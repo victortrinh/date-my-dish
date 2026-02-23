@@ -1,0 +1,43 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t } from "@i18n/utils";
+
+const locale = "fr";
+---
+
+<BaseLayout
+  title={`${t(locale, "contact.pageTitle")} | Date My Dish`}
+  description="Contactez Victor chez Date My Dish. Questions sur une recette, idées de collaboration, ou simplement dire bonjour?"
+>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <Breadcrumbs
+      locale={locale}
+      items={[{ label: t(locale, "contact.pageTitle") }]}
+    />
+
+    <h1 class="mb-8 font-heading text-4xl font-bold text-gray-900">
+      {t(locale, "contact.pageTitle")}
+    </h1>
+
+    <div class="prose max-w-none">
+      <p>
+        Vous avez une question sur une recette? Vous voulez collaborer? Ou simplement dire bonjour?
+        J'adorerais avoir de vos nouvelles!
+      </p>
+
+      <p>
+        La meilleure façon de me joindre est par les réseaux sociaux :
+      </p>
+
+      <ul>
+        <li><a href="https://instagram.com/datemydish" target="_blank" rel="noopener noreferrer">Instagram — @datemydish</a></li>
+        <li><a href="https://pinterest.com/datemydish" target="_blank" rel="noopener noreferrer">Pinterest — @datemydish</a></li>
+      </ul>
+
+      <p>
+        Vous pouvez aussi m'écrire à <a href="mailto:hello@datemydish.com">hello@datemydish.com</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

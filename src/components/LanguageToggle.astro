@@ -1,0 +1,29 @@
+---
+import { t, getAlternateUrl, getRecipeLocalizedPath, type Locale } from "@i18n/utils";
+
+interface Props {
+  locale: Locale;
+  /** For recipe pages: the slug of the translation pair */
+  translationSlug?: string;
+}
+
+const { locale, translationSlug } = Astro.props;
+
+const targetLocale: Locale = locale === "en" ? "fr" : "en";
+
+let toggleUrl: string;
+if (translationSlug) {
+  toggleUrl = getRecipeLocalizedPath(targetLocale, translationSlug);
+} else {
+  toggleUrl = getAlternateUrl(Astro.url, targetLocale);
+}
+---
+
+<a
+  href={toggleUrl}
+  class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-3 py-1 font-ui text-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-blue hover:text-brand-blue"
+  aria-label={t(locale, "lang.switchTo")}
+>
+  <span class="text-xs">{targetLocale === "fr" ? "🇫🇷" : "🇬🇧"}</span>
+  {t(locale, "lang.switchTo")}
+</a>

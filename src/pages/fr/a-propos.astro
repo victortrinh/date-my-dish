@@ -1,0 +1,59 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t } from "@i18n/utils";
+
+const locale = "fr";
+---
+
+<BaseLayout
+  title={`${t(locale, "about.pageTitle")} | Date My Dish`}
+  description="Découvrez Victor, le cuisinier amateur et créateur de recettes derrière Date My Dish. Apprenez-en plus sur sa passion pour la cuisine simple et délicieuse."
+>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <Breadcrumbs
+      locale={locale}
+      items={[{ label: t(locale, "about.pageTitle") }]}
+    />
+
+    <h1 class="mb-8 font-heading text-4xl font-bold text-gray-900">
+      {t(locale, "about.title")}
+    </h1>
+
+    <div class="prose max-w-none">
+      <p>
+        Bonjour, je suis Victor! Je suis un cuisinier amateur basé à Montréal qui croit que les meilleurs
+        repas n'ont pas besoin d'être compliqués. Date My Dish est l'endroit où je partage mes recettes
+        préférées — des plats simples et accessibles que tout le monde peut préparer et que tous vont adorer.
+      </p>
+
+      <p>
+        Ayant grandi dans un foyer bilingue, la nourriture a toujours été le langage qui rassemblait
+        tout le monde. Que ce soit une crêpe française classique ou des pâtes pour un soir de semaine,
+        j'adore trouver ce juste milieu entre simplicité et délice.
+      </p>
+
+      <h2>Pourquoi « Date My Dish »?</h2>
+
+      <p>
+        Parce que chaque recette devrait donner envie d'en tomber amoureux. Je veux que vous regardiez
+        un plat et pensiez « Il faut absolument que je fasse ça. » C'est le sentiment que je vise
+        avec chaque recette que je partage.
+      </p>
+
+      <h2>Ce que vous trouverez ici</h2>
+
+      <ul>
+        <li>Des recettes testées et perfectionnées dans une vraie cuisine maison</li>
+        <li>Des instructions claires, étape par étape, qui fonctionnent vraiment</li>
+        <li>Des temps de préparation et de cuisson honnêtes</li>
+        <li>Chaque recette disponible en français et en anglais</li>
+      </ul>
+
+      <p>
+        Merci d'être ici. J'espère que vous trouverez quelque chose qui rendra votre prochain repas
+        un peu plus spécial.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

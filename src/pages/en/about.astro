@@ -1,0 +1,56 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t } from "@i18n/utils";
+
+const locale = "en";
+---
+
+<BaseLayout
+  title={`${t(locale, "about.pageTitle")} | Date My Dish`}
+  description="Meet Victor, the home cook and recipe developer behind Date My Dish. Learn about his passion for simple, delicious food."
+>
+  <div class="mx-auto max-w-3xl px-4 py-8">
+    <Breadcrumbs
+      locale={locale}
+      items={[{ label: t(locale, "about.pageTitle") }]}
+    />
+
+    <h1 class="mb-8 font-heading text-4xl font-bold text-gray-900">
+      {t(locale, "about.title")}
+    </h1>
+
+    <div class="prose max-w-none">
+      <p>
+        Hi, I'm Victor! I'm a home cook based in Montreal who believes that the best meals don't need to be complicated.
+        Date My Dish is where I share my favorite recipes — simple, approachable dishes that anyone can make and everyone will love.
+      </p>
+
+      <p>
+        Growing up in a bilingual household, food was always the language that brought everyone together.
+        Whether it's a classic French crêpe or a weeknight pasta, I love finding that sweet spot where
+        simplicity meets deliciousness.
+      </p>
+
+      <h2>Why "Date My Dish"?</h2>
+
+      <p>
+        Because every recipe should be worth falling for. I want you to look at a dish and think,
+        "I need to make that." That's the feeling I'm going for with every recipe I share.
+      </p>
+
+      <h2>What You'll Find Here</h2>
+
+      <ul>
+        <li>Recipes tested and perfected in a real home kitchen</li>
+        <li>Clear, step-by-step instructions that actually work</li>
+        <li>Honest prep and cook times</li>
+        <li>Every recipe available in both English and French</li>
+      </ul>
+
+      <p>
+        Thanks for being here. I hope you find something that makes your next meal a little more special.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

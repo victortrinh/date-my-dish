@@ -1,5 +1,8 @@
 ---
-import "@assets/../styles/global.css";
+import "../styles/global.css";
+import SEOHead from "@components/SEOHead.astro";
+import Navigation from "@components/Navigation.astro";
+import Footer from "@components/Footer.astro";
 import { getLocaleFromUrl, type Locale } from "@i18n/utils";
 
 interface Props {
@@ -8,10 +11,25 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   noindex?: boolean;
+  translationSlug?: string;
+  ogType?: string;
+  publishDate?: Date;
+  updatedDate?: Date;
 }
 
-const { title, description, canonical, ogImage, noindex = false } = Astro.props;
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  noindex = false,
+  translationSlug,
+  ogType,
+  publishDate,
+  updatedDate,
+} = Astro.props;
 const locale = getLocaleFromUrl(Astro.url) as Locale;
+const resolvedCanonical = canonical || Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -21,18 +39,26 @@ const locale = getLocaleFromUrl(Astro.url) as Locale;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
-    {canonical && <link rel="canonical" href={canonical} />}
+    <SEOHead
+      title={title}
+      description={description}
+      locale={locale}
+      canonical={resolvedCanonical}
+      ogImage={ogImage}
+      ogType={ogType}
+      noindex={noindex}
+      translationSlug={translationSlug}
+      publishDate={publishDate}
+      updatedDate={updatedDate}
+    />
     <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col bg-white">
-    <slot name="navigation" />
+    <Navigation locale={locale} translationSlug={translationSlug} />
     <main class="flex-1">
       <slot />
     </main>
-    <slot name="footer" />
+    <Footer locale={locale} />
 
     <!-- Cloudflare Web Analytics -->
     <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": ""}'></script>

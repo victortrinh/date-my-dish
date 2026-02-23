@@ -1,0 +1,52 @@
+---
+import { t, type Locale } from "@i18n/utils";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<div id="search" data-pagefind-ui data-locale={locale}>
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <div id="pagefind-container"></div>
+</div>
+
+<script is:inline>
+  // Defer-load Pagefind JS until user focuses the search or it enters viewport
+  (function() {
+    let loaded = false;
+    function loadPagefind() {
+      if (loaded) return;
+      loaded = true;
+      const script = document.createElement('script');
+      script.src = '/pagefind/pagefind-ui.js';
+      script.onload = function() {
+        const container = document.getElementById('pagefind-container');
+        const locale = document.getElementById('search')?.dataset?.locale || 'en';
+        new window.PagefindUI({
+          element: '#pagefind-container',
+          showSubResults: true,
+          translations: locale === 'fr' ? {
+            placeholder: 'Rechercher une recette...',
+            zero_results: 'Aucun résultat pour [SEARCH_TERM]',
+          } : {
+            placeholder: 'Search for a recipe...',
+            zero_results: 'No results for [SEARCH_TERM]',
+          },
+        });
+        // Auto-focus the search input
+        const input = container?.querySelector('input');
+        if (input) input.focus();
+      };
+      document.head.appendChild(script);
+    }
+
+    // Load on focus of any input in page, or after 3 seconds
+    document.addEventListener('focusin', function(e) {
+      if (e.target && e.target.tagName === 'INPUT') loadPagefind();
+    }, { once: true });
+    setTimeout(loadPagefind, 3000);
+  })();
+</script>

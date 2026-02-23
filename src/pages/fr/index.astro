@@ -1,20 +1,84 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import RecipeCard from "@components/RecipeCard.astro";
 import { t } from "@i18n/utils";
+import { getCollection } from "astro:content";
+import type { ImageMetadata } from "astro";
 
 const locale = "fr";
+
+const allRecipes = await getCollection("recipes");
+const recipes = allRecipes
+  .filter((r) => r.data.lang === "fr")
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const categories = [...new Set(recipes.flatMap((r) => r.data.recipeCategory))];
 ---
 
 <BaseLayout
   title={t(locale, "seo.homeTitle")}
   description={t(locale, "seo.homeDescription")}
 >
-  <div class="mx-auto max-w-4xl px-4 py-16 text-center">
-    <h1 class="mb-4 font-handwritten text-5xl text-brand-blue">
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-blue-50 to-white px-4 py-20 text-center">
+    <h1 class="mb-4 font-handwritten text-5xl text-brand-blue md:text-6xl">
       {t(locale, "home.heroTitle")}
     </h1>
-    <p class="text-xl text-gray-600">
+    <p class="mx-auto max-w-xl text-lg text-gray-600">
       {t(locale, "home.heroSubtitle")}
     </p>
-  </div>
+    <a
+      href="/fr/recettes/"
+      class="mt-8 inline-block rounded-full bg-brand-blue px-8 py-3 font-ui font-semibold text-white no-underline shadow-sm transition-colors hover:bg-blue-700"
+    >
+      {t(locale, "home.viewAllRecipes")}
+    </a>
+  </section>
+
+  <!-- Featured Recipes -->
+  {recipes.length > 0 && (
+    <section class="mx-auto max-w-6xl px-4 py-16">
+      <h2 class="mb-8 text-center font-heading text-3xl font-bold text-gray-900">
+        {t(locale, "home.featuredRecipes")}
+      </h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {recipes.slice(0, 6).map((recipe) => {
+          const slug = recipe.id.replace(/^fr\//, "");
+          return (
+            <RecipeCard
+              title={recipe.data.title}
+              description={recipe.data.description}
+              slug={slug}
+              locale={locale}
+              heroImage={recipe.data.heroImage as ImageMetadata}
+              heroImageAlt={recipe.data.heroImageAlt}
+              prepTime={recipe.data.prepTime}
+              difficulty={recipe.data.difficulty}
+            />
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <!-- Categories -->
+  {categories.length > 0 && (
+    <section class="bg-gray-50 px-4 py-16">
+      <div class="mx-auto max-w-6xl">
+        <h2 class="mb-8 text-center font-heading text-3xl font-bold text-gray-900">
+          {t(locale, "home.categories")}
+        </h2>
+        <div class="flex flex-wrap justify-center gap-3">
+          {categories.map((cat) => (
+            <a
+              href={`/fr/recettes/categorie/${cat}/`}
+              class="rounded-full border border-gray-200 bg-white px-5 py-2 font-ui text-sm font-medium text-gray-700 no-underline shadow-sm transition-colors hover:border-brand-blue hover:text-brand-blue"
+            >
+              {t(locale, `categories.${cat}` as any) || cat}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>

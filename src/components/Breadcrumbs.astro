@@ -1,0 +1,58 @@
+---
+import { t, getLocalizedPath, type Locale } from "@i18n/utils";
+
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  locale: Locale;
+  items: BreadcrumbItem[];
+}
+
+const { locale, items } = Astro.props;
+
+const siteUrl = "https://datemydish.com";
+
+// Build full breadcrumb list with Home prepended
+const breadcrumbs: BreadcrumbItem[] = [
+  { label: t(locale, "breadcrumbs.home"), href: getLocalizedPath(locale, "/") },
+  ...items,
+];
+
+// BreadcrumbList JSON-LD
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: breadcrumbs.map((item, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: item.label,
+    ...(item.href ? { item: `${siteUrl}${item.href}` } : {}),
+  })),
+};
+---
+
+<nav aria-label="Breadcrumb" class="no-print mb-4">
+  <ol class="flex flex-wrap items-center gap-1 text-sm text-gray-500">
+    {breadcrumbs.map((item, i) => (
+      <li class="flex items-center gap-1">
+        {i > 0 && (
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        )}
+        {item.href && i < breadcrumbs.length - 1 ? (
+          <a href={item.href} class="text-gray-500 no-underline hover:text-brand-blue">
+            {item.label}
+          </a>
+        ) : (
+          <span class="font-medium text-gray-700">{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />

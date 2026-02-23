@@ -1,0 +1,76 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import RecipeCard from "@components/RecipeCard.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t } from "@i18n/utils";
+import { getCollection } from "astro:content";
+import type { ImageMetadata } from "astro";
+
+const locale = "fr";
+
+const allRecipes = await getCollection("recipes");
+const recipes = allRecipes
+  .filter((r) => r.data.lang === "fr")
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const categories = [...new Set(recipes.flatMap((r) => r.data.recipeCategory))];
+---
+
+<BaseLayout
+  title={t(locale, "seo.recipesTitle")}
+  description={t(locale, "seo.recipesDescription")}
+>
+  <div class="mx-auto max-w-6xl px-4 py-8">
+    <Breadcrumbs
+      locale={locale}
+      items={[{ label: t(locale, "nav.recipes") }]}
+    />
+
+    <h1 class="mb-8 font-heading text-4xl font-bold text-gray-900">
+      {t(locale, "listing.allRecipes")}
+    </h1>
+
+    <!-- Category Filter -->
+    {categories.length > 0 && (
+      <div class="mb-8 flex flex-wrap gap-2">
+        <a
+          href="/fr/recettes/"
+          class="rounded-full bg-brand-blue px-4 py-1.5 font-ui text-sm font-medium text-white no-underline"
+        >
+          {t(locale, "listing.allCategories")}
+        </a>
+        {categories.map((cat) => (
+          <a
+            href={`/fr/recettes/categorie/${cat}/`}
+            class="rounded-full border border-gray-200 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 no-underline hover:border-brand-blue hover:text-brand-blue"
+          >
+            {t(locale, `categories.${cat}` as any) || cat}
+          </a>
+        ))}
+      </div>
+    )}
+
+    <!-- Recipe Grid -->
+    {recipes.length > 0 ? (
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {recipes.map((recipe) => {
+          const slug = recipe.id.replace(/^fr\//, "");
+          return (
+            <RecipeCard
+              title={recipe.data.title}
+              description={recipe.data.description}
+              slug={slug}
+              locale={locale}
+              heroImage={recipe.data.heroImage as ImageMetadata}
+              heroImageAlt={recipe.data.heroImageAlt}
+              prepTime={recipe.data.prepTime}
+              difficulty={recipe.data.difficulty}
+            />
+          );
+        })}
+      </div>
+    ) : (
+      <p class="text-gray-500">{t(locale, "listing.noRecipesFound")}</p>
+    )}
+  </div>
+</BaseLayout>
