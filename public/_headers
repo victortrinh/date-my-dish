@@ -1,0 +1,21 @@
+# Cloudflare Pages headers
+
+# Security headers for all pages
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Long cache for Astro-generated assets (hashed filenames)
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Long cache for Pagefind assets
+/pagefind/*
+  Cache-Control: public, max-age=86400
+
+# Cache images
+/images/*
+  Cache-Control: public, max-age=604800

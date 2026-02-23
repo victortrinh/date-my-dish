@@ -1,0 +1,31 @@
+# Date My Dish - robots.txt
+# Allow all crawlers including AI bots
+
+User-agent: *
+Allow: /
+
+# AI Crawlers - explicitly allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Disallow admin/search pages
+Disallow: /en/search/
+Disallow: /fr/recherche/
+
+# Sitemaps
+Sitemap: https://datemydish.com/sitemap-index.xml
