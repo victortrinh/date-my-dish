@@ -1,0 +1,157 @@
+---
+import type { Locale } from "@i18n/utils";
+import { getRecipeLocalizedPath } from "@i18n/utils";
+
+interface HowToStep {
+  text: string;
+  image?: string;
+}
+
+interface IngredientGroup {
+  group?: string;
+  items: string[];
+}
+
+interface InstructionGroup {
+  group?: string;
+  steps: HowToStep[];
+}
+
+interface Nutrition {
+  calories?: string;
+  fatContent?: string;
+  carbohydrateContent?: string;
+  proteinContent?: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  lang: Locale;
+  author: string;
+  publishDate: Date;
+  updatedDate?: Date;
+  heroImageUrl: string;
+  prepTime: string;
+  cookTime: string;
+  totalTime: string;
+  recipeYield: string;
+  recipeCategory: string[];
+  recipeCuisine: string;
+  keywords: string[];
+  ingredientGroups: IngredientGroup[];
+  instructionGroups: InstructionGroup[];
+  nutrition?: Nutrition;
+  faqs: FAQ[];
+}
+
+const {
+  title,
+  description,
+  slug,
+  lang,
+  author,
+  publishDate,
+  updatedDate,
+  heroImageUrl,
+  prepTime,
+  cookTime,
+  totalTime,
+  recipeYield,
+  recipeCategory,
+  recipeCuisine,
+  keywords,
+  ingredientGroups,
+  instructionGroups,
+  nutrition,
+  faqs,
+} = Astro.props;
+
+const siteUrl = "https://datemydish.com";
+const recipePath = getRecipeLocalizedPath(lang, slug);
+const canonicalUrl = `${siteUrl}${recipePath}`;
+
+// Flatten ingredients for JSON-LD
+const allIngredients = ingredientGroups.flatMap((g) => g.items);
+
+// Build HowToStep/HowToSection for JSON-LD
+const instructionSections = instructionGroups.map((group) => {
+  const steps = group.steps.map((step, i) => ({
+    "@type": "HowToStep" as const,
+    text: step.text,
+    position: i + 1,
+    ...(step.image ? { image: step.image } : {}),
+  }));
+
+  if (group.group) {
+    return {
+      "@type": "HowToSection" as const,
+      name: group.group,
+      itemListElement: steps,
+    };
+  }
+  return steps;
+}).flat();
+
+// Recipe JSON-LD
+const recipeJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  name: title,
+  description,
+  author: {
+    "@type": "Person",
+    name: author,
+  },
+  datePublished: publishDate.toISOString().split("T")[0],
+  ...(updatedDate ? { dateModified: updatedDate.toISOString().split("T")[0] } : {}),
+  image: heroImageUrl.startsWith("http") ? heroImageUrl : `${siteUrl}${heroImageUrl}`,
+  prepTime,
+  cookTime,
+  totalTime,
+  recipeYield,
+  recipeCategory,
+  recipeCuisine,
+  keywords: keywords.join(", "),
+  recipeIngredient: allIngredients,
+  recipeInstructions: instructionSections,
+  ...(nutrition
+    ? {
+        nutrition: {
+          "@type": "NutritionInformation",
+          ...(nutrition.calories ? { calories: nutrition.calories } : {}),
+          ...(nutrition.fatContent ? { fatContent: nutrition.fatContent } : {}),
+          ...(nutrition.carbohydrateContent ? { carbohydrateContent: nutrition.carbohydrateContent } : {}),
+          ...(nutrition.proteinContent ? { proteinContent: nutrition.proteinContent } : {}),
+        },
+      }
+    : {}),
+  url: canonicalUrl,
+  inLanguage: lang,
+};
+
+// FAQ JSON-LD (only if FAQs exist)
+const faqJsonLd = faqs.length > 0
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    }
+  : null;
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(recipeJsonLd)} />
+{faqJsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />}
