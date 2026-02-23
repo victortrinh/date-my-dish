@@ -1,0 +1,7 @@
+---
+// Root redirect: detect browser language and redirect to /en/ or /fr/
+const acceptLanguage = Astro.request.headers.get("accept-language") || "";
+const prefersFrench = acceptLanguage.toLowerCase().startsWith("fr");
+
+return Astro.redirect(`/${prefersFrench ? "fr" : "en"}/`, 302);
+---

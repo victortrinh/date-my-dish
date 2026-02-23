@@ -1,0 +1,40 @@
+---
+import "@assets/../styles/global.css";
+import { getLocaleFromUrl, type Locale } from "@i18n/utils";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+
+const { title, description, canonical, ogImage, noindex = false } = Astro.props;
+const locale = getLocaleFromUrl(Astro.url) as Locale;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <slot name="head" />
+  </head>
+  <body class="flex min-h-screen flex-col bg-white">
+    <slot name="navigation" />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+
+    <!-- Cloudflare Web Analytics -->
+    <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": ""}'></script>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+{
+  "site": {
+    "name": "Date My Dish",
+    "tagline": "Recipes worth falling for"
+  },
+  "nav": {
+    "home": "Home",
+    "recipes": "Recipes",
+    "about": "About",
+    "contact": "Contact",
+    "search": "Search"
+  },
+  "recipe": {
+    "jumpToRecipe": "Jump to Recipe",
+    "ingredients": "Ingredients",
+    "instructions": "Instructions",
+    "prepTime": "Prep Time",
+    "cookTime": "Cook Time",
+    "totalTime": "Total Time",
+    "servings": "Servings",
+    "difficulty": "Difficulty",
+    "nutrition": "Nutrition",
+    "calories": "Calories",
+    "fat": "Fat",
+    "carbs": "Carbs",
+    "protein": "Protein",
+    "printRecipe": "Print Recipe",
+    "relatedRecipes": "You might also like",
+    "faq": "Frequently Asked Questions",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "minutes": "min",
+    "category": "Category",
+    "cuisine": "Cuisine"
+  },
+  "home": {
+    "heroTitle": "Recipes Worth Falling For",
+    "heroSubtitle": "Simple, delicious recipes crafted with love by Victor",
+    "featuredRecipes": "Featured Recipes",
+    "viewAllRecipes": "View All Recipes",
+    "categories": "Browse by Category"
+  },
+  "listing": {
+    "allRecipes": "All Recipes",
+    "filterByCategory": "Filter by Category",
+    "allCategories": "All",
+    "noRecipesFound": "No recipes found."
+  },
+  "about": {
+    "title": "About Victor",
+    "pageTitle": "About"
+  },
+  "contact": {
+    "title": "Contact",
+    "pageTitle": "Get in Touch"
+  },
+  "search": {
+    "title": "Search Recipes",
+    "placeholder": "Search for a recipe...",
+    "noResults": "No results found."
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "madeWith": "Made with love in Montreal"
+  },
+  "seo": {
+    "titleTemplate": "%s | Date My Dish",
+    "homeTitle": "Date My Dish - Recipes Worth Falling For",
+    "homeDescription": "Discover simple, delicious recipes crafted with love. From comforting classics to creative dishes, find your next favorite meal.",
+    "recipesTitle": "All Recipes | Date My Dish",
+    "recipesDescription": "Browse our collection of simple, delicious recipes. Find your next favorite meal."
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "recipes": "Recipes",
+    "category": "Category"
+  },
+  "categories": {
+    "breakfast": "Breakfast",
+    "lunch": "Lunch",
+    "dinner": "Dinner",
+    "dessert": "Dessert",
+    "snack": "Snack",
+    "appetizer": "Appetizer",
+    "side-dish": "Side Dish",
+    "drink": "Drink",
+    "sauce": "Sauce"
+  },
+  "lang": {
+    "switchTo": "Français",
+    "current": "English"
+  }
+}

@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Caveat:wght@400;700&family=Fira+Sans+Condensed:wght@300;400;500;600&family=Raleway:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-body text-gray-800 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading font-bold;
+  }
+
+  a {
+    @apply text-brand-blue transition-colors hover:text-brand-green;
+  }
+}
+
+@layer components {
+  .prose h2 {
+    @apply mt-8 mb-4 text-2xl font-bold text-gray-900;
+  }
+
+  .prose h3 {
+    @apply mt-6 mb-3 text-xl font-semibold text-gray-800;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose ul {
+    @apply mb-4 list-disc pl-6;
+  }
+
+  .prose ol {
+    @apply mb-4 list-decimal pl-6;
+  }
+
+  .prose li {
+    @apply mb-1;
+  }
+
+  .prose img {
+    @apply my-6 rounded-lg;
+  }
+
+  .prose blockquote {
+    @apply my-4 border-l-4 border-brand-blue pl-4 italic text-gray-600;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}

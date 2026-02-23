@@ -1,0 +1,94 @@
+{
+  "site": {
+    "name": "Date My Dish",
+    "tagline": "Des recettes dont on tombe amoureux"
+  },
+  "nav": {
+    "home": "Accueil",
+    "recipes": "Recettes",
+    "about": "À propos",
+    "contact": "Contact",
+    "search": "Recherche"
+  },
+  "recipe": {
+    "jumpToRecipe": "Aller à la recette",
+    "ingredients": "Ingrédients",
+    "instructions": "Instructions",
+    "prepTime": "Préparation",
+    "cookTime": "Cuisson",
+    "totalTime": "Temps total",
+    "servings": "Portions",
+    "difficulty": "Difficulté",
+    "nutrition": "Nutrition",
+    "calories": "Calories",
+    "fat": "Lipides",
+    "carbs": "Glucides",
+    "protein": "Protéines",
+    "printRecipe": "Imprimer la recette",
+    "relatedRecipes": "Vous aimerez aussi",
+    "faq": "Questions fréquentes",
+    "easy": "Facile",
+    "medium": "Moyen",
+    "hard": "Difficile",
+    "minutes": "min",
+    "category": "Catégorie",
+    "cuisine": "Cuisine"
+  },
+  "home": {
+    "heroTitle": "Des recettes dont on tombe amoureux",
+    "heroSubtitle": "Des recettes simples et délicieuses, préparées avec amour par Victor",
+    "featuredRecipes": "Recettes en vedette",
+    "viewAllRecipes": "Voir toutes les recettes",
+    "categories": "Parcourir par catégorie"
+  },
+  "listing": {
+    "allRecipes": "Toutes les recettes",
+    "filterByCategory": "Filtrer par catégorie",
+    "allCategories": "Toutes",
+    "noRecipesFound": "Aucune recette trouvée."
+  },
+  "about": {
+    "title": "À propos de Victor",
+    "pageTitle": "À propos"
+  },
+  "contact": {
+    "title": "Contact",
+    "pageTitle": "Nous joindre"
+  },
+  "search": {
+    "title": "Rechercher des recettes",
+    "placeholder": "Rechercher une recette...",
+    "noResults": "Aucun résultat trouvé."
+  },
+  "footer": {
+    "copyright": "Tous droits réservés.",
+    "madeWith": "Fait avec amour à Montréal"
+  },
+  "seo": {
+    "titleTemplate": "%s | Date My Dish",
+    "homeTitle": "Date My Dish - Des recettes dont on tombe amoureux",
+    "homeDescription": "Découvrez des recettes simples et délicieuses, préparées avec amour. Des classiques réconfortants aux plats créatifs, trouvez votre prochain coup de cœur.",
+    "recipesTitle": "Toutes les recettes | Date My Dish",
+    "recipesDescription": "Parcourez notre collection de recettes simples et délicieuses. Trouvez votre prochain coup de cœur."
+  },
+  "breadcrumbs": {
+    "home": "Accueil",
+    "recipes": "Recettes",
+    "category": "Catégorie"
+  },
+  "categories": {
+    "breakfast": "Déjeuner",
+    "lunch": "Dîner",
+    "dinner": "Souper",
+    "dessert": "Dessert",
+    "snack": "Collation",
+    "appetizer": "Entrée",
+    "side-dish": "Accompagnement",
+    "drink": "Boisson",
+    "sauce": "Sauce"
+  },
+  "lang": {
+    "switchTo": "English",
+    "current": "Français"
+  }
+}
