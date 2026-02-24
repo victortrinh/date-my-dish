@@ -38,6 +38,21 @@
     "share": "Share",
     "copied": "Link Copied!"
   },
+  "dateNight": {
+    "tips": "Date Night Tips",
+    "wine": "Wine Pairing",
+    "music": "Set the Mood",
+    "platingTip": "Plating Tip",
+    "impressFactor": "Impress Factor"
+  },
+  "occasion": {
+    "date-night": "Date Night",
+    "weeknight": "Weeknight",
+    "entertaining": "Entertaining",
+    "comfort": "Comfort Food",
+    "celebration": "Celebration",
+    "quick-meal": "Quick Meal"
+  },
   "home": {
     "heroTitle": "Recipes Worth Falling For",
     "heroSubtitle": "Simple, delicious recipes crafted with love by Victor",

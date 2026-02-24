@@ -6,6 +6,8 @@ import RecipeSchema from "@components/RecipeSchema.astro";
 import RecipeContent from "@components/RecipeContent.astro";
 import JumpToRecipe from "@components/JumpToRecipe.astro";
 import ShareButton from "@components/ShareButton.astro";
+import ImpressFactor from "@components/ImpressFactor.astro";
+import DateNightTips from "@components/DateNightTips.astro";
 import FAQSection from "@components/FAQSection.astro";
 import RelatedRecipes from "@components/RelatedRecipes.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
@@ -127,7 +129,23 @@ const difficultyColors = {
         <span class={`rounded-full px-3 py-1 text-sm font-medium ${difficultyColors[data.difficulty]}`}>
           {t(locale, `recipe.${data.difficulty}` as "recipe.easy" | "recipe.medium" | "recipe.hard")}
         </span>
+        {data.impressFactor && (
+          <>
+            <div class="h-4 w-px bg-gray-300"></div>
+            <ImpressFactor locale={locale} rating={data.impressFactor} />
+          </>
+        )}
       </div>
+
+      {data.occasion && data.occasion.length > 0 && (
+        <div class="mb-4 flex flex-wrap gap-2">
+          {data.occasion.map((occ: string) => (
+            <span class="rounded-full bg-brand-accent/10 px-3 py-1 text-xs font-medium text-brand-accent-dark">
+              {t(locale, `occasion.${occ}` as any) || occ}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div class="flex flex-wrap items-center gap-3">
         <JumpToRecipe locale={locale} />
@@ -163,6 +181,10 @@ const difficultyColors = {
       nutrition={data.nutrition}
       sourceUrl={sourceUrl}
     />
+
+    {data.dateNightTips && (
+      <DateNightTips locale={locale} tips={data.dateNightTips} />
+    )}
 
     <!-- FAQs -->
     <FAQSection locale={locale} faqs={data.faqs} />

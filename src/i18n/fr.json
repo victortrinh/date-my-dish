@@ -38,6 +38,21 @@
     "share": "Partager",
     "copied": "Lien copié!"
   },
+  "dateNight": {
+    "tips": "Conseils soirée en amoureux",
+    "wine": "Accord vin",
+    "music": "Ambiance musicale",
+    "platingTip": "Conseil de dressage",
+    "impressFactor": "Facteur wow"
+  },
+  "occasion": {
+    "date-night": "Soirée en amoureux",
+    "weeknight": "Soir de semaine",
+    "entertaining": "Recevoir",
+    "comfort": "Comfort food",
+    "celebration": "Célébration",
+    "quick-meal": "Repas rapide"
+  },
   "home": {
     "heroTitle": "Des recettes dont on tombe amoureux",
     "heroSubtitle": "Des recettes simples et délicieuses, préparées avec amour par Victor",

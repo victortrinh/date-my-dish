@@ -19,6 +19,12 @@ const FAQSchema = z.object({
   answer: z.string(),
 });
 
+const DateNightTipsSchema = z.object({
+  wine: z.string().optional(),
+  music: z.string().optional(),
+  platingTip: z.string().optional(),
+});
+
 const recipes = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/recipes" }),
   schema: ({ image }) => {
@@ -55,6 +61,9 @@ const recipes = defineCollection({
       ingredientGroups: z.array(IngredientGroupSchema),
       instructionGroups: z.array(InstructionGroupSchema),
       nutrition: NutritionSchema.optional(),
+      occasion: z.array(z.string()).optional(),
+      impressFactor: z.number().min(1).max(5).optional(),
+      dateNightTips: DateNightTipsSchema.optional(),
       faqs: z.array(FAQSchema).min(1),
     });
   },
