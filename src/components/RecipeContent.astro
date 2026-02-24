@@ -88,7 +88,7 @@ const difficultyLabels = {
               <input
                 type="checkbox"
                 id={`ing-${ingredientGroups.indexOf(group)}-${i}`}
-                class="peer mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-gray-300 text-brand-green accent-brand-green"
+                class="peer mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-gray-300 text-brand-accent accent-brand-accent"
               />
               <label
                 for={`ing-${ingredientGroups.indexOf(group)}-${i}`}
@@ -116,7 +116,7 @@ const difficultyLabels = {
         <ol class="space-y-4">
           {group.steps.map((step, i) => (
             <li class="flex gap-4">
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-blue font-ui text-sm font-bold text-white">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary font-ui text-sm font-bold text-white">
                 {i + 1}
               </span>
               <div class="pt-1">
@@ -148,25 +148,25 @@ const difficultyLabels = {
       <div class="nutrition-grid grid grid-cols-2 gap-4 sm:grid-cols-4">
         {nutrition.calories && (
           <div class="text-center">
-            <p class="text-2xl font-bold text-brand-blue">{nutrition.calories}</p>
+            <p class="text-2xl font-bold text-brand-primary">{nutrition.calories}</p>
             <p class="text-sm text-gray-500">{t(locale, "recipe.calories")}</p>
           </div>
         )}
         {nutrition.fatContent && (
           <div class="text-center">
-            <p class="text-2xl font-bold text-brand-blue">{nutrition.fatContent}</p>
+            <p class="text-2xl font-bold text-brand-primary">{nutrition.fatContent}</p>
             <p class="text-sm text-gray-500">{t(locale, "recipe.fat")}</p>
           </div>
         )}
         {nutrition.carbohydrateContent && (
           <div class="text-center">
-            <p class="text-2xl font-bold text-brand-blue">{nutrition.carbohydrateContent}</p>
+            <p class="text-2xl font-bold text-brand-primary">{nutrition.carbohydrateContent}</p>
             <p class="text-sm text-gray-500">{t(locale, "recipe.carbs")}</p>
           </div>
         )}
         {nutrition.proteinContent && (
           <div class="text-center">
-            <p class="text-2xl font-bold text-brand-blue">{nutrition.proteinContent}</p>
+            <p class="text-2xl font-bold text-brand-primary">{nutrition.proteinContent}</p>
             <p class="text-sm text-gray-500">{t(locale, "recipe.protein")}</p>
           </div>
         )}

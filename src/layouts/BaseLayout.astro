@@ -59,8 +59,8 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <link rel="alternate" type="application/rss+xml" title="Date My Dish (Français)" href="/fr/rss.xml" />
     <slot name="head" />
   </head>
-  <body class="flex min-h-screen flex-col bg-white">
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-ui focus:text-sm focus:font-medium focus:text-brand-blue focus:shadow-lg">
+  <body class="flex min-h-screen flex-col bg-brand-cream">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-ui focus:text-sm focus:font-medium focus:text-brand-primary focus:shadow-lg">
       {locale === "fr" ? "Aller au contenu" : "Skip to content"}
     </a>
     <Navigation locale={locale} translationSlug={translationSlug} />

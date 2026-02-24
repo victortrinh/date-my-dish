@@ -63,7 +63,7 @@ allCategories.sort((a, b) => {
     <div class="mb-8 flex flex-wrap gap-2">
       <a
         href="/en/recipes/"
-        class="rounded-full border border-gray-200 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-blue hover:text-brand-blue"
+        class="rounded-full border border-gray-200 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary"
       >
         {t(locale, "listing.allCategories")}
       </a>
@@ -73,8 +73,8 @@ allCategories.sort((a, b) => {
           class:list={[
             "rounded-full px-4 py-1.5 font-ui text-sm font-medium no-underline",
             cat === category
-              ? "bg-brand-blue text-white"
-              : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-blue hover:text-brand-blue",
+              ? "bg-brand-primary text-white"
+              : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-primary hover:text-brand-primary",
           ]}
           aria-current={cat === category ? "page" : undefined}
         >

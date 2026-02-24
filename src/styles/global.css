@@ -19,7 +19,7 @@
   }
 
   a {
-    @apply text-brand-blue transition-colors hover:text-brand-green;
+    @apply text-brand-primary transition-colors hover:text-brand-accent;
   }
 }
 
@@ -53,7 +53,7 @@
   }
 
   .prose blockquote {
-    @apply my-4 border-l-4 border-brand-blue pl-4 italic text-gray-600;
+    @apply my-4 border-l-4 border-brand-primary pl-4 italic text-gray-600;
   }
 }
 
@@ -85,11 +85,11 @@
     background: none !important;
   }
 
-  .bg-brand-blue {
+  .bg-brand-primary {
     background: #000 !important;
   }
 
-  .text-brand-blue {
+  .text-brand-primary {
     color: #000 !important;
   }
 

@@ -78,7 +78,7 @@ categories.sort((a, b) => {
       </p>
       <a
         href="/fr/recettes/"
-        class="mt-8 inline-block rounded-full bg-brand-blue px-8 py-3 font-ui font-semibold text-white no-underline shadow-lg transition-colors hover:bg-blue-700"
+        class="mt-8 inline-block rounded-full bg-brand-primary px-8 py-3 font-ui font-semibold text-white no-underline shadow-lg transition-colors hover:bg-brand-primary-dark"
       >
         {t(locale, "home.viewAllRecipes")}
       </a>
@@ -123,7 +123,7 @@ categories.sort((a, b) => {
           {categories.map((cat) => (
             <a
               href={`/fr/recettes/categorie/${cat}/`}
-              class="rounded-full border border-gray-200 bg-white px-5 py-2 font-ui text-sm font-medium text-gray-700 no-underline shadow-sm transition-colors hover:border-brand-blue hover:text-brand-blue"
+              class="rounded-full border border-gray-200 bg-white px-5 py-2 font-ui text-sm font-medium text-gray-700 no-underline shadow-sm transition-colors hover:border-brand-primary hover:text-brand-primary"
             >
               {t(locale, `categories.${cat}` as any) || cat}
             </a>

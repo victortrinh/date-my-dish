@@ -44,7 +44,7 @@ categories.sort((a, b) => {
       <div class="mb-8 flex flex-wrap gap-2">
         <a
           href="/en/recipes/"
-          class="rounded-full bg-brand-blue px-4 py-1.5 font-ui text-sm font-medium text-white no-underline"
+          class="rounded-full bg-brand-primary px-4 py-1.5 font-ui text-sm font-medium text-white no-underline"
           aria-current="page"
         >
           {t(locale, "listing.allCategories")}
@@ -52,7 +52,7 @@ categories.sort((a, b) => {
         {categories.map((cat) => (
           <a
             href={`/en/recipes/category/${cat}/`}
-            class="rounded-full border border-gray-200 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-blue hover:text-brand-blue"
+            class="rounded-full border border-gray-200 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary"
           >
             {t(locale, `categories.${cat}` as any) || cat}
           </a>

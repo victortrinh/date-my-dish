@@ -42,6 +42,6 @@ Bilingual recipe blog (EN/FR) built with Astro 5, deployed on Cloudflare Pages.
 - `/en/contact/` → `/fr/contact/`
 
 ## Brand
-- Colors: Blue `#1863DC`, Green `#5A822B`
-- Fonts: Bitter (headings), Fira Sans Condensed (body), Caveat (handwritten), Raleway (UI)
+- Colors: Terracotta `#C4704B` (primary), Warm Gold `#D4A853` (accent), Cream `#FDF6EC` (background)
+- Fonts: Bitter (headings), Source Sans 3 (body + UI), Caveat (handwritten)
 - Locale: Quebec French (souper, déjeuner, cuillère à thé)
