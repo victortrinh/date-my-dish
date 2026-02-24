@@ -14,7 +14,8 @@ const year = new Date().getFullYear();
     <div class="flex flex-col items-center gap-6 md:flex-row md:justify-between">
       <!-- Brand -->
       <div class="text-center md:text-left">
-        <a href={getLocalizedPath(locale, "/")} class="font-handwritten text-xl text-brand-primary no-underline">
+        <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-1.5 font-handwritten text-xl text-brand-primary no-underline">
+          <img src="/favicon.svg" class="h-5 w-5" alt="" width="20" height="20" />
           Date My Dish
         </a>
         <p class="mt-1 text-sm text-gray-500">{t(locale, "footer.madeWith")}</p>
