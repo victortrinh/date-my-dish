@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import { t, getCategorySlug } from "@i18n/utils";
+import { t, getCategorySlug, getRecipeLocalizedPath } from "@i18n/utils";
 import { getCollection } from "astro:content";
 import type { ImageMetadata } from "astro";
 
@@ -47,6 +47,24 @@ allCategories.sort((a, b) => {
   title={`Recettes ${categoryLabel} | Date My Dish`}
   description={`Parcourez nos recettes de ${categoryLabel.toLowerCase()}. Trouvez votre prochain plat coup de cœur.`}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `Recettes ${categoryLabel}`,
+      numberOfItems: sortedRecipes.length,
+      itemListElement: sortedRecipes.map((recipe: any, i: number) => {
+        const slug = recipe.id.replace(/^fr\//, "");
+        return {
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://datemydish.com${getRecipeLocalizedPath(locale, slug)}`,
+          name: recipe.data.title,
+        };
+      }),
+    })} />
+  </Fragment>
+
   <div class="mx-auto max-w-6xl px-4 py-8">
     <Breadcrumbs
       locale={locale}

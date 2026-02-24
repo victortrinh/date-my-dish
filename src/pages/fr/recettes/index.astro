@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import { t, getCategorySlug } from "@i18n/utils";
+import { t, getCategorySlug, getRecipeLocalizedPath } from "@i18n/utils";
 import { getCollection } from "astro:content";
 import type { ImageMetadata } from "astro";
 
@@ -29,6 +29,24 @@ categories.sort((a, b) => {
   title={t(locale, "seo.recipesTitle")}
   description={t(locale, "seo.recipesDescription")}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: t(locale, "listing.allRecipes"),
+      numberOfItems: recipes.length,
+      itemListElement: recipes.map((recipe, i) => {
+        const slug = recipe.id.replace(/^fr\//, "");
+        return {
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://datemydish.com${getRecipeLocalizedPath(locale, slug)}`,
+          name: recipe.data.title,
+        };
+      }),
+    })} />
+  </Fragment>
+
   <div class="mx-auto max-w-6xl px-4 py-8">
     <Breadcrumbs
       locale={locale}
