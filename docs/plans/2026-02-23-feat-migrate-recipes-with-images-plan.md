@@ -1,7 +1,7 @@
 ---
 title: "Migrate 9 WordPress Recipes with Images to Astro"
 type: feat
-status: active
+status: completed
 date: 2026-02-23
 origin: docs/plans/2026-02-23-feat-wordpress-to-astro-migration-plan.md
 ---
