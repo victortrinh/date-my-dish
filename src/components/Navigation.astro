@@ -40,7 +40,7 @@ function isActive(linkPath: string): boolean {
         <a
           href={getLocalizedPath(locale, link.path)}
           class:list={[
-            "relative rounded-lg px-3 py-2 font-ui text-sm font-medium no-underline transition-colors",
+            "relative rounded-lg px-3 py-2 font-ui text-sm font-medium uppercase no-underline transition-colors",
             isActive(link.path)
               ? "text-brand-primary-text"
               : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100",
@@ -105,7 +105,7 @@ function isActive(linkPath: string): boolean {
         <a
           href={getLocalizedPath(locale, link.path)}
           class:list={[
-            "block rounded-lg px-4 py-3 font-ui text-base font-medium no-underline transition-colors",
+            "block rounded-lg px-4 py-3 font-ui text-base font-medium uppercase no-underline transition-colors",
             isActive(link.path)
               ? "bg-brand-primary/5 text-brand-primary-text"
               : "text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800/50",

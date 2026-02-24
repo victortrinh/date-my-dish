@@ -78,7 +78,7 @@ categories.sort((a, b) => {
       </p>
       <a
         href="/en/recipes/"
-        class="mt-10 inline-block rounded-full bg-brand-primary px-8 py-3.5 font-ui text-sm font-semibold text-white no-underline shadow-lg transition-all hover:bg-brand-primary-dark hover:shadow-xl sm:px-10 sm:py-4 sm:text-base"
+        class="mt-10 inline-block rounded-lg bg-brand-primary px-8 py-3.5 font-ui text-sm font-semibold text-white no-underline shadow-lg transition-all hover:bg-brand-primary-dark hover:shadow-xl sm:px-10 sm:py-4 sm:text-base"
       >
         {t(locale, "home.viewAllRecipes")}
       </a>
@@ -116,7 +116,7 @@ categories.sort((a, b) => {
         <div class="mt-10 text-center">
           <a
             href="/en/recipes/"
-            class="inline-block rounded-full border-2 border-brand-primary px-8 py-3 font-ui text-sm font-semibold text-brand-primary-text no-underline transition-colors hover:bg-brand-primary hover:text-white"
+            class="inline-block rounded-lg border-2 border-brand-primary px-8 py-3 font-ui text-sm font-semibold text-brand-primary-text no-underline transition-colors hover:bg-brand-primary hover:text-white"
           >
             {t(locale, "home.viewAllRecipes")}
           </a>
@@ -139,7 +139,7 @@ categories.sort((a, b) => {
           {categories.map((cat) => (
             <a
               href={`/en/recipes/category/${cat}/`}
-              class="rounded-full border border-gray-200 bg-white px-6 py-2.5 font-ui text-sm font-medium text-gray-700 no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300"
+              class="rounded-lg border border-gray-200 bg-white px-6 py-2.5 font-ui text-sm font-medium text-gray-700 no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300"
             >
               {t(locale, `categories.${cat}` as any) || cat}
             </a>

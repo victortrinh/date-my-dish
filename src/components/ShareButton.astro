@@ -11,7 +11,7 @@ const { locale, title, url } = Astro.props;
 ---
 
 <button
-  class="no-print share-btn inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-600 px-5 py-3 font-ui text-sm font-medium text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800"
+  class="no-print share-btn inline-flex items-center gap-2 rounded-lg border border-gray-200 dark:border-gray-600 px-5 py-3 font-ui text-sm font-medium text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800"
   data-title={title}
   data-url={url}
   data-copied-text={t(locale, "recipe.copied")}
