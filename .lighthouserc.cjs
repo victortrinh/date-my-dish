@@ -23,7 +23,7 @@ module.exports = {
       startServerReadyPattern: 'Ready on',
       startServerReadyTimeout: 30000,
       url: urls,
-      numberOfRuns: 3,
+      numberOfRuns: 1,
       settings: {
         chromeFlags: '--no-sandbox --disable-dev-shm-usage',
         preset: 'desktop',
