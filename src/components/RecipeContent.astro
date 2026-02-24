@@ -1,5 +1,6 @@
 ---
 import { t, type Locale } from "@i18n/utils";
+import { formatDuration } from "@utils/format";
 
 interface HowToStep {
   text: string;
@@ -16,16 +17,61 @@ interface InstructionGroup {
   steps: HowToStep[];
 }
 
-interface Props {
-  locale: Locale;
-  ingredientGroups: IngredientGroup[];
-  instructionGroups: InstructionGroup[];
+interface Nutrition {
+  calories?: string;
+  fatContent?: string;
+  carbohydrateContent?: string;
+  proteinContent?: string;
 }
 
-const { locale, ingredientGroups, instructionGroups } = Astro.props;
+interface Props {
+  locale: Locale;
+  title: string;
+  prepTime: string;
+  cookTime: string;
+  totalTime: string;
+  recipeYield: string;
+  difficulty: "easy" | "medium" | "hard";
+  ingredientGroups: IngredientGroup[];
+  instructionGroups: InstructionGroup[];
+  nutrition?: Nutrition;
+  sourceUrl: string;
+}
+
+const {
+  locale,
+  title,
+  prepTime,
+  cookTime,
+  totalTime,
+  recipeYield,
+  difficulty,
+  ingredientGroups,
+  instructionGroups,
+  nutrition,
+  sourceUrl,
+} = Astro.props;
+
+const difficultyLabels = {
+  easy: t(locale, "recipe.easy"),
+  medium: t(locale, "recipe.medium"),
+  hard: t(locale, "recipe.hard"),
+};
 ---
 
-<div id="recipe" class="scroll-mt-20">
+<div id="recipe" class="scroll-mt-20 rounded-2xl border border-gray-200 p-6 sm:p-8">
+  <!-- Print-only header: title, times, yield, difficulty -->
+  <div class="print-only mb-6 border-b border-gray-200 pb-6">
+    <h2 class="mb-3 font-heading text-2xl font-bold text-gray-900">{title}</h2>
+    <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-700">
+      <span>{t(locale, "recipe.prepTime")}: {formatDuration(prepTime, locale)}</span>
+      <span>{t(locale, "recipe.cookTime")}: {formatDuration(cookTime, locale)}</span>
+      <span>{t(locale, "recipe.totalTime")}: {formatDuration(totalTime, locale)}</span>
+      <span>{t(locale, "recipe.servings")}: {recipeYield}</span>
+      <span>{t(locale, "recipe.difficulty")}: {difficultyLabels[difficulty]}</span>
+    </div>
+  </div>
+
   <!-- Ingredients -->
   <section class="mb-8 rounded-xl bg-amber-50 p-6">
     <h2 class="mb-4 font-heading text-2xl font-bold text-gray-900">
@@ -42,7 +88,7 @@ const { locale, ingredientGroups, instructionGroups } = Astro.props;
               <input
                 type="checkbox"
                 id={`ing-${ingredientGroups.indexOf(group)}-${i}`}
-                class="mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-gray-300 text-brand-green accent-brand-green"
+                class="peer mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-gray-300 text-brand-green accent-brand-green"
               />
               <label
                 for={`ing-${ingredientGroups.indexOf(group)}-${i}`}
@@ -75,6 +121,15 @@ const { locale, ingredientGroups, instructionGroups } = Astro.props;
               </span>
               <div class="pt-1">
                 <p class="text-gray-700">{step.text}</p>
+                {step.image && (
+                  <img
+                    src={step.image}
+                    alt=""
+                    class="step-image mt-3 w-full rounded-lg"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
               </div>
             </li>
           ))}
@@ -82,17 +137,71 @@ const { locale, ingredientGroups, instructionGroups } = Astro.props;
       </div>
     ))}
   </section>
+
+  <!-- Nutrition (inside card) -->
+  {nutrition && (
+    <section class="mb-6 rounded-xl border border-gray-200 p-6">
+      <h2 class="mb-4 font-heading text-xl font-bold text-gray-900">
+        {t(locale, "recipe.nutrition")}
+        <span class="ml-2 text-sm font-normal text-gray-500">({t(locale, "recipe.perServing")})</span>
+      </h2>
+      <div class="nutrition-grid grid grid-cols-2 gap-4 sm:grid-cols-4">
+        {nutrition.calories && (
+          <div class="text-center">
+            <p class="text-2xl font-bold text-brand-blue">{nutrition.calories}</p>
+            <p class="text-sm text-gray-500">{t(locale, "recipe.calories")}</p>
+          </div>
+        )}
+        {nutrition.fatContent && (
+          <div class="text-center">
+            <p class="text-2xl font-bold text-brand-blue">{nutrition.fatContent}</p>
+            <p class="text-sm text-gray-500">{t(locale, "recipe.fat")}</p>
+          </div>
+        )}
+        {nutrition.carbohydrateContent && (
+          <div class="text-center">
+            <p class="text-2xl font-bold text-brand-blue">{nutrition.carbohydrateContent}</p>
+            <p class="text-sm text-gray-500">{t(locale, "recipe.carbs")}</p>
+          </div>
+        )}
+        {nutrition.proteinContent && (
+          <div class="text-center">
+            <p class="text-2xl font-bold text-brand-blue">{nutrition.proteinContent}</p>
+            <p class="text-sm text-gray-500">{t(locale, "recipe.protein")}</p>
+          </div>
+        )}
+      </div>
+    </section>
+  )}
+
+  <!-- Print-only source URL -->
+  <footer class="print-only border-t border-gray-300 pt-3 text-center text-xs text-gray-500">
+    {t(locale, "recipe.source")}: {sourceUrl}
+  </footer>
 </div>
 
 <style>
+  .print-only {
+    display: none;
+  }
+
   @media print {
+    .print-only {
+      display: block;
+    }
+
     input[type="checkbox"] {
       -webkit-appearance: none;
       appearance: none;
       width: 12px;
       height: 12px;
-      border: 1px solid #000;
+      border: 1.5px solid #000;
       border-radius: 2px;
+      background: #fff;
+    }
+
+    .step-image {
+      display: none;
     }
   }
 </style>

@@ -24,13 +24,16 @@ Scaffold a new bilingual recipe (EN + FR MDX file pair) with all required frontm
    - Complete frontmatter with all required fields from the content schema
    - `translationSlug` pointing to the French slug
    - Placeholder ingredient groups and instruction groups
+   - Step image placeholders on key instruction steps (see Image Guidelines below)
    - 3 starter FAQ entries
    - MDX body with heading structure for SEO prose (h2s for sections)
+   - Inline image imports and `<Picture>` usage for process shots in body (see Image Guidelines)
 
 5. Create `src/content/recipes/fr/{slug-fr}.mdx` with:
    - Complete frontmatter translated to French
    - `translationSlug` pointing to the English slug
    - Same structure as English version
+   - Same step image references (shared files, French alt text)
 
 6. Create a placeholder hero image if none exists:
    - `src/assets/images/recipes/{slug}.jpg`
@@ -62,8 +65,67 @@ ingredientGroups:
   - items: []
 instructionGroups:
   - steps:
-      - text: ""
+      - text: "Step description here."
+        image: "/images/recipes/{slug}-step-1.jpg"  # Optional: URL for step photo
+      - text: "Another step."
+        # image omitted = no step photo for this step
 faqs:
   - question: ""
     answer: ""
 ```
+
+## Image Guidelines
+
+### Target: 5-7 Images Per Recipe
+- 1 hero image (required)
+- 3-5 step images (recommended for key techniques/stages)
+- Each image proves you actually cooked the dish (E-E-A-T Experience signal)
+
+### Naming Convention
+```
+src/assets/images/recipes/
+  {slug}.jpg              # Hero image
+  {slug}-step-1.jpg       # Step image 1
+  {slug}-step-2.jpg       # Step image 2
+  {slug}-step-3.jpg       # Step image 3
+```
+
+### Step Images in Frontmatter
+Add the `image` field to instruction steps that show key moments:
+- Major technique (searing, emulsifying, folding)
+- Visual transformation (before/after browning, sauce thickening)
+- Plating / final presentation
+- Not every step needs an image -- pick 3-5 most impactful moments
+
+Step images are URL strings (not Astro `image()` imports). They appear in:
+- The recipe page visually (below the step text)
+- JSON-LD HowToStep structured data (enables Google Guided Recipes on smart displays)
+
+### Inline MDX Body Images
+For process shots in the blog prose (e.g., close-ups, ingredient prep), import and use Astro's `<Picture>` component:
+
+```mdx
+import { Picture } from "astro:assets";
+import stepSear from "../../../assets/images/recipes/{slug}-step-1.jpg";
+
+<Picture
+  src={stepSear}
+  alt="Descriptive alt text for the searing step"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-4 w-full rounded-lg"
+  loading="lazy"
+/>
+```
+
+### Alt Text Rules
+- Descriptive, ~125 characters max
+- Include the dish name naturally
+- Describe what's visible: colors, textures, arrangement
+- No "Image of" or "Picture of" prefix
+- Good: `"Golden seared salmon fillet with crispy quinoa crust on a bed of wilted greens"`
+- Bad: `"Image of salmon recipe step 3"`
+
+### Pinterest Images (Deferred)
+Pinterest images (1000x1500, 2:3 ratio) are deferred until the site has 30+ published recipes. Pinterest requires a minimum content library for traction. The `pinterestImage` field exists in the schema for future use.

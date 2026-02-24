@@ -60,17 +60,64 @@
 }
 
 @media print {
+  @page {
+    margin: 1.5cm;
+  }
+
   .no-print {
     display: none !important;
   }
 
   body {
-    font-size: 12pt;
+    font-size: 11pt;
+    line-height: 1.5;
     color: #000;
+    background: #fff;
   }
 
   a {
     color: #000;
     text-decoration: none;
+  }
+
+  /* Remove background colors for ink savings */
+  .bg-amber-50,
+  .bg-gray-50,
+  .rounded-xl.bg-amber-50 {
+    background: none !important;
+  }
+
+  .bg-brand-blue {
+    background: #000 !important;
+  }
+
+  .text-brand-blue {
+    color: #000 !important;
+  }
+
+  /* Page break rules */
+  h2, h3 {
+    break-after: avoid;
+  }
+
+  li {
+    break-inside: avoid;
+  }
+
+  .nutrition-grid {
+    break-inside: avoid;
+  }
+
+  /* Orphan/widow control */
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Recipe card: clean up borders for print */
+  #recipe {
+    border: none;
+    padding: 0;
+    margin: 0;
   }
 }

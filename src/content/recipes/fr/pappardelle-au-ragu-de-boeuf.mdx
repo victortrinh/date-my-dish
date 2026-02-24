@@ -90,6 +90,13 @@ faqs:
     answer: "Les pappardelle sont l'accompagnement classique parce que leur surface large et plate attrape et retient la sauce épaisse à la viande. Les tagliatelle et les fettuccine sont d'excellentes alternatives. Les rigatoni fonctionnent bien si vous préférez les pâtes courtes, car leurs rainures et leur centre creux emprisonnent la sauce efficacement."
 ---
 
+import { Picture } from "astro:assets";
+import imgIngredients from "../../../assets/images/recipes/beef-ragu-pappardelle-ingredients.webp";
+import imgPrep from "../../../assets/images/recipes/beef-ragu-pappardelle-prep.webp";
+import imgSimmering from "../../../assets/images/recipes/beef-ragu-pappardelle-simmering.webp";
+import imgTossing from "../../../assets/images/recipes/beef-ragu-pappardelle-tossing.webp";
+import imgCombined from "../../../assets/images/recipes/beef-ragu-pappardelle-combined.webp";
+
 Le ragù de bœuf avec pappardelle est le genre de plat qui remplit toute votre maison de chaleur bien avant qu'il n'arrive sur la table. Ce ragù de bœuf mijoté transforme une humble palette de bœuf en brins de viande fondants et profondément savoureux, suspendus dans une riche sauce tomate, le tout drapé sur de larges rubans de pappardelle. C'est de la cuisine réconfortante à son plus raffiné, et le long temps de cuisson fait pratiquement tout le travail pour vous.
 
 ## Ce qui fait un grand ragù de bœuf
@@ -100,6 +107,26 @@ Un soffritto bien exécuté -- la base aromatique d'oignon, de carotte et de cé
 
 ## L'importance de la saisie
 
+<Picture
+  src={imgIngredients}
+  alt="Tous les ingrédients pour les pappardelle au ragù de bœuf disposés incluant bœuf, aromates, tomates, vin et pâtes"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
+<Picture
+  src={imgPrep}
+  alt="Oignons, carottes, céleri et ail hachés préparés pour la base du ragù de bœuf"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
 Saisir le bœuf avant de le braiser est une étape non négociable. Quand la viande touche une poêle brûlante, la réaction de Maillard crée des centaines de nouveaux composés de saveur à la surface -- des notes profondes, caramélisées et légèrement amères qui donnent au ragù fini sa complexité caractéristique. Sans la saisie, la sauce a un goût plat et unidimensionnel, peu importe combien de temps vous la cuisez.
 
 Épongez le bœuf complètement avant de le mettre dans la casserole. L'humidité à la surface crée de la vapeur au lieu de la caramélisation, et la vapeur est l'ennemie du brunissement. Utilisez un feu vif et résistez à la tentation de déplacer la viande. Laissez chaque côté développer une croûte foncée et bien dorée avant de la tourner. Le fond de cuisson -- ces morceaux bruns collés au fond de la casserole -- est de la saveur concentrée pure que les légumes et le liquide dissoudront et distribueront dans toute la sauce.
@@ -108,11 +135,31 @@ Saisir le bœuf avant de le braiser est une étape non négociable. Quand la via
 
 Une fois le bœuf mis de côté et les légumes attendris, l'étape de déglaçage est le moment où la sauce commence à prendre forme. Le vin rouge frappe la poêle chaude et soulève immédiatement chaque morceau de fond du fond de la casserole, dissolvant ces jus de viande caramélisés dans le liquide. Un rouge sec et corsé comme un Merlot ou un Cabernet Sauvignon ajoute des tanins et du fruit qui complètent le bœuf sans l'écraser.
 
+<Picture
+  src={imgSimmering}
+  alt="Ragù de bœuf mijotant lentement dans un faitout avec une sauce tomate riche et une viande tendre"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
 Les tomates broyées et la pâte de tomates fournissent acidité et corps. La pâte, en particulier, est une source concentrée d'umami qui approfondit l'épine dorsale savoureuse de la sauce. Le thym et la feuille de laurier contribuent des notes herbacées qui se tissent en arrière-plan, ajoutant une complexité aromatique sans attirer l'attention sur elles-mêmes. La combinaison de ces éléments, mijotés ensemble pendant des heures, produit une sauce avec une profondeur de saveur qu'aucun ingrédient seul ne pourrait atteindre.
 
 ## Pourquoi les pappardelle sont l'accord parfait
 
 Les larges rubans plats de pappardelle sont le véhicule idéal pour un ragù épais et charnu. Leur grande surface attrape et retient la sauce d'une manière que les pâtes plus fines ne peuvent égaler. Chaque bouchée offre un généreux ratio de sauce par rapport aux pâtes, et la texture légèrement rugueuse des pappardelle sèches agrippe le ragù encore plus efficacement que les pâtes aux œufs fraîches.
+
+<Picture
+  src={imgTossing}
+  alt="Larges rubans de pappardelle mélangés avec le ragù de bœuf mijoté dans une poêle"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
 Cuisez les pappardelle une minute de moins que les instructions de l'emballage. Cette légère sous-cuisson signifie que les pâtes finissent d'absorber le liquide dans la sauce elle-même, ce qui accomplit deux choses : les nouilles prennent la saveur du ragù de l'intérieur vers l'extérieur, et l'amidon qu'elles libèrent épaissit la sauce en un enrobage qui s'accroche à chaque ruban. Brasser les pâtes dans la sauce avec une généreuse quantité d'eau de cuisson est l'étape finale qui transforme des composantes séparées en un plat unifié.
 
@@ -124,9 +171,19 @@ La sauce se congèle magnifiquement jusqu'à trois mois. Portionnez-la dans des 
 
 ## Les touches finales
 
+<Picture
+  src={imgCombined}
+  alt="Pappardelle entièrement enrobées de la riche sauce ragù de bœuf prêtes à être dressées"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
 Le Parmigiano-Reggiano fraîchement râpé est la seule garniture dont ce plat a véritablement besoin. Son croquant salé et cristallin contraste magnifiquement avec la texture moelleuse et fondante du bœuf effiloché et des pâtes tendres. Un soupçon de persil frais finement haché ajoute une note vive et fraîche qui relève la richesse de la sauce.
 
-Servez le ragù dans des bols chauds avec du pain croûté à côté pour éponger chaque dernière goutte de sauce. Une simple salade verte assaisonnée de vinaigrette au vin rouge offre un contrepoint croustillant à ces pâtes copieuses. Pour une soirée italienne complète, commencez par une entrée légère et terminez avec quelque chose de sucré comme des [crêpes au chocolat](/fr/recettes/crepes-au-chocolat/) pour le dessert.
+Servez le ragù dans des bols chauds avec du pain croûté à côté pour éponger chaque dernière goutte de sauce. Une simple salade verte assaisonnée de vinaigrette au vin rouge offre un contrepoint croustillant à ces pâtes copieuses. Pour une soirée italienne complète, commencez par une entrée légère et terminez avec quelque chose de sucré comme le [posset brûlée au citron](/fr/recettes/posset-brulee-au-citron/) pour le dessert.
 
 ## Conseils pour les meilleurs résultats
 

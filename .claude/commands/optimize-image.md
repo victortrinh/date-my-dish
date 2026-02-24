@@ -1,52 +1,103 @@
 # Optimize Image
 
-Process and optimize a recipe image: rename descriptively, resize for web, generate Pinterest variant, and output frontmatter paths.
+Process and optimize recipe images: hero, step, and batch processing with correct naming and sizing.
 
 ## Input
-- Image file path: $ARGUMENTS
+- Image file path(s) or directory: $ARGUMENTS
 
 ## Steps
 
-1. **Analyze the image:**
-   - Read the image file
+1. **Analyze the image(s):**
+   - Read the image file(s)
    - Get dimensions and file size
-   - Determine if it needs resizing
+   - Determine image type (hero or step) based on filename or user input
 
 2. **Rename descriptively:**
    - Ask for the recipe slug if not obvious from the filename
-   - Rename to: `{recipe-slug}.jpg` (main hero)
+   - Hero image: `{recipe-slug}.jpg`
+   - Step images: `{recipe-slug}-step-{n}.jpg` (numbered sequentially)
    - Use lowercase, hyphens, no spaces
 
 3. **Resize for web:**
-   - Hero image: max 1200px wide, maintain aspect ratio
-   - Target file size: under 200KB for JPEG source (Astro will create AVIF/WebP)
-   - Use sharp to resize and compress:
-     ```
-     node -e "require('sharp')('input.jpg').resize(1200, null, {withoutEnlargement: true}).jpeg({quality: 82}).toFile('output.jpg')"
-     ```
 
-4. **Generate Pinterest variant (optional):**
-   - Pinterest optimal: 1000x1500 (2:3 ratio)
-   - Filename: `{recipe-slug}-pinterest.jpg`
-   - Crop/resize to 2:3 ratio from center
+   **Hero image:**
+   - Max 1200px wide, maintain aspect ratio
+   - Target file size: under 200KB for JPEG source (Astro creates AVIF/WebP)
+   - Quality: 82
+   ```bash
+   node -e "require('sharp')('input.jpg').resize(1200, null, {withoutEnlargement: true}).jpeg({quality: 82}).toFile('output.jpg')"
+   ```
+
+   **Step images:**
+   - Max 900px wide, maintain aspect ratio
+   - Target file size: under 150KB for JPEG source
+   - Quality: 80
+   ```bash
+   node -e "require('sharp')('input.jpg').resize(900, null, {withoutEnlargement: true}).jpeg({quality: 80}).toFile('output.jpg')"
+   ```
+
+4. **Batch processing (multiple images):**
+   When given a directory or multiple files:
+   - Identify which image is the hero (largest/best composed, or ask user)
+   - Number remaining images as step-1, step-2, etc. in logical cooking order
+   - Process all with appropriate sizing (hero vs step)
+   - Report summary table of all processed images
 
 5. **Move to correct location:**
    - Move processed images to `src/assets/images/recipes/`
 
-6. **Output frontmatter paths:**
+6. **Output frontmatter paths and alt text guidance:**
    ```yaml
+   # Hero image (in recipe frontmatter)
    heroImage: "../../../assets/images/recipes/{recipe-slug}.jpg"
-   heroImageAlt: "Descriptive alt text here"
-   pinterestImage: "../../../assets/images/recipes/{recipe-slug}-pinterest.jpg"
+   heroImageAlt: "Descriptive alt text here (~125 chars, include dish name)"
+
+   # Step images (in instruction steps)
+   instructionGroups:
+     - steps:
+         - text: "Step description"
+           image: "/images/recipes/{recipe-slug}-step-1.jpg"
    ```
 
 7. **Verify:**
-   - Check final file sizes
+   - Check final file sizes (hero < 200KB, step < 150KB)
    - Run `npx astro check` to verify image references
+   - Report image count (target: 5-7 total per recipe)
+
+## Image Size Targets
+
+| Image Type | Max Width | Max File Size | Quality |
+|------------|-----------|---------------|---------|
+| Hero | 1200px | 200KB | 82 |
+| Step | 900px | 150KB | 80 |
+| Pinterest | 1000x1500 | 200KB | 85 |
 
 ## Image Guidelines
-- Source images should be at least 1200px wide
+- Source images should be at least 1200px wide (hero) or 900px wide (step)
 - Use descriptive filenames (chocolate-crepes.jpg, not IMG_4521.jpg)
-- Alt text should describe what's visible, not just the recipe name
-- Example good alt: "Stack of golden French crêpes drizzled with melted dark chocolate on a white plate"
-- Example bad alt: "Chocolate crêpes recipe"
+- Target 5-7 images per recipe (1 hero + 3-5 step images)
+- Original process photos demonstrate E-E-A-T Experience (proves you cooked it)
+
+## Alt Text Guidelines
+- Descriptive, ~125 characters max
+- Include the dish name naturally
+- Describe what's visible: colors, textures, arrangement, setting
+- No "Image of" or "Picture of" prefix
+
+**Hero image alt text** -- describe the finished dish:
+- Good: `"Stack of golden French crepes drizzled with melted dark chocolate on a white plate"`
+- Bad: `"Chocolate crepes recipe"`
+
+**Step image alt text** -- describe the cooking action/state:
+- Good: `"Beef chunks searing in a hot Dutch oven with golden brown crust forming"`
+- Bad: `"Step 3 of the recipe"`
+
+## Pinterest Images (Deferred)
+
+Pinterest-optimized images (1000x1500, 2:3 ratio) are deferred until the site has 30+ published recipes. Pinterest requires a minimum content library (30 recipes to start testing, 50+ for real momentum). The `pinterestImage` field exists in the schema for future use.
+
+When ready to enable:
+- Filename: `{recipe-slug}-pinterest.jpg`
+- Crop/resize to 2:3 ratio from center
+- Add text overlay with recipe name and brand URL
+- Process with quality 85
