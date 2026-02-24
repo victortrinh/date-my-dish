@@ -26,93 +26,133 @@ function isActive(linkPath: string): boolean {
 }
 ---
 
-<nav class="no-print sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm dark:border-gray-700 dark:bg-gray-900/95">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+<nav class="no-print sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-950/95">
+  <div class="mx-auto flex max-w-content items-center justify-between px-4 py-3">
     <!-- Logo -->
-    <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2 no-underline hover:opacity-80">
-      <img src="/favicon.svg" class="h-7 w-7" alt="" width="28" height="28" />
-      <span class="font-handwritten text-2xl text-brand-primary">Date My Dish</span>
+    <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2.5 no-underline hover:opacity-80">
+      <img src="/favicon.svg" class="h-8 w-8" alt="" width="32" height="32" />
+      <span class="font-handwritten text-2xl text-brand-primary sm:text-3xl">Date My Dish</span>
     </a>
 
     <!-- Desktop Nav -->
-    <div class="hidden items-center gap-6 md:flex">
+    <div class="hidden items-center gap-1 md:flex">
       {navLinks.map((link) => (
         <a
           href={getLocalizedPath(locale, link.path)}
           class:list={[
-            "font-ui text-sm font-medium no-underline",
+            "relative rounded-lg px-3 py-2 font-ui text-sm font-medium no-underline transition-colors",
             isActive(link.path)
-              ? "text-brand-primary"
-              : "text-gray-600 hover:text-brand-primary dark:text-gray-300 dark:hover:text-brand-primary",
+              ? "text-brand-primary-text"
+              : "text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100",
+          ]}
+          aria-current={isActive(link.path) ? "page" : undefined}
+        >
+          {link.label}
+          {isActive(link.path) && (
+            <span class="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-brand-primary" />
+          )}
+        </a>
+      ))}
+
+      <div class="ml-2 flex items-center gap-1">
+        <!-- Search button (opens overlay) -->
+        <button
+          id="nav-search-btn"
+          class="rounded-lg p-2 text-gray-400 no-underline transition-colors hover:bg-gray-100 hover:text-gray-600 dark:text-gray-500 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+          aria-label={t(locale, "nav.search")}
+          title="⌘K"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+        <DarkModeToggle locale={locale} />
+        <LanguageToggle locale={locale} translationSlug={translationSlug} />
+      </div>
+    </div>
+
+    <!-- Mobile: search + hamburger -->
+    <div class="flex items-center gap-1 md:hidden">
+      <button
+        id="nav-search-btn-mobile"
+        class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+        aria-label={t(locale, "nav.search")}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
+      <button
+        id="mobile-menu-btn"
+        class="rounded-lg p-2 text-gray-600 dark:text-gray-300"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden border-t border-gray-100 bg-white md:hidden dark:border-gray-800 dark:bg-gray-950">
+    <div class="mx-auto max-w-content space-y-1 px-4 py-3">
+      {navLinks.map((link) => (
+        <a
+          href={getLocalizedPath(locale, link.path)}
+          class:list={[
+            "block rounded-lg px-4 py-3 font-ui text-base font-medium no-underline transition-colors",
+            isActive(link.path)
+              ? "bg-brand-primary/5 text-brand-primary-text"
+              : "text-gray-700 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800/50",
           ]}
           aria-current={isActive(link.path) ? "page" : undefined}
         >
           {link.label}
         </a>
       ))}
-      <a
-        href={getLocalizedPath(locale, locale === "fr" ? "/recherche/" : "/search/")}
-        class="text-gray-400 no-underline hover:text-brand-primary dark:text-gray-500 dark:hover:text-brand-primary"
-        aria-label={t(locale, "nav.search")}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-      </a>
-      <DarkModeToggle locale={locale} />
-      <LanguageToggle locale={locale} translationSlug={translationSlug} />
-    </div>
-
-    <!-- Mobile Menu Toggle (CSS-only) -->
-    <input type="checkbox" id="mobile-menu-toggle" class="peer hidden" aria-label="Toggle menu" />
-    <label for="mobile-menu-toggle" class="cursor-pointer md:hidden" aria-label="Open menu">
-      <!-- Hamburger icon (shown when menu is closed) -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="hamburger-icon h-6 w-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-      <!-- X icon (shown when menu is open) -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="close-icon hidden h-6 w-6 text-gray-600 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </label>
-
-    <!-- Mobile Menu -->
-    <div class="fixed inset-0 top-[57px] z-40 hidden bg-white peer-checked:block md:hidden dark:bg-gray-900">
-      <div class="flex flex-col gap-1 p-4">
-        {navLinks.map((link) => (
-          <a
-            href={getLocalizedPath(locale, link.path)}
-            class:list={[
-              "rounded-lg px-4 py-3 font-ui text-base font-medium no-underline",
-              isActive(link.path)
-                ? "bg-orange-50 text-brand-primary dark:bg-brand-primary/10"
-                : "text-gray-700 hover:bg-orange-50 hover:text-brand-primary dark:text-gray-200 dark:hover:bg-brand-primary/10",
-            ]}
-            aria-current={isActive(link.path) ? "page" : undefined}
-          >
-            {link.label}
-          </a>
-        ))}
-        <a
-          href={getLocalizedPath(locale, locale === "fr" ? "/recherche/" : "/search/")}
-          class="rounded-lg px-4 py-3 font-ui text-base font-medium text-gray-700 no-underline hover:bg-orange-50 hover:text-brand-primary dark:text-gray-200 dark:hover:bg-brand-primary/10"
-        >
-          {t(locale, "nav.search")}
-        </a>
-        <div class="mt-2 flex items-center gap-3 border-t border-gray-100 pt-3 pl-4 dark:border-gray-700">
-          <DarkModeToggle locale={locale} />
-          <LanguageToggle locale={locale} translationSlug={translationSlug} />
-        </div>
+      <div class="flex items-center gap-3 border-t border-gray-100 px-4 pt-3 dark:border-gray-800">
+        <DarkModeToggle locale={locale} />
+        <LanguageToggle locale={locale} translationSlug={translationSlug} />
       </div>
     </div>
   </div>
 </nav>
 
-<style>
-  #mobile-menu-toggle:checked ~ label .hamburger-icon {
-    display: none;
+<script is:inline>
+(function() {
+  var menuBtn = document.getElementById('mobile-menu-btn');
+  var menu = document.getElementById('mobile-menu');
+  var hamburger = document.getElementById('hamburger-icon');
+  var closeIcon = document.getElementById('close-icon');
+
+  if (menuBtn && menu) {
+    menuBtn.addEventListener('click', function() {
+      var isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      hamburger.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    });
   }
-  #mobile-menu-toggle:checked ~ label .close-icon {
-    display: block;
-  }
-</style>
+
+  // Search buttons open overlay
+  var searchBtns = document.querySelectorAll('#nav-search-btn, #nav-search-btn-mobile');
+  searchBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      // Close mobile menu first if open
+      if (menu && !menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+        hamburger.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+      if (window.__openSearch) window.__openSearch(btn);
+    });
+  });
+})();
+</script>

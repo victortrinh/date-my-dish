@@ -77,11 +77,17 @@
   "search": {
     "title": "Rechercher des recettes",
     "placeholder": "Rechercher une recette...",
-    "noResults": "Aucun résultat trouvé."
+    "noResults": "Aucun résultat trouvé.",
+    "overlayTitle": "Rechercher sur Date My Dish",
+    "overlayPlaceholder": "Rechercher des recettes...",
+    "close": "Fermer la recherche",
+    "tip": "Astuce : Appuyez sur {key} pour rechercher"
   },
   "footer": {
     "copyright": "Tous droits réservés.",
-    "madeWith": "Fait avec amour à Montréal"
+    "madeWith": "Fait avec amour à Montréal",
+    "categories": "Catégories",
+    "navigation": "Navigation"
   },
   "seo": {
     "titleTemplate": "%s | Date My Dish",
@@ -108,6 +114,14 @@
   },
   "theme": {
     "toggle": "Basculer le mode sombre"
+  },
+  "toc": {
+    "title": "Table des matières"
+  },
+  "author": {
+    "bioShort": "Victor crée des recettes pour les soirées en amoureux, conçues pour impressionner. Basé à Montréal, il croit que la bonne cuisine rapproche les gens.",
+    "aboutLink": "À propos de l'auteur",
+    "photoAlt": "Victor, créateur de Date My Dish"
   },
   "lang": {
     "switchTo": "English",

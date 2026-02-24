@@ -1,0 +1,139 @@
+---
+import { t, type Locale } from "@i18n/utils";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<div
+  id="search-overlay"
+  class="fixed inset-0 z-[60] hidden items-start justify-center bg-black/60 backdrop-blur-sm"
+  role="dialog"
+  aria-modal="true"
+  aria-label={t(locale, "search.overlayTitle")}
+>
+  <div class="mx-auto mt-20 w-full max-w-2xl px-4 sm:mt-32">
+    <div class="rounded-2xl bg-white p-6 shadow-2xl dark:bg-gray-900">
+      <!-- Header -->
+      <div class="mb-4 flex items-center justify-between">
+        <h2 class="font-heading text-lg font-bold text-gray-900 dark:text-gray-100">
+          {t(locale, "search.overlayTitle")}
+        </h2>
+        <button
+          id="search-overlay-close"
+          class="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+          aria-label={t(locale, "search.close")}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Search container -->
+      <div id="search-overlay-container" data-locale={locale}></div>
+
+      <!-- Keyboard hint -->
+      <p class="mt-3 text-center text-caption text-gray-400 dark:text-gray-500">
+        <kbd class="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 font-ui text-xs dark:border-gray-700 dark:bg-gray-800">Esc</kbd>
+        {locale === "fr" ? "pour fermer" : "to close"}
+      </p>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  const overlay = document.getElementById('search-overlay');
+  const closeBtn = document.getElementById('search-overlay-close');
+  const container = document.getElementById('search-overlay-container');
+  let pagefindLoaded = false;
+  let triggerElement = null;
+
+  function openSearch(trigger) {
+    triggerElement = trigger || document.activeElement;
+    overlay.classList.remove('hidden');
+    overlay.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+
+    // Load Pagefind on first open
+    if (!pagefindLoaded) {
+      pagefindLoaded = true;
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/pagefind/pagefind-ui.css';
+      document.head.appendChild(link);
+
+      const script = document.createElement('script');
+      script.src = '/pagefind/pagefind-ui.js';
+      script.onload = function() {
+        const locale = container.dataset.locale || 'en';
+        new window.PagefindUI({
+          element: '#search-overlay-container',
+          showSubResults: true,
+          filters: { lang: locale },
+          translations: locale === 'fr' ? {
+            placeholder: 'Rechercher des recettes...',
+            zero_results: 'Aucun résultat pour [SEARCH_TERM]',
+          } : {
+            placeholder: 'Search recipes...',
+            zero_results: 'No results for [SEARCH_TERM]',
+          },
+        });
+        // Focus input
+        setTimeout(function() {
+          var input = container.querySelector('input');
+          if (input) input.focus();
+        }, 100);
+      };
+      document.head.appendChild(script);
+    } else {
+      // Already loaded, just focus
+      setTimeout(function() {
+        var input = container.querySelector('input');
+        if (input) input.focus();
+      }, 50);
+    }
+  }
+
+  function closeSearch() {
+    overlay.classList.add('hidden');
+    overlay.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+    if (triggerElement) {
+      triggerElement.focus();
+      triggerElement = null;
+    }
+  }
+
+  // Close button
+  closeBtn.addEventListener('click', closeSearch);
+
+  // Click backdrop to close
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeSearch();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+      closeSearch();
+    }
+    // Cmd/Ctrl + K to open
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      if (overlay.classList.contains('hidden')) {
+        openSearch();
+      } else {
+        closeSearch();
+      }
+    }
+  });
+
+  // Expose open function for nav buttons
+  window.__openSearch = openSearch;
+})();
+</script>
