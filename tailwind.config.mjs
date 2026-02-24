@@ -15,9 +15,9 @@ export default {
       },
       fontFamily: {
         heading: ["Bitter", "serif"],
-        body: ["Source Sans 3", "sans-serif"],
+        body: ["Nunito", "sans-serif"],
         handwritten: ["Caveat", "cursive"],
-        ui: ["Source Sans 3", "sans-serif"],
+        ui: ["Nunito", "sans-serif"],
       },
     },
   },
