@@ -51,7 +51,7 @@
   }
 
   .prose img {
-    @apply my-6 rounded-lg;
+    @apply my-6 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[50%];
   }
 
   .prose blockquote {
