@@ -14,9 +14,9 @@ export default {
       },
       fontFamily: {
         heading: ["Bitter", "serif"],
-        body: ["Fira Sans Condensed", "sans-serif"],
+        body: ["Source Sans 3", "sans-serif"],
         handwritten: ["Caveat", "cursive"],
-        ui: ["Raleway", "sans-serif"],
+        ui: ["Source Sans 3", "sans-serif"],
       },
     },
   },
