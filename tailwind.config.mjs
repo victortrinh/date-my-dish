@@ -8,9 +8,11 @@ export default {
         brand: {
           primary: "#C4704B",
           "primary-dark": "#A85D3D",
+          "primary-text": "#9A5439", // Darker terracotta for small text — WCAG AA on cream/white
           accent: "#D4A853",
           "accent-dark": "#B8923F",
           cream: "#FDF6EC",
+          "cream-dark": "#F5EDDF", // Slightly darker cream for alternating sections
         },
       },
       fontFamily: {
@@ -18,6 +20,24 @@ export default {
         body: ["Nunito", "sans-serif"],
         handwritten: ["Caveat", "cursive"],
         ui: ["Nunito", "sans-serif"],
+      },
+      fontSize: {
+        display: ["3.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "heading-1": ["2.5rem", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
+        "heading-2": ["1.875rem", { lineHeight: "1.3" }],
+        "heading-3": ["1.5rem", { lineHeight: "1.4" }],
+        "body-lg": ["1.125rem", { lineHeight: "1.7" }],
+        "body-sm": ["0.875rem", { lineHeight: "1.6" }],
+        caption: ["0.75rem", { lineHeight: "1.5" }],
+      },
+      spacing: {
+        section: "5rem",
+        "section-sm": "3rem",
+      },
+      maxWidth: {
+        content: "72rem",
+        prose: "56rem",
+        narrow: "48rem",
       },
     },
   },

@@ -18,42 +18,52 @@
     @apply font-heading font-bold;
   }
 
+  /* Headings get scroll-margin to clear sticky nav */
+  h2,
+  h3 {
+    scroll-margin-top: 5rem;
+  }
+
   a {
-    @apply text-brand-primary transition-colors hover:text-brand-accent;
+    @apply text-brand-primary-text transition-colors hover:text-brand-accent;
   }
 }
 
 @layer components {
   .prose h2 {
-    @apply mt-8 mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100;
+    @apply mt-10 mb-4 text-heading-2 font-bold text-gray-900 dark:text-gray-100;
   }
 
   .prose h3 {
-    @apply mt-6 mb-3 text-xl font-semibold text-gray-800 dark:text-gray-200;
+    @apply mt-8 mb-3 text-heading-3 font-semibold text-gray-800 dark:text-gray-200;
   }
 
   .prose p {
-    @apply mb-4 leading-relaxed;
+    @apply mb-5 text-body-lg leading-relaxed;
   }
 
   .prose ul {
-    @apply mb-4 list-disc pl-6;
+    @apply mb-5 list-disc pl-6;
   }
 
   .prose ol {
-    @apply mb-4 list-decimal pl-6;
+    @apply mb-5 list-decimal pl-6;
   }
 
   .prose li {
-    @apply mb-1;
+    @apply mb-1.5;
   }
 
   .prose img {
-    @apply my-6 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[50%];
+    @apply my-8 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[50%];
   }
 
   .prose blockquote {
-    @apply my-4 border-l-4 border-brand-primary pl-4 italic text-gray-600 dark:text-gray-400 dark:border-brand-primary;
+    @apply my-6 border-l-4 border-brand-primary pl-4 italic text-gray-600 dark:text-gray-400 dark:border-brand-primary;
+  }
+
+  .prose a {
+    @apply text-brand-primary-text underline decoration-brand-primary/30 underline-offset-2 transition-colors hover:text-brand-accent hover:decoration-brand-accent/50;
   }
 }
 
@@ -89,8 +99,19 @@
     background: #000 !important;
   }
 
-  .text-brand-primary {
+  .text-brand-primary,
+  .text-brand-primary-text {
     color: #000 !important;
+  }
+
+  /* Force single column for print (two-column recipe layout) */
+  .recipe-two-col {
+    display: block !important;
+  }
+
+  .recipe-sidebar {
+    position: static !important;
+    max-height: none !important;
   }
 
   /* Page break rules */
