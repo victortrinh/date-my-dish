@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Date My Dish",
-    "tagline": "Des recettes dont on tombe amoureux"
+    "tagline": "Recettes romantiques pour des soirées inoubliables"
   },
   "nav": {
     "home": "Accueil",
@@ -56,8 +56,8 @@
     "quick-meal": "Repas rapide"
   },
   "home": {
-    "heroTitle": "Des recettes dont on tombe amoureux",
-    "heroSubtitle": "Des recettes simples et délicieuses, préparées avec amour par Victor",
+    "heroTitle": "Recettes romantiques pour des soirées inoubliables",
+    "heroSubtitle": "Des plats simples pour impressionner, préparés avec amour",
     "featuredRecipes": "Recettes en vedette",
     "viewAllRecipes": "Voir toutes les recettes",
     "categories": "Parcourir par catégorie"
@@ -91,11 +91,12 @@
     "categories": "Catégories",
     "navigation": "Navigation",
     "nav": "Navigation du pied de page",
-    "categoriesNav": "Catégories de recettes"
+    "categoriesNav": "Catégories de recettes",
+    "instagramLabel": "Suivez-nous sur Instagram"
   },
   "seo": {
     "titleTemplate": "%s | Date My Dish",
-    "homeTitle": "Date My Dish - Des recettes dont on tombe amoureux",
+    "homeTitle": "Date My Dish - Recettes romantiques, soirées inoubliables",
     "homeDescription": "Découvrez des recettes simples et délicieuses, préparées avec amour. Des classiques réconfortants aux plats créatifs, trouvez votre prochain coup de cœur.",
     "recipesTitle": "Toutes les recettes | Date My Dish",
     "recipesDescription": "Parcourez notre collection de recettes simples et délicieuses. Trouvez votre prochain coup de cœur."

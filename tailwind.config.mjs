@@ -20,7 +20,7 @@ export default {
         heading: ['"Fira Sans"', "sans-serif"],
         body: ["Bitter", "serif"],
         handwritten: ["Caveat", "cursive"],
-        ui: ["Bitter", "serif"],
+        ui: ['"Fira Sans"', "sans-serif"],
       },
       fontSize: {
         display: ["3.5rem", { lineHeight: "1.1" }],

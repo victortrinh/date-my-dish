@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Date My Dish",
-    "tagline": "Recipes worth falling for"
+    "tagline": "Romantic recipes for unforgettable date nights"
   },
   "nav": {
     "home": "Home",
@@ -56,8 +56,8 @@
     "quick-meal": "Quick Meal"
   },
   "home": {
-    "heroTitle": "Recipes Worth Falling For",
-    "heroSubtitle": "Simple, delicious recipes crafted with love by Victor",
+    "heroTitle": "Romantic Recipes for Unforgettable Date Nights",
+    "heroSubtitle": "Simple dishes to impress, crafted with love",
     "featuredRecipes": "Featured Recipes",
     "viewAllRecipes": "View All Recipes",
     "categories": "Browse by Category"
@@ -91,11 +91,12 @@
     "categories": "Categories",
     "navigation": "Navigation",
     "nav": "Footer navigation",
-    "categoriesNav": "Recipe categories"
+    "categoriesNav": "Recipe categories",
+    "instagramLabel": "Follow us on Instagram"
   },
   "seo": {
     "titleTemplate": "%s | Date My Dish",
-    "homeTitle": "Date My Dish - Recipes Worth Falling For",
+    "homeTitle": "Date My Dish - Romantic Recipes for Unforgettable Date Nights",
     "homeDescription": "Discover simple, delicious recipes crafted with love. From comforting classics to creative dishes, find your next favorite meal.",
     "recipesTitle": "All Recipes | Date My Dish",
     "recipesDescription": "Browse our collection of simple, delicious recipes. Find your next favorite meal."
