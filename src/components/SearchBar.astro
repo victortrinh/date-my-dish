@@ -28,6 +28,7 @@ const { locale } = Astro.props;
         new window.PagefindUI({
           element: '#pagefind-container',
           showSubResults: true,
+          filters: { lang: locale },
           translations: locale === 'fr' ? {
             placeholder: 'Rechercher une recette...',
             zero_results: 'Aucun résultat pour [SEARCH_TERM]',

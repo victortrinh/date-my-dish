@@ -124,7 +124,7 @@ const difficultyLabels = {
                 {step.image && (
                   <img
                     src={step.image}
-                    alt=""
+                    alt={`${t(locale, "recipe.instructions")} ${i + 1}: ${step.text.slice(0, 120)}`}
                     class="step-image mt-3 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[50%]"
                     loading="lazy"
                     decoding="async"

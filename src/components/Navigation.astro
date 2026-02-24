@@ -9,12 +9,20 @@ interface Props {
 
 const { locale, translationSlug } = Astro.props;
 
+const currentPath = Astro.url.pathname;
+
 const navLinks = [
   { label: t(locale, "nav.home"), path: "/" },
   { label: t(locale, "nav.recipes"), path: locale === "fr" ? "/recettes/" : "/recipes/" },
   { label: t(locale, "nav.about"), path: locale === "fr" ? "/a-propos/" : "/about/" },
   { label: t(locale, "nav.contact"), path: "/contact/" },
 ];
+
+function isActive(linkPath: string): boolean {
+  const fullPath = getLocalizedPath(locale, linkPath);
+  if (linkPath === "/") return currentPath === fullPath;
+  return currentPath.startsWith(fullPath);
+}
 ---
 
 <nav class="no-print sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
@@ -29,7 +37,13 @@ const navLinks = [
       {navLinks.map((link) => (
         <a
           href={getLocalizedPath(locale, link.path)}
-          class="font-ui text-sm font-medium text-gray-600 no-underline hover:text-brand-blue"
+          class:list={[
+            "font-ui text-sm font-medium no-underline",
+            isActive(link.path)
+              ? "text-brand-blue"
+              : "text-gray-600 hover:text-brand-blue",
+          ]}
+          aria-current={isActive(link.path) ? "page" : undefined}
         >
           {link.label}
         </a>
@@ -49,8 +63,13 @@ const navLinks = [
     <!-- Mobile Menu Toggle (CSS-only) -->
     <input type="checkbox" id="mobile-menu-toggle" class="peer hidden" aria-label="Toggle menu" />
     <label for="mobile-menu-toggle" class="cursor-pointer md:hidden" aria-label="Open menu">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <!-- Hamburger icon (shown when menu is closed) -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="hamburger-icon h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <!-- X icon (shown when menu is open) -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="close-icon hidden h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </label>
 
@@ -60,7 +79,13 @@ const navLinks = [
         {navLinks.map((link) => (
           <a
             href={getLocalizedPath(locale, link.path)}
-            class="rounded-lg px-4 py-3 font-ui text-base font-medium text-gray-700 no-underline hover:bg-gray-50 hover:text-brand-blue"
+            class:list={[
+              "rounded-lg px-4 py-3 font-ui text-base font-medium no-underline",
+              isActive(link.path)
+                ? "bg-blue-50 text-brand-blue"
+                : "text-gray-700 hover:bg-gray-50 hover:text-brand-blue",
+            ]}
+            aria-current={isActive(link.path) ? "page" : undefined}
           >
             {link.label}
           </a>
@@ -78,3 +103,12 @@ const navLinks = [
     </div>
   </div>
 </nav>
+
+<style>
+  #mobile-menu-toggle:checked ~ label .hamburger-icon {
+    display: none;
+  }
+  #mobile-menu-toggle:checked ~ label .close-icon {
+    display: block;
+  }
+</style>

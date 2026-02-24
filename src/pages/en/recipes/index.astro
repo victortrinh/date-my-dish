@@ -45,13 +45,14 @@ categories.sort((a, b) => {
         <a
           href="/en/recipes/"
           class="rounded-full bg-brand-blue px-4 py-1.5 font-ui text-sm font-medium text-white no-underline"
+          aria-current="page"
         >
           {t(locale, "listing.allCategories")}
         </a>
         {categories.map((cat) => (
           <a
             href={`/en/recipes/category/${cat}/`}
-            class="rounded-full border border-gray-200 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 no-underline hover:border-brand-blue hover:text-brand-blue"
+            class="rounded-full border border-gray-200 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-blue hover:text-brand-blue"
           >
             {t(locale, `categories.${cat}` as any) || cat}
           </a>
@@ -73,6 +74,7 @@ categories.sort((a, b) => {
               heroImage={recipe.data.heroImage as ImageMetadata}
               heroImageAlt={recipe.data.heroImageAlt}
               prepTime={recipe.data.prepTime}
+              totalTime={recipe.data.totalTime}
               difficulty={recipe.data.difficulty}
             />
           );

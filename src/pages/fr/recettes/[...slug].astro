@@ -89,7 +89,7 @@ const difficultyColors = {
         widths={[600, 900, 1200]}
         sizes="(max-width: 896px) 100vw, 896px"
         formats={["avif", "webp"]}
-        class="w-full max-h-[350px] object-cover"
+        class="w-full max-h-[250px] object-cover sm:max-h-[350px] lg:max-h-[450px]"
         loading="eager"
       />
     </div>
@@ -128,7 +128,18 @@ const difficultyColors = {
         </span>
       </div>
 
-      <JumpToRecipe locale={locale} />
+      <div class="flex flex-wrap items-center gap-3">
+        <JumpToRecipe locale={locale} />
+        <button
+          onclick="window.print()"
+          class="no-print inline-flex items-center gap-2 rounded-full border border-gray-200 px-5 py-3 font-ui text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+          </svg>
+          {t(locale, "recipe.printRecipe")}
+        </button>
+      </div>
     </header>
 
     <!-- Blog Prose -->
@@ -150,19 +161,6 @@ const difficultyColors = {
       nutrition={data.nutrition}
       sourceUrl={sourceUrl}
     />
-
-    <!-- Print Button -->
-    <div class="no-print mt-6">
-      <button
-        onclick="window.print()"
-        class="inline-flex items-center gap-2 rounded-lg border border-gray-200 px-4 py-2 font-ui text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-        </svg>
-        {t(locale, "recipe.printRecipe")}
-      </button>
-    </div>
 
     <!-- FAQs -->
     <FAQSection locale={locale} faqs={data.faqs} />

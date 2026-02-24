@@ -17,7 +17,8 @@ const allRecipes = await getCollection("recipes");
 const related = allRecipes
   .filter((recipe) => {
     if (recipe.data.lang !== locale) return false;
-    if (recipe.id.includes(currentSlug)) return false;
+    const recipeSlug = recipe.id.replace(/^(en|fr)\//, "");
+    if (recipeSlug === currentSlug) return false;
     return recipe.data.recipeCategory.some((cat: string) => categories.includes(cat));
   })
   .slice(0, limit);
@@ -40,6 +41,7 @@ const related = allRecipes
             heroImage={recipe.data.heroImage as ImageMetadata}
             heroImageAlt={recipe.data.heroImageAlt}
             prepTime={recipe.data.prepTime}
+            totalTime={recipe.data.totalTime}
             difficulty={recipe.data.difficulty}
           />
         );

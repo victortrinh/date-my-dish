@@ -108,10 +108,11 @@ const recipeJsonLd = {
   author: {
     "@type": "Person",
     name: author,
+    url: `${siteUrl}/${lang}/${lang === "fr" ? "a-propos" : "about"}/`,
   },
   datePublished: publishDate.toISOString().split("T")[0],
   ...(updatedDate ? { dateModified: updatedDate.toISOString().split("T")[0] } : {}),
-  image: heroImageUrl.startsWith("http") ? heroImageUrl : `${siteUrl}${heroImageUrl}`,
+  image: [heroImageUrl.startsWith("http") ? heroImageUrl : `${siteUrl}${heroImageUrl}`],
   prepTime,
   cookTime,
   totalTime,

@@ -27,6 +27,19 @@ const categoryLabel = t(locale, `categories.${category}` as any) || category;
 const sortedRecipes = recipes.sort(
   (a: any, b: any) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
 );
+
+const allRecipes = await getCollection("recipes");
+const enRecipes = allRecipes.filter((r) => r.data.lang === "en");
+const CATEGORY_ORDER = ["appetizer", "dinner", "dessert"];
+const allCategories = [...new Set(enRecipes.flatMap((r) => r.data.recipeCategory))];
+allCategories.sort((a, b) => {
+  const ai = CATEGORY_ORDER.indexOf(a);
+  const bi = CATEGORY_ORDER.indexOf(b);
+  if (ai !== -1 && bi !== -1) return ai - bi;
+  if (ai !== -1) return -1;
+  if (bi !== -1) return 1;
+  return a.localeCompare(b);
+});
 ---
 
 <BaseLayout
@@ -46,6 +59,30 @@ const sortedRecipes = recipes.sort(
       {categoryLabel}
     </h1>
 
+    <!-- Category Filter -->
+    <div class="mb-8 flex flex-wrap gap-2">
+      <a
+        href="/en/recipes/"
+        class="rounded-full border border-gray-200 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-blue hover:text-brand-blue"
+      >
+        {t(locale, "listing.allCategories")}
+      </a>
+      {allCategories.map((cat) => (
+        <a
+          href={`/en/recipes/category/${cat}/`}
+          class:list={[
+            "rounded-full px-4 py-1.5 font-ui text-sm font-medium no-underline",
+            cat === category
+              ? "bg-brand-blue text-white"
+              : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-blue hover:text-brand-blue",
+          ]}
+          aria-current={cat === category ? "page" : undefined}
+        >
+          {t(locale, `categories.${cat}` as any) || cat}
+        </a>
+      ))}
+    </div>
+
     {sortedRecipes.length > 0 ? (
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {sortedRecipes.map((recipe: any) => {
@@ -59,6 +96,7 @@ const sortedRecipes = recipes.sort(
               heroImage={recipe.data.heroImage as ImageMetadata}
               heroImageAlt={recipe.data.heroImageAlt}
               prepTime={recipe.data.prepTime}
+              totalTime={recipe.data.totalTime}
               difficulty={recipe.data.difficulty}
             />
           );

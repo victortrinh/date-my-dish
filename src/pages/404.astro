@@ -1,0 +1,42 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page Not Found | Date My Dish"
+  description="The page you're looking for doesn't exist."
+  noindex={true}
+>
+  <div class="mx-auto flex max-w-2xl flex-col items-center px-4 py-20 text-center">
+    <span class="mb-6 text-7xl">🍽️</span>
+    <h1 class="mb-4 font-heading text-4xl font-bold text-gray-900">
+      Page Not Found
+    </h1>
+    <p class="mb-8 text-lg text-gray-600">
+      This recipe seems to have gone missing from our kitchen. Let's get you back on track.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a
+        href="/en/"
+        class="rounded-full bg-brand-blue px-6 py-3 font-ui text-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-blue-700"
+      >
+        Home (English)
+      </a>
+      <a
+        href="/fr/"
+        class="rounded-full border border-brand-blue px-6 py-3 font-ui text-sm font-semibold text-brand-blue no-underline transition-colors hover:bg-blue-50"
+      >
+        Accueil (Français)
+      </a>
+    </div>
+    <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
+      <a href="/en/recipes/" class="text-brand-blue hover:text-brand-green">
+        Browse Recipes
+      </a>
+      <span class="text-gray-300">|</span>
+      <a href="/fr/recettes/" class="text-brand-blue hover:text-brand-green">
+        Parcourir les recettes
+      </a>
+    </div>
+  </div>
+</BaseLayout>

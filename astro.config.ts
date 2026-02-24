@@ -11,6 +11,10 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      filter: (page) =>
+        !page.includes("/search") &&
+        !page.includes("/recherche") &&
+        page !== "https://datemydish.com/",
       i18n: {
         defaultLocale: "en",
         locales: {

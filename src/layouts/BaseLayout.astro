@@ -39,9 +39,10 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- Preload critical fonts -->
+    <!-- Google Fonts: loaded via <link> instead of CSS @import to avoid render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Caveat:wght@400;700&family=Fira+Sans+Condensed:wght@300;400;500;600&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <SEOHead
       title={title}
       description={description}
@@ -54,16 +55,19 @@ const resolvedCanonical = canonical || Astro.url.pathname;
       publishDate={publishDate}
       updatedDate={updatedDate}
     />
+    <link rel="alternate" type="application/rss+xml" title="Date My Dish (English)" href="/en/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Date My Dish (Français)" href="/fr/rss.xml" />
     <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col bg-white">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-ui focus:text-sm focus:font-medium focus:text-brand-blue focus:shadow-lg">
+      {locale === "fr" ? "Aller au contenu" : "Skip to content"}
+    </a>
     <Navigation locale={locale} translationSlug={translationSlug} />
-    <main class="flex-1">
+    <main id="main-content" class="flex-1">
       <slot />
     </main>
     <Footer locale={locale} />
 
-    <!-- Cloudflare Web Analytics -->
-    <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": ""}'></script>
   </body>
 </html>
