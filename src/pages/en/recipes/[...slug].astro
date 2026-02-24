@@ -193,9 +193,7 @@ const difficultyColors = {
           totalTime={data.totalTime}
           recipeYield={data.recipeYield}
           difficulty={data.difficulty}
-          ingredientGroups={data.ingredientGroups}
           instructionGroups={data.instructionGroups}
-          nutrition={data.nutrition}
           sourceUrl={sourceUrl}
         />
       </div>
@@ -210,15 +208,22 @@ const difficultyColors = {
 
           <!-- Nutrition (compact) -->
           {data.nutrition && (
-            <NutritionCard locale={locale} nutrition={data.nutrition} compact={true} />
+            <div class="no-print">
+              <NutritionCard locale={locale} nutrition={data.nutrition} compact={true} />
+            </div>
           )}
         </div>
       </aside>
     </div>
 
     <!-- Inline ingredients (mobile/tablet only) — hidden on lg -->
-    <div class="mx-auto mt-8 max-w-prose rounded-xl bg-gray-50 p-6 lg:hidden dark:bg-neutral-800/30">
+    <div class="recipe-inline-ingredients mx-auto mt-8 max-w-prose rounded-xl bg-gray-50 p-6 lg:hidden dark:bg-neutral-800/30">
       <IngredientList locale={locale} ingredientGroups={data.ingredientGroups} idPrefix="inline-ing" />
+      {data.nutrition && (
+        <div class="mt-4 no-print">
+          <NutritionCard locale={locale} nutrition={data.nutrition} compact={true} />
+        </div>
+      )}
     </div>
 
     <!-- Full-width zone: bottom sections -->
@@ -228,7 +233,7 @@ const difficultyColors = {
       )}
 
       <!-- Author Bio -->
-      <div class="mt-8">
+      <div class="mt-8 no-print">
         <AuthorBioCard locale={locale} />
       </div>
 

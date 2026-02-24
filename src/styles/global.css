@@ -134,19 +134,89 @@
     color: #000 !important;
   }
 
-  /* Force single column for print (two-column recipe layout) */
+  /* Step images hidden in print */
+  .step-image {
+    display: none !important;
+  }
+
+  /* Force single column with sidebar (ingredients) before main content */
   .recipe-two-col {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    max-width: none !important;
   }
 
   .recipe-sidebar {
+    display: block !important;
+    order: -1 !important;
     position: static !important;
     max-height: none !important;
   }
 
-  /* Page break rules */
-  h2, h3 {
+  /* Strip sidebar decorative styles for ink/space savings */
+  .recipe-sidebar > div {
+    border: none !important;
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .recipe-sidebar .rounded-lg {
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  /* Hide inline mobile ingredients in print (sidebar ingredients shown instead) */
+  .recipe-inline-ingredients {
+    display: none !important;
+  }
+
+  /* Compact headings for print */
+  h2 {
+    font-size: 12pt !important;
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.3rem !important;
     break-after: avoid;
+  }
+
+  h3 {
+    font-size: 11pt !important;
+    margin-top: 0.3rem !important;
+    margin-bottom: 0.2rem !important;
+    break-after: avoid;
+  }
+
+  /* Compact step numbers: plain inline text instead of circles */
+  .step-number {
+    width: auto !important;
+    height: auto !important;
+    background: none !important;
+    color: #000 !important;
+    font-size: 10pt !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .step-number::after {
+    content: ".";
+  }
+
+  /* Tighten step spacing */
+  .instruction-steps ol {
+    gap: 0.25rem !important;
+  }
+
+  .instruction-steps li {
+    gap: 0.25rem !important;
+  }
+
+  /* Tighten ingredient spacing */
+  .recipe-sidebar ul {
+    gap: 0.15rem !important;
   }
 
   li {
