@@ -1,8 +1,7 @@
 # Cloudflare Pages redirects
 # Format: from  to  status
 
-# www to apex
-https://www.datemydish.com/*  https://datemydish.com/:splat  301
+# www to apex — handle via Cloudflare DNS (CNAME redirect) instead of _redirects
 
 # Root to English (static fallback for non-JS clients)
 /  /en/  302
