@@ -3,8 +3,11 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
+import cloudflare from "@astrojs/cloudflare";
+
 export default defineConfig({
   site: "https://datemydish.com",
+
   integrations: [
     mdx(),
     sitemap({
@@ -18,6 +21,7 @@ export default defineConfig({
     }),
     tailwind(),
   ],
+
   i18n: {
     locales: ["en", "fr"],
     defaultLocale: "en",
@@ -25,9 +29,12 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+
   image: {
     service: {
       entrypoint: "astro/assets/services/sharp",
     },
   },
+
+  adapter: cloudflare(),
 });
