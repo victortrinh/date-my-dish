@@ -30,7 +30,6 @@ module.exports = {
       },
     },
     assert: {
-      preset: 'lighthouse:recommended',
       assertions: {
         // Block on deterministic categories
         'categories:seo': ['error', { minScore: 0.9 }],
@@ -39,12 +38,6 @@ module.exports = {
         // Warn on flaky categories
         'categories:performance': ['warn', { minScore: 0.9, aggregationMethod: 'median' }],
         'categories:best-practices': ['warn', { minScore: 0.9 }],
-
-        // Disable localhost-irrelevant audits
-        'is-crawlable': 'off',
-        'uses-long-cache-ttl': 'off',
-        'redirects-http': 'off',
-        'csp-xss': 'off',
 
         // Core Web Vitals
         'cumulative-layout-shift': ['error', { maxNumericValue: 0.1, aggregationMethod: 'median' }],

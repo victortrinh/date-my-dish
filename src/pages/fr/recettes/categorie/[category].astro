@@ -110,7 +110,7 @@ allCategories.sort((a, b) => {
 
     {sortedRecipes.length > 0 ? (
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {sortedRecipes.map((recipe: any) => {
+        {sortedRecipes.map((recipe: any, i: number) => {
           const slug = recipe.id.replace(/^fr\//, "");
           return (
             <RecipeCard
@@ -123,6 +123,7 @@ allCategories.sort((a, b) => {
               prepTime={recipe.data.prepTime}
               totalTime={recipe.data.totalTime}
               difficulty={recipe.data.difficulty}
+              loading={i === 0 ? "eager" : "lazy"}
             />
           );
         })}
