@@ -1,7 +1,17 @@
 {
+  "main": "dist/_worker.js/index.js",
   "name": "date-my-dish",
-  "compatibility_date": "2026-02-24",
+  "compatibility_date": "2025-09-27",
+  "compatibility_flags": [
+    "global_fetch_strictly_public",
+    "nodejs_compat"
+  ],
   "assets": {
-    "directory": "./dist"
-  }
+    "binding": "ASSETS",
+    "directory": "dist"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "$schema": "node_modules/wrangler/config-schema.json"
 }
