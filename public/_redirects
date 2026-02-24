@@ -16,3 +16,12 @@
 /cauliflower-steak-with-romesco-sauce/      /en/recipes/cauliflower-steak-with-romesco-sauce/      301
 /penne-alla-vodka/                          /en/recipes/penne-alla-vodka/                          301
 /lemon-posset-brulee/                       /en/recipes/lemon-posset-brulee/                       301
+
+# FR category slug redirects (old English slugs → translated French slugs)
+/fr/recettes/categorie/appetizer/*          /fr/recettes/categorie/entree/:splat        301
+/fr/recettes/categorie/dinner/*             /fr/recettes/categorie/souper/:splat         301
+/fr/recettes/categorie/breakfast/*          /fr/recettes/categorie/dejeuner/:splat       301
+/fr/recettes/categorie/lunch/*              /fr/recettes/categorie/diner/:splat          301
+/fr/recettes/categorie/snack/*              /fr/recettes/categorie/collation/:splat      301
+/fr/recettes/categorie/side-dish/*          /fr/recettes/categorie/accompagnement/:splat 301
+/fr/recettes/categorie/drink/*              /fr/recettes/categorie/boisson/:splat        301
