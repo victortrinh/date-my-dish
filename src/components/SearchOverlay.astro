@@ -36,6 +36,51 @@ const { locale } = Astro.props;
       <!-- Search container -->
       <div id="search-overlay-container" class="min-h-0 flex-1 overflow-y-auto" data-locale={locale}></div>
 
+      <!-- Dark mode overrides for Pagefind UI + hide lang filter -->
+      <style is:global>
+        /* Hide the filter panel entirely */
+        .pagefind-ui__filter-panel {
+          display: none !important;
+        }
+
+        /* Dark mode overrides */
+        :root.dark .pagefind-ui__result-title,
+        :root.dark .pagefind-ui__result-link {
+          color: #f3f4f6 !important;
+        }
+        :root.dark .pagefind-ui__result-excerpt {
+          color: #d1d5db !important;
+        }
+        :root.dark mark {
+          background-color: #d4a853 !important;
+          color: #1f2937 !important;
+        }
+        :root.dark .pagefind-ui__message {
+          color: #9ca3af !important;
+        }
+        :root.dark .pagefind-ui__search-input {
+          background-color: #1f2937 !important;
+          color: #f3f4f6 !important;
+          border-color: #374151 !important;
+        }
+        :root.dark .pagefind-ui__search-input::placeholder {
+          color: #6b7280 !important;
+        }
+        :root.dark .pagefind-ui__search-clear {
+          color: #9ca3af !important;
+        }
+        :root.dark .pagefind-ui__result {
+          border-color: #374151 !important;
+        }
+        :root.dark .pagefind-ui__result-thumb {
+          border-color: #374151 !important;
+        }
+        :root.dark .pagefind-ui__button {
+          background-color: #374151 !important;
+          color: #f3f4f6 !important;
+        }
+      </style>
+
       <!-- Keyboard hint -->
       <p class="mt-3 shrink-0 text-center text-caption text-gray-400 dark:text-gray-500">
         <kbd class="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 font-ui text-xs dark:border-gray-700 dark:bg-gray-800">Esc</kbd>
@@ -74,7 +119,7 @@ const { locale } = Astro.props;
         new window.PagefindUI({
           element: '#search-overlay-container',
           showSubResults: true,
-          filters: { lang: locale },
+          showEmptyFilters: false,
           translations: locale === 'fr' ? {
             placeholder: 'Rechercher des recettes...',
             zero_results: 'Aucun résultat pour [SEARCH_TERM]',
