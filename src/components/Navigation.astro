@@ -26,7 +26,7 @@ function isActive(linkPath: string): boolean {
 }
 ---
 
-<nav class="no-print sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-950/95">
+<nav class="no-print sticky top-0 z-50 border-b border-gray-100 bg-gray-50/95 backdrop-blur-sm dark:border-gray-800 dark:bg-gray-950/95">
   <div class="mx-auto flex max-w-content items-center justify-between px-4 py-3">
     <!-- Logo -->
     <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2.5 no-underline hover:opacity-80">
@@ -99,7 +99,7 @@ function isActive(linkPath: string): boolean {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden border-t border-gray-100 bg-white md:hidden dark:border-gray-800 dark:bg-gray-950">
+  <div id="mobile-menu" class="hidden border-t border-gray-100 bg-gray-50 md:hidden dark:border-gray-800 dark:bg-gray-950">
     <div class="mx-auto max-w-content space-y-1 px-4 py-3">
       {navLinks.map((link) => (
         <a

@@ -89,9 +89,9 @@
   }
 
   /* Remove background colors for ink savings */
-  .bg-amber-50,
   .bg-gray-50,
-  .rounded-xl.bg-amber-50 {
+  .bg-gray-100,
+  .bg-gray-200 {
     background: none !important;
   }
 

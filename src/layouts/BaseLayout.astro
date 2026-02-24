@@ -63,7 +63,7 @@ const resolvedCanonical = canonical || Astro.url.pathname;
       (function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})();
     </script>
   </head>
-  <body class="flex min-h-screen flex-col bg-brand-cream dark:bg-gray-950">
+  <body class="flex min-h-screen flex-col bg-gray-100 dark:bg-gray-950">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-ui focus:text-sm focus:font-medium focus:text-brand-primary focus:shadow-lg dark:focus:bg-gray-800 dark:focus:text-brand-primary">
       {locale === "fr" ? "Aller au contenu" : "Skip to content"}
     </a>

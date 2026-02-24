@@ -11,8 +11,8 @@ export default {
           "primary-text": "#9A5439", // Darker terracotta for small text — WCAG AA on cream/white
           accent: "#D4A853",
           "accent-dark": "#B8923F",
-          cream: "#FDF6EC",
-          "cream-dark": "#F5EDDF", // Slightly darker cream for alternating sections
+          cream: "#FDF6EC", // Legacy — kept for reference only
+          "cream-dark": "#F5EDDF", // Legacy — kept for reference only
         },
       },
       fontFamily: {
