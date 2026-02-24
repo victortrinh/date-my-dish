@@ -24,6 +24,11 @@ pnpm-debug.log*
 # Astro
 .astro/
 
+# Lighthouse CI
+.lighthouseci/
+.lighthouserc-full-urls.json
+lighthouse-manifest.json
+
 # wrangler files
 .wrangler
 .dev.vars*

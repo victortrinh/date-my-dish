@@ -1,0 +1,91 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: lighthouse-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - id: lhci
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./.lighthouserc.cjs
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Post PR comment with scores
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const manifest = JSON.parse('${{ steps.lhci.outputs.manifest }}');
+            const links = JSON.parse('${{ steps.lhci.outputs.links }}');
+
+            let body = '<!-- lighthouse-ci-results -->\n';
+            body += '## Lighthouse CI Results\n\n';
+            body += '| URL | Perf | A11y | Best Practices | SEO | Report |\n';
+            body += '|-----|------|------|----------------|-----|--------|\n';
+
+            for (const entry of manifest) {
+              const path = new URL(entry.url).pathname;
+              const s = {
+                perf: Math.round(entry.summary.performance * 100),
+                a11y: Math.round(entry.summary.accessibility * 100),
+                bp: Math.round(entry.summary['best-practices'] * 100),
+                seo: Math.round(entry.summary.seo * 100),
+              };
+              const icon = (v) => v >= 90 ? '🟢' : v >= 50 ? '🟠' : '🔴';
+              const link = links[entry.url] ? `[View](${links[entry.url]})` : '--';
+              body += `| \`${path}\` | ${icon(s.perf)} ${s.perf} | ${icon(s.a11y)} ${s.a11y} | ${icon(s.bp)} ${s.bp} | ${icon(s.seo)} ${s.seo} | ${link} |\n`;
+            }
+
+            // Update existing comment or create new
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c =>
+              c.body.includes('<!-- lighthouse-ci-results -->')
+            );
+
+            const params = {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body,
+            };
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                ...params,
+                comment_id: existing.id,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                ...params,
+                issue_number: context.issue.number,
+              });
+            }
