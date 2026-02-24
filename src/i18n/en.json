@@ -8,7 +8,9 @@
     "recipes": "Recipes",
     "about": "About",
     "contact": "Contact",
-    "search": "Search"
+    "search": "Search",
+    "toggleMenu": "Toggle menu",
+    "breadcrumb": "Breadcrumb"
   },
   "recipe": {
     "jumpToRecipe": "Jump to Recipe",
@@ -77,11 +79,19 @@
   "search": {
     "title": "Search Recipes",
     "placeholder": "Search for a recipe...",
-    "noResults": "No results found."
+    "noResults": "No results found.",
+    "overlayTitle": "Search Date My Dish",
+    "overlayPlaceholder": "Search recipes...",
+    "close": "Close search",
+    "tip": "Tip: Press {key} to search from anywhere"
   },
   "footer": {
     "copyright": "All rights reserved.",
-    "madeWith": "Made with love in Montreal"
+    "madeWith": "Made with love in Montreal",
+    "categories": "Categories",
+    "navigation": "Navigation",
+    "nav": "Footer navigation",
+    "categoriesNav": "Recipe categories"
   },
   "seo": {
     "titleTemplate": "%s | Date My Dish",
@@ -107,7 +117,17 @@
     "sauce": "Sauce"
   },
   "theme": {
-    "toggle": "Toggle dark mode"
+    "toggle": "Toggle dark mode",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode"
+  },
+  "toc": {
+    "title": "Table of Contents"
+  },
+  "author": {
+    "bioShort": "Victor creates date night recipes designed to impress. Based in Montreal, he believes great food brings people closer together.",
+    "aboutLink": "About the author",
+    "photoAlt": "Victor, creator of Date My Dish"
   },
   "lang": {
     "switchTo": "Français",

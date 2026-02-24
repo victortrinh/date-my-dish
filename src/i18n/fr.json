@@ -8,7 +8,9 @@
     "recipes": "Recettes",
     "about": "À propos",
     "contact": "Contact",
-    "search": "Recherche"
+    "search": "Recherche",
+    "toggleMenu": "Basculer le menu",
+    "breadcrumb": "Fil d'Ariane"
   },
   "recipe": {
     "jumpToRecipe": "Aller à la recette",
@@ -77,11 +79,19 @@
   "search": {
     "title": "Rechercher des recettes",
     "placeholder": "Rechercher une recette...",
-    "noResults": "Aucun résultat trouvé."
+    "noResults": "Aucun résultat trouvé.",
+    "overlayTitle": "Rechercher sur Date My Dish",
+    "overlayPlaceholder": "Rechercher des recettes...",
+    "close": "Fermer la recherche",
+    "tip": "Astuce : Appuyez sur {key} pour rechercher"
   },
   "footer": {
     "copyright": "Tous droits réservés.",
-    "madeWith": "Fait avec amour à Montréal"
+    "madeWith": "Fait avec amour à Montréal",
+    "categories": "Catégories",
+    "navigation": "Navigation",
+    "nav": "Navigation du pied de page",
+    "categoriesNav": "Catégories de recettes"
   },
   "seo": {
     "titleTemplate": "%s | Date My Dish",
@@ -107,7 +117,17 @@
     "sauce": "Sauce"
   },
   "theme": {
-    "toggle": "Basculer le mode sombre"
+    "toggle": "Basculer le mode sombre",
+    "switchToDark": "Activer le mode sombre",
+    "switchToLight": "Activer le mode clair"
+  },
+  "toc": {
+    "title": "Table des matières"
+  },
+  "author": {
+    "bioShort": "Victor crée des recettes pour les soirées en amoureux, conçues pour impressionner. Basé à Montréal, il croit que la bonne cuisine rapproche les gens.",
+    "aboutLink": "À propos de l'auteur",
+    "photoAlt": "Victor, créateur de Date My Dish"
   },
   "lang": {
     "switchTo": "English",

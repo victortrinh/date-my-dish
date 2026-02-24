@@ -43,5 +43,5 @@ Bilingual recipe blog (EN/FR) built with Astro 5, deployed on Cloudflare Pages.
 
 ## Brand
 - Colors: Terracotta `#C4704B` (primary), Warm Gold `#D4A853` (accent), Cream `#FDF6EC` (background)
-- Fonts: Bitter (headings), Nunito (body + UI), Caveat (handwritten)
+- Fonts: Fira Sans (headings, uppercase), Bitter (body + UI), Caveat (handwritten)
 - Locale: Quebec French (souper, déjeuner, cuillère à thé)

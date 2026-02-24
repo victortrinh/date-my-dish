@@ -65,7 +65,7 @@ allCategories.sort((a, b) => {
     })} />
   </Fragment>
 
-  <div class="mx-auto max-w-6xl px-4 py-8">
+  <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
     <Breadcrumbs
       locale={locale}
       items={[
@@ -74,15 +74,21 @@ allCategories.sort((a, b) => {
       ]}
     />
 
-    <h1 class="mb-8 font-heading text-4xl font-bold text-gray-900 dark:text-gray-100">
-      {categoryLabel}
-    </h1>
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-gray-100">
+        {categoryLabel}
+      </h1>
+      <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
+      <p class="text-body-sm text-gray-500 dark:text-gray-400">
+        {sortedRecipes.length} {sortedRecipes.length === 1 ? "recette" : "recettes"}
+      </p>
+    </div>
 
     <!-- Category Filter -->
-    <div class="mb-8 flex flex-wrap gap-2">
+    <div class="mb-10 flex flex-wrap gap-2">
       <a
         href="/fr/recettes/"
-        class="rounded-full border border-gray-200 dark:border-gray-600 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 dark:text-gray-400 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary"
+        class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-gray-600 dark:text-gray-400"
       >
         {t(locale, "listing.allCategories")}
       </a>
@@ -90,10 +96,10 @@ allCategories.sort((a, b) => {
         <a
           href={`/fr/recettes/categorie/${getCategorySlug(cat, locale)}/`}
           class:list={[
-            "rounded-full px-4 py-1.5 font-ui text-sm font-medium no-underline",
+            "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
             cat === canonicalCategory
-              ? "bg-brand-primary text-white"
-              : "border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-400 transition-colors hover:border-brand-primary hover:text-brand-primary",
+              ? "bg-brand-primary-dark text-white shadow-md"
+              : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-gray-600 dark:text-gray-400",
           ]}
           aria-current={cat === canonicalCategory ? "page" : undefined}
         >
@@ -103,7 +109,7 @@ allCategories.sort((a, b) => {
     </div>
 
     {sortedRecipes.length > 0 ? (
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {sortedRecipes.map((recipe: any) => {
           const slug = recipe.id.replace(/^fr\//, "");
           return (

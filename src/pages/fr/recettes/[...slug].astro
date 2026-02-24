@@ -4,6 +4,10 @@ import { Picture } from "astro:assets";
 import RecipeLayout from "@layouts/RecipeLayout.astro";
 import RecipeSchema from "@components/RecipeSchema.astro";
 import RecipeContent from "@components/RecipeContent.astro";
+import IngredientList from "@components/IngredientList.astro";
+import NutritionCard from "@components/NutritionCard.astro";
+import TableOfContents from "@components/TableOfContents.astro";
+import AuthorBioCard from "@components/AuthorBioCard.astro";
 import JumpToRecipe from "@components/JumpToRecipe.astro";
 import ShareButton from "@components/ShareButton.astro";
 import ImpressFactor from "@components/ImpressFactor.astro";
@@ -37,9 +41,9 @@ const heroImage = data.heroImage as ImageMetadata;
 const sourceUrl = `https://datemydish.com${getRecipeLocalizedPath(locale, slug)}`;
 
 const difficultyColors = {
-  easy: "bg-green-100 text-green-800",
-  medium: "bg-yellow-100 text-yellow-800",
-  hard: "bg-red-100 text-red-800",
+  easy: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
+  medium: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400",
+  hard: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400",
 };
 ---
 
@@ -75,125 +79,168 @@ const difficultyColors = {
     faqs={data.faqs}
   />
 
-  <article class="mx-auto max-w-4xl px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
-    <Breadcrumbs
-      locale={locale}
-      items={[
-        { label: t(locale, "nav.recipes"), href: "/fr/recettes/" },
-        { label: data.title },
-      ]}
-    />
-
-    <!-- Hero Image -->
-    <div class="no-print relative mb-8 overflow-hidden rounded-2xl">
-      <Picture
-        src={heroImage}
-        alt={data.heroImageAlt}
-        widths={[600, 900, 1200]}
-        sizes="(max-width: 896px) 100vw, 896px"
-        formats={["avif", "webp"]}
-        class="w-full max-h-[250px] object-cover sm:max-h-[350px] lg:max-h-[450px]"
-        loading="eager"
+  <article class="mx-auto max-w-content px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
+    <!-- Full-width zone: Breadcrumbs + Hero + Meta -->
+    <div class="mx-auto max-w-prose">
+      <Breadcrumbs
+        locale={locale}
+        items={[
+          { label: t(locale, "nav.recipes"), href: "/fr/recettes/" },
+          { label: data.title },
+        ]}
       />
-    </div>
 
-    <!-- Title & Meta -->
-    <header class="no-print mb-8">
-      <h1 class="mb-4 font-heading text-4xl font-bold text-gray-900 dark:text-gray-100">
-        {data.title}
-      </h1>
-      <p class="mb-6 text-lg text-gray-600 dark:text-gray-400">{data.description}</p>
-
-      <!-- Meta Bar -->
-      <div class="mb-6 flex flex-wrap items-center gap-4 rounded-xl bg-gray-50 dark:bg-gray-800 p-4">
-        <div class="flex items-center gap-2">
-          <span class="text-sm text-gray-500 dark:text-gray-400">{t(locale, "recipe.prepTime")}</span>
-          <span class="font-medium">{formatDuration(data.prepTime, locale)}</span>
-        </div>
-        <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
-        <div class="flex items-center gap-2">
-          <span class="text-sm text-gray-500 dark:text-gray-400">{t(locale, "recipe.cookTime")}</span>
-          <span class="font-medium">{formatDuration(data.cookTime, locale)}</span>
-        </div>
-        <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
-        <div class="flex items-center gap-2">
-          <span class="text-sm text-gray-500 dark:text-gray-400">{t(locale, "recipe.totalTime")}</span>
-          <span class="font-medium">{formatDuration(data.totalTime, locale)}</span>
-        </div>
-        <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
-        <div class="flex items-center gap-2">
-          <span class="text-sm text-gray-500 dark:text-gray-400">{t(locale, "recipe.servings")}</span>
-          <span class="font-medium">{data.recipeYield}</span>
-        </div>
-        <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
-        <span class={`rounded-full px-3 py-1 text-sm font-medium ${difficultyColors[data.difficulty]}`}>
-          {t(locale, `recipe.${data.difficulty}` as "recipe.easy" | "recipe.medium" | "recipe.hard")}
-        </span>
-        {data.impressFactor && (
-          <>
-            <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
-            <ImpressFactor locale={locale} rating={data.impressFactor} />
-          </>
-        )}
+      <!-- Hero Image -->
+      <div class="no-print relative mb-8 overflow-hidden rounded-2xl">
+        <Picture
+          src={heroImage}
+          alt={data.heroImageAlt}
+          widths={[600, 900, 1200]}
+          sizes="(max-width: 896px) 100vw, 896px"
+          formats={["avif", "webp"]}
+          class="w-full max-h-[280px] object-cover sm:max-h-[380px] lg:max-h-[500px]"
+          loading="eager"
+        />
       </div>
 
-      {data.occasion && data.occasion.length > 0 && (
-        <div class="mb-4 flex flex-wrap gap-2">
-          {data.occasion.map((occ: string) => (
-            <span class="rounded-full bg-brand-accent/10 px-3 py-1 text-xs font-medium text-brand-accent-dark">
-              {t(locale, `occasion.${occ}` as any) || occ}
-            </span>
-          ))}
+      <!-- Title & Meta -->
+      <header class="no-print mb-8">
+        <h1 class="mb-4 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-gray-100">
+          {data.title}
+        </h1>
+        <p class="mb-6 text-body-lg text-gray-600 dark:text-gray-400">{data.description}</p>
+
+        <!-- Meta Bar -->
+        <div class="mb-6 flex flex-wrap items-center gap-4 rounded-xl bg-gray-200 p-4 dark:bg-gray-800">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="text-body-sm text-gray-500 dark:text-gray-400">{t(locale, "recipe.prepTime")}</span>
+            <span class="font-medium text-body-sm">{formatDuration(data.prepTime, locale)}</span>
+          </div>
+          <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-body-sm text-gray-500 dark:text-gray-400">{t(locale, "recipe.cookTime")}</span>
+            <span class="font-medium text-body-sm">{formatDuration(data.cookTime, locale)}</span>
+          </div>
+          <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-body-sm text-gray-500 dark:text-gray-400">{t(locale, "recipe.totalTime")}</span>
+            <span class="font-medium text-body-sm">{formatDuration(data.totalTime, locale)}</span>
+          </div>
+          <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
+          <div class="flex items-center gap-2">
+            <span class="text-body-sm text-gray-500 dark:text-gray-400">{t(locale, "recipe.servings")}</span>
+            <span class="font-medium text-body-sm">{data.recipeYield}</span>
+          </div>
+          <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
+          <span class={`rounded-full px-3 py-1 text-body-sm font-medium ${difficultyColors[data.difficulty]}`}>
+            {t(locale, `recipe.${data.difficulty}` as "recipe.easy" | "recipe.medium" | "recipe.hard")}
+          </span>
+          {data.impressFactor && (
+            <>
+              <div class="h-4 w-px bg-gray-300 dark:bg-gray-600"></div>
+              <ImpressFactor locale={locale} rating={data.impressFactor} />
+            </>
+          )}
         </div>
+
+        {data.occasion && data.occasion.length > 0 && (
+          <div class="mb-4 flex flex-wrap gap-2">
+            {data.occasion.map((occ: string) => (
+              <span class="rounded-full bg-brand-accent/10 px-3 py-1 text-caption font-medium text-brand-accent-text">
+                {t(locale, `occasion.${occ}` as any) || occ}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div class="flex flex-wrap items-center gap-3">
+          <JumpToRecipe locale={locale} />
+          <button
+            onclick="window.print()"
+            class="no-print inline-flex items-center gap-2 rounded-lg border border-gray-200 px-5 py-3 font-ui text-body-sm font-medium text-gray-600 transition-colors hover:bg-gray-200 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-800"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            {t(locale, "recipe.printRecipe")}
+          </button>
+          <ShareButton locale={locale} title={data.title} url={sourceUrl} />
+        </div>
+      </header>
+    </div>
+
+    <!-- Two-column zone -->
+    <div class="recipe-two-col mx-auto grid max-w-prose grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-[1fr_320px]">
+      <!-- Main column -->
+      <div class="min-w-0">
+        <!-- Table of Contents -->
+        <TableOfContents locale={locale} />
+
+        <!-- Blog Prose -->
+        <div class="no-print prose mb-12 max-w-none">
+          <Content />
+        </div>
+
+        <!-- Recipe Card (Instructions + Print info) -->
+        <RecipeContent
+          locale={locale}
+          title={data.title}
+          prepTime={data.prepTime}
+          cookTime={data.cookTime}
+          totalTime={data.totalTime}
+          recipeYield={data.recipeYield}
+          difficulty={data.difficulty}
+          ingredientGroups={data.ingredientGroups}
+          instructionGroups={data.instructionGroups}
+          nutrition={data.nutrition}
+          sourceUrl={sourceUrl}
+        />
+      </div>
+
+      <!-- Sidebar (desktop only) -->
+      <aside class="recipe-sidebar hidden lg:block">
+        <div class="sticky top-[73px] space-y-6 self-start overflow-y-auto rounded-xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-900" style="max-height: calc(100vh - 89px);">
+          <!-- Ingredients -->
+          <div class="rounded-lg bg-gray-100 p-4 dark:bg-gray-800/30">
+            <IngredientList locale={locale} ingredientGroups={data.ingredientGroups} idPrefix="sidebar-ing" />
+          </div>
+
+          <!-- Nutrition (compact) -->
+          {data.nutrition && (
+            <NutritionCard locale={locale} nutrition={data.nutrition} compact={true} />
+          )}
+        </div>
+      </aside>
+    </div>
+
+    <!-- Inline ingredients (mobile/tablet only) — hidden on lg -->
+    <div class="mx-auto mt-8 max-w-prose rounded-xl bg-gray-50 p-6 lg:hidden dark:bg-gray-800/30">
+      <IngredientList locale={locale} ingredientGroups={data.ingredientGroups} idPrefix="inline-ing" />
+    </div>
+
+    <!-- Full-width zone: bottom sections -->
+    <div class="mx-auto max-w-prose">
+      {data.dateNightTips && (
+        <DateNightTips locale={locale} tips={data.dateNightTips} />
       )}
 
-      <div class="flex flex-wrap items-center gap-3">
-        <JumpToRecipe locale={locale} />
-        <button
-          onclick="window.print()"
-          class="no-print inline-flex items-center gap-2 rounded-full border border-gray-200 dark:border-gray-600 px-5 py-3 font-ui text-sm font-medium text-gray-600 dark:text-gray-400 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-          </svg>
-          {t(locale, "recipe.printRecipe")}
-        </button>
-        <ShareButton locale={locale} title={data.title} url={sourceUrl} />
+      <!-- Author Bio -->
+      <div class="mt-8">
+        <AuthorBioCard locale={locale} />
       </div>
-    </header>
 
-    <!-- Blog Prose -->
-    <div class="no-print prose mb-12 max-w-none">
-      <Content />
+      <!-- FAQs -->
+      <FAQSection locale={locale} faqs={data.faqs} />
+
+      <!-- Related Recipes -->
+      <RelatedRecipes
+        locale={locale}
+        currentSlug={slug}
+        categories={data.recipeCategory}
+      />
     </div>
-
-    <!-- Recipe Card (Ingredients + Instructions + Nutrition) -->
-    <RecipeContent
-      locale={locale}
-      title={data.title}
-      prepTime={data.prepTime}
-      cookTime={data.cookTime}
-      totalTime={data.totalTime}
-      recipeYield={data.recipeYield}
-      difficulty={data.difficulty}
-      ingredientGroups={data.ingredientGroups}
-      instructionGroups={data.instructionGroups}
-      nutrition={data.nutrition}
-      sourceUrl={sourceUrl}
-    />
-
-    {data.dateNightTips && (
-      <DateNightTips locale={locale} tips={data.dateNightTips} />
-    )}
-
-    <!-- FAQs -->
-    <FAQSection locale={locale} faqs={data.faqs} />
-
-    <!-- Related Recipes -->
-    <RelatedRecipes
-      locale={locale}
-      currentSlug={slug}
-      categories={data.recipeCategory}
-    />
   </article>
 </RecipeLayout>

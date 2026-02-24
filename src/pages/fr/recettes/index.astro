@@ -47,22 +47,28 @@ categories.sort((a, b) => {
     })} />
   </Fragment>
 
-  <div class="mx-auto max-w-6xl px-4 py-8">
+  <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
     <Breadcrumbs
       locale={locale}
       items={[{ label: t(locale, "nav.recipes") }]}
     />
 
-    <h1 class="mb-8 font-heading text-4xl font-bold text-gray-900 dark:text-gray-100">
-      {t(locale, "listing.allRecipes")}
-    </h1>
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-gray-100">
+        {t(locale, "listing.allRecipes")}
+      </h1>
+      <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
+      <p class="text-body-sm text-gray-500 dark:text-gray-400">
+        {recipes.length} {recipes.length === 1 ? "recette" : "recettes"}
+      </p>
+    </div>
 
     <!-- Category Filter -->
     {categories.length > 0 && (
-      <div class="mb-8 flex flex-wrap gap-2">
+      <div class="mb-10 flex flex-wrap gap-2">
         <a
           href="/fr/recettes/"
-          class="rounded-full bg-brand-primary px-4 py-1.5 font-ui text-sm font-medium text-white no-underline"
+          class="rounded-lg bg-brand-primary-dark px-4 py-2 font-ui text-body-sm font-medium text-white no-underline transition-shadow hover:shadow-md"
           aria-current="page"
         >
           {t(locale, "listing.allCategories")}
@@ -70,7 +76,7 @@ categories.sort((a, b) => {
         {categories.map((cat) => (
           <a
             href={`/fr/recettes/categorie/${getCategorySlug(cat, locale)}/`}
-            class="rounded-full border border-gray-200 dark:border-gray-600 px-4 py-1.5 font-ui text-sm font-medium text-gray-600 dark:text-gray-400 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary"
+            class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-gray-600 dark:text-gray-400"
           >
             {t(locale, `categories.${cat}` as any) || cat}
           </a>
@@ -80,7 +86,7 @@ categories.sort((a, b) => {
 
     <!-- Recipe Grid -->
     {recipes.length > 0 ? (
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {recipes.map((recipe) => {
           const slug = recipe.id.replace(/^fr\//, "");
           return (

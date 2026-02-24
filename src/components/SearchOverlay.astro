@@ -1,0 +1,212 @@
+---
+import { t, type Locale } from "@i18n/utils";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+---
+
+<div
+  id="search-overlay"
+  class="fixed inset-0 z-[60] hidden items-start justify-center bg-black/60 backdrop-blur-sm"
+  role="dialog"
+  aria-modal="true"
+  aria-label={t(locale, "search.overlayTitle")}
+>
+  <div class="mx-auto mt-12 w-full max-w-2xl px-4 sm:mt-20">
+    <div class="flex max-h-[80vh] flex-col rounded-2xl bg-white p-6 shadow-2xl dark:bg-gray-900/95">
+      <!-- Header -->
+      <div class="mb-4 flex shrink-0 items-center justify-between">
+        <h2 class="font-heading text-lg font-bold text-gray-900 dark:text-gray-100">
+          {t(locale, "search.overlayTitle")}
+        </h2>
+        <button
+          id="search-overlay-close"
+          class="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+          aria-label={t(locale, "search.close")}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Search container -->
+      <div id="search-overlay-container" class="min-h-0 flex-1 overflow-y-auto" data-locale={locale}></div>
+
+      <!-- Dark mode overrides for Pagefind UI + hide lang filter -->
+      <style is:global>
+        /* Hide the filter panel entirely */
+        .pagefind-ui__filter-panel {
+          display: none !important;
+        }
+
+        /* Dark mode overrides */
+        :root.dark .pagefind-ui__result-title,
+        :root.dark .pagefind-ui__result-link {
+          color: #f3f4f6 !important;
+        }
+        :root.dark .pagefind-ui__result-excerpt {
+          color: #d1d5db !important;
+        }
+        :root.dark mark {
+          background-color: #d4a853 !important;
+          color: #1f2937 !important;
+        }
+        :root.dark .pagefind-ui__message {
+          color: #9ca3af !important;
+        }
+        :root.dark .pagefind-ui__search-input {
+          background-color: #1f2937 !important;
+          color: #f3f4f6 !important;
+          border-color: #374151 !important;
+          outline-color: #D4A853 !important;
+        }
+        :root.dark .pagefind-ui__search-input::placeholder {
+          color: #6b7280 !important;
+        }
+        :root.dark .pagefind-ui__search-clear {
+          color: #9ca3af !important;
+          background-color: #374151 !important;
+        }
+        :root.dark .pagefind-ui__result {
+          border-color: #374151 !important;
+        }
+        :root.dark .pagefind-ui__result-thumb {
+          border-color: #374151 !important;
+        }
+        :root.dark .pagefind-ui__button {
+          background-color: #374151 !important;
+          color: #f3f4f6 !important;
+        }
+      </style>
+
+      <!-- Keyboard hint -->
+      <p class="mt-3 shrink-0 text-center text-caption text-gray-400 dark:text-gray-400">
+        <kbd class="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 font-ui text-xs dark:border-gray-700 dark:bg-gray-800">Esc</kbd>
+        {locale === "fr" ? "pour fermer" : "to close"}
+      </p>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  const overlay = document.getElementById('search-overlay');
+  const closeBtn = document.getElementById('search-overlay-close');
+  const container = document.getElementById('search-overlay-container');
+  let pagefindLoaded = false;
+  let triggerElement = null;
+
+  function openSearch(trigger) {
+    triggerElement = trigger || document.activeElement;
+    overlay.classList.remove('hidden');
+    overlay.classList.add('flex');
+    document.documentElement.style.overflow = 'hidden';
+
+    // Load Pagefind on first open
+    if (!pagefindLoaded) {
+      pagefindLoaded = true;
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/pagefind/pagefind-ui.css';
+      document.head.appendChild(link);
+
+      const script = document.createElement('script');
+      script.src = '/pagefind/pagefind-ui.js';
+      script.onload = function() {
+        const locale = container.dataset.locale || 'en';
+        new window.PagefindUI({
+          element: '#search-overlay-container',
+          showSubResults: true,
+          showEmptyFilters: false,
+          translations: locale === 'fr' ? {
+            placeholder: 'Rechercher des recettes...',
+            zero_results: 'Aucun résultat pour [SEARCH_TERM]',
+          } : {
+            placeholder: 'Search recipes...',
+            zero_results: 'No results for [SEARCH_TERM]',
+          },
+        });
+        // Focus input
+        setTimeout(function() {
+          var input = container.querySelector('input');
+          if (input) input.focus();
+        }, 100);
+      };
+      script.onerror = function() {
+        var locale = container.dataset.locale || 'en';
+        container.innerHTML = '<p style="text-align:center;padding:1rem;color:#6b7280;">' +
+          (locale === 'fr'
+            ? 'La recherche nécessite une version compilée. Exécutez <code>npm run build</code> puis <code>npm run preview</code>.'
+            : 'Search requires a built site. Run <code>npm run build</code> then <code>npm run preview</code>.') +
+          '</p>';
+      };
+      document.head.appendChild(script);
+    } else {
+      // Already loaded, just focus
+      setTimeout(function() {
+        var input = container.querySelector('input');
+        if (input) input.focus();
+      }, 50);
+    }
+  }
+
+  function closeSearch() {
+    overlay.classList.add('hidden');
+    overlay.classList.remove('flex');
+    document.documentElement.style.overflow = '';
+    if (triggerElement) {
+      triggerElement.focus();
+      triggerElement = null;
+    }
+  }
+
+  // Close button
+  closeBtn.addEventListener('click', closeSearch);
+
+  // Click backdrop to close
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeSearch();
+  });
+
+  // Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !overlay.classList.contains('hidden')) {
+      closeSearch();
+    }
+    // Cmd/Ctrl + K to open
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      if (overlay.classList.contains('hidden')) {
+        openSearch();
+      } else {
+        closeSearch();
+      }
+    }
+  });
+
+  // Focus trap — keep Tab cycling within the overlay
+  overlay.addEventListener('keydown', function(e) {
+    if (e.key !== 'Tab' || overlay.classList.contains('hidden')) return;
+    var focusable = overlay.querySelectorAll(
+      'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  // Expose open function for nav buttons
+  window.__openSearch = openSearch;
+})();
+</script>

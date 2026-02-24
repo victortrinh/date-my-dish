@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
+import AuthorBioCard from "@components/AuthorBioCard.astro";
 import { t } from "@i18n/utils";
 
 const locale = "en";
@@ -10,15 +11,18 @@ const locale = "en";
   title={`${t(locale, "about.pageTitle")} | Date My Dish`}
   description="Meet Victor, the home cook and recipe developer behind Date My Dish. Learn about his passion for simple, delicious food."
 >
-  <div class="mx-auto max-w-3xl px-4 py-8">
+  <div class="mx-auto max-w-narrow px-4 py-12 sm:py-16">
     <Breadcrumbs
       locale={locale}
       items={[{ label: t(locale, "about.pageTitle") }]}
     />
 
-    <h1 class="mb-8 font-heading text-4xl font-bold text-gray-900 dark:text-gray-100">
-      {t(locale, "about.title")}
-    </h1>
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-gray-100">
+        {t(locale, "about.title")}
+      </h1>
+      <div class="h-1 w-12 rounded-full bg-brand-accent"></div>
+    </div>
 
     <div class="prose max-w-none">
       <p>
@@ -51,6 +55,10 @@ const locale = "en";
       <p>
         Thanks for being here. I hope you find something that makes your next meal a little more special.
       </p>
+    </div>
+
+    <div class="mt-12">
+      <AuthorBioCard locale={locale} showLink={false} />
     </div>
   </div>
 </BaseLayout>
