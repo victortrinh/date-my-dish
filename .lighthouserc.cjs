@@ -1,20 +1,41 @@
 // .lighthouserc.cjs
-// Lighthouse CI configuration for Date My Dish
+// Lighthouse CI configuration for Date My Dish — PR gate
 // Must be .cjs because package.json has "type": "module"
+
+const fs = require('fs');
+const path = require('path');
 
 const BASE = 'http://localhost:8788';
 
-// Representative subset: 1 of each page type, both locales
-const urls = [
+// Static pages
+const staticUrls = [
   `${BASE}/en/`,
   `${BASE}/fr/`,
-  `${BASE}/en/recipes/cacio-e-pepe/`,
-  `${BASE}/fr/recettes/cacio-e-pepe/`,
   `${BASE}/en/recipes/`,
   `${BASE}/fr/recettes/`,
   `${BASE}/en/about/`,
+  `${BASE}/fr/a-propos/`,
+  `${BASE}/en/contact/`,
   `${BASE}/fr/contact/`,
 ];
+
+// Discover recipe URLs from content directory
+const recipesDir = path.join(__dirname, 'src', 'content', 'recipes');
+
+const enRecipes = fs.readdirSync(path.join(recipesDir, 'en'))
+  .filter(f => f.endsWith('.mdx'))
+  .map(f => f.replace('.mdx', ''));
+
+const frRecipes = fs.readdirSync(path.join(recipesDir, 'fr'))
+  .filter(f => f.endsWith('.mdx'))
+  .map(f => f.replace('.mdx', ''));
+
+const recipeUrls = [
+  ...enRecipes.map(slug => `${BASE}/en/recipes/${slug}/`),
+  ...frRecipes.map(slug => `${BASE}/fr/recettes/${slug}/`),
+];
+
+const urls = [...staticUrls, ...recipeUrls];
 
 module.exports = {
   ci: {
