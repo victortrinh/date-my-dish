@@ -6,6 +6,13 @@
 # Root to English (static fallback for non-JS clients)
 /  /en/  302
 
-# Old WordPress URL redirects (add as you migrate each recipe)
-# /chocolate-crepes/  /en/recipes/chocolate-crepes/  301
-# /crepes-au-chocolat/  /fr/recettes/crepes-au-chocolat/  301
+# Old WordPress URL redirects
+/brussels-sprouts-salad/                    /en/recipes/brussels-sprouts-salad/                    301
+/crispy-vegan-calamari/                     /en/recipes/crispy-vegan-calamari/                     301
+/zucchini-eggplant-chips/                   /en/recipes/zucchini-eggplant-chips/                   301
+/cacio-e-pepe/                              /en/recipes/cacio-e-pepe/                              301
+/beef-ragu-pappardelle/                     /en/recipes/beef-ragu-pappardelle/                     301
+/quinoa-crusted-salmon/                     /en/recipes/quinoa-crusted-salmon/                     301
+/cauliflower-steak-with-romesco-sauce/      /en/recipes/cauliflower-steak-with-romesco-sauce/      301
+/penne-alla-vodka/                          /en/recipes/penne-alla-vodka/                          301
+/lemon-posset-brulee/                       /en/recipes/lemon-posset-brulee/                       301
