@@ -36,7 +36,7 @@ const difficultyColors = {
 };
 ---
 
-<article class="group overflow-hidden rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md">
+<article class="group overflow-hidden rounded-xl bg-white dark:bg-gray-900 shadow-sm transition-shadow hover:shadow-md">
   <a href={url} class="block no-underline">
     <div class="relative aspect-[4/3] overflow-hidden">
       <Picture
@@ -51,12 +51,12 @@ const difficultyColors = {
       />
     </div>
     <div class="p-4">
-      <h3 class="mb-2 font-heading text-lg font-bold text-gray-900 group-hover:text-brand-primary">
+      <h3 class="mb-2 font-heading text-lg font-bold text-gray-900 dark:text-gray-100 group-hover:text-brand-primary">
         {title}
       </h3>
-      <p class="mb-3 line-clamp-2 text-sm text-gray-600">{description}</p>
+      <p class="mb-3 line-clamp-2 text-sm text-gray-600 dark:text-gray-400">{description}</p>
       <div class="flex items-center gap-3">
-        <span class="text-xs text-gray-500">
+        <span class="text-xs text-gray-500 dark:text-gray-400">
           {formatDuration(totalTime || prepTime)}
         </span>
         <span class={`rounded-full px-2 py-0.5 text-xs font-medium ${difficultyColors[difficulty]}`}>

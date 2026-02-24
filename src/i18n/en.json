@@ -106,6 +106,9 @@
     "drink": "Drink",
     "sauce": "Sauce"
   },
+  "theme": {
+    "toggle": "Toggle dark mode"
+  },
   "lang": {
     "switchTo": "Français",
     "current": "English"
