@@ -16,6 +16,7 @@
 /cauliflower-steak-with-romesco-sauce/      /en/recipes/cauliflower-steak-with-romesco-sauce/      301
 /penne-alla-vodka/                          /en/recipes/penne-alla-vodka/                          301
 /lemon-posset-brulee/                       /en/recipes/lemon-posset-brulee/                       301
+/about-date-my-dish/                        /en/about/                                             301
 
 # FR category slug redirects (old English slugs → translated French slugs)
 /fr/recettes/categorie/appetizer/*          /fr/recettes/categorie/entree/:splat        301

@@ -9,7 +9,7 @@ export async function GET(context: APIContext) {
     .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
   return rss({
-    title: "Date My Dish - Recipes Worth Falling For",
+    title: "Date My Dish - Romantic Recipes for Unforgettable Date Nights",
     description:
       "Discover simple, delicious recipes crafted with love. From comforting classics to creative dishes, find your next favorite meal.",
     site: context.site!,
