@@ -21,8 +21,18 @@ Bilingual recipe blog (EN/FR) built with Astro 5, deployed on Cloudflare Pages.
 - Recipes are MDX files with extensive YAML frontmatter (ingredients, instructions, nutrition, FAQs)
 - Every recipe must have an EN + FR pair linked via `translationSlug`
 - Ingredients and instructions live in frontmatter (needed for JSON-LD generation)
+- Instruction steps support optional `image` field (URL string) for step-by-step photos
 - MDX body is the SEO blog prose (target 800-1500 words)
 - Images go in `src/assets/images/recipes/` with descriptive filenames
+
+## Image Guidelines
+- **Target 5-7 images per recipe**: 1 hero (required) + 3-5 step images (recommended)
+- **Naming**: `{slug}.jpg` (hero), `{slug}-step-{n}.jpg` (steps)
+- **Sizing**: Hero max 1200px wide / < 200KB, Step max 900px wide / < 150KB
+- **Alt text**: Descriptive, ~125 chars, include dish name, no "Image of" prefix
+- **Step images** go in frontmatter `instructionGroups.steps[].image` as URL strings; rendered visually + in JSON-LD HowToStep
+- **EN/FR share the same image files** -- only alt text is translated
+- **Pinterest images deferred** until 30+ recipes published
 
 ## Route Mapping (EN → FR)
 - `/en/recipes/` → `/fr/recettes/`
