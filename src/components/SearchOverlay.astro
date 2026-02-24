@@ -15,10 +15,10 @@ const { locale } = Astro.props;
   aria-modal="true"
   aria-label={t(locale, "search.overlayTitle")}
 >
-  <div class="mx-auto mt-20 w-full max-w-2xl px-4 sm:mt-32">
-    <div class="rounded-2xl bg-white p-6 shadow-2xl dark:bg-gray-900">
+  <div class="mx-auto mt-12 w-full max-w-2xl px-4 sm:mt-20">
+    <div class="flex max-h-[80vh] flex-col rounded-2xl bg-white p-6 shadow-2xl dark:bg-gray-900">
       <!-- Header -->
-      <div class="mb-4 flex items-center justify-between">
+      <div class="mb-4 flex shrink-0 items-center justify-between">
         <h2 class="font-heading text-lg font-bold text-gray-900 dark:text-gray-100">
           {t(locale, "search.overlayTitle")}
         </h2>
@@ -34,10 +34,10 @@ const { locale } = Astro.props;
       </div>
 
       <!-- Search container -->
-      <div id="search-overlay-container" data-locale={locale}></div>
+      <div id="search-overlay-container" class="min-h-0 flex-1 overflow-y-auto" data-locale={locale}></div>
 
       <!-- Keyboard hint -->
-      <p class="mt-3 text-center text-caption text-gray-400 dark:text-gray-500">
+      <p class="mt-3 shrink-0 text-center text-caption text-gray-400 dark:text-gray-500">
         <kbd class="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 font-ui text-xs dark:border-gray-700 dark:bg-gray-800">Esc</kbd>
         {locale === "fr" ? "pour fermer" : "to close"}
       </p>

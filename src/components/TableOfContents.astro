@@ -16,7 +16,7 @@ const { locale } = Astro.props;
 </nav>
 
 <script is:inline>
-(function() {
+document.addEventListener('DOMContentLoaded', function() {
   var toc = document.getElementById('toc');
   var tocList = document.getElementById('toc-list');
   var prose = document.querySelector('.prose');
@@ -71,5 +71,5 @@ const { locale } = Astro.props;
 
     items.forEach(function(item) { observer.observe(item.el); });
   }
-})();
+});
 </script>
