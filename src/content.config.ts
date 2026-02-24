@@ -2,19 +2,9 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-const HowToStepSchema = z.object({
-  text: z.string(),
-  image: z.string().optional(),
-});
-
 const IngredientGroupSchema = z.object({
   group: z.string().optional(),
   items: z.array(z.string()),
-});
-
-const InstructionGroupSchema = z.object({
-  group: z.string().optional(),
-  steps: z.array(HowToStepSchema),
 });
 
 const NutritionSchema = z.object({
@@ -31,8 +21,18 @@ const FAQSchema = z.object({
 
 const recipes = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/recipes" }),
-  schema: ({ image }) =>
-    z.object({
+  schema: ({ image }) => {
+    const HowToStepSchema = z.object({
+      text: z.string(),
+      image: image().optional(),
+    });
+
+    const InstructionGroupSchema = z.object({
+      group: z.string().optional(),
+      steps: z.array(HowToStepSchema),
+    });
+
+    return z.object({
       title: z.string(),
       lang: z.enum(["en", "fr"]),
       translationSlug: z.string(),
@@ -56,7 +56,8 @@ const recipes = defineCollection({
       instructionGroups: z.array(InstructionGroupSchema),
       nutrition: NutritionSchema.optional(),
       faqs: z.array(FAQSchema).min(1),
-    }),
+    });
+  },
 });
 
 export const collections = { recipes };
