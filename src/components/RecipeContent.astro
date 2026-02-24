@@ -2,7 +2,6 @@
 import { t, type Locale } from "@i18n/utils";
 import { formatDuration } from "@utils/format";
 import InstructionSteps from "./InstructionSteps.astro";
-import NutritionCard from "./NutritionCard.astro";
 import type { ImageMetadata } from "astro";
 
 interface HowToStep {
@@ -10,21 +9,9 @@ interface HowToStep {
   image?: ImageMetadata;
 }
 
-interface IngredientGroup {
-  group?: string;
-  items: string[];
-}
-
 interface InstructionGroup {
   group?: string;
   steps: HowToStep[];
-}
-
-interface Nutrition {
-  calories?: string;
-  fatContent?: string;
-  carbohydrateContent?: string;
-  proteinContent?: string;
 }
 
 interface Props {
@@ -35,9 +22,7 @@ interface Props {
   totalTime: string;
   recipeYield: string;
   difficulty: "easy" | "medium" | "hard";
-  ingredientGroups: IngredientGroup[];
   instructionGroups: InstructionGroup[];
-  nutrition?: Nutrition;
   sourceUrl: string;
 }
 
@@ -50,7 +35,6 @@ const {
   recipeYield,
   difficulty,
   instructionGroups,
-  nutrition,
   sourceUrl,
 } = Astro.props;
 
@@ -77,13 +61,6 @@ const difficultyLabels = {
   <!-- Instructions -->
   <InstructionSteps locale={locale} instructionGroups={instructionGroups} />
 
-  <!-- Nutrition (full width) -->
-  {nutrition && (
-    <div class="mt-8">
-      <NutritionCard locale={locale} nutrition={nutrition} />
-    </div>
-  )}
-
   <!-- Print-only source URL -->
   <footer class="print-only border-t border-gray-300 pt-3 text-center text-xs text-gray-500">
     {t(locale, "recipe.source")}: {sourceUrl}
@@ -98,10 +75,6 @@ const difficultyLabels = {
   @media print {
     .print-only {
       display: block;
-    }
-
-    .step-image {
-      display: none;
     }
   }
 </style>
