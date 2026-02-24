@@ -84,7 +84,7 @@ const { locale } = Astro.props;
       </style>
 
       <!-- Keyboard hint -->
-      <p class="mt-3 shrink-0 text-center text-caption text-gray-400 dark:text-gray-500">
+      <p class="mt-3 shrink-0 text-center text-caption text-gray-400 dark:text-gray-400">
         <kbd class="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 font-ui text-xs dark:border-gray-700 dark:bg-gray-800">Esc</kbd>
         {locale === "fr" ? "pour fermer" : "to close"}
       </p>
@@ -185,6 +185,24 @@ const { locale } = Astro.props;
       } else {
         closeSearch();
       }
+    }
+  });
+
+  // Focus trap — keep Tab cycling within the overlay
+  overlay.addEventListener('keydown', function(e) {
+    if (e.key !== 'Tab' || overlay.classList.contains('hidden')) return;
+    var focusable = overlay.querySelectorAll(
+      'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length === 0) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
     }
   });
 

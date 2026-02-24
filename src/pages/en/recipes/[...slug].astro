@@ -149,7 +149,7 @@ const difficultyColors = {
         {data.occasion && data.occasion.length > 0 && (
           <div class="mb-4 flex flex-wrap gap-2">
             {data.occasion.map((occ: string) => (
-              <span class="rounded-full bg-brand-accent/10 px-3 py-1 text-caption font-medium text-brand-accent-dark">
+              <span class="rounded-full bg-brand-accent/10 px-3 py-1 text-caption font-medium text-brand-accent-text">
                 {t(locale, `occasion.${occ}` as any) || occ}
               </span>
             ))}

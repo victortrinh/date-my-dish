@@ -10,7 +10,8 @@ export default {
           "primary-dark": "#A85D3D",
           "primary-text": "#9A5439", // Darker terracotta for small text — WCAG AA on cream/white
           accent: "#D4A853",
-          "accent-dark": "#B8923F",
+          "accent-dark": "#B8923F", // Legacy — avoid for text, fails WCAG
+          "accent-text": "#7D631C", // Gold text on light backgrounds — WCAG AA (5.72:1)
           cream: "#FDF6EC", // Legacy — kept for reference only
           "cream-dark": "#F5EDDF", // Legacy — kept for reference only
         },

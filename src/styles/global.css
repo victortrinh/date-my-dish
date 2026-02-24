@@ -25,7 +25,7 @@
   }
 
   a {
-    @apply text-brand-primary-text transition-colors hover:text-brand-accent;
+    @apply text-brand-primary-text transition-colors hover:text-brand-accent dark:text-brand-primary dark:hover:text-brand-accent;
   }
 }
 
@@ -64,6 +64,36 @@
 
   .prose a {
     @apply text-brand-primary-text underline decoration-brand-primary/30 underline-offset-2 transition-colors hover:text-brand-accent hover:decoration-brand-accent/50;
+  }
+}
+
+/* Focus indicators — visible for keyboard, hidden for mouse/touch */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 3px solid #9A5439; /* brand-primary-text */
+  outline-offset: 2px;
+}
+
+:root.dark *:focus-visible {
+  outline-color: #D4A853; /* brand-accent — high contrast on dark backgrounds */
+}
+
+/* Reduced motion — disable animations for vestibular-sensitive users */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

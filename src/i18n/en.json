@@ -8,7 +8,9 @@
     "recipes": "Recipes",
     "about": "About",
     "contact": "Contact",
-    "search": "Search"
+    "search": "Search",
+    "toggleMenu": "Toggle menu",
+    "breadcrumb": "Breadcrumb"
   },
   "recipe": {
     "jumpToRecipe": "Jump to Recipe",
@@ -87,7 +89,9 @@
     "copyright": "All rights reserved.",
     "madeWith": "Made with love in Montreal",
     "categories": "Categories",
-    "navigation": "Navigation"
+    "navigation": "Navigation",
+    "nav": "Footer navigation",
+    "categoriesNav": "Recipe categories"
   },
   "seo": {
     "titleTemplate": "%s | Date My Dish",
@@ -113,7 +117,9 @@
     "sauce": "Sauce"
   },
   "theme": {
-    "toggle": "Toggle dark mode"
+    "toggle": "Toggle dark mode",
+    "switchToDark": "Switch to dark mode",
+    "switchToLight": "Switch to light mode"
   },
   "toc": {
     "title": "Table of Contents"

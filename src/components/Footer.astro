@@ -33,7 +33,7 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       <!-- Brand -->
       <div class="sm:col-span-2 lg:col-span-1">
-        <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2 font-handwritten text-2xl text-brand-primary no-underline">
+        <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2 font-handwritten text-2xl text-brand-primary-text no-underline">
           <img src="/favicon.svg" class="h-6 w-6" alt="" width="24" height="24" />
           Date My Dish
         </a>
@@ -60,7 +60,7 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
         <h3 class="mb-4 font-heading text-sm font-bold tracking-wider text-gray-900 dark:text-gray-100">
           {t(locale, "footer.navigation")}
         </h3>
-        <nav class="flex flex-col gap-2.5" aria-label="Footer navigation">
+        <nav class="flex flex-col gap-2.5" aria-label={t(locale, "footer.nav")}>
           <a href={getLocalizedPath(locale, "/")} class="font-ui text-body-sm text-gray-500 no-underline transition-colors hover:text-brand-primary dark:text-gray-400">
             {t(locale, "nav.home")}
           </a>
@@ -81,7 +81,7 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
         <h3 class="mb-4 font-heading text-sm font-bold tracking-wider text-gray-900 dark:text-gray-100">
           {t(locale, "footer.categories")}
         </h3>
-        <nav class="flex flex-col gap-2.5" aria-label="Recipe categories">
+        <nav class="flex flex-col gap-2.5" aria-label={t(locale, "footer.categoriesNav")}>
           {categories.slice(0, 6).map((cat) => (
             <a
               href={`${categoryBasePath}${locale === "fr" ? getCategorySlug(cat, locale) : cat}/`}
@@ -95,7 +95,7 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
 
       <!-- Tagline -->
       <div class="flex flex-col justify-between">
-        <p class="font-handwritten text-xl text-brand-primary/60 dark:text-brand-primary/40">
+        <p aria-hidden="true" class="font-handwritten text-xl text-brand-primary/60 dark:text-brand-primary/40">
           {t(locale, "site.tagline")}
         </p>
       </div>

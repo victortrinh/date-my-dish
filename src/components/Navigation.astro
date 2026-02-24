@@ -31,7 +31,7 @@ function isActive(linkPath: string): boolean {
     <!-- Logo -->
     <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2.5 no-underline hover:opacity-80">
       <img src="/favicon.svg" class="h-8 w-8" alt="" width="32" height="32" />
-      <span class="font-handwritten text-2xl text-brand-primary sm:text-3xl">Date My Dish</span>
+      <span class="font-handwritten text-2xl text-brand-primary-text sm:text-3xl">Date My Dish</span>
     </a>
 
     <!-- Desktop Nav -->
@@ -85,7 +85,7 @@ function isActive(linkPath: string): boolean {
       <button
         id="mobile-menu-btn"
         class="rounded-lg p-2 text-gray-600 dark:text-gray-300"
-        aria-label="Toggle menu"
+        aria-label={t(locale, "nav.toggleMenu")}
         aria-expanded="false"
       >
         <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -130,13 +130,49 @@ function isActive(linkPath: string): boolean {
   var hamburger = document.getElementById('hamburger-icon');
   var closeIcon = document.getElementById('close-icon');
 
+  function closeMenu() {
+    menu.classList.add('hidden');
+    hamburger.classList.remove('hidden');
+    closeIcon.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.focus();
+  }
+
+  function openMenu() {
+    menu.classList.remove('hidden');
+    hamburger.classList.add('hidden');
+    closeIcon.classList.remove('hidden');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    // Move focus to first link in menu
+    var firstLink = menu.querySelector('a');
+    if (firstLink) firstLink.focus();
+  }
+
   if (menuBtn && menu) {
     menuBtn.addEventListener('click', function() {
       var isOpen = !menu.classList.contains('hidden');
-      menu.classList.toggle('hidden');
-      hamburger.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-      menuBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      if (isOpen) { closeMenu(); } else { openMenu(); }
+    });
+
+    // Escape key closes mobile menu
+    menu.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+      // Focus trap within mobile menu
+      if (e.key === 'Tab') {
+        var focusable = menu.querySelectorAll('a[href], button:not([disabled])');
+        if (focusable.length === 0) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
   }
 
