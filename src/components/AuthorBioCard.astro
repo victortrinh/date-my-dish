@@ -12,7 +12,7 @@ const { locale, showLink = true } = Astro.props;
 const aboutPath = locale === "fr" ? "/a-propos/" : "/about/";
 ---
 
-<section class="rounded-xl bg-gray-200 p-6 dark:bg-gray-800/50 sm:p-8">
+<section class="rounded-xl bg-gray-200 p-6 dark:bg-neutral-800/50 sm:p-8">
   <div class="flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:gap-6">
     <div class="h-20 w-20 shrink-0 overflow-hidden rounded-full">
       <Picture
@@ -26,8 +26,8 @@ const aboutPath = locale === "fr" ? "/a-propos/" : "/about/";
       />
     </div>
     <div>
-      <h3 class="font-heading text-lg font-bold text-gray-900 dark:text-gray-100">Victor Vu</h3>
-      <p class="mt-1 text-body-sm text-gray-600 dark:text-gray-400">
+      <h3 class="font-heading text-lg font-bold text-gray-900 dark:text-neutral-100">Victor Vu</h3>
+      <p class="mt-1 text-body-sm text-gray-600 dark:text-neutral-400">
         {t(locale, "author.bioShort")}
       </p>
       {showLink && (

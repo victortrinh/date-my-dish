@@ -89,7 +89,7 @@ categories.sort((a, b) => {
   {recipes.length > 0 && (
     <section class="mx-auto max-w-content px-4 py-section">
       <div class="mb-10 text-center">
-        <h2 class="font-heading text-heading-1 font-bold text-gray-900 dark:text-gray-100">
+        <h2 class="font-heading text-heading-1 font-bold text-gray-900 dark:text-neutral-100">
           {t(locale, "home.featuredRecipes")}
         </h2>
         <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-accent"></div>
@@ -127,10 +127,10 @@ categories.sort((a, b) => {
 
   <!-- Categories -->
   {categories.length > 0 && (
-    <section class="bg-gray-200 px-4 py-section dark:bg-gray-900">
+    <section class="bg-gray-200 px-4 py-section dark:bg-neutral-900">
       <div class="mx-auto max-w-content">
         <div class="mb-10 text-center">
-          <h2 class="font-heading text-heading-1 font-bold text-gray-900 dark:text-gray-100">
+          <h2 class="font-heading text-heading-1 font-bold text-gray-900 dark:text-neutral-100">
             {t(locale, "home.categories")}
           </h2>
           <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-accent"></div>
@@ -139,7 +139,7 @@ categories.sort((a, b) => {
           {categories.map((cat) => (
             <a
               href={`/fr/recettes/categorie/${getCategorySlug(cat, locale)}/`}
-              class="rounded-lg border border-gray-300 bg-white px-6 py-2.5 font-ui text-sm font-medium text-gray-700 no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300"
+              class="rounded-lg border border-gray-300 bg-white px-6 py-2.5 font-ui text-sm font-medium text-gray-700 no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
             >
               {t(locale, `categories.${cat}` as any) || cat}
             </a>

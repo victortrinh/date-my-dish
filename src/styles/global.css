@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply font-body text-gray-800 antialiased dark:text-gray-200;
+    @apply font-body text-gray-800 antialiased dark:text-neutral-200;
   }
 
   h1,
@@ -31,11 +31,11 @@
 
 @layer components {
   .prose h2 {
-    @apply mt-10 mb-4 text-heading-2 font-bold text-gray-900 dark:text-gray-100;
+    @apply mt-10 mb-4 text-heading-2 font-bold text-gray-900 dark:text-neutral-100;
   }
 
   .prose h3 {
-    @apply mt-8 mb-3 text-heading-3 font-semibold text-gray-800 dark:text-gray-200;
+    @apply mt-8 mb-3 text-heading-3 font-semibold text-gray-800 dark:text-neutral-200;
   }
 
   .prose p {
@@ -59,7 +59,7 @@
   }
 
   .prose blockquote {
-    @apply my-6 border-l-4 border-brand-primary pl-4 italic text-gray-600 dark:text-gray-400 dark:border-brand-primary;
+    @apply my-6 border-l-4 border-brand-primary pl-4 italic text-gray-600 dark:text-neutral-400 dark:border-brand-primary;
   }
 
   .prose a {

@@ -54,11 +54,11 @@ categories.sort((a, b) => {
     />
 
     <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-gray-100">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
         {t(locale, "listing.allRecipes")}
       </h1>
       <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
-      <p class="text-body-sm text-gray-500 dark:text-gray-400">
+      <p class="text-body-sm text-gray-500 dark:text-neutral-400">
         {recipes.length} {recipes.length === 1 ? "recette" : "recettes"}
       </p>
     </div>
@@ -76,7 +76,7 @@ categories.sort((a, b) => {
         {categories.map((cat) => (
           <a
             href={`/fr/recettes/categorie/${getCategorySlug(cat, locale)}/`}
-            class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-gray-600 dark:text-gray-400"
+            class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
           >
             {t(locale, `categories.${cat}` as any) || cat}
           </a>
@@ -105,7 +105,7 @@ categories.sort((a, b) => {
         })}
       </div>
     ) : (
-      <p class="text-gray-500 dark:text-gray-400">{t(locale, "listing.noRecipesFound")}</p>
+      <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
     )}
   </div>
 </BaseLayout>

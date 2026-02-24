@@ -16,15 +16,15 @@ const { locale } = Astro.props;
   aria-label={t(locale, "search.overlayTitle")}
 >
   <div class="mx-auto mt-12 w-full max-w-2xl px-4 sm:mt-20">
-    <div class="flex max-h-[80vh] flex-col rounded-2xl bg-white p-6 shadow-2xl dark:bg-gray-900/95">
+    <div class="flex max-h-[80vh] flex-col rounded-2xl bg-white p-6 shadow-2xl dark:bg-neutral-900/95">
       <!-- Header -->
       <div class="mb-4 flex shrink-0 items-center justify-between">
-        <h2 class="font-heading text-lg font-bold text-gray-900 dark:text-gray-100">
+        <h2 class="font-heading text-lg font-bold text-gray-900 dark:text-neutral-100">
           {t(locale, "search.overlayTitle")}
         </h2>
         <button
           id="search-overlay-close"
-          class="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+          class="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-neutral-800 dark:hover:text-neutral-300"
           aria-label={t(locale, "search.close")}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -46,46 +46,46 @@ const { locale } = Astro.props;
         /* Dark mode overrides */
         :root.dark .pagefind-ui__result-title,
         :root.dark .pagefind-ui__result-link {
-          color: #f3f4f6 !important;
+          color: #f5f5f5 !important;
         }
         :root.dark .pagefind-ui__result-excerpt {
-          color: #d1d5db !important;
+          color: #d4d4d4 !important;
         }
         :root.dark mark {
           background-color: #d4a853 !important;
-          color: #1f2937 !important;
+          color: #262626 !important;
         }
         :root.dark .pagefind-ui__message {
-          color: #9ca3af !important;
+          color: #a3a3a3 !important;
         }
         :root.dark .pagefind-ui__search-input {
-          background-color: #1f2937 !important;
-          color: #f3f4f6 !important;
-          border-color: #374151 !important;
+          background-color: #262626 !important;
+          color: #f5f5f5 !important;
+          border-color: #404040 !important;
           outline-color: #D4A853 !important;
         }
         :root.dark .pagefind-ui__search-input::placeholder {
-          color: #6b7280 !important;
+          color: #737373 !important;
         }
         :root.dark .pagefind-ui__search-clear {
-          color: #9ca3af !important;
-          background-color: #374151 !important;
+          color: #a3a3a3 !important;
+          background-color: #404040 !important;
         }
         :root.dark .pagefind-ui__result {
-          border-color: #374151 !important;
+          border-color: #404040 !important;
         }
         :root.dark .pagefind-ui__result-thumb {
-          border-color: #374151 !important;
+          border-color: #404040 !important;
         }
         :root.dark .pagefind-ui__button {
-          background-color: #374151 !important;
-          color: #f3f4f6 !important;
+          background-color: #404040 !important;
+          color: #f5f5f5 !important;
         }
       </style>
 
       <!-- Keyboard hint -->
-      <p class="mt-3 shrink-0 text-center text-caption text-gray-400 dark:text-gray-400">
-        <kbd class="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 font-ui text-xs dark:border-gray-700 dark:bg-gray-800">Esc</kbd>
+      <p class="mt-3 shrink-0 text-center text-caption text-gray-400 dark:text-neutral-400">
+        <kbd class="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 font-ui text-xs dark:border-neutral-700 dark:bg-neutral-800">Esc</kbd>
         {locale === "fr" ? "pour fermer" : "to close"}
       </p>
     </div>
@@ -138,7 +138,7 @@ const { locale } = Astro.props;
       };
       script.onerror = function() {
         var locale = container.dataset.locale || 'en';
-        container.innerHTML = '<p style="text-align:center;padding:1rem;color:#6b7280;">' +
+        container.innerHTML = '<p style="text-align:center;padding:1rem;color:#737373;">' +
           (locale === 'fr'
             ? 'La recherche nécessite une version compilée. Exécutez <code>npm run build</code> puis <code>npm run preview</code>.'
             : 'Search requires a built site. Run <code>npm run build</code> then <code>npm run preview</code>.') +
