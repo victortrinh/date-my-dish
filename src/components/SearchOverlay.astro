@@ -89,6 +89,14 @@ const { locale } = Astro.props;
           if (input) input.focus();
         }, 100);
       };
+      script.onerror = function() {
+        var locale = container.dataset.locale || 'en';
+        container.innerHTML = '<p style="text-align:center;padding:1rem;color:#6b7280;">' +
+          (locale === 'fr'
+            ? 'La recherche nécessite une version compilée. Exécutez <code>npm run build</code> puis <code>npm run preview</code>.'
+            : 'Search requires a built site. Run <code>npm run build</code> then <code>npm run preview</code>.') +
+          '</p>';
+      };
       document.head.appendChild(script);
     } else {
       // Already loaded, just focus

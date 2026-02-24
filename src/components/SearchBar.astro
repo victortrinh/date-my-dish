@@ -14,17 +14,17 @@ const { locale } = Astro.props;
 </div>
 
 <script is:inline>
-  // Defer-load Pagefind JS until user focuses the search or it enters viewport
   (function() {
-    let loaded = false;
+    var loaded = false;
+    var container = document.getElementById('pagefind-container');
+    var locale = document.getElementById('search')?.dataset?.locale || 'en';
+
     function loadPagefind() {
       if (loaded) return;
       loaded = true;
-      const script = document.createElement('script');
+      var script = document.createElement('script');
       script.src = '/pagefind/pagefind-ui.js';
       script.onload = function() {
-        const container = document.getElementById('pagefind-container');
-        const locale = document.getElementById('search')?.dataset?.locale || 'en';
         new window.PagefindUI({
           element: '#pagefind-container',
           showSubResults: true,
@@ -37,17 +37,22 @@ const { locale } = Astro.props;
             zero_results: 'No results for [SEARCH_TERM]',
           },
         });
-        // Auto-focus the search input
-        const input = container?.querySelector('input');
+        var input = container?.querySelector('input');
         if (input) input.focus();
+      };
+      script.onerror = function() {
+        if (container) {
+          container.innerHTML = '<p style="padding:1rem 0;color:#6b7280;">' +
+            (locale === 'fr'
+              ? 'La recherche nécessite une version compilée. Exécutez <code>npm run build</code> puis <code>npm run preview</code>.'
+              : 'Search requires a built site. Run <code>npm run build</code> then <code>npm run preview</code>.') +
+            '</p>';
+        }
       };
       document.head.appendChild(script);
     }
 
-    // Load on focus of any input in page, or after 3 seconds
-    document.addEventListener('focusin', function(e) {
-      if (e.target && e.target.tagName === 'INPUT') loadPagefind();
-    }, { once: true });
-    setTimeout(loadPagefind, 3000);
+    // Load immediately — no need to defer on a dedicated search page
+    loadPagefind();
   })();
 </script>
