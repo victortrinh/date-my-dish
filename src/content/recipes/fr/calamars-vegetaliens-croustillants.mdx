@@ -84,9 +84,22 @@ faqs:
     answer: "Vous pouvez trancher et découper les anneaux jusqu'à un jour à l'avance. Conservez-les dans l'eau de kombu au réfrigérateur pour qu'ils continuent d'absorber la saveur. Mélangez les ingrédients secs de la pâte à l'avance aussi. Ajoutez l'eau et faites frire juste avant de servir pour un résultat ultra croustillant."
 ---
 
+import { Picture } from "astro:assets";
+import imgPlated from "../../../assets/images/recipes/crispy-vegan-calamari-plated.webp";
+
 Les calamars végétaliens croustillants à base de pleurotes royaux sont l'entrée végétale qui trompe tout le monde à table. Des anneaux dorés et croquants avec un intérieur tendre et charnu offrent exactement la même satisfaction que les calamars frits traditionnels, sans aucun fruit de mer. Le secret réside dans le pleurote royal, un champignon à la tige dense qui se tranche en rondelles parfaites et qui frit à merveille dans une pâte assaisonnée à l'origan et au poivre de Cayenne.
 
 ## Pourquoi les pleurotes royaux sont le substitut parfait
+
+<Picture
+  src={imgPlated}
+  alt="Rondelles de calamars végétaliens croustillants faits de pleurotes du roi disposées sur une assiette avec des quartiers de citron frais"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
 Tous les champignons ne peuvent pas réussir ce tour de passe-passe. Les champignons de Paris sont trop mous. Les shiitakes sont trop minces. Les pleurotes royaux possèdent des tiges épaisses et cylindriques avec une texture ferme, presque caoutchouteuse, qui résiste au tranchage, au trempage, à l'enrobage et à la friture sans se défaire. Quand on croque à travers la coquille croustillante, l'intérieur offre cette même résistance légèrement élastique qu'on attend de vrais calamars.
 

@@ -85,6 +85,21 @@ faqs:
     answer: "La pâte doit être préparée fraîche juste avant la friture. La carbonatation de l'eau gazéifiée se dissipe en quelques minutes, et une pâte plate produit un enrobage dense et lourd au lieu d'un enrobage léger et croustillant. Mesurez vos ingrédients secs à l'avance, mais ajoutez l'eau gazéifiée seulement quand vous êtes prêt à frire."
 ---
 
+import { Picture } from "astro:assets";
+import imgCloseup from "../../../assets/images/recipes/zucchini-eggplant-chips-closeup.webp";
+import imgVegetables from "../../../assets/images/recipes/zucchini-eggplant-chips-vegetables.webp";
+import imgBatter from "../../../assets/images/recipes/zucchini-eggplant-chips-batter.webp";
+
+<Picture
+  src={imgCloseup}
+  alt="Gros plan de chips de courgettes et aubergines dorées montrant la texture légère de la pâte style tempura"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
 Les chips de courgettes et aubergines frites dans une pâte à l'eau gazéifiée sont le genre d'entrée qui disparaît de l'assiette avant même qu'on ait le temps de s'asseoir. Des tranches ultra-fines de légumes d'été enrobées d'une pâte légère et aérienne qui éclate à la première bouchée, révélant des légumes tendres et savoureux en dessous. Servies bien chaudes avec un bol de tzatziki frais, ces chips d'inspiration méditerranéenne sont d'une simplicité désarmante et absolument irrésistibles.
 
 ## Le secret de l'eau gazéifiée
@@ -97,6 +112,16 @@ L'eau doit être froide. L'eau gazéifiée tiède a déjà perdu une bonne parti
 
 ## Choisir et trancher les légumes
 
+<Picture
+  src={imgVegetables}
+  alt="Ingrédients pour les chips de légumes incluant courgettes, aubergines, huile de canola, farine et sel de mer"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
 Une demi-courgette moyenne et une demie petite aubergine italienne donnent la quantité parfaite pour deux portions. L'aubergine italienne est la variété privilégiée ici parce qu'elle contient moins de graines et a une texture plus ferme que l'aubergine globe, ce qui signifie qu'elle tient mieux pendant la friture et produit une chip plus nette.
 
 Tranchez les deux légumes ultra-fin, idéalement de 1,5 à 3 mm d'épaisseur. Une mandoline est le meilleur outil pour ce travail. Elle produit des tranches uniformes qui cuisent au même rythme, garantissant que chaque chip sort de l'huile uniformément dorée et croustillante. Si vous tranchez à la main, utilisez un couteau bien aiguisé et prenez votre temps. L'uniformité compte plus que la vitesse ici.
@@ -104,6 +129,16 @@ Tranchez les deux légumes ultra-fin, idéalement de 1,5 à 3 mm d'épaisseur. U
 Le bref trempage dans l'eau tiède a un but précis. Il fait ressortir une petite quantité d'humidité de la surface des tranches, ce qui aide l'enrobage de farine à adhérer. Secouez bien l'excédent d'eau avant de saupoudrer de farine. Vous voulez que les tranches soient humides, pas mouillées. La couche de farine crée une barrière sèche entre le légume et la pâte, empêchant l'humidité à l'intérieur du légume de rendre la pâte molle pendant la friture.
 
 ## Composer la pâte à frire
+
+<Picture
+  src={imgBatter}
+  alt="Ingrédients pour la pâte des chips de légumes incluant farine, fécule de maïs, origan, poudre à pâte, eau pétillante et farine de riz"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
 Les ingrédients secs se combinent en quelques secondes. La farine tout usage fournit la structure de base. La fécule de maïs ajoute un croquant supplémentaire et aide l'enrobage à rester croustillant plus longtemps après la friture. La poudre à pâte apporte un volume additionnel, complétant le travail des bulles d'eau gazéifiée. L'origan séché donne à la pâte un caractère méditerranéen aromatique qui s'accorde naturellement avec la courgette et l'aubergine.
 
