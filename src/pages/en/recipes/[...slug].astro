@@ -5,6 +5,7 @@ import RecipeLayout from "@layouts/RecipeLayout.astro";
 import RecipeSchema from "@components/RecipeSchema.astro";
 import RecipeContent from "@components/RecipeContent.astro";
 import JumpToRecipe from "@components/JumpToRecipe.astro";
+import ShareButton from "@components/ShareButton.astro";
 import FAQSection from "@components/FAQSection.astro";
 import RelatedRecipes from "@components/RelatedRecipes.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
@@ -139,6 +140,7 @@ const difficultyColors = {
           </svg>
           {t(locale, "recipe.printRecipe")}
         </button>
+        <ShareButton locale={locale} title={data.title} url={sourceUrl} />
       </div>
     </header>
 

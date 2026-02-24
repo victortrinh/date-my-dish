@@ -34,7 +34,9 @@
     "hard": "Difficile",
     "minutes": "min",
     "category": "Catégorie",
-    "cuisine": "Cuisine"
+    "cuisine": "Cuisine",
+    "share": "Partager",
+    "copied": "Lien copié!"
   },
   "home": {
     "heroTitle": "Des recettes dont on tombe amoureux",
