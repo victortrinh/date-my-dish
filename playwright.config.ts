@@ -26,15 +26,7 @@ export default defineConfig({
 
   expect: {
     timeout: 10_000,
-    toHaveScreenshot: {
-      threshold: 0.2,
-      maxDiffPixelRatio: 0.005,
-      animations: "disabled",
-    },
   },
-
-  snapshotPathTemplate:
-    "tests/snapshots/{testFileDir}/{testFileName}-snapshots/{arg}-{projectName}{ext}",
 
   projects: [
     {
