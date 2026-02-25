@@ -139,19 +139,46 @@
     display: none !important;
   }
 
-  /* Force single column with sidebar (ingredients) before main content */
+  /* Two-column print layout: ingredients left, instructions right */
   .recipe-two-col {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.5rem !important;
+    display: grid !important;
+    grid-template-columns: 2fr 3fr !important;
+    gap: 0 1.5rem !important;
     max-width: none !important;
   }
 
+  /* Flatten wrappers so children become grid items */
+  .recipe-main-col {
+    display: contents !important;
+  }
+
+  #recipe {
+    display: contents !important;
+  }
+
+  /* Print header spans full width */
+  .print-recipe-header {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Sidebar (ingredients) in left column */
   .recipe-sidebar {
     display: block !important;
-    order: -1 !important;
+    grid-column: 1 !important;
+    grid-row: 2 !important;
     position: static !important;
     max-height: none !important;
+  }
+
+  /* Instructions in right column */
+  .instruction-steps {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+  }
+
+  /* Print footer spans full width */
+  .print-recipe-footer {
+    grid-column: 1 / -1 !important;
   }
 
   /* Strip sidebar decorative styles for ink/space savings */
@@ -179,44 +206,85 @@
   h2 {
     font-size: 12pt !important;
     margin-top: 0.5rem !important;
-    margin-bottom: 0.3rem !important;
+    margin-bottom: 0.5rem !important;
     break-after: avoid;
   }
 
   h3 {
     font-size: 11pt !important;
     margin-top: 0.3rem !important;
-    margin-bottom: 0.2rem !important;
+    margin-bottom: 0.35rem !important;
     break-after: avoid;
   }
 
-  /* Compact step numbers: plain inline text instead of circles */
+  /* Step numbers: clean inline text with baseline alignment */
+  .instruction-steps li {
+    gap: 0.3rem !important;
+    align-items: baseline !important;
+  }
+
   .step-number {
     width: auto !important;
     height: auto !important;
+    min-width: auto !important;
+    display: inline !important;
     background: none !important;
     color: #000 !important;
     font-size: 10pt !important;
+    font-weight: 700 !important;
     padding: 0 !important;
     border-radius: 0 !important;
+    line-height: 1.5 !important;
   }
 
   .step-number::after {
     content: ".";
   }
 
-  /* Tighten step spacing */
-  .instruction-steps ol {
-    gap: 0.25rem !important;
+  /* Remove padding offset on step text for clean alignment */
+  .instruction-steps li > div {
+    padding-top: 0 !important;
   }
 
-  .instruction-steps li {
-    gap: 0.25rem !important;
+  /* Tighten step spacing */
+  .instruction-steps ol {
+    gap: 0 !important;
+  }
+
+  .instruction-steps ol > * + * {
+    margin-top: 0.15rem !important;
+  }
+
+  /* Tighten instruction group spacing */
+  .instruction-steps > div {
+    margin-bottom: 0.4rem !important;
+  }
+
+  .instruction-steps > div h3 {
+    margin-bottom: 0.15rem !important;
   }
 
   /* Tighten ingredient spacing */
   .recipe-sidebar ul {
-    gap: 0.15rem !important;
+    gap: 0 !important;
+  }
+
+  .recipe-sidebar ul > * + * {
+    margin-top: 0.1rem !important;
+  }
+
+  /* Align checkbox with ingredient text */
+  .recipe-sidebar li input[type="checkbox"] {
+    margin-top: 0.1rem !important;
+  }
+
+  /* Tighten ingredient group spacing */
+  .recipe-sidebar section > div {
+    margin-bottom: 0.3rem !important;
+  }
+
+  .recipe-sidebar section > div h3 {
+    margin-bottom: 0.1rem !important;
   }
 
   li {
