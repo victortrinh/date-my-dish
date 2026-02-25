@@ -1,0 +1,3 @@
+# Playwright snapshot PNGs — binary to avoid CRLF issues and useless diffs
+tests/snapshots/**/*.png binary
+tests/snapshots/**/*.png -diff

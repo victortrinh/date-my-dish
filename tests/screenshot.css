@@ -1,0 +1,7 @@
+/* Injected during screenshots to eliminate flicker sources */
+* {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+  caret-color: transparent !important;
+}

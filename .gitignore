@@ -34,3 +34,7 @@ lighthouse-manifest.json
 .dev.vars*
 !.dev.vars.example
 !.env.example
+
+# Playwright
+test-results/
+playwright-report/

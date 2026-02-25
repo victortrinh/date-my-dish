@@ -1,0 +1,68 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases"
+  ],
+  "timezone": "America/Toronto",
+  "schedule": ["before 9am on Monday"],
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 3,
+  "rebaseWhen": "conflicted",
+  "packageRules": [
+    {
+      "description": "Group all patch and minor updates — auto-merge if CI passes",
+      "matchUpdateTypes": ["patch", "minor"],
+      "groupName": "All non-major dependencies",
+      "groupSlug": "all-non-major",
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "minimumReleaseAge": "3 days",
+      "labels": ["dependencies", "automerge"]
+    },
+    {
+      "description": "Major version bumps — require manual review",
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "labels": ["dependencies", "major-update"]
+    },
+    {
+      "description": "Astro ecosystem — major needs care (breaking changes common)",
+      "matchPackageNames": ["astro", "@astrojs/**"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "labels": ["dependencies", "major-update", "astro"]
+    },
+    {
+      "description": "Cloudflare/Wrangler — infrastructure, always manual review",
+      "matchPackageNames": ["wrangler", "@cloudflare/**", "@astrojs/cloudflare"],
+      "matchUpdateTypes": ["major", "minor"],
+      "automerge": false,
+      "labels": ["dependencies", "infrastructure"]
+    },
+    {
+      "description": "Lock file maintenance — automerge silently",
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "description": "Security patches — apply immediately regardless of schedule",
+      "matchCategories": ["security"],
+      "schedule": ["at any time"],
+      "automerge": true,
+      "minimumReleaseAge": "0 days",
+      "labels": ["dependencies", "security"]
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "automerge": true,
+    "schedule": ["at any time"]
+  },
+  "platformAutomerge": true
+}

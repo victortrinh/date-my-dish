@@ -1,0 +1,80 @@
+import { defineConfig, devices } from "@playwright/test";
+
+const PORT = 8788;
+const BASE_URL = `http://localhost:${PORT}`;
+
+export default defineConfig({
+  testDir: "./tests",
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 1 : 0,
+  workers: process.env.CI ? 2 : undefined,
+
+  reporter: process.env.CI
+    ? [
+        ["github"],
+        ["html", { open: "never" }],
+        ["json", { outputFile: "playwright-report/results.json" }],
+      ]
+    : [["html", { open: "on-failure" }]],
+
+  use: {
+    baseURL: BASE_URL,
+    trace: "on-first-retry",
+    screenshot: "only-on-failure",
+  },
+
+  expect: {
+    timeout: 10_000,
+    toHaveScreenshot: {
+      threshold: 0.2,
+      maxDiffPixelRatio: 0.005,
+      animations: "disabled",
+    },
+  },
+
+  snapshotPathTemplate:
+    "tests/snapshots/{testFileDir}/{testFileName}-snapshots/{arg}-{projectName}{ext}",
+
+  projects: [
+    {
+      name: "desktop-light",
+      use: {
+        ...devices["Desktop Chrome"],
+        colorScheme: "light",
+        viewport: { width: 1280, height: 900 },
+      },
+    },
+    {
+      name: "desktop-dark",
+      use: {
+        ...devices["Desktop Chrome"],
+        colorScheme: "dark",
+        viewport: { width: 1280, height: 900 },
+      },
+    },
+    {
+      name: "mobile-light",
+      use: {
+        ...devices["Pixel 5"],
+        colorScheme: "light",
+      },
+    },
+    {
+      name: "mobile-dark",
+      use: {
+        ...devices["Pixel 5"],
+        colorScheme: "dark",
+      },
+    },
+  ],
+
+  webServer: {
+    command: `npx wrangler dev --port ${PORT}`,
+    url: BASE_URL,
+    reuseExistingServer: !process.env.CI,
+    timeout: 60_000,
+    stdout: "pipe",
+    stderr: "pipe",
+  },
+});
