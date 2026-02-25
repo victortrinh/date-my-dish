@@ -1,0 +1,144 @@
+name: Weekly SEO Audit
+
+on:
+  schedule:
+    - cron: '0 3 * * 0' # Sunday 3 AM UTC
+  workflow_dispatch: # Manual trigger
+
+concurrency:
+  group: weekly-seo-audit
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      # Generate dynamic URL list from content directory
+      - name: Generate URL list
+        id: urls
+        run: node scripts/generate-lighthouse-urls.cjs
+
+      # Run Lighthouse CI on all pages (1 run per URL for speed)
+      - name: Run Lighthouse CI
+        id: lhci
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./.lighthouserc-full.cjs
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      # Save Lighthouse results for Claude
+      - name: Save audit results
+        if: always()
+        run: |
+          echo '${{ steps.lhci.outputs.manifest }}' > lighthouse-manifest.json
+
+      # Close any stale weekly SEO PR
+      - name: Close stale audit PR
+        run: |
+          OPEN_PRS=$(gh pr list --label "automated-seo" --state open --json number --jq '.[].number')
+          for PR in $OPEN_PRS; do
+            gh pr close "$PR" --comment "Superseded by new weekly SEO audit run."
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      # Claude Code analyzes and fixes
+      - name: Claude Code SEO Analysis
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are running the weekly automated SEO audit for Date My Dish.
+
+            ## Input Data
+            Read `lighthouse-manifest.json` in the repo root for Lighthouse scores per page.
+
+            ## Your Tasks
+
+            1. **Analyze Lighthouse scores**: Identify pages scoring below 90 in any category.
+
+            2. **Validate JSON-LD**: For each recipe in `dist/`, check the generated HTML for:
+               - Recipe schema with all required properties
+               - Image in array format `[url]`
+               - FAQPage schema present
+               - BreadcrumbList schema present
+
+            3. **Check content quality** in `src/content/recipes/`:
+               - `description` <= 160 characters
+               - `heroImageAlt` descriptive, ~125 chars, no "Image of" prefix
+               - At least 3 FAQs per recipe
+               - MDX body word count >= 800 words
+               - At least 3 H2 headings in prose
+               - Internal cross-links present with trailing slashes
+               - EN/FR pairs properly linked via `translationSlug`
+
+            4. **Check images**: Verify hero images < 200KB, step images < 150KB
+
+            5. **Fix issues**: Edit files to fix problems found. Be specific and targeted.
+
+            6. **After making changes**, run `npm run check` to verify no TypeScript/schema errors.
+
+            ## Restrictions
+            - ONLY modify files in `src/content/recipes/` (MDX frontmatter and prose)
+            - Do NOT modify files in `src/components/`, `src/layouts/`, `src/pages/`, `src/i18n/`, or config files
+            - Do NOT rewrite prose content wholesale — only fix specific issues (meta descriptions, alt text, cross-links, headings)
+            - Do NOT modify `package.json`, `astro.config.ts`, `wrangler.jsonc`, or `CLAUDE.md`
+
+            ## Output
+            After making all fixes, provide a summary listing:
+            - Pages with scores below 90 and which categories
+            - Issues found and fixes applied (grouped by type)
+            - Any issues that require manual attention
+          claude_args: |
+            --model claude-sonnet-4-6
+            --max-turns 15
+            --allowedTools Edit,Read,Write,Glob,Grep,Bash(npm run check)
+          branch_prefix: "seo-audit/"
+
+      # Verify Claude's changes build successfully
+      - name: Verify build after fixes
+        run: |
+          npm run check && npm run build
+        continue-on-error: true
+        id: verify
+
+      # Create PR with label (only if there are changes)
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Add label to PR
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          # Find the PR created by Claude Code action
+          LATEST_PR=$(gh pr list --author "app/claude" --state open --json number --jq '.[0].number')
+          if [ -n "$LATEST_PR" ]; then
+            gh pr edit "$LATEST_PR" --add-label "automated-seo"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}

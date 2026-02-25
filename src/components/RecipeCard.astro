@@ -13,9 +13,12 @@ interface Props {
   prepTime: string;
   totalTime?: string;
   difficulty: "easy" | "medium" | "hard";
+  headingLevel?: "h2" | "h3";
+  loading?: "lazy" | "eager";
 }
 
-const { title, description, slug, locale, heroImage, heroImageAlt, prepTime, totalTime, difficulty } = Astro.props;
+const { title, description, slug, locale, heroImage, heroImageAlt, prepTime, totalTime, difficulty, headingLevel = "h2", loading = "lazy" } = Astro.props;
+const Heading = headingLevel;
 
 const url = getRecipeLocalizedPath(locale, slug);
 
@@ -41,18 +44,18 @@ const difficultyColors = {
       <Picture
         src={heroImage}
         alt={heroImageAlt}
-        widths={[400, 600, 800]}
+        widths={[320, 480, 640]}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         formats={["avif", "webp"]}
         class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        loading="lazy"
+        loading={loading}
         decoding="async"
       />
     </div>
     <div class="p-5">
-      <h3 class="mb-2 line-clamp-2 font-heading text-lg font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-neutral-100">
+      <Heading class="mb-2 line-clamp-2 font-heading text-lg font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-neutral-100">
         {title}
-      </h3>
+      </Heading>
       <p class="mb-4 line-clamp-2 text-body-sm text-gray-500 dark:text-neutral-400">{description}</p>
       <div class="flex items-center gap-3">
         <div class="flex items-center gap-1.5 text-gray-400 dark:text-neutral-500">
