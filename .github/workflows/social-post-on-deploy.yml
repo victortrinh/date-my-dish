@@ -1,0 +1,65 @@
+name: Social Media Post on Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/content/recipes/en/**/*.mdx"
+
+concurrency:
+  group: social-post-${{ github.sha }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Detect new recipes
+        id: detect
+        run: |
+          NEW_RECIPES=$(git diff --name-only --diff-filter=A HEAD~1 -- 'src/content/recipes/en/*.mdx' || true)
+          if [ -z "$NEW_RECIPES" ]; then
+            echo "count=0" >> $GITHUB_OUTPUT
+            echo "recipes=" >> $GITHUB_OUTPUT
+          else
+            echo "recipes<<EOF" >> $GITHUB_OUTPUT
+            echo "$NEW_RECIPES" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            echo "count=$(echo "$NEW_RECIPES" | wc -l | tr -d ' ')" >> $GITHUB_OUTPUT
+          fi
+          echo "Detected new recipes: $NEW_RECIPES"
+
+      - name: Post to social media
+        if: steps.detect.outputs.count != '0'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+        run: node scripts/social-post.mjs ${{ steps.detect.outputs.recipes }}
+
+      - name: Commit post log
+        if: steps.detect.outputs.count != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/social-posts-log.json
+          git diff --cached --quiet || git commit -m "chore: update social posts log"
+          git push
