@@ -34,11 +34,7 @@ export default defineConfig({
     },
   },
 
-  image: {
-    service: {
-      entrypoint: "astro/assets/services/sharp",
-    },
-  },
-
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: "compile",
+  }),
 });
