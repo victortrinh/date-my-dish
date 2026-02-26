@@ -16,6 +16,10 @@ const RECIPES_DIR = "src/content/recipes";
 const LOG_FILE = "data/social-posts-log.json";
 const DEPLOY_POLL_INTERVAL_MS = 10_000;
 const DEPLOY_MAX_ATTEMPTS = 30;
+const FETCH_HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (compatible; DateMyDishBot/1.0; +https://datemydish.com)",
+};
 
 // ---------------------------------------------------------------------------
 // Env vars
@@ -73,7 +77,7 @@ async function waitForDeploy(slug) {
 
   for (let i = 0; i < DEPLOY_MAX_ATTEMPTS; i++) {
     try {
-      const res = await fetch(url, { method: "HEAD" });
+      const res = await fetch(url, { method: "HEAD", headers: FETCH_HEADERS });
       if (res.ok) {
         console.log(`Deploy ready after ${(i + 1) * DEPLOY_POLL_INTERVAL_MS / 1000}s`);
         return;
@@ -94,14 +98,24 @@ async function waitForDeploy(slug) {
 // ---------------------------------------------------------------------------
 async function resolveHeroImageUrl(slug) {
   const url = `${SITE_URL}/en/recipes/${slug}/`;
-  const res = await fetch(url);
+  const res = await fetch(url, { headers: FETCH_HEADERS });
+
+  if (!res.ok) {
+    throw new Error(
+      `Failed to fetch ${url}: HTTP ${res.status} ${res.statusText}`
+    );
+  }
+
   const html = await res.text();
 
   // Extract the first JSON-LD script (Recipe schema)
   const match = html.match(
     /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/
   );
-  if (!match) throw new Error(`No JSON-LD found on ${url}`);
+  if (!match) {
+    console.error(`Page HTML length: ${html.length}, first 500 chars: ${html.slice(0, 500)}`);
+    throw new Error(`No JSON-LD found on ${url}`);
+  }
 
   const jsonLd = JSON.parse(match[1]);
   // Recipe JSON-LD image is always array format per CLAUDE.md
