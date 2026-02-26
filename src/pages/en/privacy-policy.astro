@@ -1,0 +1,142 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t } from "@i18n/utils";
+
+const locale = "en";
+---
+
+<BaseLayout
+  title={`${t(locale, "privacy.pageTitle")} | Date My Dish`}
+  description="Privacy Policy for Date My Dish. Learn how we collect, use, and protect your information when you visit our recipe blog."
+>
+  <div class="mx-auto max-w-narrow px-4 py-12 sm:py-16">
+    <Breadcrumbs
+      locale={locale}
+      items={[{ label: t(locale, "privacy.pageTitle") }]}
+    />
+
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+        {t(locale, "privacy.title")}
+      </h1>
+      <div class="h-1 w-12 rounded-full bg-brand-accent"></div>
+    </div>
+
+    <div class="prose max-w-none">
+      <p>
+        <strong>Last updated:</strong> February 26, 2026
+      </p>
+
+      <p>
+        Date My Dish ("we," "us," or "our") operates the website
+        <a href="https://www.datemydish.com">datemydish.com</a> (the "Site").
+        This Privacy Policy explains what information we collect, how we use it,
+        and your choices regarding that information.
+      </p>
+
+      <h2>Information We Collect</h2>
+
+      <h3>Analytics Data</h3>
+      <p>
+        We use <strong>Google Analytics</strong> and <strong>Cloudflare Web Analytics</strong> to
+        understand how visitors interact with the Site. These services may collect:
+      </p>
+      <ul>
+        <li>Pages visited and time spent on each page</li>
+        <li>Referring website or search terms that led you here</li>
+        <li>Browser type, operating system, and device type</li>
+        <li>Approximate geographic location (city/country level)</li>
+        <li>Anonymized IP address</li>
+      </ul>
+      <p>
+        Google Analytics uses cookies to distinguish unique visitors. Cloudflare Web Analytics
+        is privacy-first and does not use cookies or collect personal data. For more information,
+        see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>
+        and <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare's Privacy Policy</a>.
+      </p>
+
+      <h3>Local Storage</h3>
+      <p>
+        We store your dark mode preference (<code>localStorage.theme</code>) in your browser's
+        local storage. This data never leaves your device and is not transmitted to our servers.
+      </p>
+
+      <h3>Third-Party Fonts</h3>
+      <p>
+        We load fonts from <strong>Google Fonts</strong>. When you visit the Site, your browser
+        makes a request to Google's servers to download font files. Google may log this request,
+        including your IP address. See
+        <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener noreferrer">Google Fonts Privacy FAQ</a>
+        for details.
+      </p>
+
+      <h2>Cookies</h2>
+      <p>
+        We use cookies only through Google Analytics to distinguish unique visitors and track
+        site usage over time. These are first-party cookies set by the Google Analytics script.
+        You can opt out of Google Analytics by installing the
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a>.
+      </p>
+      <p>
+        You can also disable cookies entirely through your browser settings. The Site will
+        continue to function normally without cookies.
+      </p>
+
+      <h2>How We Use Information</h2>
+      <p>We use the analytics data we collect to:</p>
+      <ul>
+        <li>Understand which recipes and content are most popular</li>
+        <li>Improve site performance and user experience</li>
+        <li>Identify and fix technical issues</li>
+        <li>Make decisions about future content</li>
+      </ul>
+      <p>
+        We do not sell, trade, or otherwise transfer your information to third parties,
+        except as described in this policy (analytics providers).
+      </p>
+
+      <h2>Affiliate Links and Advertising</h2>
+      <p>
+        The Site may contain affiliate links and advertisements in the future. When we introduce
+        these, affiliate partners and ad networks may use cookies or similar technologies to
+        serve relevant content. This Privacy Policy will be updated accordingly at that time.
+      </p>
+
+      <h2>Data Retention</h2>
+      <p>
+        Analytics data is retained according to the default retention policies of Google Analytics
+        (26 months) and Cloudflare Web Analytics (6 months). We do not store any personal data
+        on our own servers.
+      </p>
+
+      <h2>Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Opt out of Google Analytics tracking using the browser add-on linked above</li>
+        <li>Clear cookies and local storage through your browser settings</li>
+        <li>Request information about what data we hold (though we hold no personally identifiable data)</li>
+      </ul>
+
+      <h2>Children's Privacy</h2>
+      <p>
+        The Site is not directed at children under 13. We do not knowingly collect personal
+        information from children. If you believe a child has provided us with personal data,
+        please contact us so we can take appropriate action.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. Changes will be posted on this
+        page with an updated "Last updated" date. We encourage you to review this page
+        periodically.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have questions about this Privacy Policy, please reach out through our
+        <a href="/en/contact/">contact page</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

@@ -90,6 +90,8 @@
     "madeWith": "Fait avec amour à Montréal",
     "categories": "Catégories",
     "navigation": "Navigation",
+    "legal": "Légal",
+    "legalNav": "Navigation légale",
     "nav": "Navigation du pied de page",
     "categoriesNav": "Catégories de recettes",
     "instagramLabel": "Suivez-nous sur Instagram"
@@ -129,6 +131,14 @@
     "bioShort": "Victor crée des recettes pour les soirées en amoureux, conçues pour impressionner. Basé à Montréal, il croit que la bonne cuisine rapproche les gens.",
     "aboutLink": "À propos de l'auteur",
     "photoAlt": "Victor, créateur de Date My Dish"
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "pageTitle": "Politique de confidentialité"
+  },
+  "terms": {
+    "title": "Conditions d'utilisation",
+    "pageTitle": "Conditions d'utilisation"
   },
   "lang": {
     "switchTo": "English",

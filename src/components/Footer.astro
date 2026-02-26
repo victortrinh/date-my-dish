@@ -25,6 +25,8 @@ categories.sort((a, b) => {
 
 const recipesPath = locale === "fr" ? "/recettes/" : "/recipes/";
 const aboutPath = locale === "fr" ? "/a-propos/" : "/about/";
+const privacyPath = locale === "fr" ? "/politique-de-confidentialite/" : "/privacy-policy/";
+const termsPath = locale === "fr" ? "/conditions-dutilisation/" : "/terms-of-service/";
 const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/recipes/category/";
 ---
 
@@ -88,11 +90,19 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
         </nav>
       </div>
 
-      <!-- Tagline -->
-      <div class="flex flex-col justify-between">
-        <p aria-hidden="true" class="font-handwritten text-xl text-brand-primary/60 dark:text-brand-primary/40">
-          {t(locale, "site.tagline")}
-        </p>
+      <!-- Legal -->
+      <div>
+        <h3 class="mb-4 font-heading text-sm font-bold tracking-wider text-gray-900 dark:text-neutral-100">
+          {t(locale, "footer.legal")}
+        </h3>
+        <nav class="flex flex-col gap-2.5" aria-label={t(locale, "footer.legalNav")}>
+          <a href={getLocalizedPath(locale, privacyPath)} class="font-ui text-body-sm text-gray-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
+            {t(locale, "privacy.pageTitle")}
+          </a>
+          <a href={getLocalizedPath(locale, termsPath)} class="font-ui text-body-sm text-gray-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
+            {t(locale, "terms.pageTitle")}
+          </a>
+        </nav>
       </div>
     </div>
 

@@ -1,0 +1,125 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t } from "@i18n/utils";
+
+const locale = "en";
+---
+
+<BaseLayout
+  title={`${t(locale, "terms.pageTitle")} | Date My Dish`}
+  description="Terms of Service for Date My Dish. Read the terms and conditions that govern your use of our recipe blog."
+>
+  <div class="mx-auto max-w-narrow px-4 py-12 sm:py-16">
+    <Breadcrumbs
+      locale={locale}
+      items={[{ label: t(locale, "terms.pageTitle") }]}
+    />
+
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+        {t(locale, "terms.title")}
+      </h1>
+      <div class="h-1 w-12 rounded-full bg-brand-accent"></div>
+    </div>
+
+    <div class="prose max-w-none">
+      <p>
+        <strong>Last updated:</strong> February 26, 2026
+      </p>
+
+      <p>
+        Welcome to Date My Dish. By accessing or using the website
+        <a href="https://www.datemydish.com">datemydish.com</a> (the "Site"), you agree to be
+        bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please
+        do not use the Site.
+      </p>
+
+      <h2>Use of the Site</h2>
+      <p>
+        The Site provides recipes, cooking tips, and related content for personal, non-commercial
+        use. You may browse, save, and print recipes for your own personal enjoyment. You agree
+        not to:
+      </p>
+      <ul>
+        <li>Reproduce, distribute, or republish our content without written permission</li>
+        <li>Use automated tools to scrape or bulk-download content from the Site</li>
+        <li>Attempt to interfere with the Site's operation or security</li>
+        <li>Use the Site for any unlawful purpose</li>
+      </ul>
+
+      <h2>Intellectual Property</h2>
+      <p>
+        All content on the Site — including recipes, text, photographs, graphics, and design
+        — is owned by Date My Dish and protected by copyright and intellectual property laws.
+        You may share links to our pages freely, but reproducing our content (text, images,
+        or full recipes) on other websites or publications requires our prior written consent.
+      </p>
+
+      <h2>Recipe Disclaimer</h2>
+      <p>
+        Recipes on the Site are provided for informational and entertainment purposes. While
+        we strive for accuracy, we make no guarantees regarding:
+      </p>
+      <ul>
+        <li>Nutritional information (values are estimates and may vary)</li>
+        <li>Cooking times and temperatures (may differ based on equipment and conditions)</li>
+        <li>Allergen information (always verify ingredients if you have allergies or dietary restrictions)</li>
+        <li>Suitability for specific diets or medical conditions</li>
+      </ul>
+      <p>
+        You assume full responsibility for any use of the recipes and cooking instructions
+        provided on the Site.
+      </p>
+
+      <h2>Affiliate Links and Advertising</h2>
+      <p>
+        The Site may contain affiliate links and advertisements in the future. This means we may
+        earn a commission if you make a purchase through certain links, at no additional cost to you.
+        Affiliate relationships and sponsored content will always be clearly disclosed.
+      </p>
+
+      <h2>Third-Party Links</h2>
+      <p>
+        The Site may contain links to third-party websites. We are not responsible for the content,
+        privacy practices, or availability of those sites. Visiting third-party links is at your
+        own risk.
+      </p>
+
+      <h2>Disclaimer of Warranties</h2>
+      <p>
+        The Site is provided "as is" and "as available" without warranties of any kind, either
+        express or implied. We do not warrant that the Site will be uninterrupted, error-free,
+        or free of viruses or other harmful components.
+      </p>
+
+      <h2>Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by law, Date My Dish shall not be liable for any indirect,
+        incidental, special, consequential, or punitive damages arising from your use of or
+        inability to use the Site, including but not limited to any errors in recipe content,
+        nutritional information, or cooking instructions.
+      </p>
+
+      <h2>Changes to These Terms</h2>
+      <p>
+        We reserve the right to modify these Terms at any time. Changes will be posted on this
+        page with an updated "Last updated" date. Your continued use of the Site after any
+        changes constitutes acceptance of the new Terms.
+      </p>
+
+      <h2>Governing Law</h2>
+      <p>
+        These Terms are governed by and construed in accordance with the laws of the Province
+        of Quebec and the federal laws of Canada applicable therein, without regard to conflict
+        of law principles.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have questions about these Terms, please reach out through our
+        <a href="/en/contact/">contact page</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

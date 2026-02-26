@@ -1,0 +1,130 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t } from "@i18n/utils";
+
+const locale = "fr";
+---
+
+<BaseLayout
+  title={`${t(locale, "terms.pageTitle")} | Date My Dish`}
+  description="Conditions d'utilisation de Date My Dish. Lisez les modalités qui régissent votre utilisation de notre blogue de recettes."
+>
+  <div class="mx-auto max-w-narrow px-4 py-12 sm:py-16">
+    <Breadcrumbs
+      locale={locale}
+      items={[{ label: t(locale, "terms.pageTitle") }]}
+    />
+
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+        {t(locale, "terms.title")}
+      </h1>
+      <div class="h-1 w-12 rounded-full bg-brand-accent"></div>
+    </div>
+
+    <div class="prose max-w-none">
+      <p>
+        <strong>Dernière mise à jour :</strong> 26 février 2026
+      </p>
+
+      <p>
+        Bienvenue sur Date My Dish. En accédant ou en utilisant le site Web
+        <a href="https://www.datemydish.com">datemydish.com</a> (le « Site »), vous acceptez
+        d'être lié par les présentes conditions d'utilisation (les « Conditions »). Si vous
+        n'acceptez pas ces Conditions, veuillez ne pas utiliser le Site.
+      </p>
+
+      <h2>Utilisation du Site</h2>
+      <p>
+        Le Site fournit des recettes, des conseils culinaires et du contenu connexe à des fins
+        personnelles et non commerciales. Vous pouvez consulter, sauvegarder et imprimer les
+        recettes pour votre usage personnel. Vous vous engagez à ne pas :
+      </p>
+      <ul>
+        <li>Reproduire, distribuer ou republier notre contenu sans permission écrite</li>
+        <li>Utiliser des outils automatisés pour extraire ou télécharger en masse le contenu du Site</li>
+        <li>Tenter d'interférer avec le fonctionnement ou la sécurité du Site</li>
+        <li>Utiliser le Site à des fins illégales</li>
+      </ul>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        Tout le contenu du Site — y compris les recettes, les textes, les photographies, les
+        graphiques et le design — est la propriété de Date My Dish et est protégé par les lois
+        sur le droit d'auteur et la propriété intellectuelle. Vous pouvez partager librement
+        des liens vers nos pages, mais la reproduction de notre contenu (textes, images ou
+        recettes complètes) sur d'autres sites Web ou publications nécessite notre consentement
+        écrit préalable.
+      </p>
+
+      <h2>Avertissement concernant les recettes</h2>
+      <p>
+        Les recettes du Site sont fournies à titre informatif et de divertissement. Bien que
+        nous nous efforcions d'être exacts, nous ne garantissons pas :
+      </p>
+      <ul>
+        <li>Les informations nutritionnelles (les valeurs sont des estimations et peuvent varier)</li>
+        <li>Les temps et les températures de cuisson (peuvent différer selon l'équipement et les conditions)</li>
+        <li>Les informations sur les allergènes (vérifiez toujours les ingrédients si vous avez des allergies ou des restrictions alimentaires)</li>
+        <li>L'adéquation à des régimes alimentaires ou des conditions médicales spécifiques</li>
+      </ul>
+      <p>
+        Vous assumez l'entière responsabilité de toute utilisation des recettes et des
+        instructions de cuisson fournies sur le Site.
+      </p>
+
+      <h2>Liens d'affiliation et publicité</h2>
+      <p>
+        Le Site pourra contenir des liens d'affiliation et des publicités à l'avenir. Cela
+        signifie que nous pourrions recevoir une commission si vous effectuez un achat via
+        certains liens, sans frais supplémentaires pour vous. Les relations d'affiliation
+        et le contenu commandité seront toujours clairement divulgués.
+      </p>
+
+      <h2>Liens vers des tiers</h2>
+      <p>
+        Le Site peut contenir des liens vers des sites Web tiers. Nous ne sommes pas responsables
+        du contenu, des pratiques de confidentialité ou de la disponibilité de ces sites. La
+        consultation de liens tiers se fait à vos propres risques.
+      </p>
+
+      <h2>Exclusion de garanties</h2>
+      <p>
+        Le Site est fourni « tel quel » et « selon la disponibilité », sans garantie d'aucune
+        sorte, expresse ou implicite. Nous ne garantissons pas que le Site sera ininterrompu,
+        exempt d'erreurs ou libre de virus ou d'autres composants nuisibles.
+      </p>
+
+      <h2>Limitation de responsabilité</h2>
+      <p>
+        Dans toute la mesure permise par la loi, Date My Dish ne saurait être tenu responsable
+        de tout dommage indirect, accessoire, spécial, consécutif ou punitif découlant de votre
+        utilisation ou de votre incapacité à utiliser le Site, y compris, mais sans s'y limiter,
+        toute erreur dans le contenu des recettes, les informations nutritionnelles ou les
+        instructions de cuisson.
+      </p>
+
+      <h2>Modifications des Conditions</h2>
+      <p>
+        Nous nous réservons le droit de modifier les présentes Conditions à tout moment. Les
+        modifications seront publiées sur cette page avec une date de « Dernière mise à jour »
+        actualisée. Votre utilisation continue du Site après toute modification constitue une
+        acceptation des nouvelles Conditions.
+      </p>
+
+      <h2>Loi applicable</h2>
+      <p>
+        Les présentes Conditions sont régies et interprétées conformément aux lois de la province
+        de Québec et aux lois fédérales du Canada qui y sont applicables, sans égard aux principes
+        de conflits de lois.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Si vous avez des questions concernant ces Conditions, n'hésitez pas à nous écrire
+        via notre <a href="/fr/contact/">page de contact</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
