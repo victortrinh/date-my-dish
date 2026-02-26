@@ -1,1 +1,8 @@
-{}
+{
+  "beef-ragu-pappardelle": {
+    "pinterest": {
+      "error": "Pinterest API error 3: Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']",
+      "failedAt": "2026-02-26T23:48:12.135Z"
+    }
+  }
+}
