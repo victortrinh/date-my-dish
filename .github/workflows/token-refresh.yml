@@ -19,6 +19,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
@@ -31,5 +33,5 @@ jobs:
           PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
           PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
           PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: node scripts/refresh-tokens.mjs
