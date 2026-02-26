@@ -1,0 +1,147 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t } from "@i18n/utils";
+
+const locale = "fr";
+---
+
+<BaseLayout
+  title={`${t(locale, "privacy.pageTitle")} | Date My Dish`}
+  description="Politique de confidentialité de Date My Dish. Découvrez comment nous recueillons, utilisons et protégeons vos informations lorsque vous visitez notre blogue de recettes."
+>
+  <div class="mx-auto max-w-narrow px-4 py-12 sm:py-16">
+    <Breadcrumbs
+      locale={locale}
+      items={[{ label: t(locale, "privacy.pageTitle") }]}
+    />
+
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+        {t(locale, "privacy.title")}
+      </h1>
+      <div class="h-1 w-12 rounded-full bg-brand-accent"></div>
+    </div>
+
+    <div class="prose max-w-none">
+      <p>
+        <strong>Dernière mise à jour :</strong> 26 février 2026
+      </p>
+
+      <p>
+        Date My Dish (« nous » ou « notre ») exploite le site Web
+        <a href="https://www.datemydish.com">datemydish.com</a> (le « Site »).
+        La présente politique de confidentialité explique quelles informations nous recueillons,
+        comment nous les utilisons et les choix qui s'offrent à vous.
+      </p>
+
+      <h2>Informations recueillies</h2>
+
+      <h3>Données analytiques</h3>
+      <p>
+        Nous utilisons <strong>Google Analytics</strong> et <strong>Cloudflare Web Analytics</strong> pour
+        comprendre comment les visiteurs interagissent avec le Site. Ces services peuvent recueillir :
+      </p>
+      <ul>
+        <li>Les pages visitées et le temps passé sur chacune</li>
+        <li>Le site Web ou les termes de recherche qui vous ont mené ici</li>
+        <li>Le type de navigateur, le système d'exploitation et le type d'appareil</li>
+        <li>La localisation géographique approximative (ville/pays)</li>
+        <li>L'adresse IP anonymisée</li>
+      </ul>
+      <p>
+        Google Analytics utilise des témoins (cookies) pour distinguer les visiteurs uniques.
+        Cloudflare Web Analytics est axé sur la vie privée et n'utilise pas de témoins ni ne
+        recueille de données personnelles. Pour en savoir plus, consultez la
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politique de confidentialité de Google</a>
+        et la <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">politique de confidentialité de Cloudflare</a>.
+      </p>
+
+      <h3>Stockage local</h3>
+      <p>
+        Nous enregistrons votre préférence de mode sombre (<code>localStorage.theme</code>) dans
+        le stockage local de votre navigateur. Ces données ne quittent jamais votre appareil et
+        ne sont pas transmises à nos serveurs.
+      </p>
+
+      <h3>Polices tierces</h3>
+      <p>
+        Nous chargeons des polices à partir de <strong>Google Fonts</strong>. Lorsque vous visitez
+        le Site, votre navigateur envoie une requête aux serveurs de Google pour télécharger les
+        fichiers de polices. Google peut enregistrer cette requête, y compris votre adresse IP.
+        Consultez la <a href="https://developers.google.com/fonts/faq/privacy" target="_blank" rel="noopener noreferrer">FAQ
+        sur la confidentialité de Google Fonts</a> pour plus de détails.
+      </p>
+
+      <h2>Témoins (Cookies)</h2>
+      <p>
+        Nous utilisons des témoins uniquement via Google Analytics pour distinguer les visiteurs
+        uniques et suivre l'utilisation du site au fil du temps. Il s'agit de témoins propriétaires
+        définis par le script Google Analytics. Vous pouvez refuser Google Analytics en installant
+        le <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">module
+        complémentaire de désactivation de Google Analytics</a>.
+      </p>
+      <p>
+        Vous pouvez également désactiver les témoins entièrement dans les paramètres de votre
+        navigateur. Le Site continuera de fonctionner normalement sans témoins.
+      </p>
+
+      <h2>Utilisation des informations</h2>
+      <p>Nous utilisons les données analytiques recueillies pour :</p>
+      <ul>
+        <li>Comprendre quelles recettes et quel contenu sont les plus populaires</li>
+        <li>Améliorer la performance du site et l'expérience utilisateur</li>
+        <li>Identifier et corriger les problèmes techniques</li>
+        <li>Orienter nos décisions concernant le contenu futur</li>
+      </ul>
+      <p>
+        Nous ne vendons, n'échangeons ni ne transférons vos informations à des tiers,
+        sauf tel que décrit dans la présente politique (fournisseurs d'analytique).
+      </p>
+
+      <h2>Liens d'affiliation et publicité</h2>
+      <p>
+        Le Site pourra contenir des liens d'affiliation et des publicités à l'avenir. Lorsque
+        nous les introduirons, les partenaires affiliés et les réseaux publicitaires pourront
+        utiliser des témoins ou des technologies similaires pour diffuser du contenu pertinent.
+        La présente politique de confidentialité sera mise à jour en conséquence.
+      </p>
+
+      <h2>Conservation des données</h2>
+      <p>
+        Les données analytiques sont conservées selon les politiques de conservation par défaut
+        de Google Analytics (26 mois) et de Cloudflare Web Analytics (6 mois). Nous ne stockons
+        aucune donnée personnelle sur nos propres serveurs.
+      </p>
+
+      <h2>Vos droits</h2>
+      <p>Vous avez le droit de :</p>
+      <ul>
+        <li>Refuser le suivi Google Analytics en utilisant le module complémentaire mentionné ci-dessus</li>
+        <li>Effacer les témoins et le stockage local dans les paramètres de votre navigateur</li>
+        <li>Demander des informations sur les données que nous détenons (bien que nous ne détenions aucune donnée personnelle identifiable)</li>
+      </ul>
+
+      <h2>Vie privée des enfants</h2>
+      <p>
+        Le Site ne s'adresse pas aux enfants de moins de 13 ans. Nous ne recueillons pas
+        sciemment de renseignements personnels auprès d'enfants. Si vous croyez qu'un enfant
+        nous a fourni des données personnelles, veuillez nous contacter afin que nous puissions
+        prendre les mesures appropriées.
+      </p>
+
+      <h2>Modifications à cette politique</h2>
+      <p>
+        Nous pouvons mettre à jour la présente politique de confidentialité de temps à autre.
+        Les modifications seront publiées sur cette page avec une date de « Dernière mise à jour »
+        actualisée. Nous vous encourageons à consulter cette page périodiquement.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Si vous avez des questions concernant cette politique de confidentialité, n'hésitez pas
+        à nous écrire via notre <a href="/fr/contact/">page de contact</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

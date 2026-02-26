@@ -60,6 +60,22 @@ export function getAlternateUrl(
     "a-propos": { en: "about", fr: "a-propos" },
     search: { en: "search", fr: "recherche" },
     recherche: { en: "search", fr: "recherche" },
+    "privacy-policy": {
+      en: "privacy-policy",
+      fr: "politique-de-confidentialite",
+    },
+    "politique-de-confidentialite": {
+      en: "privacy-policy",
+      fr: "politique-de-confidentialite",
+    },
+    "terms-of-service": {
+      en: "terms-of-service",
+      fr: "conditions-dutilisation",
+    },
+    "conditions-dutilisation": {
+      en: "terms-of-service",
+      fr: "conditions-dutilisation",
+    },
   };
 
   const translatedParts = pathParts.slice(1).map((part, index, arr) => {

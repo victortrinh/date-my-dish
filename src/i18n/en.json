@@ -90,6 +90,8 @@
     "madeWith": "Made with love in Montreal",
     "categories": "Categories",
     "navigation": "Navigation",
+    "legal": "Legal",
+    "legalNav": "Legal navigation",
     "nav": "Footer navigation",
     "categoriesNav": "Recipe categories",
     "instagramLabel": "Follow us on Instagram"
@@ -129,6 +131,14 @@
     "bioShort": "Victor creates date night recipes designed to impress. Based in Montreal, he believes great food brings people closer together.",
     "aboutLink": "About the author",
     "photoAlt": "Victor, creator of Date My Dish"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "pageTitle": "Privacy Policy"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "pageTitle": "Terms of Service"
   },
   "lang": {
     "switchTo": "Français",
