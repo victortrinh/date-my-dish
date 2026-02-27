@@ -1,0 +1,97 @@
+name: Weekly SEO Rank Tracking
+
+on:
+  schedule:
+    - cron: '0 8 * * 1' # Monday 8 AM UTC
+  workflow_dispatch:
+    inputs:
+      keyword_limit:
+        description: 'Max keywords for Serper.dev (default: 60)'
+        required: false
+        default: '60'
+
+concurrency:
+  group: weekly-seo-ranking
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  track-rankings:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Derive keywords from frontmatter
+        run: node scripts/seo/derive-keywords.mjs
+        env:
+          KEYWORD_LIMIT: ${{ inputs.keyword_limit || '60' }}
+
+      - name: Fetch GSC rankings
+        run: node scripts/seo/fetch-gsc-rankings.mjs
+        continue-on-error: true
+        env:
+          GSC_SERVICE_ACCOUNT_KEY: ${{ secrets.GSC_SERVICE_ACCOUNT_KEY }}
+          SITE_URL: 'sc-domain:datemydish.com'
+
+      - name: Fetch SERP rankings
+        run: node scripts/seo/fetch-serp-rankings.mjs
+        continue-on-error: true
+        env:
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+
+      - name: Generate report and snapshot
+        id: report
+        run: node scripts/seo/generate-report.mjs
+        continue-on-error: true
+
+      - name: Commit snapshot
+        if: steps.report.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/seo/
+          git diff --cached --quiet || git commit -m "chore(seo): weekly ranking snapshot $(date +%Y-%m-%d)"
+          git push
+
+      - name: Close previous ranking issue
+        if: steps.report.outcome == 'success'
+        run: |
+          PREV_ISSUE=$(gh issue list --label "seo-ranking" --state open --limit 1 --json number -q '.[0].number')
+          if [ -n "$PREV_ISSUE" ]; then
+            gh issue close "$PREV_ISSUE" --comment "Superseded by new weekly report"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Create ranking report issue
+        if: steps.report.outcome == 'success'
+        run: |
+          gh issue create \
+            --title "SEO Ranking Report — $(date +%Y-%m-%d)" \
+            --body-file data/seo/report.md \
+            --label "seo-ranking"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Create failure issue
+        if: steps.report.outcome == 'failure'
+        run: |
+          gh issue create \
+            --title "SEO Ranking Workflow Failed — $(date +%Y-%m-%d)" \
+            --body "The weekly SEO ranking workflow failed. Both GSC and Serper.dev returned no data. Check the [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details." \
+            --label "seo-ranking-failure"
+        env:
+          GH_TOKEN: ${{ github.token }}
