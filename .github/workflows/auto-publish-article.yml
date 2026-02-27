@@ -30,107 +30,13 @@ jobs:
 
       - run: npm ci
 
-      # Step 1: Query Notion and select next article
-      - name: Select next article from Notion
+      # Step 1: Fetch article from public Notion database (no auth needed)
+      # Uses notion-client (unofficial API) to query the publicly shared database.
+      # Note: notion-client depends on Notion's internal /api/v3/ — if it breaks,
+      # fall back to the local notion/ folder exports.
+      - name: Fetch and select article from Notion
         id: select
-        env:
-          NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-        run: |
-          # Query Notion for Ready to Publish articles
-          RESPONSE=$(curl -s "https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query" \
-            -H "Authorization: Bearer ${NOTION_API_TOKEN}" \
-            -H "Notion-Version: 2022-06-28" \
-            -H "Content-Type: application/json" \
-            -d '{
-              "filter": {
-                "and": [
-                  {"property": "Status", "status": {"equals": "Ready to Publish"}},
-                  {"property": "Post Type", "select": {"equals": "Informative Posts"}}
-                ]
-              },
-              "sorts": [{"property": "Recipe #", "direction": "ascending"}]
-            }')
-
-          # Check for API errors
-          if echo "$RESPONSE" | jq -e '.object == "error"' > /dev/null 2>&1; then
-            echo "Notion API error: $(echo "$RESPONSE" | jq -r '.message')"
-            exit 1
-          fi
-
-          # Extract results with Recipe # and page IDs
-          ARTICLES=$(echo "$RESPONSE" | jq '[.results[] | {
-            page_id: .id,
-            recipe_num: (.properties["Recipe #"].number // 0 | tostring),
-            title: ([.properties["Post Title"].title[]?.plain_text // .properties.Name.title[]?.plain_text] | join(""))
-          }]')
-
-          # Read published.json and get already-published Recipe #s
-          PUBLISHED=$(jq -r '.entries | keys[]' notion/published.json 2>/dev/null || echo "")
-
-          # Filter out already-published articles
-          UNPUBLISHED=$(echo "$ARTICLES" | jq --arg published "$PUBLISHED" '
-            ($published | split("\n") | map(select(. != ""))) as $pub_list |
-            map(select(.recipe_num as $rn | $pub_list | index($rn) | not))
-          ')
-
-          COUNT=$(echo "$UNPUBLISHED" | jq 'length')
-          echo "Found $COUNT unpublished articles"
-
-          if [ "$COUNT" -gt 0 ]; then
-            # Priority 1: Publish new article (oldest by Recipe #)
-            SELECTED=$(echo "$UNPUBLISHED" | jq '.[0]')
-            MODE="publish"
-          else
-            # Priority 2: Check for updated articles (Notion edits since last sync)
-            ALL_ARTICLES=$(echo "$RESPONSE" | jq '[.results[] | {
-              page_id: .id,
-              recipe_num: (.properties["Recipe #"].number // 0 | tostring),
-              title: ([.properties["Post Title"].title[]?.plain_text // .properties.Name.title[]?.plain_text] | join("")),
-              last_edited: .last_edited_time
-            }]')
-
-            # Find articles where Notion's last_edited_time > published.json's lastSyncedDate
-            STALE=$(echo "$ALL_ARTICLES" | jq --slurpfile pub notion/published.json '
-              ($pub[0].entries // {}) as $entries |
-              map(select(
-                .recipe_num as $rn |
-                $entries[$rn] != null and
-                (.last_edited > ($entries[$rn].lastSyncedDate + "T23:59:59Z"))
-              ))
-            ')
-
-            STALE_COUNT=$(echo "$STALE" | jq 'length')
-            echo "Found $STALE_COUNT stale (updated in Notion) articles"
-
-            if [ "$STALE_COUNT" -eq 0 ]; then
-              echo "found=false" >> $GITHUB_OUTPUT
-              echo "No new or updated articles found. Exiting."
-              exit 0
-            fi
-
-            # Select oldest stale article
-            SELECTED=$(echo "$STALE" | jq 'sort_by(.recipe_num | tonumber) | .[0]')
-            MODE="update"
-          fi
-
-          PAGE_ID=$(echo "$SELECTED" | jq -r '.page_id')
-          RECIPE_NUM=$(echo "$SELECTED" | jq -r '.recipe_num')
-          TITLE=$(echo "$SELECTED" | jq -r '.title')
-
-          echo "Mode: ${MODE} | Selected: #${RECIPE_NUM} - ${TITLE}"
-          echo "found=true" >> $GITHUB_OUTPUT
-          echo "mode=${MODE}" >> $GITHUB_OUTPUT
-          echo "page_id=${PAGE_ID}" >> $GITHUB_OUTPUT
-          echo "recipe_num=${RECIPE_NUM}" >> $GITHUB_OUTPUT
-
-          # Write selection details for Claude (include mode and existing slug for updates)
-          if [ "$MODE" = "update" ]; then
-            EXISTING_SLUG=$(jq -r --arg rn "$RECIPE_NUM" '.entries[$rn].slug' notion/published.json)
-            echo "$SELECTED" | jq --arg mode "$MODE" --arg slug "$EXISTING_SLUG" '. + {mode: $mode, existing_slug: $slug}' > notion-article-selection.json
-          else
-            echo "$SELECTED" | jq --arg mode "$MODE" '. + {mode: $mode}' > notion-article-selection.json
-          fi
+        run: node scripts/fetch-notion-article.mjs
 
       # Step 2: Close stale auto-article PRs
       - name: Close stale auto-article PRs
@@ -153,38 +59,36 @@ jobs:
             You are running the automated article publishing pipeline for Date My Dish.
 
             ## Input
-            Read `notion-article-selection.json` for the selected article's Notion page ID, Recipe #, title, and `mode` ("publish" or "update").
-            - **publish mode**: Create new EN+FR MDX files and a new published.json entry.
-            - **update mode**: The article was already published but has been edited in Notion. The `existing_slug` field contains the current EN slug. Regenerate the EN+FR MDX files in-place (overwrite), keeping the same slugs and `publishDate`, but updating content and `lastSyncedDate` in published.json.
+            Two JSON files have been pre-fetched from the public Notion database:
 
-            ## Environment
-            The Notion API token is available as NOTION_API_TOKEN environment variable.
-            Use it with curl: `curl -H "Authorization: Bearer $NOTION_API_TOKEN" -H "Notion-Version: 2022-06-28"`
+            1. **`notion-article-selection.json`** — Contains: `pageId`, `recipeNum`, `title`, `mode` ("publish" or "update"), and `existingSlug` (only for updates).
+            2. **`notion-article-content.json`** — Contains the full article content:
+               - `title`, `recipeNum`, `lastEditedTime`
+               - `heroImage`: `{ localPath, caption }` — the hero image has already been downloaded to `/tmp/notion-images/`
+               - `blocks`: Array of structured content blocks, each with a `type` field:
+                 - `{ type: "heading", level: 2, text: "..." }`
+                 - `{ type: "paragraph", text: "Markdown text with **bold** and [links](url)..." }`
+                 - `{ type: "list", style: "unordered"|"ordered", items: ["...", "..."] }`
+                 - `{ type: "image", url: "...", localPath: "/tmp/notion-images/...", caption: "..." }`
+                 - `{ type: "callout", icon: "emoji", text: "..." }`
+                 - `{ type: "divider" }`
+               - `faqs`: Array of `{ question, answer }` objects extracted from the article
+
+            Read both files to understand the article content and mode.
+            - **publish mode**: Create new EN+FR MDX files and a new published.json entry.
+            - **update mode**: The article was already published but has been edited in Notion. The `existingSlug` field contains the current EN slug. Regenerate the EN+FR MDX files in-place (overwrite), keeping the same slugs and `publishDate`, but updating content and `lastSyncedDate` in published.json.
 
             ## Your Tasks
 
-            ### 1. Fetch article content from Notion
-            Use the Notion API to fetch the page blocks:
-            ```
-            curl -s "https://api.notion.com/v1/blocks/{page_id}/children?page_size=100" \
-              -H "Authorization: Bearer $NOTION_API_TOKEN" \
-              -H "Notion-Version: 2022-06-28"
-            ```
-            Parse the block JSON to extract the article's text content, section headings, FAQ entries, and image URLs.
-            Handle pagination if `has_more` is true.
-
-            ### 2. Download and optimize the hero image
-            Find the first image block in the Notion page. Download it:
-            ```
-            curl -sL "{image_url}" -o /tmp/hero-original.png
-            ```
+            ### 1. Optimize the hero image
+            The hero image has already been downloaded to the path in `notion-article-content.json` → `heroImage.localPath`.
             Convert to WebP, resize to max 1200px wide, quality 82:
             ```
-            convert /tmp/hero-original.png -resize '1200x>' -quality 82 src/assets/images/articles/{slug}.webp
+            convert {heroImage.localPath} -resize '1200x>' -quality 82 src/assets/images/articles/{slug}.webp
             ```
             If the result exceeds 200KB, reduce quality incrementally until it fits.
 
-            ### 3. Generate the EN slug
+            ### 2. Generate the EN slug
             If mode is "update", use the `existing_slug` from the selection JSON.
             If mode is "publish", derive an SEO-friendly English slug from the title:
             - Lowercase, replace spaces with hyphens
@@ -195,7 +99,7 @@ jobs:
               - "The Truth About MSG: A Flavor-Boosting Superstar for Your Date Night" -> `truth-about-msg`
               - "Why You Shouldn't Wash Chicken on Date Night (and What to Do Instead)" -> `why-not-wash-chicken`
 
-            ### 4. Generate the FR slug
+            ### 3. Generate the FR slug
             If mode is "update", read the existing EN MDX file to get the current `translationSlug` value.
             If mode is "publish", create a meaningful French translation of the slug concept:
             - Examples:
@@ -203,13 +107,13 @@ jobs:
               - `truth-about-msg` -> `verite-sur-le-msg`
               - `why-not-wash-chicken` -> `pourquoi-ne-pas-laver-le-poulet`
 
-            ### 5. Generate EN MDX file
+            ### 4. Generate EN MDX file
             Create `src/content/articles/en/{en-slug}.mdx` with:
 
             **Frontmatter** (match schema exactly -- see `src/content/articles/en/wok-hei-at-home.mdx` as template):
             - `title`: Original Notion title (in quotes)
             - `lang`: `en`
-            - `translationSlug`: The FR slug from step 4
+            - `translationSlug`: The FR slug from step 3
             - `description`: Max 160 chars, SEO-optimized summary
             - `author`: `"Victor"`
             - `publishDate`: Today's date (YYYY-MM-DD). If mode is "update", keep the original publishDate and add `updatedDate` with today's date.
@@ -231,11 +135,11 @@ jobs:
             - Include the "date night" angle throughout (this is a date night cooking blog)
             - Internal cross-links to recipes: `/en/recipes/{slug}/` (trailing slash required)
 
-            ### 6. Generate FR MDX file
+            ### 5. Generate FR MDX file
             Create `src/content/articles/fr/{fr-slug}.mdx`:
             - Translate ALL frontmatter values to Quebec French
             - `lang`: `fr`
-            - `translationSlug`: The EN slug from step 3
+            - `translationSlug`: The EN slug from step 2
             - `heroImage`: Same path as EN (shared image file)
             - `heroImageAlt`: French translation of alt text
             - `keywords`: French SEO keywords
@@ -247,7 +151,7 @@ jobs:
             - Quebec French conventions: souper (dinner), dejeuner (breakfast), diner (lunch), cuillere a soupe (tbsp), tasses (cups)
             - Cross-links use `/fr/recettes/{slug}/` (French route with trailing slash)
 
-            ### 7. Update published.json
+            ### 6. Update published.json
             Read `notion/published.json`:
 
             **If mode = "publish"** -- add a new entry:
@@ -270,11 +174,11 @@ jobs:
             }
             ```
 
-            ### 8. Validate
+            ### 7. Validate
             Run `npm run check` to verify schema compliance.
             If it fails, fix the issues and re-run.
 
-            ### 9. Verify EN/FR pair
+            ### 8. Verify EN/FR pair
             Confirm that:
             - EN file's `translationSlug` matches the FR file's slug (filename without .mdx)
             - FR file's `translationSlug` matches the EN file's slug
@@ -302,8 +206,6 @@ jobs:
             --max-turns 25
             --allowedTools Edit,Read,Write,Glob,Grep,Bash(curl:convert:npm run check:npm run build:ls:cat:wc:du:file:identify)
           branch_prefix: "auto-article/"
-        env:
-          NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
 
       # Step 4: Verify build after Claude's changes
       - name: Verify build
