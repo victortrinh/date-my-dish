@@ -1,0 +1,2076 @@
+{
+  "version": 1,
+  "generatedAt": "2026-02-27T19:45:09.189Z",
+  "dateRange": {
+    "start": "N/A",
+    "end": "N/A"
+  },
+  "config": {
+    "serpLocale": "en",
+    "serpCountry": "ca",
+    "keywordLimit": 53
+  },
+  "derivedKeywords": [
+    {
+      "keyword": "slow-cooked beef ragu with pappardelle pasta",
+      "source": "title",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "beef ragu",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "pappardelle recipe",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "slow cooked beef pasta",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "brussels sprouts salad with crispy leaves and fish sauce vinaigrette",
+      "source": "title",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "brussels sprouts salad",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy brussels sprouts",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "fish sauce vinaigrette",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "southeast asian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "authentic cacio e pepe roman cheese and pepper pasta",
+      "source": "title",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "cacio e pepe",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "cacio e pepe recipe",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "roman pasta",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "roasted cauliflower steaks with smoky romesco sauce",
+      "source": "title",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "cauliflower steak",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romesco sauce",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "roasted cauliflower",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spanish recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy vegan calamari with king oyster mushrooms",
+      "source": "title",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vegan calamari",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "king oyster mushroom calamari",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "plant-based appetizer",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "mediterranean recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lemon posset brulee easy 3-ingredient no-bake dessert",
+      "source": "title",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lemon posset",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lemon posset brulee",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "no bake dessert",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "british recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "creamy penne alla vodka with italian sausage",
+      "source": "title",
+      "url": "/en/recipes/penne-alla-vodka/",
+      "lang": "en"
+    },
+    {
+      "keyword": "penne alla vodka",
+      "source": "keywords",
+      "url": "/en/recipes/penne-alla-vodka/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vodka pasta",
+      "source": "keywords",
+      "url": "/en/recipes/penne-alla-vodka/",
+      "lang": "en"
+    },
+    {
+      "keyword": "creamy pasta recipe",
+      "source": "keywords",
+      "url": "/en/recipes/penne-alla-vodka/",
+      "lang": "en"
+    },
+    {
+      "keyword": "quinoa-crusted salmon with spicy orange miso sauce",
+      "source": "title",
+      "url": "/en/recipes/quinoa-crusted-salmon/",
+      "lang": "en"
+    },
+    {
+      "keyword": "quinoa crusted salmon",
+      "source": "keywords",
+      "url": "/en/recipes/quinoa-crusted-salmon/",
+      "lang": "en"
+    },
+    {
+      "keyword": "orange miso salmon",
+      "source": "keywords",
+      "url": "/en/recipes/quinoa-crusted-salmon/",
+      "lang": "en"
+    },
+    {
+      "keyword": "nikkei recipe",
+      "source": "keywords",
+      "url": "/en/recipes/quinoa-crusted-salmon/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy zucchini and eggplant chips with sparkling water batter",
+      "source": "title",
+      "url": "/en/recipes/zucchini-eggplant-chips/",
+      "lang": "en"
+    },
+    {
+      "keyword": "zucchini chips",
+      "source": "keywords",
+      "url": "/en/recipes/zucchini-eggplant-chips/",
+      "lang": "en"
+    },
+    {
+      "keyword": "eggplant chips",
+      "source": "keywords",
+      "url": "/en/recipes/zucchini-eggplant-chips/",
+      "lang": "en"
+    },
+    {
+      "keyword": "fried vegetable appetizer",
+      "source": "keywords",
+      "url": "/en/recipes/zucchini-eggplant-chips/",
+      "lang": "en"
+    },
+    {
+      "keyword": "the truth about msg: a flavor-boosting superstar for your date night",
+      "source": "title",
+      "url": "/en/articles/truth-about-msg/",
+      "lang": "en"
+    },
+    {
+      "keyword": "msg",
+      "source": "keywords",
+      "url": "/en/articles/truth-about-msg/",
+      "lang": "en"
+    },
+    {
+      "keyword": "monosodium glutamate",
+      "source": "keywords",
+      "url": "/en/articles/truth-about-msg/",
+      "lang": "en"
+    },
+    {
+      "keyword": "is msg safe",
+      "source": "keywords",
+      "url": "/en/articles/truth-about-msg/",
+      "lang": "en"
+    },
+    {
+      "keyword": "why you shouldnt wash chicken on date night and what to do instead",
+      "source": "title",
+      "url": "/en/articles/why-not-wash-chicken/",
+      "lang": "en"
+    },
+    {
+      "keyword": "should you wash chicken",
+      "source": "keywords",
+      "url": "/en/articles/why-not-wash-chicken/",
+      "lang": "en"
+    },
+    {
+      "keyword": "why not wash chicken",
+      "source": "keywords",
+      "url": "/en/articles/why-not-wash-chicken/",
+      "lang": "en"
+    },
+    {
+      "keyword": "washing raw chicken",
+      "source": "keywords",
+      "url": "/en/articles/why-not-wash-chicken/",
+      "lang": "en"
+    },
+    {
+      "keyword": "heres how to get wok hei at home for a memorable date night",
+      "source": "title",
+      "url": "/en/articles/wok-hei-at-home/",
+      "lang": "en"
+    },
+    {
+      "keyword": "wok hei",
+      "source": "keywords",
+      "url": "/en/articles/wok-hei-at-home/",
+      "lang": "en"
+    },
+    {
+      "keyword": "wok hei at home",
+      "source": "keywords",
+      "url": "/en/articles/wok-hei-at-home/",
+      "lang": "en"
+    },
+    {
+      "keyword": "how to get wok hei",
+      "source": "keywords",
+      "url": "/en/articles/wok-hei-at-home/",
+      "lang": "en"
+    }
+  ],
+  "pages": {
+    "/en/recipes/beef-ragu-pappardelle/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "slow-cooked beef ragu with pappardelle pasta",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "recipetineats.com",
+            "position": 1
+          },
+          {
+            "domain": "pinchofyum.com",
+            "position": 2
+          },
+          {
+            "domain": "seasonedskilletblog.com",
+            "position": 3
+          },
+          {
+            "domain": "sweetteaandthyme.com",
+            "position": 4
+          },
+          {
+            "domain": "littlespicejar.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/brussels-sprouts-salad/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "brussels sprouts salad with crispy leaves and fish sauce vinaigrette",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "petersom.com",
+            "position": 1
+          },
+          {
+            "domain": "crunchtimekitchen.com",
+            "position": 2
+          },
+          {
+            "domain": "themodernproper.com",
+            "position": 3
+          },
+          {
+            "domain": "wisconsinfromscratch.com",
+            "position": 4
+          },
+          {
+            "domain": "foodandwine.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/cacio-e-pepe/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "authentic cacio e pepe roman cheese and pepper pasta",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "seriouseats.com",
+            "position": 1
+          },
+          {
+            "domain": "memoriediangelina.com",
+            "position": 2
+          },
+          {
+            "domain": "spoonforkbacon.com",
+            "position": 3
+          },
+          {
+            "domain": "mission-food.com",
+            "position": 4
+          },
+          {
+            "domain": "chuonthis.ca",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/cauliflower-steak-with-romesco-sauce/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "roasted cauliflower steaks with smoky romesco sauce",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "feastingathome.com",
+            "position": 1
+          },
+          {
+            "domain": "cookprimalgourmet.com",
+            "position": 2
+          },
+          {
+            "domain": "overcomingms.org",
+            "position": 3
+          },
+          {
+            "domain": "daniliciousdishes.com",
+            "position": 4
+          },
+          {
+            "domain": "thefabledtable.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/crispy-vegan-calamari/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "crispy vegan calamari with king oyster mushrooms",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "sweetsimplevegan.com",
+            "position": 1
+          },
+          {
+            "domain": "hotforfoodblog.com",
+            "position": 2
+          },
+          {
+            "domain": "fuelednaturally.net",
+            "position": 3
+          },
+          {
+            "domain": "facebook.com",
+            "position": 4
+          },
+          {
+            "domain": "dailyvegan.recipes",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/lemon-posset-brulee/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "lemon posset brulee easy 3-ingredient no-bake dessert",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "natashaskitchen.com",
+            "position": 1
+          },
+          {
+            "domain": "whatagirleats.com",
+            "position": 2
+          },
+          {
+            "domain": "notquitenigella.com",
+            "position": 3
+          },
+          {
+            "domain": "youtube.com",
+            "position": 4
+          },
+          {
+            "domain": "facebook.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/penne-alla-vodka/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "creamy penne alla vodka with italian sausage",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "allrecipes.com",
+            "position": 1
+          },
+          {
+            "domain": "eatingeuropean.com",
+            "position": 2
+          },
+          {
+            "domain": "thewoksoflife.com",
+            "position": 3
+          },
+          {
+            "domain": "meatloafandmelodrama.com",
+            "position": 4
+          },
+          {
+            "domain": "dinneratthezoo.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/quinoa-crusted-salmon/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "quinoa-crusted salmon with spicy orange miso sauce",
+        "position": 3,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "foodandwine.com",
+            "position": 1
+          },
+          {
+            "domain": "drfabio.com",
+            "position": 2
+          },
+          {
+            "domain": "punchfork.com",
+            "position": 4
+          },
+          {
+            "domain": "youtube.com",
+            "position": 5
+          },
+          {
+            "domain": "citylifestyle.com",
+            "position": 6
+          }
+        ]
+      }
+    },
+    "/en/recipes/zucchini-eggplant-chips/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "crispy zucchini and eggplant chips with sparkling water batter",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "realgreekrecipes.com",
+            "position": 1
+          },
+          {
+            "domain": "mulberrypomegranate.com",
+            "position": 2
+          },
+          {
+            "domain": "youtube.com",
+            "position": 3
+          },
+          {
+            "domain": "houseandhome.com",
+            "position": 4
+          },
+          {
+            "domain": "miakouppa.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/articles/truth-about-msg/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "the truth about msg: a flavor-boosting superstar for your date night",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "youtube.com",
+            "position": 1
+          },
+          {
+            "domain": "facebook.com",
+            "position": 2
+          },
+          {
+            "domain": "foxnews.com",
+            "position": 3
+          },
+          {
+            "domain": "theintrepidgourmet.com",
+            "position": 4
+          },
+          {
+            "domain": "today.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/articles/why-not-wash-chicken/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "why you shouldnt wash chicken on date night and what to do instead",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "reddit.com",
+            "position": 1
+          },
+          {
+            "domain": "drexel.edu",
+            "position": 2
+          },
+          {
+            "domain": "seriouseats.com",
+            "position": 3
+          },
+          {
+            "domain": "youtube.com",
+            "position": 4
+          },
+          {
+            "domain": "facebook.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/articles/wok-hei-at-home/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "heres how to get wok hei at home for a memorable date night",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "seriouseats.com",
+            "position": 1
+          },
+          {
+            "domain": "youtube.com",
+            "position": 2
+          },
+          {
+            "domain": "reddit.com",
+            "position": 3
+          },
+          {
+            "domain": "nytimes.com",
+            "position": 4
+          },
+          {
+            "domain": "facebook.com",
+            "position": 6
+          }
+        ]
+      }
+    }
+  },
+  "serpResults": {
+    "slow-cooked beef ragu with pappardelle pasta": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "recipetineats.com",
+          "position": 1
+        },
+        {
+          "domain": "pinchofyum.com",
+          "position": 2
+        },
+        {
+          "domain": "seasonedskilletblog.com",
+          "position": 3
+        },
+        {
+          "domain": "sweetteaandthyme.com",
+          "position": 4
+        },
+        {
+          "domain": "littlespicejar.com",
+          "position": 5
+        }
+      ]
+    },
+    "beef ragu": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "recipetineats.com",
+          "position": 1
+        },
+        {
+          "domain": "simplehomeedit.com",
+          "position": 2
+        },
+        {
+          "domain": "pinchofyum.com",
+          "position": 3
+        },
+        {
+          "domain": "daringgourmet.com",
+          "position": 4
+        },
+        {
+          "domain": "sugarspunrun.com",
+          "position": 5
+        }
+      ]
+    },
+    "pappardelle recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "101cookbooks.com",
+          "position": 1
+        },
+        {
+          "domain": "theburntbuttertable.com",
+          "position": 2
+        },
+        {
+          "domain": "lidiasitaly.com",
+          "position": 3
+        },
+        {
+          "domain": "theclevercarrot.com",
+          "position": 4
+        },
+        {
+          "domain": "italiankitchenconfessions.com",
+          "position": 5
+        }
+      ]
+    },
+    "slow cooked beef pasta": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "recipetineats.com",
+          "position": 1
+        },
+        {
+          "domain": "simplehomeedit.com",
+          "position": 2
+        },
+        {
+          "domain": "pinchofyum.com",
+          "position": 3
+        },
+        {
+          "domain": "mangiawithmichele.com",
+          "position": 4
+        },
+        {
+          "domain": "skinnytaste.com",
+          "position": 5
+        }
+      ]
+    },
+    "italian recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "lacucinaitaliana.com",
+          "position": 1
+        },
+        {
+          "domain": "anitalianinmykitchen.com",
+          "position": 2
+        },
+        {
+          "domain": "youtube.com",
+          "position": 3
+        },
+        {
+          "domain": "foodandwine.com",
+          "position": 4
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 5
+        }
+      ]
+    },
+    "brussels sprouts salad with crispy leaves and fish sauce vinaigrette": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "petersom.com",
+          "position": 1
+        },
+        {
+          "domain": "crunchtimekitchen.com",
+          "position": 2
+        },
+        {
+          "domain": "themodernproper.com",
+          "position": 3
+        },
+        {
+          "domain": "wisconsinfromscratch.com",
+          "position": 4
+        },
+        {
+          "domain": "foodandwine.com",
+          "position": 5
+        }
+      ]
+    },
+    "brussels sprouts salad": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "loveandlemons.com",
+          "position": 1
+        },
+        {
+          "domain": "twopeasandtheirpod.com",
+          "position": 2
+        },
+        {
+          "domain": "ambitiouskitchen.com",
+          "position": 3
+        },
+        {
+          "domain": "shutterbean.com",
+          "position": 4
+        },
+        {
+          "domain": "chelseasmessyapron.com",
+          "position": 5
+        }
+      ]
+    },
+    "crispy brussels sprouts": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "cjeatsrecipes.com",
+          "position": 1
+        },
+        {
+          "domain": "errenskitchen.com",
+          "position": 2
+        },
+        {
+          "domain": "loveandlemons.com",
+          "position": 3
+        },
+        {
+          "domain": "simplyrecipes.com",
+          "position": 4
+        },
+        {
+          "domain": "thekitchn.com",
+          "position": 5
+        }
+      ]
+    },
+    "fish sauce vinaigrette": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "thekitchn.com",
+          "position": 1
+        },
+        {
+          "domain": "thedeliciouslife.com",
+          "position": 2
+        },
+        {
+          "domain": "tastecooking.com",
+          "position": 3
+        },
+        {
+          "domain": "food52.com",
+          "position": 4
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 5
+        }
+      ]
+    },
+    "southeast asian recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "bonappetit.com",
+          "position": 1
+        },
+        {
+          "domain": "foodandwine.com",
+          "position": 2
+        },
+        {
+          "domain": "cooking.nytimes.com",
+          "position": 3
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 4
+        },
+        {
+          "domain": "mission-food.com",
+          "position": 5
+        }
+      ]
+    },
+    "authentic cacio e pepe roman cheese and pepper pasta": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "memoriediangelina.com",
+          "position": 2
+        },
+        {
+          "domain": "spoonforkbacon.com",
+          "position": 3
+        },
+        {
+          "domain": "mission-food.com",
+          "position": 4
+        },
+        {
+          "domain": "chuonthis.ca",
+          "position": 5
+        }
+      ]
+    },
+    "cacio e pepe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "spoonforkbacon.com",
+          "position": 2
+        },
+        {
+          "domain": "en.wikipedia.org",
+          "position": 3
+        },
+        {
+          "domain": "gimmesomeoven.com",
+          "position": 4
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 5
+        }
+      ]
+    },
+    "cacio e pepe recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "spoonforkbacon.com",
+          "position": 2
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 3
+        },
+        {
+          "domain": "urbanfarmie.com",
+          "position": 4
+        },
+        {
+          "domain": "pinabresciani.com",
+          "position": 5
+        }
+      ]
+    },
+    "roman pasta": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "food52.com",
+          "position": 1
+        },
+        {
+          "domain": "masterclass.com",
+          "position": 2
+        },
+        {
+          "domain": "thekitchykitchen.com",
+          "position": 3
+        },
+        {
+          "domain": "stefanofaita.com",
+          "position": 4
+        },
+        {
+          "domain": "eurotravelcoach.com",
+          "position": 5
+        }
+      ]
+    },
+    "roasted cauliflower steaks with smoky romesco sauce": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "feastingathome.com",
+          "position": 1
+        },
+        {
+          "domain": "cookprimalgourmet.com",
+          "position": 2
+        },
+        {
+          "domain": "overcomingms.org",
+          "position": 3
+        },
+        {
+          "domain": "daniliciousdishes.com",
+          "position": 4
+        },
+        {
+          "domain": "thefabledtable.com",
+          "position": 5
+        }
+      ]
+    },
+    "cauliflower steak": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "healthyrecipesblogs.com",
+          "position": 1
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 2
+        },
+        {
+          "domain": "budgetbytes.com",
+          "position": 3
+        },
+        {
+          "domain": "wholesomeyum.com",
+          "position": 4
+        },
+        {
+          "domain": "thebigmansworld.com",
+          "position": 5
+        }
+      ]
+    },
+    "romesco sauce": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "cookieandkate.com",
+          "position": 1
+        },
+        {
+          "domain": "loveandlemons.com",
+          "position": 2
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 3
+        },
+        {
+          "domain": "alexandracooks.com",
+          "position": 4
+        },
+        {
+          "domain": "pinchofyum.com",
+          "position": 5
+        }
+      ]
+    },
+    "roasted cauliflower": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "natashaskitchen.com",
+          "position": 1
+        },
+        {
+          "domain": "themodernproper.com",
+          "position": 2
+        },
+        {
+          "domain": "loveandlemons.com",
+          "position": 3
+        },
+        {
+          "domain": "recipetineats.com",
+          "position": 4
+        },
+        {
+          "domain": "jamieoliver.com",
+          "position": 5
+        }
+      ]
+    },
+    "spanish recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "spanishsabores.com",
+          "position": 1
+        },
+        {
+          "domain": "spanishrecipesbynuria.com",
+          "position": 2
+        },
+        {
+          "domain": "tienda.com",
+          "position": 3
+        },
+        {
+          "domain": "tastesbetterfromscratch.com",
+          "position": 4
+        },
+        {
+          "domain": "thespanishchef.com",
+          "position": 5
+        }
+      ]
+    },
+    "crispy vegan calamari with king oyster mushrooms": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "sweetsimplevegan.com",
+          "position": 1
+        },
+        {
+          "domain": "hotforfoodblog.com",
+          "position": 2
+        },
+        {
+          "domain": "fuelednaturally.net",
+          "position": 3
+        },
+        {
+          "domain": "facebook.com",
+          "position": 4
+        },
+        {
+          "domain": "dailyvegan.recipes",
+          "position": 5
+        }
+      ]
+    },
+    "vegan calamari": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "itdoesnttastelikechicken.com",
+          "position": 1
+        },
+        {
+          "domain": "sweetsimplevegan.com",
+          "position": 2
+        },
+        {
+          "domain": "apinchofparsley.com",
+          "position": 3
+        },
+        {
+          "domain": "hotforfoodblog.com",
+          "position": 4
+        },
+        {
+          "domain": "youtube.com",
+          "position": 5
+        }
+      ]
+    },
+    "king oyster mushroom calamari": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "sweetsimplevegan.com",
+          "position": 1
+        },
+        {
+          "domain": "thevibrantveggie.com",
+          "position": 2
+        },
+        {
+          "domain": "theedgyveg.com",
+          "position": 3
+        },
+        {
+          "domain": "sunnysidehanne.com",
+          "position": 4
+        },
+        {
+          "domain": "hellaphatvegan.com",
+          "position": 5
+        }
+      ]
+    },
+    "plant-based appetizer": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "sharonpalmer.com",
+          "position": 1
+        },
+        {
+          "domain": "thefirstmess.com",
+          "position": 2
+        },
+        {
+          "domain": "cleanfooddirtygirl.com",
+          "position": 3
+        },
+        {
+          "domain": "loveandlemons.com",
+          "position": 4
+        },
+        {
+          "domain": "twospoons.ca",
+          "position": 5
+        }
+      ]
+    },
+    "mediterranean recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "themediterraneandish.com",
+          "position": 1
+        },
+        {
+          "domain": "mediterraneanliving.com",
+          "position": 2
+        },
+        {
+          "domain": "instagram.com",
+          "position": 3
+        },
+        {
+          "domain": "recipetineats.com",
+          "position": 4
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 5
+        }
+      ]
+    },
+    "lemon posset brulee easy 3-ingredient no-bake dessert": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "natashaskitchen.com",
+          "position": 1
+        },
+        {
+          "domain": "whatagirleats.com",
+          "position": 2
+        },
+        {
+          "domain": "notquitenigella.com",
+          "position": 3
+        },
+        {
+          "domain": "youtube.com",
+          "position": 4
+        },
+        {
+          "domain": "facebook.com",
+          "position": 5
+        }
+      ]
+    },
+    "lemon posset": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "natashaskitchen.com",
+          "position": 1
+        },
+        {
+          "domain": "cookieandkate.com",
+          "position": 2
+        },
+        {
+          "domain": "whatagirleats.com",
+          "position": 3
+        },
+        {
+          "domain": "food52.com",
+          "position": 4
+        },
+        {
+          "domain": "dairyfarmersofcanada.ca",
+          "position": 5
+        }
+      ]
+    },
+    "lemon posset brulee": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "xoxobella.com",
+          "position": 1
+        },
+        {
+          "domain": "notquitenigella.com",
+          "position": 2
+        },
+        {
+          "domain": "agoodtable.substack.com",
+          "position": 3
+        },
+        {
+          "domain": "happytummy702.com",
+          "position": 4
+        },
+        {
+          "domain": "instagram.com",
+          "position": 5
+        }
+      ]
+    },
+    "no bake dessert": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "delish.com",
+          "position": 1
+        },
+        {
+          "domain": "youtube.com",
+          "position": 2
+        },
+        {
+          "domain": "sallysbakingaddiction.com",
+          "position": 3
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 4
+        },
+        {
+          "domain": "sugarspunrun.com",
+          "position": 5
+        }
+      ]
+    },
+    "british recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "carolinescooking.com",
+          "position": 1
+        },
+        {
+          "domain": "bbcgoodfood.com",
+          "position": 2
+        },
+        {
+          "domain": "britishfoodhistory.com",
+          "position": 3
+        },
+        {
+          "domain": "foodnetwork.com",
+          "position": 4
+        },
+        {
+          "domain": "soscuisine.com",
+          "position": 5
+        }
+      ]
+    },
+    "creamy penne alla vodka with italian sausage": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "allrecipes.com",
+          "position": 1
+        },
+        {
+          "domain": "eatingeuropean.com",
+          "position": 2
+        },
+        {
+          "domain": "thewoksoflife.com",
+          "position": 3
+        },
+        {
+          "domain": "meatloafandmelodrama.com",
+          "position": 4
+        },
+        {
+          "domain": "dinneratthezoo.com",
+          "position": 5
+        }
+      ]
+    },
+    "penne alla vodka": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "saltandlavender.com",
+          "position": 1
+        },
+        {
+          "domain": "delish.com",
+          "position": 2
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 3
+        },
+        {
+          "domain": "recipetineats.com",
+          "position": 4
+        },
+        {
+          "domain": "thekitchn.com",
+          "position": 5
+        }
+      ]
+    },
+    "vodka pasta": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "recipetineats.com",
+          "position": 1
+        },
+        {
+          "domain": "delish.com",
+          "position": 2
+        },
+        {
+          "domain": "acozykitchen.com",
+          "position": 3
+        },
+        {
+          "domain": "foodbymaria.com",
+          "position": 4
+        },
+        {
+          "domain": "alwaysusebutter.com",
+          "position": 5
+        }
+      ]
+    },
+    "creamy pasta recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "allrecipes.com",
+          "position": 1
+        },
+        {
+          "domain": "theburntbuttertable.com",
+          "position": 2
+        },
+        {
+          "domain": "simplyrecipes.com",
+          "position": 3
+        },
+        {
+          "domain": "youtube.com",
+          "position": 4
+        },
+        {
+          "domain": "budgetbytes.com",
+          "position": 5
+        }
+      ]
+    },
+    "quinoa-crusted salmon with spicy orange miso sauce": {
+      "position": 3,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "foodandwine.com",
+          "position": 1
+        },
+        {
+          "domain": "drfabio.com",
+          "position": 2
+        },
+        {
+          "domain": "punchfork.com",
+          "position": 4
+        },
+        {
+          "domain": "youtube.com",
+          "position": 5
+        },
+        {
+          "domain": "citylifestyle.com",
+          "position": 6
+        }
+      ]
+    },
+    "quinoa crusted salmon": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "thealmondeater.com",
+          "position": 1
+        },
+        {
+          "domain": "foodandwine.com",
+          "position": 2
+        },
+        {
+          "domain": "thishappymommy.com",
+          "position": 3
+        },
+        {
+          "domain": "ariellelorre.com",
+          "position": 4
+        },
+        {
+          "domain": "highcountrysalmon.co.nz",
+          "position": 5
+        }
+      ]
+    },
+    "orange miso salmon": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "drizzleanddip.com",
+          "position": 1
+        },
+        {
+          "domain": "foodiewithfamily.com",
+          "position": 2
+        },
+        {
+          "domain": "food52.com",
+          "position": 3
+        },
+        {
+          "domain": "whisknwhip.com",
+          "position": 4
+        },
+        {
+          "domain": "bonappetit.com",
+          "position": 5
+        }
+      ]
+    },
+    "nikkei recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "cravingsjournal.com",
+          "position": 1
+        },
+        {
+          "domain": "olivemagazine.com",
+          "position": 2
+        },
+        {
+          "domain": "beyondmeresustenance.com",
+          "position": 3
+        },
+        {
+          "domain": "ronda14.com",
+          "position": 4
+        },
+        {
+          "domain": "foodsorcery.co.uk",
+          "position": 5
+        }
+      ]
+    },
+    "crispy zucchini and eggplant chips with sparkling water batter": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "realgreekrecipes.com",
+          "position": 1
+        },
+        {
+          "domain": "mulberrypomegranate.com",
+          "position": 2
+        },
+        {
+          "domain": "youtube.com",
+          "position": 3
+        },
+        {
+          "domain": "houseandhome.com",
+          "position": 4
+        },
+        {
+          "domain": "miakouppa.com",
+          "position": 5
+        }
+      ]
+    },
+    "zucchini chips": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "tablefortwoblog.com",
+          "position": 1
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 2
+        },
+        {
+          "domain": "loveandlemons.com",
+          "position": 3
+        },
+        {
+          "domain": "healthyrecipesblogs.com",
+          "position": 4
+        },
+        {
+          "domain": "keytomylime.com",
+          "position": 5
+        }
+      ]
+    },
+    "eggplant chips": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "healthyrecipesblogs.com",
+          "position": 1
+        },
+        {
+          "domain": "healthfulpursuit.com",
+          "position": 2
+        },
+        {
+          "domain": "runningtothekitchen.com",
+          "position": 3
+        },
+        {
+          "domain": "stetted.com",
+          "position": 4
+        },
+        {
+          "domain": "theveganlarder.com",
+          "position": 5
+        }
+      ]
+    },
+    "fried vegetable appetizer": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "littlespicejar.com",
+          "position": 1
+        },
+        {
+          "domain": "tiffycooks.com",
+          "position": 2
+        },
+        {
+          "domain": "memoriediangelina.com",
+          "position": 3
+        },
+        {
+          "domain": "justataste.com",
+          "position": 4
+        },
+        {
+          "domain": "ahnestkitchen.com",
+          "position": 5
+        }
+      ]
+    },
+    "the truth about msg: a flavor-boosting superstar for your date night": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "youtube.com",
+          "position": 1
+        },
+        {
+          "domain": "facebook.com",
+          "position": 2
+        },
+        {
+          "domain": "foxnews.com",
+          "position": 3
+        },
+        {
+          "domain": "theintrepidgourmet.com",
+          "position": 4
+        },
+        {
+          "domain": "today.com",
+          "position": 5
+        }
+      ]
+    },
+    "msg": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "en.wikipedia.org",
+          "position": 1
+        },
+        {
+          "domain": "mayoclinic.org",
+          "position": 2
+        },
+        {
+          "domain": "health.harvard.edu",
+          "position": 3
+        },
+        {
+          "domain": "fda.gov",
+          "position": 4
+        },
+        {
+          "domain": "ajinomoto.com",
+          "position": 5
+        }
+      ]
+    },
+    "monosodium glutamate": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "en.wikipedia.org",
+          "position": 1
+        },
+        {
+          "domain": "mayoclinic.org",
+          "position": 2
+        },
+        {
+          "domain": "health.harvard.edu",
+          "position": 3
+        },
+        {
+          "domain": "canada.ca",
+          "position": 4
+        },
+        {
+          "domain": "fda.gov",
+          "position": 5
+        }
+      ]
+    },
+    "is msg safe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "health.harvard.edu",
+          "position": 1
+        },
+        {
+          "domain": "mayoclinic.org",
+          "position": 2
+        },
+        {
+          "domain": "canada.ca",
+          "position": 3
+        },
+        {
+          "domain": "pmc.ncbi.nlm.nih.gov",
+          "position": 4
+        },
+        {
+          "domain": "healthline.com",
+          "position": 5
+        }
+      ]
+    },
+    "why you shouldnt wash chicken on date night and what to do instead": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "reddit.com",
+          "position": 1
+        },
+        {
+          "domain": "drexel.edu",
+          "position": 2
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 3
+        },
+        {
+          "domain": "youtube.com",
+          "position": 4
+        },
+        {
+          "domain": "facebook.com",
+          "position": 5
+        }
+      ]
+    },
+    "should you wash chicken": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "fsis.usda.gov",
+          "position": 1
+        },
+        {
+          "domain": "reddit.com",
+          "position": 2
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 3
+        },
+        {
+          "domain": "facebook.com",
+          "position": 4
+        },
+        {
+          "domain": "pubmed.ncbi.nlm.nih.gov",
+          "position": 5
+        }
+      ]
+    },
+    "why not wash chicken": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "reddit.com",
+          "position": 1
+        },
+        {
+          "domain": "usda.gov",
+          "position": 2
+        },
+        {
+          "domain": "health.state.mn.us",
+          "position": 3
+        },
+        {
+          "domain": "pubmed.ncbi.nlm.nih.gov",
+          "position": 4
+        },
+        {
+          "domain": "health.clevelandclinic.org",
+          "position": 5
+        }
+      ]
+    },
+    "washing raw chicken": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "fsis.usda.gov",
+          "position": 1
+        },
+        {
+          "domain": "reddit.com",
+          "position": 2
+        },
+        {
+          "domain": "facebook.com",
+          "position": 3
+        },
+        {
+          "domain": "pubmed.ncbi.nlm.nih.gov",
+          "position": 4
+        },
+        {
+          "domain": "health.clevelandclinic.org",
+          "position": 5
+        }
+      ]
+    },
+    "heres how to get wok hei at home for a memorable date night": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "youtube.com",
+          "position": 2
+        },
+        {
+          "domain": "reddit.com",
+          "position": 3
+        },
+        {
+          "domain": "nytimes.com",
+          "position": 4
+        },
+        {
+          "domain": "facebook.com",
+          "position": 6
+        }
+      ]
+    },
+    "wok hei": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "reddit.com",
+          "position": 1
+        },
+        {
+          "domain": "guide.michelin.com",
+          "position": 2
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 3
+        },
+        {
+          "domain": "en.wikipedia.org",
+          "position": 4
+        },
+        {
+          "domain": "youtube.com",
+          "position": 5
+        }
+      ]
+    },
+    "wok hei at home": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "reddit.com",
+          "position": 2
+        },
+        {
+          "domain": "youtube.com",
+          "position": 3
+        },
+        {
+          "domain": "nytimes.com",
+          "position": 4
+        },
+        {
+          "domain": "broadsheet.com.au",
+          "position": 6
+        }
+      ]
+    },
+    "how to get wok hei": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "reddit.com",
+          "position": 2
+        },
+        {
+          "domain": "youtube.com",
+          "position": 3
+        },
+        {
+          "domain": "nytimes.com",
+          "position": 4
+        },
+        {
+          "domain": "facebook.com",
+          "position": 5
+        }
+      ]
+    }
+  },
+  "errors": []
+}
