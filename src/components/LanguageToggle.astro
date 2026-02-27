@@ -1,19 +1,24 @@
 ---
-import { t, getAlternateUrl, getRecipeLocalizedPath, type Locale } from "@i18n/utils";
+import { t, getAlternateUrl, getRecipeLocalizedPath, getArticleLocalizedPath, type Locale } from "@i18n/utils";
 
 interface Props {
   locale: Locale;
-  /** For recipe pages: the slug of the translation pair */
+  /** For content pages: the slug of the translation pair */
   translationSlug?: string;
+  contentType?: "recipe" | "article";
 }
 
-const { locale, translationSlug } = Astro.props;
+const { locale, translationSlug, contentType } = Astro.props;
 
 const targetLocale: Locale = locale === "en" ? "fr" : "en";
 
 let toggleUrl: string;
-if (translationSlug) {
-  toggleUrl = getRecipeLocalizedPath(targetLocale, translationSlug);
+if (translationSlug && contentType) {
+  if (contentType === "recipe") {
+    toggleUrl = getRecipeLocalizedPath(targetLocale, translationSlug);
+  } else {
+    toggleUrl = getArticleLocalizedPath(targetLocale, translationSlug);
+  }
 } else {
   toggleUrl = getAlternateUrl(Astro.url, targetLocale);
 }

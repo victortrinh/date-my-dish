@@ -64,6 +64,9 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
           <a href={getLocalizedPath(locale, recipesPath)} class="font-ui text-body-sm text-gray-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
             {t(locale, "nav.recipes")}
           </a>
+          <a href={getLocalizedPath(locale, "/articles/")} class="font-ui text-body-sm text-gray-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
+            {t(locale, "nav.articles")}
+          </a>
           <a href={getLocalizedPath(locale, aboutPath)} class="font-ui text-body-sm text-gray-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
             {t(locale, "nav.about")}
           </a>

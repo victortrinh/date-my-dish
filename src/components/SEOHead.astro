@@ -12,8 +12,9 @@ interface Props {
   noindex?: boolean;
   publishDate?: Date;
   updatedDate?: Date;
-  /** For recipe pages: the translation slug to build hreflang for the paired recipe */
+  /** For content pages: the translation slug to build hreflang for the paired content */
   translationSlug?: string;
+  contentType?: "recipe" | "article";
 }
 
 const {
@@ -28,6 +29,7 @@ const {
   publishDate,
   updatedDate,
   translationSlug,
+  contentType,
 } = Astro.props;
 
 const siteUrl = "https://datemydish.com";
@@ -41,9 +43,13 @@ const fullOgImage = resolvedOgImage.startsWith("http")
 const targetLocale = locale === "en" ? "fr" : "en";
 let alternateUrl: string;
 
-if (translationSlug) {
-  // Recipe page: use translationSlug for the paired recipe
-  const prefix = targetLocale === "fr" ? "recettes" : "recipes";
+if (translationSlug && contentType) {
+  let prefix: string;
+  if (contentType === "recipe") {
+    prefix = targetLocale === "fr" ? "recettes" : "recipes";
+  } else {
+    prefix = "articles";
+  }
   alternateUrl = `${siteUrl}/${targetLocale}/${prefix}/${translationSlug}`;
 } else {
   // Non-recipe page: use route mapping

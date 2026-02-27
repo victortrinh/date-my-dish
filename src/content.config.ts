@@ -25,6 +25,15 @@ const DateNightTipsSchema = z.object({
   platingTip: z.string().optional(),
 });
 
+const ArticleCategorySchema = z.enum([
+  "cooking-techniques",
+  "food-science",
+  "guides",
+  "ingredients",
+  "kitchen-tips",
+  "drinks",
+]);
+
 const recipes = defineCollection({
   loader: glob({ pattern: "**/*.mdx", base: "./src/content/recipes" }),
   schema: ({ image }) => {
@@ -69,4 +78,28 @@ const recipes = defineCollection({
   },
 });
 
-export const collections = { recipes };
+const articles = defineCollection({
+  loader: glob({ pattern: "**/*.mdx", base: "./src/content/articles" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      lang: z.enum(["en", "fr"]),
+      translationSlug: z.string(),
+      description: z.string().max(160),
+      author: z.string().default("Victor"),
+      publishDate: z.coerce.date(),
+      updatedDate: z.coerce.date().optional(),
+      heroImage: image(),
+      heroImageAlt: z.string(),
+      keywords: z.array(z.string()),
+      tags: z.array(z.string()).optional(),
+      articleCategory: ArticleCategorySchema,
+      readingTime: z.number().optional(),
+      relatedRecipes: z.array(z.string()).optional(),
+      faqs: z
+        .array(z.object({ question: z.string(), answer: z.string() }))
+        .min(1),
+    }),
+});
+
+export const collections = { recipes, articles };

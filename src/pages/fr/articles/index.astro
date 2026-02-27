@@ -1,0 +1,79 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import ArticleCard from "@components/ArticleCard.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t, getArticleLocalizedPath } from "@i18n/utils";
+import { getCollection } from "astro:content";
+import type { ImageMetadata } from "astro";
+
+const locale = "fr";
+
+const allArticles = await getCollection("articles");
+const articles = allArticles
+  .filter((a) => a.data.lang === "fr")
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+---
+
+<BaseLayout
+  title={t(locale, "seo.articlesTitle")}
+  description={t(locale, "seo.articlesDescription")}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: t(locale, "listing.allArticles"),
+      numberOfItems: articles.length,
+      itemListElement: articles.map((article, i) => {
+        const slug = article.id.replace(/^fr\//, "");
+        return {
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://datemydish.com${getArticleLocalizedPath(locale, slug)}`,
+          name: article.data.title,
+        };
+      }),
+    })} />
+  </Fragment>
+
+  <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
+    <Breadcrumbs
+      locale={locale}
+      items={[{ label: t(locale, "breadcrumbs.articles") }]}
+    />
+
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+        {t(locale, "listing.allArticles")}
+      </h1>
+      <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
+      <p class="text-body-sm text-gray-500 dark:text-neutral-400">
+        {articles.length} {articles.length === 1 ? "article" : "articles"}
+      </p>
+    </div>
+
+    <!-- Article Grid -->
+    {articles.length > 0 ? (
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {articles.map((article, i) => {
+          const slug = article.id.replace(/^fr\//, "");
+          return (
+            <ArticleCard
+              title={article.data.title}
+              description={article.data.description}
+              slug={slug}
+              locale={locale}
+              heroImage={article.data.heroImage as ImageMetadata}
+              heroImageAlt={article.data.heroImageAlt}
+              publishDate={article.data.publishDate}
+              readingTime={article.data.readingTime}
+              loading={i === 0 ? "eager" : "lazy"}
+            />
+          );
+        })}
+      </div>
+    ) : (
+      <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noArticlesFound")}</p>
+    )}
+  </div>
+</BaseLayout>
