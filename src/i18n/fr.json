@@ -8,6 +8,7 @@
     "recipes": "Recettes",
     "about": "À propos",
     "contact": "Contact",
+    "articles": "Articles",
     "search": "Recherche",
     "toggleMenu": "Basculer le menu",
     "breadcrumb": "Fil d'Ariane"
@@ -58,15 +59,27 @@
   "home": {
     "heroTitle": "Recettes romantiques pour des soirées inoubliables",
     "heroSubtitle": "Des plats simples pour impressionner, préparés avec amour",
+    "recentPosts": "Publications récentes",
     "featuredRecipes": "Recettes en vedette",
     "viewAllRecipes": "Voir toutes les recettes",
     "categories": "Parcourir par catégorie"
   },
+  "article": {
+    "readTime": "min de lecture",
+    "publishedOn": "Publié le",
+    "relatedRecipes": "Recettes associées",
+    "relatedArticles": "Articles similaires",
+    "faq": "Questions fréquentes",
+    "share": "Partager cet article",
+    "backToArticles": "Retour aux articles"
+  },
   "listing": {
     "allRecipes": "Toutes les recettes",
+    "allArticles": "Tous les articles",
     "filterByCategory": "Filtrer par catégorie",
     "allCategories": "Toutes",
-    "noRecipesFound": "Aucune recette trouvée."
+    "noRecipesFound": "Aucune recette trouvée.",
+    "noArticlesFound": "Aucun article trouvé."
   },
   "about": {
     "title": "À propos de Victor",
@@ -101,11 +114,14 @@
     "homeTitle": "Date My Dish - Recettes romantiques, soirées inoubliables",
     "homeDescription": "Découvrez des recettes simples et délicieuses, préparées avec amour. Des classiques réconfortants aux plats créatifs, trouvez votre prochain coup de cœur.",
     "recipesTitle": "Toutes les recettes | Date My Dish",
-    "recipesDescription": "Parcourez notre collection de recettes simples et délicieuses. Trouvez votre prochain coup de cœur."
+    "recipesDescription": "Parcourez notre collection de recettes simples et délicieuses. Trouvez votre prochain coup de cœur.",
+    "articlesTitle": "Articles et guides de cuisine | Date My Dish",
+    "articlesDescription": "Guides de cuisine experts, explications de science alimentaire et astuces pour sublimer vos soupers en amoureux."
   },
   "breadcrumbs": {
     "home": "Accueil",
     "recipes": "Recettes",
+    "articles": "Articles",
     "category": "Catégorie"
   },
   "categories": {

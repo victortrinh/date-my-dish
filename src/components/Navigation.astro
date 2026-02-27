@@ -6,15 +6,17 @@ import DarkModeToggle from "./DarkModeToggle.astro";
 interface Props {
   locale: Locale;
   translationSlug?: string;
+  contentType?: "recipe" | "article";
 }
 
-const { locale, translationSlug } = Astro.props;
+const { locale, translationSlug, contentType } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
   { label: t(locale, "nav.home"), path: "/" },
   { label: t(locale, "nav.recipes"), path: locale === "fr" ? "/recettes/" : "/recipes/" },
+  { label: t(locale, "nav.articles"), path: "/articles/" },
   { label: t(locale, "nav.about"), path: locale === "fr" ? "/a-propos/" : "/about/" },
   { label: t(locale, "nav.contact"), path: "/contact/" },
 ];
@@ -67,7 +69,7 @@ function isActive(linkPath: string): boolean {
           </svg>
         </button>
         <DarkModeToggle locale={locale} />
-        <LanguageToggle locale={locale} translationSlug={translationSlug} />
+        <LanguageToggle locale={locale} translationSlug={translationSlug} contentType={contentType} />
       </div>
     </div>
 
@@ -117,7 +119,7 @@ function isActive(linkPath: string): boolean {
       ))}
       <div class="flex items-center gap-3 border-t border-gray-100 px-4 pt-3 dark:border-neutral-800">
         <DarkModeToggle locale={locale} />
-        <LanguageToggle locale={locale} translationSlug={translationSlug} />
+        <LanguageToggle locale={locale} translationSlug={translationSlug} contentType={contentType} />
       </div>
     </div>
   </div>

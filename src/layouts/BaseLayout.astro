@@ -16,6 +16,7 @@ interface Props {
   ogType?: string;
   publishDate?: Date;
   updatedDate?: Date;
+  contentType?: "recipe" | "article";
 }
 
 const {
@@ -28,6 +29,7 @@ const {
   ogType,
   publishDate,
   updatedDate,
+  contentType,
 } = Astro.props;
 const locale = getLocaleFromUrl(Astro.url) as Locale;
 const resolvedCanonical = canonical || Astro.url.pathname;
@@ -57,6 +59,7 @@ const resolvedCanonical = canonical || Astro.url.pathname;
       translationSlug={translationSlug}
       publishDate={publishDate}
       updatedDate={updatedDate}
+      contentType={contentType}
     />
     <link rel="alternate" type="application/rss+xml" title="Date My Dish (English)" href="/en/rss.xml" />
     <link rel="alternate" type="application/rss+xml" title="Date My Dish (Français)" href="/fr/rss.xml" />
@@ -69,7 +72,7 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-ui focus:text-sm focus:font-medium focus:text-brand-primary focus:shadow-lg dark:focus:bg-neutral-800 dark:focus:text-brand-primary">
       {locale === "fr" ? "Aller au contenu" : "Skip to content"}
     </a>
-    <Navigation locale={locale} translationSlug={translationSlug} />
+    <Navigation locale={locale} translationSlug={translationSlug} contentType={contentType} />
     <main id="main-content" class="flex-1">
       <slot />
     </main>

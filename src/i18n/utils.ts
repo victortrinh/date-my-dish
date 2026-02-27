@@ -76,6 +76,7 @@ export function getAlternateUrl(
       en: "terms-of-service",
       fr: "conditions-dutilisation",
     },
+    articles: { en: "articles", fr: "articles" },
   };
 
   const translatedParts = pathParts.slice(1).map((part, index, arr) => {
@@ -100,6 +101,13 @@ export function getRecipeLocalizedPath(
 ): string {
   const prefix = locale === "fr" ? "recettes" : "recipes";
   return `/${locale}/${prefix}/${slug}`;
+}
+
+export function getArticleLocalizedPath(
+  locale: Locale,
+  slug: string,
+): string {
+  return `/${locale}/articles/${slug}`;
 }
 
 export const categorySlugMap: Record<string, Record<Locale, string>> = {

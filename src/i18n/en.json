@@ -8,6 +8,7 @@
     "recipes": "Recipes",
     "about": "About",
     "contact": "Contact",
+    "articles": "Articles",
     "search": "Search",
     "toggleMenu": "Toggle menu",
     "breadcrumb": "Breadcrumb"
@@ -58,15 +59,27 @@
   "home": {
     "heroTitle": "Romantic Recipes for Unforgettable Date Nights",
     "heroSubtitle": "Simple dishes to impress, crafted with love",
+    "recentPosts": "Recent Posts",
     "featuredRecipes": "Featured Recipes",
     "viewAllRecipes": "View All Recipes",
     "categories": "Browse by Category"
   },
+  "article": {
+    "readTime": "min read",
+    "publishedOn": "Published on",
+    "relatedRecipes": "Related Recipes",
+    "relatedArticles": "Related Articles",
+    "faq": "Frequently Asked Questions",
+    "share": "Share this article",
+    "backToArticles": "Back to Articles"
+  },
   "listing": {
     "allRecipes": "All Recipes",
+    "allArticles": "All Articles",
     "filterByCategory": "Filter by Category",
     "allCategories": "All",
-    "noRecipesFound": "No recipes found."
+    "noRecipesFound": "No recipes found.",
+    "noArticlesFound": "No articles found."
   },
   "about": {
     "title": "About Victor",
@@ -101,11 +114,14 @@
     "homeTitle": "Date My Dish - Romantic Recipes for Unforgettable Date Nights",
     "homeDescription": "Discover simple, delicious recipes crafted with love. From comforting classics to creative dishes, find your next favorite meal.",
     "recipesTitle": "All Recipes | Date My Dish",
-    "recipesDescription": "Browse our collection of simple, delicious recipes. Find your next favorite meal."
+    "recipesDescription": "Browse our collection of simple, delicious recipes. Find your next favorite meal.",
+    "articlesTitle": "Cooking Articles & Guides | Date My Dish",
+    "articlesDescription": "Expert cooking guides, food science explanations, and kitchen tips to elevate your date night dinners."
   },
   "breadcrumbs": {
     "home": "Home",
     "recipes": "Recipes",
+    "articles": "Articles",
     "category": "Category"
   },
   "categories": {

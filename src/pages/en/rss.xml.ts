@@ -8,20 +8,41 @@ export async function GET(context: APIContext) {
     .filter((r) => r.data.lang === "en")
     .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
+  const articles = await getCollection("articles");
+  const enArticles = articles
+    .filter((a) => a.data.lang === "en")
+    .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+  const recipeItems = enRecipes.map((recipe) => {
+    const slug = recipe.id.replace(/^en\//, "");
+    return {
+      title: recipe.data.title,
+      description: recipe.data.description,
+      pubDate: recipe.data.publishDate,
+      link: `/en/recipes/${slug}/`,
+    };
+  });
+
+  const articleItems = enArticles.map((article) => {
+    const slug = article.id.replace(/^en\//, "");
+    return {
+      title: article.data.title,
+      description: article.data.description,
+      pubDate: article.data.publishDate,
+      link: `/en/articles/${slug}/`,
+    };
+  });
+
+  const allItems = [...recipeItems, ...articleItems].sort(
+    (a, b) => b.pubDate.getTime() - a.pubDate.getTime(),
+  );
+
   return rss({
-    title: "Date My Dish - Romantic Recipes for Unforgettable Date Nights",
+    title: "Date My Dish - Recipes & Cooking Guides for Date Night",
     description:
-      "Discover simple, delicious recipes crafted with love. From comforting classics to creative dishes, find your next favorite meal.",
+      "Discover recipes and cooking guides crafted with love. From comforting classics to expert kitchen tips, elevate your date night dinners.",
     site: context.site!,
-    items: enRecipes.map((recipe) => {
-      const slug = recipe.id.replace(/^en\//, "");
-      return {
-        title: recipe.data.title,
-        description: recipe.data.description,
-        pubDate: recipe.data.publishDate,
-        link: `/en/recipes/${slug}/`,
-      };
-    }),
+    items: allItems,
     customData: `<language>en</language>`,
   });
 }

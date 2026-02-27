@@ -1,0 +1,65 @@
+---
+import { Picture } from "astro:assets";
+import { t, getArticleLocalizedPath, type Locale } from "@i18n/utils";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  locale: Locale;
+  heroImage: ImageMetadata;
+  heroImageAlt: string;
+  publishDate: Date;
+  readingTime?: number;
+  headingLevel?: "h2" | "h3";
+  loading?: "lazy" | "eager";
+}
+
+const { title, description, slug, locale, heroImage, heroImageAlt, publishDate, readingTime, headingLevel = "h2", loading = "lazy" } = Astro.props;
+const Heading = headingLevel;
+
+const url = getArticleLocalizedPath(locale, slug);
+
+const formattedDate = publishDate.toLocaleDateString(locale === "fr" ? "fr-CA" : "en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+---
+
+<article class="group overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-neutral-900/80 dark:shadow-neutral-950/20">
+  <a href={url} class="block no-underline">
+    <div class="relative aspect-[4/3] overflow-hidden">
+      <Picture
+        src={heroImage}
+        alt={heroImageAlt}
+        widths={[320, 480, 640]}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        formats={["avif", "webp"]}
+        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading={loading}
+        decoding="async"
+      />
+    </div>
+    <div class="p-5">
+      <Heading class="mb-2 line-clamp-2 font-heading text-lg font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-neutral-100">
+        {title}
+      </Heading>
+      <p class="mb-4 line-clamp-2 text-body-sm text-gray-500 dark:text-neutral-400">{description}</p>
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-1.5 text-gray-400 dark:text-neutral-500">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span class="text-caption font-medium">{formattedDate}</span>
+        </div>
+        {readingTime && (
+          <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-caption font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
+            {readingTime} {t(locale, "article.readTime")}
+          </span>
+        )}
+      </div>
+    </div>
+  </a>
+</article>
