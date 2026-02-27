@@ -1,0 +1,125 @@
+name: SEO Auto-Optimize
+
+on:
+  push:
+    branches: [main]
+    paths: ['data/seo/rankings-*.json']
+  workflow_dispatch:
+
+concurrency:
+  group: seo-auto-optimize
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Close stale optimize PR
+        run: |
+          OPEN_PRS=$(gh pr list --label "seo-auto-optimize" --state open --json number --jq '.[].number')
+          for PR in $OPEN_PRS; do
+            gh pr close "$PR" --comment "Superseded by new ranking data."
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Claude Code SEO Optimization
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are running the weekly SEO auto-optimization for Date My Dish based on fresh ranking data.
+
+            ## Input Data
+
+            1. Read the MOST RECENT `data/seo/rankings-*.json` file (highest date in filename).
+            2. If a previous week's snapshot exists, read that too for delta comparison.
+
+            ## Optimization Targets
+
+            Analyze the ranking data and prioritize fixes in this order:
+
+            ### 1. Striking Distance Keywords (HIGH PRIORITY)
+            Pages with GSC avgPosition 4-20 AND ≥10 impressions.
+            These are close to page 1 — small improvements can yield big traffic gains.
+            - Ensure the target keyword appears in an H2 heading in the MDX prose
+            - Ensure the keyword is in the frontmatter `keywords[]` array
+            - Check that the meta `description` includes the keyword naturally
+            - Add 1-2 sentences in the prose strengthening relevance for that keyword
+
+            ### 2. Low CTR Pages (MEDIUM PRIORITY)
+            Pages with ≥50 impressions but CTR <2%.
+            The page ranks but nobody clicks — the meta description needs work.
+            - Rewrite the frontmatter `description` (max 160 chars) to be more compelling
+            - Include the primary keyword, a benefit, and a call to action
+            - Make it specific and enticing (not generic)
+
+            ### 3. Declining Pages (MEDIUM PRIORITY)
+            Pages where avgPosition dropped ≥3 positions vs. the previous week.
+            - Add 1-2 internal cross-links FROM other relevant recipe pages TO this page
+            - Cross-links use format: `/en/recipes/{slug}/` (with trailing slash)
+            - Ensure the declining keyword still appears in H2s and prose
+
+            ### 4. Missing Keywords (LOW PRIORITY)
+            Keywords GSC shows we rank for but are NOT in the recipe's frontmatter `keywords[]`.
+            - Add them to the `keywords[]` array (max 10 keywords per recipe)
+
+            ## Restrictions
+            - ONLY modify files in `src/content/recipes/` and `src/content/articles/` (MDX frontmatter and prose)
+            - Do NOT modify components, layouts, pages, i18n files, or config files
+            - Do NOT rewrite prose wholesale — make targeted, surgical additions
+            - Do NOT add more than 3 internal links per page per run
+            - Do NOT modify a recipe if it already ranks position 1-3 (don't fix what isn't broken)
+            - Keep all changes bilingual — if you modify an EN recipe, make the equivalent FR change
+            - Preserve all existing frontmatter fields exactly as-is (only add/modify specific fields)
+
+            ## After Changes
+            Run `npm run check` to verify no TypeScript/schema errors.
+
+            ## Output
+            Provide a summary:
+            - Pages optimized and what was changed
+            - Keywords targeted and current positions
+            - Expected impact (which keywords should improve)
+            - Any issues requiring manual attention
+          claude_args: |
+            --model claude-sonnet-4-6
+            --max-turns 20
+            --allowedTools Edit,Read,Write,Glob,Grep,Bash(npm run check)
+          branch_prefix: "seo-optimize/"
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Add label to PR
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          LATEST_PR=$(gh pr list --author "app/claude" --state open --json number --jq '.[0].number')
+          if [ -n "$LATEST_PR" ]; then
+            gh pr edit "$LATEST_PR" --add-label "seo-auto-optimize"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
