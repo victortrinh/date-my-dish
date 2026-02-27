@@ -56,6 +56,7 @@ jobs:
         uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.PAT_TOKEN }}
           prompt: |
             You are running the automated article publishing pipeline for Date My Dish.
 
