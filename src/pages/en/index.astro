@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
+import ArticleCard from "@components/ArticleCard.astro";
 import { Picture } from "astro:assets";
 import { t } from "@i18n/utils";
 import { getCollection } from "astro:content";
@@ -13,6 +14,19 @@ const allRecipes = await getCollection("recipes");
 const recipes = allRecipes
   .filter((r) => r.data.lang === "en")
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const allArticles = await getCollection("articles");
+const articles = allArticles
+  .filter((a) => a.data.lang === "en")
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+const recentPosts = [...recipes, ...articles]
+  .sort((a, b) => {
+    const dateDiff = b.data.publishDate.getTime() - a.data.publishDate.getTime();
+    if (dateDiff !== 0) return dateDiff;
+    return a.id.localeCompare(b.id);
+  })
+  .slice(0, 3);
 
 const CATEGORY_ORDER = ["appetizer", "dinner", "dessert"];
 const categories = [...new Set(recipes.flatMap((r) => r.data.recipeCategory))];
@@ -84,6 +98,51 @@ categories.sort((a, b) => {
       </a>
     </div>
   </section>
+
+  <!-- Recent Posts -->
+  {recentPosts.length > 0 && (
+    <section class="bg-gray-200 px-4 py-section dark:bg-neutral-900" aria-labelledby="recent-posts">
+      <div class="mx-auto max-w-content">
+        <div class="mb-10 text-center">
+          <h2 id="recent-posts" class="font-heading text-heading-1 font-bold text-gray-900 dark:text-neutral-100">
+            {t(locale, "home.recentPosts")}
+          </h2>
+          <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-accent"></div>
+        </div>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {recentPosts.map((post) => {
+            const slug = post.id.replace(/^en\//, "");
+            return post.collection === "recipes" ? (
+              <RecipeCard
+                title={post.data.title}
+                description={post.data.description}
+                slug={slug}
+                locale={locale}
+                heroImage={post.data.heroImage as ImageMetadata}
+                heroImageAlt={post.data.heroImageAlt}
+                prepTime={(post.data as any).prepTime}
+                totalTime={(post.data as any).totalTime}
+                difficulty={(post.data as any).difficulty}
+                headingLevel="h3"
+              />
+            ) : (
+              <ArticleCard
+                title={post.data.title}
+                description={post.data.description}
+                slug={slug}
+                locale={locale}
+                heroImage={post.data.heroImage as ImageMetadata}
+                heroImageAlt={post.data.heroImageAlt}
+                publishDate={post.data.publishDate}
+                readingTime={(post.data as any).readingTime}
+                headingLevel="h3"
+              />
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Featured Recipes -->
   {recipes.length > 0 && (
