@@ -206,7 +206,7 @@ jobs:
           claude_args: |
             --model claude-sonnet-4-6
             --max-turns 25
-            --allowedTools Edit,Read,Write,Glob,Grep,Bash(curl:convert:npm run check:npm run build:ls:cat:wc:du:file:identify)
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(convert),Bash(npm run check),Bash(npm run build),Bash(ls),Bash(cat),Bash(wc),Bash(du),Bash(file),Bash(identify)"
           branch_prefix: "auto-article/"
 
       # Step 4: Verify build after Claude's changes
