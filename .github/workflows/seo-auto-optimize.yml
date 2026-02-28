@@ -104,7 +104,7 @@ jobs:
           claude_args: |
             --model claude-sonnet-4-6
             --max-turns 20
-            --allowedTools Edit,Read,Write,Glob,Grep,Bash(npm run check)
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check:*)"
           branch_prefix: "seo-optimize/"
 
       - name: Check for changes
