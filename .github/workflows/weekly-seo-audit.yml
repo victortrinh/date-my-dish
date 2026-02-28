@@ -79,16 +79,17 @@ jobs:
 
             1. **Analyze Lighthouse scores**: Identify pages scoring below 90 in any category.
 
-            2. **Validate JSON-LD**: For each recipe in `dist/`, check the generated HTML for:
-               - Recipe schema with all required properties
+            2. **Validate JSON-LD**: For each recipe and article in `dist/`, check the generated HTML for:
+               - Recipe schema with all required properties (recipes only)
+               - Article schema with required properties (articles only)
                - Image in array format `[url]`
                - FAQPage schema present
                - BreadcrumbList schema present
 
-            3. **Check content quality** in `src/content/recipes/`:
+            3. **Check content quality** in `src/content/recipes/` and `src/content/articles/`:
                - `description` <= 160 characters
                - `heroImageAlt` descriptive, ~125 chars, no "Image of" prefix
-               - At least 3 FAQs per recipe
+               - At least 3 FAQs per recipe/article
                - MDX body word count >= 800 words
                - At least 3 H2 headings in prose
                - Internal cross-links present with trailing slashes
@@ -101,7 +102,7 @@ jobs:
             6. **After making changes**, run `npm run check` to verify no TypeScript/schema errors.
 
             ## Restrictions
-            - ONLY modify files in `src/content/recipes/` (MDX frontmatter and prose)
+            - ONLY modify files in `src/content/recipes/` and `src/content/articles/` (MDX frontmatter and prose)
             - Do NOT modify files in `src/components/`, `src/layouts/`, `src/pages/`, `src/i18n/`, or config files
             - Do NOT rewrite prose content wholesale — only fix specific issues (meta descriptions, alt text, cross-links, headings)
             - Do NOT modify `package.json`, `astro.config.ts`, `wrangler.jsonc`, or `CLAUDE.md`
@@ -166,7 +167,7 @@ jobs:
           - Lighthouse scores analyzed, content quality checked
 
           ## Verify
-          - [ ] All recipe pages still render correctly
+          - [ ] All recipe and article pages still render correctly
           - [ ] No schema validation errors
           - [ ] Meta descriptions within 160 chars
 
