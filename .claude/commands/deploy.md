@@ -8,6 +8,7 @@ Run pre-deploy checks, commit changes, and push to trigger Cloudflare Pages auto
    - Run `npx astro check` — must pass with 0 errors
    - Run `npm run build` — must complete successfully
    - Verify all recipe MDX files have matching EN/FR pairs (check translationSlug references)
+   - Verify all article MDX files have matching EN/FR pairs (check translationSlug references)
    - Check for any uncommitted changes
 
 2. **Review changes:**

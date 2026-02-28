@@ -1,9 +1,9 @@
 # Bulk Audit
 
-Run SEO audits across all recipes and produce a summary scorecard showing collection-wide health.
+Run SEO audits across all recipes and articles, producing a summary scorecard showing collection-wide health.
 
 ## Input
-- No arguments required (audits all recipes)
+- No arguments required (audits all recipes and articles)
 - Optional: `--skip-build` to skip the build step and only check source files
 
 ## Steps
@@ -14,10 +14,11 @@ Run SEO audits across all recipes and produce a summary scorecard showing collec
    - If build fails, report the error and stop
    - If `--skip-build` is passed, skip this step and note that JSON-LD checks will be skipped
 
-2. **Collect all recipes:**
+2. **Collect all content:**
    - List all `.mdx` files in `src/content/recipes/en/` (audit EN versions, which represent the primary content)
-   - Parse frontmatter from each recipe
-   - For each EN recipe, also locate its FR pair via `translationSlug`
+   - List all `.mdx` files in `src/content/articles/en/` (audit EN versions)
+   - Parse frontmatter from each file
+   - For each EN recipe/article, also locate its FR pair via `translationSlug`
 
 3. **Audit each recipe** using the same criteria as `/seo-audit`:
 
@@ -58,30 +59,69 @@ Run SEO audits across all recipes and produce a summary scorecard showing collec
 
    **Total possible: 24 points** (15 SEO + 9 Image)
 
-4. **Produce the summary scorecard:**
+4. **Audit each article** using the article scoring rubric from `/seo-audit`:
+
+   **a. Frontmatter Completeness (5 points):**
+   | Check | Points |
+   |-------|--------|
+   | All required fields present | +2 |
+   | Description <= 160 chars | +1 |
+   | At least 1 FAQ | +1 |
+   | Translation pair exists | +1 |
+
+   **b. JSON-LD Validity (5 points):** *(skipped if --skip-build)*
+   - Read the generated HTML from `dist/en/articles/{slug}/index.html`
+   | Check | Points |
+   |-------|--------|
+   | BlogPosting schema present | +2 |
+   | All required properties | +1 |
+   | FAQPage schema present | +1 |
+   | BreadcrumbList schema present | +1 |
+
+   **c. Content Quality (5 points):**
+   | Check | Points |
+   |-------|--------|
+   | MDX body word count >= 800 | +2 |
+   | At least 3 H2 headings | +1 |
+   | Internal cross-links present | +1 |
+   | Translation pair exists | +1 |
+
+   **d. Image Score (3 points):**
+   | Check | Points |
+   |-------|--------|
+   | Hero image present and optimized (< 200KB) | +2 |
+   | Descriptive alt text | +1 |
+
+   **Total possible: 18 points** (15 SEO + 3 Image)
+
+5. **Produce the summary scorecard:**
 
    ```
    === Bulk SEO Audit Report ===
    Date: YYYY-MM-DD
-   Recipes audited: X
+   Recipes audited: X | Articles audited: Y
+
+   --- RECIPES (24-point scale) ---
 
    | Recipe                    | SEO  | Image | Total | Issues                              |
    |---------------------------|------|-------|-------|-------------------------------------|
    | cacio-e-pepe              | 15/15| 9/9   | 24/24 | None                                |
    | quinoa-crusted-salmon     | 14/15| 7/9   | 21/24 | Prose 750 words (target: 800)       |
-   | beef-ragu-pappardelle     | 13/15| 5/9   | 18/24 | Missing 2 step images, no nutrition |
-   | ...                       |      |       |       |                                     |
+
+   --- ARTICLES (18-point scale) ---
+
+   | Article                   | SEO  | Image | Total | Issues                              |
+   |---------------------------|------|-------|-------|-------------------------------------|
+   | knife-skills-basics       | 15/15| 3/3   | 18/18 | None                                |
+   | food-science-emulsions    | 13/15| 2/3   | 15/18 | Prose under 800 words               |
 
    --- Scoring Tiers ---
-   Excellent (22-24): X recipes
-   Good (18-21): X recipes
-   Needs Work (14-17): X recipes
-   Critical (< 14): X recipes
+   Recipes:  Excellent (22-24): X | Good (18-21): X | Needs Work (14-17): X | Critical (<14): X
+   Articles: Excellent (16-18): X | Good (13-15): X | Needs Work (10-12): X | Critical (<10): X
 
    --- Common Issues ---
    - 5 of 9 recipes have < 3 step images
    - 2 of 9 recipes have prose under 800 words
-   - 1 recipe missing nutrition data
 
    --- Priority Fixes ---
    Critical:
@@ -90,20 +130,17 @@ Run SEO audits across all recipes and produce a summary scorecard showing collec
    Important:
    - [list important issues]
 
-   Nice-to-have:
-   - [list nice-to-have improvements]
-
    --- Collection Averages ---
-   Average SEO Score: X/15
-   Average Image Score: X/9
-   Average Total Score: X/24
+   Recipes:  Avg SEO: X/15 | Avg Image: X/9 | Avg Total: X/24
+   Articles: Avg SEO: X/15 | Avg Image: X/3 | Avg Total: X/18
    ```
 
 5. **Report actionable next steps:**
-   - For each recipe with issues, suggest the specific skill to run:
-     - Missing prose → `/write-prose {slug}`
+   - For each recipe/article with issues, suggest the specific skill to run:
+     - Missing recipe prose → `/write-prose {slug}`
      - Missing images → `/optimize-image` + add to frontmatter
-     - Missing translation → `/translate-recipe {slug}`
+     - Missing recipe translation → `/translate-recipe {slug}`
+     - Missing article translation → `/translate-article {slug}`
      - SEO issues → `/seo-audit {slug}` for detailed breakdown
    - Highlight the single highest-impact fix across the collection
 
