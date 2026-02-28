@@ -36,7 +36,7 @@ jobs:
       # Generate dynamic URL list from content directory
       - name: Generate URL list
         id: urls
-        run: node scripts/generate-lighthouse-urls.cjs
+        run: node scripts/generate-lighthouse-urls.cjs --mode=all
 
       # Run Lighthouse CI on all pages (1 run per URL for speed)
       - name: Run Lighthouse CI

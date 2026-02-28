@@ -8,7 +8,7 @@ const path = require('path');
 let urls;
 try {
   urls = JSON.parse(
-    fs.readFileSync(path.join(__dirname, '.lighthouserc-full-urls.json'), 'utf8')
+    fs.readFileSync(path.join(__dirname, '.lighthouse-urls.json'), 'utf8')
   );
 } catch {
   // Fallback to minimal set if URL generation hasn't run
