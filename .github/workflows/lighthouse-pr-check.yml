@@ -4,9 +4,6 @@ on:
   pull_request:
     branches: [main]
     types: [opened, synchronize, reopened]
-    paths:
-      - "src/content/recipes/**"
-      - "src/content/articles/**"
 
 concurrency:
   group: lighthouse-${{ github.event.pull_request.number }}
@@ -25,21 +22,38 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check for content changes
+        id: content
+        run: |
+          CHANGED=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD -- src/content/recipes/ src/content/articles/ src/pages/)
+          if [ -z "$CHANGED" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "No content pages changed — skipping Lighthouse"
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "Content changes detected:"
+            echo "$CHANGED"
+          fi
+
       - uses: actions/setup-node@v4
+        if: steps.content.outputs.skip == 'false'
         with:
           node-version: 20
           cache: npm
 
       - run: npm ci
+        if: steps.content.outputs.skip == 'false'
 
       - run: npm run build
+        if: steps.content.outputs.skip == 'false'
 
       - name: Generate changed page URLs
+        if: steps.content.outputs.skip == 'false'
         id: urls
         run: node scripts/generate-lighthouse-urls.cjs --mode=changed --base=origin/${{ github.event.pull_request.base.ref }}
 
       - name: Run Lighthouse CI
-        if: steps.urls.outputs.url_count > 0
+        if: steps.content.outputs.skip == 'false' && steps.urls.outputs.url_count > 0
         id: lhci
         uses: treosh/lighthouse-ci-action@v12
         with:
@@ -48,7 +62,7 @@ jobs:
           temporaryPublicStorage: true
 
       - name: Post PR comment with scores
-        if: always() && steps.lhci.outcome == 'success'
+        if: always() && steps.content.outputs.skip == 'false' && steps.lhci.outcome == 'success'
         uses: actions/github-script@v7
         with:
           script: |
