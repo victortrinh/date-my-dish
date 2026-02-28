@@ -48,7 +48,7 @@ jobs:
             gh pr close "$PR" --comment "Superseded by new auto-publish run."
           done
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.CREATE_PR_TOKEN }}
 
       # Step 3: Claude generates the recipe
       - name: Claude Code Recipe Generation
@@ -88,20 +88,24 @@ jobs:
             ## Your Tasks
 
             ### 1. Optimize images
+            **IMPORTANT: ONLY optimize images from the Notion download in `/tmp/notion-images/`. Do NOT re-optimize or touch any existing images in `src/assets/images/recipes/`.**
+
             The hero image has already been downloaded to the path in `notion-recipe-content.json` → `heroImage.localPath`.
 
-            **Hero image**: Convert to WebP, resize to max 1200px wide, quality 82:
+            **Hero image**: Convert the downloaded file to WebP, resize to max 1200px wide, quality 82:
             ```
             convert {heroImage.localPath} -resize '1200x>' -quality 82 src/assets/images/recipes/{slug}.webp
             ```
             If the result exceeds 200KB, reduce quality by 5 incrementally until it fits.
 
-            **Step/inline images**: For each image block with a `localPath`, convert to WebP, resize to max 900px wide, quality 80:
+            **Step/inline images**: For each image block in the JSON that has a `localPath` (in `/tmp/notion-images/`), convert to WebP, resize to max 900px wide, quality 80:
             ```
             convert {localPath} -resize '900x>' -quality 80 src/assets/images/recipes/{slug}-{descriptor}.webp
             ```
             If the result exceeds 150KB, reduce quality by 5 incrementally until it fits.
             Use descriptive filenames like `{slug}-step-1.webp`, `{slug}-ingredients.webp`, etc.
+
+            Only process images listed in the JSON content. Never glob or batch-process existing images.
 
             ### 2. Generate the EN slug
             If mode is "update", use the `existingSlug` from the selection JSON.
@@ -238,6 +242,7 @@ jobs:
             - In **update** mode: overwrite the existing EN+FR MDX files and images for the recipe being updated
             - Do NOT modify components, layouts, pages, i18n files, or config files
             - Do NOT modify `package.json`, `astro.config.ts`, `wrangler.jsonc`, or `CLAUDE.md`
+            - Do NOT re-optimize, convert, or modify any existing images — only process images from `/tmp/notion-images/`
 
             ## Output
             Provide a summary listing:
@@ -317,7 +322,7 @@ jobs:
           🤖 Generated with [Claude Code](https://claude.com/claude-code)" \
             --label "auto-recipe"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.CREATE_PR_TOKEN }}
 
       # Step 6: Create issue on failure
       - name: Create issue on failure
