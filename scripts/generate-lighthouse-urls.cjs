@@ -12,6 +12,8 @@ const staticUrls = [
   `${BASE}/fr/`,
   `${BASE}/en/recipes/`,
   `${BASE}/fr/recettes/`,
+  `${BASE}/en/articles/`,
+  `${BASE}/fr/articles/`,
   `${BASE}/en/about/`,
   `${BASE}/fr/a-propos/`,
   `${BASE}/en/contact/`,
@@ -34,7 +36,23 @@ const recipeUrls = [
   ...frRecipes.map(slug => `${BASE}/fr/recettes/${slug}/`),
 ];
 
-const allUrls = [...staticUrls, ...recipeUrls];
+// Discover article URLs from content directory
+const articlesDir = path.join(__dirname, '..', 'src', 'content', 'articles');
+
+const enArticles = fs.readdirSync(path.join(articlesDir, 'en'))
+  .filter(f => f.endsWith('.mdx'))
+  .map(f => f.replace('.mdx', ''));
+
+const frArticles = fs.readdirSync(path.join(articlesDir, 'fr'))
+  .filter(f => f.endsWith('.mdx'))
+  .map(f => f.replace('.mdx', ''));
+
+const articleUrls = [
+  ...enArticles.map(slug => `${BASE}/en/articles/${slug}/`),
+  ...frArticles.map(slug => `${BASE}/fr/articles/${slug}/`),
+];
+
+const allUrls = [...staticUrls, ...recipeUrls, ...articleUrls];
 
 // Write to .lighthouserc-full-urls.json for the config to consume
 const outputPath = path.join(__dirname, '..', '.lighthouserc-full-urls.json');
