@@ -173,4 +173,4 @@ jobs:
           🤖 Generated with [Claude Code](https://claude.com/claude-code)" \
             --label "automated-seo"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.CREATE_PR_TOKEN }}
