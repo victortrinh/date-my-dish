@@ -48,7 +48,7 @@ jobs:
             gh pr close "$PR" --comment "Superseded by new auto-publish run."
           done
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.CREATE_PR_TOKEN }}
 
       # Step 3: Claude generates the article
       - name: Claude Code Article Generation
@@ -269,7 +269,7 @@ jobs:
           🤖 Generated with [Claude Code](https://claude.com/claude-code)" \
             --label "auto-article"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.CREATE_PR_TOKEN }}
 
       # Step 6: Create issue on failure
       - name: Create issue on failure
