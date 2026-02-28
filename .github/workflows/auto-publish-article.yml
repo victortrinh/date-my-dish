@@ -226,13 +226,14 @@ jobs:
         continue-on-error: true
         id: verify
 
-      - name: Create branch and PR
+      - name: Create branch and push
         if: steps.changes.outputs.has_changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           BRANCH="auto-article/$(date +%Y-%m-%d)-${{ github.run_id }}"
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
           git checkout -b "$BRANCH"
           git add -A
           git commit -m "feat(article): auto-publish article from Notion
@@ -241,11 +242,18 @@ jobs:
 
           Co-Authored-By: Claude <noreply@anthropic.com>"
           git push -u origin "$BRANCH"
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
 
+      - name: Create PR
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
           # Read the selection JSON for PR title context
           TITLE=$(node -e "const s = require('./notion-article-selection.json'); console.log(s.title || 'New article')" 2>/dev/null || echo "New article")
 
           gh pr create \
+            --base main \
+            --head "$BRANCH" \
             --title "Auto-publish: $TITLE" \
             --body "## Summary
           - Auto-generated article from Notion database
@@ -261,7 +269,7 @@ jobs:
           🤖 Generated with [Claude Code](https://claude.com/claude-code)" \
             --label "auto-article"
         env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
 
       # Step 6: Create issue on failure
       - name: Create issue on failure
