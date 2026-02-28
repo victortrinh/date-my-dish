@@ -56,7 +56,7 @@ Process and optimize recipe images: hero, step, and batch processing with correc
    instructionGroups:
      - steps:
          - text: "Step description"
-           image: "/images/recipes/{recipe-slug}-step-1.jpg"
+           image: "../../../assets/images/recipes/{recipe-slug}-step-1.jpg"
    ```
 
 7. **Verify:**
