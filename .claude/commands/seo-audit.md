@@ -1,9 +1,9 @@
 # SEO Audit
 
-Audit a recipe for SEO completeness, structured data validity, content quality, and image optimization.
+Audit a recipe or article for SEO completeness, structured data validity, content quality, and image optimization.
 
 ## Input
-- Recipe slug or file path: $ARGUMENTS
+- Recipe or article slug or file path: $ARGUMENTS
 
 ## Audit Checklist
 
@@ -69,17 +69,57 @@ Calculate and report the image score:
 Generate a scorecard with:
 - Pass/Fail for each item
 - Overall score (X/total)
-- Image score (X/9)
+- Image score (X/9 for recipes, X/3 for articles)
 - List of specific issues to fix
 - Priority ranking of fixes (Critical > Important > Nice-to-have)
 
 ## Steps
-1. Read the recipe MDX file (both EN and FR)
-2. Check all frontmatter fields against the schema
-3. Build the site and inspect the generated HTML for JSON-LD
-4. Count words, headings, and links in the MDX body
-5. Verify the translation pair exists and slugs match
-6. Count and assess images (hero + step images in instruction steps)
-7. Check image file sizes on disk
-8. Calculate image score
+1. Determine content type: check if slug exists in `src/content/recipes/en/` or `src/content/articles/en/`
+2. Read the MDX file (both EN and FR)
+3. Check all frontmatter fields against the appropriate schema (recipe vs article)
+4. Build the site and inspect the generated HTML for JSON-LD
+5. Count words, headings, and links in the MDX body
+6. Verify the translation pair exists and slugs match
+7. Count and assess images
+8. Calculate score using the appropriate rubric
 9. Output the scorecard
+
+## Article Scoring Rubric (18 points)
+
+When auditing an article (found in `src/content/articles/`), use this adapted scoring:
+
+**a. Frontmatter Completeness (5 points):**
+| Check | Points |
+|-------|--------|
+| All required fields present (title, lang, translationSlug, description, publishDate, heroImage, heroImageAlt, keywords, articleCategory, faqs) | +2 |
+| Description <= 160 chars | +1 |
+| At least 1 FAQ | +1 |
+| Translation pair exists | +1 |
+
+**b. JSON-LD Validity (5 points):**
+| Check | Points |
+|-------|--------|
+| BlogPosting schema present with @type: BlogPosting | +2 |
+| All required properties (headline, description, image, author, datePublished) | +1 |
+| FAQPage schema present | +1 |
+| BreadcrumbList schema present | +1 |
+
+**c. Content Quality (5 points):**
+| Check | Points |
+|-------|--------|
+| MDX body word count >= 800 | +2 |
+| At least 3 H2 headings | +1 |
+| Internal cross-links present | +1 |
+| Translation pair exists | +1 |
+
+**d. Image Score (3 points):**
+| Check | Points |
+|-------|--------|
+| Hero image present and optimized (< 200KB) | +2 |
+| Descriptive alt text | +1 |
+
+**Scoring tiers (articles):**
+- **Excellent** (16-18): Fully optimized
+- **Good** (13-15): Minor improvements possible
+- **Needs Work** (10-12): Significant gaps
+- **Critical** (< 10): Missing essential elements

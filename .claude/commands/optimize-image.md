@@ -12,10 +12,11 @@ Process and optimize recipe images: hero, step, and batch processing with correc
    - Get dimensions and file size
    - Determine image type (hero or step) based on filename or user input
 
-2. **Rename descriptively:**
-   - Ask for the recipe slug if not obvious from the filename
-   - Hero image: `{recipe-slug}.jpg`
-   - Step images: `{recipe-slug}-step-{n}.jpg` (numbered sequentially)
+2. **Determine content type and rename descriptively:**
+   - Ask for the recipe or article slug if not obvious from the filename
+   - Determine if the image is for a recipe or article (ask if unclear from context)
+   - Hero image: `{slug}.jpg`
+   - Step images (recipes only): `{slug}-step-{n}.jpg` (numbered sequentially)
    - Use lowercase, hyphens, no spaces
 
 3. **Resize for web:**
@@ -44,20 +45,27 @@ Process and optimize recipe images: hero, step, and batch processing with correc
    - Report summary table of all processed images
 
 5. **Move to correct location:**
-   - Move processed images to `src/assets/images/recipes/`
+   - Recipe images: move to `src/assets/images/recipes/`
+   - Article images: move to `src/assets/images/articles/`
 
 6. **Output frontmatter paths and alt text guidance:**
    ```yaml
-   # Hero image (in recipe frontmatter)
-   heroImage: "../../../assets/images/recipes/{recipe-slug}.jpg"
+   # Recipe hero image
+   heroImage: "../../../assets/images/recipes/{slug}.jpg"
    heroImageAlt: "Descriptive alt text here (~125 chars, include dish name)"
 
-   # Step images (in instruction steps)
+   # Recipe step images (in instruction steps) -- uses image() imports
    instructionGroups:
      - steps:
          - text: "Step description"
-           image: "/images/recipes/{recipe-slug}-step-1.jpg"
+           image: "../../../assets/images/recipes/{slug}-step-1.jpg"
+
+   # Article hero image
+   heroImage: "../../../assets/images/articles/{slug}.jpg"
+   heroImageAlt: "Descriptive alt text here (~125 chars)"
    ```
+
+   **Note**: Articles only need a hero image (no step images). Recipe step images use Astro `image()` imports (relative paths), not URL strings.
 
 7. **Verify:**
    - Check final file sizes (hero < 200KB, step < 150KB)

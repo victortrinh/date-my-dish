@@ -66,7 +66,7 @@ ingredientGroups:
 instructionGroups:
   - steps:
       - text: "Step description here."
-        image: "/images/recipes/{slug}-step-1.jpg"  # Optional: URL for step photo
+        image: "../../../assets/images/recipes/{slug}-step-1.jpg"  # Optional: step photo (Astro image() import)
       - text: "Another step."
         # image omitted = no step photo for this step
 faqs:
@@ -97,7 +97,7 @@ Add the `image` field to instruction steps that show key moments:
 - Plating / final presentation
 - Not every step needs an image -- pick 3-5 most impactful moments
 
-Step images are URL strings (not Astro `image()` imports). They appear in:
+Step images use Astro `image()` imports (relative paths from the MDX file). They appear in:
 - The recipe page visually (below the step text)
 - JSON-LD HowToStep structured data (enables Google Guided Recipes on smart displays)
 

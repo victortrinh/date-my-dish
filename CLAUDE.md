@@ -5,7 +5,7 @@ Bilingual recipe blog (EN/FR) built with Astro 5, deployed on Cloudflare Pages.
 ## Tech Stack
 - **Framework**: Astro 5.x + TypeScript (strict) + MDX
 - **Styling**: Tailwind CSS 3.4+ (class-based dark mode)
-- **Content**: MDX files in `src/content/recipes/{en,fr}/` with Zod-validated frontmatter
+- **Content**: MDX files in `src/content/recipes/{en,fr}/` and `src/content/articles/{en,fr}/` with Zod-validated frontmatter
 - **i18n**: Subdirectory routing (`/en/`, `/fr/`) with `prefixDefaultLocale: true`
 - **Search**: Pagefind (runs post-build via `postbuild` script)
 - **Images**: Astro `<Picture>` with AVIF/WebP, images in `src/assets/` (not `public/`)
@@ -27,9 +27,10 @@ Bilingual recipe blog (EN/FR) built with Astro 5, deployed on Cloudflare Pages.
 - SVG icons inlined as raw elements (no icon library)
 
 ### Layout Hierarchy
-- `BaseLayout.astro` -- Root HTML shell (SEO head, nav, footer, search overlay, skip-to-content)
-- `RecipeLayout.astro` -- Thin wrapper extending BaseLayout for recipe pages (`ogType="article"`)
-- Named slot: `<slot name="head" />` for injecting `<RecipeSchema>` into `<head>`
+- `BaseLayout.astro` -- Root HTML shell (SEO head, nav, footer, search overlay, skip-to-content). Accepts `contentType?: "recipe" | "article"` for hreflang/language toggle routing.
+- `RecipeLayout.astro` -- Thin wrapper: `contentType="recipe"`, `ogType="article"`
+- `ArticleLayout.astro` -- Thin wrapper: `contentType="article"`, `ogType="article"`
+- Named slot: `<slot name="head" />` for injecting schema components into `<head>`
 
 ### Path Aliases (tsconfig.json)
 `@components/*`, `@layouts/*`, `@i18n/*`, `@assets/*`, `@content/*`, `@utils/*`
@@ -46,7 +47,16 @@ getCollection("recipes") -> filter by recipe.data.lang === locale
 -> extract slug: recipe.id.replace(/^(en|fr)\//, "")
 -> render(recipe) returns { Content }
 ```
-Recipe IDs in Astro 5 are locale-prefixed (e.g., `en/cacio-e-pepe`). Always strip the prefix.
+
+### Data Flow for Articles
+```
+getCollection("articles") -> filter by article.data.lang === locale
+-> extract slug: article.id.replace(/^(en|fr)\//, "")
+-> render(article) returns { Content }
+```
+
+Content IDs in Astro 5 are locale-prefixed (e.g., `en/cacio-e-pepe`). Always strip the prefix.
+Homepage merges both collections into "recent posts" sorted by `publishDate`.
 
 ### Dark Mode
 - Tailwind `class` strategy with `dark:` prefix
@@ -102,14 +112,42 @@ Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*
 ### HowToStep Schema
 `{ text: string, image?: image() }` -- Step images use Astro `image()` imports, NOT URL strings.
 
+## Article Schema Quick-Reference
+
+Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*.mdx", base: "./src/content/articles" })`
+
+### Required Fields
+| Field | Type | Constraint |
+|-------|------|------------|
+| `title` | string | Article title |
+| `lang` | enum | `"en"` or `"fr"` |
+| `translationSlug` | string | Slug of the paired translation |
+| `description` | string | Max 160 chars (SEO meta) |
+| `publishDate` | date | YYYY-MM-DD (coerced) |
+| `heroImage` | image() | Relative import path |
+| `heroImageAlt` | string | Descriptive, ~125 chars |
+| `keywords` | string[] | SEO keywords |
+| `articleCategory` | enum | `cooking-techniques`, `food-science`, `guides`, `ingredients`, `kitchen-tips`, `drinks` |
+| `faqs` | array | Min 1. `{ question: string, answer: string }` |
+
+### Optional Fields
+| Field | Type | Notes |
+|-------|------|-------|
+| `author` | string | Defaults to `"Victor"` |
+| `updatedDate` | date | YYYY-MM-DD |
+| `tags` | string[] | e.g., `["technique", "beginner"]` |
+| `readingTime` | number | Estimated reading time in minutes |
+| `relatedRecipes` | string[] | EN recipe slugs for cross-linking (rendered by `ArticleRelatedRecipes.astro`) |
+
 ## Content Structure
-- Recipes are MDX files with extensive YAML frontmatter (ingredients, instructions, nutrition, FAQs)
-- Every recipe must have an EN + FR pair linked via `translationSlug`
-- Ingredients and instructions live in frontmatter (needed for JSON-LD generation)
+- **Recipes**: MDX in `src/content/recipes/{en,fr}/` with extensive YAML frontmatter (ingredients, instructions, nutrition, FAQs)
+- **Articles**: MDX in `src/content/articles/{en,fr}/` with lighter frontmatter (no ingredients/instructions). Components: `ArticleCard`, `ArticleRelatedRecipes`, `ArticleSchema`
+- Every recipe/article must have an EN + FR pair linked via `translationSlug`
+- Recipe ingredients and instructions live in frontmatter (needed for JSON-LD generation)
 - MDX body is the SEO blog prose (target 800-1500 words, 5-8 H2 sections)
-- Images go in `src/assets/images/recipes/` with descriptive filenames
+- Recipe images go in `src/assets/images/recipes/`, article images in `src/assets/images/articles/`
 - EN/FR share the same image files -- only alt text is translated
-- Cross-links in prose use absolute paths with trailing slashes: `/en/recipes/{slug}/`
+- Cross-links in prose use absolute paths with trailing slashes: `/en/recipes/{slug}/`, `/en/articles/{slug}/`
 
 ### Picture Component Pattern in MDX
 ```mdx
@@ -144,9 +182,12 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 |----|----|
 | `/en/recipes/` | `/fr/recettes/` |
 | `/en/recipes/category/` | `/fr/recettes/categorie/` |
+| `/en/articles/` | `/fr/articles/` |
 | `/en/about/` | `/fr/a-propos/` |
 | `/en/search/` | `/fr/recherche/` |
 | `/en/contact/` | `/fr/contact/` |
+| `/en/privacy-policy/` | `/fr/politique-de-confidentialite/` |
+| `/en/terms-of-service/` | `/fr/conditions-dutilisation/` |
 
 ### Category Slug Map (canonical EN key -> localized slug)
 | Canonical | EN | FR |
@@ -172,6 +213,7 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 - `t(locale, key)` -- Type-safe translation lookup
 - `getLocaleFromUrl(url)` -- Extract locale from URL path
 - `getRecipeLocalizedPath(locale, slug)` -- Build recipe URL
+- `getArticleLocalizedPath(locale, slug)` -- Build article URL
 - `getCategoryLocalizedPath(locale, category)` -- Build category URL
 - `getAlternateUrl(currentUrl, targetLocale)` -- Translate full URL for hreflang
 
@@ -210,6 +252,7 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 
 ### JSON-LD Types
 - **Recipe + FAQPage** -- On every recipe page (via `RecipeSchema.astro`)
+- **BlogPosting + FAQPage** -- On every article page (via `ArticleSchema.astro`)
 - **BreadcrumbList** -- On every page (via `Breadcrumbs.astro`)
 - **WebSite + Organization** -- Homepage only
 - **ItemList** -- Recipe listing and category pages
@@ -227,19 +270,22 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 ### Available Commands
 | Command | Purpose |
 |---------|---------|
-| `/new-recipe` | Scaffold EN+FR MDX pair with full frontmatter template |
+| `/new-recipe` | Scaffold EN+FR recipe MDX pair with full frontmatter template |
+| `/new-article` | Scaffold EN+FR article MDX pair with article frontmatter template |
 | `/write-prose` | Generate 800-1500 word SEO blog prose for recipe MDX body |
 | `/translate-recipe` | Translate recipe EN<->FR with Quebec French conventions |
-| `/optimize-image` | Resize/rename images (hero 1200px/<200KB, step 900px/<150KB) |
-| `/seo-audit` | Audit single recipe: frontmatter, JSON-LD, content, images (24-pt score) |
-| `/bulk-audit` | Audit ALL recipes with collection-wide summary scorecard |
-| `/validate-recipes` | Collection integrity: EN/FR pairs, images, cross-links, content parity |
+| `/translate-article` | Translate article EN<->FR with Quebec French conventions |
+| `/optimize-image` | Resize/rename images for recipes or articles |
+| `/seo-audit` | Audit single recipe or article: frontmatter, JSON-LD, content, images |
+| `/bulk-audit` | Audit ALL recipes and articles with collection-wide summary scorecard |
+| `/validate-recipes` | Collection integrity: EN/FR pairs, images, cross-links, content parity (recipes + articles) |
 | `/deploy` | Pre-deploy checks + commit + push to main (triggers Cloudflare auto-deploy) |
 
 ### Recommended Workflows
 - **New recipe**: `/new-recipe` -> add real images -> `/optimize-image` -> `/write-prose` -> `/translate-recipe` -> `/seo-audit` -> `/deploy`
+- **New article**: `/new-article` -> add hero image -> `/optimize-image` -> write prose -> `/translate-article` -> `/seo-audit` -> `/deploy`
 - **Audit & fix**: `/bulk-audit` -> fix issues -> `/validate-recipes` -> `/deploy`
-- **Translation**: `/translate-recipe` -> `/validate-recipes`
+- **Translation**: `/translate-recipe` or `/translate-article` -> `/validate-recipes`
 - **Image update**: add images -> `/optimize-image` -> update frontmatter paths -> `/validate-recipes`
 
 ## Deploy & Infrastructure
@@ -248,6 +294,32 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 - **`_redirects`**: Relative paths ONLY (Cloudflare rejects absolute URLs) + WordPress migration 301s
 - **www-to-apex**: Configured at DNS level (CNAME + Redirect Rule), NOT in `_redirects`
 - **Wrangler**: `nodejs_compat` flag, `global_fetch_strictly_public`, observability enabled
+
+## CI/CD & Automation Pipelines
+
+### Content Publishing
+- `auto-publish-recipe.yml` -- Thursdays 3AM UTC: Notion -> Claude generates EN+FR MDX + images -> PR
+- `auto-publish-article.yml` -- Mondays 3AM UTC: same pipeline for articles
+- `social-post-on-deploy.yml` -- Auto-posts new recipes to Instagram/Pinterest on deploy
+- `token-refresh.yml` -- 1st + 25th of month: refreshes OAuth tokens (Pinterest 30d, Instagram 60d)
+
+### SEO & Quality Gates
+- `weekly-seo-ranking.yml` -- Mondays 8AM: GSC + SERP data -> `data/seo/`
+- `seo-auto-optimize.yml` -- Triggers on ranking data push: Claude optimizes underperforming content
+- `weekly-seo-audit.yml` -- Sundays 3AM: Lighthouse CI audit of all pages
+- `playwright-pr-check.yml` -- E2E smoke tests on PRs (desktop-light/dark, mobile-light/dark)
+- `lighthouse-pr-check.yml` -- Performance checks on PRs
+- `auto-merge.yml` -- Auto-merges Renovate dependency updates
+
+### Key Files (do not delete)
+- `notion/published.json`, `data/seo/`, `data/social-posts-log.json` -- automation state
+- `scripts/fetch-notion-recipe.mjs` / `scripts/fetch-notion-article.mjs` -- Notion fetch scripts
+- `scripts/seo/` -- SEO ranking and reporting scripts
+
+### Testing
+- **Playwright E2E**: `npx playwright test` -- auto-discovers all pages from `dist/`, 4 projects (desktop/mobile x light/dark)
+- **Lighthouse CI**: `.lighthouserc.cjs` (PR checks), `.lighthouserc-full.cjs` (full audit)
+- **Tests directory**: `tests/` with custom dark mode fixture at `tests/fixtures.ts`
 
 ## Lessons Learned
 
@@ -269,5 +341,9 @@ Key gotchas from `docs/solutions/` -- read the full docs for detailed context.
 14. Hero images need `max-h-[350px] object-cover`; step images need responsive max-width
 15. Sitemap must filter out search pages and bare root URL
 16. Protect handwritten fonts (Caveat) with `normal-case` when global uppercase rules exist
+17. Step images in recipe frontmatter use `image()` imports (relative paths), NOT URL strings
+18. `relatedRecipes` in article frontmatter must reference valid EN recipe slugs
+19. Homepage merges recipes + articles -- schema changes to either collection can break the homepage
+20. Article routes use `/articles/` in both EN and FR (no localization needed for this segment)
 
 For detailed context on any lesson, see `docs/solutions/`.
