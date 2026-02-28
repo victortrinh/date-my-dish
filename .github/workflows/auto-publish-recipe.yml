@@ -1,0 +1,331 @@
+name: Auto-Publish Recipe
+
+on:
+  schedule:
+    - cron: '0 3 * * 4' # Thursday 3 AM UTC
+  workflow_dispatch: # Manual trigger
+
+concurrency:
+  group: auto-publish-recipe
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Step 1: Fetch recipe from public Notion database (no auth needed)
+      # Uses notion-client (unofficial API) to query the publicly shared database.
+      # Note: notion-client depends on Notion's internal /api/v3/ — if it breaks,
+      # fall back to the local notion/ folder exports.
+      - name: Fetch and select recipe from Notion
+        id: select
+        run: node scripts/fetch-notion-recipe.mjs
+
+      # Step 2: Close stale auto-recipe PRs
+      - name: Close stale auto-recipe PRs
+        if: steps.select.outputs.found == 'true'
+        run: |
+          OPEN_PRS=$(gh pr list --label "auto-recipe" --state open --json number --jq '.[].number')
+          for PR in $OPEN_PRS; do
+            gh pr close "$PR" --comment "Superseded by new auto-publish run."
+          done
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      # Step 3: Claude generates the recipe
+      - name: Claude Code Recipe Generation
+        if: steps.select.outputs.found == 'true'
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.PAT_TOKEN }}
+          prompt: |
+            You are running the automated recipe publishing pipeline for Date My Dish.
+
+            ## Input
+            Two JSON files have been pre-fetched from the public Notion database:
+
+            1. **`notion-recipe-selection.json`** — Contains: `pageId`, `recipeNum`, `title`, `mode` ("publish" or "update"), and `existingSlug` (only for updates).
+            2. **`notion-recipe-content.json`** — Contains the full recipe content:
+               - `title`, `recipeNum`, `lastEditedTime`
+               - `cookTime` (text, e.g., "30 minutes"), `prepTime`, `totalTime` — human-readable times from Notion
+               - `difficulty` (lowercased, e.g., "easy", "medium", "hard")
+               - `servings` (number, e.g., 4)
+               - `category` (Notion category, e.g., "Others", "Main", "Appetizers", "Desserts")
+               - `heroImage`: `{ localPath, caption }` — the hero image has already been downloaded to `/tmp/notion-images/`
+               - `blocks`: Array of structured content blocks, each with a `type` field:
+                 - `{ type: "heading", level: 2, text: "..." }`
+                 - `{ type: "paragraph", text: "Markdown text with **bold** and [links](url)..." }`
+                 - `{ type: "list", style: "unordered"|"ordered", items: ["...", "..."] }`
+                 - `{ type: "image", url: "...", localPath: "/tmp/notion-images/...", caption: "..." }`
+                 - `{ type: "callout", icon: "emoji", text: "..." }`
+                 - `{ type: "toggle", text: "..." }`
+                 - `{ type: "divider" }`
+               - `faqs`: Array of `{ question, answer }` objects extracted from the recipe
+
+            Read both files to understand the recipe content and mode.
+            - **publish mode**: Create new EN+FR MDX files and a new published.json entry.
+            - **update mode**: The recipe was already published but has been edited in Notion. The `existingSlug` field contains the current EN slug. Regenerate the EN+FR MDX files in-place (overwrite), keeping the same slugs and `publishDate`, but updating content and `lastSyncedDate` in published.json.
+
+            ## Your Tasks
+
+            ### 1. Optimize images
+            The hero image has already been downloaded to the path in `notion-recipe-content.json` → `heroImage.localPath`.
+
+            **Hero image**: Convert to WebP, resize to max 1200px wide, quality 82:
+            ```
+            convert {heroImage.localPath} -resize '1200x>' -quality 82 src/assets/images/recipes/{slug}.webp
+            ```
+            If the result exceeds 200KB, reduce quality by 5 incrementally until it fits.
+
+            **Step/inline images**: For each image block with a `localPath`, convert to WebP, resize to max 900px wide, quality 80:
+            ```
+            convert {localPath} -resize '900x>' -quality 80 src/assets/images/recipes/{slug}-{descriptor}.webp
+            ```
+            If the result exceeds 150KB, reduce quality by 5 incrementally until it fits.
+            Use descriptive filenames like `{slug}-step-1.webp`, `{slug}-ingredients.webp`, etc.
+
+            ### 2. Generate the EN slug
+            If mode is "update", use the `existingSlug` from the selection JSON.
+            If mode is "publish", derive an SEO-friendly English slug from the title:
+            - Lowercase, replace spaces with hyphens
+            - Remove special characters (colons, apostrophes, parentheses, ampersands)
+            - Keep it concise (3-6 words max)
+            - Examples from existing recipes:
+              - "Vietnamese Pickled Vegetables (Do Chua)" -> `vietnamese-pickled-vegetables`
+              - "Authentic Cacio e Pepe" -> `cacio-e-pepe`
+              - "Bold Spicy Miso Ramen" -> `spicy-miso-ramen`
+
+            ### 3. Generate the FR slug
+            If mode is "update", read the existing EN MDX file to get the current `translationSlug` value.
+            If mode is "publish", create a meaningful French translation of the slug concept:
+            - Examples:
+              - `vietnamese-pickled-vegetables` -> `legumes-marines-vietnamiens`
+              - `cacio-e-pepe` -> `cacio-e-pepe`
+              - `spicy-miso-ramen` -> `ramen-miso-piquant`
+
+            ### 4. Generate EN MDX file
+            Create `src/content/recipes/en/{en-slug}.mdx` with:
+
+            **Frontmatter** (match schema exactly — see `src/content/recipes/en/cacio-e-pepe.mdx` as template):
+            - `title`: Original Notion title or a polished version (in quotes)
+            - `lang`: `en`
+            - `translationSlug`: The FR slug from step 3 (in quotes)
+            - `description`: Max 160 chars, SEO-optimized summary (in quotes)
+            - `author`: `"Victor"`
+            - `publishDate`: Today's date (YYYY-MM-DD). If mode is "update", keep the original publishDate and add `updatedDate` with today's date.
+            - `heroImage`: `"../../../assets/images/recipes/{en-slug}.webp"`
+            - `heroImageAlt`: Descriptive alt text ~125 chars based on the hero image (in quotes)
+            - `prepTime`: Convert from Notion text to ISO 8601 duration matching `/^PT\d+[HM](\d+[MS])?$/`. Examples: "15 minutes" -> "PT15M", "1 hour 30 minutes" -> "PT1H30M", "3 hours" -> "PT3H". Strip qualifiers like "about", "approximately", "plus resting time". For non-numeric values like "overnight", estimate (e.g., "PT8H").
+            - `cookTime`: Same ISO 8601 conversion as prepTime
+            - `totalTime`: Same ISO 8601 conversion as prepTime
+            - `recipeYield`: `"{servings} servings"` format (or more specific unit if appropriate, e.g., "4 steaks")
+            - `difficulty`: Use the lowercase value from JSON (must be "easy", "medium", or "hard")
+            - `recipeCategory`: Map from Notion Category to canonical EN keys. MUST be one of: `appetizer`, `dinner`, `dessert`, `breakfast`, `lunch`, `snack`, `side-dish`, `drink`, `sauce`. Mapping: "Main" -> `["dinner"]`, "Appetizers" -> `["appetizer"]`, "Desserts" -> `["dessert"]`, "Others" or missing -> infer from content.
+            - `recipeCuisine`: Infer from recipe content (e.g., "Italian", "Vietnamese", "Korean", "Japanese", "Mexican", "Thai", "French", "Mediterranean")
+            - `keywords`: 8-12 SEO keywords as array
+            - `tags`: 3-5 topic tags as array (e.g., `["vietnamese", "pickled", "side-dish", "quick"]`)
+            - `ingredientGroups`: Structure from Notion blocks. Look for headings containing "Ingredient" to identify sections. Each group: `{ group: "section name" or "", items: ["ingredient 1", "ingredient 2"] }`. Items from bulleted/unordered lists under ingredient headings.
+            - `instructionGroups`: Structure from Notion blocks. Look for headings containing "Instruction", "Method", "Steps", or "Directions". Each group: `{ group: "section name" or "", steps: [{ text: "step description" }] }`. Steps contain `text` only (NO images in frontmatter steps).
+            - `nutrition`: Approximate nutritional info: `{ calories: "X kcal", fatContent: "Xg", carbohydrateContent: "Xg", proteinContent: "Xg" }`
+            - `occasion`: Array from: `date-night`, `weeknight`, `entertaining`, `comfort`, `celebration`, `quick-meal`. Choose 1-3 that fit.
+            - `impressFactor`: 1-5 rating (how impressive for a date night)
+            - `dateNightTips`: `{ wine: "...", music: "...", platingTip: "..." }` — Generate appropriate suggestions
+            - `faqs`: At least 3 FAQ entries with expanded answers (~2-3 sentences each). Use Notion FAQs if extracted, supplement or generate if fewer than 3.
+
+            **Body**: Write 800-1500 words of SEO-optimized prose:
+            - Start with `import { Picture } from "astro:assets";` and import statements for each optimized image
+            - Image imports use relative paths: `import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";`
+            - Opening paragraph (no heading) — engaging hook related to date night cooking
+            - 5-8 H2 sections covering the recipe's story, techniques, and tips
+            - Include `<Picture>` components for step/inline images throughout the body:
+              ```
+              <Picture
+                src={imgName}
+                alt="Descriptive alt text (~125 chars)"
+                widths={[400, 600, 900]}
+                sizes="(max-width: 896px) 100vw, 896px"
+                formats={["avif", "webp"]}
+                class="my-6 w-full rounded-lg"
+                loading="lazy"
+              />
+              ```
+            - Use the Notion content as an outline but REWRITE the prose — make it more engaging, detailed, and SEO-friendly
+            - Include the "date night" angle throughout (this is a date night cooking blog)
+            - Internal cross-links to existing recipes: `/en/recipes/{slug}/` (trailing slash required)
+            - Check existing recipe slugs: Glob for `src/content/recipes/en/*.mdx` to find linkable recipes
+
+            ### 5. Generate FR MDX file
+            Create `src/content/recipes/fr/{fr-slug}.mdx`:
+            - Translate ALL frontmatter values to Quebec French
+            - `lang`: `fr`
+            - `translationSlug`: The EN slug from step 2 (in quotes)
+            - `heroImage`: Same path as EN (shared image file)
+            - `heroImageAlt`: French translation of alt text
+            - `recipeYield`: `"{servings} portions"` (Quebec French for servings)
+            - `recipeCuisine`: French translation (e.g., "Italienne", "Vietnamienne", "Coréenne")
+            - `keywords`: French SEO keywords
+            - `tags`: French tags
+            - `ingredientGroups`: Fully translated to French (measurements: cuillère à thé/tsp, cuillère à soupe/tbsp, tasses/cups)
+            - `instructionGroups`: Fully translated to French
+            - `nutrition`: Same values (units are universal)
+            - `dateNightTips`: Translated to French
+            - `faqs`: Fully translated to Quebec French
+            - Body: Full Quebec French translation of the EN prose
+            - Quebec French conventions: souper (dinner), déjeuner (breakfast), dîner (lunch), cuillère à soupe (tbsp), tasses (cups), portions (servings)
+            - Cross-links use `/fr/recettes/{slug}/` (French route with trailing slash)
+            - Image imports and `<Picture>` components: same image files, French alt text
+
+            ### 6. Update published.json
+            Read `notion/published.json`:
+
+            **If mode = "publish"** — add a new entry:
+            ```json
+            "{recipe_num}": {
+              "notionTitle": "{original Notion title}",
+              "slug": "{en-slug}",
+              "type": "recipe",
+              "publishedDate": "{today YYYY-MM-DD}",
+              "lastSyncedDate": "{today YYYY-MM-DD}",
+              "status": "published"
+            }
+            ```
+
+            **If mode = "update"** — update only `lastSyncedDate` to today:
+            ```json
+            "{recipe_num}": {
+              ...existing fields unchanged...,
+              "lastSyncedDate": "{today YYYY-MM-DD}"
+            }
+            ```
+
+            ### 7. Validate
+            Run `npm run check` to verify schema compliance.
+            If it fails, read the error messages, fix the issues, and re-run.
+            Common issues to watch for:
+            - ISO 8601 times not matching `/^PT\d+[HM](\d+[MS])?$/`
+            - `description` exceeding 160 characters
+            - Missing required frontmatter fields
+            - Image paths not resolving (ensure images were saved correctly)
+
+            ### 8. Verify EN/FR pair
+            Confirm that:
+            - EN file's `translationSlug` matches the FR file's slug (filename without .mdx)
+            - FR file's `translationSlug` matches the EN file's slug
+            - Both files exist
+
+            ## Restrictions
+            - ONLY create/modify files in: `src/content/recipes/`, `src/assets/images/recipes/`, `notion/published.json`
+            - In **publish** mode: create new files only (except `notion/published.json`)
+            - In **update** mode: overwrite the existing EN+FR MDX files and images for the recipe being updated
+            - Do NOT modify components, layouts, pages, i18n files, or config files
+            - Do NOT modify `package.json`, `astro.config.ts`, `wrangler.jsonc`, or `CLAUDE.md`
+
+            ## Output
+            Provide a summary listing:
+            - Mode (publish or update)
+            - Recipe title and Recipe #
+            - EN slug and FR slug
+            - Recipe category assigned
+            - Cuisine identified
+            - Number of ingredient groups and total ingredients
+            - Number of instruction groups and total steps
+            - Word count of EN prose
+            - Number of FAQs
+            - Image optimization results (original size -> final size for each)
+            - Any issues encountered
+          claude_args: |
+            --model claude-sonnet-4-6
+            --max-turns 30
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(convert:*),Bash(node:*),Bash(npm run:*),Bash(ls:*),Bash(cat:*),Bash(wc:*),Bash(du:*),Bash(file:*),Bash(identify:*),Bash(mkdir:*),Bash(which:*),Bash(cp:*)"
+          branch_prefix: "auto-recipe/"
+
+      # Step 4: Check for changes and create PR
+      - name: Check for changes
+        if: steps.select.outputs.found == 'true'
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Verify build
+        if: steps.changes.outputs.has_changes == 'true'
+        run: npm run check && npm run build
+
+      - name: Create branch and push
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="auto-recipe/$(date +%Y-%m-%d)-${{ github.run_id }}"
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+          git checkout -b "$BRANCH"
+          git add src/content/recipes/ src/assets/images/recipes/ notion/published.json
+          git commit -m "feat(recipe): auto-publish recipe from Notion
+
+          Generated by Auto-Publish Recipe workflow.
+
+          Co-Authored-By: Claude <noreply@anthropic.com>"
+          git push -u origin "$BRANCH"
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+
+      - name: Create PR
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          # Read the selection JSON for PR title context
+          TITLE=$(node -e "const s = require('./notion-recipe-selection.json'); console.log(s.title || 'New recipe')" 2>/dev/null || echo "New recipe")
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "Auto-publish: $TITLE" \
+            --body "## Summary
+          - Auto-generated recipe from Notion database
+          - Created by the weekly auto-publish pipeline
+
+          ## Verify
+          - [ ] EN recipe renders correctly
+          - [ ] FR recipe renders correctly
+          - [ ] Images optimized and displaying
+          - [ ] JSON-LD schema valid
+          - [ ] Cross-links working
+          - [ ] All frontmatter fields pass validation
+
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)" \
+            --label "auto-recipe"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      # Step 6: Create issue on failure
+      - name: Create issue on failure
+        if: failure()
+        run: |
+          gh issue create \
+            --title "Auto-publish recipe failed ($(date +%Y-%m-%d))" \
+            --body "The weekly auto-publish recipe workflow failed. [View run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})" \
+            --label "auto-recipe-failure"
+        env:
+          GH_TOKEN: ${{ github.token }}
