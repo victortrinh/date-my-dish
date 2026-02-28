@@ -135,13 +135,14 @@ jobs:
         id: verify
 
       # Create branch, commit, push, and open PR
-      - name: Create branch and PR
+      - name: Create branch and push
         if: steps.changes.outputs.has_changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           BRANCH="seo-audit/$(date +%Y-%m-%d)-${{ github.run_id }}"
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
           git checkout -b "$BRANCH"
           git add -A
           git commit -m "fix(seo): weekly SEO audit fixes
@@ -150,8 +151,15 @@ jobs:
 
           Co-Authored-By: Claude <noreply@anthropic.com>"
           git push -u origin "$BRANCH"
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
 
+      - name: Create PR
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
           gh pr create \
+            --base main \
+            --head "$BRANCH" \
             --title "SEO Audit: $(date +%Y-%m-%d) weekly fixes" \
             --body "## Summary
           - Automated weekly SEO audit and fixes
@@ -165,4 +173,4 @@ jobs:
           🤖 Generated with [Claude Code](https://claude.com/claude-code)" \
             --label "automated-seo"
         env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}

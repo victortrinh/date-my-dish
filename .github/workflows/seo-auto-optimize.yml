@@ -116,13 +116,14 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Create branch and PR
+      - name: Create branch and push
         if: steps.changes.outputs.has_changes == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           BRANCH="seo-optimize/$(date +%Y-%m-%d)-${{ github.run_id }}"
+          echo "BRANCH=$BRANCH" >> $GITHUB_ENV
           git checkout -b "$BRANCH"
           git add -A
           git commit -m "fix(seo): auto-optimize from ranking data
@@ -131,8 +132,15 @@ jobs:
 
           Co-Authored-By: Claude <noreply@anthropic.com>"
           git push -u origin "$BRANCH"
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
 
+      - name: Create PR
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
           gh pr create \
+            --base main \
+            --head "$BRANCH" \
             --title "SEO Optimize: $(date +%Y-%m-%d) ranking-based fixes" \
             --body "## Summary
           - Automated SEO optimization based on fresh ranking data
@@ -146,4 +154,4 @@ jobs:
           🤖 Generated with [Claude Code](https://claude.com/claude-code)" \
             --label "seo-auto-optimize"
         env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
