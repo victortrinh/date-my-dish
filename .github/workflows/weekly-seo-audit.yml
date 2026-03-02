@@ -18,7 +18,7 @@ permissions:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v6
         with:
@@ -39,11 +39,19 @@ jobs:
         run: node scripts/generate-lighthouse-urls.cjs --mode=all
 
       # Run Lighthouse CI on all pages (1 run per URL for speed)
-      - name: Run Lighthouse CI
+      - name: Run Lighthouse CI (Desktop)
         id: lhci
         uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./.lighthouserc-full.cjs
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      - name: Run Lighthouse CI (Mobile)
+        id: lhci-mobile
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./.lighthouserc-mobile-full.cjs
           uploadArtifacts: true
           temporaryPublicStorage: true
 
