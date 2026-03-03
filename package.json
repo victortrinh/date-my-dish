@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node scripts/fetch-ratings.mjs",
     "build": "astro build",
     "preview": "npm run build && wrangler dev",
     "check": "astro check",
-    "postbuild": "npx pagefind --site dist",
+    "postbuild": "node scripts/generate-recipe-index.mjs && npx pagefind --site dist",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types",
     "test": "npx playwright test",

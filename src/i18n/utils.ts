@@ -142,5 +142,10 @@ export function getCategoryLocalizedPath(
   return `/${locale}/${prefix}/${slug}`;
 }
 
+export function getBookmarksLocalizedPath(locale: Locale): string {
+  const segment = locale === "fr" ? "signets" : "bookmarks";
+  return `/${locale}/${segment}/`;
+}
+
 export const locales: Locale[] = ["en", "fr"];
 export const defaultLocale: Locale = "en";

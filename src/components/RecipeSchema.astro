@@ -30,6 +30,11 @@ interface FAQ {
   answer: string;
 }
 
+interface RatingInfo {
+  averageRating: number;
+  ratingCount: number;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -50,6 +55,7 @@ interface Props {
   instructionGroups: InstructionGroup[];
   nutrition?: Nutrition;
   faqs: FAQ[];
+  ratingData?: RatingInfo;
 }
 
 const {
@@ -72,6 +78,7 @@ const {
   instructionGroups,
   nutrition,
   faqs,
+  ratingData,
 } = Astro.props;
 
 const siteUrl = "https://datemydish.com";
@@ -131,6 +138,17 @@ const recipeJsonLd = {
           ...(nutrition.fatContent ? { fatContent: nutrition.fatContent } : {}),
           ...(nutrition.carbohydrateContent ? { carbohydrateContent: nutrition.carbohydrateContent } : {}),
           ...(nutrition.proteinContent ? { proteinContent: nutrition.proteinContent } : {}),
+        },
+      }
+    : {}),
+  ...(ratingData && ratingData.ratingCount > 0
+    ? {
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: ratingData.averageRating,
+          ratingCount: ratingData.ratingCount,
+          bestRating: 5,
+          worstRating: 1,
         },
       }
     : {}),

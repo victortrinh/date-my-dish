@@ -13,5 +13,11 @@
   "observability": {
     "enabled": true
   },
+  "kv_namespaces": [
+    {
+      "binding": "RATINGS",
+      "id": "YOUR_KV_NAMESPACE_ID"
+    }
+  ],
   "$schema": "node_modules/wrangler/config-schema.json"
 }
