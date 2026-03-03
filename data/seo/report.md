@@ -4,10 +4,16 @@
 
 | Source | Status |
 |--------|--------|
-| Google Search Console | No data / skipped |
+| Google Search Console | OK |
 | Serper.dev SERP | OK |
-| Date Range | N/A to N/A |
+| Date Range | 2026-02-21 to 2026-02-28 |
 | Keywords Tracked | 60 |
+
+## Per-Page Summary
+
+| Page | Top Keyword | Avg Position | Clicks | Impressions | CTR |
+|------|-------------|-------------|--------|-------------|-----|
+| /quinoa-crusted-salmon/ | quinoa crusted salmon | 76.5 | 0 | 2 | 0.0% |
 
 ## Competitor Snapshot
 
@@ -15,16 +21,16 @@ Top domains appearing across your tracked keywords:
 
 | Domain | Keywords Ranking For |
 |--------|---------------------|
-| youtube.com | 16 |
-| recipetineats.com | 15 |
-| seriouseats.com | 14 |
-| allrecipes.com | 7 |
-| reddit.com | 7 |
-| loveandlemons.com | 6 |
+| youtube.com | 17 |
+| seriouseats.com | 15 |
+| recipetineats.com | 14 |
+| reddit.com | 8 |
+| allrecipes.com | 5 |
 | delish.com | 5 |
-| thekitchn.com | 5 |
-| pinchofyum.com | 4 |
+| loveandlemons.com | 5 |
 | food52.com | 4 |
+| bonappetit.com | 4 |
+| facebook.com | 4 |
 
 ## Our SERP Positions
 

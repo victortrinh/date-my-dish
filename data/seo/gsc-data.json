@@ -1,1 +1,22 @@
-null
+{
+  "pages": {
+    "/quinoa-crusted-salmon/": {
+      "queries": [
+        {
+          "keyword": "quinoa crusted salmon",
+          "avgPosition": 76.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 2
+    }
+  },
+  "dateRange": {
+    "start": "2026-02-21",
+    "end": "2026-02-28"
+  },
+  "rowCount": 1
+}
