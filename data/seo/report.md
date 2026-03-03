@@ -1,4 +1,4 @@
-# SEO Ranking Report — 2026-03-02
+# SEO Ranking Report — 2026-03-03
 
 ## Data Sources
 
@@ -15,23 +15,22 @@ Top domains appearing across your tracked keywords:
 
 | Domain | Keywords Ranking For |
 |--------|---------------------|
-| seriouseats.com | 17 |
-| youtube.com | 11 |
-| reddit.com | 11 |
-| recipetineats.com | 10 |
+| youtube.com | 16 |
+| recipetineats.com | 15 |
+| seriouseats.com | 14 |
 | allrecipes.com | 7 |
+| reddit.com | 7 |
 | loveandlemons.com | 6 |
-| pinchofyum.com | 5 |
 | delish.com | 5 |
-| facebook.com | 5 |
-| hungryhuy.com | 5 |
+| thekitchn.com | 5 |
+| pinchofyum.com | 4 |
+| food52.com | 4 |
 
 ## Our SERP Positions
 
 | Keyword | Position | Featured |
 |---------|----------|----------|
-| the truth about msg: a flavor-boosting superstar for your date night | 1 | No |
-| quinoa-crusted salmon with spicy orange miso sauce | 4 | No |
+| quinoa-crusted salmon with spicy orange miso sauce | 3 | No |
 
 ---
 *Generated automatically by [weekly-seo-ranking](../../.github/workflows/weekly-seo-ranking.yml)*
