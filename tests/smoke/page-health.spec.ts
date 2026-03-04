@@ -6,6 +6,7 @@ const pages = discoverPages();
 // Known noise to filter out (third-party scripts, non-critical warnings)
 const IGNORED_ERRORS = [
   "favicon", // Browser-generated favicon 404
+  "cloudflareinsights.com", // CF Web Analytics CORS error on localhost
 ];
 
 for (const { path, name } of pages) {
