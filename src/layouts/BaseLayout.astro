@@ -69,6 +69,16 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <script is:inline>
       (function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})();
     </script>
+    <!-- Pinterest Tag -->
+    <script is:inline>
+      !function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+      pintrk('load','2613431123607');
+      pintrk('page');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?event=init&tid=2613431123607&noscript=1" />
+    </noscript>
+    <!-- end Pinterest Tag -->
   </head>
   <body class="flex min-h-screen flex-col bg-gray-100 dark:bg-neutral-950">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-ui focus:text-sm focus:font-medium focus:text-brand-primary focus:shadow-lg dark:focus:bg-neutral-800 dark:focus:text-brand-primary">
