@@ -56,6 +56,9 @@ const difficultyColors = {
   publishDate={data.publishDate}
   updatedDate={data.updatedDate}
 >
+  <Fragment slot="head">
+    <script is:inline>pintrk('track', 'pagevisit');</script>
+  </Fragment>
   <RecipeSchema
     slot="head"
     title={data.title}

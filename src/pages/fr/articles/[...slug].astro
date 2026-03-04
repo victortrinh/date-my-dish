@@ -48,6 +48,9 @@ const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
   publishDate={data.publishDate}
   updatedDate={data.updatedDate}
 >
+  <Fragment slot="head">
+    <script is:inline>pintrk('track', 'pagevisit');</script>
+  </Fragment>
   <ArticleSchema
     slot="head"
     title={data.title}
