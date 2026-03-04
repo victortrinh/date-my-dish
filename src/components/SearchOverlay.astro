@@ -130,6 +130,22 @@ const { locale } = Astro.props;
             zero_results: 'No results for [SEARCH_TERM]',
           },
         });
+        // Track searches with Pinterest
+        setTimeout(function() {
+          var input = container.querySelector('input');
+          if (input) {
+            var searchTimeout;
+            input.addEventListener('input', function() {
+              clearTimeout(searchTimeout);
+              var q = input.value.trim();
+              if (q.length >= 3 && window.pintrk) {
+                searchTimeout = setTimeout(function() {
+                  pintrk('track', 'search', { search_query: q });
+                }, 1000);
+              }
+            });
+          }
+        }, 200);
         // Focus input
         setTimeout(function() {
           var input = container.querySelector('input');

@@ -48,6 +48,7 @@ allCategories.sort((a, b) => {
   description={`Parcourez nos recettes de ${categoryLabel.toLowerCase()}. Trouvez votre prochain plat coup de cœur.`}
 >
   <Fragment slot="head">
+    <script is:inline>pintrk('track', 'viewcategory');</script>
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ItemList",
