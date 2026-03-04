@@ -107,7 +107,8 @@
     "legalNav": "Navigation légale",
     "nav": "Navigation du pied de page",
     "categoriesNav": "Catégories de recettes",
-    "instagramLabel": "Suivez-nous sur Instagram"
+    "instagramLabel": "Suivez-nous sur Instagram",
+    "pinterestLabel": "Suivez-nous sur Pinterest"
   },
   "seo": {
     "titleTemplate": "%s | Date My Dish",
