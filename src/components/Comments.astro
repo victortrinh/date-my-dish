@@ -87,8 +87,7 @@ const { locale, identifier, url, title } = Astro.props;
       };
 
       var script = document.createElement('script');
-      // Replace YOUR_SHORTNAME with actual Disqus shortname
-      script.src = 'https://YOUR_SHORTNAME.disqus.com/embed.js';
+      script.src = 'https://datemydish.disqus.com/embed.js';
       script.dataset.timestamp = +new Date();
       script.async = true;
       document.head.appendChild(script);

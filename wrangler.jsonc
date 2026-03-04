@@ -16,7 +16,7 @@
   "kv_namespaces": [
     {
       "binding": "RATINGS",
-      "id": "YOUR_KV_NAMESPACE_ID"
+      "id": "24d232d9f632423e8e45dc04f6f8ddf0"
     }
   ],
   "$schema": "node_modules/wrangler/config-schema.json"

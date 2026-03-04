@@ -92,8 +92,7 @@ const { locale, compact = false } = Astro.props;
         btn.textContent = '...';
 
         // POST to ConvertKit form endpoint
-        // Replace YOUR_FORM_ID with actual ConvertKit form ID
-        fetch('https://app.convertkit.com/forms/YOUR_FORM_ID/subscriptions', {
+        fetch('https://app.convertkit.com/forms/9162657/subscriptions', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
