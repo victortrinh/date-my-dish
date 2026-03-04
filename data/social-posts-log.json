@@ -1,14 +1,14 @@
 {
   "beef-ragu-pappardelle": {
     "pinterest": {
-      "error": "Pinterest API error 3: Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']",
-      "failedAt": "2026-03-04T16:34:13.540Z"
+      "id": "1050746156851488745",
+      "postedAt": "2026-03-04T16:37:53.542Z"
     }
   },
   "brussels-sprouts-salad": {
     "pinterest": {
-      "error": "Pinterest API error 3: Your token does not have sufficient permissions to perform this operation. Please ensure your token is authorized with the correct set of scopes. Missing: ['boards:write']",
-      "failedAt": "2026-03-04T16:34:29.392Z"
+      "id": "1050746156851488759",
+      "postedAt": "2026-03-04T16:38:10.344Z"
     }
   }
 }
