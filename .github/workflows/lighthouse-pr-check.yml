@@ -60,6 +60,7 @@ jobs:
           configPath: ./.lighthouserc.cjs
           uploadArtifacts: true
           temporaryPublicStorage: true
+          artifactName: lighthouse-results-desktop
 
       - name: Run Lighthouse CI (Mobile)
         if: steps.content.outputs.skip == 'false' && steps.urls.outputs.url_count > 0
@@ -69,6 +70,7 @@ jobs:
           configPath: ./.lighthouserc-mobile.cjs
           uploadArtifacts: true
           temporaryPublicStorage: true
+          artifactName: lighthouse-results-mobile
 
       - name: Post PR comment with scores
         if: always() && steps.content.outputs.skip == 'false' && (steps.lhci.outcome == 'success' || steps.lhci-mobile.outcome == 'success')
