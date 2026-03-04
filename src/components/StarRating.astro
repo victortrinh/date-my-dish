@@ -1,0 +1,171 @@
+---
+import { t, type Locale } from "@i18n/utils";
+
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+
+const { locale, slug } = Astro.props;
+---
+
+<div
+  class="no-print star-rating mt-6 rounded-xl border border-gray-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-900"
+  data-slug={slug}
+  role="group"
+  aria-label={t(locale, "rating.rateThis")}
+>
+  <h3 class="mb-3 font-heading text-sm font-semibold uppercase tracking-wide text-gray-700 dark:text-neutral-300">
+    {t(locale, "rating.rateThis")}
+  </h3>
+
+  <div class="flex items-center gap-4">
+    <div class="star-rating-stars flex" role="radiogroup" aria-label={t(locale, "rating.rateThis")}>
+      {[1, 2, 3, 4, 5].map((value) => (
+        <button
+          type="button"
+          class="star-btn p-0.5 text-gray-300 transition-colors hover:text-yellow-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary dark:text-neutral-600 dark:hover:text-yellow-400"
+          data-value={value}
+          role="radio"
+          aria-checked="false"
+          aria-label={`${value} ${value === 1 ? (locale === "fr" ? "étoile" : "star") : (locale === "fr" ? "étoiles" : "stars")}`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+          </svg>
+        </button>
+      ))}
+    </div>
+
+    <span class="star-rating-summary text-body-sm text-gray-500 dark:text-neutral-400"></span>
+  </div>
+
+  <div class="star-rating-feedback mt-2 text-body-sm" aria-live="polite"></div>
+</div>
+
+<script is:inline>
+  document.querySelectorAll('.star-rating').forEach(function(widget) {
+    if (widget.dataset.bound) return;
+    widget.dataset.bound = 'true';
+
+    var slug = widget.dataset.slug;
+    var stars = widget.querySelectorAll('.star-btn');
+    var summary = widget.querySelector('.star-rating-summary');
+    var feedback = widget.querySelector('.star-rating-feedback');
+    var userRating = 0;
+    var hasRated = false;
+
+    // Check localStorage for existing rating
+    var stored = localStorage.getItem('dmd_rating_' + slug);
+    if (stored) {
+      userRating = parseInt(stored, 10);
+      hasRated = true;
+      highlightStars(userRating);
+      disableStars();
+    }
+
+    // Fetch current aggregate
+    fetch('/api/rate?slug=' + encodeURIComponent(slug))
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (data.ratingCount > 0) {
+          var lang = document.documentElement.lang;
+          if (lang === 'fr') {
+            summary.textContent = data.averageRating + '/5 (' + data.ratingCount + ' ' + (data.ratingCount === 1 ? 'vote' : 'votes') + ')';
+          } else {
+            summary.textContent = data.averageRating + '/5 (' + data.ratingCount + ' ' + (data.ratingCount === 1 ? 'rating' : 'ratings') + ')';
+          }
+          if (!hasRated) {
+            highlightStars(Math.round(data.averageRating));
+          }
+        }
+      })
+      .catch(function() {});
+
+    // Hover effects
+    stars.forEach(function(star, i) {
+      star.addEventListener('mouseenter', function() {
+        if (hasRated) return;
+        highlightStars(i + 1);
+      });
+    });
+
+    widget.querySelector('.star-rating-stars').addEventListener('mouseleave', function() {
+      if (hasRated) return;
+      highlightStars(userRating);
+    });
+
+    // Click to rate
+    stars.forEach(function(star) {
+      star.addEventListener('click', function() {
+        if (hasRated) return;
+        var value = parseInt(this.dataset.value, 10);
+        userRating = value;
+        hasRated = true;
+        highlightStars(value);
+        disableStars();
+        localStorage.setItem('dmd_rating_' + slug, value.toString());
+
+        var lang = document.documentElement.lang;
+        feedback.textContent = lang === 'fr' ? 'Merci pour votre vote !' : 'Thanks for rating!';
+        feedback.className = 'star-rating-feedback mt-2 text-body-sm text-green-600 dark:text-green-400';
+
+        fetch('/api/rate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ slug: slug, rating: value })
+        })
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
+            if (data.ratingCount) {
+              if (lang === 'fr') {
+                summary.textContent = data.averageRating + '/5 (' + data.ratingCount + ' ' + (data.ratingCount === 1 ? 'vote' : 'votes') + ')';
+              } else {
+                summary.textContent = data.averageRating + '/5 (' + data.ratingCount + ' ' + (data.ratingCount === 1 ? 'rating' : 'ratings') + ')';
+              }
+            }
+          })
+          .catch(function() {});
+      });
+    });
+
+    // Keyboard navigation
+    stars.forEach(function(star, i) {
+      star.addEventListener('keydown', function(e) {
+        if (hasRated) return;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          var next = stars[Math.min(i + 1, stars.length - 1)];
+          next.focus();
+          highlightStars(Math.min(i + 2, 5));
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          var prev = stars[Math.max(i - 1, 0)];
+          prev.focus();
+          highlightStars(Math.max(i, 1));
+        }
+      });
+    });
+
+    function highlightStars(count) {
+      stars.forEach(function(s, i) {
+        if (i < count) {
+          s.classList.remove('text-gray-300', 'dark:text-neutral-600');
+          s.classList.add('text-yellow-400');
+          s.setAttribute('aria-checked', i + 1 === userRating ? 'true' : 'false');
+        } else {
+          s.classList.remove('text-yellow-400');
+          s.classList.add('text-gray-300', 'dark:text-neutral-600');
+          s.setAttribute('aria-checked', 'false');
+        }
+      });
+    }
+
+    function disableStars() {
+      stars.forEach(function(s) {
+        s.classList.add('cursor-default');
+        s.classList.remove('hover:text-yellow-400', 'dark:hover:text-yellow-400');
+      });
+    }
+  });
+</script>

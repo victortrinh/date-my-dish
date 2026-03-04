@@ -7,6 +7,9 @@ import AuthorBioCard from "@components/AuthorBioCard.astro";
 import FAQSection from "@components/FAQSection.astro";
 import ArticleRelatedRecipes from "@components/ArticleRelatedRecipes.astro";
 import ShareButton from "@components/ShareButton.astro";
+import NewsletterSignup from "@components/NewsletterSignup.astro";
+import Comments from "@components/Comments.astro";
+import SocialShareButtons from "@components/SocialShareButtons.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t, getArticleLocalizedPath } from "@i18n/utils";
 import type { ImageMetadata } from "astro";
@@ -117,6 +120,7 @@ const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
           )}
           <div class="h-4 w-px bg-gray-300 dark:bg-neutral-600"></div>
           <ShareButton locale={locale} title={data.title} url={sourceUrl} />
+          <SocialShareButtons locale={locale} url={sourceUrl} title={data.title} imageUrl={heroImage.src} description={data.description} />
         </div>
       </header>
 
@@ -135,8 +139,16 @@ const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
         <AuthorBioCard locale={locale} />
       </div>
 
+      <!-- Newsletter -->
+      <div class="mt-8 no-print">
+        <NewsletterSignup locale={locale} compact={true} />
+      </div>
+
       <!-- FAQs -->
       <FAQSection locale={locale} faqs={data.faqs} />
+
+      <!-- Comments -->
+      <Comments locale={locale} identifier={data.translationSlug} url={sourceUrl} title={data.title} />
     </div>
   </article>
 </ArticleLayout>

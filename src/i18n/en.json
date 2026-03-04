@@ -160,5 +160,62 @@
   "lang": {
     "switchTo": "Français",
     "current": "English"
+  },
+  "rating": {
+    "rateThis": "Rate this recipe",
+    "yourRating": "Your rating",
+    "average": "Average rating",
+    "count": "ratings",
+    "starLabel": "star",
+    "starsLabel": "stars",
+    "submitted": "Thanks for rating!",
+    "alreadyRated": "You've already rated this recipe"
+  },
+  "newsletter": {
+    "title": "Get Recipes in Your Inbox",
+    "description": "New date night recipes delivered weekly. No spam, unsubscribe anytime.",
+    "emailPlaceholder": "Your email address",
+    "subscribe": "Subscribe",
+    "success": "You're subscribed! Check your email to confirm.",
+    "error": "Something went wrong. Please try again.",
+    "privacy": "We respect your privacy.",
+    "cookiesRequired": "Enable cookies to subscribe to our newsletter."
+  },
+  "comments": {
+    "title": "Comments",
+    "loadComments": "Load Comments",
+    "loadingComments": "Loading comments...",
+    "failedToLoad": "Comments could not be loaded. Please disable your ad blocker or try again later.",
+    "poweredBy": "Powered by Disqus",
+    "cookiesRequired": "Enable cookies to view comments."
+  },
+  "share": {
+    "pinterest": "Pin it on Pinterest",
+    "facebook": "Share on Facebook",
+    "twitter": "Share on X",
+    "opensNewWindow": "(opens new window)"
+  },
+  "scaling": {
+    "label": "Scale recipe",
+    "servings": "Servings",
+    "original": "1x",
+    "double": "2x",
+    "triple": "3x",
+    "scaled": "Recipe scaled"
+  },
+  "bookmark": {
+    "save": "Save recipe",
+    "saved": "Recipe saved",
+    "remove": "Remove from saved",
+    "viewAll": "Saved Recipes",
+    "empty": "No saved recipes yet. Browse recipes and tap the bookmark icon to save your favorites.",
+    "pageTitle": "My Saved Recipes",
+    "removedFromSaved": "Removed from saved"
+  },
+  "cookies": {
+    "message": "We use cookies for comments and newsletter features.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learnMore": "Learn more"
   }
 }

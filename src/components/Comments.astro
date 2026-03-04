@@ -1,0 +1,108 @@
+---
+import { t, type Locale } from "@i18n/utils";
+
+interface Props {
+  locale: Locale;
+  identifier: string;
+  url: string;
+  title: string;
+}
+
+const { locale, identifier, url, title } = Astro.props;
+---
+
+<section
+  class="no-print comments-section mt-8"
+  data-locale={locale}
+  data-identifier={identifier}
+  data-url={url}
+  data-title={title}
+>
+  <h3 class="mb-4 font-heading text-heading-3 font-bold text-gray-900 dark:text-neutral-100">
+    {t(locale, "comments.title")}
+  </h3>
+
+  <div class="comments-area">
+    <noscript>
+      <p class="text-body-sm text-gray-500">{t(locale, "comments.cookiesRequired")}</p>
+    </noscript>
+  </div>
+</section>
+
+<script is:inline>
+  document.querySelectorAll('.comments-section').forEach(function(section) {
+    if (section.dataset.bound) return;
+    section.dataset.bound = 'true';
+
+    var locale = section.dataset.locale;
+    var identifier = section.dataset.identifier;
+    var pageUrl = section.dataset.url;
+    var pageTitle = section.dataset.title;
+    var area = section.querySelector('.comments-area');
+    if (!area) return;
+
+    var cookiesAccepted = localStorage.getItem('dmd_cookies') === 'accepted';
+
+    if (!cookiesAccepted) {
+      area.innerHTML = '<p class="text-body-sm text-gray-500 dark:text-neutral-400">' +
+        (locale === 'fr' ? 'Activez les cookies pour voir les commentaires.' : 'Enable cookies to view comments.') + '</p>';
+
+      window.addEventListener('cookies-accepted', function() {
+        showLoadButton();
+      });
+      return;
+    }
+
+    showLoadButton();
+
+    function showLoadButton() {
+      area.innerHTML = '<button class="load-comments-btn rounded-lg border border-gray-200 px-5 py-3 font-ui text-body-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 dark:border-neutral-600 dark:text-neutral-400 dark:hover:bg-neutral-800">' +
+        (locale === 'fr' ? 'Charger les commentaires' : 'Load Comments') + '</button>' +
+        '<div class="comments-status mt-2 text-body-sm" aria-live="polite"></div>';
+
+      var btn = area.querySelector('.load-comments-btn');
+      var status = area.querySelector('.comments-status');
+
+      btn.addEventListener('click', function() {
+        btn.disabled = true;
+        btn.textContent = locale === 'fr' ? 'Chargement des commentaires...' : 'Loading comments...';
+        status.textContent = locale === 'fr' ? 'Chargement des commentaires...' : 'Loading comments...';
+
+        loadDisqus();
+      });
+    }
+
+    function loadDisqus() {
+      var disqusDiv = document.createElement('div');
+      disqusDiv.id = 'disqus_thread';
+      disqusDiv.className = 'mt-4';
+      area.innerHTML = '';
+      area.appendChild(disqusDiv);
+
+      window.disqus_config = function() {
+        this.page.identifier = identifier;
+        this.page.url = pageUrl;
+        this.page.title = pageTitle;
+        this.language.code = locale;
+      };
+
+      var script = document.createElement('script');
+      script.src = 'https://datemydish.disqus.com/embed.js';
+      script.dataset.timestamp = +new Date();
+      script.async = true;
+      document.head.appendChild(script);
+
+      // Fallback after 10 seconds
+      var timeout = setTimeout(function() {
+        if (!document.getElementById('disqus_thread').children.length) {
+          area.innerHTML = '<p class="text-body-sm text-gray-500 dark:text-neutral-400">' +
+            (locale === 'fr' ? 'Les commentaires n\'ont pas pu être chargés. Veuillez désactiver votre bloqueur de publicités ou réessayer.' : 'Comments could not be loaded. Please disable your ad blocker or try again later.') + '</p>';
+        }
+      }, 10000);
+
+      script.onload = function() {
+        clearTimeout(timeout);
+      };
+    }
+  });
+</script>

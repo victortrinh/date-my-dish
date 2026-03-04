@@ -1,0 +1,120 @@
+---
+import { t, type Locale } from "@i18n/utils";
+
+interface Props {
+  locale: Locale;
+  compact?: boolean;
+}
+
+const { locale, compact = false } = Astro.props;
+---
+
+<div
+  class:list={[
+    "no-print newsletter-signup",
+    compact
+      ? "rounded-xl border border-gray-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900"
+      : "",
+  ]}
+  data-locale={locale}
+>
+  <div class="newsletter-content">
+    <h3 class:list={[
+      "mb-2 font-heading font-bold text-gray-900 dark:text-neutral-100",
+      compact ? "text-lg" : "text-xl",
+    ]}>
+      {t(locale, "newsletter.title")}
+    </h3>
+    <p class="mb-4 text-body-sm text-gray-600 dark:text-neutral-400">
+      {t(locale, "newsletter.description")}
+    </p>
+
+    <div class="newsletter-form-area">
+      <noscript>
+        <p class="text-body-sm text-gray-500">{t(locale, "newsletter.cookiesRequired")}</p>
+      </noscript>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.querySelectorAll('.newsletter-signup').forEach(function(widget) {
+    if (widget.dataset.bound) return;
+    widget.dataset.bound = 'true';
+
+    var locale = widget.dataset.locale;
+    var formArea = widget.querySelector('.newsletter-form-area');
+    if (!formArea) return;
+
+    var cookiesAccepted = localStorage.getItem('dmd_cookies') === 'accepted';
+
+    if (!cookiesAccepted) {
+      var privacyPath = locale === 'fr' ? '/fr/politique-de-confidentialite/' : '/en/privacy-policy/';
+      formArea.innerHTML = '<p class="text-body-sm text-gray-500 dark:text-neutral-400">' +
+        (locale === 'fr' ? 'Activez les cookies pour vous abonner à notre infolettre.' : 'Enable cookies to subscribe to our newsletter.') +
+        ' <a href="' + privacyPath + '" class="underline text-brand-primary-text dark:text-brand-accent">' +
+        (locale === 'fr' ? 'En savoir plus' : 'Learn more') + '</a></p>';
+
+      // Listen for cookie acceptance
+      window.addEventListener('cookies-accepted', function() {
+        renderForm();
+      });
+      return;
+    }
+
+    renderForm();
+
+    function renderForm() {
+      formArea.innerHTML =
+        '<form class="newsletter-form flex gap-2" aria-label="' +
+        (locale === 'fr' ? 'Inscription à l\'infolettre' : 'Newsletter signup') + '">' +
+        '<input type="email" name="email_address" required ' +
+        'placeholder="' + (locale === 'fr' ? 'Votre adresse courriel' : 'Your email address') + '" ' +
+        'class="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-2.5 font-body text-body-sm text-gray-900 placeholder-gray-400 transition-colors focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/20 dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder-neutral-500" />' +
+        '<input type="hidden" name="fields[locale]" value="' + locale + '" />' +
+        '<button type="submit" ' +
+        'class="shrink-0 rounded-lg bg-brand-primary px-5 py-2.5 font-ui text-body-sm font-medium text-white transition-colors hover:bg-brand-primary-dark">' +
+        (locale === 'fr' ? 'S\'abonner' : 'Subscribe') + '</button></form>' +
+        '<p class="mt-2 text-caption text-gray-400 dark:text-neutral-500">' +
+        (locale === 'fr' ? 'Nous respectons votre vie privée.' : 'We respect your privacy.') + '</p>' +
+        '<div class="newsletter-feedback mt-2" aria-live="polite"></div>';
+
+      var form = formArea.querySelector('.newsletter-form');
+      var feedback = formArea.querySelector('.newsletter-feedback');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = form.querySelector('input[type="email"]').value;
+        if (!email) return;
+
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = '...';
+
+        // POST to ConvertKit form endpoint
+        fetch('https://app.convertkit.com/forms/9162657/subscriptions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email_address: email,
+            fields: { locale: locale }
+          })
+        })
+          .then(function(r) {
+            if (r.ok || r.status === 200) {
+              formArea.innerHTML = '<p class="text-body-sm font-medium text-green-600 dark:text-green-400">' +
+                (locale === 'fr' ? 'Vous êtes abonné ! Vérifiez votre courriel pour confirmer.' : 'You\'re subscribed! Check your email to confirm.') + '</p>';
+            } else {
+              throw new Error('Failed');
+            }
+          })
+          .catch(function() {
+            feedback.innerHTML = '<p class="text-body-sm text-red-600 dark:text-red-400">' +
+              (locale === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : 'Something went wrong. Please try again.') + '</p>';
+            btn.disabled = false;
+            btn.textContent = locale === 'fr' ? 'S\'abonner' : 'Subscribe';
+          });
+      });
+    }
+  });
+</script>

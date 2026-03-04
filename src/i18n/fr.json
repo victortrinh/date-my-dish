@@ -160,5 +160,62 @@
   "lang": {
     "switchTo": "English",
     "current": "Français"
+  },
+  "rating": {
+    "rateThis": "Notez cette recette",
+    "yourRating": "Votre note",
+    "average": "Note moyenne",
+    "count": "notes",
+    "starLabel": "étoile",
+    "starsLabel": "étoiles",
+    "submitted": "Merci pour votre note!",
+    "alreadyRated": "Vous avez déjà noté cette recette"
+  },
+  "newsletter": {
+    "title": "Recevez nos recettes par courriel",
+    "description": "De nouvelles recettes pour vos soirées en amoureux chaque semaine. Pas de pourriel, désabonnement facile.",
+    "emailPlaceholder": "Votre adresse courriel",
+    "subscribe": "S'abonner",
+    "success": "Vous êtes abonné! Vérifiez votre courriel pour confirmer.",
+    "error": "Une erreur est survenue. Veuillez réessayer.",
+    "privacy": "Nous respectons votre vie privée.",
+    "cookiesRequired": "Activez les cookies pour vous abonner à notre infolettre."
+  },
+  "comments": {
+    "title": "Commentaires",
+    "loadComments": "Charger les commentaires",
+    "loadingComments": "Chargement des commentaires...",
+    "failedToLoad": "Les commentaires n'ont pas pu être chargés. Veuillez désactiver votre bloqueur de publicités ou réessayer plus tard.",
+    "poweredBy": "Propulsé par Disqus",
+    "cookiesRequired": "Activez les cookies pour voir les commentaires."
+  },
+  "share": {
+    "pinterest": "Épingler sur Pinterest",
+    "facebook": "Partager sur Facebook",
+    "twitter": "Partager sur X",
+    "opensNewWindow": "(ouvre une nouvelle fenêtre)"
+  },
+  "scaling": {
+    "label": "Ajuster les portions",
+    "servings": "Portions",
+    "original": "1x",
+    "double": "2x",
+    "triple": "3x",
+    "scaled": "Recette ajustée"
+  },
+  "bookmark": {
+    "save": "Sauvegarder la recette",
+    "saved": "Recette sauvegardée",
+    "remove": "Retirer des favoris",
+    "viewAll": "Recettes sauvegardées",
+    "empty": "Aucune recette sauvegardée. Parcourez les recettes et appuyez sur l'icône de signet pour sauvegarder vos favorites.",
+    "pageTitle": "Mes recettes sauvegardées",
+    "removedFromSaved": "Retiré des favoris"
+  },
+  "cookies": {
+    "message": "Nous utilisons des cookies pour les commentaires et l'infolettre.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "learnMore": "En savoir plus"
   }
 }

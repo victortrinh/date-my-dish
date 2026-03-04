@@ -1,5 +1,5 @@
 ---
-import { t, getLocalizedPath, type Locale } from "@i18n/utils";
+import { t, getLocalizedPath, getBookmarksLocalizedPath, type Locale } from "@i18n/utils";
 import LanguageToggle from "./LanguageToggle.astro";
 import DarkModeToggle from "./DarkModeToggle.astro";
 
@@ -68,6 +68,16 @@ function isActive(linkPath: string): boolean {
             <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </button>
+        <a
+          href={getBookmarksLocalizedPath(locale)}
+          class="bookmark-nav-link relative rounded-lg p-2 text-gray-400 no-underline transition-colors hover:bg-gray-100 hover:text-gray-600 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-300"
+          aria-label={t(locale, "bookmark.pageTitle")}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <span class="bookmark-dot absolute -right-0.5 -top-0.5 hidden h-2 w-2 rounded-full bg-red-500"></span>
+        </a>
         <DarkModeToggle locale={locale} />
         <LanguageToggle locale={locale} translationSlug={translationSlug} contentType={contentType} />
       </div>
@@ -177,6 +187,16 @@ function isActive(linkPath: string): boolean {
       }
     });
   }
+
+  // Bookmark dot indicator
+  try {
+    var bookmarks = JSON.parse(localStorage.getItem('dmd_bookmarks') || '[]');
+    if (bookmarks.length > 0) {
+      document.querySelectorAll('.bookmark-dot').forEach(function(dot) {
+        dot.classList.remove('hidden');
+      });
+    }
+  } catch(e) {}
 
   // Search buttons open overlay
   var searchBtns = document.querySelectorAll('#nav-search-btn, #nav-search-btn-mobile');

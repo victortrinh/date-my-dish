@@ -4,6 +4,7 @@ import SEOHead from "@components/SEOHead.astro";
 import Navigation from "@components/Navigation.astro";
 import Footer from "@components/Footer.astro";
 import SearchOverlay from "@components/SearchOverlay.astro";
+import CookieConsent from "@components/CookieConsent.astro";
 import { getLocaleFromUrl, type Locale } from "@i18n/utils";
 
 interface Props {
@@ -66,8 +67,10 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <link rel="alternate" type="application/rss+xml" title="Date My Dish (Français)" href="/fr/rss.xml" />
     <meta name="p:domain_verify" content="f73563c227b19a404524ccf1d3167dd6"/>
     <slot name="head" />
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2acfc6a04df0427b80b87ca6498542a3"}' is:inline></script>
     <script is:inline>
-      (function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})();
+      (function(){var t=localStorage.getItem('dmd_theme');if(!t){var o=localStorage.getItem('theme');if(o){t=o;localStorage.setItem('dmd_theme',o);localStorage.removeItem('theme')}}if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})();
     </script>
     <!-- Pinterest Tag -->
     <script is:inline>
@@ -90,5 +93,6 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     </main>
     <Footer locale={locale} />
     <SearchOverlay locale={locale} />
+    <CookieConsent locale={locale} />
   </body>
 </html>

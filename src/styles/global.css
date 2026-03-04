@@ -308,3 +308,11 @@
     margin: 0;
   }
 }
+
+/* Disqus dark mode overrides */
+:root.dark #disqus_thread {
+  color-scheme: dark;
+}
+:root.dark #disqus_thread a {
+  color: #d4a853;
+}
