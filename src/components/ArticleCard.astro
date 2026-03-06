@@ -28,7 +28,7 @@ const formattedDate = publishDate.toLocaleDateString(locale === "fr" ? "fr-CA" :
 });
 ---
 
-<article class="group overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-neutral-900/80 dark:shadow-neutral-950/20">
+<article class="group overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-neutral-900/80 dark:shadow-neutral-950/20">
   <a href={url} class="block no-underline">
     <div class="relative aspect-[4/3] overflow-hidden">
       <Picture
@@ -43,7 +43,7 @@ const formattedDate = publishDate.toLocaleDateString(locale === "fr" ? "fr-CA" :
       />
     </div>
     <div class="p-5">
-      <Heading class="mb-2 line-clamp-2 font-heading text-lg font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-neutral-100">
+      <Heading class="mb-2 line-clamp-2 font-heading text-lg font-bold text-gray-900 transition-colors group-hover:text-brand-primary-text dark:text-neutral-100">
         {title}
       </Heading>
       <p class="mb-4 line-clamp-2 text-body-sm text-gray-500 dark:text-neutral-400">{description}</p>
