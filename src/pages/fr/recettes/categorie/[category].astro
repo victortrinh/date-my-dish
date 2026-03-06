@@ -110,7 +110,7 @@ allCategories.sort((a, b) => {
     </div>
 
     {sortedRecipes.length > 0 ? (
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate-stagger>
         {sortedRecipes.map((recipe: any, i: number) => {
           const slug = recipe.id.replace(/^fr\//, "");
           return (

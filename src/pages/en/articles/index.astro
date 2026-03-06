@@ -54,7 +54,7 @@ const articles = allArticles
 
     <!-- Article Grid -->
     {articles.length > 0 ? (
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate-stagger>
         {articles.map((article, i) => {
           const slug = article.id.replace(/^en\//, "");
           return (

@@ -67,6 +67,20 @@
   }
 }
 
+/* Scroll-triggered stagger animations — children cascade in one by one */
+[data-animate-stagger] > * {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-animate-stagger] > .animate-in {
+  opacity: 1;
+  transform: none;
+}
+
 /* Focus indicators — visible for keyboard, hidden for mouse/touch */
 *:focus:not(:focus-visible) {
   outline: none;
@@ -94,6 +108,12 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  [data-animate-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 

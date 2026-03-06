@@ -94,5 +94,15 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <Footer locale={locale} />
     <SearchOverlay locale={locale} />
     <CookieConsent locale={locale} />
+    <script is:inline>
+      (function(){
+        if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+          document.querySelectorAll('[data-animate-stagger]>*').forEach(function(el){el.style.opacity='1';el.style.transform='none';});
+          return;
+        }
+        var s=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var children=e.target.children;for(var i=0;i<children.length;i++){(function(child,delay){setTimeout(function(){child.classList.add('animate-in');},delay);})(children[i],i*100);}s.unobserve(e.target);}});},{threshold:0.05});
+        document.querySelectorAll('[data-animate-stagger]').forEach(function(el){s.observe(el);});
+      })();
+    </script>
   </body>
 </html>
