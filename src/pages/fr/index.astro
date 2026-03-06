@@ -2,6 +2,8 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
 import ArticleCard from "@components/ArticleCard.astro";
+import FeaturedCard from "@components/FeaturedCard.astro";
+import SectionHeading from "@components/SectionHeading.astro";
 import { Picture } from "astro:assets";
 import { t, getCategorySlug } from "@i18n/utils";
 import { getCollection } from "astro:content";
@@ -83,18 +85,18 @@ categories.sort((a, b) => {
         loading="eager"
         fetchpriority="high"
       />
-      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/70"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/70"></div>
     </div>
-    <div class="relative px-4 py-28 text-center sm:py-36 lg:py-44">
-      <h1 class="mb-5 font-handwritten text-3xl normal-case text-white drop-shadow-lg sm:text-4xl lg:text-5xl">
+    <div class="relative min-h-[85vh] flex flex-col items-center justify-center px-4 text-center">
+      <h1 class="mb-5 font-display text-display-xl normal-case text-white drop-shadow-lg">
         {t(locale, "home.heroTitle")}
       </h1>
-      <p class="mx-auto max-w-lg text-sm text-white/85 drop-shadow sm:text-base">
+      <p class="mx-auto max-w-lg text-base text-white/85 drop-shadow sm:text-lg">
         {t(locale, "home.heroSubtitle")}
       </p>
       <a
         href="/fr/recettes/"
-        class="mt-10 inline-block rounded-lg bg-brand-primary-dark px-6 py-2.5 font-ui text-sm font-semibold text-white no-underline shadow-lg transition-all hover:bg-brand-primary hover:text-white hover:shadow-xl dark:text-white dark:hover:text-white sm:px-8 sm:py-3 sm:text-base"
+        class="mt-10 inline-block rounded-lg bg-brand-primary-dark px-8 py-3.5 font-ui text-base font-semibold text-white no-underline shadow-lg transition-all hover:bg-brand-primary hover:text-white hover:shadow-xl dark:text-white dark:hover:text-white sm:px-10 sm:py-4 sm:text-lg"
       >
         {t(locale, "home.viewAllRecipes")}
       </a>
@@ -105,43 +107,93 @@ categories.sort((a, b) => {
   {recentPosts.length > 0 && (
     <section class="bg-gray-200 px-4 py-section dark:bg-neutral-900" aria-labelledby="recent-posts">
       <div class="mx-auto max-w-content">
-        <div class="mb-10 text-center">
-          <h2 id="recent-posts" class="font-heading text-heading-1 font-bold text-gray-900 dark:text-neutral-100">
-            {t(locale, "home.recentPosts")}
-          </h2>
-          <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-accent"></div>
-        </div>
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {recentPosts.map((post) => {
-            const slug = post.id.replace(/^fr\//, "");
-            return post.collection === "recipes" ? (
-              <RecipeCard
-                title={post.data.title}
-                description={post.data.description}
-                slug={slug}
-                locale={locale}
-                heroImage={post.data.heroImage as ImageMetadata}
-                heroImageAlt={post.data.heroImageAlt}
-                prepTime={(post.data as any).prepTime}
-                totalTime={(post.data as any).totalTime}
-                difficulty={(post.data as any).difficulty}
-                headingLevel="h3"
-              />
-            ) : (
-              <ArticleCard
-                title={post.data.title}
-                description={post.data.description}
-                slug={slug}
-                locale={locale}
-                heroImage={post.data.heroImage as ImageMetadata}
-                heroImageAlt={post.data.heroImageAlt}
-                publishDate={post.data.publishDate}
-                readingTime={(post.data as any).readingTime}
-                headingLevel="h3"
-              />
-            );
-          })}
-        </div>
+        <SectionHeading title={t(locale, "home.recentPosts")} id="recent-posts" />
+        {recentPosts.length >= 3 ? (
+          <div class="grid gap-6 lg:grid-cols-[3fr_2fr]" data-animate>
+            {(() => {
+              const post = recentPosts[0];
+              const slug = post.id.replace(/^fr\//, "");
+              return (
+                <FeaturedCard
+                  title={post.data.title}
+                  description={post.data.description}
+                  slug={slug}
+                  locale={locale}
+                  heroImage={post.data.heroImage as ImageMetadata}
+                  heroImageAlt={post.data.heroImageAlt}
+                  collection={post.collection}
+                  difficulty={(post.data as any).difficulty}
+                  totalTime={(post.data as any).totalTime}
+                  publishDate={post.data.publishDate}
+                  readingTime={(post.data as any).readingTime}
+                />
+              );
+            })()}
+            <div class="grid gap-6">
+              {recentPosts.slice(1, 3).map((post) => {
+                const slug = post.id.replace(/^fr\//, "");
+                return post.collection === "recipes" ? (
+                  <RecipeCard
+                    title={post.data.title}
+                    description={post.data.description}
+                    slug={slug}
+                    locale={locale}
+                    heroImage={post.data.heroImage as ImageMetadata}
+                    heroImageAlt={post.data.heroImageAlt}
+                    prepTime={(post.data as any).prepTime}
+                    totalTime={(post.data as any).totalTime}
+                    difficulty={(post.data as any).difficulty}
+                    headingLevel="h3"
+                  />
+                ) : (
+                  <ArticleCard
+                    title={post.data.title}
+                    description={post.data.description}
+                    slug={slug}
+                    locale={locale}
+                    heroImage={post.data.heroImage as ImageMetadata}
+                    heroImageAlt={post.data.heroImageAlt}
+                    publishDate={post.data.publishDate}
+                    readingTime={(post.data as any).readingTime}
+                    headingLevel="h3"
+                  />
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate>
+            {recentPosts.map((post) => {
+              const slug = post.id.replace(/^fr\//, "");
+              return post.collection === "recipes" ? (
+                <RecipeCard
+                  title={post.data.title}
+                  description={post.data.description}
+                  slug={slug}
+                  locale={locale}
+                  heroImage={post.data.heroImage as ImageMetadata}
+                  heroImageAlt={post.data.heroImageAlt}
+                  prepTime={(post.data as any).prepTime}
+                  totalTime={(post.data as any).totalTime}
+                  difficulty={(post.data as any).difficulty}
+                  headingLevel="h3"
+                />
+              ) : (
+                <ArticleCard
+                  title={post.data.title}
+                  description={post.data.description}
+                  slug={slug}
+                  locale={locale}
+                  heroImage={post.data.heroImage as ImageMetadata}
+                  heroImageAlt={post.data.heroImageAlt}
+                  publishDate={post.data.publishDate}
+                  readingTime={(post.data as any).readingTime}
+                  headingLevel="h3"
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
     </section>
   )}
@@ -149,13 +201,8 @@ categories.sort((a, b) => {
   <!-- Featured Recipes -->
   {recipes.length > 0 && (
     <section class="mx-auto max-w-content px-4 py-section">
-      <div class="mb-10 text-center">
-        <h2 class="font-heading text-heading-1 font-bold text-gray-900 dark:text-neutral-100">
-          {t(locale, "home.featuredRecipes")}
-        </h2>
-        <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-accent"></div>
-      </div>
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <SectionHeading title={t(locale, "home.featuredRecipes")} />
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate>
         {recipes.slice(0, 6).map((recipe) => {
           const slug = recipe.id.replace(/^fr\//, "");
           return (
@@ -177,7 +224,7 @@ categories.sort((a, b) => {
         <div class="mt-10 text-center">
           <a
             href="/fr/recettes/"
-            class="inline-block rounded-lg border-2 border-brand-primary px-6 py-2.5 font-ui text-sm font-semibold text-brand-primary-text no-underline transition-colors hover:bg-brand-primary-dark hover:text-white dark:hover:text-white"
+            class="inline-block rounded-lg border-2 border-brand-primary px-8 py-3 font-ui text-base font-semibold text-brand-primary-text no-underline transition-colors hover:bg-brand-primary-dark hover:text-white dark:hover:text-white"
           >
             {t(locale, "home.viewAllRecipes")}
           </a>
@@ -188,10 +235,10 @@ categories.sort((a, b) => {
 
   <!-- Categories -->
   {categories.length > 0 && (
-    <section class="bg-gray-200 px-4 py-section dark:bg-neutral-900">
-      <div class="mx-auto max-w-content">
+    <section class="bg-brand-primary-dark px-4 py-section dark:bg-brand-primary-dark/20">
+      <div class="mx-auto max-w-content" data-animate>
         <div class="mb-10 text-center">
-          <h2 class="font-heading text-heading-1 font-bold text-gray-900 dark:text-neutral-100">
+          <h2 class="font-heading text-heading-1 font-bold text-white dark:text-neutral-100">
             {t(locale, "home.categories")}
           </h2>
           <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-accent"></div>
@@ -200,7 +247,7 @@ categories.sort((a, b) => {
           {categories.map((cat) => (
             <a
               href={`/fr/recettes/categorie/${getCategorySlug(cat, locale)}/`}
-              class="rounded-lg border border-gray-300 bg-white px-6 py-2.5 font-ui text-sm font-medium text-gray-700 no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+              class="rounded-lg border border-white/20 bg-white/10 px-6 py-3 font-ui text-base font-medium text-white no-underline shadow-sm backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-white/20 hover:text-white hover:shadow-md dark:border-neutral-600 dark:bg-neutral-800/50 dark:text-neutral-200 dark:hover:text-white"
             >
               {t(locale, `categories.${cat}` as any) || cat}
             </a>
