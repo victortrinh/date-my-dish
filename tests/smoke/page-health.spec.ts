@@ -6,11 +6,23 @@ const pages = discoverPages();
 // Known noise to filter out (third-party scripts, non-critical warnings)
 const IGNORED_ERRORS = [
   "favicon", // Browser-generated favicon 404
-  "cloudflareinsights.com", // CF Web Analytics CORS error on localhost
+];
+
+// Third-party domains to block in tests (prevents CORS/resource errors on localhost)
+const BLOCKED_DOMAINS = [
+  "**/cloudflareinsights.com/**",
+  "**/static.cloudflareinsights.com/**",
+  "**/s.pinimg.com/**",
+  "**/ct.pinterest.com/**",
 ];
 
 for (const { path, name } of pages) {
   test(`${name} loads without errors`, async ({ page }) => {
+    // Block third-party tracking scripts that cause errors on localhost
+    for (const pattern of BLOCKED_DOMAINS) {
+      await page.route(pattern, (route) => route.abort());
+    }
+
     const consoleErrors: string[] = [];
     const pageErrors: Error[] = [];
 
