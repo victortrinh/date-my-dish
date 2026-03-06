@@ -25,6 +25,15 @@ const DateNightTipsSchema = z.object({
   platingTip: z.string().optional(),
 });
 
+const VideoSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+  thumbnailUrl: z.string().url(),
+  contentUrl: z.string().url(),
+  uploadDate: z.coerce.date(),
+  duration: z.string(),
+});
+
 const ArticleCategorySchema = z.enum([
   "cooking-techniques",
   "food-science",
@@ -73,6 +82,7 @@ const recipes = defineCollection({
       occasion: z.array(z.string()).optional(),
       impressFactor: z.number().min(1).max(5).optional(),
       dateNightTips: DateNightTipsSchema.optional(),
+      video: VideoSchema.optional(),
       faqs: z.array(FAQSchema).min(1),
     });
   },

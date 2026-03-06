@@ -35,6 +35,15 @@ interface RatingInfo {
   ratingCount: number;
 }
 
+interface VideoInfo {
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  contentUrl: string;
+  uploadDate: Date;
+  duration: string;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -56,6 +65,7 @@ interface Props {
   nutrition?: Nutrition;
   faqs: FAQ[];
   ratingData?: RatingInfo;
+  video?: VideoInfo;
 }
 
 const {
@@ -79,6 +89,7 @@ const {
   nutrition,
   faqs,
   ratingData,
+  video,
 } = Astro.props;
 
 const siteUrl = "https://datemydish.com";
@@ -94,7 +105,7 @@ const instructionSections = instructionGroups.map((group) => {
     "@type": "HowToStep" as const,
     text: step.text,
     position: i + 1,
-    ...(step.image ? { image: step.image.src } : {}),
+    ...(step.image ? { image: step.image.src.startsWith("http") ? step.image.src : `${siteUrl}${step.image.src}` } : {}),
   }));
 
   if (group.group) {
@@ -149,6 +160,19 @@ const recipeJsonLd = {
           ratingCount: ratingData.ratingCount,
           bestRating: 5,
           worstRating: 1,
+        },
+      }
+    : {}),
+  ...(video
+    ? {
+        video: {
+          "@type": "VideoObject",
+          name: video.name,
+          description: video.description,
+          thumbnailUrl: video.thumbnailUrl,
+          contentUrl: video.contentUrl,
+          uploadDate: video.uploadDate.toISOString().split("T")[0],
+          duration: video.duration,
         },
       }
     : {}),
