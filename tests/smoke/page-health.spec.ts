@@ -10,18 +10,18 @@ const IGNORED_ERRORS = [
 
 // Third-party domains to block in tests (prevents CORS/resource errors on localhost)
 const BLOCKED_DOMAINS = [
-  "**/cloudflareinsights.com/**",
-  "**/static.cloudflareinsights.com/**",
-  "**/s.pinimg.com/**",
-  "**/ct.pinterest.com/**",
+  "cloudflareinsights.com",
+  "pinimg.com",
+  "pinterest.com",
 ];
 
 for (const { path, name } of pages) {
   test(`${name} loads without errors`, async ({ page }) => {
     // Block third-party tracking scripts that cause errors on localhost
-    for (const pattern of BLOCKED_DOMAINS) {
-      await page.route(pattern, (route) => route.abort());
-    }
+    await page.route(
+      (url) => BLOCKED_DOMAINS.some((d) => url.hostname.includes(d)),
+      (route) => route.abort(),
+    );
 
     const consoleErrors: string[] = [];
     const pageErrors: Error[] = [];
