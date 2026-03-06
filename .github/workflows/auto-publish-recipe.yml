@@ -230,7 +230,8 @@ jobs:
             This ensures the recipe has aggregateRating in its JSON-LD from day one.
 
             ### 8. Validate
-            Run `npm run check` to verify schema compliance.
+            First run `node scripts/fetch-ratings.mjs` to generate `data/ratings.json` (required by recipe pages).
+            Then run `npm run check` to verify schema compliance.
             If it fails, read the error messages, fix the issues, and re-run.
             Common issues to watch for:
             - ISO 8601 times not matching `/^PT\d+[HM](\d+[MS])?$/`
@@ -284,7 +285,7 @@ jobs:
 
       - name: Verify build
         if: steps.changes.outputs.has_changes == 'true'
-        run: npm run check && npm run build
+        run: node scripts/fetch-ratings.mjs && npm run check && npm run build
 
       - name: Extract recipe title
         if: steps.changes.outputs.has_changes == 'true'
