@@ -96,13 +96,13 @@ jobs:
 
             **Hero image**: Convert the downloaded file to WebP, resize to max 1200px wide, quality 82:
             ```
-            convert {heroImage.localPath} -resize '1200x>' -quality 82 src/assets/images/recipes/{slug}.webp
+            convert {heroImage.localPath} -auto-orient -resize '1200x>' -quality 82 src/assets/images/recipes/{slug}.webp
             ```
             If the result exceeds 200KB, reduce quality by 5 incrementally until it fits.
 
             **Step/inline images**: For each image block in the JSON that has a `localPath` (in `/tmp/notion-images/`), convert to WebP, resize to max 900px wide, quality 80:
             ```
-            convert {localPath} -resize '900x>' -quality 80 src/assets/images/recipes/{slug}-{descriptor}.webp
+            convert {localPath} -auto-orient -resize '900x>' -quality 80 src/assets/images/recipes/{slug}-{descriptor}.webp
             ```
             If the result exceeds 150KB, reduce quality by 5 incrementally until it fits.
             Use descriptive filenames like `{slug}-step-1.webp`, `{slug}-ingredients.webp`, etc.
