@@ -26,6 +26,14 @@ module.exports = {
       settings: {
         chromeFlags: '--no-sandbox --disable-dev-shm-usage',
         preset: 'desktop',
+        // Block third-party tracking scripts that tank best-practices score
+        // (deprecated APIs, third-party cookies, CORS errors on localhost)
+        blockedUrlPatterns: [
+          'https://s.pinimg.com/*',
+          'https://ct.pinterest.com/*',
+          'https://static.cloudflareinsights.com/*',
+          'https://cloudflareinsights.com/*',
+        ],
       },
     },
     assert: {

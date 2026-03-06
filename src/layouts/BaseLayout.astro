@@ -66,13 +66,12 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <link rel="alternate" type="application/rss+xml" title="Date My Dish (English)" href="/en/rss.xml" />
     <link rel="alternate" type="application/rss+xml" title="Date My Dish (Français)" href="/fr/rss.xml" />
     <meta name="p:domain_verify" content="f73563c227b19a404524ccf1d3167dd6"/>
-    <slot name="head" />
-    <!-- Cloudflare Web Analytics -->
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2acfc6a04df0427b80b87ca6498542a3"}' is:inline></script>
     <script is:inline>
       (function(){var t=localStorage.getItem('dmd_theme');if(!t){var o=localStorage.getItem('theme');if(o){t=o;localStorage.setItem('dmd_theme',o);localStorage.removeItem('theme')}}if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})();
     </script>
-    <!-- Pinterest Tag -->
+    <!-- Cloudflare Web Analytics -->
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2acfc6a04df0427b80b87ca6498542a3"}' is:inline></script>
+    <!-- Pinterest Tag (must be before head slot so pintrk is defined for page-specific events) -->
     <script is:inline>
       !function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var n=window.pintrk;n.queue=[],n.version="3.0";var t=document.createElement("script");t.async=!0,t.src=e;var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
       pintrk('load','2613431123607');
@@ -82,6 +81,7 @@ const resolvedCanonical = canonical || Astro.url.pathname;
       <img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?event=init&tid=2613431123607&noscript=1" />
     </noscript>
     <!-- end Pinterest Tag -->
+    <slot name="head" />
   </head>
   <body class="flex min-h-screen flex-col bg-gray-100 dark:bg-neutral-950">
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:font-ui focus:text-sm focus:font-medium focus:text-brand-primary focus:shadow-lg dark:focus:bg-neutral-800 dark:focus:text-brand-primary">

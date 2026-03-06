@@ -47,7 +47,7 @@ allCategories.sort((a, b) => {
   description={`Browse our ${categoryLabel.toLowerCase()} recipes. Find your next favorite ${categoryLabel.toLowerCase()} dish.`}
 >
   <Fragment slot="head">
-    <script is:inline>pintrk('track', 'viewcategory');</script>
+    <script is:inline>window.pintrk&&pintrk('track','viewcategory');</script>
     <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "ItemList",

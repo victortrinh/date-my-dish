@@ -26,6 +26,12 @@ module.exports = {
       settings: {
         chromeFlags: '--no-sandbox --disable-dev-shm-usage',
         // No preset = Lighthouse mobile default (4x CPU throttle, simulated slow 4G)
+        blockedUrlPatterns: [
+          'https://s.pinimg.com/*',
+          'https://ct.pinterest.com/*',
+          'https://static.cloudflareinsights.com/*',
+          'https://cloudflareinsights.com/*',
+        ],
       },
     },
     assert: {
