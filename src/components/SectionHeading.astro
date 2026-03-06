@@ -1,0 +1,19 @@
+---
+interface Props {
+  title: string;
+  id?: string;
+  class?: string;
+}
+
+const { title, id, class: className } = Astro.props;
+---
+
+<div class:list={["mb-10 text-center", className]}>
+  <h2
+    id={id}
+    class="font-heading text-heading-1 font-bold text-gray-900 dark:text-neutral-100"
+  >
+    {title}
+  </h2>
+  <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-accent"></div>
+</div>

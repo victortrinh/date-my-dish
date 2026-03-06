@@ -17,12 +17,17 @@ export default {
         },
       },
       fontFamily: {
+        display: ['"Fraunces"', "serif"],
         heading: ['"Fira Sans"', "sans-serif"],
         body: ["Bitter", "serif"],
         handwritten: ["Caveat", "cursive"],
         ui: ['"Fira Sans"', "sans-serif"],
       },
       fontSize: {
+        "display-xl": [
+          "clamp(3rem, 6vw + 1rem, 6rem)",
+          { lineHeight: "1.05", letterSpacing: "-0.02em" },
+        ],
         display: ["3.5rem", { lineHeight: "1.1" }],
         "heading-1": ["2.5rem", { lineHeight: "1.2" }],
         "heading-2": ["1.875rem", { lineHeight: "1.3" }],

@@ -1,0 +1,92 @@
+---
+import { Picture } from "astro:assets";
+import { t, getRecipeLocalizedPath, getArticleLocalizedPath, type Locale } from "@i18n/utils";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  locale: Locale;
+  heroImage: ImageMetadata;
+  heroImageAlt: string;
+  collection: "recipes" | "articles";
+  difficulty?: "easy" | "medium" | "hard";
+  totalTime?: string;
+  publishDate?: Date;
+  readingTime?: number;
+}
+
+const { title, description, slug, locale, heroImage, heroImageAlt, collection, difficulty, totalTime, publishDate, readingTime } = Astro.props;
+
+const url = collection === "recipes"
+  ? getRecipeLocalizedPath(locale, slug)
+  : getArticleLocalizedPath(locale, slug);
+
+function formatDuration(iso: string): string {
+  const match = iso.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
+  if (!match) return iso;
+  const hours = match[1] ? parseInt(match[1]) : 0;
+  const minutes = match[2] ? parseInt(match[2]) : 0;
+  if (hours > 0) return `${hours}h${minutes > 0 ? ` ${minutes}${t(locale, "recipe.minutes")}` : ""}`;
+  return `${minutes} ${t(locale, "recipe.minutes")}`;
+}
+
+const difficultyColors: Record<string, string> = {
+  easy: "bg-green-100/90 text-green-800",
+  medium: "bg-yellow-100/90 text-yellow-800",
+  hard: "bg-red-100/90 text-red-800",
+};
+---
+
+<article class="group relative overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-2xl">
+  <a href={url} class="block no-underline">
+    <div class="relative aspect-[16/9] overflow-hidden sm:aspect-[2/1]">
+      <Picture
+        src={heroImage}
+        alt={heroImageAlt}
+        widths={[640, 960, 1200]}
+        sizes="(max-width: 1152px) 100vw, 60vw"
+        formats={["avif", "webp"]}
+        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        loading="eager"
+        decoding="async"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+      <div class="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+        {difficulty && (
+          <span class={`mb-3 inline-block rounded-full px-3 py-1 text-caption font-medium ${difficultyColors[difficulty]}`}>
+            {t(locale, `recipe.${difficulty}` as "recipe.easy" | "recipe.medium" | "recipe.hard")}
+          </span>
+        )}
+        <h3 class="mb-2 font-display text-2xl font-bold normal-case text-white drop-shadow-lg sm:text-3xl lg:text-4xl">
+          {title}
+        </h3>
+        <p class="line-clamp-2 max-w-xl text-sm text-white/85 drop-shadow sm:text-base">
+          {description}
+        </p>
+        <div class="mt-3 flex items-center gap-3 text-sm text-white/70">
+          {totalTime && (
+            <div class="flex items-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{formatDuration(totalTime)}</span>
+            </div>
+          )}
+          {publishDate && (
+            <div class="flex items-center gap-1.5">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>{publishDate.toLocaleDateString(locale === "fr" ? "fr-CA" : "en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+            </div>
+          )}
+          {readingTime && (
+            <span>{readingTime} {t(locale, "article.readTime")}</span>
+          )}
+        </div>
+      </div>
+    </div>
+  </a>
+</article>
