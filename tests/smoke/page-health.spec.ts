@@ -20,7 +20,7 @@ for (const { path, name } of pages) {
     // Block third-party tracking scripts that cause errors on localhost
     await page.route(
       (url) => BLOCKED_DOMAINS.some((d) => url.hostname.includes(d)),
-      (route) => route.abort(),
+      (route) => route.fulfill({ status: 200, body: "" }),
     );
 
     const consoleErrors: string[] = [];
