@@ -1,0 +1,20 @@
+{
+  "beef-ragu-pappardelle": { "averageRating": 4.7, "ratingCount": 35 },
+  "brussels-sprouts-salad": { "averageRating": 4.5, "ratingCount": 18 },
+  "cacio-e-pepe": { "averageRating": 4.8, "ratingCount": 42 },
+  "cauliflower-steak-with-romesco-sauce": { "averageRating": 4.6, "ratingCount": 23 },
+  "crispy-vegan-calamari": { "averageRating": 4.7, "ratingCount": 29 },
+  "lemon-posset-brulee": { "averageRating": 4.8, "ratingCount": 31 },
+  "penne-alla-vodka": { "averageRating": 4.7, "ratingCount": 47 },
+  "quinoa-crusted-salmon": { "averageRating": 4.6, "ratingCount": 15 },
+  "vietnamese-pickled-vegetables": { "averageRating": 4.5, "ratingCount": 12 },
+  "zucchini-eggplant-chips": { "averageRating": 4.6, "ratingCount": 21 },
+  "pappardelle-au-ragu-de-boeuf": { "averageRating": 4.7, "ratingCount": 35 },
+  "salade-de-choux-de-bruxelles": { "averageRating": 4.5, "ratingCount": 18 },
+  "steak-de-chou-fleur-sauce-romesco": { "averageRating": 4.6, "ratingCount": 23 },
+  "calamars-vegetaliens-croustillants": { "averageRating": 4.7, "ratingCount": 29 },
+  "posset-brulee-au-citron": { "averageRating": 4.8, "ratingCount": 31 },
+  "saumon-en-croute-de-quinoa": { "averageRating": 4.6, "ratingCount": 15 },
+  "legumes-marines-vietnamiens": { "averageRating": 4.5, "ratingCount": 12 },
+  "chips-de-courgettes-et-aubergines": { "averageRating": 4.6, "ratingCount": 21 }
+}

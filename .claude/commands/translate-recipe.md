@@ -20,6 +20,7 @@ Assist with translating a recipe between English and French, using proper culina
      - ounces -> grammes
    - Translate instruction steps with proper culinary verbs
    - Keep step `image` references identical (EN/FR share the same image files)
+   - Keep `video` field identical if present (video metadata is language-neutral)
    - Translate FAQs naturally
    - Translate MDX body prose with localized SEO keywords
    - Translate alt text for any `<Picture>` components in MDX body to French
@@ -30,6 +31,7 @@ Assist with translating a recipe between English and French, using proper culina
    - Similar process in reverse
    - Use standard North American English measurements
    - Keep step `image` references identical (shared files)
+   - Keep `video` field identical if present (video metadata is language-neutral)
    - Translate alt text for any `<Picture>` components in MDX body to English
    - Generate English SEO keywords
 
