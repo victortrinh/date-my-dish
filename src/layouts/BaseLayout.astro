@@ -4,6 +4,7 @@ import SEOHead from "@components/SEOHead.astro";
 import Navigation from "@components/Navigation.astro";
 import Footer from "@components/Footer.astro";
 import SearchOverlay from "@components/SearchOverlay.astro";
+import MobileMenuOverlay from "@components/MobileMenuOverlay.astro";
 import CookieConsent from "@components/CookieConsent.astro";
 import { getLocaleFromUrl, type Locale } from "@i18n/utils";
 
@@ -93,6 +94,7 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     </main>
     <Footer locale={locale} />
     <SearchOverlay locale={locale} />
+    <MobileMenuOverlay locale={locale} translationSlug={translationSlug} contentType={contentType} />
     <CookieConsent locale={locale} />
     <script is:inline>
       (function(){

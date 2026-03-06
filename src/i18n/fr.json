@@ -11,6 +11,7 @@
     "articles": "Articles",
     "search": "Recherche",
     "toggleMenu": "Basculer le menu",
+    "mobileMenu": "Menu de navigation mobile",
     "breadcrumb": "Fil d'Ariane"
   },
   "recipe": {

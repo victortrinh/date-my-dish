@@ -1,0 +1,153 @@
+---
+import { t, getLocalizedPath, getBookmarksLocalizedPath, type Locale } from "@i18n/utils";
+import LanguageToggle from "./LanguageToggle.astro";
+import DarkModeToggle from "./DarkModeToggle.astro";
+
+interface Props {
+  locale: Locale;
+  translationSlug?: string;
+  contentType?: "recipe" | "article";
+}
+
+const { locale, translationSlug, contentType } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { label: t(locale, "nav.home"), path: "/" },
+  { label: t(locale, "nav.recipes"), path: locale === "fr" ? "/recettes/" : "/recipes/" },
+  { label: t(locale, "nav.articles"), path: "/articles/" },
+  { label: t(locale, "nav.about"), path: locale === "fr" ? "/a-propos/" : "/about/" },
+  { label: t(locale, "nav.contact"), path: "/contact/" },
+];
+
+function isActive(linkPath: string): boolean {
+  const fullPath = getLocalizedPath(locale, linkPath);
+  if (linkPath === "/") return currentPath === fullPath;
+  return currentPath.startsWith(fullPath);
+}
+---
+
+<div
+  id="mobile-menu-overlay"
+  class="fixed inset-0 z-[55] hidden flex-col bg-white dark:bg-neutral-950"
+  role="dialog"
+  aria-modal="true"
+  aria-label={t(locale, "nav.mobileMenu")}
+>
+  <!-- Close button -->
+  <div class="flex justify-end px-4 py-4">
+    <button
+      id="mobile-menu-close"
+      class="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 dark:text-neutral-300 dark:hover:bg-neutral-800"
+      aria-label={t(locale, "search.close")}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Nav links -->
+  <nav class="flex flex-1 flex-col items-center justify-center gap-6">
+    {navLinks.map((link) => (
+      <a
+        href={getLocalizedPath(locale, link.path)}
+        class:list={[
+          "font-display text-3xl normal-case no-underline transition-colors",
+          isActive(link.path)
+            ? "text-brand-primary-text"
+            : "text-gray-700 hover:text-brand-primary-text dark:text-neutral-200 dark:hover:text-neutral-100",
+        ]}
+        aria-current={isActive(link.path) ? "page" : undefined}
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+
+  <!-- Bottom bar: bookmarks, dark mode, language -->
+  <div class="flex items-center justify-center gap-4 border-t border-gray-100 px-4 py-6 dark:border-neutral-800">
+    <a
+      href={getBookmarksLocalizedPath(locale)}
+      class="bookmark-nav-link relative rounded-lg p-2 text-gray-500 no-underline transition-colors hover:bg-gray-100 hover:text-gray-600 dark:text-neutral-400 dark:hover:bg-neutral-800"
+      aria-label={t(locale, "bookmark.pageTitle")}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+      <span class="bookmark-dot absolute -right-0.5 -top-0.5 hidden h-2 w-2 rounded-full bg-red-500"></span>
+    </a>
+    <DarkModeToggle locale={locale} />
+    <LanguageToggle locale={locale} translationSlug={translationSlug} contentType={contentType} />
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  var overlay = document.getElementById('mobile-menu-overlay');
+  var closeBtn = document.getElementById('mobile-menu-close');
+  var triggerEl = null;
+
+  function openMobileMenu(trigger) {
+    triggerEl = trigger || document.activeElement;
+    overlay.classList.remove('hidden');
+    overlay.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    // Update hamburger aria-expanded
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+    // Focus first link
+    var firstLink = overlay.querySelector('nav a');
+    if (firstLink) firstLink.focus();
+  }
+
+  function closeMobileMenu() {
+    overlay.classList.add('hidden');
+    overlay.classList.remove('flex');
+    document.body.style.overflow = '';
+    var menuBtn = document.getElementById('mobile-menu-btn');
+    if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+    if (triggerEl) {
+      triggerEl.focus();
+      triggerEl = null;
+    }
+  }
+
+  closeBtn.addEventListener('click', closeMobileMenu);
+
+  // Escape key
+  overlay.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
+    // Focus trap
+    if (e.key === 'Tab') {
+      var focusable = overlay.querySelectorAll('a[href], button:not([disabled])');
+      if (focusable.length === 0) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  // Bookmark dot indicator
+  try {
+    var bookmarks = JSON.parse(localStorage.getItem('dmd_bookmarks') || '[]');
+    if (bookmarks.length > 0) {
+      overlay.querySelectorAll('.bookmark-dot').forEach(function(dot) {
+        dot.classList.remove('hidden');
+      });
+    }
+  } catch(e) {}
+
+  window.__openMobileMenu = openMobileMenu;
+  window.__closeMobileMenu = closeMobileMenu;
+})();
+</script>
