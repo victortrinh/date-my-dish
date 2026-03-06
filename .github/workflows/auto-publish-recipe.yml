@@ -267,8 +267,8 @@ jobs:
             - Any issues encountered
           claude_args: |
             --model claude-sonnet-4-6
-            --max-turns 30
-            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(convert:*),Bash(node:*),Bash(npm run:*),Bash(npx:*),Bash(ls:*),Bash(cat:*),Bash(wc:*),Bash(du:*),Bash(file:*),Bash(identify:*),Bash(stat:*),Bash(mkdir:*),Bash(which:*),Bash(cp:*)"
+            --max-turns 45
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(convert:*),Bash(node:*),Bash(npm run:*),Bash(npx:*),Bash(ls:*),Bash(cat:*),Bash(wc:*),Bash(du:*),Bash(file:*),Bash(identify:*),Bash(stat:*),Bash(mkdir:*),Bash(which:*),Bash(cp:*),Bash(mv:*),Bash(rm:*),Bash(echo:*),Bash(head:*),Bash(tail:*),Bash(find:*),Bash(sed:*),Bash(jq:*),Bash(test:*),Bash([:*)"
           branch_prefix: "auto-recipe/"
 
       # Step 4: Check for changes and create PR
