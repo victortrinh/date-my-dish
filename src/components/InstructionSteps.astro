@@ -33,7 +33,7 @@ const { locale, instructionGroups } = Astro.props;
       <ol class="space-y-6">
         {group.steps.map((step, i) => (
           <li class="flex gap-4">
-            <span aria-hidden="true" class="step-number flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-primary-dark font-ui text-sm font-bold text-white">
+            <span aria-hidden="true" class="step-number flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-primary-dark font-ui text-lg font-bold text-white ring-4 ring-brand-primary/20">
               {i + 1}
             </span>
             <div class="pt-0.5">
