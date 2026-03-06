@@ -19,7 +19,9 @@ Audit a recipe or article for SEO completeness, structured data validity, conten
 - [ ] Recipe schema present with @type: Recipe
 - [ ] All required Recipe properties (name, description, image, prepTime, cookTime, totalTime, recipeIngredient, recipeInstructions, author)
 - [ ] HowToStep objects have text property
-- [ ] HowToStep objects with images have valid image URLs
+- [ ] HowToStep objects with images have valid image URLs (absolute URLs, not relative)
+- [ ] aggregateRating present (check `data/ratings-seed.json` has entry for this slug AND the FR translationSlug)
+- [ ] video field: if present in frontmatter, VideoObject emitted in JSON-LD
 - [ ] FAQPage schema present (if FAQs exist)
 - [ ] BreadcrumbList schema present
 

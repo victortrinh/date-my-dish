@@ -36,6 +36,7 @@ Run SEO audits across all recipes and articles, producing a summary scorecard sh
    |-------|--------|
    | Recipe schema present with @type: Recipe | +2 |
    | All required Recipe properties (name, image, recipeIngredient, recipeInstructions) | +1 |
+   | aggregateRating present in JSON-LD (seed entry exists in `data/ratings-seed.json` for EN slug + FR slug) | +1 |
    | FAQPage schema present | +1 |
    | BreadcrumbList schema present | +1 |
 
@@ -57,7 +58,7 @@ Run SEO audits across all recipes and articles, producing a summary scorecard sh
    | All images have descriptive alt text | +2 |
    | All images under size targets | +1 |
 
-   **Total possible: 24 points** (15 SEO + 9 Image)
+   **Total possible: 25 points** (16 SEO + 9 Image)
 
 4. **Audit each article** using the article scoring rubric from `/seo-audit`:
 
@@ -105,8 +106,8 @@ Run SEO audits across all recipes and articles, producing a summary scorecard sh
 
    | Recipe                    | SEO  | Image | Total | Issues                              |
    |---------------------------|------|-------|-------|-------------------------------------|
-   | cacio-e-pepe              | 15/15| 9/9   | 24/24 | None                                |
-   | quinoa-crusted-salmon     | 14/15| 7/9   | 21/24 | Prose 750 words (target: 800)       |
+   | cacio-e-pepe              | 16/16| 9/9   | 25/25 | None                                |
+   | quinoa-crusted-salmon     | 15/16| 7/9   | 22/25 | Prose 750 words (target: 800)       |
 
    --- ARTICLES (18-point scale) ---
 
@@ -116,7 +117,7 @@ Run SEO audits across all recipes and articles, producing a summary scorecard sh
    | food-science-emulsions    | 13/15| 2/3   | 15/18 | Prose under 800 words               |
 
    --- Scoring Tiers ---
-   Recipes:  Excellent (22-24): X | Good (18-21): X | Needs Work (14-17): X | Critical (<14): X
+   Recipes:  Excellent (23-25): X | Good (19-22): X | Needs Work (15-18): X | Critical (<15): X
    Articles: Excellent (16-18): X | Good (13-15): X | Needs Work (10-12): X | Critical (<10): X
 
    --- Common Issues ---
@@ -131,7 +132,7 @@ Run SEO audits across all recipes and articles, producing a summary scorecard sh
    - [list important issues]
 
    --- Collection Averages ---
-   Recipes:  Avg SEO: X/15 | Avg Image: X/9 | Avg Total: X/24
+   Recipes:  Avg SEO: X/16 | Avg Image: X/9 | Avg Total: X/25
    Articles: Avg SEO: X/15 | Avg Image: X/3 | Avg Total: X/18
    ```
 
@@ -148,10 +149,10 @@ Run SEO audits across all recipes and articles, producing a summary scorecard sh
 
 | Tier | Score Range | Meaning |
 |------|-------------|---------|
-| Excellent | 22-24 | Fully optimized, ready for rich results |
-| Good | 18-21 | Minor improvements possible |
-| Needs Work | 14-17 | Significant gaps in SEO or images |
-| Critical | < 14 | Missing essential elements, unlikely to rank |
+| Excellent | 23-25 | Fully optimized, ready for rich results |
+| Good | 19-22 | Minor improvements possible |
+| Needs Work | 15-18 | Significant gaps in SEO or images |
+| Critical | < 15 | Missing essential elements, unlikely to rank |
 
 ## Image Size Targets
 

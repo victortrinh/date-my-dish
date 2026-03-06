@@ -69,6 +69,24 @@ instructionGroups:
         image: "../../../assets/images/recipes/{slug}-step-1.jpg"  # Optional: step photo (Astro image() import)
       - text: "Another step."
         # image omitted = no step photo for this step
+nutrition:
+  calories: ""
+  fatContent: ""
+  carbohydrateContent: ""
+  proteinContent: ""
+occasion: []
+impressFactor: 3
+dateNightTips:
+  wine: ""
+  music: ""
+  platingTip: ""
+# video:  # Optional — only add when a video URL is available
+#   name: ""
+#   description: ""
+#   thumbnailUrl: ""
+#   contentUrl: ""
+#   uploadDate: YYYY-MM-DD
+#   duration: "PT0M0S"  # ISO 8601 duration
 faqs:
   - question: ""
     answer: ""
