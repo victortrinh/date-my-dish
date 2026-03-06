@@ -93,7 +93,8 @@ jobs:
             - Preserve all existing frontmatter fields exactly as-is (only add/modify specific fields)
 
             ## After Changes
-            Run `npm run check` to verify no TypeScript/schema errors.
+            First run `node scripts/fetch-ratings.mjs` to generate `data/ratings.json` (required by recipe pages).
+            Then run `npm run check` to verify no TypeScript/schema errors.
 
             ## Output
             Provide a summary:
@@ -104,7 +105,7 @@ jobs:
           claude_args: |
             --model claude-sonnet-4-6
             --max-turns 20
-            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check:*)"
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check:*),Bash(node:*)"
           branch_prefix: "seo-optimize/"
 
       - name: Check for changes

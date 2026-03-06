@@ -107,7 +107,7 @@ jobs:
 
             5. **Fix issues**: Edit files to fix problems found. Be specific and targeted.
 
-            6. **After making changes**, run `npm run check` to verify no TypeScript/schema errors.
+            6. **After making changes**, first run `node scripts/fetch-ratings.mjs` to generate `data/ratings.json`, then run `npm run check` to verify no TypeScript/schema errors.
 
             ## Restrictions
             - ONLY modify files in `src/content/recipes/` and `src/content/articles/` (MDX frontmatter and prose)
@@ -123,7 +123,7 @@ jobs:
           claude_args: |
             --model claude-sonnet-4-6
             --max-turns 15
-            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check:*)"
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check:*),Bash(node:*)"
           branch_prefix: "seo-audit/"
 
       # Check for changes
@@ -139,7 +139,7 @@ jobs:
       # Verify Claude's changes build successfully
       - name: Verify build after fixes
         if: steps.changes.outputs.has_changes == 'true'
-        run: npm run check && npm run build
+        run: node scripts/fetch-ratings.mjs && npm run check && npm run build
         continue-on-error: true
         id: verify
 
