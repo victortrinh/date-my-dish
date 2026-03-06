@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
+import FeaturedCard from "@components/FeaturedCard.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t, getRecipeLocalizedPath } from "@i18n/utils";
 import { getCollection } from "astro:content";
@@ -88,7 +89,7 @@ allCategories.sort((a, b) => {
     <div class="mb-10 flex flex-wrap gap-2">
       <a
         href="/en/recipes/"
-        class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
+        class="rounded-lg border border-gray-200 bg-white px-5 py-2.5 font-ui text-base font-medium text-gray-700 no-underline transition-colors hover:bg-gray-50 hover:border-brand-primary hover:text-brand-primary dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700"
       >
         {t(locale, "listing.allCategories")}
       </a>
@@ -96,10 +97,10 @@ allCategories.sort((a, b) => {
         <a
           href={`/en/recipes/category/${cat}/`}
           class:list={[
-            "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
+            "rounded-lg px-5 py-2.5 font-ui text-base font-medium no-underline",
             cat === category
-              ? "bg-brand-primary-dark text-white dark:text-white dark:hover:text-white shadow-md"
-              : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400",
+              ? "bg-brand-primary-dark font-bold text-white shadow-md dark:text-white dark:hover:text-white"
+              : "border border-gray-200 bg-white text-gray-700 transition-colors hover:bg-gray-50 hover:border-brand-primary hover:text-brand-primary dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700",
           ]}
           aria-current={cat === category ? "page" : undefined}
         >
@@ -109,25 +110,47 @@ allCategories.sort((a, b) => {
     </div>
 
     {sortedRecipes.length > 0 ? (
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {sortedRecipes.map((recipe: any, i: number) => {
-          const slug = recipe.id.replace(/^en\//, "");
+      <>
+        {(() => {
+          const first = sortedRecipes[0];
+          const slug = first.id.replace(/^en\//, "");
           return (
-            <RecipeCard
-              title={recipe.data.title}
-              description={recipe.data.description}
-              slug={slug}
-              locale={locale}
-              heroImage={recipe.data.heroImage as ImageMetadata}
-              heroImageAlt={recipe.data.heroImageAlt}
-              prepTime={recipe.data.prepTime}
-              totalTime={recipe.data.totalTime}
-              difficulty={recipe.data.difficulty}
-              loading={i === 0 ? "eager" : "lazy"}
-            />
+            <div class="mb-8">
+              <FeaturedCard
+                title={first.data.title}
+                description={first.data.description}
+                slug={slug}
+                locale={locale}
+                heroImage={first.data.heroImage as ImageMetadata}
+                heroImageAlt={first.data.heroImageAlt}
+                collection="recipes"
+                difficulty={first.data.difficulty}
+                totalTime={first.data.totalTime}
+              />
+            </div>
           );
-        })}
-      </div>
+        })()}
+        {sortedRecipes.length > 1 && (
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate>
+            {sortedRecipes.slice(1).map((recipe: any) => {
+              const slug = recipe.id.replace(/^en\//, "");
+              return (
+                <RecipeCard
+                  title={recipe.data.title}
+                  description={recipe.data.description}
+                  slug={slug}
+                  locale={locale}
+                  heroImage={recipe.data.heroImage as ImageMetadata}
+                  heroImageAlt={recipe.data.heroImageAlt}
+                  prepTime={recipe.data.prepTime}
+                  totalTime={recipe.data.totalTime}
+                  difficulty={recipe.data.difficulty}
+                />
+              );
+            })}
+          </div>
+        )}
+      </>
     ) : (
       <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
     )}

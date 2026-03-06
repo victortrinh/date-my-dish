@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import ArticleCard from "@components/ArticleCard.astro";
+import FeaturedCard from "@components/FeaturedCard.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t, getArticleLocalizedPath } from "@i18n/utils";
 import { getCollection } from "astro:content";
@@ -54,24 +55,46 @@ const articles = allArticles
 
     <!-- Article Grid -->
     {articles.length > 0 ? (
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {articles.map((article, i) => {
-          const slug = article.id.replace(/^fr\//, "");
+      <>
+        {(() => {
+          const first = articles[0];
+          const slug = first.id.replace(/^fr\//, "");
           return (
-            <ArticleCard
-              title={article.data.title}
-              description={article.data.description}
-              slug={slug}
-              locale={locale}
-              heroImage={article.data.heroImage as ImageMetadata}
-              heroImageAlt={article.data.heroImageAlt}
-              publishDate={article.data.publishDate}
-              readingTime={article.data.readingTime}
-              loading={i === 0 ? "eager" : "lazy"}
-            />
+            <div class="mb-8">
+              <FeaturedCard
+                title={first.data.title}
+                description={first.data.description}
+                slug={slug}
+                locale={locale}
+                heroImage={first.data.heroImage as ImageMetadata}
+                heroImageAlt={first.data.heroImageAlt}
+                collection="articles"
+                publishDate={first.data.publishDate}
+                readingTime={first.data.readingTime}
+              />
+            </div>
           );
-        })}
-      </div>
+        })()}
+        {articles.length > 1 && (
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate>
+            {articles.slice(1).map((article) => {
+              const slug = article.id.replace(/^fr\//, "");
+              return (
+                <ArticleCard
+                  title={article.data.title}
+                  description={article.data.description}
+                  slug={slug}
+                  locale={locale}
+                  heroImage={article.data.heroImage as ImageMetadata}
+                  heroImageAlt={article.data.heroImageAlt}
+                  publishDate={article.data.publishDate}
+                  readingTime={article.data.readingTime}
+                />
+              );
+            })}
+          </div>
+        )}
+      </>
     ) : (
       <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noArticlesFound")}</p>
     )}
