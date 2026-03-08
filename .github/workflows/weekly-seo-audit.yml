@@ -45,6 +45,7 @@ jobs:
         with:
           configPath: ./.lighthouserc-full.cjs
           uploadArtifacts: true
+          artifactName: lighthouse-results-desktop
           temporaryPublicStorage: true
 
       - name: Run Lighthouse CI (Mobile)
@@ -53,6 +54,7 @@ jobs:
         with:
           configPath: ./.lighthouserc-mobile-full.cjs
           uploadArtifacts: true
+          artifactName: lighthouse-results-mobile
           temporaryPublicStorage: true
 
       # Save Lighthouse results for Claude
