@@ -124,8 +124,8 @@ jobs:
             - Any issues that require manual attention
           claude_args: |
             --model claude-sonnet-4-6
-            --max-turns 15
-            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check:*),Bash(node:*)"
+            --max-turns 30
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check*),Bash(node *),Bash(wc *),Bash(stat *),Bash(ls *)"
           branch_prefix: "seo-audit/"
 
       # Check for changes
