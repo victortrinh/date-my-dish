@@ -10,7 +10,7 @@
  * Requires environment variables:
  *   CF_ACCOUNT_ID, CF_API_TOKEN, CF_KV_NAMESPACE_ID
  *
- * Skips if the slug already has a rating in KV (won't overwrite live data).
+ * Overwrites any existing rating in KV for the given slug.
  */
 
 const [slug, avgStr, countStr] = process.argv.slice(2);
@@ -46,19 +46,6 @@ const headers = {
 };
 
 const key = `rating:${slug}`;
-
-// Check if rating already exists
-const checkRes = await fetch(`${baseUrl}/values/${encodeURIComponent(key)}`, {
-  headers: { Authorization: `Bearer ${apiToken}` },
-});
-
-if (checkRes.ok) {
-  const existing = await checkRes.text();
-  if (existing && existing !== "null") {
-    console.log(`[seed-rating] ${slug} already has a rating in KV, skipping`);
-    process.exit(0);
-  }
-}
 
 // Write seed data (store as total + count so live ratings accumulate correctly)
 const total = Math.round(averageRating * ratingCount * 10) / 10;
