@@ -1,8 +1,8 @@
 {
-  "pageId": "1930cda9-74a5-42c5-a829-be7bc1c7b21b",
-  "title": "The Secret to Deliciously Tender Stir-Fries: Mastering the Art of Velveting (Perfect for Date Night)",
-  "recipeNum": 28,
-  "lastEditedTime": "2026-01-29T01:07:56.115Z",
+  "pageId": "ed0c5288-8c7b-40c6-90cd-10719d75a0cc",
+  "title": "Unlock Restaurant-Quality Meals with Sous Vide Cooking for Date Night",
+  "recipeNum": 29,
+  "lastEditedTime": "2026-01-29T01:20:08.032Z",
   "heroImage": {
     "localPath": "/tmp/notion-images/hero.png",
     "caption": null
@@ -10,7 +10,7 @@
   "blocks": [
     {
       "type": "paragraph",
-      "text": "Cooking a stir-fry for date night shows culinary skill and cultural awareness. Mastering velveting, the Chinese technique that makes restaurant stir-fries impossibly tender, elevates your home cooking and impresses without pretension."
+      "text": "Sous vide cooking delivers consistently perfect results without constant monitoring. For date night, this means you can focus on your guest instead of worrying about overcooking expensive steaks or fish. The technique shows sophistication and attention to detail."
     },
     {
       "type": "callout",
@@ -25,10 +25,10 @@
       "type": "list",
       "style": "unordered",
       "items": [
-        "What velveting is and why it works",
-        "The simple technique anyone can master",
-        "How to apply it to date night cooking",
-        "Common mistakes to avoid"
+        "What sous vide is and how it works",
+        "Why it's perfect for date night cooking",
+        "Essential equipment and temperatures",
+        "Best proteins for impressive results"
       ]
     },
     {
@@ -37,15 +37,15 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "What Is Velveting"
+      "text": "What Is Sous Vide"
     },
     {
       "type": "paragraph",
-      "text": "Velveting is a Chinese cooking technique that coats protein in a mixture of cornstarch, egg white, and sometimes oil or wine. This creates a protective barrier that keeps meat tender during high-heat cooking. The result is that silky, tender texture you get at good Chinese restaurants."
+      "text": "Sous vide (French for \"under vacuum\") cooks food in a precisely controlled water bath. You seal ingredients in a bag, submerge them in water held at the exact target temperature, and wait. The food reaches that temperature throughout and stays there without overcooking."
     },
     {
       "type": "image",
-      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/65df910b-788d-48a0-bae3-4b0604cc9312/vudememe_A_delicate_watercolor_illustration_of_thinly_sliced_me_21bddf89-fd95-4dce-8a83-064483cc7911.png?table=block&id=2f7c3484-e8de-80bf-b89f-eb60b8bffc62&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1772496000000&signature=Xej0XDGmmJKOr7AxP0qyi5kOfKbT8wsfCROjmvo60wQ",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/24c70f6e-ecc0-4eb0-8326-7e4da8995149/vudememe_A_watercolor_illustration_of_a_vacuum-sealed_bag_with__849876ff-8895-49e1-be22-8e06d1e12dcb.png?table=block&id=2f7c3484-e8de-809c-bd04-dc3e7cdf95d4&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1773100800000&signature=xBkqZyq-TjHrPU_eTMcaymYZ_NmKZQUEaaVhPsgRtjc",
       "caption": null,
       "localPath": "/tmp/notion-images/hero.png"
     },
@@ -55,11 +55,15 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Why This Matters for Date Night"
+      "text": "Why This Matters for Dating"
     },
     {
       "type": "paragraph",
-      "text": "Cooking Asian food at home demonstrates cultural curiosity and adventurousness. When you serve a perfectly tender stir-fry, it shows you've taken time to learn proper technique rather than just following a recipe. This level of care translates to how you approach relationships."
+      "text": "Sous vide lets you prepare the main course hours in advance, then finish quickly when your date arrives. This eliminates kitchen stress and lets you be present. Serving a perfectly cooked, edge-to-edge medium-rare steak demonstrates care and precision."
+    },
+    {
+      "type": "paragraph",
+      "text": "The technique also shows you're current with modern cooking methods. It's a conversation starter that reveals your interest in food beyond basic home cooking."
     },
     {
       "type": "divider"
@@ -67,44 +71,136 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "The Basic Velveting Technique"
+      "text": "Essential Equipment"
     },
     {
       "type": "heading",
       "level": 3,
-      "text": "Ingredients Per Pound of Protein"
+      "text": "What You Need"
     },
     {
       "type": "list",
       "style": "unordered",
       "items": [
-        "1 egg white",
-        "1 tablespoon cornstarch",
-        "1 tablespoon rice wine or water",
-        "1/2 teaspoon salt",
-        "Optional: 1 tablespoon oil"
+        "**Immersion circulator:** $100-200 (Anova, Joule are popular brands)",
+        "**Container:** Any large pot or dedicated sous vide container",
+        "**Bags:** Ziplock freezer bags work, vacuum sealer is optional",
+        "**Cast iron pan or torch:** For finishing sear"
       ]
     },
     {
       "type": "heading",
       "level": 3,
-      "text": "Steps"
+      "text": "What's Nice to Have"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Vacuum sealer for better seal and longer storage",
+        "Insulated container to reduce energy use",
+        "Rack to keep bags separated"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Key Temperatures for Date Night Proteins"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Steak"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Rare: 120-125°F (1-4 hours)",
+        "Medium-rare: 129-134°F (1-4 hours)",
+        "Medium: 135-144°F (1-4 hours)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Chicken Breast"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Tender and juicy: 140-145°F (1.5-4 hours)",
+        "Traditional texture: 150°F (1-4 hours)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Fish"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Salmon (medium): 125°F (30-45 minutes)",
+        "Firm fish: 130°F (30-45 minutes)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Eggs"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Soft poached style: 145°F (45 minutes)",
+        "Custard-like: 167°F (13 minutes)"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Basic Process"
     },
     {
       "type": "list",
       "style": "ordered",
       "items": [
-        "**Slice the protein thin:** Cut chicken, beef, or pork into thin, uniform pieces (about 1/4 inch). Uniform size ensures even cooking.",
-        "**Mix the coating:** Whisk egg white until slightly frothy. Add cornstarch, wine, and salt. Mix until smooth.",
-        "**Coat the protein:** Toss protein pieces in the mixture until evenly coated. Let sit for 15-30 minutes at room temperature.",
-        "**Pre-cook (optional but recommended):** Briefly blanch in oil (30 seconds at 280°F) or boiling water (1-2 minutes). This sets the coating.",
-        "**Stir-fry as normal:** Add to your hot wok with vegetables and sauce. The meat stays tender throughout."
+        "**Season the protein:** Salt, pepper, and any aromatics (garlic, herbs). Less is more with sous vide since flavors concentrate.",
+        "**Bag it:** Place in ziplock bag. Use water displacement method: slowly lower bag into water, letting pressure push out air before sealing.",
+        "**Set temperature:** Fill container with water. Set circulator to target temperature. Wait for it to reach temp (10-15 minutes).",
+        "**Cook:** Submerge sealed bag. Set timer. Walk away.",
+        "**Sear and serve:** Pat protein dry. Sear in screaming hot cast iron or with torch (1 minute per side). Serve immediately."
       ]
     },
     {
-      "type": "image",
-      "url": "attachment:f8dae350-a1ab-43cb-b206-2b29e6ecbd49:vudememe_beef_stir_fry_stir_fry_chinese_hand_drawn_water_color__81f7124b-6ed2-4a66-9fc5-768fbcf9f836.png",
-      "caption": null
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Why It Works"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Precision:** Traditional cooking applies high heat from outside, creating gradients (overcooked edges, raw center). Sous vide heats evenly throughout to exactly your target temperature."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Impossible to overcook:** Once food reaches target temp, it stays there. A steak at 130°F for 2 hours or 4 hours ends up the same (within reason)."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Timing flexibility:** This is crucial for date night. Start cooking early, finish when ready."
     },
     {
       "type": "divider"
@@ -112,15 +208,31 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Why Velveting Works"
+      "text": "Common Mistakes"
     },
     {
       "type": "paragraph",
-      "text": "**Science:** The cornstarch and egg white create a physical barrier that prevents moisture loss. When proteins cook, their fibers contract and squeeze out water. This coating keeps that moisture locked in, resulting in tender meat even at high temperatures."
+      "text": "**Mistake:** Skipping the sear"
     },
     {
       "type": "paragraph",
-      "text": "**Temperature control:** The pre-cooking step gently sets the coating before the aggressive heat of stir-frying. This two-stage cooking prevents the meat from seizing up."
+      "text": "**Solution:** Always finish with high heat. The sear creates flavor and texture contrast."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Mistake:** Overseasoning"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Solution:** Flavors concentrate in the bag. Use less salt and seasoning than normal."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Mistake:** Wrong bag seal"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Solution:** Ensure all air is out. Floating bags cook unevenly."
     },
     {
       "type": "divider"
@@ -128,69 +240,62 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Common Mistakes to Avoid"
-    },
-    {
-      "type": "paragraph",
-      "text": "**Mistake:** Skipping the rest time"
-    },
-    {
-      "type": "paragraph",
-      "text": "**Solution:** Let the coating adhere for at least 15 minutes. This ensures it stays on during cooking."
-    },
-    {
-      "type": "paragraph",
-      "text": "**Mistake:** Cutting meat too thick"
-    },
-    {
-      "type": "paragraph",
-      "text": "**Solution:** Thin, uniform pieces (1/4 inch) cook quickly and stay tender."
-    },
-    {
-      "type": "paragraph",
-      "text": "**Mistake:** Overcrowding the wok"
-    },
-    {
-      "type": "paragraph",
-      "text": "**Solution:** Cook in batches if needed. Overcrowding drops the temperature and steams instead of sears."
-    },
-    {
-      "type": "divider"
-    },
-    {
-      "type": "heading",
-      "level": 2,
-      "text": "Date Night Application"
+      "text": "Date Night Game Plan"
     },
     {
       "type": "heading",
       "level": 3,
-      "text": "Best Proteins for Velveting"
-    },
-    {
-      "type": "list",
-      "style": "unordered",
-      "items": [
-        "Chicken breast: Naturally lean, benefits most from velveting",
-        "Beef (flank or sirloin): Creates that tender restaurant texture",
-        "Pork tenderloin: Stays juicy and tender",
-        "Shrimp: Quick-cooking, impressive results"
-      ]
-    },
-    {
-      "type": "heading",
-      "level": 3,
-      "text": "Pairing Suggestions"
+      "text": "Timeline Example (Steak Dinner)"
     },
     {
       "type": "paragraph",
-      "text": "Serve with jasmine rice and a simple vegetable stir-fry. The contrast between tender protein and crisp vegetables creates textural interest. Share everything family-style to encourage interaction and conversation."
+      "text": "**4:00 PM:** Season steaks, bag them, start sous vide at 130°F"
+    },
+    {
+      "type": "paragraph",
+      "text": "**6:00 PM:** Date arrives, enjoy drinks and appetizers"
+    },
+    {
+      "type": "paragraph",
+      "text": "**7:30 PM:** Remove steaks, pat dry"
+    },
+    {
+      "type": "paragraph",
+      "text": "**7:35 PM:** Sear in hot pan (2 minutes total)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**7:37 PM:** Serve perfect medium-rare steaks"
+    },
+    {
+      "type": "paragraph",
+      "text": "No stress, no guessing, no overcooked meat."
     },
     {
       "type": "image",
-      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/e18e52a4-007f-48e3-a01c-0feaec73f002/vudememe_stir_fry_with_ricebowl_beef_stir_fry_stir_fry_chinese__eed9e404-df35-4e0c-9b57-5d5c7e6115c2.png?table=block&id=2f7c3484-e8de-80f7-9160-d19d31d97113&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1772496000000&signature=91nAtbKMOyqB7sHrYA2GLjnaQPhv5-5hkOo6zqza4go",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/f151143a-6526-4a39-a362-0f449ce311ff/vudememe_clock_in_kitchen_timer_hand_drawn_water_color_style_il_643b55cf-494e-47c4-a0c5-1517a4cb09e0.png?table=block&id=2f7c3484-e8de-80e9-8ae6-e404c9065eb6&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1773100800000&signature=a8v2RBULQ7cl_ZxINAhSQNGAYFJiBkaOb69zAQSM3bs",
       "caption": null,
-      "localPath": "/tmp/notion-images/img-3.png"
+      "localPath": "/tmp/notion-images/img-2.png"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Best First Projects"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Easiest:** Salmon at 125°F (impressive results, hard to mess up)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Most impressive:** Ribeye at 130°F (restaurant-quality, edge-to-edge pink)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Most romantic:** Scallops at 120°F (tender, sweet, pairs with wine)"
     },
     {
       "type": "divider"
@@ -202,35 +307,35 @@
     },
     {
       "type": "paragraph",
-      "text": "**Can I velvet in advance?**"
+      "text": "**Q: Is sous vide safe?**"
     },
     {
       "type": "paragraph",
-      "text": "Yes. Coat and refrigerate for up to 4 hours before cooking. Bring to room temperature before stir-frying."
+      "text": "Yes. Extended cooking at lower temperatures still pasteurizes food. Follow time/temperature guidelines."
     },
     {
       "type": "paragraph",
-      "text": "**Is the pre-cooking step necessary?**"
+      "text": "**Q: Can I cook frozen?**"
     },
     {
       "type": "paragraph",
-      "text": "Not required, but it gives the best results. For quick weeknight cooking, you can skip it and still get tender meat."
+      "text": "Yes. Add 30-60 minutes to cooking time."
     },
     {
       "type": "paragraph",
-      "text": "**What if I don't have rice wine?**"
+      "text": "**Q: Do I need a vacuum sealer?**"
     },
     {
       "type": "paragraph",
-      "text": "Water, dry sherry, or even vodka work. The alcohol helps tenderize and adds minimal flavor."
+      "text": "No. Ziplock bags with water displacement work perfectly."
     },
     {
       "type": "paragraph",
-      "text": "**Can I use whole eggs instead of just whites?**"
+      "text": "**Q: What if I don't have a torch?**"
     },
     {
       "type": "paragraph",
-      "text": "Yes, but egg whites give a cleaner, more delicate coating. Whole eggs work in a pinch."
+      "text": "Cast iron pan works great. Get it screaming hot, sear 30-60 seconds per side."
     },
     {
       "type": "divider"
@@ -238,15 +343,15 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "The Social Advantage"
+      "text": "The Confidence Factor"
     },
     {
       "type": "paragraph",
-      "text": "Knowing this technique gives you confidence when cooking Asian cuisine at home. When your date comments on how tender the meat is, you can casually explain velveting. This demonstrates both skill and cultural knowledge without being pretentious."
+      "text": "Knowing your protein is perfectly cooked before your date arrives eliminates kitchen anxiety. You can focus on conversation, plating, and enjoying the evening. This presence and confidence is attractive."
     },
     {
       "type": "paragraph",
-      "text": "Cooking together and teaching this technique creates a collaborative, playful dynamic. It shows you're willing to share knowledge and work as a team."
+      "text": "When asked about your cooking, explaining sous vide shows you take food seriously without being pretentious. It's a balance of expertise and accessibility."
     },
     {
       "type": "callout",
@@ -261,17 +366,34 @@
       "type": "list",
       "style": "ordered",
       "items": [
-        "Choose a simple stir-fry recipe",
-        "Velvet the protein 30 minutes before cooking",
-        "Prep all ingredients together",
-        "Cook quickly in a hot wok",
-        "Serve family-style with rice"
+        "Choose salmon or steak",
+        "Start cooking 2-4 hours before date",
+        "Prepare sides and table",
+        "Quick sear when ready to serve",
+        "Enjoy perfectly cooked protein"
       ]
     },
     {
       "type": "paragraph",
-      "text": "The tender, restaurant-quality results will impress naturally."
+      "text": "Consistent results build cooking confidence."
     }
   ],
-  "faqs": []
+  "faqs": [
+    {
+      "question": "Is sous vide safe?",
+      "answer": "Yes. Extended cooking at lower temperatures still pasteurizes food. Follow time/temperature guidelines."
+    },
+    {
+      "question": "Can I cook frozen?",
+      "answer": "Yes. Add 30-60 minutes to cooking time."
+    },
+    {
+      "question": "Do I need a vacuum sealer?",
+      "answer": "No. Ziplock bags with water displacement work perfectly."
+    },
+    {
+      "question": "What if I don't have a torch?",
+      "answer": "Cast iron pan works great. Get it screaming hot, sear 30-60 seconds per side."
+    }
+  ]
 }
