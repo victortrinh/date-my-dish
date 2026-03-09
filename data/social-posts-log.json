@@ -9,6 +9,20 @@
           "description": "",
           "postedAt": "2026-03-04T16:37:53.542Z",
           "status": "posted"
+        },
+        {
+          "variant": 2,
+          "title": "The Pasta That Says 'I Made This For You'",
+          "description": "Slow-cooked beef ragu that whispers 'I've been thinking about you all day.' This Italian braised beef pasta is fork-tender, luxuriously rich, and worth every single minute. Pair with a bold Barolo, Dean Martin on the speakers, and watch your date night unfold beautifully. A medium-difficulty recipe that feels like pure magic on the plate.\n\nhttps://datemydish.com/en/recipes/beef-ragu-pappardelle/",
+          "scheduledFor": "2026-03-14T16:42:22.109Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Restaurant-Quality Italian Beef Ragu You Can Make at Home",
+          "description": "Master this classic Italian beef ragu recipe and impress every time. Slow-cooked until fork-tender, this braised beef sauce transforms simple ingredients into pure luxury. Serve over wide pappardelle ribbons for an elegant dinner that tastes like you spent hours in the kitchen—but won't. Medium difficulty, 2 hours 45 minutes, serves 2. The perfect homemade pasta dish.\n\nhttps://datemydish.com/en/recipes/beef-ragu-pappardelle/",
+          "scheduledFor": "2026-03-21T16:42:22.109Z",
+          "status": "pending"
         }
       ]
     }
@@ -23,6 +37,20 @@
           "description": "",
           "postedAt": "2026-03-04T16:38:10.344Z",
           "status": "posted"
+        },
+        {
+          "variant": 2,
+          "title": "The Appetizer That Says 'I Made This For You'",
+          "description": "Impress your date with a restaurant-quality Brussels sprouts salad that's easier to make than it looks. Crispy fried leaves tossed in a fish sauce vinaigrette—it's the kind of Southeast Asian appetizer that feels fancy but takes just 35 minutes. Pair with a chilled Sauvignon Blanc and serve artfully scattered in a shallow bowl. Date night just got seriously delicious. https://datemydish.com/en/recipes/brussels-sprouts-salad/",
+          "scheduledFor": "2026-03-14T16:42:40.684Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "35-Minute Southeast Asian Appetizer That Impresses",
+          "description": "Master this medium-difficulty Brussels sprouts salad and unlock the secrets of Southeast Asian flavors. Crispy fried leaves and a punchy fish sauce vinaigrette make this the ultimate date night appetizer. Takes just 35 minutes, serves 2, and tastes like you've trained at a professional kitchen. Perfect for entertaining without the stress. https://datemydish.com/en/recipes/brussels-sprouts-salad/",
+          "scheduledFor": "2026-03-21T16:42:40.684Z",
+          "status": "pending"
         }
       ]
     }
@@ -78,6 +106,202 @@
           "title": "Spanish Cauliflower Steaks: 40-Minute Vegan Dinner",
           "description": "Master Spanish cuisine with this foolproof roasted cauliflower steak recipe. Golden-brown steaks topped with smoky romesco and fresh parsley oil—elegant enough for entertaining, easy enough for weeknight dinners. This vegan main course is healthy, vibrant, and ready in 40 minutes. Make it for date night or your next dinner party. https://datemydish.com/en/recipes/cauliflower-steak-with-romesco-sauce/",
           "scheduledFor": "2026-03-21T16:24:29.040Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "crispy-vegan-calamari": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Crispy Vegan Calamari with King Oyster Mushrooms",
+          "description": "Discover this plant-based Mediterranean appetizer that fools everyone! Crispy king oyster mushroom rings fried golden in oregano-cayenne batter. Perfect vegan calamari alternative ready in 30 minutes for two. Impress your date night with this restaurant-quality, easy mushroom appetizer. Get the recipe: https://datemydish.com/en/recipes/crispy-vegan-calamari/",
+          "status": "posted",
+          "id": "1050746156851673516",
+          "postedAt": "2026-03-09T16:42:59.474Z"
+        },
+        {
+          "variant": 2,
+          "title": "The Vegan Appetizer That'll Blow Their Mind",
+          "description": "Serve up date night magic with Crispy Vegan Calamari—the plant-based appetizer everyone will love. Golden-fried king oyster mushrooms with oregano-cayenne batter, paired with sparkling Prosecco and bossa nova vibes. Restaurant-quality plating, 30-minute prep, pure romance. This vegan mushroom appetizer is your secret to entertaining. Find it here: https://datemydish.com/en/recipes/crispy-vegan-calamari/",
+          "scheduledFor": "2026-03-14T16:42:58.388Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "30-Minute Mediterranean Vegan Appetizer Magic",
+          "description": "Quick, impressive, and totally plant-based—Crispy Vegan Calamari with King Oyster Mushrooms is Mediterranean dining made easy. These golden-fried mushroom rings in oregano-cayenne batter come together in under 30 minutes and fool everyone at the table. No special skills needed, just restaurant-quality results. Medium difficulty, maximum impact for date nights or entertaining. Discover this game-changing vegan appetizer: https://datemydish.com/en/recipes/crispy-vegan-calamari/",
+          "scheduledFor": "2026-03-21T16:42:58.388Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "gochujang-kimchi-seafood-bucatini": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Spicy Gochujang-Kimchi Seafood Bucatini Recipe",
+          "description": "This Korean-Italian fusion seafood bucatini combines spicy gochujang and tangy kimchi with mussels, shrimp, and scallops. Ready in 45 minutes, it's the perfect medium-difficulty date night pasta that delivers restaurant-quality flavors. Pair with crisp Albariño and finish with fresh lemon zest for an impressive dinner for two. https://datemydish.com/en/recipes/gochujang-kimchi-seafood-bucatini/",
+          "status": "posted",
+          "id": "1050746156851673520",
+          "postedAt": "2026-03-09T16:43:19.208Z"
+        },
+        {
+          "variant": 2,
+          "title": "The Pasta That Says 'I Made This For You'",
+          "description": "Impress your date with this stunning Korean-Italian seafood bucatini loaded with gochujang, kimchi, mussels, shrimp, and scallops. Takes 45 minutes, tastes like pure restaurant magic, and comes with pro plating tips: warm bowls, shellfish on top, tableside lemon zest, and a pinch of chili flakes. Pair with crisp Albariño or dry Riesling for the ultimate date night moment. https://datemydish.com/en/recipes/gochujang-kimchi-seafood-bucatini/",
+          "scheduledFor": "2026-03-14T16:43:18.421Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Korean-Italian Fusion Pasta That Impresses Every Time",
+          "description": "Effortlessly elegant and surprisingly easy, this spicy gochujang-kimchi seafood bucatini brings Korean and Italian flavors together in just 45 minutes. Loaded with fresh mussels, shrimp, and scallops, it's medium difficulty but tastes like you spent hours perfecting it. Perfect weeknight or date night dinner that feels like a special occasion. Pair with crisp Albariño and finish with fresh lemon zest. https://datemydish.com/en/recipes/gochujang-kimchi-seafood-bucatini/",
+          "scheduledFor": "2026-03-21T16:43:18.421Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "lemon-posset-brulee": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Lemon Posset Brûlée: Easy 3-Ingredient No-Bake Dessert",
+          "description": "Impress your date with this elegant lemon posset brûlée—a British classic made with just 3 ingredients and zero oven time. Creamy lemon posset topped with a shattering caramelized sugar crust, served in lemon shells. Perfect for date night or celebrations. No-bake, elegant, and ready in 4 hours. https://datemydish.com/en/recipes/lemon-posset-brulee/",
+          "status": "posted",
+          "id": "1050746156851673528",
+          "postedAt": "2026-03-09T16:43:38.614Z"
+        },
+        {
+          "variant": 2,
+          "title": "The Dessert That Says 'I Trained in Paris'",
+          "description": "Serve your date an elegant lemon posset brûlée and watch them fall for you all over again. This no-bake British dessert requires just 3 ingredients but tastes like pure luxury. Creamy, tangy, with a shattering sugar crust—pair with late-harvest Riesling and soft French café music. Easy enough to make regularly, impressive enough for special occasions. https://datemydish.com/en/recipes/lemon-posset-brulee/",
+          "scheduledFor": "2026-03-14T16:43:37.708Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Effortless British Elegance: No-Bake Lemon Brûlée",
+          "description": "Looking for an elegant dessert that doesn't require culinary school? This no-bake lemon posset brûlée is a British classic that impresses every single time. Three simple ingredients, zero oven stress, and maximum romance. The creamy lemon posset and crackly caramelized crust create restaurant-quality results at home. Perfect for date nights, celebrations, or whenever you want to feel fancy. https://datemydish.com/en/recipes/lemon-posset-brulee/",
+          "scheduledFor": "2026-03-21T16:43:37.708Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "penne-alla-vodka": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Creamy Penne alla Vodka with Italian Sausage — 40 Min",
+          "description": "Restaurant-quality creamy penne alla vodka with Italian sausage ready in just 40 minutes. This one-pan easy pasta recipe features a rich tomato-vodka sauce, tender penne, and savory sausage. Perfect for date night or weeknight dinner. No reservation needed! https://datemydish.com/en/recipes/penne-alla-vodka/",
+          "status": "posted",
+          "id": "1050746156851673536",
+          "postedAt": "2026-03-09T16:43:56.521Z"
+        },
+        {
+          "variant": 2,
+          "title": "The Pasta That Says 'I Made This For You' 🍝",
+          "description": "Impress your date with creamy penne alla vodka that tastes like you spent hours in the kitchen—but takes just 40 minutes. Italian sausage, silky vodka sauce, and plating tips for that restaurant-perfect presentation. Pair with Pinot Grigio, dim lights, and Frank Sinatra. Date night magic. https://datemydish.com/en/recipes/penne-alla-vodka/",
+          "scheduledFor": "2026-03-14T16:43:55.655Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "40-Minute Italian Pasta That Impresses Every Time",
+          "description": "Easy Italian penne alla vodka with sausage delivers restaurant vibes on a weeknight timeline. Creamy tomato-vodka sauce, one-pan cooking, and professional plating tips make this the ultimate comfort pasta for date nights. Elegant, effortless, and unforgettably delicious. https://datemydish.com/en/recipes/penne-alla-vodka/",
+          "scheduledFor": "2026-03-21T16:43:55.655Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "quinoa-crusted-salmon": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Quinoa-Crusted Salmon with Spicy Orange Miso Sauce",
+          "description": "Impress your date with this stunning Quinoa-Crusted Salmon featuring a spicy orange miso sauce. This Nikkei fusion recipe combines crispy quinoa crust with vibrant citrus heat, creating a restaurant-quality dish in just 40 minutes. Perfect for date nights and special occasions. https://datemydish.com/en/recipes/quinoa-crusted-salmon/",
+          "status": "posted",
+          "id": "1050746156851673545",
+          "postedAt": "2026-03-09T16:44:16.220Z"
+        },
+        {
+          "variant": 2,
+          "title": "The Salmon That Says 'I'm Definitely Impressing You Tonight'",
+          "description": "Ready to wow your date? This Quinoa-Crusted Salmon with Spicy Orange Miso Sauce looks like a $45 entrée but takes just 40 minutes at home. Pro plating tip: serve skin-side down on greens. Pair with Burgundy Chardonnay and set the mood with Norah Jones for the perfect Nikkei fusion date night. https://datemydish.com/en/recipes/quinoa-crusted-salmon/",
+          "scheduledFor": "2026-03-14T16:44:15.221Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Restaurant-Quality Nikkei Salmon in 40 Minutes at Home",
+          "description": "This Quinoa-Crusted Salmon with Spicy Orange Miso Sauce brings Nikkei fusion straight to your table. Crispy quinoa crust meets bold citrus heat in this medium-difficulty, 40-minute recipe that feels fancy but stays approachable. Stunning date night salmon with Peruvian-Japanese flavors that impress every time. https://datemydish.com/en/recipes/quinoa-crusted-salmon/",
+          "scheduledFor": "2026-03-21T16:44:15.221Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "vietnamese-pickled-vegetables": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Vietnamese Pickled Vegetables (Do Chua) — Ready in 15 Minutes",
+          "description": "Learn how to make authentic Vietnamese do chua with this easy 15-minute recipe. Crisp daikon and carrots in a sweet-tangy brine. Perfect as a banh mi topping, rice bowl condiment, or side dish. This quick pickled vegetable recipe is a Vietnamese staple that upgrades any meal. https://datemydish.com/en/recipes/vietnamese-pickled-vegetables/",
+          "status": "failed",
+          "error": "Pinterest API error 2787: Sorry! Something went wrong on our end.",
+          "failedAt": "2026-03-09T16:44:43.961Z"
+        },
+        {
+          "variant": 2,
+          "title": "The Condiment That Makes Date Night Taste Better",
+          "description": "Impress your date with Vietnamese do chua — the easiest, crispiest pickled vegetable side dish ready in 15 minutes. Daikon and carrots in a tangy-sweet brine. Serve in a pretty mason jar with cilantro, pair with cold Tiger Beer or Vietnamese iced coffee, and set the mood with lo-fi vibes. Simple, elegant, unforgettable. https://datemydish.com/en/recipes/vietnamese-pickled-vegetables/",
+          "scheduledFor": "2026-03-14T16:44:34.514Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "15-Minute Vietnamese Pickled Vegetables That Elevate Everything",
+          "description": "Authentic Vietnamese do chua made easy. Crisp daikon and carrots in a sweet-tangy brine ready in 15 minutes — no canning required. This quick pickled vegetable recipe is a Vietnamese kitchen staple for banh mi, rice bowls, and grilled dishes. Naturally vegetarian, naturally delicious, naturally impressive. https://datemydish.com/en/recipes/vietnamese-pickled-vegetables/",
+          "scheduledFor": "2026-03-21T16:44:34.514Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "zucchini-eggplant-chips": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Crispy Zucchini & Eggplant Chips with Sparkling Water Batter",
+          "description": "These paper-thin zucchini and eggplant chips are fried until impossibly crispy in a sparkling water batter, then served with cool tzatziki. A Mediterranean appetizer that's vegetarian, easy, and ready in 30 minutes. Perfect for entertaining or a quick date night meal. https://datemydish.com/en/recipes/zucchini-eggplant-chips/",
+          "status": "failed",
+          "error": "Pinterest API error 2787: Sorry! Something went wrong on our end.",
+          "failedAt": "2026-03-09T16:45:08.193Z"
+        },
+        {
+          "variant": 2,
+          "title": "The Appetizer That Says 'I Actually Cooked For You'",
+          "description": "Impress your date with restaurant-quality crispy zucchini and eggplant chips made at home in just 30 minutes. This Mediterranean appetizer features a genius sparkling water batter that fries vegetables until they're perfectly golden and crispy. Serve in a paper-lined basket with creamy tzatziki and a chilled Pinot Grigio for an effortless date night starter. https://datemydish.com/en/recipes/zucchini-eggplant-chips/",
+          "scheduledFor": "2026-03-14T16:45:01.065Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "30-Minute Mediterranean Appetizer That Entertains Like a Pro",
+          "description": "This easy Mediterranean appetizer proves you don't need complicated techniques to impress. Paper-thin zucchini and eggplant fried in a sparkling water batter create impossibly crispy chips ready in just 30 minutes. Vegetarian, simple to execute, and perfect for entertaining guests or a casual date night. Serve with tzatziki and watch them disappear in minutes. https://datemydish.com/en/recipes/zucchini-eggplant-chips/",
+          "scheduledFor": "2026-03-21T16:45:01.065Z",
           "status": "pending"
         }
       ]
