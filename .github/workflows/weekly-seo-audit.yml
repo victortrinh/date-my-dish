@@ -75,58 +75,58 @@ jobs:
 
       # Claude Code analyzes and fixes
       - name: Claude Code SEO Analysis
-        uses: anthropics/claude-code-action@v1
-        with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ secrets.PAT_TOKEN }}
-          prompt: |
-            You are running the weekly automated SEO audit for Date My Dish.
+        run: |
+          npx @anthropic-ai/claude-code@latest --print \
+            --model claude-sonnet-4-6 \
+            --max-turns 30 \
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check*),Bash(node *),Bash(wc *),Bash(stat *),Bash(ls *)" \
+            "$(cat <<'PROMPT'
+          You are running the weekly automated SEO audit for Date My Dish.
 
-            ## Input Data
-            Read `lighthouse-manifest.json` in the repo root for Lighthouse scores per page.
+          ## Input Data
+          Read `lighthouse-manifest.json` in the repo root for Lighthouse scores per page.
 
-            ## Your Tasks
+          ## Your Tasks
 
-            1. **Analyze Lighthouse scores**: Identify pages scoring below 90 in any category.
+          1. **Analyze Lighthouse scores**: Identify pages scoring below 90 in any category.
 
-            2. **Validate JSON-LD**: For each recipe and article in `dist/`, check the generated HTML for:
-               - Recipe schema with all required properties (recipes only)
-               - Article schema with required properties (articles only)
-               - Image in array format `[url]`
-               - FAQPage schema present
-               - BreadcrumbList schema present
+          2. **Validate JSON-LD**: For each recipe and article in `dist/`, check the generated HTML for:
+             - Recipe schema with all required properties (recipes only)
+             - Article schema with required properties (articles only)
+             - Image in array format `[url]`
+             - FAQPage schema present
+             - BreadcrumbList schema present
 
-            3. **Check content quality** in `src/content/recipes/` and `src/content/articles/`:
-               - `description` <= 160 characters
-               - `heroImageAlt` descriptive, ~125 chars, no "Image of" prefix
-               - At least 3 FAQs per recipe/article
-               - MDX body word count >= 800 words
-               - At least 3 H2 headings in prose
-               - Internal cross-links present with trailing slashes
-               - EN/FR pairs properly linked via `translationSlug`
+          3. **Check content quality** in `src/content/recipes/` and `src/content/articles/`:
+             - `description` <= 160 characters
+             - `heroImageAlt` descriptive, ~125 chars, no "Image of" prefix
+             - At least 3 FAQs per recipe/article
+             - MDX body word count >= 800 words
+             - At least 3 H2 headings in prose
+             - Internal cross-links present with trailing slashes
+             - EN/FR pairs properly linked via `translationSlug`
 
-            4. **Check images**: Verify hero images < 200KB, step images < 150KB
+          4. **Check images**: Verify hero images < 200KB, step images < 150KB
 
-            5. **Fix issues**: Edit files to fix problems found. Be specific and targeted.
+          5. **Fix issues**: Edit files to fix problems found. Be specific and targeted.
 
-            6. **After making changes**, first run `node scripts/fetch-ratings.mjs` to generate `data/ratings.json`, then run `npm run check` to verify no TypeScript/schema errors.
+          6. **After making changes**, first run `node scripts/fetch-ratings.mjs` to generate `data/ratings.json`, then run `npm run check` to verify no TypeScript/schema errors.
 
-            ## Restrictions
-            - ONLY modify files in `src/content/recipes/` and `src/content/articles/` (MDX frontmatter and prose)
-            - Do NOT modify files in `src/components/`, `src/layouts/`, `src/pages/`, `src/i18n/`, or config files
-            - Do NOT rewrite prose content wholesale — only fix specific issues (meta descriptions, alt text, cross-links, headings)
-            - Do NOT modify `package.json`, `astro.config.ts`, `wrangler.jsonc`, or `CLAUDE.md`
+          ## Restrictions
+          - ONLY modify files in `src/content/recipes/` and `src/content/articles/` (MDX frontmatter and prose)
+          - Do NOT modify files in `src/components/`, `src/layouts/`, `src/pages/`, `src/i18n/`, or config files
+          - Do NOT rewrite prose content wholesale — only fix specific issues (meta descriptions, alt text, cross-links, headings)
+          - Do NOT modify `package.json`, `astro.config.ts`, `wrangler.jsonc`, or `CLAUDE.md`
 
-            ## Output
-            After making all fixes, provide a summary listing:
-            - Pages with scores below 90 and which categories
-            - Issues found and fixes applied (grouped by type)
-            - Any issues that require manual attention
-          claude_args: |
-            --model claude-sonnet-4-6
-            --max-turns 30
-            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check*),Bash(node *),Bash(wc *),Bash(stat *),Bash(ls *)"
-          branch_prefix: "seo-audit/"
+          ## Output
+          After making all fixes, provide a summary listing:
+          - Pages with scores below 90 and which categories
+          - Issues found and fixes applied (grouped by type)
+          - Any issues that require manual attention
+          PROMPT
+          )"
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       # Check for changes
       - name: Check for changes
