@@ -1,10 +1,10 @@
-# Date My Dish — Brand Voice Guide
+# Date My Dish: Brand Voice Guide
 
 ## Voice Definition
 
 **"Confident home cook impressing a date. Witty without trying too hard."**
 
-We're the friend who cooks beautifully and tells great stories while doing it. Food is always the star — personality is the seasoning. Think: approachable expertise with a wink.
+We're the friend who cooks beautifully and tells great stories while doing it. Food is always the star; personality is the seasoning. Think: approachable expertise with a wink.
 
 ### Tone Spectrum
 
@@ -39,10 +39,10 @@ We're the friend who cooks beautifully and tells great stories while doing it. F
 ### Example 1: Recipe Prose Opening
 
 **Before (generic):**
-> Cacio e pepe is a classic Roman pasta dish. It uses just a few simple ingredients — pasta, Pecorino Romano, and black pepper — to create a creamy, flavorful sauce. This recipe is easy to make at home.
+> Cacio e pepe is a classic Roman pasta dish. It uses just a few simple ingredients (pasta, Pecorino Romano, and black pepper) to create a creamy, flavorful sauce. This recipe is easy to make at home.
 
 **After (cheeky & confident):**
-> Three ingredients. No cream. No shortcuts. Cacio e pepe is the dish that proves you don't need a stocked pantry to cook something extraordinary — you just need the nerve to trust simplicity. This is the pasta that whispers "I know exactly what I'm doing" without raising its voice.
+> Three ingredients. No cream. No shortcuts. Cacio e pepe is the dish that proves you don't need a stocked pantry to cook something extraordinary; you just need the nerve to trust simplicity. This is the pasta that whispers "I know exactly what I'm doing" without raising its voice.
 
 ### Example 2: Meta Description
 
@@ -60,7 +60,7 @@ We're the friend who cooks beautifully and tells great stories while doing it. F
 
 **After:**
 > Q: Can I use a different type of pasta?
-> A: Wide and flat is the move — tagliatelle, fettuccine, or even mafaldine all catch the ragu beautifully. Spaghetti? It'll taste fine, but you'll lose the sauce-to-noodle magic. Go wide or go home.
+> A: Wide and flat is the move: tagliatelle, fettuccine, or even mafaldine all catch the ragu beautifully. Spaghetti? It'll taste fine, but you'll lose the sauce-to-noodle magic. Go wide or go home.
 
 ---
 
@@ -75,10 +75,10 @@ We're the friend who cooks beautifully and tells great stories while doing it. F
 ### Example 1: Recipe Prose Opening
 
 **Before (generic):**
-> Le cacio e pepe est un plat de pâtes romain classique. Il utilise seulement quelques ingrédients simples — des pâtes, du Pecorino Romano et du poivre noir — pour créer une sauce crémeuse et savoureuse.
+> Le cacio e pepe est un plat de pâtes romain classique. Il utilise seulement quelques ingrédients simples (des pâtes, du Pecorino Romano et du poivre noir) pour créer une sauce crémeuse et savoureuse.
 
 **After (cheeky & confident):**
-> Trois ingrédients. Pas de crème. Pas de raccourcis. Le cacio e pepe, c'est la preuve qu'on n'a pas besoin d'un garde-manger bien garni pour cuisiner quelque chose d'extraordinaire — juste le culot de faire confiance à la simplicité. C'est le plat qui murmure « je sais exactement ce que je fais » sans jamais lever le ton.
+> Trois ingrédients. Pas de crème. Pas de raccourcis. Le cacio e pepe, c'est la preuve qu'on n'a pas besoin d'un garde-manger bien garni pour cuisiner quelque chose d'extraordinaire; juste le culot de faire confiance à la simplicité. C'est le plat qui murmure « je sais exactement ce que je fais » sans jamais lever le ton.
 
 ### Example 2: Meta Description
 
@@ -96,7 +96,7 @@ We're the friend who cooks beautifully and tells great stories while doing it. F
 
 **After:**
 > Q: Puis-je utiliser un autre type de pâtes?
-> A: Large et plate, c'est la clé — tagliatelles, fettuccine, même des mafaldine, tout ça attrape le ragù à merveille. Des spaghettis? Le goût sera correct, mais tu vas perdre la magie sauce-pâte. Go wide or go home.
+> A: Large et plate, c'est la clé : tagliatelles, fettuccine, même des mafaldine, tout ça attrape le ragù à merveille. Des spaghettis? Le goût sera correct, mais tu vas perdre la magie sauce-pâte. Go wide or go home.
 
 ---
 
@@ -110,11 +110,11 @@ We're the friend who cooks beautifully and tells great stories while doing it. F
 - Date night tips copy
 
 ### DO NOT Apply Voice To
-- Cooking instructions (`instructionGroups.steps[].text`) — keep these clear, precise, authoritative
-- Ingredient lists — factual only
-- Nutrition data — factual only
-- `title` field — do NOT change recipe/article titles (URL stability)
-- `slug` — never change
+- Cooking instructions (`instructionGroups.steps[].text`): keep these clear, precise, authoritative
+- Ingredient lists: factual only
+- Nutrition data: factual only
+- `title` field: do NOT change recipe/article titles (URL stability)
+- `slug`: never change
 - Schema/JSON-LD data
 - Navigation, UI labels, error messages
 
@@ -132,9 +132,9 @@ We're the friend who cooks beautifully and tells great stories while doing it. F
 ## Refresh Checklist (Per Content Piece)
 
 - [ ] Rewrite MDX prose body with cheeky voice
-- [ ] Refresh `description` — max 160 chars, personality-infused
-- [ ] Refresh FAQ `answer` fields — witty but helpful
-- [ ] Review `heroImageAlt` — make vivid if too generic
+- [ ] Refresh `description`: max 160 chars, personality-infused
+- [ ] Refresh FAQ `answer` fields: witty but helpful
+- [ ] Review `heroImageAlt`: make vivid if too generic
 - [ ] Set `updatedDate` to refresh date
 - [ ] Do NOT change `title` or `slug`
 - [ ] Verify cooking instructions remain clear and authoritative
