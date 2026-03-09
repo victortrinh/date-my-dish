@@ -1,0 +1,45 @@
+name: Pinterest Pin Rotation
+
+on:
+  schedule:
+    # Runs daily at 10 AM UTC (good Pinterest posting time)
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: pinterest-rotation
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Post scheduled pin variants
+        env:
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+        run: node scripts/pinterest-rotate.mjs
+
+      - name: Commit updated log
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/social-posts-log.json
+          git diff --cached --quiet || git commit -m "chore: update social posts log (pin rotation)"
+          git push

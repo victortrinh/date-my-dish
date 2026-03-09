@@ -1,0 +1,152 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import RecipeCard from "@components/RecipeCard.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t, getRecipeLocalizedPath, getTagLocalizedPath } from "@i18n/utils";
+import { getCollection } from "astro:content";
+import type { ImageMetadata } from "astro";
+
+const locale = "en";
+const MIN_RECIPES_FOR_TAG_PAGE = 2;
+
+export async function getStaticPaths() {
+  const recipes = await getCollection("recipes");
+  const enRecipes = recipes.filter((r) => r.data.lang === "en");
+
+  // Count tags
+  const tagCounts = new Map<string, number>();
+  for (const recipe of enRecipes) {
+    for (const tag of recipe.data.tags || []) {
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    }
+  }
+
+  // Only generate pages for tags with 2+ recipes
+  const qualifyingTags = [...tagCounts.entries()]
+    .filter(([, count]) => count >= 2)
+    .map(([tag]) => tag);
+
+  return qualifyingTags.map((tag) => ({
+    params: { tag },
+    props: {
+      tag,
+      recipes: enRecipes.filter((r) => (r.data.tags || []).includes(tag)),
+    },
+  }));
+}
+
+const { tag, recipes } = Astro.props;
+const tagLabel = t(locale, `tags.${tag}` as any) || tag.charAt(0).toUpperCase() + tag.slice(1);
+const sortedRecipes = recipes.sort(
+  (a: any, b: any) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
+);
+
+// Get all qualifying tags for filter chips
+const allRecipes = await getCollection("recipes");
+const enRecipes = allRecipes.filter((r) => r.data.lang === "en");
+const tagCounts = new Map<string, number>();
+for (const recipe of enRecipes) {
+  for (const tagName of recipe.data.tags || []) {
+    tagCounts.set(tagName, (tagCounts.get(tagName) || 0) + 1);
+  }
+}
+const allTags = [...tagCounts.entries()]
+  .filter(([, count]) => count >= MIN_RECIPES_FOR_TAG_PAGE)
+  .map(([t]) => t)
+  .sort((a, b) => (tagCounts.get(b) || 0) - (tagCounts.get(a) || 0));
+---
+
+<BaseLayout
+  title={`${tagLabel} Recipes | Date My Dish`}
+  description={`Discover our best ${tagLabel.toLowerCase()} recipes. ${sortedRecipes.length} dishes to inspire your next meal.`}
+>
+  <Fragment slot="head">
+    <script is:inline>window.pintrk&&pintrk('track','viewcategory');</script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `${tagLabel} Recipes`,
+      numberOfItems: sortedRecipes.length,
+      itemListElement: sortedRecipes.map((recipe: any, i: number) => {
+        const slug = recipe.id.replace(/^en\//, "");
+        return {
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://datemydish.com${getRecipeLocalizedPath(locale, slug)}`,
+          name: recipe.data.title,
+        };
+      }),
+    })} />
+  </Fragment>
+
+  <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
+    <Breadcrumbs
+      locale={locale}
+      items={[
+        { label: t(locale, "nav.recipes"), href: "/en/recipes/" },
+        { label: tagLabel },
+      ]}
+    />
+
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+        {tagLabel}
+      </h1>
+      <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
+      <p class="text-body-sm text-gray-500 dark:text-neutral-400">
+        {sortedRecipes.length} {sortedRecipes.length === 1 ? "recipe" : "recipes"}
+      </p>
+    </div>
+
+    <!-- Tag Filter -->
+    <div class="mb-10 flex flex-wrap gap-2">
+      <a
+        href="/en/recipes/"
+        class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
+      >
+        {t(locale, "listing.allCategories")}
+      </a>
+      {allTags.map((tagItem) => {
+        const tagItemLabel = t(locale, `tags.${tagItem}` as any) || tagItem.charAt(0).toUpperCase() + tagItem.slice(1);
+        return (
+          <a
+            href={`${getTagLocalizedPath(locale, tagItem)}/`}
+            class:list={[
+              "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
+              tagItem === tag
+                ? "bg-brand-primary-dark text-white dark:text-white dark:hover:text-white shadow-md"
+                : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400",
+            ]}
+            aria-current={tagItem === tag ? "page" : undefined}
+          >
+            {tagItemLabel}
+          </a>
+        );
+      })}
+    </div>
+
+    {sortedRecipes.length > 0 ? (
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate-stagger>
+        {sortedRecipes.map((recipe: any, i: number) => {
+          const slug = recipe.id.replace(/^en\//, "");
+          return (
+            <RecipeCard
+              title={recipe.data.title}
+              description={recipe.data.description}
+              slug={slug}
+              locale={locale}
+              heroImage={recipe.data.heroImage as ImageMetadata}
+              heroImageAlt={recipe.data.heroImageAlt}
+              prepTime={recipe.data.prepTime}
+              totalTime={recipe.data.totalTime}
+              difficulty={recipe.data.difficulty}
+              loading={i === 0 ? "eager" : "lazy"}
+            />
+          );
+        })}
+      </div>
+    ) : (
+      <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
+    )}
+  </div>
+</BaseLayout>

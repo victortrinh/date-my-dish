@@ -14,7 +14,7 @@
   "rebaseWhen": "conflicted",
   "packageRules": [
     {
-      "description": "Group all patch and minor updates — auto-merge if CI passes",
+      "description": "Group all patch and minor updates, auto-merge if CI passes",
       "matchUpdateTypes": ["patch", "minor"],
       "groupName": "All non-major dependencies",
       "groupSlug": "all-non-major",
@@ -25,33 +25,33 @@
       "labels": ["dependencies", "automerge"]
     },
     {
-      "description": "Major version bumps — require manual review",
+      "description": "Major version bumps: require manual review",
       "matchUpdateTypes": ["major"],
       "automerge": false,
       "labels": ["dependencies", "major-update"]
     },
     {
-      "description": "Astro ecosystem — major needs care (breaking changes common)",
+      "description": "Astro ecosystem: major needs care (breaking changes common)",
       "matchPackageNames": ["astro", "@astrojs/**"],
       "matchUpdateTypes": ["major"],
       "automerge": false,
       "labels": ["dependencies", "major-update", "astro"]
     },
     {
-      "description": "Cloudflare/Wrangler — infrastructure, always manual review",
+      "description": "Cloudflare/Wrangler: infrastructure, always manual review",
       "matchPackageNames": ["wrangler", "@cloudflare/**", "@astrojs/cloudflare"],
       "matchUpdateTypes": ["major", "minor"],
       "automerge": false,
       "labels": ["dependencies", "infrastructure"]
     },
     {
-      "description": "Lock file maintenance — automerge silently",
+      "description": "Lock file maintenance: automerge silently",
       "matchUpdateTypes": ["lockFileMaintenance"],
       "automerge": true,
       "automergeType": "branch"
     },
     {
-      "description": "Security patches — apply immediately regardless of schedule",
+      "description": "Security patches: apply immediately regardless of schedule",
       "matchCategories": ["security"],
       "schedule": ["at any time"],
       "automerge": true,

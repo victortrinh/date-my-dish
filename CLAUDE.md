@@ -148,6 +148,7 @@ Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*
 - Recipe images go in `src/assets/images/recipes/`, article images in `src/assets/images/articles/`
 - EN/FR share the same image files -- only alt text is translated
 - Cross-links in prose use absolute paths with trailing slashes: `/en/recipes/{slug}/`, `/en/articles/{slug}/`
+- **Never use em-dashes (—)** in any content, copy, or UI text. Use commas, periods, colons, or semicolons instead. Reword if needed.
 
 ### Picture Component Pattern in MDX
 ```mdx
