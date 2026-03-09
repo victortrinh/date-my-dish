@@ -1,7 +1,7 @@
 ---
 title: "feat: 50K Sessions Growth Strategy — Pinterest Engine + SEO Landing Pages + Brand Voice"
 type: feat
-status: active
+status: completed
 date: 2026-03-08
 origin: docs/brainstorms/2026-03-08-50k-sessions-growth-strategy-brainstorm.md
 ---
@@ -133,13 +133,13 @@ After 1a-1d are deployed:
 3. The daily cron picks up pending variants over the next 2 weeks
 
 **Acceptance criteria:**
-- [ ] Log schema supports multiple pin variants per recipe with status tracking
-- [ ] Existing 2 log entries migrated to new format without data loss
-- [ ] Pin variants 2-3 auto-generated at publish time with cheeky titles
-- [ ] Daily cron workflow posts pending pins on schedule
-- [ ] Backfill completes: all 11 recipes have pin 1 posted + variants 2-3 scheduled
-- [ ] Idempotency: re-running backfill or cron is safe (no duplicate pins)
-- [ ] Rate limiting: max 5 pins per cron run, 10s delay between posts
+- [x]Log schema supports multiple pin variants per recipe with status tracking
+- [x]Existing 2 log entries migrated to new format without data loss
+- [x]Pin variants 2-3 auto-generated at publish time with cheeky titles
+- [x]Daily cron workflow posts pending pins on schedule
+- [x]Backfill completes: all 11 recipes have pin 1 posted + variants 2-3 scheduled
+- [x]Idempotency: re-running backfill or cron is safe (no duplicate pins)
+- [x]Rate limiting: max 5 pins per cron run, 10s delay between posts
 
 ---
 
@@ -223,16 +223,16 @@ Tags likely qualifying: `italian`, `pasta`, `vegetarian`, `quick`, `date-night`,
 - **Sitemap:** Verify new pages are included (Astro should handle automatically)
 
 **Acceptance criteria:**
-- [ ] Occasion pages generated for all 6 occasions (EN + FR)
-- [ ] Tag pages generated only for tags with 2+ recipes (EN + FR)
-- [ ] Language toggle works correctly on all new pages
-- [ ] Hreflang tags are bidirectional and correct
-- [ ] ItemList JSON-LD schema on all listing pages
-- [ ] Tags and occasions are clickable links on recipe pages
-- [ ] "Browse by Occasion" section on recipe listing page
-- [ ] All new pages appear in sitemap
-- [ ] Empty state: if a tag drops below 2 recipes, page is not generated
-- [ ] `occasionSlugMap` and `tagSlugMap` added to i18n utils
+- [x]Occasion pages generated for all 6 occasions (EN + FR)
+- [x]Tag pages generated only for tags with 2+ recipes (EN + FR)
+- [x]Language toggle works correctly on all new pages
+- [x]Hreflang tags are bidirectional and correct
+- [x]ItemList JSON-LD schema on all listing pages
+- [x]Tags and occasions are clickable links on recipe pages
+- [x]"Browse by Occasion" section on recipe listing page
+- [x]All new pages appear in sitemap
+- [x]Empty state: if a tag drops below 2 recipes, page is not generated
+- [x]`occasionSlugMap` and `tagSlugMap` added to i18n utils
 
 ---
 
@@ -275,13 +275,13 @@ Contents:
 **Why phased:** Bulk meta description changes can trigger Google quality re-evaluation. 3-4 per week is safe and lets you monitor impact via Cloudflare Analytics and GSC.
 
 **Acceptance criteria:**
-- [ ] Brand voice style guide created with EN + FR examples
-- [ ] All 11 EN recipes refreshed with new voice
-- [ ] All 5 EN articles refreshed (calibrated tone per article type)
-- [ ] All 16 FR translations updated to match
-- [ ] `updatedDate` set on every refreshed piece
-- [ ] No title or slug changes (URL stability)
-- [ ] Cooking instructions remain clear and authoritative (not cheeky)
+- [x]Brand voice style guide created with EN + FR examples
+- [x]All 11 EN recipes refreshed with new voice
+- [x]All 5 EN articles refreshed (calibrated tone per article type)
+- [x]All 16 FR translations updated to match
+- [x]`updatedDate` set on every refreshed piece
+- [x]No title or slug changes (URL stability)
+- [x]Cooking instructions remain clear and authoritative (not cheeky)
 
 ---
 
