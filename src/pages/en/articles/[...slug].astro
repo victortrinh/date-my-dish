@@ -8,7 +8,6 @@ import FAQSection from "@components/FAQSection.astro";
 import ArticleRelatedRecipes from "@components/ArticleRelatedRecipes.astro";
 import ShareButton from "@components/ShareButton.astro";
 import NewsletterSignup from "@components/NewsletterSignup.astro";
-import Comments from "@components/Comments.astro";
 import SocialShareButtons from "@components/SocialShareButtons.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t, getArticleLocalizedPath } from "@i18n/utils";
@@ -147,8 +146,6 @@ const formattedDate = data.publishDate.toLocaleDateString("en-US", {
       <!-- FAQs -->
       <FAQSection locale={locale} faqs={data.faqs} />
 
-      <!-- Comments -->
-      <Comments locale={locale} identifier={slug} url={sourceUrl} title={data.title} />
     </div>
   </article>
 </ArticleLayout>

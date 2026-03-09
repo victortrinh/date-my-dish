@@ -14,7 +14,6 @@ import SocialShareButtons from "@components/SocialShareButtons.astro";
 import StarRating from "@components/StarRating.astro";
 import BookmarkButton from "@components/BookmarkButton.astro";
 import NewsletterSignup from "@components/NewsletterSignup.astro";
-import Comments from "@components/Comments.astro";
 import ImpressFactor from "@components/ImpressFactor.astro";
 import DateNightTips from "@components/DateNightTips.astro";
 import FAQSection from "@components/FAQSection.astro";
@@ -277,9 +276,6 @@ const difficultyColors = {
 
       <!-- Star Rating -->
       <StarRating locale={locale} slug={slug} averageRating={ratingData?.averageRating} ratingCount={ratingData?.ratingCount} />
-
-      <!-- Comments -->
-      <Comments locale={locale} identifier={slug} url={sourceUrl} title={data.title} />
 
       <!-- FAQs -->
       <FAQSection locale={locale} faqs={data.faqs} />
