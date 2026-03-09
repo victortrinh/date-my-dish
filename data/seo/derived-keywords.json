@@ -144,6 +144,36 @@
     "lang": "en"
   },
   {
+    "keyword": "spicy gochujang-kimchi seafood bucatini",
+    "source": "title",
+    "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+    "lang": "en"
+  },
+  {
+    "keyword": "gochujang seafood pasta",
+    "source": "keywords",
+    "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+    "lang": "en"
+  },
+  {
+    "keyword": "kimchi bucatini",
+    "source": "keywords",
+    "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+    "lang": "en"
+  },
+  {
+    "keyword": "spicy seafood pasta recipe",
+    "source": "keywords",
+    "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+    "lang": "en"
+  },
+  {
+    "keyword": "korean-italian recipe",
+    "source": "cuisine",
+    "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+    "lang": "en"
+  },
+  {
     "keyword": "lemon posset brulee easy 3-ingredient no-bake dessert",
     "source": "title",
     "url": "/en/recipes/lemon-posset-brulee/",
@@ -327,36 +357,6 @@
     "keyword": "why you shouldnt order a well-done steak on a date make a great impression",
     "source": "title",
     "url": "/en/articles/well-done-steak-date-night/",
-    "lang": "en"
-  },
-  {
-    "keyword": "well done steak date night",
-    "source": "keywords",
-    "url": "/en/articles/well-done-steak-date-night/",
-    "lang": "en"
-  },
-  {
-    "keyword": "steak doneness guide",
-    "source": "keywords",
-    "url": "/en/articles/well-done-steak-date-night/",
-    "lang": "en"
-  },
-  {
-    "keyword": "how to order steak",
-    "source": "keywords",
-    "url": "/en/articles/well-done-steak-date-night/",
-    "lang": "en"
-  },
-  {
-    "keyword": "why you shouldnt wash chicken on date night and what to do instead",
-    "source": "title",
-    "url": "/en/articles/why-not-wash-chicken/",
-    "lang": "en"
-  },
-  {
-    "keyword": "should you wash chicken",
-    "source": "keywords",
-    "url": "/en/articles/why-not-wash-chicken/",
     "lang": "en"
   }
 ]
