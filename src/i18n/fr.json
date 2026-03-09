@@ -191,16 +191,7 @@
     "subscribe": "S'abonner",
     "success": "Vous êtes abonné! Vérifiez votre courriel pour confirmer.",
     "error": "Une erreur est survenue. Veuillez réessayer.",
-    "privacy": "Nous respectons votre vie privée.",
-    "cookiesRequired": "Activez les cookies pour vous abonner à notre infolettre."
-  },
-  "comments": {
-    "title": "Commentaires",
-    "loadComments": "Charger les commentaires",
-    "loadingComments": "Chargement des commentaires...",
-    "failedToLoad": "Les commentaires n'ont pas pu être chargés. Veuillez désactiver votre bloqueur de publicités ou réessayer plus tard.",
-    "poweredBy": "Propulsé par Disqus",
-    "cookiesRequired": "Activez les cookies pour voir les commentaires."
+    "privacy": "Nous respectons votre vie privée."
   },
   "share": {
     "pinterest": "Épingler sur Pinterest",
@@ -224,11 +215,5 @@
     "empty": "Aucune recette sauvegardée. Parcourez les recettes et appuyez sur l'icône de signet pour sauvegarder vos favorites.",
     "pageTitle": "Mes recettes sauvegardées",
     "removedFromSaved": "Retiré des favoris"
-  },
-  "cookies": {
-    "message": "Nous utilisons des cookies pour les commentaires et l'infolettre.",
-    "accept": "Accepter",
-    "decline": "Refuser",
-    "learnMore": "En savoir plus"
   }
 }

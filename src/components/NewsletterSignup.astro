@@ -31,7 +31,7 @@ const { locale, compact = false } = Astro.props;
 
     <div class="newsletter-form-area">
       <noscript>
-        <p class="text-body-sm text-gray-500">{t(locale, "newsletter.cookiesRequired")}</p>
+        <p class="text-body-sm text-gray-500">{t(locale, "newsletter.error")}</p>
       </noscript>
     </div>
   </div>
@@ -45,22 +45,6 @@ const { locale, compact = false } = Astro.props;
     var locale = widget.dataset.locale;
     var formArea = widget.querySelector('.newsletter-form-area');
     if (!formArea) return;
-
-    var cookiesAccepted = localStorage.getItem('dmd_cookies') === 'accepted';
-
-    if (!cookiesAccepted) {
-      var privacyPath = locale === 'fr' ? '/fr/politique-de-confidentialite/' : '/en/privacy-policy/';
-      formArea.innerHTML = '<p class="text-body-sm text-gray-500 dark:text-neutral-400">' +
-        (locale === 'fr' ? 'Activez les cookies pour vous abonner à notre infolettre.' : 'Enable cookies to subscribe to our newsletter.') +
-        ' <a href="' + privacyPath + '" class="underline text-brand-primary-text dark:text-brand-accent">' +
-        (locale === 'fr' ? 'En savoir plus' : 'Learn more') + '</a></p>';
-
-      // Listen for cookie acceptance
-      window.addEventListener('cookies-accepted', function() {
-        renderForm();
-      });
-      return;
-    }
 
     renderForm();
 
