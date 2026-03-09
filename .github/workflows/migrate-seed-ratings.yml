@@ -9,14 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 5
 
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
       - name: Restore ratings-seed.json from git history
-        run: git show HEAD~1:data/ratings-seed.json > data/ratings-seed.json
+        run: git show d3f74df:data/ratings-seed.json > data/ratings-seed.json
 
       - name: Migrate seed ratings to Cloudflare KV
         run: node scripts/migrate-seed-ratings-to-kv.mjs
