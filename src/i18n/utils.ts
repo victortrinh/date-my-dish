@@ -77,6 +77,9 @@ export function getAlternateUrl(
       fr: "conditions-dutilisation",
     },
     articles: { en: "articles", fr: "articles" },
+    occasion: { en: "occasion", fr: "occasion" },
+    tag: { en: "tag", fr: "etiquette" },
+    etiquette: { en: "tag", fr: "etiquette" },
   };
 
   const translatedParts = pathParts.slice(1).map((part, index, arr) => {
@@ -88,6 +91,16 @@ export function getAlternateUrl(
     if (prev === "category" || prev === "categorie") {
       const canonical = getCategoryFromSlug(part, currentLocale);
       return getCategorySlug(canonical, targetLocale);
+    }
+    // Translate occasion slugs
+    if (prev === "occasion") {
+      const canonical = getOccasionFromSlug(part, currentLocale);
+      return getOccasionSlug(canonical, targetLocale);
+    }
+    // Translate tag slugs
+    if (prev === "tag" || prev === "etiquette") {
+      const canonical = getTagFromSlug(part, currentLocale);
+      return getTagSlug(canonical, targetLocale);
     }
     return part;
   });
@@ -108,6 +121,62 @@ export function getArticleLocalizedPath(
   slug: string,
 ): string {
   return `/${locale}/articles/${slug}`;
+}
+
+export const occasionSlugMap: Record<string, Record<Locale, string>> = {
+  "date-night": { en: "date-night", fr: "soiree-en-amoureux" },
+  weeknight: { en: "weeknight", fr: "soir-de-semaine" },
+  entertaining: { en: "entertaining", fr: "recevoir" },
+  comfort: { en: "comfort", fr: "reconfort" },
+  celebration: { en: "celebration", fr: "celebration" },
+  "quick-meal": { en: "quick-meal", fr: "repas-rapide" },
+};
+
+export const tagSlugMap: Record<string, Record<Locale, string>> = {
+  italian: { en: "italian", fr: "italien" },
+  pasta: { en: "pasta", fr: "pates" },
+  quick: { en: "quick", fr: "rapide" },
+  vegetarian: { en: "vegetarian", fr: "vegetarien" },
+  vegan: { en: "vegan", fr: "vegane" },
+  seafood: { en: "seafood", fr: "fruits-de-mer" },
+  fried: { en: "fried", fr: "frit" },
+};
+
+export function getOccasionSlug(occasion: string, locale: Locale): string {
+  return occasionSlugMap[occasion]?.[locale] ?? occasion;
+}
+
+export function getOccasionFromSlug(slug: string, locale: Locale): string {
+  for (const [canonical, slugs] of Object.entries(occasionSlugMap)) {
+    if (slugs[locale] === slug) return canonical;
+  }
+  return slug;
+}
+
+export function getOccasionLocalizedPath(
+  locale: Locale,
+  occasion: string,
+): string {
+  const prefix = locale === "fr" ? "recettes/occasion" : "recipes/occasion";
+  const slug = getOccasionSlug(occasion, locale);
+  return `/${locale}/${prefix}/${slug}`;
+}
+
+export function getTagSlug(tag: string, locale: Locale): string {
+  return tagSlugMap[tag]?.[locale] ?? tag;
+}
+
+export function getTagFromSlug(slug: string, locale: Locale): string {
+  for (const [canonical, slugs] of Object.entries(tagSlugMap)) {
+    if (slugs[locale] === slug) return canonical;
+  }
+  return slug;
+}
+
+export function getTagLocalizedPath(locale: Locale, tag: string): string {
+  const prefix = locale === "fr" ? "recettes/etiquette" : "recipes/tag";
+  const slug = getTagSlug(tag, locale);
+  return `/${locale}/${prefix}/${slug}`;
 }
 
 export const categorySlugMap: Record<string, Record<Locale, string>> = {

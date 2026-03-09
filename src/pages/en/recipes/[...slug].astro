@@ -20,7 +20,7 @@ import DateNightTips from "@components/DateNightTips.astro";
 import FAQSection from "@components/FAQSection.astro";
 import RelatedRecipes from "@components/RelatedRecipes.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import { t, getRecipeLocalizedPath } from "@i18n/utils";
+import { t, getRecipeLocalizedPath, getOccasionLocalizedPath, getTagLocalizedPath, tagSlugMap } from "@i18n/utils";
 import { formatDuration } from "@utils/format";
 import type { ImageMetadata } from "astro";
 import ratingsData from "../../../../data/ratings.json";
@@ -162,10 +162,28 @@ const difficultyColors = {
         {data.occasion && data.occasion.length > 0 && (
           <div class="mb-4 flex flex-wrap gap-2">
             {data.occasion.map((occ: string) => (
-              <span class="rounded-full bg-brand-accent/10 px-3 py-1 text-caption font-medium text-brand-accent-text">
+              <a href={`${getOccasionLocalizedPath(locale, occ)}/`} class="rounded-full bg-brand-accent/10 px-3 py-1 text-caption font-medium text-brand-accent-text no-underline transition-colors hover:bg-brand-accent/20">
                 {t(locale, `occasion.${occ}` as any) || occ}
-              </span>
+              </a>
             ))}
+          </div>
+        )}
+
+        {data.tags && data.tags.length > 0 && (
+          <div class="mb-4 flex flex-wrap gap-2">
+            {data.tags.map((tag: string) => {
+              const hasPage = tag in tagSlugMap;
+              const tagLabel = t(locale, `tags.${tag}` as any) || tag.charAt(0).toUpperCase() + tag.slice(1);
+              return hasPage ? (
+                <a href={`${getTagLocalizedPath(locale, tag)}/`} class="rounded-full border border-gray-200 px-3 py-1 text-caption font-medium text-gray-500 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary-text dark:border-neutral-600 dark:text-neutral-400">
+                  {tagLabel}
+                </a>
+              ) : (
+                <span class="rounded-full border border-gray-200 px-3 py-1 text-caption font-medium text-gray-500 dark:border-neutral-600 dark:text-neutral-400">
+                  {tagLabel}
+                </span>
+              );
+            })}
           </div>
         )}
 

@@ -54,7 +54,18 @@
     "entertaining": "Recevoir",
     "comfort": "Comfort food",
     "celebration": "Célébration",
-    "quick-meal": "Repas rapide"
+    "quick-meal": "Repas rapide",
+    "browseByOccasion": "Parcourir par occasion",
+    "allOccasions": "Toutes les occasions"
+  },
+  "tags": {
+    "italian": "Italien",
+    "pasta": "Pâtes",
+    "quick": "Rapide",
+    "vegetarian": "Végétarien",
+    "vegan": "Végane",
+    "seafood": "Fruits de mer",
+    "fried": "Frit"
   },
   "home": {
     "heroTitle": "Recettes romantiques pour des soirées inoubliables",
@@ -123,7 +134,9 @@
     "home": "Accueil",
     "recipes": "Recettes",
     "articles": "Articles",
-    "category": "Catégorie"
+    "category": "Catégorie",
+    "occasion": "Occasion",
+    "tag": "Étiquette"
   },
   "categories": {
     "breakfast": "Déjeuner",

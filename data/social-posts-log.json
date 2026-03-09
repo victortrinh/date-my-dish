@@ -1,14 +1,30 @@
 {
   "beef-ragu-pappardelle": {
     "pinterest": {
-      "id": "1050746156851488745",
-      "postedAt": "2026-03-04T16:37:53.542Z"
+      "pins": [
+        {
+          "variant": 1,
+          "id": "1050746156851488745",
+          "title": "Beef Ragu Pappardelle",
+          "description": "",
+          "postedAt": "2026-03-04T16:37:53.542Z",
+          "status": "posted"
+        }
+      ]
     }
   },
   "brussels-sprouts-salad": {
     "pinterest": {
-      "id": "1050746156851488759",
-      "postedAt": "2026-03-04T16:38:10.344Z"
+      "pins": [
+        {
+          "variant": 1,
+          "id": "1050746156851488759",
+          "title": "Brussels Sprouts Salad",
+          "description": "",
+          "postedAt": "2026-03-04T16:38:10.344Z",
+          "status": "posted"
+        }
+      ]
     }
   }
 }

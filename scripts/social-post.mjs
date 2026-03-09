@@ -141,7 +141,7 @@ async function generateCaptions(enData, frData) {
 
   const response = await anthropic.messages.create({
     model: "claude-haiku-4-5-20251001",
-    max_tokens: 1500,
+    max_tokens: 2500,
     messages: [
       {
         role: "user",
@@ -180,9 +180,17 @@ Return a JSON object with exactly these keys:
    - Recipe link (French)
    - A blank line, then 20-30 hashtags mixing: #datemydish, cuisine-specific, food-general, French hashtags
 
-2. "pinterest_title": English only, catchy, max 100 characters
+2. "pinterest_title": English only, catchy, max 100 characters (Pin variant 1 — straightforward recipe title)
 
 3. "pinterest_description": English only, SEO-optimized, max 500 characters. Include key ingredients, cooking method, and relevant keywords naturally. End with the recipe URL.
+
+4. "pinterest_title_v2": Alternate angle pin title — focus on the occasion or date night vibe (e.g., "The Pasta That Says 'I Made This For You'"). Cheeky, confident tone. Max 100 characters.
+
+5. "pinterest_description_v2": Alternate angle pin description — emphasize the occasion, date night tips, or emotional appeal. SEO-optimized, max 500 characters. End with the recipe URL.
+
+6. "pinterest_title_v3": Seasonal/lifestyle angle — focus on cuisine, difficulty, or time (e.g., "20-Minute Italian That Impresses Every Time"). Cheeky, confident tone. Max 100 characters.
+
+7. "pinterest_description_v3": Seasonal/lifestyle angle description — emphasize ease, cuisine style, or lifestyle fit. SEO-optimized, max 500 characters. End with the recipe URL.
 
 Return ONLY the JSON object, no markdown fences.`,
       },
@@ -193,6 +201,49 @@ Return ONLY the JSON object, no markdown fences.`,
   // Handle potential markdown code fences
   const cleaned = text.replace(/^```json?\n?/, "").replace(/\n?```$/, "");
   return JSON.parse(cleaned);
+}
+
+// ---------------------------------------------------------------------------
+// Build pin variants array from captions
+// ---------------------------------------------------------------------------
+function buildPinVariants(captions, existingPins = []) {
+  const now = new Date();
+  const pin2Date = new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000);
+  const pin3Date = new Date(now.getTime() + 12 * 24 * 60 * 60 * 1000);
+
+  // Keep existing pins as-is, fill in missing variants
+  const pins = [...existingPins];
+
+  if (!pins.find((p) => p.variant === 1)) {
+    pins.push({
+      variant: 1,
+      title: captions.pinterest_title,
+      description: captions.pinterest_description,
+      status: "pending",
+    });
+  }
+
+  if (!pins.find((p) => p.variant === 2)) {
+    pins.push({
+      variant: 2,
+      title: captions.pinterest_title_v2,
+      description: captions.pinterest_description_v2,
+      scheduledFor: pin2Date.toISOString(),
+      status: "pending",
+    });
+  }
+
+  if (!pins.find((p) => p.variant === 3)) {
+    pins.push({
+      variant: 3,
+      title: captions.pinterest_title_v3,
+      description: captions.pinterest_description_v3,
+      scheduledFor: pin3Date.toISOString(),
+      status: "pending",
+    });
+  }
+
+  return pins.sort((a, b) => a.variant - b.variant);
 }
 
 // ---------------------------------------------------------------------------
@@ -361,6 +412,19 @@ async function createFailureIssue(slug, platform, error, imageUrl) {
 }
 
 // ---------------------------------------------------------------------------
+// Check if Pinterest pin 1 is already posted (multi-pin format)
+// ---------------------------------------------------------------------------
+function isPinterestPin1Done(existing) {
+  if (!existing.pinterest) return false;
+  // New format: pins array
+  if (existing.pinterest.pins) {
+    return existing.pinterest.pins.some((p) => p.variant === 1 && p.status === "posted");
+  }
+  // Legacy format: single id at top level
+  return !!existing.pinterest.id;
+}
+
+// ---------------------------------------------------------------------------
 // Process a single recipe
 // ---------------------------------------------------------------------------
 async function processRecipe(enFilePath, log, options = {}) {
@@ -378,18 +442,18 @@ async function processRecipe(enFilePath, log, options = {}) {
   // Check idempotency
   const existing = log[slug] || {};
   const instagramDone = existing.instagram?.id;
-  const pinterestDone = existing.pinterest?.id;
+  const pinterestPin1Done = isPinterestPin1Done(existing);
 
-  if (instagramDone && pinterestDone) {
-    console.log(`Skipping ${slug}: already posted to both platforms`);
+  if (instagramDone && pinterestPin1Done) {
+    console.log(`Skipping ${slug}: already posted to both platforms (pin 1 done)`);
     return;
   }
   if (instagramDone && shouldPostInstagram && !shouldPostPinterest) {
     console.log(`Skipping ${slug}: already posted to Instagram`);
     return;
   }
-  if (pinterestDone && shouldPostPinterest && !shouldPostInstagram) {
-    console.log(`Skipping ${slug}: already posted to Pinterest`);
+  if (pinterestPin1Done && shouldPostPinterest && !shouldPostInstagram) {
+    console.log(`Skipping ${slug}: Pinterest pin 1 already posted`);
     return;
   }
 
@@ -405,7 +469,7 @@ async function processRecipe(enFilePath, log, options = {}) {
   // Find FR translation for bilingual Instagram caption
   const frData = findFrTranslation(slug);
 
-  // Generate captions
+  // Generate captions (now includes all 3 pin variants)
   console.log("Generating captions...");
   const captions = await generateCaptions(enData, frData);
 
@@ -426,24 +490,38 @@ async function processRecipe(enFilePath, log, options = {}) {
     }
   }
 
-  // Post to Pinterest
-  if (shouldPostPinterest && !pinterestDone) {
-    try {
-      const pinId = await postToPinterest(
-        heroImageUrl,
-        captions.pinterest_title,
-        captions.pinterest_description,
-        recipeUrl,
-        enData.heroImageAlt
-      );
-      if (pinId) {
-        results.pinterest = { id: pinId, postedAt: new Date().toISOString() };
+  // Post Pinterest pin 1 and schedule variants 2-3
+  if (shouldPostPinterest && !pinterestPin1Done) {
+    const existingPins = existing.pinterest?.pins || [];
+    const pins = buildPinVariants(captions, existingPins);
+
+    // Post pin variant 1 immediately
+    const pin1 = pins.find((p) => p.variant === 1);
+    if (pin1 && pin1.status !== "posted") {
+      try {
+        const pinId = await postToPinterest(
+          heroImageUrl,
+          pin1.title,
+          pin1.description,
+          recipeUrl,
+          enData.heroImageAlt
+        );
+        if (pinId) {
+          pin1.id = pinId;
+          pin1.postedAt = new Date().toISOString();
+          pin1.status = "posted";
+        }
+      } catch (err) {
+        console.error(`Pinterest pin 1 failed for ${slug}:`, err.message);
+        await createFailureIssue(slug, "Pinterest", err, heroImageUrl);
+        pin1.status = "failed";
+        pin1.error = err.message;
+        pin1.failedAt = new Date().toISOString();
       }
-    } catch (err) {
-      console.error(`Pinterest failed for ${slug}:`, err.message);
-      await createFailureIssue(slug, "Pinterest", err, heroImageUrl);
-      results.pinterest = { error: err.message, failedAt: new Date().toISOString() };
     }
+
+    results.pinterest = { pins };
+    console.log(`Pinterest: pin 1 ${pin1?.status}, variants 2-3 scheduled`);
   }
 
   log[slug] = results;
@@ -467,9 +545,9 @@ async function runBackfill() {
   const pending = allRecipes.filter((filePath) => {
     const slug = basename(filePath, ".mdx");
     const existing = log[slug] || {};
-    if (platform === "both") return !existing.instagram?.id || !existing.pinterest?.id;
+    if (platform === "both") return !existing.instagram?.id || !isPinterestPin1Done(existing);
     if (platform === "instagram") return !existing.instagram?.id;
-    if (platform === "pinterest") return !existing.pinterest?.id;
+    if (platform === "pinterest") return !isPinterestPin1Done(existing);
     return true;
   });
 

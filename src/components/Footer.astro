@@ -1,5 +1,5 @@
 ---
-import { t, getLocalizedPath, getCategorySlug, type Locale } from "@i18n/utils";
+import { t, getLocalizedPath, getCategorySlug, getOccasionLocalizedPath, type Locale } from "@i18n/utils";
 import NewsletterSignup from "./NewsletterSignup.astro";
 import { getCollection } from "astro:content";
 
@@ -24,6 +24,17 @@ categories.sort((a, b) => {
   return a.localeCompare(b);
 });
 
+const OCCASION_ORDER = ["date-night", "weeknight", "entertaining", "comfort", "celebration", "quick-meal"];
+const occasions = [...new Set(recipes.flatMap((r) => r.data.occasion || []))];
+occasions.sort((a, b) => {
+  const ai = OCCASION_ORDER.indexOf(a);
+  const bi = OCCASION_ORDER.indexOf(b);
+  if (ai !== -1 && bi !== -1) return ai - bi;
+  if (ai !== -1) return -1;
+  if (bi !== -1) return 1;
+  return a.localeCompare(b);
+});
+
 const recipesPath = locale === "fr" ? "/recettes/" : "/recipes/";
 const aboutPath = locale === "fr" ? "/a-propos/" : "/about/";
 const privacyPath = locale === "fr" ? "/politique-de-confidentialite/" : "/privacy-policy/";
@@ -33,7 +44,7 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
 
 <footer class="no-print mt-auto border-t border-gray-100 bg-gray-200 dark:border-neutral-800 dark:bg-neutral-900">
   <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
       <!-- Brand -->
       <div class="sm:col-span-2 lg:col-span-1">
         <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2 font-handwritten text-2xl text-brand-primary-text no-underline">
@@ -98,6 +109,25 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
           ))}
         </nav>
       </div>
+
+      <!-- Occasions -->
+      {occasions.length > 0 && (
+        <div>
+          <h3 class="mb-4 font-heading text-sm font-bold tracking-wider text-gray-900 dark:text-neutral-100">
+            {t(locale, "occasion.browseByOccasion")}
+          </h3>
+          <nav class="flex flex-col gap-2.5" aria-label={t(locale, "occasion.browseByOccasion")}>
+            {occasions.slice(0, 6).map((occ) => (
+              <a
+                href={`${getOccasionLocalizedPath(locale, occ)}/`}
+                class="font-ui text-body-sm text-gray-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400"
+              >
+                {t(locale, `occasion.${occ}` as any) || occ}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
 
       <!-- Legal -->
       <div>

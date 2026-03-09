@@ -54,7 +54,18 @@
     "entertaining": "Entertaining",
     "comfort": "Comfort Food",
     "celebration": "Celebration",
-    "quick-meal": "Quick Meal"
+    "quick-meal": "Quick Meal",
+    "browseByOccasion": "Browse by Occasion",
+    "allOccasions": "All Occasions"
+  },
+  "tags": {
+    "italian": "Italian",
+    "pasta": "Pasta",
+    "quick": "Quick",
+    "vegetarian": "Vegetarian",
+    "vegan": "Vegan",
+    "seafood": "Seafood",
+    "fried": "Fried"
   },
   "home": {
     "heroTitle": "Romantic Recipes for Unforgettable Date Nights",
@@ -123,7 +134,9 @@
     "home": "Home",
     "recipes": "Recipes",
     "articles": "Articles",
-    "category": "Category"
+    "category": "Category",
+    "occasion": "Occasion",
+    "tag": "Tag"
   },
   "categories": {
     "breakfast": "Breakfast",
