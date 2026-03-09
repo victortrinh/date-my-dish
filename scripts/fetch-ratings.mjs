@@ -10,24 +10,12 @@
  * If any env var is missing, writes an empty object (safe for first build).
  */
 
-import { writeFileSync, readFileSync, mkdirSync, existsSync } from "fs";
+import { writeFileSync, mkdirSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const outputPath = join(__dirname, "..", "data", "ratings.json");
-const seedPath = join(__dirname, "..", "data", "ratings-seed.json");
-
-function loadSeedData() {
-  if (existsSync(seedPath)) {
-    try {
-      return JSON.parse(readFileSync(seedPath, "utf-8"));
-    } catch {
-      return {};
-    }
-  }
-  return {};
-}
 
 const accountId = process.env.CF_ACCOUNT_ID;
 const apiToken = process.env.CF_API_TOKEN;
@@ -94,15 +82,10 @@ async function fetchRatings() {
   }
 }
 
-function writeOutput(kvData) {
-  const seed = loadSeedData();
-  // Merge: KV data takes priority, seed fills gaps
-  const merged = { ...seed, ...kvData };
+function writeOutput(ratings) {
   mkdirSync(dirname(outputPath), { recursive: true });
-  writeFileSync(outputPath, JSON.stringify(merged, null, 2) + "\n");
-  const kvCount = Object.keys(kvData).length;
-  const seedCount = Object.keys(seed).length;
-  console.log(`[fetch-ratings] Wrote ${outputPath} (${kvCount} from KV, ${seedCount} seed fallbacks)`);
+  writeFileSync(outputPath, JSON.stringify(ratings, null, 2) + "\n");
+  console.log(`[fetch-ratings] Wrote ${outputPath} (${Object.keys(ratings).length} ratings from KV)`);
 }
 
 fetchRatings();

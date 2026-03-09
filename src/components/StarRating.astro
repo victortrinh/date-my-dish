@@ -4,9 +4,12 @@ import { t, type Locale } from "@i18n/utils";
 interface Props {
   locale: Locale;
   slug: string;
+  averageRating?: number;
+  ratingCount?: number;
 }
 
-const { locale, slug } = Astro.props;
+const { locale, slug, averageRating = 0, ratingCount = 0 } = Astro.props;
+const initialStars = ratingCount > 0 ? Math.round(averageRating) : 0;
 ---
 
 <div
@@ -24,7 +27,10 @@ const { locale, slug } = Astro.props;
       {[1, 2, 3, 4, 5].map((value) => (
         <button
           type="button"
-          class="star-btn p-0.5 text-gray-300 transition-colors hover:text-yellow-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary dark:text-neutral-600 dark:hover:text-yellow-400"
+          class:list={[
+            "star-btn p-0.5 transition-colors hover:text-yellow-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary dark:hover:text-yellow-400",
+            value <= initialStars ? "text-yellow-400" : "text-gray-300 dark:text-neutral-600",
+          ]}
           data-value={value}
           role="radio"
           aria-checked="false"
@@ -37,7 +43,13 @@ const { locale, slug } = Astro.props;
       ))}
     </div>
 
-    <span class="star-rating-summary text-body-sm text-gray-500 dark:text-neutral-400"></span>
+    <span class="star-rating-summary text-body-sm text-gray-500 dark:text-neutral-400">
+      {ratingCount > 0 && (
+        locale === "fr"
+          ? `${averageRating}/5 (${ratingCount} ${ratingCount === 1 ? "vote" : "votes"})`
+          : `${averageRating}/5 (${ratingCount} ${ratingCount === 1 ? "rating" : "ratings"})`
+      )}
+    </span>
   </div>
 
   <div class="star-rating-feedback mt-2 text-body-sm" aria-live="polite"></div>

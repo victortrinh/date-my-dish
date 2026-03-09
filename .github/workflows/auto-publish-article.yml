@@ -207,6 +207,9 @@ jobs:
           PROMPT
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_KV_NAMESPACE_ID: ${{ secrets.CF_KV_NAMESPACE_ID }}
 
       # Step 4: Check for changes and create PR
       - name: Check for changes
@@ -224,6 +227,10 @@ jobs:
         run: node scripts/fetch-ratings.mjs && npm run check && npm run build
         continue-on-error: true
         id: verify
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_KV_NAMESPACE_ID: ${{ secrets.CF_KV_NAMESPACE_ID }}
 
       - name: Extract article title
         if: steps.changes.outputs.has_changes == 'true'

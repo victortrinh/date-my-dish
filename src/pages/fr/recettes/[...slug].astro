@@ -276,7 +276,7 @@ const difficultyColors = {
       </div>
 
       <!-- Star Rating -->
-      <StarRating locale={locale} slug={slug} />
+      <StarRating locale={locale} slug={slug} averageRating={ratingData?.averageRating} ratingCount={ratingData?.ratingCount} />
 
       <!-- Comments -->
       <Comments locale={locale} identifier={data.translationSlug} url={sourceUrl} title={data.title} />

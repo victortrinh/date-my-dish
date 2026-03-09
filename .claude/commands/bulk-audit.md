@@ -36,7 +36,7 @@ Run SEO audits across all recipes and articles, producing a summary scorecard sh
    |-------|--------|
    | Recipe schema present with @type: Recipe | +2 |
    | All required Recipe properties (name, image, recipeIngredient, recipeInstructions) | +1 |
-   | aggregateRating present in JSON-LD (seed entry exists in `data/ratings-seed.json` for EN slug + FR slug) | +1 |
+   | aggregateRating present in JSON-LD (entry exists in `data/ratings.json` for EN slug + FR slug) | +1 |
    | FAQPage schema present | +1 |
    | BreadcrumbList schema present | +1 |
 
