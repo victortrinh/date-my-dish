@@ -26,5 +26,61 @@
         }
       ]
     }
+  },
+  "cacio-e-pepe": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Authentic Cacio e Pepe: 3-Ingredient Roman Pasta",
+          "description": "Discover the authentic Cacio e Pepe recipe—creamy, silky pasta made with just three ingredients: Pecorino Romano, black pepper, and pasta water. No cream needed for this traditional Roman pasta dish. Learn the technique for perfectly emulsified sauce in just 25 minutes. Perfect for date night or weeknight dinner. Vegetarian and impressive. https://datemydish.com/en/recipes/cacio-e-pepe/",
+          "status": "posted",
+          "id": "1050746156851673128",
+          "postedAt": "2026-03-09T16:24:12.285Z"
+        },
+        {
+          "variant": 2,
+          "title": "The Pasta That Says 'I Made This For You'",
+          "description": "Elevate your date night with Cacio e Pepe—the Roman pasta that whispers confidence. Three ingredients, no shortcuts, pure Italian romance. Pair with crisp Frascati wine and Italian jazz for the perfect evening. Twirl into a tight nest, serve warm, and watch them fall for your culinary prowess. Medium difficulty, maximum impact. 25 minutes to impressive. https://datemydish.com/en/recipes/cacio-e-pepe/",
+          "scheduledFor": "2026-03-14T16:24:11.122Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "20-Minute Italian Pasta That Impresses Every Time",
+          "description": "Master the art of authentic Cacio e Pepe—a 25-minute Italian pasta recipe that proves simplicity equals elegance. No cream, no complications, just pure Pecorino Romano and black pepper magic. This vegetarian Roman pasta is the ultimate quick weeknight dinner that feels restaurant-quality. Easy enough for beginners, refined enough for date night. https://datemydish.com/en/recipes/cacio-e-pepe/",
+          "scheduledFor": "2026-03-21T16:24:11.122Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "cauliflower-steak-with-romesco-sauce": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Roasted Cauliflower Steaks with Smoky Romesco Sauce",
+          "description": "Vegan cauliflower steaks with smoky romesco sauce—a Spanish-inspired plant-based main that converts skeptics in just 40 minutes. Golden roasted cauliflower pairs beautifully with charred romesco and bright parsley dressing. Perfect for easy entertaining or date night. Serve 4. https://datemydish.com/en/recipes/cauliflower-steak-with-romesco-sauce/",
+          "status": "posted",
+          "id": "1050746156851673137",
+          "postedAt": "2026-03-09T16:24:30.095Z"
+        },
+        {
+          "variant": 2,
+          "title": "The Vegan Main Course That Impresses on Date Night",
+          "description": "Looking for an impressive vegan date night dinner? These roasted cauliflower steaks with smoky romesco sauce deliver restaurant-quality Spanish flavors at home in 40 minutes. Pair with a Spanish Garnacha, add some Spanish guitar to the ambiance, and watch your date fall in love with plant-based cooking. Easy, elegant, unforgettable. https://datemydish.com/en/recipes/cauliflower-steak-with-romesco-sauce/",
+          "scheduledFor": "2026-03-14T16:24:29.040Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Spanish Cauliflower Steaks: 40-Minute Vegan Dinner",
+          "description": "Master Spanish cuisine with this foolproof roasted cauliflower steak recipe. Golden-brown steaks topped with smoky romesco and fresh parsley oil—elegant enough for entertaining, easy enough for weeknight dinners. This vegan main course is healthy, vibrant, and ready in 40 minutes. Make it for date night or your next dinner party. https://datemydish.com/en/recipes/cauliflower-steak-with-romesco-sauce/",
+          "scheduledFor": "2026-03-21T16:24:29.040Z",
+          "status": "pending"
+        }
+      ]
+    }
   }
 }
