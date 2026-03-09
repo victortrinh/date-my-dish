@@ -424,6 +424,13 @@ function isPinterestPin1Done(existing) {
   return !!existing.pinterest.id;
 }
 
+function isPinterestFullyScheduled(existing) {
+  if (!existing.pinterest?.pins) return false;
+  return [1, 2, 3].every((v) =>
+    existing.pinterest.pins.some((p) => p.variant === v && (p.status === "posted" || p.status === "pending"))
+  );
+}
+
 // ---------------------------------------------------------------------------
 // Process a single recipe
 // ---------------------------------------------------------------------------
@@ -443,17 +450,18 @@ async function processRecipe(enFilePath, log, options = {}) {
   const existing = log[slug] || {};
   const instagramDone = existing.instagram?.id;
   const pinterestPin1Done = isPinterestPin1Done(existing);
+  const pinterestFullyScheduled = isPinterestFullyScheduled(existing);
 
-  if (instagramDone && pinterestPin1Done) {
-    console.log(`Skipping ${slug}: already posted to both platforms (pin 1 done)`);
+  if (instagramDone && pinterestFullyScheduled) {
+    console.log(`Skipping ${slug}: already posted to both platforms (all variants scheduled)`);
     return;
   }
   if (instagramDone && shouldPostInstagram && !shouldPostPinterest) {
     console.log(`Skipping ${slug}: already posted to Instagram`);
     return;
   }
-  if (pinterestPin1Done && shouldPostPinterest && !shouldPostInstagram) {
-    console.log(`Skipping ${slug}: Pinterest pin 1 already posted`);
+  if (pinterestFullyScheduled && shouldPostPinterest && !shouldPostInstagram) {
+    console.log(`Skipping ${slug}: Pinterest all variants scheduled`);
     return;
   }
 
@@ -491,7 +499,7 @@ async function processRecipe(enFilePath, log, options = {}) {
   }
 
   // Post Pinterest pin 1 and schedule variants 2-3
-  if (shouldPostPinterest && !pinterestPin1Done) {
+  if (shouldPostPinterest && !pinterestFullyScheduled) {
     const existingPins = existing.pinterest?.pins || [];
     const pins = buildPinVariants(captions, existingPins);
 
@@ -545,9 +553,9 @@ async function runBackfill() {
   const pending = allRecipes.filter((filePath) => {
     const slug = basename(filePath, ".mdx");
     const existing = log[slug] || {};
-    if (platform === "both") return !existing.instagram?.id || !isPinterestPin1Done(existing);
+    if (platform === "both") return !existing.instagram?.id || !isPinterestFullyScheduled(existing);
     if (platform === "instagram") return !existing.instagram?.id;
-    if (platform === "pinterest") return !isPinterestPin1Done(existing);
+    if (platform === "pinterest") return !isPinterestFullyScheduled(existing);
     return true;
   });
 
