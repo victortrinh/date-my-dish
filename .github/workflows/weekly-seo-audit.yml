@@ -76,11 +76,10 @@ jobs:
       # Claude Code analyzes and fixes
       - name: Claude Code SEO Analysis
         run: |
-          npx @anthropic-ai/claude-code@latest --print \
+          cat <<'PROMPT' | npx @anthropic-ai/claude-code@latest --print \
             --model claude-sonnet-4-6 \
             --max-turns 30 \
-            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check*),Bash(node *),Bash(wc *),Bash(stat *),Bash(ls *)" \
-            "$(cat <<'PROMPT'
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check*),Bash(node *),Bash(wc *),Bash(stat *),Bash(ls *)"
           You are running the weekly automated SEO audit for Date My Dish.
 
           ## Input Data
@@ -124,7 +123,6 @@ jobs:
           - Issues found and fixes applied (grouped by type)
           - Any issues that require manual attention
           PROMPT
-          )"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 

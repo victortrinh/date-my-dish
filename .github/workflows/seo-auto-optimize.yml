@@ -43,11 +43,10 @@ jobs:
 
       - name: Claude Code SEO Optimization
         run: |
-          npx @anthropic-ai/claude-code@latest --print \
+          cat <<'PROMPT' | npx @anthropic-ai/claude-code@latest --print \
             --model claude-sonnet-4-6 \
             --max-turns 20 \
-            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check:*),Bash(node:*)" \
-            "$(cat <<'PROMPT'
+            --allowedTools "Edit,Read,Write,Glob,Grep,Bash(npm run check:*),Bash(node:*)"
           You are running the weekly SEO auto-optimization for Date My Dish based on fresh ranking data.
 
           ## Input Data
@@ -104,7 +103,6 @@ jobs:
           - Expected impact (which keywords should improve)
           - Any issues requiring manual attention
           PROMPT
-          )"
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
