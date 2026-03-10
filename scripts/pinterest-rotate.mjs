@@ -231,6 +231,9 @@ async function main() {
       if (pin.status === "failed") {
         console.log(`Resetting failed pin ${slug} variant ${pin.variant} to pending for retry`);
         pin.status = "pending";
+        if (!pin.scheduledFor) {
+          pin.scheduledFor = new Date().toISOString();
+        }
         delete pin.error;
         delete pin.failedAt;
       }
