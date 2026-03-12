@@ -159,6 +159,10 @@ jobs:
           - `dateNightTips`: `{ wine: "...", music: "...", platingTip: "..." }` — Generate appropriate suggestions
           - `faqs`: At least 3 FAQ entries with expanded answers (~2-3 sentences each). Use Notion FAQs if extracted, supplement or generate if fewer than 3.
 
+          **Before writing the prose body:**
+          - Read `docs/brand-voice-guide.md` for voice and tone guidelines
+          - Read `.claude/commands/humanizer.md` for anti-AI-pattern rules to apply
+
           **Body**: Write 800-1500 words of SEO-optimized prose:
           - Start with `import { Picture } from "astro:assets";` and import statements for each optimized image
           - Image imports use relative paths: `import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";`
@@ -180,6 +184,18 @@ jobs:
           - Include the "date night" angle throughout (this is a date night cooking blog)
           - Internal cross-links to existing recipes: `/en/recipes/{slug}/` (trailing slash required)
           - Check existing recipe slugs: Glob for `src/content/recipes/en/*.mdx` to find linkable recipes
+          - **Voice**: Confident, flirtatious, cheeky — never pretentious. The tone of a home cook impressing a date, not a chef lecturing a class. Sensual about food, not about people. PG-13 innuendo is fine; vulgarity is not.
+          - **Anti-AI patterns to actively avoid** (apply humanizer rules from the file you read):
+            - No em dashes (use commas, colons, or rewrite the sentence)
+            - No AI vocabulary: "delve", "tapestry", "vibrant", "elevate", "seamlessly", "robust", "foster", "journey", "testament", "unpack", "dive in", "game-changer"
+            - No sycophantic openers: never start with "Great question", "Certainly", "Absolutely", "Of course"
+            - No vague attributions: replace "many people" / "some say" / "it is often said" with specific claims or just say it directly
+            - No hollow transitions: cut "In conclusion", "It is worth noting", "Without further ado", "At the end of the day"
+            - No reflexive self-labeling: never call the recipe "game-changing", "revolutionary", or "transformative"
+            - No over-hedging: cut "it is important to note", "please be aware", "it should be mentioned"
+            - Avoid gratuitous rule-of-three lists unless the three things genuinely belong together
+          - After drafting the prose, self-audit: ask "What makes this sound AI-generated?" then rewrite those parts
+          - Apply the same humanizer pass to FAQ answers and `description` frontmatter field
 
           ### 5. Generate FR MDX file
           Create `src/content/recipes/fr/{fr-slug}.mdx`:
