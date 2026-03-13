@@ -16,37 +16,18 @@ interface Props {
 const { locale, ingredientGroups, idPrefix = "ing", recipeYield } = Astro.props;
 ---
 
-<section class="ingredient-list-section" data-recipe-yield={recipeYield || ""}>
-  <div class="mb-4 flex items-center justify-between">
+<section class="ingredient-list-section">
+  <div class="mb-4">
     <h2 class="font-heading text-heading-3 font-bold text-gray-900 dark:text-neutral-100">
       {t(locale, "recipe.ingredients")}
     </h2>
-    <div class="no-print flex gap-1" role="group" aria-label={t(locale, "scaling.label")}>
-      {[1, 2, 3].map((scale) => (
-        <button
-          type="button"
-          class:list={[
-            "scale-btn rounded-md px-2.5 py-1 font-ui text-caption font-medium transition-colors",
-            scale === 1
-              ? "bg-brand-primary text-white"
-              : "bg-gray-200 text-gray-600 hover:bg-gray-300 dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-600",
-          ]}
-          data-scale={scale}
-          aria-pressed={scale === 1 ? "true" : "false"}
-        >
-          {scale}x
-        </button>
-      ))}
-    </div>
   </div>
 
   {recipeYield && (
-    <p class="recipe-yield-display mb-3 text-body-sm text-gray-500 dark:text-neutral-400" data-original-yield={recipeYield}>
+    <p class="mb-3 text-body-sm text-gray-500 dark:text-neutral-400">
       {recipeYield}
     </p>
   )}
-
-  <div aria-live="polite" class="sr-only scale-announce"></div>
 
   {ingredientGroups.map((group, gi) => (
     <div class="mb-4 last:mb-0">
@@ -63,8 +44,7 @@ const { locale, ingredientGroups, idPrefix = "ing", recipeYield } = Astro.props;
             />
             <label
               for={`${idPrefix}-${gi}-${i}`}
-              class="ingredient-label cursor-pointer text-body-sm text-gray-700 peer-checked:text-gray-400 peer-checked:line-through dark:text-neutral-300 dark:peer-checked:text-neutral-500"
-              data-original={item}
+              class="cursor-pointer text-body-sm text-gray-700 peer-checked:text-gray-400 peer-checked:line-through dark:text-neutral-300 dark:peer-checked:text-neutral-500"
             >
               {item}
             </label>
@@ -74,117 +54,3 @@ const { locale, ingredientGroups, idPrefix = "ing", recipeYield } = Astro.props;
     </div>
   ))}
 </section>
-
-<script is:inline>
-  (function() {
-    var qtyRegex = /^(\d+\s+\d+\/\d+|\d+\/\d+|\d+\.?\d*(?:\s*-\s*\d+\.?\d*)?)\s/;
-
-    function parseFraction(str) {
-      str = str.trim();
-      // Mixed number: "1 1/2"
-      var mixed = str.match(/^(\d+)\s+(\d+)\/(\d+)$/);
-      if (mixed) return parseInt(mixed[1]) + parseInt(mixed[2]) / parseInt(mixed[3]);
-      // Simple fraction: "1/2"
-      var frac = str.match(/^(\d+)\/(\d+)$/);
-      if (frac) return parseInt(frac[1]) / parseInt(frac[2]);
-      // Decimal or integer
-      return parseFloat(str);
-    }
-
-    function formatNumber(n) {
-      if (isNaN(n)) return '';
-      // Check common fractions
-      var whole = Math.floor(n);
-      var frac = n - whole;
-      var fracStr = '';
-      if (Math.abs(frac - 0.25) < 0.01) fracStr = '1/4';
-      else if (Math.abs(frac - 0.333) < 0.02) fracStr = '1/3';
-      else if (Math.abs(frac - 0.5) < 0.01) fracStr = '1/2';
-      else if (Math.abs(frac - 0.667) < 0.02) fracStr = '2/3';
-      else if (Math.abs(frac - 0.75) < 0.01) fracStr = '3/4';
-
-      if (fracStr) {
-        return whole > 0 ? whole + ' ' + fracStr : fracStr;
-      }
-      // Round to 1 decimal if needed
-      if (n === Math.floor(n)) return n.toString();
-      return (Math.round(n * 10) / 10).toString();
-    }
-
-    function scaleText(original, factor) {
-      var match = original.match(qtyRegex);
-      if (!match) return original;
-
-      var qtyStr = match[1];
-      // Handle ranges: "2-3"
-      if (qtyStr.indexOf('-') !== -1) {
-        var parts = qtyStr.split(/\s*-\s*/);
-        var scaled = parts.map(function(p) { return formatNumber(parseFraction(p) * factor); });
-        return scaled.join('-') + original.slice(match[0].length - 1);
-      }
-
-      var scaled = formatNumber(parseFraction(qtyStr) * factor);
-      return scaled + original.slice(match[0].length - 1);
-    }
-
-    function scaleYield(original, factor) {
-      // Parse leading number from yield string like "2 servings"
-      var match = original.match(/^(\d+\.?\d*)\s*(.*)/);
-      if (!match) return original;
-      var num = parseFloat(match[1]) * factor;
-      return formatNumber(num) + ' ' + match[2];
-    }
-
-    document.querySelectorAll('.ingredient-list-section').forEach(function(section) {
-      if (section.dataset.scaleBound) return;
-      section.dataset.scaleBound = 'true';
-
-      var buttons = section.querySelectorAll('.scale-btn');
-      var labels = section.querySelectorAll('.ingredient-label');
-      var yieldEl = section.querySelector('.recipe-yield-display');
-      var announcer = section.querySelector('.scale-announce');
-
-      buttons.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          var factor = parseInt(this.dataset.scale);
-
-          // Update button styles
-          buttons.forEach(function(b) {
-            var isActive = b === btn;
-            b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-            if (isActive) {
-              b.classList.remove('bg-gray-200', 'text-gray-600', 'hover:bg-gray-300', 'dark:bg-neutral-700', 'dark:text-neutral-300', 'dark:hover:bg-neutral-600');
-              b.classList.add('bg-brand-primary', 'text-white');
-            } else {
-              b.classList.remove('bg-brand-primary', 'text-white');
-              b.classList.add('bg-gray-200', 'text-gray-600', 'hover:bg-gray-300', 'dark:bg-neutral-700', 'dark:text-neutral-300', 'dark:hover:bg-neutral-600');
-            }
-          });
-
-          // Scale ingredients
-          labels.forEach(function(label) {
-            var original = label.dataset.original;
-            label.textContent = factor === 1 ? original : scaleText(original, factor);
-          });
-
-          // Scale yield
-          if (yieldEl && yieldEl.dataset.originalYield) {
-            yieldEl.textContent = factor === 1
-              ? yieldEl.dataset.originalYield
-              : scaleYield(yieldEl.dataset.originalYield, factor);
-          }
-
-          // Announce
-          if (announcer) {
-            var lang = document.documentElement.lang;
-            if (lang === 'fr') {
-              announcer.textContent = 'Recette ajustée à ' + factor + 'x.';
-            } else {
-              announcer.textContent = 'Recipe scaled to ' + factor + 'x.';
-            }
-          }
-        });
-      });
-    });
-  })();
-</script>

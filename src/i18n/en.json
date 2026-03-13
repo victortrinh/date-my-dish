@@ -199,14 +199,6 @@
     "twitter": "Share on X",
     "opensNewWindow": "(opens new window)"
   },
-  "scaling": {
-    "label": "Scale recipe",
-    "servings": "Servings",
-    "original": "1x",
-    "double": "2x",
-    "triple": "3x",
-    "scaled": "Recipe scaled"
-  },
   "bookmark": {
     "save": "Save recipe",
     "saved": "Recipe saved",
