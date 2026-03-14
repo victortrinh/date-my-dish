@@ -119,7 +119,7 @@
 
 @media print {
   @page {
-    margin: 1.5cm;
+    margin: 1cm;
   }
 
   .no-print {
@@ -127,8 +127,8 @@
   }
 
   body {
-    font-size: 11pt;
-    line-height: 1.5;
+    font-size: 9pt;
+    line-height: 1.4;
     color: #000;
     background: #fff;
   }
@@ -167,26 +167,55 @@
     overflow: visible !important;
   }
 
-  .recipe-detail-card-content {
-    divide-y: none !important;
+  /* Strip padding from all inner card sections */
+  .recipe-detail-card-content > div {
+    padding: 0 !important;
+    border: none !important;
   }
 
-  /* Meta bar: strip background, add bottom rule */
+  /* Title: compact */
+  .recipe-detail-card [itemprop="name"] {
+    font-size: 13pt !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  /* Meta bar: strip background, compact, add bottom rule */
   .recipe-detail-card-meta {
     background: none !important;
     border-bottom: 1px solid #ccc !important;
-    padding: 0 0 0.5rem 0 !important;
-    margin-bottom: 0.75rem !important;
+    padding: 0 0 0.35rem 0 !important;
+    margin-bottom: 0.5rem !important;
     border-radius: 0 !important;
+    gap: 0.5rem 0.75rem !important;
+    font-size: 8pt !important;
+  }
+
+  .recipe-detail-card-meta .h-8 {
+    display: none !important;
   }
 
   /* Two-column body: ingredients left, instructions right */
   .recipe-detail-card-body {
     display: grid !important;
     grid-template-columns: 1fr 1.5fr !important;
-    gap: 0 1.5rem !important;
+    gap: 0 1.25rem !important;
     align-items: start !important;
     padding: 0 !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* Section headings */
+  .recipe-detail-card-ingredients h3,
+  .recipe-detail-card-instructions h3 {
+    font-size: 10pt !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .recipe-detail-card-ingredients h4,
+  .recipe-detail-card-instructions h4 {
+    font-size: 8pt !important;
+    margin-bottom: 0.15rem !important;
+    margin-top: 0.25rem !important;
   }
 
   /* Tighten ingredient spacing */
@@ -195,11 +224,15 @@
   }
 
   .recipe-detail-card-ingredients ul > * + * {
-    margin-top: 0.1rem !important;
+    margin-top: 0.05rem !important;
   }
 
   .recipe-detail-card-ingredients li input[type="checkbox"] {
-    margin-top: 0.1rem !important;
+    margin-top: 0.05rem !important;
+  }
+
+  .recipe-detail-card-ingredients > div {
+    margin-bottom: 0.2rem !important;
   }
 
   /* Step number: clean inline text for print */
@@ -222,12 +255,13 @@
   }
 
   .recipe-detail-card-instructions li {
-    gap: 0.3rem !important;
+    gap: 0.25rem !important;
     align-items: baseline !important;
   }
 
   .recipe-detail-card-instructions li p {
     padding-top: 0 !important;
+    line-height: 1.3 !important;
   }
 
   .recipe-detail-card-instructions ol {
@@ -235,7 +269,11 @@
   }
 
   .recipe-detail-card-instructions ol > * + * {
-    margin-top: 0.15rem !important;
+    margin-top: 0.1rem !important;
+  }
+
+  .recipe-detail-card-instructions > div {
+    margin-bottom: 0.25rem !important;
   }
 
   /* Compact headings for print */
