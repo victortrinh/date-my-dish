@@ -67,23 +67,21 @@ const difficultyColors = {
   itemtype="https://schema.org/Recipe"
   class="recipe-detail-card scroll-mt-20 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900"
 >
-  <div class="lg:grid lg:grid-cols-[2fr_3fr]">
+  <!-- Hero Image (hidden in print) -->
+  <div class="recipe-detail-card-image">
+    <Picture
+      src={heroImage}
+      alt={heroImageAlt}
+      widths={[400, 600, 900]}
+      sizes="(max-width: 768px) 100vw, 768px"
+      formats={["avif", "webp"]}
+      class="h-56 w-full object-cover sm:h-72"
+      loading="lazy"
+    />
+  </div>
 
-    <!-- Left: Hero Image (hidden in print) -->
-    <div class="recipe-detail-card-image">
-      <Picture
-        src={heroImage}
-        alt={heroImageAlt}
-        widths={[400, 600, 900, 1200]}
-        sizes="(max-width: 1024px) 100vw, 40vw"
-        formats={["avif", "webp"]}
-        class="h-56 w-full object-cover sm:h-72 lg:h-full lg:min-h-[500px]"
-        loading="lazy"
-      />
-    </div>
-
-    <!-- Right: Recipe Details -->
-    <div class="recipe-detail-card-content divide-y divide-gray-100 dark:divide-neutral-800">
+  <!-- Recipe Details -->
+  <div class="recipe-detail-card-content divide-y divide-gray-100 dark:divide-neutral-800">
 
       <!-- Title + Meta Stats -->
       <div class="p-6 lg:p-8">
@@ -238,7 +236,6 @@ const difficultyColors = {
         {t(locale, "recipe.source")}: {sourceUrl}
       </div>
 
-    </div>
   </div>
 </article>
 
