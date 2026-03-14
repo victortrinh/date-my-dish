@@ -199,14 +199,6 @@
     "twitter": "Partager sur X",
     "opensNewWindow": "(ouvre une nouvelle fenêtre)"
   },
-  "scaling": {
-    "label": "Ajuster les portions",
-    "servings": "Portions",
-    "original": "1x",
-    "double": "2x",
-    "triple": "3x",
-    "scaled": "Recette ajustée"
-  },
   "bookmark": {
     "save": "Sauvegarder la recette",
     "saved": "Recette sauvegardée",
