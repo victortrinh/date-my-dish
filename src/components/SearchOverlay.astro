@@ -19,12 +19,12 @@ const { locale } = Astro.props;
     <div class="flex max-h-[80vh] flex-col rounded-2xl bg-white p-6 shadow-2xl dark:bg-neutral-900/95">
       <!-- Header -->
       <div class="mb-4 flex shrink-0 items-center justify-between">
-        <h2 class="font-heading text-lg font-bold text-gray-900 dark:text-neutral-100">
+        <h2 class="font-heading text-lg font-bold text-neutral-900 dark:text-neutral-100">
           {t(locale, "search.overlayTitle")}
         </h2>
         <button
           id="search-overlay-close"
-          class="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-neutral-800 dark:hover:text-neutral-300"
+          class="rounded-lg p-2 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600 dark:hover:bg-neutral-800 dark:hover:text-neutral-300"
           aria-label={t(locale, "search.close")}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -84,8 +84,8 @@ const { locale } = Astro.props;
       </style>
 
       <!-- Keyboard hint -->
-      <p class="mt-3 shrink-0 text-center text-caption text-gray-400 dark:text-neutral-400">
-        <kbd class="rounded border border-gray-200 bg-gray-50 px-1.5 py-0.5 font-ui text-xs dark:border-neutral-700 dark:bg-neutral-800">Esc</kbd>
+      <p class="mt-3 shrink-0 text-center text-caption text-neutral-400 dark:text-neutral-400">
+        <kbd class="rounded border border-neutral-200 bg-neutral-50 px-1.5 py-0.5 font-ui text-xs dark:border-neutral-700 dark:bg-neutral-800">Esc</kbd>
         {locale === "fr" ? "pour fermer" : "to close"}
       </p>
     </div>

@@ -22,13 +22,13 @@ const { locale, instructionGroups } = Astro.props;
 ---
 
 <section class="instruction-steps">
-  <h2 class="mb-6 font-heading text-heading-2 font-bold text-gray-900 dark:text-neutral-100">
+  <h2 class="mb-6 font-heading text-heading-2 font-bold text-neutral-900 dark:text-neutral-100">
     {t(locale, "recipe.instructions")}
   </h2>
   {instructionGroups.map((group) => (
     <div class="mb-8 last:mb-0">
       {group.group && (
-        <h3 class="mb-4 font-heading text-heading-3 font-semibold text-gray-700 dark:text-neutral-300">{group.group}</h3>
+        <h3 class="mb-4 font-heading text-heading-3 font-semibold text-neutral-700 dark:text-neutral-300">{group.group}</h3>
       )}
       <ol class="space-y-6">
         {group.steps.map((step, i) => (
@@ -37,7 +37,7 @@ const { locale, instructionGroups } = Astro.props;
               {i + 1}
             </span>
             <div class="pt-0.5">
-              <p class="text-gray-700 dark:text-neutral-300">{step.text}</p>
+              <p class="text-neutral-700 dark:text-neutral-300">{step.text}</p>
               {step.image && (
                 <Picture
                   src={step.image}
