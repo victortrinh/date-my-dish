@@ -15,7 +15,9 @@
           "title": "The Pasta That Says 'I Made This For You'",
           "description": "Slow-cooked beef ragu that whispers 'I've been thinking about you all day.' This Italian braised beef pasta is fork-tender, luxuriously rich, and worth every single minute. Pair with a bold Barolo, Dean Martin on the speakers, and watch your date night unfold beautifully. A medium-difficulty recipe that feels like pure magic on the plate.\n\nhttps://datemydish.com/en/recipes/beef-ragu-pappardelle/",
           "scheduledFor": "2026-03-14T16:42:22.109Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851881538",
+          "postedAt": "2026-03-15T10:18:42.551Z"
         },
         {
           "variant": 3,
@@ -43,7 +45,9 @@
           "title": "The Appetizer That Says 'I Made This For You'",
           "description": "Impress your date with a restaurant-quality Brussels sprouts salad that's easier to make than it looks. Crispy fried leaves tossed in a fish sauce vinaigrette—it's the kind of Southeast Asian appetizer that feels fancy but takes just 35 minutes. Pair with a chilled Sauvignon Blanc and serve artfully scattered in a shallow bowl. Date night just got seriously delicious. https://datemydish.com/en/recipes/brussels-sprouts-salad/",
           "scheduledFor": "2026-03-14T16:42:40.684Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851881546",
+          "postedAt": "2026-03-15T10:18:53.579Z"
         },
         {
           "variant": 3,
@@ -71,7 +75,9 @@
           "title": "The Pasta That Says 'I Made This For You'",
           "description": "Elevate your date night with Cacio e Pepe—the Roman pasta that whispers confidence. Three ingredients, no shortcuts, pure Italian romance. Pair with crisp Frascati wine and Italian jazz for the perfect evening. Twirl into a tight nest, serve warm, and watch them fall for your culinary prowess. Medium difficulty, maximum impact. 25 minutes to impressive. https://datemydish.com/en/recipes/cacio-e-pepe/",
           "scheduledFor": "2026-03-14T16:24:11.122Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851881549",
+          "postedAt": "2026-03-15T10:19:04.419Z"
         },
         {
           "variant": 3,
@@ -99,7 +105,9 @@
           "title": "The Vegan Main Course That Impresses on Date Night",
           "description": "Looking for an impressive vegan date night dinner? These roasted cauliflower steaks with smoky romesco sauce deliver restaurant-quality Spanish flavors at home in 40 minutes. Pair with a Spanish Garnacha, add some Spanish guitar to the ambiance, and watch your date fall in love with plant-based cooking. Easy, elegant, unforgettable. https://datemydish.com/en/recipes/cauliflower-steak-with-romesco-sauce/",
           "scheduledFor": "2026-03-14T16:24:29.040Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851881555",
+          "postedAt": "2026-03-15T10:19:15.248Z"
         },
         {
           "variant": 3,
@@ -127,7 +135,9 @@
           "title": "The Vegan Appetizer That'll Blow Their Mind",
           "description": "Serve up date night magic with Crispy Vegan Calamari—the plant-based appetizer everyone will love. Golden-fried king oyster mushrooms with oregano-cayenne batter, paired with sparkling Prosecco and bossa nova vibes. Restaurant-quality plating, 30-minute prep, pure romance. This vegan mushroom appetizer is your secret to entertaining. Find it here: https://datemydish.com/en/recipes/crispy-vegan-calamari/",
           "scheduledFor": "2026-03-14T16:42:58.388Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851881560",
+          "postedAt": "2026-03-15T10:19:26.018Z"
         },
         {
           "variant": 3,
@@ -258,9 +268,8 @@
           "variant": 1,
           "title": "Vietnamese Pickled Vegetables (Do Chua) — Ready in 15 Minutes",
           "description": "Learn how to make authentic Vietnamese do chua with this easy 15-minute recipe. Crisp daikon and carrots in a sweet-tangy brine. Perfect as a banh mi topping, rice bowl condiment, or side dish. This quick pickled vegetable recipe is a Vietnamese staple that upgrades any meal. https://datemydish.com/en/recipes/vietnamese-pickled-vegetables/",
-          "status": "failed",
-          "error": "Pinterest API error 2787: Sorry! Something went wrong on our end.",
-          "failedAt": "2026-03-09T16:44:43.961Z"
+          "status": "pending",
+          "scheduledFor": "2026-03-15T10:19:26.019Z"
         },
         {
           "variant": 2,
@@ -286,9 +295,8 @@
           "variant": 1,
           "title": "Crispy Zucchini & Eggplant Chips with Sparkling Water Batter",
           "description": "These paper-thin zucchini and eggplant chips are fried until impossibly crispy in a sparkling water batter, then served with cool tzatziki. A Mediterranean appetizer that's vegetarian, easy, and ready in 30 minutes. Perfect for entertaining or a quick date night meal. https://datemydish.com/en/recipes/zucchini-eggplant-chips/",
-          "status": "failed",
-          "error": "Pinterest API error 2787: Sorry! Something went wrong on our end.",
-          "failedAt": "2026-03-09T16:45:08.193Z"
+          "status": "pending",
+          "scheduledFor": "2026-03-15T10:19:26.019Z"
         },
         {
           "variant": 2,
