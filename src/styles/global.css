@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply font-body text-gray-800 antialiased dark:text-neutral-200;
+    @apply font-body text-neutral-800 antialiased dark:text-neutral-200;
   }
 
   h1,
@@ -31,11 +31,11 @@
 
 @layer components {
   .prose h2 {
-    @apply mt-10 mb-4 text-heading-2 font-bold text-gray-900 dark:text-neutral-100;
+    @apply mt-10 mb-4 text-heading-2 font-bold text-neutral-900 dark:text-neutral-100;
   }
 
   .prose h3 {
-    @apply mt-8 mb-3 text-heading-3 font-semibold text-gray-800 dark:text-neutral-200;
+    @apply mt-8 mb-3 text-heading-3 font-semibold text-neutral-800 dark:text-neutral-200;
   }
 
   .prose p {
@@ -55,15 +55,47 @@
   }
 
   .prose img {
-    @apply my-8 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[50%];
+    @apply my-8 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[75%];
   }
 
   .prose blockquote {
-    @apply my-6 border-l-4 border-brand-primary pl-4 italic text-gray-600 dark:text-neutral-400 dark:border-brand-primary;
+    @apply my-6 border-l-4 border-brand-primary pl-4 italic text-neutral-600 dark:text-neutral-400 dark:border-brand-primary;
   }
 
   .prose a {
     @apply text-brand-primary-text underline decoration-brand-primary/30 underline-offset-2 transition-colors hover:text-brand-accent hover:decoration-brand-accent/50;
+  }
+
+  /* ─── Button system ─────────────────────────────────────────────────── */
+
+  /* Base: shared layout, font, and transition. Combine with a variant below. */
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-lg font-ui text-sm font-medium transition-colors;
+  }
+
+  /* Filled terracotta — primary CTAs (hero, view-all alternative) */
+  .btn-primary {
+    @apply bg-brand-primary-dark px-6 py-3 text-white no-underline shadow-sm hover:bg-brand-primary hover:text-white dark:text-white dark:hover:text-white;
+  }
+
+  /* Filled gold — jump-to-recipe and accent CTAs */
+  .btn-accent {
+    @apply bg-brand-accent px-6 py-3 font-semibold text-white no-underline shadow-sm hover:bg-brand-accent-dark hover:text-white hover:shadow-md dark:text-white dark:hover:text-white;
+  }
+
+  /* Bordered neutral — secondary actions (print, share) */
+  .btn-outline {
+    @apply border border-neutral-200 px-5 py-3 text-neutral-600 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-400 dark:hover:bg-neutral-800;
+  }
+
+  /* Bordered brand — "View all" links */
+  .btn-outline-brand {
+    @apply border-2 border-brand-primary px-6 py-2.5 font-semibold text-brand-primary-text no-underline hover:bg-brand-primary-dark hover:text-white dark:text-white dark:hover:text-white;
+  }
+
+  /* Ghost — icon-only nav buttons */
+  .btn-ghost {
+    @apply p-2 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-600 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-300;
   }
 }
 
@@ -87,12 +119,12 @@
 }
 
 *:focus-visible {
-  outline: 3px solid #9A5439; /* brand-primary-text */
+  outline: 3px solid theme('colors.brand.primary-text');
   outline-offset: 2px;
 }
 
 :root.dark *:focus-visible {
-  outline-color: #D4A853; /* brand-accent — high contrast on dark backgrounds */
+  outline-color: theme('colors.brand.accent');
 }
 
 /* Reduced motion — disable animations for vestibular-sensitive users */
@@ -139,9 +171,9 @@
   }
 
   /* Remove background colors for ink savings */
-  .bg-gray-50,
-  .bg-gray-100,
-  .bg-gray-200 {
+  .bg-neutral-50,
+  .bg-neutral-100,
+  .bg-neutral-200 {
     background: none !important;
   }
 

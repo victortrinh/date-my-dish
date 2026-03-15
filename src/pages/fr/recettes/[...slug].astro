@@ -22,6 +22,7 @@ import RelatedRecipes from "@components/RelatedRecipes.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t, getRecipeLocalizedPath, getOccasionLocalizedPath, getTagLocalizedPath, tagSlugMap } from "@i18n/utils";
 import { formatDuration } from "@utils/format";
+import { difficultyColors } from "@utils/recipe";
 import type { ImageMetadata } from "astro";
 import ratingsData from "../../../../data/ratings.json";
 
@@ -47,11 +48,6 @@ const heroImage = data.heroImage as ImageMetadata;
 const sourceUrl = `https://datemydish.com${getRecipeLocalizedPath(locale, slug)}`;
 const ratingData = (ratingsData as Record<string, { averageRating: number; ratingCount: number }>)[slug];
 
-const difficultyColors = {
-  easy: "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400",
-  medium: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400",
-  hard: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400",
-};
 ---
 
 <RecipeLayout
@@ -103,7 +99,7 @@ const difficultyColors = {
       />
 
       <!-- Hero Image -->
-      <div class="no-print relative mb-8 overflow-hidden rounded-2xl">
+      <div class="no-print relative mb-8 overflow-hidden rounded-xl">
         <Picture
           src={heroImage}
           alt={data.heroImageAlt}
@@ -118,42 +114,42 @@ const difficultyColors = {
 
       <!-- Title & Meta -->
       <header class="no-print mb-8">
-        <h1 class="mb-4 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+        <h1 class="mb-4 font-heading text-heading-1 font-bold text-neutral-900 sm:text-4xl dark:text-neutral-100">
           {data.title}
         </h1>
-        <p class="mb-6 text-body-lg text-gray-600 dark:text-neutral-400">{data.description}</p>
+        <p class="mb-6 text-body-lg text-neutral-600 dark:text-neutral-400">{data.description}</p>
 
         <!-- Meta Bar -->
-        <div class="mb-6 flex flex-wrap items-center gap-4 rounded-xl bg-gray-200 p-4 dark:bg-neutral-800">
+        <div class="mb-6 flex flex-wrap items-center gap-4 rounded-xl bg-neutral-100 p-4 dark:bg-neutral-800">
           <div class="flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span class="text-body-sm text-gray-500 dark:text-neutral-400">{t(locale, "recipe.prepTime")}</span>
+            <span class="text-body-sm text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.prepTime")}</span>
             <span class="font-medium text-body-sm">{formatDuration(data.prepTime, locale)}</span>
           </div>
-          <div class="h-4 w-px bg-gray-300 dark:bg-neutral-600"></div>
+          <div class="h-4 w-px bg-neutral-300 dark:bg-neutral-600"></div>
           <div class="flex items-center gap-2">
-            <span class="text-body-sm text-gray-500 dark:text-neutral-400">{t(locale, "recipe.cookTime")}</span>
+            <span class="text-body-sm text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.cookTime")}</span>
             <span class="font-medium text-body-sm">{formatDuration(data.cookTime, locale)}</span>
           </div>
-          <div class="h-4 w-px bg-gray-300 dark:bg-neutral-600"></div>
+          <div class="h-4 w-px bg-neutral-300 dark:bg-neutral-600"></div>
           <div class="flex items-center gap-2">
-            <span class="text-body-sm text-gray-500 dark:text-neutral-400">{t(locale, "recipe.totalTime")}</span>
+            <span class="text-body-sm text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.totalTime")}</span>
             <span class="font-medium text-body-sm">{formatDuration(data.totalTime, locale)}</span>
           </div>
-          <div class="h-4 w-px bg-gray-300 dark:bg-neutral-600"></div>
+          <div class="h-4 w-px bg-neutral-300 dark:bg-neutral-600"></div>
           <div class="flex items-center gap-2">
-            <span class="text-body-sm text-gray-500 dark:text-neutral-400">{t(locale, "recipe.servings")}</span>
+            <span class="text-body-sm text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.servings")}</span>
             <span class="font-medium text-body-sm">{data.recipeYield}</span>
           </div>
-          <div class="h-4 w-px bg-gray-300 dark:bg-neutral-600"></div>
+          <div class="h-4 w-px bg-neutral-300 dark:bg-neutral-600"></div>
           <span class={`rounded-full px-3 py-1 text-body-sm font-medium ${difficultyColors[data.difficulty]}`}>
             {t(locale, `recipe.${data.difficulty}` as "recipe.easy" | "recipe.medium" | "recipe.hard")}
           </span>
           {data.impressFactor && (
             <>
-              <div class="h-4 w-px bg-gray-300 dark:bg-neutral-600"></div>
+              <div class="h-4 w-px bg-neutral-300 dark:bg-neutral-600"></div>
               <ImpressFactor locale={locale} rating={data.impressFactor} />
             </>
           )}
@@ -175,11 +171,11 @@ const difficultyColors = {
               const hasPage = tag in tagSlugMap;
               const tagLabel = t(locale, `tags.${tag}` as any) || tag.charAt(0).toUpperCase() + tag.slice(1);
               return hasPage ? (
-                <a href={`${getTagLocalizedPath(locale, tag)}/`} class="rounded-full border border-gray-200 px-3 py-1 text-caption font-medium text-gray-500 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary-text dark:border-neutral-600 dark:text-neutral-400">
+                <a href={`${getTagLocalizedPath(locale, tag)}/`} class="rounded-full border border-neutral-200 px-3 py-1 text-caption font-medium text-neutral-500 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary-text dark:border-neutral-600 dark:text-neutral-400">
                   {tagLabel}
                 </a>
               ) : (
-                <span class="rounded-full border border-gray-200 px-3 py-1 text-caption font-medium text-gray-500 dark:border-neutral-600 dark:text-neutral-400">
+                <span class="rounded-full border border-neutral-200 px-3 py-1 text-caption font-medium text-neutral-500 dark:border-neutral-600 dark:text-neutral-400">
                   {tagLabel}
                 </span>
               );
@@ -187,20 +183,19 @@ const difficultyColors = {
           </div>
         )}
 
-        <div class="flex flex-wrap items-center gap-3">
+        <div class="flex flex-wrap items-center gap-4">
           <JumpToRecipe locale={locale} />
-          <button
-            onclick="window.print()"
-            class="no-print inline-flex items-center gap-2 rounded-lg border border-gray-200 px-5 py-3 font-ui text-body-sm font-medium text-gray-600 transition-colors hover:bg-gray-200 dark:border-neutral-600 dark:text-neutral-400 dark:hover:bg-neutral-800"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-            </svg>
-            {t(locale, "recipe.printRecipe")}
-          </button>
-          <ShareButton locale={locale} title={data.title} url={sourceUrl} />
-          <SocialShareButtons locale={locale} url={sourceUrl} title={data.title} imageUrl={heroImage.src} description={data.description} />
-          <BookmarkButton locale={locale} enSlug={data.translationSlug} />
+          <div class="flex flex-wrap items-center gap-2 border-l border-neutral-200 pl-4 dark:border-neutral-700">
+            <button onclick="window.print()" class="no-print btn btn-outline">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+              </svg>
+              {t(locale, "recipe.printRecipe")}
+            </button>
+            <ShareButton locale={locale} title={data.title} url={sourceUrl} />
+            <SocialShareButtons locale={locale} url={sourceUrl} title={data.title} imageUrl={heroImage.src} description={data.description} />
+            <BookmarkButton locale={locale} enSlug={data.translationSlug} />
+          </div>
         </div>
       </header>
     </div>
@@ -228,8 +223,8 @@ const difficultyColors = {
 
       <!-- Sidebar (desktop only) -->
       <aside class="recipe-sidebar hidden lg:block">
-        <div class="sticky top-[73px] space-y-6 self-start overflow-y-auto rounded-xl border border-gray-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-900" style="max-height: calc(100vh - 89px);">
-          <div class="rounded-lg bg-gray-100 p-4 dark:bg-neutral-800/30">
+        <div class="sticky top-[73px] space-y-6 self-start overflow-y-auto rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-900" style="max-height: calc(100vh - 89px);">
+          <div class="rounded-lg bg-neutral-100 p-4 dark:bg-neutral-800/30">
             <IngredientList locale={locale} ingredientGroups={data.ingredientGroups} idPrefix="sidebar-ing" recipeYield={data.recipeYield} />
           </div>
           {data.nutrition && (
@@ -242,7 +237,7 @@ const difficultyColors = {
     </div>
 
     <!-- Inline ingredients (mobile only, hidden in print) -->
-    <div class="no-print recipe-inline-ingredients mx-auto mt-8 max-w-prose rounded-xl bg-gray-50 p-6 lg:hidden dark:bg-neutral-800/30">
+    <div class="no-print recipe-inline-ingredients mx-auto mt-8 max-w-prose rounded-xl bg-neutral-50 p-6 lg:hidden dark:bg-neutral-800/30">
       <IngredientList locale={locale} ingredientGroups={data.ingredientGroups} idPrefix="inline-ing" recipeYield={data.recipeYield} />
       {data.nutrition && (
         <div class="mt-4">

@@ -28,7 +28,7 @@ function isActive(linkPath: string): boolean {
 }
 ---
 
-<nav class="no-print sticky top-0 z-50 border-b border-gray-100 bg-gray-50/95 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/95">
+<nav class="no-print sticky top-0 z-50 border-b border-neutral-100 bg-neutral-50/95 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/95">
   <div class="mx-auto flex max-w-content items-center justify-between px-4 py-4">
     <!-- Logo -->
     <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2.5 no-underline hover:opacity-80">
@@ -45,7 +45,7 @@ function isActive(linkPath: string): boolean {
             "relative rounded-lg px-3 py-2 font-ui text-sm font-medium uppercase no-underline transition-colors",
             isActive(link.path)
               ? "text-brand-primary-text"
-              : "text-gray-600 hover:text-gray-900 dark:text-neutral-300 dark:hover:text-neutral-100",
+              : "text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100",
           ]}
           aria-current={isActive(link.path) ? "page" : undefined}
         >
@@ -60,7 +60,7 @@ function isActive(linkPath: string): boolean {
         <!-- Search button (opens overlay) -->
         <button
           id="nav-search-btn"
-          class="rounded-lg p-2 text-gray-400 no-underline transition-colors hover:bg-gray-100 hover:text-gray-600 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-300"
+          class="btn btn-ghost"
           aria-label={t(locale, "nav.search")}
           title="⌘K"
         >
@@ -70,7 +70,7 @@ function isActive(linkPath: string): boolean {
         </button>
         <a
           href={getBookmarksLocalizedPath(locale)}
-          class="bookmark-nav-link relative rounded-lg p-2 text-gray-400 no-underline transition-colors hover:bg-gray-100 hover:text-gray-600 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-300"
+          class="bookmark-nav-link relative btn btn-ghost no-underline"
           aria-label={t(locale, "bookmark.pageTitle")}
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -87,7 +87,7 @@ function isActive(linkPath: string): boolean {
     <div class="flex items-center gap-1 md:hidden">
       <button
         id="nav-search-btn-mobile"
-        class="rounded-lg p-2 text-gray-500 hover:bg-gray-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
+        class="btn btn-ghost"
         aria-label={t(locale, "nav.search")}
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -96,7 +96,7 @@ function isActive(linkPath: string): boolean {
       </button>
       <button
         id="mobile-menu-btn"
-        class="rounded-lg p-2 text-gray-600 dark:text-neutral-300"
+        class="rounded-lg p-2 text-neutral-600 dark:text-neutral-300"
         aria-label={t(locale, "nav.toggleMenu")}
         aria-expanded="false"
       >
@@ -111,7 +111,7 @@ function isActive(linkPath: string): boolean {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden border-t border-gray-100 bg-gray-50 md:hidden dark:border-neutral-800 dark:bg-neutral-950">
+  <div id="mobile-menu" class="hidden border-t border-neutral-100 bg-neutral-50 md:hidden dark:border-neutral-800 dark:bg-neutral-950">
     <div class="mx-auto max-w-content space-y-1 px-4 py-3">
       {navLinks.map((link) => (
         <a
@@ -120,14 +120,14 @@ function isActive(linkPath: string): boolean {
             "block rounded-lg px-4 py-3 font-ui text-base font-medium uppercase no-underline transition-colors",
             isActive(link.path)
               ? "bg-brand-primary/5 text-brand-primary-text"
-              : "text-gray-700 hover:bg-gray-50 dark:text-neutral-200 dark:hover:bg-neutral-800/50",
+              : "text-neutral-700 hover:bg-neutral-50 dark:text-neutral-200 dark:hover:bg-neutral-800/50",
           ]}
           aria-current={isActive(link.path) ? "page" : undefined}
         >
           {link.label}
         </a>
       ))}
-      <div class="flex items-center gap-3 border-t border-gray-100 px-4 pt-3 dark:border-neutral-800">
+      <div class="flex items-center gap-3 border-t border-neutral-100 px-4 pt-3 dark:border-neutral-800">
         <DarkModeToggle locale={locale} />
         <LanguageToggle locale={locale} translationSlug={translationSlug} contentType={contentType} />
       </div>

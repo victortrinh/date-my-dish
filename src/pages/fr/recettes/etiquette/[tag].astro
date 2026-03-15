@@ -80,7 +80,7 @@ const allTags = [...tagCounts.entries()]
     })} />
   </Fragment>
 
-  <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
+  <div class="mx-auto max-w-content px-4 py-section-sm">
     <Breadcrumbs
       locale={locale}
       items={[
@@ -90,11 +90,11 @@ const allTags = [...tagCounts.entries()]
     />
 
     <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-neutral-900 sm:text-4xl dark:text-neutral-100">
         {tagLabel}
       </h1>
       <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
-      <p class="text-body-sm text-gray-500 dark:text-neutral-400">
+      <p class="text-body-sm text-neutral-500 dark:text-neutral-400">
         {sortedRecipes.length} {sortedRecipes.length === 1 ? "recette" : "recettes"}
       </p>
     </div>
@@ -103,7 +103,7 @@ const allTags = [...tagCounts.entries()]
     <div class="mb-10 flex flex-wrap gap-2">
       <a
         href="/fr/recettes/"
-        class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
+        class="rounded-lg border border-neutral-200 px-4 py-2 font-ui text-body-sm font-medium text-neutral-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
       >
         {t(locale, "listing.allCategories")}
       </a>
@@ -116,7 +116,7 @@ const allTags = [...tagCounts.entries()]
               "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
               tagItem === canonicalTag
                 ? "bg-brand-primary-dark text-white dark:text-white dark:hover:text-white shadow-md"
-                : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400",
+                : "border border-neutral-200 bg-white text-neutral-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300",
             ]}
             aria-current={tagItem === canonicalTag ? "page" : undefined}
           >
@@ -147,7 +147,7 @@ const allTags = [...tagCounts.entries()]
         })}
       </div>
     ) : (
-      <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
+      <p class="text-neutral-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
     )}
   </div>
 </BaseLayout>

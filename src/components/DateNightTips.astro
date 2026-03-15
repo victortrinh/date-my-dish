@@ -15,8 +15,8 @@ const hasTips = tips.wine || tips.music || tips.platingTip;
 ---
 
 {hasTips && (
-  <section class="no-print mt-8 rounded-2xl border border-brand-accent/30 bg-gray-50 dark:bg-neutral-800/50 p-6 sm:p-8">
-    <h2 class="mb-5 flex items-center gap-2 font-heading text-xl font-bold text-gray-900 dark:text-neutral-100">
+  <section class="no-print mt-8 rounded-2xl border border-brand-accent/30 bg-neutral-50 dark:bg-neutral-800/50 p-6 sm:p-8">
+    <h2 class="mb-5 flex items-center gap-2 font-heading text-xl font-bold text-neutral-900 dark:text-neutral-100">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-accent" viewBox="0 0 24 24" fill="currentColor">
         <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
       </svg>
@@ -30,7 +30,7 @@ const hasTips = tips.wine || tips.music || tips.platingTip;
           </svg>
           <div>
             <p class="text-xs font-semibold uppercase tracking-wide text-brand-primary-text">{t(locale, "dateNight.wine")}</p>
-            <p class="mt-1 text-sm text-gray-700 dark:text-neutral-300">{tips.wine}</p>
+            <p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">{tips.wine}</p>
           </div>
         </div>
       )}
@@ -41,7 +41,7 @@ const hasTips = tips.wine || tips.music || tips.platingTip;
           </svg>
           <div>
             <p class="text-xs font-semibold uppercase tracking-wide text-brand-primary-text">{t(locale, "dateNight.music")}</p>
-            <p class="mt-1 text-sm text-gray-700 dark:text-neutral-300">{tips.music}</p>
+            <p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">{tips.music}</p>
           </div>
         </div>
       )}
@@ -52,7 +52,7 @@ const hasTips = tips.wine || tips.music || tips.platingTip;
           </svg>
           <div>
             <p class="text-xs font-semibold uppercase tracking-wide text-brand-primary-text">{t(locale, "dateNight.platingTip")}</p>
-            <p class="mt-1 text-sm text-gray-700 dark:text-neutral-300">{tips.platingTip}</p>
+            <p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">{tips.platingTip}</p>
           </div>
         </div>
       )}
