@@ -165,7 +165,9 @@
           "title": "The Pasta That Says 'I Made This For You'",
           "description": "Impress your date with this stunning Korean-Italian seafood bucatini loaded with gochujang, kimchi, mussels, shrimp, and scallops. Takes 45 minutes, tastes like pure restaurant magic, and comes with pro plating tips: warm bowls, shellfish on top, tableside lemon zest, and a pinch of chili flakes. Pair with crisp Albariño or dry Riesling for the ultimate date night moment. https://datemydish.com/en/recipes/gochujang-kimchi-seafood-bucatini/",
           "scheduledFor": "2026-03-14T16:43:18.421Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851920385",
+          "postedAt": "2026-03-16T10:42:49.590Z"
         },
         {
           "variant": 3,
@@ -193,7 +195,9 @@
           "title": "The Dessert That Says 'I Trained in Paris'",
           "description": "Serve your date an elegant lemon posset brûlée and watch them fall for you all over again. This no-bake British dessert requires just 3 ingredients but tastes like pure luxury. Creamy, tangy, with a shattering sugar crust—pair with late-harvest Riesling and soft French café music. Easy enough to make regularly, impressive enough for special occasions. https://datemydish.com/en/recipes/lemon-posset-brulee/",
           "scheduledFor": "2026-03-14T16:43:37.708Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851920392",
+          "postedAt": "2026-03-16T10:43:00.695Z"
         },
         {
           "variant": 3,
@@ -221,7 +225,9 @@
           "title": "The Pasta That Says 'I Made This For You' 🍝",
           "description": "Impress your date with creamy penne alla vodka that tastes like you spent hours in the kitchen—but takes just 40 minutes. Italian sausage, silky vodka sauce, and plating tips for that restaurant-perfect presentation. Pair with Pinot Grigio, dim lights, and Frank Sinatra. Date night magic. https://datemydish.com/en/recipes/penne-alla-vodka/",
           "scheduledFor": "2026-03-14T16:43:55.655Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851920400",
+          "postedAt": "2026-03-16T10:43:11.967Z"
         },
         {
           "variant": 3,
@@ -249,7 +255,9 @@
           "title": "The Salmon That Says 'I'm Definitely Impressing You Tonight'",
           "description": "Ready to wow your date? This Quinoa-Crusted Salmon with Spicy Orange Miso Sauce looks like a $45 entrée but takes just 40 minutes at home. Pro plating tip: serve skin-side down on greens. Pair with Burgundy Chardonnay and set the mood with Norah Jones for the perfect Nikkei fusion date night. https://datemydish.com/en/recipes/quinoa-crusted-salmon/",
           "scheduledFor": "2026-03-14T16:44:15.221Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851920409",
+          "postedAt": "2026-03-16T10:43:22.954Z"
         },
         {
           "variant": 3,
@@ -268,8 +276,10 @@
           "variant": 1,
           "title": "Vietnamese Pickled Vegetables (Do Chua) — Ready in 15 Minutes",
           "description": "Learn how to make authentic Vietnamese do chua with this easy 15-minute recipe. Crisp daikon and carrots in a sweet-tangy brine. Perfect as a banh mi topping, rice bowl condiment, or side dish. This quick pickled vegetable recipe is a Vietnamese staple that upgrades any meal. https://datemydish.com/en/recipes/vietnamese-pickled-vegetables/",
-          "status": "pending",
-          "scheduledFor": "2026-03-15T10:19:26.019Z"
+          "status": "posted",
+          "scheduledFor": "2026-03-15T10:19:26.019Z",
+          "id": "1050746156851920412",
+          "postedAt": "2026-03-16T10:43:33.971Z"
         },
         {
           "variant": 2,
