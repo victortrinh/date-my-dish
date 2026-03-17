@@ -1,25 +1,5 @@
 {
   "pages": {
-    "/en/": {
-      "queries": [
-        {
-          "keyword": "me dish",
-          "avgPosition": 8,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "www.mydish.com",
-          "avgPosition": 37,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 2
-    },
     "/fr/": {
       "queries": [
         {
@@ -37,7 +17,7 @@
       "queries": [
         {
           "keyword": "quinoa crusted salmon",
-          "avgPosition": 57.5,
+          "avgPosition": 39,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
@@ -48,8 +28,8 @@
     }
   },
   "dateRange": {
-    "start": "2026-02-27",
-    "end": "2026-03-06"
+    "start": "2026-03-06",
+    "end": "2026-03-13"
   },
-  "rowCount": 4
+  "rowCount": 2
 }
