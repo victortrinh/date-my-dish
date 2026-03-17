@@ -286,7 +286,9 @@
           "title": "The Condiment That Makes Date Night Taste Better",
           "description": "Impress your date with Vietnamese do chua — the easiest, crispiest pickled vegetable side dish ready in 15 minutes. Daikon and carrots in a tangy-sweet brine. Serve in a pretty mason jar with cilantro, pair with cold Tiger Beer or Vietnamese iced coffee, and set the mood with lo-fi vibes. Simple, elegant, unforgettable. https://datemydish.com/en/recipes/vietnamese-pickled-vegetables/",
           "scheduledFor": "2026-03-14T16:44:34.514Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851956175",
+          "postedAt": "2026-03-17T10:38:53.902Z"
         },
         {
           "variant": 3,
@@ -305,15 +307,19 @@
           "variant": 1,
           "title": "Crispy Zucchini & Eggplant Chips with Sparkling Water Batter",
           "description": "These paper-thin zucchini and eggplant chips are fried until impossibly crispy in a sparkling water batter, then served with cool tzatziki. A Mediterranean appetizer that's vegetarian, easy, and ready in 30 minutes. Perfect for entertaining or a quick date night meal. https://datemydish.com/en/recipes/zucchini-eggplant-chips/",
-          "status": "pending",
-          "scheduledFor": "2026-03-15T10:19:26.019Z"
+          "status": "posted",
+          "scheduledFor": "2026-03-15T10:19:26.019Z",
+          "id": "1050746156851956177",
+          "postedAt": "2026-03-17T10:39:04.864Z"
         },
         {
           "variant": 2,
           "title": "The Appetizer That Says 'I Actually Cooked For You'",
           "description": "Impress your date with restaurant-quality crispy zucchini and eggplant chips made at home in just 30 minutes. This Mediterranean appetizer features a genius sparkling water batter that fries vegetables until they're perfectly golden and crispy. Serve in a paper-lined basket with creamy tzatziki and a chilled Pinot Grigio for an effortless date night starter. https://datemydish.com/en/recipes/zucchini-eggplant-chips/",
           "scheduledFor": "2026-03-14T16:45:01.065Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156851956178",
+          "postedAt": "2026-03-17T10:39:15.320Z"
         },
         {
           "variant": 3,
