@@ -8,8 +8,8 @@ interface Props {
 const { locale } = Astro.props;
 ---
 
-<nav id="toc" class="no-print mb-8 rounded-xl border border-gray-200 bg-white p-5 dark:border-neutral-700 dark:bg-neutral-900/80" aria-label={t(locale, "toc.title")}>
-  <h2 class="mb-3 font-heading text-base font-bold text-gray-900 dark:text-neutral-100">
+<nav id="toc" class="no-print mb-8 rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-700 dark:bg-neutral-900/80" aria-label={t(locale, "toc.title")}>
+  <h2 class="mb-3 font-heading text-base font-bold text-neutral-900 dark:text-neutral-100">
     {t(locale, "toc.title")}
   </h2>
   <ol id="toc-list" class="space-y-1.5 text-body-sm"></ol>
@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var a = document.createElement('a');
     a.href = '#' + h.id;
     a.textContent = h.textContent;
-    a.className = 'block rounded px-2 py-1 text-gray-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400 dark:hover:text-brand-primary';
+    a.className = 'block rounded px-2 py-1 text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400 dark:hover:text-brand-primary';
     if (h.tagName === 'H3') {
       li.className = 'pl-4';
-      a.className += ' text-gray-500 dark:text-neutral-500';
+      a.className += ' text-neutral-500 dark:text-neutral-500';
     }
     li.appendChild(a);
     tocList.appendChild(li);
