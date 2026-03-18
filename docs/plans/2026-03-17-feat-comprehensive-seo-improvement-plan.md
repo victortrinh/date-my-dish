@@ -102,21 +102,21 @@ Audit and optimize all 12 EN recipes, 6 EN articles, and their FR counterparts.
 - [ ] Add 1-2 internal cross-links per article to related recipes
 - [ ] Use absolute paths with trailing slashes: `/en/recipes/{slug}/`, `/en/articles/{slug}/`
 - [ ] FR cross-links must use localized slugs: `/fr/recettes/categorie/souper/` (not `dinner`)
-- [ ] Fix existing inconsistency in `src/content/recipes/fr/chips-de-courgettes-et-aubergines.mdx` (uses `/fr/recettes/categorie/dinner/` instead of `/fr/recettes/categorie/souper/`)
+- [x] Fix existing inconsistency in FR recipes using `/fr/recettes/categorie/dinner/` instead of `/fr/recettes/categorie/souper/`
 
 #### 1.4 Image Audit
 
-- [ ] Audit each recipe for image count (target: 1 hero + 3-5 step images = 5-7 total)
-- [ ] Identify recipes below the target count
+- [x] Audit each recipe for image count (target: 1 hero + 3-5 step images = 5-7 total)
+- [x] Identify recipes below the target count (7 recipes need more step images: cauliflower-steak, crispy-vegan-calamari, pork-osso-buco, quinoa-crusted-salmon, brussels-sprouts-salad, gochujang-bucatini, lemon-posset-brulee)
 - [ ] Run `/optimize-image` on any new images added
 - [ ] Update frontmatter `instructionGroups.steps[].image` for new step images
 
 #### 1.5 E-E-A-T: About Page Enhancement
 
-- [ ] Enhance `src/pages/en/about.astro` with specific credentials: years cooking, recipe testing methodology, Montreal food scene connection, date-night expertise origin story
+- [x] Enhance `src/pages/en/about.astro` with specific credentials: years cooking, recipe testing methodology, Montreal food scene connection, date-night expertise origin story
 - [ ] Add structured author schema data if not already present
-- [ ] Update `AuthorBioCard` component's `bioShort` i18n string with stronger credibility signals
-- [ ] Mirror changes to `src/pages/fr/a-propos.astro` with Quebec French
+- [x] Update `AuthorBioCard` component's `bioShort` i18n string with stronger credibility signals
+- [x] Mirror changes to `src/pages/fr/a-propos.astro` with Quebec French
 - [ ] Update `en.json` and `fr.json` i18n keys for any new bio strings
 
 **Files:**
@@ -126,10 +126,10 @@ Audit and optimize all 12 EN recipes, 6 EN articles, and their FR counterparts.
 
 #### 1.6 Noindex Thin Occasion Pages
 
-- [ ] Add noindex meta tag to occasion pages with fewer than 3 recipes
-- [ ] Implement in `src/pages/en/recipes/occasion/[occasion].astro` with a recipe count check
-- [ ] Mirror in `src/pages/fr/recettes/occasion/[occasion].astro`
-- [ ] Currently affects: `celebration` (1 recipe) and `quick-meal` (1 recipe)
+- [x] Add noindex meta tag to occasion pages with fewer than 3 recipes
+- [x] Implement in `src/pages/en/recipes/occasion/[occasion].astro` with a recipe count check
+- [x] Mirror in `src/pages/fr/recettes/occasion/[occasion].astro`
+- [x] Currently affects: `celebration` (1 recipe) and `quick-meal` (1 recipe)
 
 **Files:**
 - `src/pages/en/recipes/occasion/[occasion].astro`
