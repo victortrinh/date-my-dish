@@ -168,6 +168,20 @@ RECIPE URLs:
 - English: ${SITE_URL}/en/recipes/${enData.slug}/
 - French: ${SITE_URL}/fr/recettes/${frSlug}/
 
+WRITING RULES (follow strictly):
+- Write like a real person, not a marketing bot. Vary sentence length and structure.
+- NEVER use these AI-tell words: elevate, unlock, discover, master, journey, vibrant, nestled, tapestry, testament, showcase, underscore, highlight (as verb), landscape (abstract), pivotal, crucial, fostering, encompassing, delve, interplay, intricate.
+- NEVER use em-dashes (--). Use commas, periods, or semicolons instead.
+- NEVER use the rule of three pattern (listing exactly 3 adjectives or phrases in parallel).
+- NEVER use "Not only X, but Y" or "It's not just X, it's Y" constructions.
+- NEVER use -ing participial phrases tacked onto sentences for fake depth (e.g., "showcasing how...", "ensuring that...", "reflecting the...").
+- NEVER use "serves as", "stands as", or "marks a" when "is" works fine.
+- NEVER start with "Discover", "Unlock", "Master", "Elevate", or "Dive into".
+- Avoid promotional puffery: "game-changing", "next-level", "restaurant-quality" (use sparingly if at all).
+- Be specific and concrete. Say what the food tastes like, not that it's "impressive".
+- Keep it cheeky and confident, like you're texting a friend who loves food.
+- Each variant should sound genuinely different, not the same idea with synonym swaps.
+
 Return a JSON object with exactly these keys:
 
 1. "instagram_caption": A bilingual Instagram caption following this structure:
@@ -180,17 +194,17 @@ Return a JSON object with exactly these keys:
    - Recipe link (French)
    - A blank line, then 20-30 hashtags mixing: #datemydish, cuisine-specific, food-general, French hashtags
 
-2. "pinterest_title": English only, catchy, max 100 characters (Pin variant 1 — straightforward recipe title)
+2. "pinterest_title": English only, catchy, max 100 characters (Pin variant 1: straightforward recipe title)
 
-3. "pinterest_description": English only, SEO-optimized, max 500 characters. Include key ingredients, cooking method, and relevant keywords naturally. End with the recipe URL.
+3. "pinterest_description": English only, SEO-friendly, max 500 characters. Mention key ingredients and cooking method naturally. Do NOT include the recipe URL, it's handled separately via the pin link.
 
-4. "pinterest_title_v2": Alternate angle pin title — focus on the occasion or date night vibe (e.g., "The Pasta That Says 'I Made This For You'"). Cheeky, confident tone. Max 100 characters.
+4. "pinterest_title_v2": Alternate angle pin title: focus on the occasion or date night vibe. Max 100 characters.
 
-5. "pinterest_description_v2": Alternate angle pin description — emphasize the occasion, date night tips, or emotional appeal. SEO-optimized, max 500 characters. End with the recipe URL.
+5. "pinterest_description_v2": Alternate angle description: emphasize the occasion, date night tips, or how it makes people feel. Max 500 characters. Do NOT include the recipe URL.
 
-6. "pinterest_title_v3": Seasonal/lifestyle angle — focus on cuisine, difficulty, or time (e.g., "20-Minute Italian That Impresses Every Time"). Cheeky, confident tone. Max 100 characters.
+6. "pinterest_title_v3": Seasonal/lifestyle angle: focus on cuisine, difficulty, or time. Max 100 characters.
 
-7. "pinterest_description_v3": Seasonal/lifestyle angle description — emphasize ease, cuisine style, or lifestyle fit. SEO-optimized, max 500 characters. End with the recipe URL.
+7. "pinterest_description_v3": Seasonal/lifestyle angle description: emphasize ease, cuisine style, or when to make it. Max 500 characters. Do NOT include the recipe URL.
 
 Return ONLY the JSON object, no markdown fences.`,
       },

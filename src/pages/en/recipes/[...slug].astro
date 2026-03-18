@@ -20,6 +20,7 @@ import DateNightTips from "@components/DateNightTips.astro";
 import FAQSection from "@components/FAQSection.astro";
 import RelatedRecipes from "@components/RelatedRecipes.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
+import QuickAnswer from "@components/QuickAnswer.astro";
 import { t, getRecipeLocalizedPath, getOccasionLocalizedPath, getTagLocalizedPath, tagSlugMap } from "@i18n/utils";
 import { formatDuration } from "@utils/format";
 import { difficultyColors } from "@utils/recipe";
@@ -109,6 +110,8 @@ const ratingData = (ratingsData as Record<string, { averageRating: number; ratin
           class="w-full max-h-[280px] object-cover sm:max-h-[380px] lg:max-h-[500px]"
           loading="eager"
           fetchpriority="high"
+          data-pin-url={sourceUrl}
+          data-pin-description={`${data.title} | ${data.description} | Date My Dish`}
         />
       </div>
 
@@ -118,6 +121,8 @@ const ratingData = (ratingsData as Record<string, { averageRating: number; ratin
           {data.title}
         </h1>
         <p class="mb-6 text-body-lg text-neutral-600 dark:text-neutral-400">{data.description}</p>
+
+        {data.summary && <QuickAnswer summary={data.summary} title={data.title} />}
 
         <!-- Meta Bar -->
         <div class="mb-6 flex flex-wrap items-center gap-4 rounded-xl bg-neutral-100 p-4 dark:bg-neutral-800">
@@ -296,4 +301,18 @@ const ratingData = (ratingsData as Record<string, { averageRating: number; ratin
       />
     </div>
   </article>
+  <script is:inline>
+    (function() {
+      var canonical = document.querySelector('link[rel="canonical"]');
+      var title = document.querySelector('h1');
+      if (!canonical || !title) return;
+      document.querySelectorAll('.prose img').forEach(function(img) {
+        if (!img.dataset.pinUrl) {
+          img.dataset.pinUrl = canonical.href;
+          img.dataset.pinDescription = title.textContent + ' | Date My Dish';
+        }
+      });
+    })();
+  </script>
+  <script async defer src="https://assets.pinterest.com/js/pinit.js" data-pin-hover="true" data-pin-tall="true" data-pin-round="true" is:inline></script>
 </RecipeLayout>

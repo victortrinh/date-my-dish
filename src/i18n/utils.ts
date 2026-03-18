@@ -78,6 +78,7 @@ export function getAlternateUrl(
     },
     articles: { en: "articles", fr: "articles" },
     occasion: { en: "occasion", fr: "occasion" },
+    cuisine: { en: "cuisine", fr: "cuisine" },
     tag: { en: "tag", fr: "etiquette" },
     etiquette: { en: "tag", fr: "etiquette" },
   };
@@ -96,6 +97,11 @@ export function getAlternateUrl(
     if (prev === "occasion") {
       const canonical = getOccasionFromSlug(part, currentLocale);
       return getOccasionSlug(canonical, targetLocale);
+    }
+    // Translate cuisine slugs
+    if (prev === "cuisine") {
+      const canonical = getCuisineFromSlug(part, currentLocale);
+      return getCuisineSlug(canonical, targetLocale);
     }
     // Translate tag slugs
     if (prev === "tag" || prev === "etiquette") {
@@ -133,13 +139,61 @@ export const occasionSlugMap: Record<string, Record<Locale, string>> = {
 };
 
 export const tagSlugMap: Record<string, Record<Locale, string>> = {
-  italian: { en: "italian", fr: "italien" },
-  pasta: { en: "pasta", fr: "pates" },
-  quick: { en: "quick", fr: "rapide" },
-  vegetarian: { en: "vegetarian", fr: "vegetarien" },
-  vegan: { en: "vegan", fr: "vegane" },
-  seafood: { en: "seafood", fr: "fruits-de-mer" },
+  appetizer: { en: "appetizer", fr: "entree" },
+  "asian-fusion": { en: "asian-fusion", fr: "fusion-asiatique" },
+  beef: { en: "beef", fr: "boeuf" },
+  "beginner-friendly": { en: "beginner-friendly", fr: "debutant" },
+  braised: { en: "braised", fr: "braise" },
+  british: { en: "british", fr: "britannique" },
+  "brussels-sprouts": { en: "brussels-sprouts", fr: "choux-de-bruxelles" },
+  chicken: { en: "chicken", fr: "poulet" },
+  chinese: { en: "chinese", fr: "chinois" },
+  "comfort-food": { en: "comfort-food", fr: "reconfort" },
+  condiment: { en: "condiment", fr: "condiment" },
+  "cooking-techniques": { en: "cooking-techniques", fr: "techniques-de-cuisson" },
+  "date-night": { en: "date-night", fr: "soiree-en-amoureux" },
+  dessert: { en: "dessert", fr: "dessert" },
+  "dining-etiquette": { en: "dining-etiquette", fr: "etiquette-a-table" },
+  eggplant: { en: "eggplant", fr: "aubergine" },
+  elegant: { en: "elegant", fr: "elegant" },
+  "food-safety": { en: "food-safety", fr: "securite-alimentaire" },
+  "food-science": { en: "food-science", fr: "science-alimentaire" },
   fried: { en: "fried", fr: "frit" },
+  fusion: { en: "fusion", fr: "fusion" },
+  guides: { en: "guides", fr: "guides" },
+  healthy: { en: "healthy", fr: "sante" },
+  ingredients: { en: "ingredients", fr: "ingredients" },
+  italian: { en: "italian", fr: "italien" },
+  "kitchen-tips": { en: "kitchen-tips", fr: "astuces-cuisine" },
+  korean: { en: "korean", fr: "coreen" },
+  lemon: { en: "lemon", fr: "citron" },
+  mediterranean: { en: "mediterranean", fr: "mediterraneen" },
+  mushroom: { en: "mushroom", fr: "champignon" },
+  nikkei: { en: "nikkei", fr: "nikkei" },
+  "no-bake": { en: "no-bake", fr: "sans-cuisson" },
+  pasta: { en: "pasta", fr: "pates" },
+  pickled: { en: "pickled", fr: "marine" },
+  "plant-based": { en: "plant-based", fr: "vegetal" },
+  proteins: { en: "proteins", fr: "proteines" },
+  quick: { en: "quick", fr: "rapide" },
+  roasted: { en: "roasted", fr: "roti" },
+  salad: { en: "salad", fr: "salade" },
+  salmon: { en: "salmon", fr: "saumon" },
+  seafood: { en: "seafood", fr: "fruits-de-mer" },
+  seasoning: { en: "seasoning", fr: "assaisonnement" },
+  "side-dish": { en: "side-dish", fr: "accompagnement" },
+  "slow-cooked": { en: "slow-cooked", fr: "mijote" },
+  "sous-vide": { en: "sous-vide", fr: "sous-vide" },
+  spanish: { en: "spanish", fr: "espagnol" },
+  spicy: { en: "spicy", fr: "epice" },
+  steak: { en: "steak", fr: "steak" },
+  "stir-fry": { en: "stir-fry", fr: "saute" },
+  umami: { en: "umami", fr: "umami" },
+  vegan: { en: "vegan", fr: "vegane" },
+  vegetarian: { en: "vegetarian", fr: "vegetarien" },
+  vietnamese: { en: "vietnamese", fr: "vietnamien" },
+  wok: { en: "wok", fr: "wok" },
+  zucchini: { en: "zucchini", fr: "courgette" },
 };
 
 export function getOccasionSlug(occasion: string, locale: Locale): string {
@@ -214,6 +268,38 @@ export function getCategoryLocalizedPath(
 export function getBookmarksLocalizedPath(locale: Locale): string {
   const segment = locale === "fr" ? "signets" : "bookmarks";
   return `/${locale}/${segment}/`;
+}
+
+export const cuisineSlugMap: Record<string, Record<Locale, string>> = {
+  italian: { en: "italian", fr: "italien" },
+  mediterranean: { en: "mediterranean", fr: "mediterraneen" },
+  spanish: { en: "spanish", fr: "espagnol" },
+  vietnamese: { en: "vietnamese", fr: "vietnamien" },
+  british: { en: "british", fr: "britannique" },
+  "southeast-asian": { en: "southeast-asian", fr: "asie-du-sud-est" },
+  nikkei: { en: "nikkei", fr: "nikkei" },
+  "korean-italian": { en: "korean-italian", fr: "coreen-italien" },
+};
+
+export function getCuisineSlug(cuisine: string, locale: Locale): string {
+  const key = cuisine.toLowerCase().replace(/\s+/g, "-");
+  return cuisineSlugMap[key]?.[locale] ?? key;
+}
+
+export function getCuisineFromSlug(slug: string, locale: Locale): string {
+  for (const [canonical, slugs] of Object.entries(cuisineSlugMap)) {
+    if (slugs[locale] === slug) return canonical;
+  }
+  return slug;
+}
+
+export function getCuisineLocalizedPath(
+  locale: Locale,
+  cuisine: string,
+): string {
+  const prefix = locale === "fr" ? "recettes/cuisine" : "recipes/cuisine";
+  const slug = getCuisineSlug(cuisine, locale);
+  return `/${locale}/${prefix}/${slug}`;
 }
 
 export const locales: Locale[] = ["en", "fr"];

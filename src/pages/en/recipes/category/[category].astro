@@ -28,6 +28,18 @@ const sortedRecipes = recipes.sort(
   (a: any, b: any) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
 );
 
+const categoryDescriptions: Record<string, string> = {
+  dinner: "The main event. These are the dishes that anchor date night, the ones that fill your kitchen with aromas worth lingering over. From 25-minute pastas to slow-cooked braises, dinner is where the magic happens.\n\nWhether you're cooking for two or showing off for a crowd, every recipe here is built to impress without burning you out. Bold flavors, approachable techniques, and plates worth photographing.",
+  appetizer: "The first bite sets expectations for the whole evening. These starters are designed to impress before the main course even hits the table.\n\nThink of appetizers as your opening line: confident, a little unexpected, and impossible to forget. Small plates, big impact.",
+  dessert: "Sweet endings that leave a lasting impression. Every dessert here earns its spot on the table.",
+  "side-dish": "The supporting cast that steals the show. Sides worth making room on the plate for.",
+  breakfast: "Morning recipes worth waking up for. Start the day with something genuinely delicious.",
+  lunch: "Midday meals that go beyond the sad desk salad. Fresh, satisfying, and ready when you are.",
+  snack: "Quick bites for when hunger strikes between meals.",
+  drink: "Sips and cocktails to pair with your favorite dishes.",
+  sauce: "Sauces, dressings, and drizzles that elevate everything they touch.",
+};
+
 const allRecipes = await getCollection("recipes");
 const enRecipes = allRecipes.filter((r) => r.data.lang === "en");
 const CATEGORY_ORDER = ["appetizer", "dinner", "dessert"];
@@ -44,7 +56,7 @@ allCategories.sort((a, b) => {
 
 <BaseLayout
   title={`${categoryLabel} Recipes | Date My Dish`}
-  description={`Browse our ${categoryLabel.toLowerCase()} recipes. Find your next favorite ${categoryLabel.toLowerCase()} dish.`}
+  description={categoryDescriptions[category]?.split("\n\n")[0] || `Browse our ${categoryLabel.toLowerCase()} recipes. Find your next favorite ${categoryLabel.toLowerCase()} dish.`}
 >
   <Fragment slot="head">
     <script is:inline>window.pintrk&&pintrk('track','viewcategory');</script>
@@ -65,7 +77,7 @@ allCategories.sort((a, b) => {
     })} />
   </Fragment>
 
-  <div class="mx-auto max-w-content px-4 py-section-sm">
+  <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
     <Breadcrumbs
       locale={locale}
       items={[
@@ -75,11 +87,16 @@ allCategories.sort((a, b) => {
     />
 
     <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-neutral-900 sm:text-4xl dark:text-neutral-100">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
         {categoryLabel}
       </h1>
       <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
-      <p class="text-body-sm text-neutral-500 dark:text-neutral-400">
+      {categoryDescriptions[category] && (
+        categoryDescriptions[category].split("\n\n").map((paragraph) => (
+          <p class="mb-2 text-body-sm text-gray-500 dark:text-neutral-400">{paragraph}</p>
+        ))
+      )}
+      <p class="text-body-sm text-gray-500 dark:text-neutral-400">
         {sortedRecipes.length} {sortedRecipes.length === 1 ? "recipe" : "recipes"}
       </p>
     </div>
@@ -88,7 +105,7 @@ allCategories.sort((a, b) => {
     <div class="mb-10 flex flex-wrap gap-2">
       <a
         href="/en/recipes/"
-        class="rounded-lg border border-neutral-200 px-4 py-2 font-ui text-body-sm font-medium text-neutral-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
+        class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
       >
         {t(locale, "listing.allCategories")}
       </a>
@@ -99,7 +116,7 @@ allCategories.sort((a, b) => {
             "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
             cat === category
               ? "bg-brand-primary-dark text-white dark:text-white dark:hover:text-white shadow-md"
-              : "border border-neutral-200 bg-white text-neutral-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300",
+              : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400",
           ]}
           aria-current={cat === category ? "page" : undefined}
         >
@@ -129,7 +146,7 @@ allCategories.sort((a, b) => {
         })}
       </div>
     ) : (
-      <p class="text-neutral-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
+      <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
     )}
   </div>
 </BaseLayout>

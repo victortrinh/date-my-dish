@@ -108,11 +108,28 @@ jobs:
              - Internal cross-links present with trailing slashes
              - EN/FR pairs properly linked via `translationSlug`
 
-          4. **Check images**: Verify hero images < 200KB, step images < 150KB
+          4. **Check GEO/AI optimization signals** in `src/content/recipes/`:
+             - `summary` field present in recipe frontmatter (40-60 words)
+             - At least 1 sourced citation in prose (look for patterns like "According to", "Research shows", chef names)
+             - FAQ answers are self-contained and 40-60 words each (flag if < 30 or > 80 words)
+             - Concrete statistics present in prose (temperatures, timings, measurements)
+             - Report a GEO readiness score per recipe (0-4 based on how many of the above are present)
 
-          5. **Fix issues**: Edit files to fix problems found. Be specific and targeted.
+          5. **Check images**: Verify hero images < 200KB, step images < 150KB
 
-          6. **After making changes**, first run `node scripts/fetch-ratings.mjs` to generate `data/ratings.json`, then run `npm run check` to verify no TypeScript/schema errors.
+          6. **Fix issues**: Edit files to fix problems found. Be specific and targeted.
+
+          7. **Writing rules** (apply to ALL text you write or rewrite, including descriptions, alt text, FAQ answers):
+             - Read `.claude/commands/humanizer.md` for anti-AI-pattern rules before writing
+             - Write like a real person. Vary sentence length and structure.
+             - NEVER use these AI-tell words: elevate, unlock, discover, master, journey, vibrant, nestled, tapestry, testament, showcase, underscore, highlight (as verb), landscape (abstract), pivotal, crucial, fostering, encompassing, delve, interplay, intricate
+             - NEVER use em-dashes. Use commas, periods, or semicolons instead.
+             - NEVER use the rule of three pattern, "Not only X, but Y", or -ing participial phrases for fake depth
+             - NEVER use "serves as", "stands as", or "marks a" when "is" works fine
+             - Be specific and concrete. No promotional puffery.
+             - After writing any text, self-audit: "What makes this sound AI-generated?" Then fix it.
+
+          8. **After making changes**, first run `node scripts/fetch-ratings.mjs` to generate `data/ratings.json`, then run `npm run check` to verify no TypeScript/schema errors.
 
           ## Restrictions
           - ONLY modify files in `src/content/recipes/` and `src/content/articles/` (MDX frontmatter and prose)
