@@ -1,0 +1,66 @@
+name: Pinterest - Update Existing Pins
+
+on:
+  workflow_dispatch:
+    inputs:
+      recipe_slug:
+        description: "Recipe slug (leave empty to update all)"
+        required: false
+        default: ""
+      update_link:
+        description: "Update destination URLs"
+        required: false
+        type: boolean
+        default: true
+      update_description:
+        description: "Update titles and descriptions"
+        required: false
+        type: boolean
+        default: true
+      dry_run:
+        description: "Dry run (preview changes without API calls)"
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  update-pins:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Update Pinterest pins
+        env:
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.recipe_slug }}" ]; then
+            ARGS="$ARGS --slug=${{ inputs.recipe_slug }}"
+          fi
+          if [ "${{ inputs.update_link }}" = "true" ] && [ "${{ inputs.update_description }}" = "false" ]; then
+            ARGS="$ARGS --update-link"
+          fi
+          if [ "${{ inputs.update_description }}" = "true" ] && [ "${{ inputs.update_link }}" = "false" ]; then
+            ARGS="$ARGS --update-description"
+          fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          node scripts/pinterest-update-pins.mjs $ARGS
+
+      - name: Commit updated log
+        if: inputs.dry_run == false
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/social-posts-log.json
+          git diff --staged --quiet || git commit -m "chore: update Pinterest pin metadata"
+          git push
