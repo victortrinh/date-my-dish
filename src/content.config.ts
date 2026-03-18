@@ -83,6 +83,7 @@ const recipes = defineCollection({
       impressFactor: z.number().min(1).max(5).optional(),
       dateNightTips: DateNightTipsSchema.optional(),
       video: VideoSchema.optional(),
+      summary: z.string().optional(),
       faqs: z.array(FAQSchema).min(1),
     });
   },

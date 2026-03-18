@@ -43,11 +43,14 @@ allOccasions.sort((a, b) => {
   return a.localeCompare(b);
 });
 
+const MIN_RECIPES_FOR_INDEX = 3;
+const shouldNoindex = sortedRecipes.length < MIN_RECIPES_FOR_INDEX;
+
 const occasionDescriptions: Record<string, string> = {
-  "date-night": "Des recettes romantiques pour impressionner votre moitié. Cuisinez ensemble, dressez avec soin, et faites du souper l'événement de la soirée.",
-  weeknight: "Des recettes rapides et savoureuses pour les soirs de semaine. Minimum d'effort, maximum de saveur.",
-  entertaining: "Des plats spectaculaires parfaits pour recevoir. Rendez chaque soirée mémorable.",
-  comfort: "Des recettes chaleureuses et réconfortantes. Parfait quand on a besoin d'un câlin culinaire.",
+  "date-night": "Cuisiner pour quelqu'un qu'on aime, c'est l'un des gestes les plus romantiques qui soit. Ces recettes de soirée en amoureux sont faites pour ça : des plats avec un dressage qui impressionne, des saveurs audacieuses, et un timing qui fonctionne même quand tu essaies aussi d'allumer des chandelles et de choisir la musique. Chaque recette ici a été testée pour que tu puisses tout réussir sans stress.\n\nLe plus beau? Tu choisis ton aventure. Cuisinez ensemble et faites de la cuisine une partie du rendez-vous, ou prépare une surprise avec quelque chose de magnifique déjà sur la table. Dans les deux cas, ces recettes font du souper l'événement de la soirée.",
+  weeknight: "Tu rentres tard, t'as faim, et le divan t'appelle. On comprend. Ces recettes de soir de semaine prouvent que 30 minutes, c'est amplement suffisant pour faire quelque chose qui vaut la peine de s'asseoir à table. Pas de souper triste ici, juste de la vraie bouffe qui se prépare vite.\n\nLe secret, c'est la technique intelligente, pas des raccourcis qui tuent la saveur. Tu vas trouver des plats qui misent sur le feu vif, les sauces punchy et les ingrédients qui font le gros du travail. Parce que \"rapide\" devrait jamais vouloir dire \"plate.\"",
+  entertaining: "Recevoir, ça devrait être un party pour toi aussi, pas un shift solo dans la cuisine pendant que tout le monde s'amuse. Ces recettes pour recevoir sont conçues exactement pour ça : des plats que tu peux préparer en partie d'avance, assembler avec confiance, et servir sans stress.\n\nL'astuce, c'est de choisir des recettes qui ont l'air spectaculaires mais qui ne demandent pas ton attention constante. Pense aux plateaux qui se montent tout seuls, aux sauces faites la veille, et aux desserts qui refroidissent déjà au frigo. Tes invités vont penser que c'est facile pour toi. Laisse-les croire.",
+  comfort: "Certaines soirées appellent le côté douillet de la cuisine. Des braisés lents, des sauces riches, du pain croûté pour tremper, et le genre de bouffe qui donne envie de rester à la maison pour toujours. Ces recettes réconfortantes sont faites pour les soirées de pluie, les moods \"on reste donc ben chez nous\", et tous ceux qui pensent que le kit mou est une tenue de souper valide.\n\nC'est de la bouffe qui t'enveloppe comme une couverture. Pas de rush, pas de chichi, juste des saveurs profondes qui remplissent la cuisine du genre d'odeur qui fait que tout va bien.",
   celebration: "Des recettes pour les grandes occasions. Des anniversaires aux moments marquants.",
   "quick-meal": "Des repas délicieux prêts en un rien de temps. Rapides, frais et pleins de saveur.",
 };
@@ -56,6 +59,7 @@ const occasionDescriptions: Record<string, string> = {
 <BaseLayout
   title={`Recettes ${occasionLabel} | Date My Dish`}
   description={occasionDescriptions[canonicalOccasion] || `Parcourez nos recettes pour ${occasionLabel.toLowerCase()}. Trouvez votre prochain plat coup de cœur.`}
+  noindex={shouldNoindex}
 >
   <Fragment slot="head">
     <script is:inline>window.pintrk&&pintrk('track','viewcategory');</script>
@@ -76,7 +80,7 @@ const occasionDescriptions: Record<string, string> = {
     })} />
   </Fragment>
 
-  <div class="mx-auto max-w-content px-4 py-section-sm">
+  <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
     <Breadcrumbs
       locale={locale}
       items={[
@@ -86,14 +90,16 @@ const occasionDescriptions: Record<string, string> = {
     />
 
     <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-neutral-900 sm:text-4xl dark:text-neutral-100">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
         {occasionLabel}
       </h1>
       <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
-      <p class="mb-2 text-body-sm text-neutral-500 dark:text-neutral-400">
-        {occasionDescriptions[canonicalOccasion]}
-      </p>
-      <p class="text-body-sm text-neutral-500 dark:text-neutral-400">
+      {occasionDescriptions[canonicalOccasion]?.split("\n\n").map((paragraph) => (
+        <p class="mb-2 text-body-sm text-gray-500 dark:text-neutral-400">
+          {paragraph}
+        </p>
+      ))}
+      <p class="text-body-sm text-gray-500 dark:text-neutral-400">
         {sortedRecipes.length} {sortedRecipes.length === 1 ? "recette" : "recettes"}
       </p>
     </div>
@@ -102,7 +108,7 @@ const occasionDescriptions: Record<string, string> = {
     <div class="mb-10 flex flex-wrap gap-2">
       <a
         href="/fr/recettes/"
-        class="rounded-lg border border-neutral-200 px-4 py-2 font-ui text-body-sm font-medium text-neutral-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
+        class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
       >
         {t(locale, "listing.allCategories")}
       </a>
@@ -113,7 +119,7 @@ const occasionDescriptions: Record<string, string> = {
             "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
             occ === canonicalOccasion
               ? "bg-brand-primary-dark text-white dark:text-white dark:hover:text-white shadow-md"
-              : "border border-neutral-200 bg-white text-neutral-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300",
+              : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400",
           ]}
           aria-current={occ === canonicalOccasion ? "page" : undefined}
         >
@@ -143,7 +149,7 @@ const occasionDescriptions: Record<string, string> = {
         })}
       </div>
     ) : (
-      <p class="text-neutral-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
+      <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
     )}
   </div>
 </BaseLayout>
