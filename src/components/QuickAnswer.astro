@@ -1,0 +1,16 @@
+---
+interface Props {
+  summary: string;
+  title: string;
+}
+
+const { summary, title } = Astro.props;
+---
+
+{summary && (
+  <div class="mb-8 rounded-lg border border-brand-accent/20 bg-brand-accent/5 p-5 dark:border-brand-accent/10 dark:bg-brand-accent/5">
+    <p class="text-body-sm font-medium leading-relaxed text-gray-700 dark:text-neutral-300">
+      {summary}
+    </p>
+  </div>
+)}

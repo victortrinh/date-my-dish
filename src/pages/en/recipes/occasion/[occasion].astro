@@ -42,11 +42,14 @@ allOccasions.sort((a, b) => {
   return a.localeCompare(b);
 });
 
+const MIN_RECIPES_FOR_INDEX = 3;
+const shouldNoindex = sortedRecipes.length < MIN_RECIPES_FOR_INDEX;
+
 const occasionDescriptions: Record<string, string> = {
-  "date-night": "Romantic recipes to impress your special someone. Cook together, plate beautifully, and make dinner the main event.",
-  weeknight: "Quick and satisfying recipes for busy evenings. Minimal effort, maximum flavor.",
-  entertaining: "Show-stopping dishes perfect for hosting friends and family. Make every gathering memorable.",
-  comfort: "Warm, cozy recipes that feel like a hug on a plate. Perfect for when you need a pick-me-up.",
+  "date-night": "Cooking for someone you love is one of the most romantic things you can do. These date night recipes are built for exactly that: dishes with impressive plating, bold flavors, and timing that actually works when you're also trying to light candles and pick a playlist. Every recipe here has been tested so you can pull it off without breaking a sweat.\n\nThe best part? You get to choose your own adventure. Cook it together and make the kitchen part of the date, or surprise them with something beautiful already on the table. Either way, these recipes make dinner the main event.",
+  weeknight: "You got home late, you're hungry, and the couch is calling. We get it. These weeknight recipes prove that 30 minutes is more than enough to make something worth sitting down for. No sad desk-lunch energy here, just real food that comes together fast.\n\nThe secret is smart technique, not shortcuts that kill flavor. You'll find dishes that lean on high heat, punchy sauces, and ingredients that do the heavy lifting. Because \"quick\" should never mean \"boring.\"",
+  entertaining: "Hosting should feel like a party for you too, not a solo shift in the kitchen while everyone else has fun. These entertaining recipes are designed for exactly that: dishes you can partially prep ahead, assemble with confidence, and serve without stress.\n\nThe trick is choosing recipes that look stunning but don't demand your constant attention. Think platters that build themselves, sauces you made yesterday, and desserts already chilling in the fridge. Your guests will think you're effortless. Let them.",
+  comfort: "Some nights call for the cozy side of cooking. Slow braises, rich sauces, crusty bread for dipping, and the kind of food that makes you want to stay in forever. These comfort recipes are built for rainy evenings, \"let's just stay home\" moods, and anyone who thinks sweatpants are valid dinner attire.\n\nThis is food that wraps around you like a blanket. No rush, no fuss, just deep flavors that fill the kitchen with the kind of smell that makes everything feel right.",
   celebration: "Special occasion recipes worth celebrating. From anniversaries to milestones.",
   "quick-meal": "Delicious meals ready in no time. Fast, fresh, and full of flavor.",
 };
@@ -55,6 +58,7 @@ const occasionDescriptions: Record<string, string> = {
 <BaseLayout
   title={`${occasionLabel} Recipes | Date My Dish`}
   description={occasionDescriptions[occasion] || `Browse our ${occasionLabel.toLowerCase()} recipes. Find your next favorite dish.`}
+  noindex={shouldNoindex}
 >
   <Fragment slot="head">
     <script is:inline>window.pintrk&&pintrk('track','viewcategory');</script>
@@ -75,7 +79,7 @@ const occasionDescriptions: Record<string, string> = {
     })} />
   </Fragment>
 
-  <div class="mx-auto max-w-content px-4 py-section-sm">
+  <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
     <Breadcrumbs
       locale={locale}
       items={[
@@ -85,14 +89,16 @@ const occasionDescriptions: Record<string, string> = {
     />
 
     <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-neutral-900 sm:text-4xl dark:text-neutral-100">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
         {occasionLabel}
       </h1>
       <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
-      <p class="mb-2 text-body-sm text-neutral-500 dark:text-neutral-400">
-        {occasionDescriptions[occasion]}
-      </p>
-      <p class="text-body-sm text-neutral-500 dark:text-neutral-400">
+      {occasionDescriptions[occasion]?.split("\n\n").map((paragraph) => (
+        <p class="mb-2 text-body-sm text-gray-500 dark:text-neutral-400">
+          {paragraph}
+        </p>
+      ))}
+      <p class="text-body-sm text-gray-500 dark:text-neutral-400">
         {sortedRecipes.length} {sortedRecipes.length === 1 ? "recipe" : "recipes"}
       </p>
     </div>
@@ -101,7 +107,7 @@ const occasionDescriptions: Record<string, string> = {
     <div class="mb-10 flex flex-wrap gap-2">
       <a
         href="/en/recipes/"
-        class="rounded-lg border border-neutral-200 px-4 py-2 font-ui text-body-sm font-medium text-neutral-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
+        class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
       >
         {t(locale, "listing.allCategories")}
       </a>
@@ -112,7 +118,7 @@ const occasionDescriptions: Record<string, string> = {
             "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
             occ === occasion
               ? "bg-brand-primary-dark text-white dark:text-white dark:hover:text-white shadow-md"
-              : "border border-neutral-200 bg-white text-neutral-700 shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300",
+              : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400",
           ]}
           aria-current={occ === occasion ? "page" : undefined}
         >
@@ -142,7 +148,7 @@ const occasionDescriptions: Record<string, string> = {
         })}
       </div>
     ) : (
-      <p class="text-neutral-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
+      <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
     )}
   </div>
 </BaseLayout>

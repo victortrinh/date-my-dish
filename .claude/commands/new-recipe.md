@@ -25,8 +25,10 @@ Scaffold a new bilingual recipe (EN + FR MDX file pair) with all required frontm
    - `translationSlug` pointing to the French slug
    - Placeholder ingredient groups and instruction groups
    - Step image placeholders on key instruction steps (see Image Guidelines below)
-   - 3 starter FAQ entries
+   - 3 starter FAQ entries (GEO: each answer must be self-contained, 40-60 words, quotable by AI engines)
    - MDX body with heading structure for SEO prose (h2s for sections)
+   - Start prose with a "What is [dish]?" paragraph (40-60 words, directly quotable by AI engines)
+   - Include 1-2 sourced citations in prose (chef attributions, food science references)
    - Inline image imports and `<Picture>` usage for process shots in body (see Image Guidelines)
 
 5. Create `src/content/recipes/fr/{slug-fr}.mdx` with:
@@ -48,7 +50,8 @@ Scaffold a new bilingual recipe (EN + FR MDX file pair) with all required frontm
 title: ""
 lang: en
 translationSlug: ""
-description: ""
+description: ""  # Max 160 chars, personality-infused CTA
+summary: ""  # GEO: 40-60 word factual summary for AI citation (what the dish is, key technique)
 author: "Victor"
 publishDate: YYYY-MM-DD
 heroImage: "../../../assets/images/recipes/{slug}.jpg"
