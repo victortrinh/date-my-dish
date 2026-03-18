@@ -22,8 +22,9 @@ Scaffold a new bilingual article (EN + FR MDX file pair) with all required front
    - Complete frontmatter with all required fields from the article schema
    - `translationSlug` pointing to the French slug
    - `relatedRecipes` array (verify each slug exists in `src/content/recipes/en/`)
-   - 3 starter FAQ entries
+   - 3 starter FAQ entries (GEO: each answer must be self-contained, 40-60 words, quotable by AI engines)
    - MDX body with heading structure for SEO prose (h2s for sections)
+   - Include 1-2 sourced citations in prose (expert attributions, food science references)
 
 5. Create `src/content/articles/fr/{slug-fr}.mdx` with:
    - Complete frontmatter translated to French
