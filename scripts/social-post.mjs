@@ -182,15 +182,15 @@ Return a JSON object with exactly these keys:
 
 2. "pinterest_title": English only, catchy, max 100 characters (Pin variant 1 — straightforward recipe title)
 
-3. "pinterest_description": English only, SEO-optimized, max 500 characters. Include key ingredients, cooking method, and relevant keywords naturally. End with the recipe URL.
+3. "pinterest_description": English only, SEO-optimized, max 500 characters. Include key ingredients, cooking method, and relevant keywords naturally. Do NOT include the recipe URL in the description, it's handled separately via the pin link.
 
 4. "pinterest_title_v2": Alternate angle pin title — focus on the occasion or date night vibe (e.g., "The Pasta That Says 'I Made This For You'"). Cheeky, confident tone. Max 100 characters.
 
-5. "pinterest_description_v2": Alternate angle pin description — emphasize the occasion, date night tips, or emotional appeal. SEO-optimized, max 500 characters. End with the recipe URL.
+5. "pinterest_description_v2": Alternate angle pin description — emphasize the occasion, date night tips, or emotional appeal. SEO-optimized, max 500 characters. Do NOT include the recipe URL in the description, it's handled separately via the pin link.
 
 6. "pinterest_title_v3": Seasonal/lifestyle angle — focus on cuisine, difficulty, or time (e.g., "20-Minute Italian That Impresses Every Time"). Cheeky, confident tone. Max 100 characters.
 
-7. "pinterest_description_v3": Seasonal/lifestyle angle description — emphasize ease, cuisine style, or lifestyle fit. SEO-optimized, max 500 characters. End with the recipe URL.
+7. "pinterest_description_v3": Seasonal/lifestyle angle description — emphasize ease, cuisine style, or lifestyle fit. SEO-optimized, max 500 characters. Do NOT include the recipe URL in the description, it's handled separately via the pin link.
 
 Return ONLY the JSON object, no markdown fences.`,
       },

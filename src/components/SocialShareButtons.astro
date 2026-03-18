@@ -65,6 +65,7 @@ const { locale, url, title, imageUrl, description } = Astro.props;
         var media = encodeURIComponent(this.dataset.media || '');
         var desc = encodeURIComponent(this.dataset.description || '');
         shareUrl = 'https://pinterest.com/pin/create/button/?url=' + url + '&media=' + media + '&description=' + desc;
+        if (window.pintrk) { pintrk('track', 'lead', { lead_type: 'pin_share' }); }
       } else if (platform === 'facebook') {
         shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
       } else if (platform === 'twitter') {
