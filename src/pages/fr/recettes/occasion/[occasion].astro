@@ -43,6 +43,9 @@ allOccasions.sort((a, b) => {
   return a.localeCompare(b);
 });
 
+const MIN_RECIPES_FOR_INDEX = 3;
+const shouldNoindex = sortedRecipes.length < MIN_RECIPES_FOR_INDEX;
+
 const occasionDescriptions: Record<string, string> = {
   "date-night": "Des recettes romantiques pour impressionner votre moitié. Cuisinez ensemble, dressez avec soin, et faites du souper l'événement de la soirée.",
   weeknight: "Des recettes rapides et savoureuses pour les soirs de semaine. Minimum d'effort, maximum de saveur.",
@@ -56,6 +59,7 @@ const occasionDescriptions: Record<string, string> = {
 <BaseLayout
   title={`Recettes ${occasionLabel} | Date My Dish`}
   description={occasionDescriptions[canonicalOccasion] || `Parcourez nos recettes pour ${occasionLabel.toLowerCase()}. Trouvez votre prochain plat coup de cœur.`}
+  noindex={shouldNoindex}
 >
   <Fragment slot="head">
     <script is:inline>window.pintrk&&pintrk('track','viewcategory');</script>

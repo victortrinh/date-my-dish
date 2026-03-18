@@ -42,6 +42,9 @@ allOccasions.sort((a, b) => {
   return a.localeCompare(b);
 });
 
+const MIN_RECIPES_FOR_INDEX = 3;
+const shouldNoindex = sortedRecipes.length < MIN_RECIPES_FOR_INDEX;
+
 const occasionDescriptions: Record<string, string> = {
   "date-night": "Romantic recipes to impress your special someone. Cook together, plate beautifully, and make dinner the main event.",
   weeknight: "Quick and satisfying recipes for busy evenings. Minimal effort, maximum flavor.",
@@ -55,6 +58,7 @@ const occasionDescriptions: Record<string, string> = {
 <BaseLayout
   title={`${occasionLabel} Recipes | Date My Dish`}
   description={occasionDescriptions[occasion] || `Browse our ${occasionLabel.toLowerCase()} recipes. Find your next favorite dish.`}
+  noindex={shouldNoindex}
 >
   <Fragment slot="head">
     <script is:inline>window.pintrk&&pintrk('track','viewcategory');</script>
