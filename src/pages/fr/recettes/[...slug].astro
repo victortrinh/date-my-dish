@@ -20,6 +20,7 @@ import DateNightTips from "@components/DateNightTips.astro";
 import FAQSection from "@components/FAQSection.astro";
 import RelatedRecipes from "@components/RelatedRecipes.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
+import QuickAnswer from "@components/QuickAnswer.astro";
 import { t, getRecipeLocalizedPath, getOccasionLocalizedPath, getTagLocalizedPath, tagSlugMap } from "@i18n/utils";
 import { formatDuration } from "@utils/format";
 import type { ImageMetadata } from "astro";
@@ -122,6 +123,8 @@ const difficultyColors = {
           {data.title}
         </h1>
         <p class="mb-6 text-body-lg text-gray-600 dark:text-neutral-400">{data.description}</p>
+
+        {data.summary && <QuickAnswer summary={data.summary} title={data.title} />}
 
         <!-- Meta Bar -->
         <div class="mb-6 flex flex-wrap items-center gap-4 rounded-xl bg-gray-200 p-4 dark:bg-neutral-800">
