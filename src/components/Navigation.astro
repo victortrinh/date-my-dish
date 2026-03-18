@@ -2,6 +2,10 @@
 import { t, getLocalizedPath, getBookmarksLocalizedPath, type Locale } from "@i18n/utils";
 import LanguageToggle from "./LanguageToggle.astro";
 import DarkModeToggle from "./DarkModeToggle.astro";
+import { getImage } from "astro:assets";
+import inlineLogoSrc from "@assets/images/logo-datemydish-inline.png";
+
+const inlineLogo = await getImage({ src: inlineLogoSrc, format: "webp" });
 
 interface Props {
   locale: Locale;
@@ -33,7 +37,7 @@ function isActive(linkPath: string): boolean {
     <!-- Logo -->
     <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2.5 no-underline hover:opacity-80">
       <img src="/favicon.svg" class="h-8 w-8" alt="" width="32" height="32" data-pin-nopin="true" />
-      <span class="font-handwritten text-2xl text-brand-primary-text sm:text-3xl">Date My Dish</span>
+      <img src={inlineLogo.src} class="hidden h-8 lg:block lg:h-10" alt="Date My Dish" width={inlineLogo.width} height={inlineLogo.height} data-pin-nopin="true" />
     </a>
 
     <!-- Desktop Nav -->

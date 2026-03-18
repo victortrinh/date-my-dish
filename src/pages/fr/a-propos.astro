@@ -1,16 +1,53 @@
 ---
+import { Picture } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import AuthorBioCard from "@components/AuthorBioCard.astro";
 import { t } from "@i18n/utils";
+import heroImage from "@assets/images/victor-about.webp";
 
 const locale = "fr";
+const siteUrl = "https://datemydish.com";
+const heroImageUrl = `${siteUrl}/images/victor-about.webp`;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Victor Vu",
+  url: `${siteUrl}/fr/a-propos/`,
+  image: heroImageUrl,
+  jobTitle: "Cuisinier amateur et créateur de recettes",
+  description: "Cuisinier amateur montréalais derrière Date My Dish, partageant des recettes romantiques et de l'inspiration pour des soirées en amoureux.",
+  sameAs: [
+    "https://www.instagram.com/datemydishdotcom",
+    "https://www.pinterest.com/datemydish",
+  ],
+  knowsAbout: ["Cuisine", "Recettes romantiques", "Soirées en amoureux", "Cuisine montréalaise", "Cuisine canadienne-française"],
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: t(locale, "about.pageTitle"),
+  url: `${siteUrl}/fr/a-propos/`,
+  description: "Découvrez Victor, le cuisinier montréalais derrière Date My Dish. Recettes romantiques, conseils pour soirées en amoureux et inspiration culinaire.",
+  mainEntity: {
+    "@type": "Person",
+    name: "Victor Vu",
+  },
+};
 ---
 
 <BaseLayout
   title={`${t(locale, "about.pageTitle")} | Date My Dish`}
   description="Découvrez Victor, le cuisinier montréalais derrière Date My Dish. Recettes romantiques, conseils pour soirées en amoureux et inspiration culinaire."
+  ogImage={heroImageUrl}
+  translationSlug="about"
+  contentType="article"
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
+
   <div class="mx-auto max-w-narrow px-4 py-section-sm">
     <Breadcrumbs
       locale={locale}
@@ -24,14 +61,28 @@ const locale = "fr";
       <div class="h-1 w-12 rounded-full bg-brand-accent"></div>
     </div>
 
-    <div class="prose max-w-none">
-      <p>
+    <div class="mb-10 flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-10">
+      <div class="w-full shrink-0 overflow-hidden rounded-2xl md:w-64">
+        <Picture
+          src={heroImage}
+          alt="Victor Vu, cuisinier amateur et créateur de Date My Dish, debout dans sa cuisine montréalaise portant un tablier les bras croisés"
+          widths={[400, 600, 900]}
+          sizes="(max-width: 768px) 100vw, 256px"
+          formats={["avif", "webp"]}
+          class="aspect-[4/3] w-full object-cover object-[center_30%] md:aspect-auto md:max-h-none"
+          loading="eager"
+        />
+      </div>
+      <p class="text-lg text-neutral-700 dark:text-neutral-300">
         Bonjour, je suis Victor! Je suis un cuisinier amateur basé à Montréal qui croit que cuisiner
         pour quelqu'un est l'une des plus belles façons de montrer qu'on tient à cette personne.
         Date My Dish est l'endroit où je partage des recettes romantiques et de l'inspiration pour vos
         soirées en amoureux : des plats conçus pour impressionner, que ce soit pour un premier rendez-vous,
         un anniversaire ou une soirée cozy à la maison.
       </p>
+    </div>
+
+    <div class="prose max-w-none">
 
       <h2>Une histoire culinaire montréalaise</h2>
 
