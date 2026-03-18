@@ -86,6 +86,18 @@ jobs:
           Keywords GSC shows we rank for but are NOT in the recipe's frontmatter `keywords[]`.
           - Add them to the `keywords[]` array (max 10 keywords per recipe)
 
+          ## Writing Rules (apply to ALL text you write or rewrite)
+          - Read `.claude/commands/humanizer.md` for anti-AI-pattern rules before writing
+          - Write like a real person. Vary sentence length and structure.
+          - NEVER use these AI-tell words: elevate, unlock, discover, master, journey, vibrant, nestled, tapestry, testament, showcase, underscore, highlight (as verb), landscape (abstract), pivotal, crucial, fostering, encompassing, delve, interplay, intricate
+          - NEVER use em-dashes. Use commas, periods, or semicolons instead.
+          - NEVER use the rule of three pattern (listing exactly 3 adjectives or phrases in parallel)
+          - NEVER use "Not only X, but Y" or "It's not just X, it's Y" constructions
+          - NEVER use -ing participial phrases tacked onto sentences for fake depth (e.g., "showcasing how...", "ensuring that...", "reflecting the...")
+          - NEVER use "serves as", "stands as", or "marks a" when "is" works fine
+          - Be specific and concrete. No promotional puffery.
+          - After writing any text, self-audit: "What makes this sound AI-generated?" Then fix it.
+
           ## Restrictions
           - ONLY modify files in `src/content/recipes/` and `src/content/articles/` (MDX frontmatter and prose)
           - Do NOT modify components, layouts, pages, i18n files, or config files
