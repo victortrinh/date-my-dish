@@ -78,6 +78,7 @@ export function getAlternateUrl(
     },
     articles: { en: "articles", fr: "articles" },
     occasion: { en: "occasion", fr: "occasion" },
+    cuisine: { en: "cuisine", fr: "cuisine" },
     tag: { en: "tag", fr: "etiquette" },
     etiquette: { en: "tag", fr: "etiquette" },
   };
@@ -96,6 +97,11 @@ export function getAlternateUrl(
     if (prev === "occasion") {
       const canonical = getOccasionFromSlug(part, currentLocale);
       return getOccasionSlug(canonical, targetLocale);
+    }
+    // Translate cuisine slugs
+    if (prev === "cuisine") {
+      const canonical = getCuisineFromSlug(part, currentLocale);
+      return getCuisineSlug(canonical, targetLocale);
     }
     // Translate tag slugs
     if (prev === "tag" || prev === "etiquette") {
@@ -214,6 +220,38 @@ export function getCategoryLocalizedPath(
 export function getBookmarksLocalizedPath(locale: Locale): string {
   const segment = locale === "fr" ? "signets" : "bookmarks";
   return `/${locale}/${segment}/`;
+}
+
+export const cuisineSlugMap: Record<string, Record<Locale, string>> = {
+  italian: { en: "italian", fr: "italien" },
+  mediterranean: { en: "mediterranean", fr: "mediterraneen" },
+  spanish: { en: "spanish", fr: "espagnol" },
+  vietnamese: { en: "vietnamese", fr: "vietnamien" },
+  british: { en: "british", fr: "britannique" },
+  "southeast-asian": { en: "southeast-asian", fr: "asie-du-sud-est" },
+  nikkei: { en: "nikkei", fr: "nikkei" },
+  "korean-italian": { en: "korean-italian", fr: "coreen-italien" },
+};
+
+export function getCuisineSlug(cuisine: string, locale: Locale): string {
+  const key = cuisine.toLowerCase().replace(/\s+/g, "-");
+  return cuisineSlugMap[key]?.[locale] ?? key;
+}
+
+export function getCuisineFromSlug(slug: string, locale: Locale): string {
+  for (const [canonical, slugs] of Object.entries(cuisineSlugMap)) {
+    if (slugs[locale] === slug) return canonical;
+  }
+  return slug;
+}
+
+export function getCuisineLocalizedPath(
+  locale: Locale,
+  cuisine: string,
+): string {
+  const prefix = locale === "fr" ? "recettes/cuisine" : "recipes/cuisine";
+  const slug = getCuisineSlug(cuisine, locale);
+  return `/${locale}/${prefix}/${slug}`;
 }
 
 export const locales: Locale[] = ["en", "fr"];

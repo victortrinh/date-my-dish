@@ -149,6 +149,19 @@
     "drink": "Drink",
     "sauce": "Sauce"
   },
+  "cuisines": {
+    "italian": "Italian",
+    "mediterranean": "Mediterranean",
+    "spanish": "Spanish",
+    "vietnamese": "Vietnamese",
+    "british": "British",
+    "southeast-asian": "Southeast Asian",
+    "nikkei": "Nikkei",
+    "korean-italian": "Korean-Italian",
+    "browseByCuisine": "Browse by Cuisine",
+    "allCuisines": "All Cuisines",
+    "moreCuisineRecipes": "More {cuisine} Recipes"
+  },
   "theme": {
     "toggle": "Toggle dark mode",
     "switchToDark": "Switch to dark mode",
