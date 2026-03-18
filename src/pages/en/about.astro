@@ -11,14 +11,14 @@ const locale = "en";
   title={`${t(locale, "about.pageTitle")} | Date My Dish`}
   description="Meet Victor, the Montreal home cook behind Date My Dish. Romantic recipes, date night tips, and cooking inspiration for unforgettable evenings together."
 >
-  <div class="mx-auto max-w-narrow px-4 py-12 sm:py-16">
+  <div class="mx-auto max-w-narrow px-4 py-section-sm">
     <Breadcrumbs
       locale={locale}
       items={[{ label: t(locale, "about.pageTitle") }]}
     />
 
     <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-neutral-900 sm:text-4xl dark:text-neutral-100">
         {t(locale, "about.title")}
       </h1>
       <div class="h-1 w-12 rounded-full bg-brand-accent"></div>

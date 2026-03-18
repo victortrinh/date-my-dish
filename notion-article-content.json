@@ -1,8 +1,8 @@
 {
-  "pageId": "ed0c5288-8c7b-40c6-90cd-10719d75a0cc",
-  "title": "Unlock Restaurant-Quality Meals with Sous Vide Cooking for Date Night",
-  "recipeNum": 29,
-  "lastEditedTime": "2026-01-29T01:20:08.032Z",
+  "pageId": "b76bfa29-b55f-4e77-b991-9d2420bb025a",
+  "title": "The Essential Guide to Cooking Oils for Date Night Dinners",
+  "recipeNum": 32,
+  "lastEditedTime": "2026-01-29T01:44:05.201Z",
   "heroImage": {
     "localPath": "/tmp/notion-images/hero.png",
     "caption": null
@@ -10,7 +10,7 @@
   "blocks": [
     {
       "type": "paragraph",
-      "text": "Sous vide cooking delivers consistently perfect results without constant monitoring. For date night, this means you can focus on your guest instead of worrying about overcooking expensive steaks or fish. The technique shows sophistication and attention to detail."
+      "text": "Choosing the right cooking oil affects flavor, health, and cooking success. For date night, using appropriate oils shows you understand technique and care about quality. Knowing which oil to use when demonstrates cooking knowledge beyond following recipes."
     },
     {
       "type": "callout",
@@ -25,10 +25,10 @@
       "type": "list",
       "style": "unordered",
       "items": [
-        "What sous vide is and how it works",
-        "Why it's perfect for date night cooking",
-        "Essential equipment and temperatures",
-        "Best proteins for impressive results"
+        "Different types of cooking oils and their uses",
+        "Smoke points and why they matter",
+        "Which oils for which cooking methods",
+        "How to choose quality oils for date night"
       ]
     },
     {
@@ -37,15 +37,15 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "What Is Sous Vide"
+      "text": "Why Oil Choice Matters"
     },
     {
       "type": "paragraph",
-      "text": "Sous vide (French for \"under vacuum\") cooks food in a precisely controlled water bath. You seal ingredients in a bag, submerge them in water held at the exact target temperature, and wait. The food reaches that temperature throughout and stays there without overcooking."
+      "text": "Different oils have different smoke points (temperatures at which they start to break down and smoke), flavors, and health profiles. Using the wrong oil can ruin a dish or fill your kitchen with smoke. Using the right oil elevates flavors and shows attention to detail."
     },
     {
       "type": "image",
-      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/24c70f6e-ecc0-4eb0-8326-7e4da8995149/vudememe_A_watercolor_illustration_of_a_vacuum-sealed_bag_with__849876ff-8895-49e1-be22-8e06d1e12dcb.png?table=block&id=2f7c3484-e8de-809c-bd04-dc3e7cdf95d4&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1773100800000&signature=xBkqZyq-TjHrPU_eTMcaymYZ_NmKZQUEaaVhPsgRtjc",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/58fc0ab9-cb92-4f67-b2d7-5cc09920d857/vudememe_A_minimalist_watercolor-style_illustration_of_several__720fee0b-e683-45c8-8931-ddeba59e3d83.png?table=block&id=2f7c3484-e8de-8023-b7cf-df0e474b18bc&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1773662400000&signature=pJIg_YCFS4vozPzO785r70I8zVjfz6pSv8s9k6j9sgo",
       "caption": null,
       "localPath": "/tmp/notion-images/hero.png"
     },
@@ -55,15 +55,33 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Why This Matters for Dating"
+      "text": "Understanding Smoke Points"
     },
     {
       "type": "paragraph",
-      "text": "Sous vide lets you prepare the main course hours in advance, then finish quickly when your date arrives. This eliminates kitchen stress and lets you be present. Serving a perfectly cooked, edge-to-edge medium-rare steak demonstrates care and precision."
+      "text": "Smoke point is the temperature at which oil begins to smoke and break down. Beyond this point:"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Oil develops bitter, burnt flavors",
+        "Beneficial compounds break down",
+        "Harmful compounds can form",
+        "Smoke fills your kitchen (not ideal for dates)"
+      ]
     },
     {
       "type": "paragraph",
-      "text": "The technique also shows you're current with modern cooking methods. It's a conversation starter that reveals your interest in food beyond basic home cooking."
+      "text": "**High heat cooking (searing, stir-frying):** Use high smoke point oils (400°F+)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Medium heat cooking (sautéing, baking):** Use medium smoke point oils (350-400°F)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**No heat (dressings, finishing):** Use flavorful oils regardless of smoke point"
     },
     {
       "type": "divider"
@@ -71,35 +89,151 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Essential Equipment"
+      "text": "Essential Oils for Date Night Cooking"
     },
     {
       "type": "heading",
       "level": 3,
-      "text": "What You Need"
+      "text": "Neutral High-Heat Oils"
+    },
+    {
+      "type": "paragraph",
+      "text": "**🥜 Refined Peanut Oil**"
     },
     {
       "type": "list",
       "style": "unordered",
       "items": [
-        "**Immersion circulator:** $100-200 (Anova, Joule are popular brands)",
-        "**Container:** Any large pot or dedicated sous vide container",
-        "**Bags:** Ziplock freezer bags work, vacuum sealer is optional",
-        "**Cast iron pan or torch:** For finishing sear"
+        "Smoke point: 450°F",
+        "Best for: Stir-fries, deep frying, high-heat searing",
+        "Flavor: Nearly neutral",
+        "Why: Reliable for high-heat cooking without imparting flavor"
       ]
     },
     {
-      "type": "heading",
-      "level": 3,
-      "text": "What's Nice to Have"
+      "type": "paragraph",
+      "text": "**🌻 Refined Avocado Oil**"
     },
     {
       "type": "list",
       "style": "unordered",
       "items": [
-        "Vacuum sealer for better seal and longer storage",
-        "Insulated container to reduce energy use",
-        "Rack to keep bags separated"
+        "Smoke point: 520°F",
+        "Best for: Any high-heat application",
+        "Flavor: Very mild",
+        "Why: Highest smoke point of common oils, great all-purpose option"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**🌾 Grapeseed Oil**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Smoke point: 420°F",
+        "Best for: Searing, sautéing, making aioli",
+        "Flavor: Clean, neutral",
+        "Why: Light texture, doesn't interfere with other flavors"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Flavorful Medium-Heat Oils"
+    },
+    {
+      "type": "paragraph",
+      "text": "**🫒 Extra Virgin Olive Oil**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Smoke point: 350-410°F (varies by quality)",
+        "Best for: Sautéing vegetables, roasting, salad dressings",
+        "Flavor: Fruity, peppery, grassy",
+        "Why: Health benefits, complex flavor for Mediterranean dishes"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Note:** Quality matters significantly. Good EVOO has higher smoke point and better flavor."
+    },
+    {
+      "type": "paragraph",
+      "text": "**🥥 Refined Coconut Oil**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Smoke point: 400°F",
+        "Best for: Baking, Asian dishes, medium-heat sautéing",
+        "Flavor: Mild coconut (refined) or strong coconut (unrefined)",
+        "Why: Solid at room temp, works well in baking"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**🧈 Clarified Butter (Ghee)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Smoke point: 450°F",
+        "Best for: High-heat sautéing, adding richness",
+        "Flavor: Rich, buttery, slightly nutty",
+        "Why: Butter flavor without burning"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Finishing Oils (No Heat)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Premium Extra Virgin Olive Oil**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Use for: Drizzling on finished dishes, bread dipping",
+        "Why: Complex flavors shine when not heated"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Toasted Sesame Oil**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Use for: Asian dishes, noodles, finishing touch",
+        "Why: Intense nutty flavor, a little goes far"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Walnut or Hazelnut Oil**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Use for: Salad dressings, finishing vegetables",
+        "Why: Delicate flavors, sophisticated touch"
       ]
     },
     {
@@ -108,60 +242,84 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Key Temperatures for Date Night Proteins"
+      "text": "Cooking Method Guide"
     },
     {
       "type": "heading",
       "level": 3,
-      "text": "Steak"
+      "text": "High-Heat Cooking"
     },
     {
-      "type": "list",
-      "style": "unordered",
-      "items": [
-        "Rare: 120-125°F (1-4 hours)",
-        "Medium-rare: 129-134°F (1-4 hours)",
-        "Medium: 135-144°F (1-4 hours)"
-      ]
+      "type": "paragraph",
+      "text": "**Best choices:** Avocado oil, refined peanut oil, ghee"
     },
     {
-      "type": "heading",
-      "level": 3,
-      "text": "Chicken Breast"
+      "type": "paragraph",
+      "text": "**Use for:** Steaks, chops, searing proteins before oven finishing"
     },
     {
-      "type": "list",
-      "style": "unordered",
-      "items": [
-        "Tender and juicy: 140-145°F (1.5-4 hours)",
-        "Traditional texture: 150°F (1-4 hours)"
-      ]
+      "type": "paragraph",
+      "text": "**Why:** Won't smoke at high temps, neutral flavor lets protein shine"
+    },
+    {
+      "type": "divider"
     },
     {
       "type": "heading",
       "level": 3,
-      "text": "Fish"
+      "text": "Sautéing (300-375°F)"
     },
     {
-      "type": "list",
-      "style": "unordered",
-      "items": [
-        "Salmon (medium): 125°F (30-45 minutes)",
-        "Firm fish: 130°F (30-45 minutes)"
-      ]
+      "type": "paragraph",
+      "text": "**Best choices:** Olive oil, grapeseed oil, butter (for short cooking)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Use for:** Vegetables, chicken, fish"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Why:** Good flavor, appropriate for moderate heat"
+    },
+    {
+      "type": "divider"
     },
     {
       "type": "heading",
       "level": 3,
-      "text": "Eggs"
+      "text": "Roasting (400-450°F)"
     },
     {
-      "type": "list",
-      "style": "unordered",
-      "items": [
-        "Soft poached style: 145°F (45 minutes)",
-        "Custard-like: 167°F (13 minutes)"
-      ]
+      "type": "paragraph",
+      "text": "**Best choices:** Avocado oil, olive oil, refined coconut oil"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Use for:** Vegetables, potatoes, proteins"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Why:** Even coating, adds flavor during long cooking"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Dressings and Finishing"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best choices:** Premium EVOO, nut oils, toasted sesame oil"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Use for:** Salads, drizzling on finished dishes"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Why:** Full flavor without heat degradation"
     },
     {
       "type": "divider"
@@ -169,38 +327,45 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "The Basic Process"
-    },
-    {
-      "type": "list",
-      "style": "ordered",
-      "items": [
-        "**Season the protein:** Salt, pepper, and any aromatics (garlic, herbs). Less is more with sous vide since flavors concentrate.",
-        "**Bag it:** Place in ziplock bag. Use water displacement method: slowly lower bag into water, letting pressure push out air before sealing.",
-        "**Set temperature:** Fill container with water. Set circulator to target temperature. Wait for it to reach temp (10-15 minutes).",
-        "**Cook:** Submerge sealed bag. Set timer. Walk away.",
-        "**Sear and serve:** Pat protein dry. Sear in screaming hot cast iron or with torch (1 minute per side). Serve immediately."
-      ]
-    },
-    {
-      "type": "divider"
+      "text": "Quality Indicators"
     },
     {
       "type": "heading",
-      "level": 2,
-      "text": "Why It Works"
+      "level": 3,
+      "text": "For Olive Oil"
     },
     {
       "type": "paragraph",
-      "text": "**Precision:** Traditional cooking applies high heat from outside, creating gradients (overcooked edges, raw center). Sous vide heats evenly throughout to exactly your target temperature."
+      "text": "✅ **Dark glass bottle** (protects from light)"
     },
     {
       "type": "paragraph",
-      "text": "**Impossible to overcook:** Once food reaches target temp, it stays there. A steak at 130°F for 2 hours or 4 hours ends up the same (within reason)."
+      "text": "✅ **Harvest date** (within 18 months)"
     },
     {
       "type": "paragraph",
-      "text": "**Timing flexibility:** This is crucial for date night. Start cooking early, finish when ready."
+      "text": "✅ **Single origin** (tells you where it's from)"
+    },
+    {
+      "type": "paragraph",
+      "text": "✅ **Higher price** (quality EVOO isn't cheap)"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "For Any Oil"
+    },
+    {
+      "type": "paragraph",
+      "text": "✅ **Appropriate storage** (cool, dark place)"
+    },
+    {
+      "type": "paragraph",
+      "text": "✅ **Sealed properly** (prevents oxidation)"
+    },
+    {
+      "type": "paragraph",
+      "text": "✅ **Within freshness date** (oils go rancid)"
     },
     {
       "type": "divider"
@@ -212,27 +377,35 @@
     },
     {
       "type": "paragraph",
-      "text": "**Mistake:** Skipping the sear"
+      "text": "**Mistake:** Using EVOO for everything"
     },
     {
       "type": "paragraph",
-      "text": "**Solution:** Always finish with high heat. The sear creates flavor and texture contrast."
+      "text": "**Solution:** Save premium EVOO for finishing, use refined oils for high heat."
     },
     {
       "type": "paragraph",
-      "text": "**Mistake:** Overseasoning"
+      "text": "**Mistake:** Storing oils near the stove"
     },
     {
       "type": "paragraph",
-      "text": "**Solution:** Flavors concentrate in the bag. Use less salt and seasoning than normal."
+      "text": "**Solution:** Heat and light degrade oils. Store in cool, dark cabinet."
     },
     {
       "type": "paragraph",
-      "text": "**Mistake:** Wrong bag seal"
+      "text": "**Mistake:** Keeping oils too long"
     },
     {
       "type": "paragraph",
-      "text": "**Solution:** Ensure all air is out. Floating bags cook unevenly."
+      "text": "**Solution:** Most oils last 6-12 months after opening. Smell before using (rancid oil smells like crayons or paint)."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Mistake:** Ignoring smoke point"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Solution:** Match oil to cooking temperature to avoid bitter flavors and smoke."
     },
     {
       "type": "divider"
@@ -240,42 +413,34 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Date Night Game Plan"
+      "text": "Date Night Application"
     },
     {
       "type": "heading",
       "level": 3,
-      "text": "Timeline Example (Steak Dinner)"
+      "text": "The Setup"
     },
     {
       "type": "paragraph",
-      "text": "**4:00 PM:** Season steaks, bag them, start sous vide at 130°F"
+      "text": "Have 2-3 oils visible but organized: one high-heat neutral, one quality EVOO for finishing, maybe one specialty oil. This shows you know what you're doing without being excessive."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "The Conversation"
     },
     {
       "type": "paragraph",
-      "text": "**6:00 PM:** Date arrives, enjoy drinks and appetizers"
+      "text": "When searing steaks, mentioning you're using avocado oil for its high smoke point shows knowledge. When finishing with premium EVOO, you can explain why you save it for drizzling."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "The Taste"
     },
     {
       "type": "paragraph",
-      "text": "**7:30 PM:** Remove steaks, pat dry"
-    },
-    {
-      "type": "paragraph",
-      "text": "**7:35 PM:** Sear in hot pan (2 minutes total)"
-    },
-    {
-      "type": "paragraph",
-      "text": "**7:37 PM:** Serve perfect medium-rare steaks"
-    },
-    {
-      "type": "paragraph",
-      "text": "No stress, no guessing, no overcooked meat."
-    },
-    {
-      "type": "image",
-      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/f151143a-6526-4a39-a362-0f449ce311ff/vudememe_clock_in_kitchen_timer_hand_drawn_water_color_style_il_643b55cf-494e-47c4-a0c5-1517a4cb09e0.png?table=block&id=2f7c3484-e8de-80e9-8ae6-e404c9065eb6&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1773100800000&signature=a8v2RBULQ7cl_ZxINAhSQNGAYFJiBkaOb69zAQSM3bs",
-      "caption": null,
-      "localPath": "/tmp/notion-images/img-2.png"
+      "text": "Let your date taste the finishing oil on bread. Quality EVOO has complex flavors people notice. This creates a sensory experience and conversation."
     },
     {
       "type": "divider"
@@ -283,19 +448,57 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "Best First Projects"
+      "text": "Storage Tips"
     },
     {
       "type": "paragraph",
-      "text": "**Easiest:** Salmon at 125°F (impressive results, hard to mess up)"
+      "text": "**🌡️ Temperature:** Cool and consistent (60-70°F ideal)"
     },
     {
       "type": "paragraph",
-      "text": "**Most impressive:** Ribeye at 130°F (restaurant-quality, edge-to-edge pink)"
+      "text": "**💡 Light:** Dark pantry or dark glass bottles"
     },
     {
       "type": "paragraph",
-      "text": "**Most romantic:** Scallops at 120°F (tender, sweet, pairs with wine)"
+      "text": "**🫙 Container:** Original bottle or dark glass, tightly sealed"
+    },
+    {
+      "type": "paragraph",
+      "text": "**📅 Freshness:** Label with opening date, use within 6-12 months"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Budget-Friendly Strategy"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Must-have oils (start here):**"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Refined avocado oil (high-heat all-purpose)",
+        "Mid-range extra virgin olive oil (everyday cooking)",
+        "One quality finishing EVOO (special occasions)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Add as budget allows:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Toasted sesame oil (Asian cooking)",
+        "Grapeseed oil (neutral sautéing)",
+        "Ghee (rich flavor for special dishes)"
+      ]
     },
     {
       "type": "divider"
@@ -307,35 +510,35 @@
     },
     {
       "type": "paragraph",
-      "text": "**Q: Is sous vide safe?**"
+      "text": "**Q: Can I reuse frying oil?**"
     },
     {
       "type": "paragraph",
-      "text": "Yes. Extended cooking at lower temperatures still pasteurizes food. Follow time/temperature guidelines."
+      "text": "Yes, strain it and store in a sealed container. Use within a few weeks. Don't mix oils."
     },
     {
       "type": "paragraph",
-      "text": "**Q: Can I cook frozen?**"
+      "text": "**Q: Is expensive olive oil worth it?**"
     },
     {
       "type": "paragraph",
-      "text": "Yes. Add 30-60 minutes to cooking time."
+      "text": "For finishing and dressings, yes. For cooking, mid-range quality works fine."
     },
     {
       "type": "paragraph",
-      "text": "**Q: Do I need a vacuum sealer?**"
+      "text": "**Q: How do I know if oil has gone bad?**"
     },
     {
       "type": "paragraph",
-      "text": "No. Ziplock bags with water displacement work perfectly."
+      "text": "Smell it. Rancid oil smells stale, like crayons or old nuts. When in doubt, throw it out."
     },
     {
       "type": "paragraph",
-      "text": "**Q: What if I don't have a torch?**"
+      "text": "**Q: Do I need all these oils?**"
     },
     {
       "type": "paragraph",
-      "text": "Cast iron pan works great. Get it screaming hot, sear 30-60 seconds per side."
+      "text": "No. Start with avocado and olive oil. Add others as you explore different cuisines."
     },
     {
       "type": "divider"
@@ -343,15 +546,15 @@
     {
       "type": "heading",
       "level": 2,
-      "text": "The Confidence Factor"
+      "text": "The Knowledge Factor"
     },
     {
       "type": "paragraph",
-      "text": "Knowing your protein is perfectly cooked before your date arrives eliminates kitchen anxiety. You can focus on conversation, plating, and enjoying the evening. This presence and confidence is attractive."
+      "text": "Casually using the right oil for the task shows cooking confidence. When your date asks why you're using avocado oil for the steak, explaining smoke points demonstrates depth of knowledge. This attention to detail in cooking often reflects how you approach other areas of life."
     },
     {
       "type": "paragraph",
-      "text": "When asked about your cooking, explaining sous vide shows you take food seriously without being pretentious. It's a balance of expertise and accessibility."
+      "text": "Quality ingredients, including oils, show you value good food and aren't cutting corners."
     },
     {
       "type": "callout",
@@ -366,34 +569,33 @@
       "type": "list",
       "style": "ordered",
       "items": [
-        "Choose salmon or steak",
-        "Start cooking 2-4 hours before date",
-        "Prepare sides and table",
-        "Quick sear when ready to serve",
-        "Enjoy perfectly cooked protein"
+        "High-heat: Refined avocado or peanut oil",
+        "Everyday: Mid-range extra virgin olive oil",
+        "Finishing: Quality EVOO for drizzling",
+        "Optional: Toasted sesame for Asian dishes"
       ]
     },
     {
       "type": "paragraph",
-      "text": "Consistent results build cooking confidence."
+      "text": "Match the oil to the cooking method for best results."
     }
   ],
   "faqs": [
     {
-      "question": "Is sous vide safe?",
-      "answer": "Yes. Extended cooking at lower temperatures still pasteurizes food. Follow time/temperature guidelines."
+      "question": "Can I reuse frying oil?",
+      "answer": "Yes, strain it and store in a sealed container. Use within a few weeks. Don't mix oils."
     },
     {
-      "question": "Can I cook frozen?",
-      "answer": "Yes. Add 30-60 minutes to cooking time."
+      "question": "Is expensive olive oil worth it?",
+      "answer": "For finishing and dressings, yes. For cooking, mid-range quality works fine."
     },
     {
-      "question": "Do I need a vacuum sealer?",
-      "answer": "No. Ziplock bags with water displacement work perfectly."
+      "question": "How do I know if oil has gone bad?",
+      "answer": "Smell it. Rancid oil smells stale, like crayons or old nuts. When in doubt, throw it out."
     },
     {
-      "question": "What if I don't have a torch?",
-      "answer": "Cast iron pan works great. Get it screaming hot, sear 30-60 seconds per side."
+      "question": "Do I need all these oils?",
+      "answer": "No. Start with avocado and olive oil. Add others as you explore different cuisines."
     }
   ]
 }

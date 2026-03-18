@@ -13,12 +13,12 @@ const initialStars = ratingCount > 0 ? Math.round(averageRating) : 0;
 ---
 
 <div
-  class="no-print star-rating mt-6 rounded-xl border border-gray-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-900"
+  class="no-print star-rating mt-6 rounded-xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-900"
   data-slug={slug}
   role="group"
   aria-label={t(locale, "rating.rateThis")}
 >
-  <h3 class="mb-3 font-heading text-sm font-semibold uppercase tracking-wide text-gray-700 dark:text-neutral-300">
+  <h3 class="mb-3 font-heading text-sm font-semibold uppercase tracking-wide text-neutral-700 dark:text-neutral-300">
     {t(locale, "rating.rateThis")}
   </h3>
 
@@ -29,7 +29,7 @@ const initialStars = ratingCount > 0 ? Math.round(averageRating) : 0;
           type="button"
           class:list={[
             "star-btn p-0.5 transition-colors hover:text-yellow-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary dark:hover:text-yellow-400",
-            value <= initialStars ? "text-yellow-400" : "text-gray-300 dark:text-neutral-600",
+            value <= initialStars ? "text-yellow-400" : "text-neutral-300 dark:text-neutral-600",
           ]}
           data-value={value}
           role="radio"
@@ -43,7 +43,7 @@ const initialStars = ratingCount > 0 ? Math.round(averageRating) : 0;
       ))}
     </div>
 
-    <span class="star-rating-summary text-body-sm text-gray-500 dark:text-neutral-400">
+    <span class="star-rating-summary text-body-sm text-neutral-500 dark:text-neutral-400">
       {ratingCount > 0 && (
         locale === "fr"
           ? `${averageRating}/5 (${ratingCount} ${ratingCount === 1 ? "vote" : "votes"})`
@@ -162,12 +162,12 @@ const initialStars = ratingCount > 0 ? Math.round(averageRating) : 0;
     function highlightStars(count) {
       stars.forEach(function(s, i) {
         if (i < count) {
-          s.classList.remove('text-gray-300', 'dark:text-neutral-600');
+          s.classList.remove('text-neutral-300', 'dark:text-neutral-600');
           s.classList.add('text-yellow-400');
           s.setAttribute('aria-checked', i + 1 === userRating ? 'true' : 'false');
         } else {
           s.classList.remove('text-yellow-400');
-          s.classList.add('text-gray-300', 'dark:text-neutral-600');
+          s.classList.add('text-neutral-300', 'dark:text-neutral-600');
           s.setAttribute('aria-checked', 'false');
         }
       });

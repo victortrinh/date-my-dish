@@ -8,18 +8,20 @@ export default {
         brand: {
           primary: "#C4704B",
           "primary-dark": "#A85D3D",
-          "primary-text": "#9A5439", // Darker terracotta for small text — WCAG AA on cream/white
+          "primary-text": "#9A5439", // Darker terracotta for small text — WCAG AA on white
           accent: "#D4A853",
-          "accent-dark": "#B8923F", // Legacy — avoid for text, fails WCAG
+          "accent-dark": "#B8923F", // Used for hover states; avoid for text (fails WCAG)
           "accent-text": "#7D631C", // Gold text on light backgrounds — WCAG AA (5.72:1)
-          cream: "#FDF6EC", // Legacy — kept for reference only
-          "cream-dark": "#F5EDDF", // Legacy — kept for reference only
         },
       },
       fontFamily: {
+        // font-heading: section titles, recipe titles, card headings (uppercase, bold)
         heading: ['"Fira Sans"', "sans-serif"],
+        // font-body: article prose, descriptions, body text (mixed-case)
         body: ["Bitter", "serif"],
+        // font-handwritten: logo, decorative accents (Caveat)
         handwritten: ["Caveat", "cursive"],
+        // font-ui: buttons, labels, nav links, metadata (same face as heading, but non-uppercase contexts)
         ui: ['"Fira Sans"', "sans-serif"],
       },
       fontSize: {

@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "date": "2026-03-16",
+    "runId": "23135489319",
+    "prNumber": 83,
+    "mergedAt": null,
+    "pages": [
+      {
+        "path": "/en/recipes/quinoa-crusted-salmon/",
+        "actions": [
+          "auto-optimized"
+        ],
+        "keywords": [],
+        "positionAtTime": {
+          "serp": 4,
+          "gsc": null
+        }
+      }
+    ]
+  }
+]
