@@ -1,0 +1,178 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+import RecipeCard from "@components/RecipeCard.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t, getRecipeLocalizedPath, getCuisineLocalizedPath, getCuisineSlug, getCuisineFromSlug } from "@i18n/utils";
+import { getCollection } from "astro:content";
+import type { ImageMetadata } from "astro";
+
+const locale = "fr";
+
+const MIN_RECIPES_FOR_INDEX = 3;
+
+// Map FR recipeCuisine values to canonical EN keys for slug generation
+const frCuisineToCanonical: Record<string, string> = {
+  "Italienne": "italian",
+  "Méditerranéenne": "mediterranean",
+  "Espagnole": "spanish",
+  "Vietnamienne": "vietnamese",
+  "Britannique": "british",
+  "Asiatique du Sud-Est": "southeast-asian",
+  "Nikkei": "nikkei",
+  "Coréenne-Italienne": "korean-italian",
+};
+
+export async function getStaticPaths() {
+  const { getCuisineSlug } = await import("@i18n/utils");
+  const recipes = await getCollection("recipes");
+  const frRecipes = recipes.filter((r) => r.data.lang === "fr");
+  const cuisines = [...new Set(frRecipes.map((r) => r.data.recipeCuisine))];
+
+  return cuisines.map((cuisine) => {
+    const canonical = frCuisineToCanonical[cuisine] || cuisine.toLowerCase().replace(/\s+/g, "-");
+    const slug = getCuisineSlug(canonical, "fr");
+    return {
+      params: { cuisine: slug },
+      props: {
+        cuisineName: cuisine,
+        recipes: frRecipes.filter((r) => r.data.recipeCuisine === cuisine),
+      },
+    };
+  });
+}
+
+const { cuisineName, recipes } = Astro.props;
+const cuisineSlug = Astro.params.cuisine!;
+const cuisineLabel = t(locale, `cuisines.${getCuisineFromSlug(cuisineSlug, locale)}` as any) || cuisineName;
+const sortedRecipes = recipes.sort(
+  (a: any, b: any) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
+);
+
+const shouldNoindex = sortedRecipes.length < MIN_RECIPES_FOR_INDEX;
+
+const allRecipes = await getCollection("recipes");
+const frRecipes = allRecipes.filter((r) => r.data.lang === "fr");
+const allCuisines = [...new Set(frRecipes.map((r) => r.data.recipeCuisine))];
+allCuisines.sort((a, b) => {
+  const countA = frRecipes.filter((r) => r.data.recipeCuisine === a).length;
+  const countB = frRecipes.filter((r) => r.data.recipeCuisine === b).length;
+  return countB - countA;
+});
+
+const cuisineDescriptions: Record<string, string> = {
+  Italienne: `La cuisine italienne, c'est l'art d'en faire plus avec moins. Du Pecorino, du poivre noir et de l'eau de cuisson deviennent un cacio e pepe. Un braisage lent transforme des morceaux coriaces en quelque chose d'assez tendre pour se manger à la cuillère. Ce sont les plats qui ont bâti la culture culinaire la plus romantique au monde, et ils sont tous à portée de votre cuisine maison.
+
+Que vous étaliez des pappardelle fraîches ou que vous fassiez simplement bouillir des spaghettis secs avec intention, les soirées italiennes ont un rythme : débouchez le vin en premier, laissez la sauce prendre son temps, et ne brusquez jamais la table. Notre collection italienne couvre tout le spectre, des pâtes en 25 minutes aux ragus mijotés qui récompensent votre patience.`,
+  "Méditerranéenne": `Du soleil, de l'huile d'olive et la conviction que les légumes méritent la place d'honneur. La cuisine méditerranéenne puise dans les traditions côtières où les ingrédients frais font le gros du travail et la technique reste simple. Ces recettes apportent la même philosophie à votre cuisine, que vous charriez des aubergines ou que vous frissiez des calamars jusqu'à ce qu'ils soient dorés.
+
+L'approche méditerranéenne de la soirée en amoureux est sans effort par design : des saveurs audacieuses, de belles couleurs, et le genre de cuisine qui a l'air impressionnante sans exiger un diplôme culinaire.`,
+};
+
+const description = cuisineDescriptions[cuisineName] ||
+  `Explorez nos recettes de cuisine ${cuisineLabel.toLowerCase()}. Des favoris de semaine aux plats de soirée en amoureux.`;
+const metaDescription = `Recettes ${cuisineLabel.toLowerCase()} pour soirées en amoureux. Des plats rapides aux mijotés spectaculaires, cuisinez ${cuisineLabel.toLowerCase()} chez vous avec confiance.`;
+---
+
+<BaseLayout
+  title={`Recettes ${cuisineLabel} | Date My Dish`}
+  description={metaDescription}
+  noindex={shouldNoindex}
+>
+  <Fragment slot="head">
+    <script is:inline>window.pintrk&&pintrk('track','viewcategory');</script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `Recettes ${cuisineLabel}`,
+      numberOfItems: sortedRecipes.length,
+      itemListElement: sortedRecipes.map((recipe: any, i: number) => {
+        const slug = recipe.id.replace(/^fr\//, "");
+        return {
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://datemydish.com${getRecipeLocalizedPath(locale, slug)}`,
+          name: recipe.data.title,
+        };
+      }),
+    })} />
+  </Fragment>
+
+  <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
+    <Breadcrumbs
+      locale={locale}
+      items={[
+        { label: t(locale, "nav.recipes"), href: "/fr/recettes/" },
+        { label: `Cuisine ${cuisineLabel}` },
+      ]}
+    />
+
+    <div class="mb-10">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-gray-900 sm:text-4xl dark:text-neutral-100">
+        Recettes {cuisineLabel}
+      </h1>
+      <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
+      {cuisineDescriptions[cuisineName] && (
+        <div class="mb-6 space-y-4 text-body-sm text-gray-600 dark:text-neutral-400">
+          {cuisineDescriptions[cuisineName].split("\n\n").map((paragraph: string) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+      )}
+      <p class="text-body-sm text-gray-500 dark:text-neutral-400">
+        {sortedRecipes.length} {sortedRecipes.length === 1 ? "recette" : "recettes"}
+      </p>
+    </div>
+
+    <!-- Cuisine Filter -->
+    <div class="mb-10 flex flex-wrap gap-2">
+      <a
+        href="/fr/recettes/"
+        class="rounded-lg border border-gray-200 px-4 py-2 font-ui text-body-sm font-medium text-gray-600 no-underline transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400"
+      >
+        {t(locale, "listing.allCategories")}
+      </a>
+      {allCuisines.map((c) => {
+        const cSlug = getCuisineLocalizedPath(locale, c).split("/").pop()!;
+        const cLabel = t(locale, `cuisines.${getCuisineFromSlug(cSlug, locale)}` as any) || c;
+        return (
+          <a
+            href={`${getCuisineLocalizedPath(locale, c)}/`}
+            class:list={[
+              "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
+              c === cuisineName
+                ? "bg-brand-primary-dark text-white dark:text-white dark:hover:text-white shadow-md"
+                : "border border-gray-200 text-gray-600 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-neutral-600 dark:text-neutral-400",
+            ]}
+            aria-current={c === cuisineName ? "page" : undefined}
+          >
+            {cLabel}
+          </a>
+        );
+      })}
+    </div>
+
+    {sortedRecipes.length > 0 ? (
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate-stagger>
+        {sortedRecipes.map((recipe: any, i: number) => {
+          const slug = recipe.id.replace(/^fr\//, "");
+          return (
+            <RecipeCard
+              title={recipe.data.title}
+              description={recipe.data.description}
+              slug={slug}
+              locale={locale}
+              heroImage={recipe.data.heroImage as ImageMetadata}
+              heroImageAlt={recipe.data.heroImageAlt}
+              prepTime={recipe.data.prepTime}
+              totalTime={recipe.data.totalTime}
+              difficulty={recipe.data.difficulty}
+              loading={i === 0 ? "eager" : "lazy"}
+            />
+          );
+        })}
+      </div>
+    ) : (
+      <p class="text-gray-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
+    )}
+  </div>
+</BaseLayout>
