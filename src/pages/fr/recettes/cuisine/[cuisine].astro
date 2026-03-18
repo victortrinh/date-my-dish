@@ -10,26 +10,26 @@ const locale = "fr";
 
 const MIN_RECIPES_FOR_INDEX = 3;
 
-// Map FR recipeCuisine values to canonical EN keys for slug generation
-const frCuisineToCanonical: Record<string, string> = {
-  "Italienne": "italian",
-  "Méditerranéenne": "mediterranean",
-  "Espagnole": "spanish",
-  "Vietnamienne": "vietnamese",
-  "Britannique": "british",
-  "Asiatique du Sud-Est": "southeast-asian",
-  "Nikkei": "nikkei",
-  "Coréenne-Italienne": "korean-italian",
-};
-
 export async function getStaticPaths() {
   const { getCuisineSlug } = await import("@i18n/utils");
   const recipes = await getCollection("recipes");
   const frRecipes = recipes.filter((r) => r.data.lang === "fr");
   const cuisines = [...new Set(frRecipes.map((r) => r.data.recipeCuisine))];
 
+  // Map FR recipeCuisine values to canonical EN keys for slug generation
+  const frToCanonical: Record<string, string> = {
+    "Italienne": "italian",
+    "Méditerranéenne": "mediterranean",
+    "Espagnole": "spanish",
+    "Vietnamienne": "vietnamese",
+    "Britannique": "british",
+    "Asiatique du Sud-Est": "southeast-asian",
+    "Nikkei": "nikkei",
+    "Coréenne-Italienne": "korean-italian",
+  };
+
   return cuisines.map((cuisine) => {
-    const canonical = frCuisineToCanonical[cuisine] || cuisine.toLowerCase().replace(/\s+/g, "-");
+    const canonical = frToCanonical[cuisine] || cuisine.toLowerCase().replace(/\s+/g, "-");
     const slug = getCuisineSlug(canonical, "fr");
     return {
       params: { cuisine: slug },
