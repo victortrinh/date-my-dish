@@ -41,3 +41,6 @@ playwright-report/
 
 # Build-time generated data
 data/ratings.json
+
+# AI-generated images (working files)
+generated_imgs/

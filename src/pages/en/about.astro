@@ -1,16 +1,53 @@
 ---
+import { Picture } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import AuthorBioCard from "@components/AuthorBioCard.astro";
 import { t } from "@i18n/utils";
+import heroImage from "@assets/images/victor-about.webp";
 
 const locale = "en";
+const siteUrl = "https://datemydish.com";
+const heroImageUrl = `${siteUrl}/images/victor-about.webp`;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Victor Vu",
+  url: `${siteUrl}/en/about/`,
+  image: heroImageUrl,
+  jobTitle: "Home Cook & Recipe Creator",
+  description: "Montreal-based home cook behind Date My Dish, sharing romantic recipes and date night cooking inspiration.",
+  sameAs: [
+    "https://www.instagram.com/datemydishdotcom",
+    "https://www.pinterest.com/datemydish",
+  ],
+  knowsAbout: ["Cooking", "Romantic Recipes", "Date Night Cooking", "Montreal Cuisine", "French-Canadian Cooking"],
+};
+
+const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: t(locale, "about.pageTitle"),
+  url: `${siteUrl}/en/about/`,
+  description: "Meet Victor, the Montreal home cook behind Date My Dish. Romantic recipes, date night tips, and cooking inspiration for unforgettable evenings together.",
+  mainEntity: {
+    "@type": "Person",
+    name: "Victor Vu",
+  },
+};
 ---
 
 <BaseLayout
   title={`${t(locale, "about.pageTitle")} | Date My Dish`}
   description="Meet Victor, the Montreal home cook behind Date My Dish. Romantic recipes, date night tips, and cooking inspiration for unforgettable evenings together."
+  ogImage={heroImageUrl}
+  translationSlug="a-propos"
+  contentType="article"
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
+
   <div class="mx-auto max-w-narrow px-4 py-section-sm">
     <Breadcrumbs
       locale={locale}
@@ -24,13 +61,27 @@ const locale = "en";
       <div class="h-1 w-12 rounded-full bg-brand-accent"></div>
     </div>
 
-    <div class="prose max-w-none">
-      <p>
+    <div class="mb-10 flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-10">
+      <div class="w-full shrink-0 overflow-hidden rounded-2xl md:w-64">
+        <Picture
+          src={heroImage}
+          alt="Victor Vu, home cook and creator of Date My Dish, standing in his Montreal kitchen wearing an apron with arms crossed"
+          widths={[400, 600, 900]}
+          sizes="(max-width: 768px) 100vw, 256px"
+          formats={["avif", "webp"]}
+          class="aspect-[4/3] w-full object-cover object-[center_30%] md:aspect-auto md:max-h-none"
+          loading="eager"
+        />
+      </div>
+      <p class="text-lg text-neutral-700 dark:text-neutral-300">
         Hi, I'm Victor! I'm a home cook based in Montreal who believes that cooking for someone
         is one of the most genuine expressions of care and affection. Date My Dish is where I share
         romantic recipes and date night cooking inspiration: dishes designed to impress that special someone,
         whether it's a first date, an anniversary, or a cozy night in.
       </p>
+    </div>
+
+    <div class="prose max-w-none">
 
       <h2>A Montreal Food Story</h2>
 

@@ -2,6 +2,10 @@
 import { t, getLocalizedPath, getCategorySlug, getOccasionLocalizedPath, type Locale } from "@i18n/utils";
 import NewsletterSignup from "./NewsletterSignup.astro";
 import { getCollection } from "astro:content";
+import { getImage } from "astro:assets";
+import inlineLogoSrc from "@assets/images/logo-datemydish-inline.png";
+
+const inlineLogo = await getImage({ src: inlineLogoSrc, format: "webp" });
 
 interface Props {
   locale: Locale;
@@ -47,9 +51,8 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
       <!-- Brand -->
       <div class="sm:col-span-2 lg:col-span-1">
-        <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2 font-handwritten text-2xl text-brand-primary-text no-underline">
-          <img src="/favicon.svg" class="h-6 w-6" alt="" width="24" height="24" />
-          Date My Dish
+        <a href={getLocalizedPath(locale, "/")} class="inline-block no-underline">
+          <img src={inlineLogo.src} class="h-8" alt="Date My Dish" width={inlineLogo.width} height={inlineLogo.height} />
         </a>
         <p class="mt-3 text-body-sm text-neutral-600 dark:text-neutral-400">
           {t(locale, "footer.madeWith")}
