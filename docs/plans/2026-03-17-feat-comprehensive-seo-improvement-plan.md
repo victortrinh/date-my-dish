@@ -86,11 +86,11 @@ Audit and optimize all 12 EN recipes, 6 EN articles, and their FR counterparts.
 
 #### 1.2 Frontmatter Optimization
 
-- [ ] Review and enhance `keywords` arrays (target 7-10 long-tail keywords per recipe)
-- [ ] Review and enhance `tags` arrays for tag page generation
-- [ ] Optimize `description` fields to 150-160 chars with date-night angle CTAs
-- [ ] Verify `heroImageAlt` is descriptive (~125 chars, includes dish name)
-- [ ] Mirror all frontmatter changes to FR counterparts with Quebec French conventions
+- [x] Review and enhance `keywords` arrays (target 7-10 long-tail keywords per recipe)
+- [x] Review and enhance `tags` arrays for tag page generation
+- [x] Optimize `description` fields to 150-160 chars with date-night angle CTAs
+- [x] Verify `heroImageAlt` is descriptive (~125 chars, includes dish name)
+- [x] Mirror all frontmatter changes to FR counterparts with Quebec French conventions
 
 **Files (per recipe):**
 - `src/content/recipes/en/{slug}.mdx` (frontmatter)
@@ -98,10 +98,10 @@ Audit and optimize all 12 EN recipes, 6 EN articles, and their FR counterparts.
 
 #### 1.3 Internal Cross-Linking
 
-- [ ] Add 2-3 internal cross-links per recipe MDX body to related recipes/articles
-- [ ] Add 1-2 internal cross-links per article to related recipes
-- [ ] Use absolute paths with trailing slashes: `/en/recipes/{slug}/`, `/en/articles/{slug}/`
-- [ ] FR cross-links must use localized slugs: `/fr/recettes/categorie/souper/` (not `dinner`)
+- [x] Add 2-3 internal cross-links per recipe MDX body to related recipes/articles
+- [x] Add 1-2 internal cross-links per article to related recipes
+- [x] Use absolute paths with trailing slashes: `/en/recipes/{slug}/`, `/en/articles/{slug}/`
+- [x] FR cross-links must use localized slugs: `/fr/recettes/categorie/souper/` (not `dinner`)
 - [x] Fix existing inconsistency in FR recipes using `/fr/recettes/categorie/dinner/` instead of `/fr/recettes/categorie/souper/`
 
 #### 1.4 Image Audit
@@ -184,16 +184,16 @@ The `[category].astro` template currently has no editorial descriptions (unlike 
 
 No cuisine route exists. Create the full infrastructure.
 
-- [ ] Add `cuisineSlugMap` to `src/i18n/utils.ts` (e.g., `italian` -> `italien` for FR)
-- [ ] Add `cuisine` segment to `routeMap` in `src/i18n/utils.ts` (EN: `cuisine`, FR: `cuisine`)
-- [ ] Add `getCuisineLocalizedPath(locale, cuisine)` helper to `src/i18n/utils.ts`
-- [ ] Create `src/pages/en/recipes/cuisine/[cuisine].astro` following occasion page pattern
-- [ ] Create `src/pages/fr/recettes/cuisine/[cuisine].astro` (FR counterpart)
-- [ ] Write editorial content for Italian cuisine (4 recipes: cacio-e-pepe, penne-alla-vodka, pork-osso-buco, beef-ragu)
-- [ ] Include ItemList JSON-LD schema
-- [ ] Include hreflang via `getAlternateUrl()` (requires routeMap update first)
+- [x] Add `cuisineSlugMap` to `src/i18n/utils.ts` (e.g., `italian` -> `italien` for FR)
+- [x] Add `cuisine` segment to `routeMap` in `src/i18n/utils.ts` (EN: `cuisine`, FR: `cuisine`)
+- [x] Add `getCuisineLocalizedPath(locale, cuisine)` helper to `src/i18n/utils.ts`
+- [x] Create `src/pages/en/recipes/cuisine/[cuisine].astro` following occasion page pattern
+- [x] Create `src/pages/fr/recettes/cuisine/[cuisine].astro` (FR counterpart)
+- [x] Write editorial content for Italian cuisine (4 recipes: cacio-e-pepe, penne-alla-vodka, pork-osso-buco, beef-ragu)
+- [x] Include ItemList JSON-LD schema
+- [x] Include hreflang via `getAlternateUrl()` (requires routeMap update first)
 - [ ] Add cuisine page links to relevant recipe pages ("More Italian Recipes" link)
-- [ ] Add i18n keys for cuisine labels to `en.json` / `fr.json`
+- [x] Add i18n keys for cuisine labels to `en.json` / `fr.json`
 
 **Files:**
 - `src/i18n/utils.ts` (cuisineSlugMap, routeMap, getCuisineLocalizedPath)
@@ -227,12 +227,12 @@ Optimize content for citation by AI engines. Run alongside Phase 2.
 
 Dual approach: Astro component for visual display + prose paragraph in MDX for AI extraction.
 
-- [ ] Add optional `summary` field to recipe schema in `src/content.config.ts` (string, 40-60 words)
-- [ ] Create `src/components/QuickAnswer.astro` component that renders from the `summary` field
-- [ ] Add `<QuickAnswer>` to `RecipeLayout.astro` (rendered before the recipe card, after hero)
-- [ ] Write 40-60 word summaries for all 12 EN recipes
+- [x] Add optional `summary` field to recipe schema in `src/content.config.ts` (string, 40-60 words)
+- [x] Create `src/components/QuickAnswer.astro` component that renders from the `summary` field
+- [x] Add `<QuickAnswer>` to EN and FR recipe detail pages (rendered between description and meta bar)
+- [x] Write 40-60 word summaries for all 12 EN recipes
 - [ ] Add matching prose paragraph at top of each recipe MDX body (before first H2)
-- [ ] Translate summaries and prose to FR with Quebec French voice
+- [x] Translate summaries to FR with Quebec French voice
 - [ ] Update `/new-recipe` command template to include `summary` field
 - [ ] Update `/seo-audit` to check for `summary` field presence
 
@@ -268,10 +268,10 @@ Add sourced claims and attributions to recipe prose for +40% AI citation visibil
 
 #### 3.4 Enrich `llms.txt`
 
-- [ ] Add per-recipe structured summaries (1-2 sentences each)
-- [ ] Group recipes by occasion and cuisine
-- [ ] Add relationship data (related recipes within each group)
-- [ ] Add metadata per recipe: cuisine, difficulty, prep time, category
+- [x] Add per-recipe structured summaries (1-2 sentences each)
+- [x] Group recipes by occasion and cuisine
+- [x] Add relationship data (related recipes within each group)
+- [x] Add metadata per recipe: cuisine, difficulty, prep time, category
 - [ ] Include new pSEO pages (occasion, cuisine, category landing pages)
 - [ ] Keep EN and FR sections clearly separated
 
@@ -309,13 +309,13 @@ Upgrade existing workflows so all future content automatically benefits from the
 
 Update the Claude Code prompts in both auto-publish workflows to generate GEO-optimized content from day one.
 
-- [ ] Update `auto-publish-recipe.yml` Claude prompt to:
+- [x] Update `auto-publish-recipe.yml` Claude prompt to:
   - Generate a `summary` field (40-60 words) in frontmatter
   - Add 1-2 sourced citations in prose (food science, chef attributions, technique origins)
   - Write FAQ answers as self-contained, 40-60 word passages
   - Add concrete statistics where natural (temperatures, timing benchmarks)
   - Add a "What is [recipe]?" prose paragraph before the first H2
-- [ ] Update `auto-publish-article.yml` Claude prompt with same GEO patterns (citations, self-contained FAQs, statistics)
+- [x] Update `auto-publish-article.yml` Claude prompt with same GEO patterns (citations, self-contained FAQs, statistics)
 - [ ] Update `/new-recipe` skill template to include `summary` field and GEO guidelines
 - [ ] Update `/new-article` skill template with GEO guidelines
 
@@ -327,13 +327,13 @@ Update the Claude Code prompts in both auto-publish workflows to generate GEO-op
 
 Create a new workflow that, when a new recipe merges to main, automatically adds cross-links from 2-3 related existing recipes back to the new one.
 
-- [ ] Create `.github/workflows/reverse-internal-linking.yml`
-- [ ] Trigger: push to main touching `src/content/recipes/en/**/*.mdx` (new files only)
-- [ ] Claude Code identifies 2-3 related existing recipes (by cuisine, category, occasion, or tags)
-- [ ] Adds a natural cross-link in each related recipe's prose (both EN and FR)
-- [ ] Caps at 2-3 reverse links per new recipe to avoid over-linking
-- [ ] Opens a PR labeled `seo-reverse-links`
-- [ ] Runs `npm run check` before PR creation
+- [x] Create `.github/workflows/reverse-internal-linking.yml`
+- [x] Trigger: push to main touching `src/content/recipes/en/**/*.mdx` (new files only)
+- [x] Claude Code identifies 2-3 related existing recipes (by cuisine, category, occasion, or tags)
+- [x] Adds a natural cross-link in each related recipe's prose (both EN and FR)
+- [x] Caps at 2-3 reverse links per new recipe to avoid over-linking
+- [x] Opens a PR labeled `seo-reverse-links`
+- [x] Runs `npm run check` before PR creation
 
 **Files:**
 - `.github/workflows/reverse-internal-linking.yml` (new)
@@ -342,12 +342,12 @@ Create a new workflow that, when a new recipe merges to main, automatically adds
 
 Expand the `weekly-seo-audit.yml` Claude prompt to audit GEO signals alongside the existing Lighthouse and content quality checks.
 
-- [ ] Add checks for `summary` field presence in recipe frontmatter
-- [ ] Add checks for citation patterns in prose (at least 1 sourced claim per recipe)
-- [ ] Add checks for FAQ answer length (target 40-60 words, flag if < 30 or > 80)
-- [ ] Add checks for concrete statistics presence in prose
-- [ ] Add check that `llms.txt` includes all published recipes with summaries
-- [ ] Include GEO score in the audit report alongside existing Lighthouse scores
+- [x] Add checks for `summary` field presence in recipe frontmatter
+- [x] Add checks for citation patterns in prose (at least 1 sourced claim per recipe)
+- [x] Add checks for FAQ answer length (target 40-60 words, flag if < 30 or > 80)
+- [x] Add checks for concrete statistics presence in prose
+- [x] Add check that `llms.txt` includes all published recipes with summaries
+- [x] Include GEO score in the audit report alongside existing Lighthouse scores
 
 **Files:**
 - `.github/workflows/weekly-seo-audit.yml` (Claude prompt section)
