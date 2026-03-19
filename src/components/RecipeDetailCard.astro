@@ -61,7 +61,7 @@ const {
   id="recipe-card"
   itemscope
   itemtype="https://schema.org/Recipe"
-  class="recipe-detail-card scroll-mt-20 overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900"
+  class="recipe-detail-card scroll-mt-20 overflow-hidden rounded-xl border border-warm-200 bg-white shadow-sm dark:border-warm-700 dark:bg-warm-900"
 >
   <!-- Hero Image (hidden in print) -->
   <div class="recipe-detail-card-image">
@@ -78,61 +78,61 @@ const {
   </div>
 
   <!-- Recipe Details -->
-  <div class="recipe-detail-card-content divide-y divide-neutral-100 dark:divide-neutral-800">
+  <div class="recipe-detail-card-content divide-y divide-warm-100 dark:divide-warm-800">
 
       <!-- Title + Meta Stats -->
       <div class="p-6 lg:p-8">
         <h2
           itemprop="name"
-          class="mb-5 font-heading text-2xl font-bold text-neutral-900 sm:text-3xl dark:text-neutral-100"
+          class="mb-5 font-heading text-2xl font-bold text-warm-900 sm:text-3xl dark:text-warm-100"
         >
           {title}
         </h2>
 
         <!-- Meta Stats Bar -->
-        <div class="recipe-detail-card-meta flex flex-wrap items-center gap-x-4 gap-y-3 rounded-xl bg-neutral-100 px-4 py-3 dark:bg-neutral-800">
+        <div class="recipe-detail-card-meta flex flex-wrap items-center gap-x-4 gap-y-3 rounded-xl bg-warm-100 px-4 py-3 dark:bg-warm-800">
 
           <!-- Prep time -->
           <div class="flex flex-col items-start">
-            <span class="text-xs text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.prepTime")}</span>
-            <time itemprop="prepTime" datetime={prepTime} class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.prepTime")}</span>
+            <time itemprop="prepTime" datetime={prepTime} class="text-sm font-semibold text-warm-900 dark:text-warm-100">
               {formatDuration(prepTime, locale)}
             </time>
           </div>
 
-          <div aria-hidden="true" class="h-8 w-px bg-neutral-200 dark:bg-neutral-700"></div>
+          <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
 
           <!-- Cook time -->
           <div class="flex flex-col items-start">
-            <span class="text-xs text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.cookTime")}</span>
-            <time itemprop="cookTime" datetime={cookTime} class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.cookTime")}</span>
+            <time itemprop="cookTime" datetime={cookTime} class="text-sm font-semibold text-warm-900 dark:text-warm-100">
               {formatDuration(cookTime, locale)}
             </time>
           </div>
 
-          <div aria-hidden="true" class="h-8 w-px bg-neutral-200 dark:bg-neutral-700"></div>
+          <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
 
           <!-- Total time -->
           <div class="flex flex-col items-start">
-            <span class="text-xs text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.totalTime")}</span>
-            <time itemprop="totalTime" datetime={totalTime} class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.totalTime")}</span>
+            <time itemprop="totalTime" datetime={totalTime} class="text-sm font-semibold text-warm-900 dark:text-warm-100">
               {formatDuration(totalTime, locale)}
             </time>
           </div>
 
-          <div aria-hidden="true" class="h-8 w-px bg-neutral-200 dark:bg-neutral-700"></div>
+          <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
 
           <!-- Servings -->
           <div class="flex flex-col items-start">
-            <span class="text-xs text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.servings")}</span>
-            <span itemprop="recipeYield" class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">{recipeYield}</span>
+            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.servings")}</span>
+            <span itemprop="recipeYield" class="text-sm font-semibold text-warm-900 dark:text-warm-100">{recipeYield}</span>
           </div>
 
-          <div aria-hidden="true" class="h-8 w-px bg-neutral-200 dark:bg-neutral-700"></div>
+          <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
 
           <!-- Difficulty -->
           <div class="flex flex-col items-start">
-            <span class="text-xs text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.difficulty")}</span>
+            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.difficulty")}</span>
             <span class={`mt-0.5 rounded-full px-2.5 py-0.5 text-xs font-medium ${difficultyColors[difficulty]}`}>
               {t(locale, `recipe.${difficulty}` as "recipe.easy" | "recipe.medium" | "recipe.hard")}
             </span>
@@ -140,17 +140,17 @@ const {
 
           {calories && (
             <>
-              <div aria-hidden="true" class="h-8 w-px bg-neutral-200 dark:bg-neutral-700"></div>
+              <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
               <div class="flex flex-col items-start">
-                <span class="text-xs text-neutral-500 dark:text-neutral-400">{t(locale, "recipe.calories")}</span>
-                <span class="text-sm font-semibold text-neutral-900 dark:text-neutral-100">{calories}</span>
+                <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.calories")}</span>
+                <span class="text-sm font-semibold text-warm-900 dark:text-warm-100">{calories}</span>
               </div>
             </>
           )}
 
           {impressFactor && (
             <>
-              <div aria-hidden="true" class="h-8 w-px bg-neutral-200 dark:bg-neutral-700"></div>
+              <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
               <ImpressFactor locale={locale} rating={impressFactor} />
             </>
           )}
@@ -163,13 +163,13 @@ const {
 
         <!-- Ingredients -->
         <section class="recipe-detail-card-ingredients">
-          <h3 class="mb-4 font-heading text-xl font-bold text-neutral-900 dark:text-neutral-100">
+          <h3 class="mb-4 font-heading text-xl font-bold text-warm-900 dark:text-warm-100">
             {t(locale, "recipe.ingredients")}
           </h3>
           {ingredientGroups.map((group, gi) => (
             <div class="mb-4 last:mb-0">
               {group.group && (
-                <h4 class="mb-2 font-heading text-xs font-semibold normal-case tracking-wide text-neutral-500 dark:text-neutral-400">
+                <h4 class="mb-2 font-heading text-xs font-semibold normal-case tracking-wide text-warm-500 dark:text-warm-400">
                   {group.group}
                 </h4>
               )}
@@ -179,12 +179,12 @@ const {
                     <input
                       type="checkbox"
                       id={`card-ing-${gi}-${i}`}
-                      class="peer mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded border-neutral-400 accent-brand-accent"
+                      class="peer mt-0.5 h-4 w-4 shrink-0 cursor-pointer rounded border-warm-400 accent-brand-rose"
                     />
                     <label
                       for={`card-ing-${gi}-${i}`}
                       itemprop="recipeIngredient"
-                      class="cursor-pointer text-sm text-neutral-700 peer-checked:text-neutral-400 peer-checked:line-through dark:text-neutral-300 dark:peer-checked:text-neutral-500"
+                      class="cursor-pointer text-sm text-warm-700 peer-checked:text-warm-400 peer-checked:line-through dark:text-warm-300 dark:peer-checked:text-warm-500"
                     >
                       {item}
                     </label>
@@ -197,13 +197,13 @@ const {
 
         <!-- Instructions -->
         <section class="recipe-detail-card-instructions">
-          <h3 class="mb-4 font-heading text-xl font-bold text-neutral-900 dark:text-neutral-100">
+          <h3 class="mb-4 font-heading text-xl font-bold text-warm-900 dark:text-warm-100">
             {t(locale, "recipe.instructions")}
           </h3>
           {instructionGroups.map((group) => (
             <div class="mb-6 last:mb-0">
               {group.group && (
-                <h4 class="mb-3 font-heading text-xs font-semibold normal-case tracking-wide text-neutral-500 dark:text-neutral-400">
+                <h4 class="mb-3 font-heading text-xs font-semibold normal-case tracking-wide text-warm-500 dark:text-warm-400">
                   {group.group}
                 </h4>
               )}
@@ -212,11 +212,11 @@ const {
                   <li itemprop="recipeInstructions" class="flex gap-3">
                     <span
                       aria-hidden="true"
-                      class="recipe-detail-step-number flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-primary-dark font-ui text-xs font-bold text-white"
+                      class="recipe-detail-step-number flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-wine font-ui text-xs font-bold text-white"
                     >
                       {i + 1}
                     </span>
-                    <p class="pt-0.5 text-body-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+                    <p class="pt-0.5 text-body-sm leading-relaxed text-warm-700 dark:text-warm-300">
                       {step.text}
                     </p>
                   </li>
@@ -229,7 +229,7 @@ const {
       </div>
 
       <!-- Print-only source footer -->
-      <div class="recipe-detail-card-footer px-6 py-3 text-center text-xs text-neutral-500">
+      <div class="recipe-detail-card-footer px-6 py-3 text-center text-xs text-warm-500">
         {t(locale, "recipe.source")}: {sourceUrl}
       </div>
 

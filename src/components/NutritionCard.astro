@@ -20,16 +20,16 @@ const hasData = nutrition.calories || nutrition.fatContent || nutrition.carbohyd
 
 {hasData && (
   <section class:list={[
-    "rounded-xl border border-neutral-200 dark:border-neutral-700",
+    "rounded-xl border border-warm-200 dark:border-warm-700",
     compact ? "p-4" : "p-6",
   ]}>
     <h2 class:list={[
-      "font-heading font-bold text-neutral-900 dark:text-neutral-100",
+      "font-heading font-bold text-warm-900 dark:text-warm-100",
       compact ? "mb-3 text-base" : "mb-4 text-xl",
     ]}>
       {t(locale, "recipe.nutrition")}
       <span class:list={[
-        "ml-2 font-normal text-neutral-500 dark:text-neutral-400",
+        "ml-2 font-normal text-warm-500 dark:text-warm-400",
         compact ? "text-xs" : "text-sm",
       ]}>({t(locale, "recipe.perServing")})</span>
     </h2>
@@ -40,11 +40,11 @@ const hasData = nutrition.calories || nutrition.fatContent || nutrition.carbohyd
       {nutrition.calories && (
         <div class="text-center">
           <p class:list={[
-            "font-bold text-brand-primary-text",
+            "font-bold text-brand-wine-text",
             compact ? "text-lg" : "text-2xl",
           ]}>{nutrition.calories}</p>
           <p class:list={[
-            "text-neutral-500 dark:text-neutral-400",
+            "text-warm-500 dark:text-warm-400",
             compact ? "text-xs" : "text-sm",
           ]}>{t(locale, "recipe.calories")}</p>
         </div>
@@ -52,11 +52,11 @@ const hasData = nutrition.calories || nutrition.fatContent || nutrition.carbohyd
       {nutrition.fatContent && (
         <div class="text-center">
           <p class:list={[
-            "font-bold text-brand-primary-text",
+            "font-bold text-brand-wine-text",
             compact ? "text-lg" : "text-2xl",
           ]}>{nutrition.fatContent}</p>
           <p class:list={[
-            "text-neutral-500 dark:text-neutral-400",
+            "text-warm-500 dark:text-warm-400",
             compact ? "text-xs" : "text-sm",
           ]}>{t(locale, "recipe.fat")}</p>
         </div>
@@ -64,11 +64,11 @@ const hasData = nutrition.calories || nutrition.fatContent || nutrition.carbohyd
       {nutrition.carbohydrateContent && (
         <div class="text-center">
           <p class:list={[
-            "font-bold text-brand-primary-text",
+            "font-bold text-brand-wine-text",
             compact ? "text-lg" : "text-2xl",
           ]}>{nutrition.carbohydrateContent}</p>
           <p class:list={[
-            "text-neutral-500 dark:text-neutral-400",
+            "text-warm-500 dark:text-warm-400",
             compact ? "text-xs" : "text-sm",
           ]}>{t(locale, "recipe.carbs")}</p>
         </div>
@@ -76,11 +76,11 @@ const hasData = nutrition.calories || nutrition.fatContent || nutrition.carbohyd
       {nutrition.proteinContent && (
         <div class="text-center">
           <p class:list={[
-            "font-bold text-brand-primary-text",
+            "font-bold text-brand-wine-text",
             compact ? "text-lg" : "text-2xl",
           ]}>{nutrition.proteinContent}</p>
           <p class:list={[
-            "text-neutral-500 dark:text-neutral-400",
+            "text-warm-500 dark:text-warm-400",
             compact ? "text-xs" : "text-sm",
           ]}>{t(locale, "recipe.protein")}</p>
         </div>

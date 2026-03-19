@@ -18,14 +18,14 @@ const locale = "en";
     />
 
     <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-neutral-900 sm:text-4xl dark:text-neutral-100">
+      <h1 class="mb-3 font-heading text-heading-1 font-bold text-warm-900 sm:text-4xl dark:text-warm-100">
         {t(locale, "bookmark.pageTitle")}
       </h1>
-      <div class="h-1 w-12 rounded-full bg-brand-accent"></div>
+      <div class="h-1 w-12 rounded-full bg-brand-rose"></div>
     </div>
 
     <div id="bookmarks-container">
-      <p class="text-body-base text-neutral-500 dark:text-neutral-400">Loading...</p>
+      <p class="text-body-base text-warm-500 dark:text-warm-400">Loading...</p>
     </div>
   </div>
 </BaseLayout>
@@ -41,14 +41,14 @@ const locale = "en";
     } catch(e) { bookmarks = []; }
 
     if (bookmarks.length === 0) {
-      container.innerHTML = '<div class="rounded-xl border border-neutral-200 bg-white p-8 text-center dark:border-neutral-800 dark:bg-neutral-900">' +
-        '<p class="mb-4 text-body-lg text-neutral-500 dark:text-neutral-400">No saved recipes yet.</p>' +
-        '<a href="/en/recipes/" class="inline-block rounded-lg bg-brand-primary px-6 py-3 font-ui text-sm font-medium text-white transition-colors hover:bg-brand-primary-dark">Browse recipes</a>' +
+      container.innerHTML = '<div class="rounded-xl border border-warm-200 bg-white p-8 text-center dark:border-warm-800 dark:bg-warm-900">' +
+        '<p class="mb-4 text-body-lg text-warm-500 dark:text-warm-400">No saved recipes yet.</p>' +
+        '<a href="/en/recipes/" class="inline-block rounded-lg bg-brand-wine px-6 py-3 font-ui text-sm font-medium text-white transition-colors hover:bg-brand-wine">Browse recipes</a>' +
         '</div>';
       return;
     }
 
-    container.innerHTML = '<p class="text-body-base text-neutral-500 dark:text-neutral-400">Loading your saved recipes...</p>';
+    container.innerHTML = '<p class="text-body-base text-warm-500 dark:text-warm-400">Loading your saved recipes...</p>';
 
     fetch('/recipe-index.json')
       .then(function(r) { return r.json(); })
@@ -62,13 +62,13 @@ const locale = "en";
           if (!recipe) return;
           found++;
 
-          html += '<div class="group relative overflow-hidden rounded-xl border border-neutral-200 bg-white transition-shadow hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900">' +
+          html += '<div class="group relative overflow-hidden rounded-xl border border-warm-200 bg-white transition-shadow hover:shadow-lg dark:border-warm-800 dark:bg-warm-900">' +
             '<a href="/en/recipes/' + recipe.slug + '/" class="block">' +
             '<div class="p-5">' +
-            '<h2 class="mb-2 font-heading text-lg font-bold text-neutral-900 group-hover:text-brand-primary-text dark:text-neutral-100">' + recipe.title + '</h2>' +
-            '<p class="text-body-sm text-neutral-500 line-clamp-2 dark:text-neutral-400">' + recipe.description + '</p>' +
+            '<h2 class="mb-2 font-heading text-lg font-bold text-warm-900 group-hover:text-brand-wine-text dark:text-warm-100">' + recipe.title + '</h2>' +
+            '<p class="text-body-sm text-warm-500 line-clamp-2 dark:text-warm-400">' + recipe.description + '</p>' +
             '</div></a>' +
-            '<button class="unbookmark-btn absolute right-3 top-3 rounded-full bg-white/80 p-1.5 text-red-500 transition-colors hover:bg-white dark:bg-neutral-900/80 dark:text-red-400 dark:hover:bg-neutral-900" data-slug="' + slug + '" aria-label="Remove bookmark">' +
+            '<button class="unbookmark-btn absolute right-3 top-3 rounded-full bg-white/80 p-1.5 text-red-500 transition-colors hover:bg-white dark:bg-warm-900/80 dark:text-red-400 dark:hover:bg-warm-900" data-slug="' + slug + '" aria-label="Remove bookmark">' +
             '<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>' +
             '</button></div>';
         });
@@ -76,9 +76,9 @@ const locale = "en";
         html += '</div>';
 
         if (found === 0) {
-          container.innerHTML = '<div class="rounded-xl border border-neutral-200 bg-white p-8 text-center dark:border-neutral-800 dark:bg-neutral-900">' +
-            '<p class="mb-4 text-body-lg text-neutral-500 dark:text-neutral-400">No saved recipes yet.</p>' +
-            '<a href="/en/recipes/" class="inline-block rounded-lg bg-brand-primary px-6 py-3 font-ui text-sm font-medium text-white transition-colors hover:bg-brand-primary-dark">Browse recipes</a>' +
+          container.innerHTML = '<div class="rounded-xl border border-warm-200 bg-white p-8 text-center dark:border-warm-800 dark:bg-warm-900">' +
+            '<p class="mb-4 text-body-lg text-warm-500 dark:text-warm-400">No saved recipes yet.</p>' +
+            '<a href="/en/recipes/" class="inline-block rounded-lg bg-brand-wine px-6 py-3 font-ui text-sm font-medium text-white transition-colors hover:bg-brand-wine">Browse recipes</a>' +
             '</div>';
           return;
         }
@@ -93,16 +93,16 @@ const locale = "en";
             localStorage.setItem('dmd_bookmarks', JSON.stringify(bm));
             this.closest('.group').remove();
             if (bm.length === 0) {
-              container.innerHTML = '<div class="rounded-xl border border-neutral-200 bg-white p-8 text-center dark:border-neutral-800 dark:bg-neutral-900">' +
-                '<p class="mb-4 text-body-lg text-neutral-500 dark:text-neutral-400">No saved recipes yet.</p>' +
-                '<a href="/en/recipes/" class="inline-block rounded-lg bg-brand-primary px-6 py-3 font-ui text-sm font-medium text-white transition-colors hover:bg-brand-primary-dark">Browse recipes</a>' +
+              container.innerHTML = '<div class="rounded-xl border border-warm-200 bg-white p-8 text-center dark:border-warm-800 dark:bg-warm-900">' +
+                '<p class="mb-4 text-body-lg text-warm-500 dark:text-warm-400">No saved recipes yet.</p>' +
+                '<a href="/en/recipes/" class="inline-block rounded-lg bg-brand-wine px-6 py-3 font-ui text-sm font-medium text-white transition-colors hover:bg-brand-wine">Browse recipes</a>' +
                 '</div>';
             }
           });
         });
       })
       .catch(function() {
-        container.innerHTML = '<p class="text-body-base text-neutral-500 dark:text-neutral-400">Could not load recipes.</p>';
+        container.innerHTML = '<p class="text-body-base text-warm-500 dark:text-warm-400">Could not load recipes.</p>';
       });
   })();
 </script>

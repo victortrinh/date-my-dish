@@ -2,10 +2,7 @@
 import { t, getLocalizedPath, getBookmarksLocalizedPath, type Locale } from "@i18n/utils";
 import LanguageToggle from "./LanguageToggle.astro";
 import DarkModeToggle from "./DarkModeToggle.astro";
-import { getImage } from "astro:assets";
-import inlineLogoSrc from "@assets/images/logo-datemydish-inline.png";
-
-const inlineLogo = await getImage({ src: inlineLogoSrc, format: "webp" });
+import logoInline from "@assets/images/logo-datemydish-inline.webp";
 
 interface Props {
   locale: Locale;
@@ -32,12 +29,13 @@ function isActive(linkPath: string): boolean {
 }
 ---
 
-<nav class="no-print sticky top-0 z-50 border-b border-neutral-100 bg-neutral-50/95 backdrop-blur-sm dark:border-neutral-800 dark:bg-neutral-950/95">
+<nav class="no-print sticky top-0 z-50 border-b border-warm-200 bg-warm-50/95 backdrop-blur-sm dark:border-warm-700 dark:bg-warm-950/95">
   <div class="mx-auto flex max-w-content items-center justify-between px-4 py-4">
     <!-- Logo -->
-    <a href={getLocalizedPath(locale, "/")} class="flex items-center gap-2.5 no-underline hover:opacity-80">
-      <img src="/favicon.svg" class="h-8 w-8" alt="" width="32" height="32" data-pin-nopin="true" />
-      <img src={inlineLogo.src} class="hidden h-8 lg:block lg:h-10" alt="Date My Dish" width={inlineLogo.width} height={inlineLogo.height} data-pin-nopin="true" />
+    <a href={getLocalizedPath(locale, "/")} class="flex items-center no-underline hover:opacity-80">
+      <span class="inline-flex items-center rounded-lg bg-warm-950 px-3 py-1.5">
+        <img src={logoInline.src} class="h-8 w-auto lg:h-10" alt="Date My Dish" width={logoInline.width} height={logoInline.height} style="max-width: 200px;" data-pin-nopin="true" />
+      </span>
     </a>
 
     <!-- Desktop Nav -->
@@ -46,16 +44,16 @@ function isActive(linkPath: string): boolean {
         <a
           href={getLocalizedPath(locale, link.path)}
           class:list={[
-            "relative rounded-lg px-3 py-2 font-ui text-sm font-medium uppercase no-underline transition-colors",
+            "relative rounded-lg px-3 py-2 font-ui text-sm font-medium no-underline transition-colors",
             isActive(link.path)
-              ? "text-brand-primary-text"
-              : "text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100",
+              ? "text-brand-wine-text"
+              : "text-warm-600 hover:text-warm-800 dark:text-warm-300 dark:hover:text-warm-100",
           ]}
           aria-current={isActive(link.path) ? "page" : undefined}
         >
           {link.label}
           {isActive(link.path) && (
-            <span class="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-brand-primary" />
+            <span class="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-brand-wine" />
           )}
         </a>
       ))}
@@ -100,7 +98,7 @@ function isActive(linkPath: string): boolean {
       </button>
       <button
         id="mobile-menu-btn"
-        class="rounded-lg p-2 text-neutral-600 dark:text-neutral-300"
+        class="rounded-lg p-2 text-warm-600 dark:text-warm-300"
         aria-label={t(locale, "nav.toggleMenu")}
         aria-expanded="false"
       >
@@ -115,23 +113,23 @@ function isActive(linkPath: string): boolean {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden border-t border-neutral-100 bg-neutral-50 md:hidden dark:border-neutral-800 dark:bg-neutral-950">
+  <div id="mobile-menu" class="hidden border-t border-warm-200 bg-warm-50 md:hidden dark:border-warm-700 dark:bg-warm-950">
     <div class="mx-auto max-w-content space-y-1 px-4 py-3">
       {navLinks.map((link) => (
         <a
           href={getLocalizedPath(locale, link.path)}
           class:list={[
-            "block rounded-lg px-4 py-3 font-ui text-base font-medium uppercase no-underline transition-colors",
+            "block rounded-lg px-4 py-3 font-ui text-base font-medium no-underline transition-colors",
             isActive(link.path)
-              ? "bg-brand-primary/5 text-brand-primary-text"
-              : "text-neutral-700 hover:bg-neutral-50 dark:text-neutral-200 dark:hover:bg-neutral-800/50",
+              ? "bg-brand-wine/5 text-brand-wine-text"
+              : "text-warm-700 hover:bg-warm-50 dark:text-warm-200 dark:hover:bg-warm-800/50",
           ]}
           aria-current={isActive(link.path) ? "page" : undefined}
         >
           {link.label}
         </a>
       ))}
-      <div class="flex items-center gap-3 border-t border-neutral-100 px-4 pt-3 dark:border-neutral-800">
+      <div class="flex items-center gap-3 border-t border-warm-200 px-4 pt-3 dark:border-warm-700">
         <DarkModeToggle locale={locale} />
         <LanguageToggle locale={locale} translationSlug={translationSlug} contentType={contentType} />
       </div>

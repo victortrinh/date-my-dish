@@ -18,13 +18,13 @@ const { locale, ingredientGroups, idPrefix = "ing", recipeYield } = Astro.props;
 
 <section class="ingredient-list-section">
   <div class="mb-4">
-    <h2 class="font-heading text-heading-3 font-bold text-neutral-900 dark:text-neutral-100">
+    <h2 class="font-heading text-heading-3 font-bold text-warm-900 dark:text-warm-100">
       {t(locale, "recipe.ingredients")}
     </h2>
   </div>
 
   {recipeYield && (
-    <p class="mb-3 text-body-sm text-neutral-500 dark:text-neutral-400">
+    <p class="mb-3 text-body-sm text-warm-500 dark:text-warm-400">
       {recipeYield}
     </p>
   )}
@@ -32,7 +32,7 @@ const { locale, ingredientGroups, idPrefix = "ing", recipeYield } = Astro.props;
   {ingredientGroups.map((group, gi) => (
     <div class="mb-4 last:mb-0">
       {group.group && (
-        <h3 class="mb-2 font-heading text-base font-semibold text-neutral-700 dark:text-neutral-300">{group.group}</h3>
+        <h3 class="mb-2 font-heading text-base font-semibold text-warm-700 dark:text-warm-300">{group.group}</h3>
       )}
       <ul class="space-y-2">
         {group.items.map((item, i) => (
@@ -40,11 +40,11 @@ const { locale, ingredientGroups, idPrefix = "ing", recipeYield } = Astro.props;
             <input
               type="checkbox"
               id={`${idPrefix}-${gi}-${i}`}
-              class="peer mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-neutral-400 text-brand-accent accent-brand-accent"
+              class="peer mt-1 h-4 w-4 shrink-0 cursor-pointer rounded border-warm-400 text-brand-rose accent-brand-rose"
             />
             <label
               for={`${idPrefix}-${gi}-${i}`}
-              class="cursor-pointer text-body-sm text-neutral-700 peer-checked:text-neutral-400 peer-checked:line-through dark:text-neutral-300 dark:peer-checked:text-neutral-500"
+              class="cursor-pointer text-body-sm text-warm-700 peer-checked:text-warm-400 peer-checked:line-through dark:text-warm-300 dark:peer-checked:text-warm-500"
             >
               {item}
             </label>
