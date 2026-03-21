@@ -5,6 +5,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import AuthorBioCard from "@components/AuthorBioCard.astro";
 import { t } from "@i18n/utils";
 import heroImage from "@assets/images/victor-about.webp";
+import recipeDevImage from "@assets/images/recipes/zucchini-eggplant-chips.webp";
 
 const locale = "fr";
 const siteUrl = "https://datemydish.com";
@@ -36,6 +37,15 @@ const aboutPageSchema = {
     name: "Victor Vu",
   },
 };
+
+const cards = [
+  { emoji: "🍽️", titleKey: "about.card1Title" as const, descKey: "about.card1Desc" as const },
+  { emoji: "📖", titleKey: "about.card2Title" as const, descKey: "about.card2Desc" as const },
+  { emoji: "🍷", titleKey: "about.card3Title" as const, descKey: "about.card3Desc" as const },
+  { emoji: "🌿", titleKey: "about.card4Title" as const, descKey: "about.card4Desc" as const },
+  { emoji: "⏱️", titleKey: "about.card5Title" as const, descKey: "about.card5Desc" as const },
+  { emoji: "🌐", titleKey: "about.card6Title" as const, descKey: "about.card6Desc" as const },
+];
 ---
 
 <BaseLayout
@@ -48,110 +58,198 @@ const aboutPageSchema = {
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
 
-  <div class="mx-auto max-w-narrow px-4 py-section-sm">
-    <Breadcrumbs
-      locale={locale}
-      items={[{ label: t(locale, "about.pageTitle") }]}
-    />
+  <!-- 1. Hero / Introduction -->
+  <section class="bg-warm-50 dark:bg-warm-950">
+    <div class="mx-auto max-w-content px-4 py-section-sm lg:py-section">
+      <Breadcrumbs
+        locale={locale}
+        items={[{ label: t(locale, "about.pageTitle") }]}
+      />
 
-    <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-warm-900 sm:text-4xl dark:text-warm-100">
-        {t(locale, "about.title")}
-      </h1>
-      <div class="h-1 w-12 rounded-full bg-brand-rose"></div>
-    </div>
+      <div class="mt-8 flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
+        <div class="lg:w-3/5">
+          <h1 class="mb-3 font-heading text-heading-1 font-normal text-warm-900 sm:text-4xl dark:text-warm-100">
+            {t(locale, "about.title")}
+          </h1>
+          <div class="mb-6 h-1 w-12 rounded-full bg-brand-rose"></div>
 
-    <div class="mb-10 flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-10">
-      <div class="w-full shrink-0 overflow-hidden rounded-2xl md:w-64">
-        <Picture
-          src={heroImage}
-          alt="Victor Vu, cuisinier amateur et créateur de Date My Dish, debout dans sa cuisine montréalaise portant un tablier les bras croisés"
-          widths={[400, 600, 900]}
-          sizes="(max-width: 768px) 100vw, 256px"
-          formats={["avif", "webp"]}
-          class="aspect-[4/3] w-full object-cover object-[center_30%] md:aspect-auto md:max-h-none"
-          loading="eager"
-        />
+          <p class="mb-5 text-body-lg leading-relaxed text-warm-700 dark:text-warm-300">
+            Bonjour, je suis Victor! Je suis un cuisinier amateur basé à Montréal qui croit que cuisiner
+            pour quelqu'un est l'une des plus belles façons de montrer qu'on tient à cette personne.
+            Date My Dish est l'endroit où je partage des recettes romantiques et de l'inspiration pour vos
+            soirées en amoureux : des plats conçus pour impressionner, que ce soit pour un premier rendez-vous,
+            un anniversaire ou une soirée cozy à la maison.
+          </p>
+
+          <p class="text-body-lg leading-relaxed text-warm-600 dark:text-warm-400">
+            Date My Dish, c'est l'endroit où je partage des recettes romantiques et de l'inspiration
+            pour vos soirées. Chaque plat est conçu pour vous aider à créer une soirée inoubliable à la maison.
+          </p>
+        </div>
+
+        <div class="lg:w-2/5">
+          <div class="overflow-hidden rounded-2xl">
+            <Picture
+              src={heroImage}
+              alt="Victor Vu, cuisinier amateur et créateur de Date My Dish, debout dans sa cuisine montréalaise portant un tablier les bras croisés"
+              widths={[400, 600, 900]}
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              formats={["avif", "webp"]}
+              class="aspect-[3/4] w-full object-cover object-[center_30%]"
+              loading="eager"
+            />
+          </div>
+        </div>
       </div>
-      <p class="text-lg text-warm-700 dark:text-warm-300">
-        Bonjour, je suis Victor! Je suis un cuisinier amateur basé à Montréal qui croit que cuisiner
-        pour quelqu'un est l'une des plus belles façons de montrer qu'on tient à cette personne.
-        Date My Dish est l'endroit où je partage des recettes romantiques et de l'inspiration pour vos
-        soirées en amoureux : des plats conçus pour impressionner, que ce soit pour un premier rendez-vous,
-        un anniversaire ou une soirée cozy à la maison.
-      </p>
     </div>
+  </section>
 
-    <div class="prose max-w-none">
+  <!-- 2. Une histoire culinaire montréalaise -->
+  <section class="bg-white dark:bg-warm-900">
+    <div class="mx-auto max-w-prose px-4 py-section-sm lg:py-section">
+      <h2 class="mb-3 font-heading text-heading-2 font-normal text-warm-900 dark:text-warm-100">
+        {t(locale, "about.montrealHeading")}
+      </h2>
+      <div class="mb-8 h-1 w-10 rounded-full bg-brand-rose"></div>
 
-      <h2>Une histoire culinaire montréalaise</h2>
+      <div class="space-y-5 text-body-lg leading-relaxed text-warm-700 dark:text-warm-300">
+        <p>
+          Ayant grandi à Montréal, entouré d'une culture culinaire incroyable, j'ai développé très tôt
+          une appréciation pour la façon dont la cuisine rassemble les gens. Dans un foyer bilingue,
+          la nourriture a toujours été le langage que tout le monde comprenait, que ce soit une crêpe
+          française classique le dimanche matin ou les pâtes de ma grand-mère un soir de semaine.
+          Cet amour pour se rassembler autour de la table ne m'a jamais quitté.
+        </p>
 
-      <p>
-        Ayant grandi à Montréal, entouré d'une culture culinaire incroyable, j'ai développé très tôt
-        une appréciation pour la façon dont la cuisine rassemble les gens. Dans un foyer bilingue,
-        la nourriture a toujours été le langage que tout le monde comprenait, que ce soit une crêpe
-        française classique le dimanche matin ou les pâtes de ma grand-mère un soir de semaine.
-        Cet amour pour se rassembler autour de la table ne m'a jamais quitté.
+        <p>
+          Au fil de la dernière décennie, j'ai cuisiné des centaines de recettes, des classiques italiens
+          à la cuisine fusion coréenne, en peaufinant mes techniques à travers les cuisines du monde.
+          J'ai passé des années à affiner mon art grâce à la scène culinaire vibrante de Montréal,
+          en apprenant des marchés, des restaurants et des traditions culinaires diversifiées
+          qui rendent cette ville si spéciale.
+        </p>
+
+        <p>
+          J'ai remarqué un manque de ressources axées spécifiquement sur la cuisine
+          romantique à la maison. Il existe plein de sites de recettes, mais très peu vous aident à planifier
+          une soirée inoubliable chez vous. C'est comme ça que Date My Dish est né.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Pourquoi « Date My Dish »? (Philosophie) -->
+  <section class="bg-warm-800 dark:bg-warm-900">
+    <div class="mx-auto max-w-prose px-4 py-section-sm text-center lg:py-section">
+      <p class="mb-2 font-ui text-body-sm font-medium tracking-wide text-brand-rose uppercase">
+        {t(locale, "about.subtitle")}
       </p>
+      <h2 class="mb-8 font-heading text-heading-2 font-normal text-warm-50">
+        {t(locale, "about.whyHeading")}
+      </h2>
 
-      <p>
-        Au fil de la dernière décennie, j'ai cuisiné des centaines de recettes, des classiques italiens
-        à la cuisine fusion coréenne, en peaufinant mes techniques à travers les cuisines du monde.
-        J'ai passé des années à affiner mon art grâce à la scène culinaire vibrante de Montréal,
-        en apprenant des marchés, des restaurants et des traditions culinaires diversifiées
-        qui rendent cette ville si spéciale.
-      </p>
-
-      <p>
-        J'ai remarqué un manque de ressources axées spécifiquement sur la cuisine
-        romantique à la maison. Il existe plein de sites de recettes, mais très peu vous aident à planifier
-        une soirée inoubliable chez vous. C'est comme ça que Date My Dish est né.
-      </p>
-
-      <h2>Pourquoi « Date My Dish »?</h2>
-
-      <p>
+      <blockquote class="mx-auto max-w-2xl border-l-4 border-brand-rose pl-6 text-left text-body-lg italic leading-relaxed text-warm-200">
         Parce que chaque recette devrait donner envie d'en tomber amoureux. Je veux que vous regardiez
         un plat et pensiez « Il faut absolument que je fasse ça. » Que vous planifiiez une soirée
         en amoureux ou que vous vouliez simplement rehausser un soir ordinaire, l'objectif est
         toujours le même : une cuisine qui crée un moment. Ce n'est pas une question de perfection;
         c'est une question d'effort et d'intention.
-      </p>
+      </blockquote>
+    </div>
+  </section>
 
-      <h2>Comment je développe mes recettes</h2>
+  <!-- 4. Comment je développe mes recettes -->
+  <section class="bg-warm-50 dark:bg-warm-950">
+    <div class="mx-auto max-w-content px-4 py-section-sm lg:py-section">
+      <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
+        <div class="lg:w-3/5">
+          <h2 class="mb-3 font-heading text-heading-2 font-normal text-warm-900 dark:text-warm-100">
+            {t(locale, "about.howHeading")}
+          </h2>
+          <div class="mb-8 h-1 w-10 rounded-full bg-brand-rose"></div>
 
-      <p>
-        Chaque recette sur Date My Dish passe par plusieurs rondes de tests dans ma cuisine maison.
-        Je cuisine chaque plat au moins trois fois avant de le publier, en ajustant l'assaisonnement,
-        le timing et la technique jusqu'à ce que ce soit parfait. Les temps de préparation et de cuisson
-        que vous voyez sont honnêtes : mesurés pendant de vraies sessions de cuisine, pas estimés.
-      </p>
+          <div class="space-y-5 text-body-lg leading-relaxed text-warm-700 dark:text-warm-300">
+            <p>
+              Chaque recette sur Date My Dish passe par plusieurs rondes de tests dans ma cuisine maison.
+              Je cuisine chaque plat au moins trois fois avant de le publier, en ajustant l'assaisonnement,
+              le timing et la technique jusqu'à ce que ce soit parfait. Les temps de préparation et de cuisson
+              que vous voyez sont honnêtes : mesurés pendant de vraies sessions de cuisine, pas estimés.
+            </p>
 
-      <p>
-        Je me concentre sur des recettes qui équilibrent le facteur « wow » avec l'accessibilité.
-        Pas besoin de formation professionnelle ni d'équipement spécialisé. Il vous faut de bons
-        ingrédients, des instructions claires et la confiance de faire confiance au processus.
-      </p>
+            <p>
+              Je me concentre sur des recettes qui équilibrent le facteur « wow » avec l'accessibilité.
+              Pas besoin de formation professionnelle ni d'équipement spécialisé. Il vous faut de bons
+              ingrédients, des instructions claires et la confiance de faire confiance au processus.
+            </p>
+          </div>
 
-      <h2>Ce que vous trouverez ici</h2>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <span class="inline-flex items-center gap-2 rounded-full bg-brand-wine/10 px-4 py-2 font-ui text-body-sm font-medium text-brand-wine-text dark:bg-brand-wine-dark/15 dark:text-brand-wine-dark">
+              ✓ {t(locale, "about.testing")}
+            </span>
+            <span class="inline-flex items-center gap-2 rounded-full bg-brand-wine/10 px-4 py-2 font-ui text-body-sm font-medium text-brand-wine-text dark:bg-brand-wine-dark/15 dark:text-brand-wine-dark">
+              ✓ {t(locale, "about.timings")}
+            </span>
+          </div>
+        </div>
 
-      <ul>
-        <li>Des collections de recettes romantiques, de l'entrée au dessert, testées en cuisine maison</li>
-        <li>Des articles sur les techniques culinaires et la science alimentaire pour aiguiser vos talents</li>
-        <li>Des conseils pour planifier vos soirées, incluant accords vins et ambiance</li>
-        <li>De l'inspiration saisonnière couvrant les cuisines italienne, asiatique, méditerranéenne et fusion</li>
-        <li>Des instructions étape par étape avec des temps honnêtes issus de vrais tests</li>
-        <li>Chaque recette disponible en français et en anglais</li>
-      </ul>
+        <div class="lg:w-2/5">
+          <div class="overflow-hidden rounded-2xl">
+            <Picture
+              src={recipeDevImage}
+              alt="Chips croustillantes de courgettes et aubergines en pâte à l'eau pétillante, dorées et fraîchement frites"
+              widths={[400, 600, 900]}
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              formats={["avif", "webp"]}
+              class="aspect-[3/4] w-full object-cover object-[center_30%]"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <p>
+  <!-- 5. Ce que vous trouverez ici -->
+  <section class="bg-white dark:bg-warm-900">
+    <div class="mx-auto max-w-content px-4 py-section-sm lg:py-section">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 font-heading text-heading-2 font-normal text-warm-900 dark:text-warm-100">
+          {t(locale, "about.whatHeading")}
+        </h2>
+        <div class="mx-auto h-1 w-10 rounded-full bg-brand-rose"></div>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {cards.map((card) => (
+          <div class="rounded-xl border border-warm-200 bg-warm-50 p-6 dark:border-warm-700 dark:bg-warm-800">
+            <span class="mb-3 block text-2xl">{card.emoji}</span>
+            <h3 class="mb-2 font-heading text-heading-3 font-normal text-warm-900 dark:text-warm-100">
+              {t(locale, card.titleKey)}
+            </h3>
+            <p class="text-body-sm leading-relaxed text-warm-600 dark:text-warm-400">
+              {t(locale, card.descKey)}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Mot de la fin -->
+  <section class="bg-warm-50 dark:bg-warm-950">
+    <div class="mx-auto max-w-prose px-4 py-section-sm text-center lg:py-section">
+      <p class="font-body text-body-lg italic leading-relaxed text-warm-600 dark:text-warm-400">
         Merci d'être ici. J'espère que vous trouverez quelque chose qui rendra votre prochaine soirée
         un peu plus spéciale, et beaucoup plus délicieuse.
       </p>
     </div>
+  </section>
 
-    <div class="mt-12">
+  <!-- 7. AuthorBioCard -->
+  <section class="bg-white dark:bg-warm-900">
+    <div class="mx-auto max-w-narrow px-4 py-section-sm">
       <AuthorBioCard locale={locale} showLink={false} />
     </div>
-  </div>
+  </section>
 </BaseLayout>

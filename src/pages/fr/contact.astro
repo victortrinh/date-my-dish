@@ -1,65 +1,146 @@
 ---
+import { Picture } from "astro:assets";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t } from "@i18n/utils";
+import contactImage from "@assets/images/articles/sous-vide-date-night.webp";
 
 const locale = "fr";
+
+const topics = [
+  { emoji: "🍽️", titleKey: "contact.topicRecipesTitle" as const, descKey: "contact.topicRecipesDesc" as const },
+  { emoji: "🍷", titleKey: "contact.topicDateNightTitle" as const, descKey: "contact.topicDateNightDesc" as const },
+  { emoji: "🤝", titleKey: "contact.topicCollabTitle" as const, descKey: "contact.topicCollabDesc" as const },
+  { emoji: "💬", titleKey: "contact.topicFeedbackTitle" as const, descKey: "contact.topicFeedbackDesc" as const },
+];
 ---
 
 <BaseLayout
   title={`${t(locale, "contact.pageTitle")} | Date My Dish`}
   description="Rejoignez Victor de Date My Dish sur Instagram. Questions sur les recettes, idées de soirées, collaborations et suggestions. Créons quelque chose de spécial."
 >
-  <div class="mx-auto max-w-narrow px-4 py-section-sm">
-    <Breadcrumbs
-      locale={locale}
-      items={[{ label: t(locale, "contact.pageTitle") }]}
-    />
+  <!-- 1. Hero: 2-col — heading + intro left, image right with overlaid quote -->
+  <section class="bg-warm-50 dark:bg-warm-950">
+    <div class="mx-auto max-w-content px-4 py-section-sm lg:py-section">
+      <Breadcrumbs
+        locale={locale}
+        items={[{ label: t(locale, "contact.title") }]}
+      />
 
-    <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-warm-900 sm:text-4xl dark:text-warm-100">
-        {t(locale, "contact.pageTitle")}
-      </h1>
-      <div class="h-1 w-12 rounded-full bg-brand-rose"></div>
+      <div class="mt-8 flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
+        <div class="lg:w-3/5">
+          <h1 class="mb-3 font-heading text-heading-1 font-normal text-warm-900 italic sm:text-4xl dark:text-warm-100">
+            {t(locale, "contact.pageTitle")}
+          </h1>
+          <div class="mb-6 h-1 w-12 rounded-full bg-brand-rose"></div>
+
+          <p class="text-body-lg leading-relaxed text-warm-700 dark:text-warm-300">
+            Que vous ayez une question sur l'une de mes recettes, besoin de conseils pour planifier
+            la soirée parfaite en amoureux, ou envie d'explorer des possibilités de collaboration,
+            j'adorerais avoir de vos nouvelles. Date My Dish est plus qu'un simple site de recettes;
+            c'est une communauté de passionnés de cuisine qui croient que cuisiner ensemble
+            crée des souvenirs durables.
+          </p>
+        </div>
+
+        <div class="relative py-6 lg:w-2/5 lg:py-8 lg:pl-4">
+          <div class="mx-auto max-w-sm overflow-hidden rounded-2xl shadow-2xl transition-transform duration-700 lg:mx-0 lg:max-w-none lg:rotate-2 lg:hover:rotate-0">
+            <Picture
+              src={contactImage}
+              alt="Une table intime dressée pour une soirée en amoureux avec des plats préparés sous vide"
+              widths={[400, 600, 900]}
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              formats={["avif", "webp"]}
+              class="aspect-[3/4] w-full object-cover"
+              loading="eager"
+            />
+          </div>
+          <p class="absolute -bottom-2 -left-2 rounded-lg bg-brand-wine px-5 py-3 font-caveat text-base italic text-warm-50 sm:text-lg dark:bg-brand-wine-dark">
+            "{t(locale, "contact.heroQuote")}"
+          </p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="prose max-w-none">
-      <p>
-        Que vous ayez une question sur l'une de mes recettes, besoin de conseils pour planifier
-        la soirée parfaite en amoureux, ou envie d'explorer des possibilités de collaboration,
-        j'adorerais avoir de vos nouvelles. Date My Dish est plus qu'un simple site de recettes;
-        c'est une communauté de passionnés de cuisine qui croient que cuisiner ensemble
-        crée des souvenirs durables.
-      </p>
+  <!-- 2. Info section: 2-col — social links left, topic cards right -->
+  <section class="bg-warm-50 dark:bg-warm-950">
+    <div class="mx-auto max-w-content px-4 py-section-sm lg:py-section">
+      <div class="flex flex-col gap-8 lg:flex-row lg:gap-10">
+        <!-- Comment me joindre -->
+        <div class="rounded-2xl bg-warm-100 p-8 lg:w-2/5 dark:bg-warm-900">
+          <h2 class="mb-3 font-heading text-heading-2 font-normal text-warm-900 dark:text-warm-100">
+            {t(locale, "contact.howToConnect")}
+          </h2>
+          <div class="mb-6 h-1 w-10 rounded-full bg-brand-rose"></div>
 
-      <h2>Comment me joindre</h2>
+          <p class="mb-8 text-body-lg leading-relaxed text-warm-700 dark:text-warm-300">
+            {t(locale, "contact.howToConnectDesc")}
+          </p>
 
-      <p>
-        La meilleure façon de me contacter est par message privé sur Instagram.
-        Je réponds habituellement dans les 24 à 48 heures!
-      </p>
+          <div class="space-y-4">
+            <a
+              href="https://www.instagram.com/datemydishdotcom"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 font-ui text-body-lg font-medium text-warm-800 no-underline dark:text-warm-200"
+            >
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-wine/10 text-lg dark:bg-brand-wine-dark/15">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-wine-text dark:text-brand-wine-dark"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>
+              </span>
+              Instagram : @datemydishdotcom
+            </a>
 
-      <p>
-        <a href="https://www.instagram.com/datemydishdotcom" target="_blank" rel="noopener noreferrer">Instagram : @datemydishdotcom</a>
-      </p>
+            <a
+              href="https://www.pinterest.com/datemydish"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 font-ui text-body-lg font-medium text-warm-800 no-underline dark:text-warm-200"
+            >
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-wine/10 text-lg dark:bg-brand-wine-dark/15">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-brand-wine-text dark:text-brand-wine-dark"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+              </span>
+              Pinterest : @datemydish
+            </a>
+          </div>
+        </div>
 
-      <p>
-        Vous pouvez aussi nous retrouver sur <a href="https://www.pinterest.com/datemydish" target="_blank" rel="noopener noreferrer">Pinterest : @datemydish</a> pour de l'inspiration et des tableaux de recettes.
-      </p>
+        <!-- À quel sujet me contacter -->
+        <div class="rounded-2xl bg-white p-8 lg:w-3/5 dark:bg-warm-800">
+          <h2 class="mb-3 font-heading text-heading-2 font-normal text-warm-900 dark:text-warm-100">
+            {t(locale, "contact.whatToReachOut")}
+          </h2>
+          <div class="mb-6 h-1 w-10 rounded-full bg-brand-rose"></div>
 
-      <h2>À quel sujet me contacter</h2>
+          <div class="grid gap-6 sm:grid-cols-2">
+            {topics.map((topic) => (
+              <div class="flex gap-4">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-wine/10 text-lg dark:bg-brand-wine-dark/15">
+                  {topic.emoji}
+                </span>
+                <div>
+                  <h3 class="mb-1 font-ui text-base font-semibold text-warm-900 dark:text-warm-100">
+                    {t(locale, topic.titleKey)}
+                  </h3>
+                  <p class="text-body-sm leading-relaxed text-warm-600 dark:text-warm-400">
+                    {t(locale, topic.descKey)}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-      <ul>
-        <li><strong>Questions sur les recettes :</strong> substitutions d'ingrédients, techniques, modifications ou dépannage</li>
-        <li><strong>Planification de soirées :</strong> suggestions de menus, accords vins, conseils d'ambiance</li>
-        <li><strong>Collaboration & médias :</strong> partenariats, presse, entrevues, reportages</li>
-        <li><strong>Commentaires & suggestions :</strong> partagez vos expériences avec les recettes ou suggérez de nouveaux plats</li>
-      </ul>
-
-      <p>
-        Que vous soyez débutant ou cuisinier expérimenté, n'hésitez pas à me contacter.
-        Chaque message compte, et je suis là pour rendre votre prochaine soirée vraiment spéciale.
-      </p>
+      <!-- Closing statement -->
+      <div class="mt-16 rounded-2xl bg-warm-100 py-24 text-center lg:py-32 dark:bg-warm-900">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-6 h-8 w-8 text-brand-rose"><path d="M12 2l2.09 6.26L20 9.27l-4.74 3.99L16.18 20 12 16.77 7.82 20l.9-6.74L4 9.27l5.91-1.01z"></path></svg>
+        <p class="mx-auto max-w-prose px-8 font-caveat text-2xl leading-relaxed text-warm-800 italic sm:text-3xl dark:text-warm-100">
+          Que vous soyez débutant ou cuisinier expérimenté, n'hésitez pas à me contacter.
+          Chaque message compte, et je suis là pour rendre votre prochaine soirée vraiment spéciale.
+        </p>
+        <div class="mx-auto mt-8 h-1 w-12 rounded-full bg-brand-rose"></div>
+      </div>
     </div>
-  </div>
+  </section>
 </BaseLayout>

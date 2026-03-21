@@ -84,7 +84,7 @@ const {
       <div class="p-6 lg:p-8">
         <h2
           itemprop="name"
-          class="mb-5 font-heading text-2xl font-bold text-warm-900 sm:text-3xl dark:text-warm-100"
+          class="mb-5 font-heading text-2xl font-normal text-warm-900 sm:text-3xl dark:text-warm-100"
         >
           {title}
         </h2>
@@ -163,7 +163,7 @@ const {
 
         <!-- Ingredients -->
         <section class="recipe-detail-card-ingredients">
-          <h3 class="mb-4 font-heading text-xl font-bold text-warm-900 dark:text-warm-100">
+          <h3 class="mb-4 font-heading text-xl font-normal text-warm-900 dark:text-warm-100">
             {t(locale, "recipe.ingredients")}
           </h3>
           {ingredientGroups.map((group, gi) => (
@@ -197,7 +197,7 @@ const {
 
         <!-- Instructions -->
         <section class="recipe-detail-card-instructions">
-          <h3 class="mb-4 font-heading text-xl font-bold text-warm-900 dark:text-warm-100">
+          <h3 class="mb-4 font-heading text-xl font-normal text-warm-900 dark:text-warm-100">
             {t(locale, "recipe.instructions")}
           </h3>
           {instructionGroups.map((group) => (

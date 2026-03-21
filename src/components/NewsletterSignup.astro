@@ -17,15 +17,19 @@ const { locale, compact = false } = Astro.props;
       : "",
   ]}
   data-locale={locale}
+  data-compact={compact ? "true" : "false"}
 >
   <div class="newsletter-content">
     <h3 class:list={[
-      "mb-2 font-heading font-bold text-warm-900 dark:text-warm-100",
-      compact ? "text-lg" : "text-xl",
+      "mb-2 font-heading font-normal",
+      compact ? "text-lg text-warm-900 dark:text-warm-100" : "text-xl text-warm-100",
     ]}>
-      {t(locale, "newsletter.title")}
+      {t(locale, compact ? "newsletter.compactTitle" as any : "newsletter.title")}
     </h3>
-    <p class="mb-4 text-body-sm text-warm-600 dark:text-warm-400">
+    <p class:list={[
+      "mb-4 text-body-sm",
+      compact ? "text-warm-600 dark:text-warm-400" : "text-warm-300",
+    ]}>
       {t(locale, "newsletter.description")}
     </p>
 
@@ -43,24 +47,30 @@ const { locale, compact = false } = Astro.props;
     widget.dataset.bound = 'true';
 
     var locale = widget.dataset.locale;
+    var isCompact = widget.dataset.compact === 'true';
     var formArea = widget.querySelector('.newsletter-form-area');
     if (!formArea) return;
 
     renderForm();
 
     function renderForm() {
+      var inputClass = isCompact
+        ? 'flex-1 rounded-lg border border-warm-300 bg-white px-4 py-2.5 font-body text-body-sm text-warm-900 placeholder-warm-400 transition-colors focus:border-brand-wine focus:outline-none focus:ring-2 focus:ring-brand-wine/20 dark:border-warm-600 dark:bg-warm-800 dark:text-warm-100 dark:placeholder-warm-500'
+        : 'w-full rounded-lg border border-warm-500 bg-warm-700 px-4 py-2.5 font-body text-body-sm text-warm-100 placeholder-warm-400 transition-colors focus:border-brand-wine-dark focus:outline-none focus:ring-2 focus:ring-brand-wine-dark/20';
+      var btnClass = isCompact
+        ? 'shrink-0 rounded-lg bg-brand-wine px-5 py-2.5 font-ui text-body-sm font-medium text-white transition-colors hover:bg-brand-wine'
+        : 'mt-3 w-full rounded-full bg-brand-rose px-5 py-2.5 font-ui text-body-sm font-bold text-warm-800 transition-colors hover:bg-brand-rose/80';
+      var layout = isCompact ? 'flex gap-2' : 'flex flex-col';
+
       formArea.innerHTML =
-        '<form class="newsletter-form flex gap-2" aria-label="' +
+        '<form class="newsletter-form ' + layout + '" aria-label="' +
         (locale === 'fr' ? 'Inscription à l\'infolettre' : 'Newsletter signup') + '">' +
         '<input type="email" name="email_address" required ' +
-        'placeholder="' + (locale === 'fr' ? 'Votre adresse courriel' : 'Your email address') + '" ' +
-        'class="flex-1 rounded-lg border border-warm-300 bg-white px-4 py-2.5 font-body text-body-sm text-warm-900 placeholder-warm-400 transition-colors focus:border-brand-wine focus:outline-none focus:ring-2 focus:ring-brand-wine/20 dark:border-warm-600 dark:bg-warm-800 dark:text-warm-100 dark:placeholder-warm-500" />' +
+        'placeholder="' + (locale === 'fr' ? 'Votre adresse courriel' : 'Email address') + '" ' +
+        'class="' + inputClass + '" />' +
         '<input type="hidden" name="fields[locale]" value="' + locale + '" />' +
-        '<button type="submit" ' +
-        'class="shrink-0 rounded-lg bg-brand-wine px-5 py-2.5 font-ui text-body-sm font-medium text-white transition-colors hover:bg-brand-wine">' +
-        (locale === 'fr' ? 'S\'abonner' : 'Subscribe') + '</button></form>' +
-        '<p class="mt-2 text-caption text-warm-400 dark:text-warm-500">' +
-        (locale === 'fr' ? 'Nous respectons votre vie privée.' : 'We respect your privacy.') + '</p>' +
+        '<button type="submit" class="' + btnClass + '">' +
+        (locale === 'fr' ? 'S\'abonner' : 'Join the Club') + '</button></form>' +
         '<div class="newsletter-feedback mt-2" aria-live="polite"></div>';
 
       var form = formArea.querySelector('.newsletter-form');

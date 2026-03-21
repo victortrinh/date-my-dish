@@ -10,57 +10,50 @@ interface Props {
   locale: Locale;
   heroImage: ImageMetadata;
   heroImageAlt: string;
-  publishDate: Date;
   readingTime?: number;
+  articleCategory?: string;
   headingLevel?: "h2" | "h3";
   loading?: "lazy" | "eager";
 }
 
-const { title, description, slug, locale, heroImage, heroImageAlt, publishDate, readingTime, headingLevel = "h2", loading = "lazy" } = Astro.props;
+const { title, description, slug, locale, heroImage, heroImageAlt, readingTime, articleCategory, headingLevel = "h2", loading = "lazy" } = Astro.props;
 const Heading = headingLevel;
-
 const url = getArticleLocalizedPath(locale, slug);
-
-const formattedDate = publishDate.toLocaleDateString(locale === "fr" ? "fr-CA" : "en-US", {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-});
 ---
 
-<article class="group overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:bg-warm-900/80 dark:shadow-warm-950/20">
-  <a href={url} class="block no-underline">
-    <div class="relative aspect-[4/3] overflow-hidden">
-      <Picture
-        src={heroImage}
-        alt={heroImageAlt}
-        widths={[320, 480, 640]}
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        formats={["avif", "webp"]}
-        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-        loading={loading}
-        decoding="async"
-        data-pin-nopin="true"
-      />
+<a href={url} class="group overflow-hidden rounded-xl bg-white no-underline dark:bg-warm-900">
+  <div class="aspect-[16/10] overflow-hidden">
+    <Picture
+      src={heroImage}
+      alt={heroImageAlt}
+      widths={[400, 600]}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
+      formats={["avif", "webp"]}
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading={loading}
+      decoding="async"
+      data-pin-nopin="true"
+    />
+  </div>
+  <div class="p-5">
+    <div class="mb-3 flex items-center justify-between">
+      {readingTime && (
+        <span class="flex items-center gap-1 text-sm text-brand-wine dark:text-brand-wine-dark">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          {readingTime} {t(locale, "article.readTime")}
+        </span>
+      )}
+      {articleCategory && (
+        <span class="inline-block rounded-full bg-warm-100 px-2.5 py-0.5 text-xs font-medium text-warm-600 dark:bg-warm-800 dark:text-warm-300">
+          {t(locale, `tags.${articleCategory}` as "tags.cooking-techniques" | "tags.food-science" | "tags.guides" | "tags.ingredients" | "tags.kitchen-tips" | "tags.drinks")}
+        </span>
+      )}
     </div>
-    <div class="p-5">
-      <Heading class="mb-2 line-clamp-2 font-heading text-lg font-bold text-warm-900 transition-colors group-hover:text-brand-wine dark:text-warm-100">
-        {title}
-      </Heading>
-      <p class="mb-4 line-clamp-2 text-body-sm text-warm-500 dark:text-warm-400">{description}</p>
-      <div class="flex items-center gap-3">
-        <div class="flex items-center gap-1.5 text-warm-400 dark:text-warm-500">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          <span class="text-caption font-medium">{formattedDate}</span>
-        </div>
-        {readingTime && (
-          <span class="rounded-full bg-blue-100 px-2.5 py-0.5 text-caption font-medium text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
-            {readingTime} {t(locale, "article.readTime")}
-          </span>
-        )}
-      </div>
-    </div>
-  </a>
-</article>
+    <Heading class="font-heading text-xl font-normal text-warm-800 dark:text-warm-100">
+      {title}
+    </Heading>
+    <p class="mt-2 text-sm text-warm-500 dark:text-warm-400">
+      {description}
+    </p>
+  </div>
+</a>

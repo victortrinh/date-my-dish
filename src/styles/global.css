@@ -15,7 +15,7 @@
   h2,
   h3,
   h4 {
-    @apply font-heading font-bold;
+    @apply font-heading font-normal;
   }
 
   /* Headings get scroll-margin to clear sticky nav */

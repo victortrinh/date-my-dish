@@ -5,6 +5,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import AuthorBioCard from "@components/AuthorBioCard.astro";
 import { t } from "@i18n/utils";
 import heroImage from "@assets/images/victor-about.webp";
+import recipeDevImage from "@assets/images/recipes/zucchini-eggplant-chips.webp";
 
 const locale = "en";
 const siteUrl = "https://datemydish.com";
@@ -36,6 +37,15 @@ const aboutPageSchema = {
     name: "Victor Vu",
   },
 };
+
+const cards = [
+  { emoji: "🍽️", titleKey: "about.card1Title" as const, descKey: "about.card1Desc" as const },
+  { emoji: "📖", titleKey: "about.card2Title" as const, descKey: "about.card2Desc" as const },
+  { emoji: "🍷", titleKey: "about.card3Title" as const, descKey: "about.card3Desc" as const },
+  { emoji: "🌿", titleKey: "about.card4Title" as const, descKey: "about.card4Desc" as const },
+  { emoji: "⏱️", titleKey: "about.card5Title" as const, descKey: "about.card5Desc" as const },
+  { emoji: "🌐", titleKey: "about.card6Title" as const, descKey: "about.card6Desc" as const },
+];
 ---
 
 <BaseLayout
@@ -48,105 +58,193 @@ const aboutPageSchema = {
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
 
-  <div class="mx-auto max-w-narrow px-4 py-section-sm">
-    <Breadcrumbs
-      locale={locale}
-      items={[{ label: t(locale, "about.pageTitle") }]}
-    />
+  <!-- 1. Hero / Introduction -->
+  <section class="bg-warm-50 dark:bg-warm-950">
+    <div class="mx-auto max-w-content px-4 py-section-sm lg:py-section">
+      <Breadcrumbs
+        locale={locale}
+        items={[{ label: t(locale, "about.pageTitle") }]}
+      />
 
-    <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-warm-900 sm:text-4xl dark:text-warm-100">
-        {t(locale, "about.title")}
-      </h1>
-      <div class="h-1 w-12 rounded-full bg-brand-rose"></div>
-    </div>
+      <div class="mt-8 flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
+        <div class="lg:w-3/5">
+          <h1 class="mb-3 font-heading text-heading-1 font-normal text-warm-900 sm:text-4xl dark:text-warm-100">
+            {t(locale, "about.title")}
+          </h1>
+          <div class="mb-6 h-1 w-12 rounded-full bg-brand-rose"></div>
 
-    <div class="mb-10 flex flex-col items-center gap-8 md:flex-row md:items-start md:gap-10">
-      <div class="w-full shrink-0 overflow-hidden rounded-2xl md:w-64">
-        <Picture
-          src={heroImage}
-          alt="Victor Vu, home cook and creator of Date My Dish, standing in his Montreal kitchen wearing an apron with arms crossed"
-          widths={[400, 600, 900]}
-          sizes="(max-width: 768px) 100vw, 256px"
-          formats={["avif", "webp"]}
-          class="aspect-[4/3] w-full object-cover object-[center_30%] md:aspect-auto md:max-h-none"
-          loading="eager"
-        />
+          <p class="mb-5 text-body-lg leading-relaxed text-warm-700 dark:text-warm-300">
+            Hi, I'm Victor! I'm a home cook based in Montreal who believes that cooking for someone
+            is one of the most genuine expressions of care and affection. Date My Dish is where I share
+            romantic recipes and date night cooking inspiration: dishes designed to impress that special someone,
+            whether it's a first date, an anniversary, or a cozy night in.
+          </p>
+
+          <p class="text-body-lg leading-relaxed text-warm-600 dark:text-warm-400">
+            Date My Dish is where I share romantic recipes and date night cooking inspiration.
+            Every dish is designed to help you create an unforgettable evening at home.
+          </p>
+        </div>
+
+        <div class="lg:w-2/5">
+          <div class="overflow-hidden rounded-2xl">
+            <Picture
+              src={heroImage}
+              alt="Victor Vu, home cook and creator of Date My Dish, standing in his Montreal kitchen wearing an apron with arms crossed"
+              widths={[400, 600, 900]}
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              formats={["avif", "webp"]}
+              class="aspect-[3/4] w-full object-cover object-[center_30%]"
+              loading="eager"
+            />
+          </div>
+        </div>
       </div>
-      <p class="text-lg text-warm-700 dark:text-warm-300">
-        Hi, I'm Victor! I'm a home cook based in Montreal who believes that cooking for someone
-        is one of the most genuine expressions of care and affection. Date My Dish is where I share
-        romantic recipes and date night cooking inspiration: dishes designed to impress that special someone,
-        whether it's a first date, an anniversary, or a cozy night in.
-      </p>
     </div>
+  </section>
 
-    <div class="prose max-w-none">
+  <!-- 2. A Montreal Food Story -->
+  <section class="bg-white dark:bg-warm-900">
+    <div class="mx-auto max-w-prose px-4 py-section-sm lg:py-section">
+      <h2 class="mb-3 font-heading text-heading-2 font-normal text-warm-900 dark:text-warm-100">
+        {t(locale, "about.montrealHeading")}
+      </h2>
+      <div class="mb-8 h-1 w-10 rounded-full bg-brand-rose"></div>
 
-      <h2>A Montreal Food Story</h2>
+      <div class="space-y-5 text-body-lg leading-relaxed text-warm-700 dark:text-warm-300">
+        <p>
+          Growing up in Montreal surrounded by an incredible food culture, I developed an early appreciation
+          for how cuisine brings people together. In a bilingual household, food was always the language
+          everyone understood, whether it was a classic French crêpe on a Sunday morning or my grandmother's
+          weeknight pasta. That love for gathering around the table never left me.
+        </p>
 
-      <p>
-        Growing up in Montreal surrounded by an incredible food culture, I developed an early appreciation
-        for how cuisine brings people together. In a bilingual household, food was always the language
-        everyone understood, whether it was a classic French crêpe on a Sunday morning or my grandmother's
-        weeknight pasta. That love for gathering around the table never left me.
+        <p>
+          Over the past decade, I've cooked my way through hundreds of recipes, from Italian classics
+          to Korean fusion, refining techniques across cuisines. I've spent years studying the craft
+          through Montreal's vibrant food scene, learning from the city's markets, restaurants,
+          and the diverse culinary traditions that make this place special.
+        </p>
+
+        <p>
+          I noticed a gap in resources focused specifically on romantic home cooking. Plenty of recipe sites
+          exist, but very few help you plan an unforgettable evening at home. That's where Date My Dish was born.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Why "Date My Dish"? (Philosophy) -->
+  <section class="bg-warm-800 dark:bg-warm-900">
+    <div class="mx-auto max-w-prose px-4 py-section-sm text-center lg:py-section">
+      <p class="mb-2 font-ui text-body-sm font-medium tracking-wide text-brand-rose uppercase">
+        {t(locale, "about.subtitle")}
       </p>
+      <h2 class="mb-8 font-heading text-heading-2 font-normal text-warm-50">
+        {t(locale, "about.whyHeading")}
+      </h2>
 
-      <p>
-        Over the past decade, I've cooked my way through hundreds of recipes, from Italian classics
-        to Korean fusion, refining techniques across cuisines. I've spent years studying the craft
-        through Montreal's vibrant food scene, learning from the city's markets, restaurants,
-        and the diverse culinary traditions that make this place special.
-      </p>
-
-      <p>
-        I noticed a gap in resources focused specifically on romantic home cooking. Plenty of recipe sites
-        exist, but very few help you plan an unforgettable evening at home. That's where Date My Dish was born.
-      </p>
-
-      <h2>Why "Date My Dish"?</h2>
-
-      <p>
+      <blockquote class="mx-auto max-w-2xl border-l-4 border-brand-rose pl-6 text-left text-body-lg italic leading-relaxed text-warm-200">
         Because every recipe should be worth falling for. I want you to look at a dish and think,
         "I need to make that." Whether you're planning a date night or simply want to elevate
         an ordinary evening, the goal is always the same: food that creates a moment.
         It's not about perfection; it's about effort and intention.
-      </p>
+      </blockquote>
+    </div>
+  </section>
 
-      <h2>How I Develop Recipes</h2>
+  <!-- 4. How I Develop Recipes -->
+  <section class="bg-warm-50 dark:bg-warm-950">
+    <div class="mx-auto max-w-content px-4 py-section-sm lg:py-section">
+      <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-16">
+        <div class="lg:w-3/5">
+          <h2 class="mb-3 font-heading text-heading-2 font-normal text-warm-900 dark:text-warm-100">
+            {t(locale, "about.howHeading")}
+          </h2>
+          <div class="mb-8 h-1 w-10 rounded-full bg-brand-rose"></div>
 
-      <p>
-        Every recipe on Date My Dish goes through multiple rounds of testing in my home kitchen.
-        I cook each dish at least three times before publishing, adjusting seasoning, timing,
-        and technique until it's right. The prep times and cook times you see are honest:
-        measured during real cooking sessions, not estimated.
-      </p>
+          <div class="space-y-5 text-body-lg leading-relaxed text-warm-700 dark:text-warm-300">
+            <p>
+              Every recipe on Date My Dish goes through multiple rounds of testing in my home kitchen.
+              I cook each dish at least three times before publishing, adjusting seasoning, timing,
+              and technique until it's right. The prep times and cook times you see are honest:
+              measured during real cooking sessions, not estimated.
+            </p>
 
-      <p>
-        I focus on recipes that balance impressiveness with approachability. You don't need
-        professional training or specialty equipment. You need good ingredients, clear instructions,
-        and the confidence to trust the process.
-      </p>
+            <p>
+              I focus on recipes that balance impressiveness with approachability. You don't need
+              professional training or specialty equipment. You need good ingredients, clear instructions,
+              and the confidence to trust the process.
+            </p>
+          </div>
 
-      <h2>What You'll Find Here</h2>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <span class="inline-flex items-center gap-2 rounded-full bg-brand-wine/10 px-4 py-2 font-ui text-body-sm font-medium text-brand-wine-text dark:bg-brand-wine-dark/15 dark:text-brand-wine-dark">
+              ✓ {t(locale, "about.testing")}
+            </span>
+            <span class="inline-flex items-center gap-2 rounded-full bg-brand-wine/10 px-4 py-2 font-ui text-body-sm font-medium text-brand-wine-text dark:bg-brand-wine-dark/15 dark:text-brand-wine-dark">
+              ✓ {t(locale, "about.timings")}
+            </span>
+          </div>
+        </div>
 
-      <ul>
-        <li>Romantic recipe collections from appetizers through desserts, tested in a real home kitchen</li>
-        <li>Cooking techniques and food science articles to sharpen your skills</li>
-        <li>Date night planning guidance, including wine pairings and atmosphere tips</li>
-        <li>Seasonal recipe inspiration spanning Italian, Asian, Mediterranean, and fusion cuisines</li>
-        <li>Step-by-step instructions with honest prep and cook times from real testing</li>
-        <li>Every recipe available in both English and French</li>
-      </ul>
+        <div class="lg:w-2/5">
+          <div class="overflow-hidden rounded-2xl">
+            <Picture
+              src={recipeDevImage}
+              alt="Crispy zucchini and eggplant chips with sparkling water batter, golden and freshly fried"
+              widths={[400, 600, 900]}
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              formats={["avif", "webp"]}
+              class="aspect-[3/4] w-full object-cover object-[center_30%]"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <p>
+  <!-- 5. What You'll Find Here -->
+  <section class="bg-white dark:bg-warm-900">
+    <div class="mx-auto max-w-content px-4 py-section-sm lg:py-section">
+      <div class="mb-10 text-center">
+        <h2 class="mb-3 font-heading text-heading-2 font-normal text-warm-900 dark:text-warm-100">
+          {t(locale, "about.whatHeading")}
+        </h2>
+        <div class="mx-auto h-1 w-10 rounded-full bg-brand-rose"></div>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {cards.map((card) => (
+          <div class="rounded-xl border border-warm-200 bg-warm-50 p-6 dark:border-warm-700 dark:bg-warm-800">
+            <span class="mb-3 block text-2xl">{card.emoji}</span>
+            <h3 class="mb-2 font-heading text-heading-3 font-normal text-warm-900 dark:text-warm-100">
+              {t(locale, card.titleKey)}
+            </h3>
+            <p class="text-body-sm leading-relaxed text-warm-600 dark:text-warm-400">
+              {t(locale, card.descKey)}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Closing Statement -->
+  <section class="bg-warm-50 dark:bg-warm-950">
+    <div class="mx-auto max-w-prose px-4 py-section-sm text-center lg:py-section">
+      <p class="font-body text-body-lg italic leading-relaxed text-warm-600 dark:text-warm-400">
         Thanks for being here. I hope you find something that makes your next evening
         a little more special, and a lot more delicious.
       </p>
     </div>
+  </section>
 
-    <div class="mt-12">
+  <!-- 7. AuthorBioCard -->
+  <section class="bg-white dark:bg-warm-900">
+    <div class="mx-auto max-w-narrow px-4 py-section-sm">
       <AuthorBioCard locale={locale} showLink={false} />
     </div>
-  </div>
+  </section>
 </BaseLayout>

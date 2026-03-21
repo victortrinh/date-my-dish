@@ -18,7 +18,7 @@ const locale = "fr";
     />
 
     <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-warm-900 sm:text-4xl dark:text-warm-100">
+      <h1 class="mb-3 font-heading text-heading-1 font-normal text-warm-900 sm:text-4xl dark:text-warm-100">
         {t(locale, "bookmark.pageTitle")}
       </h1>
       <div class="h-1 w-12 rounded-full bg-brand-rose"></div>
@@ -65,7 +65,7 @@ const locale = "fr";
           html += '<div class="group relative overflow-hidden rounded-xl border border-warm-200 bg-white transition-shadow hover:shadow-lg dark:border-warm-800 dark:bg-warm-900">' +
             '<a href="/fr/recettes/' + recipe.slug + '/" class="block">' +
             '<div class="p-5">' +
-            '<h2 class="mb-2 font-heading text-lg font-bold text-warm-900 group-hover:text-brand-wine-text dark:text-warm-100">' + recipe.title + '</h2>' +
+            '<h2 class="mb-2 font-heading text-lg font-normal text-warm-900 group-hover:text-brand-wine-text dark:text-warm-100">' + recipe.title + '</h2>' +
             '<p class="text-body-sm text-warm-500 line-clamp-2 dark:text-warm-400">' + recipe.description + '</p>' +
             '</div></a>' +
             '<button class="unbookmark-btn absolute right-3 top-3 rounded-full bg-white/80 p-1.5 text-red-500 transition-colors hover:bg-white dark:bg-warm-900/80 dark:text-red-400 dark:hover:bg-warm-900" data-slug="' + enSlug + '" aria-label="Retirer le signet">' +

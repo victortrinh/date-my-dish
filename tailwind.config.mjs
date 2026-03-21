@@ -17,7 +17,7 @@ export default {
           "rose-dark": "#B8896E", // Hover states in light mode
         },
         warm: {
-          50: "#FBF8F7", // Light bg
+          50: "#FAF7F5", // Light bg
           100: "#F3EEEB", // Section alt bg
           200: "#E4DBD8", // Borders, dividers
           300: "#CBC0BD", // Muted borders
@@ -27,7 +27,7 @@ export default {
           700: "#433739", // Dark borders
           800: "#2D2226", // Body text primary / dark mode card bg
           900: "#1F1A1C", // Dark mode section alt
-          950: "#1A1215", // Dark mode body bg
+          950: "#1E1416", // Dark mode body bg
         },
       },
       fontFamily: {
@@ -35,10 +35,10 @@ export default {
         heading: ['"Playfair Display"', "serif"],
         // font-body: article prose, descriptions, body text
         body: ['"Source Serif 4"', "serif"],
-        // font-handwritten: logo, decorative accents (Caveat)
-        handwritten: ["Caveat", "cursive"],
         // font-ui: buttons, labels, nav links, metadata (clean sans-serif)
         ui: ["Inter", "sans-serif"],
+        // font-caveat: handwritten accents, quotes, decorative text
+        caveat: ["Caveat", "cursive"],
       },
       fontSize: {
         display: ["3.5rem", { lineHeight: "1.1" }],

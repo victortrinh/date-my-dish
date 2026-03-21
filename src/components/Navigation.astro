@@ -2,7 +2,6 @@
 import { t, getLocalizedPath, getBookmarksLocalizedPath, type Locale } from "@i18n/utils";
 import LanguageToggle from "./LanguageToggle.astro";
 import DarkModeToggle from "./DarkModeToggle.astro";
-import logoInline from "@assets/images/logo-datemydish-inline.webp";
 
 interface Props {
   locale: Locale;
@@ -29,60 +28,61 @@ function isActive(linkPath: string): boolean {
 }
 ---
 
-<nav class="no-print sticky top-0 z-50 border-b border-warm-200 bg-warm-50/95 backdrop-blur-sm dark:border-warm-700 dark:bg-warm-950/95">
+<nav class="no-print sticky top-0 z-50 bg-warm-50/90 backdrop-blur-xl shadow-[0_1px_3px_rgba(27,28,28,0.06)] dark:bg-warm-950/90 dark:shadow-[0_1px_3px_rgba(0,0,0,0.3)]">
   <div class="mx-auto flex max-w-content items-center justify-between px-4 py-4">
-    <!-- Logo -->
-    <a href={getLocalizedPath(locale, "/")} class="flex items-center no-underline hover:opacity-80">
-      <span class="inline-flex items-center rounded-lg bg-warm-950 px-3 py-1.5">
-        <img src={logoInline.src} class="h-8 w-auto lg:h-10" alt="Date My Dish" width={logoInline.width} height={logoInline.height} style="max-width: 200px;" data-pin-nopin="true" />
-      </span>
-    </a>
+    <!-- Left group: Logo + Desktop Nav links -->
+    <div class="flex items-center gap-8">
+      <a href={getLocalizedPath(locale, "/")} class="no-underline hover:opacity-80">
+        <span class="font-heading text-2xl font-black tracking-tighter text-brand-wine dark:text-brand-wine-dark">
+          DateMyDish
+        </span>
+      </a>
 
-    <!-- Desktop Nav -->
-    <div class="hidden items-center gap-1 md:flex">
-      {navLinks.map((link) => (
-        <a
-          href={getLocalizedPath(locale, link.path)}
-          class:list={[
-            "relative rounded-lg px-3 py-2 font-ui text-sm font-medium no-underline transition-colors",
-            isActive(link.path)
-              ? "text-brand-wine-text"
-              : "text-warm-600 hover:text-warm-800 dark:text-warm-300 dark:hover:text-warm-100",
-          ]}
-          aria-current={isActive(link.path) ? "page" : undefined}
-        >
-          {link.label}
-          {isActive(link.path) && (
-            <span class="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-brand-wine" />
-          )}
-        </a>
-      ))}
-
-      <div class="ml-2 flex items-center gap-1">
-        <!-- Search button (opens overlay) -->
-        <button
-          id="nav-search-btn"
-          class="btn btn-ghost"
-          aria-label={t(locale, "nav.search")}
-          title="⌘K"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </button>
-        <a
-          href={getBookmarksLocalizedPath(locale)}
-          class="bookmark-nav-link relative btn btn-ghost no-underline"
-          aria-label={t(locale, "bookmark.pageTitle")}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-          </svg>
-          <span class="bookmark-dot absolute -right-0.5 -top-0.5 hidden h-2 w-2 rounded-full bg-red-500"></span>
-        </a>
-        <DarkModeToggle locale={locale} />
-        <LanguageToggle locale={locale} translationSlug={translationSlug} contentType={contentType} />
+      <div class="hidden items-center gap-2 md:flex">
+        {navLinks.map((link) => (
+          <a
+            href={getLocalizedPath(locale, link.path)}
+            class:list={[
+              "relative rounded-lg px-3 py-2 font-heading text-base tracking-normal no-underline transition-colors",
+              isActive(link.path)
+                ? "text-brand-wine-text"
+                : "text-warm-600 hover:text-warm-800 dark:text-warm-300 dark:hover:text-warm-100",
+            ]}
+            aria-current={isActive(link.path) ? "page" : undefined}
+          >
+            {link.label}
+            {isActive(link.path) && (
+              <span class="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-brand-wine" />
+            )}
+          </a>
+        ))}
       </div>
+    </div>
+
+    <!-- Right group: Action icons (desktop) -->
+    <div class="hidden items-center gap-1 md:flex">
+      <button
+        id="nav-search-btn"
+        class="btn btn-ghost"
+        aria-label={t(locale, "nav.search")}
+        title="⌘K"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </button>
+      <a
+        href={getBookmarksLocalizedPath(locale)}
+        class="bookmark-nav-link relative btn btn-ghost no-underline"
+        aria-label={t(locale, "bookmark.pageTitle")}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
+        <span class="bookmark-dot absolute -right-0.5 -top-0.5 hidden h-2 w-2 rounded-full bg-red-500"></span>
+      </a>
+      <LanguageToggle locale={locale} translationSlug={translationSlug} contentType={contentType} />
+      <DarkModeToggle locale={locale} />
     </div>
 
     <!-- Mobile: search + hamburger -->
@@ -113,13 +113,13 @@ function isActive(linkPath: string): boolean {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden border-t border-warm-200 bg-warm-50 md:hidden dark:border-warm-700 dark:bg-warm-950">
+  <div id="mobile-menu" class="hidden bg-warm-50/95 backdrop-blur-xl md:hidden dark:bg-warm-950/95">
     <div class="mx-auto max-w-content space-y-1 px-4 py-3">
       {navLinks.map((link) => (
         <a
           href={getLocalizedPath(locale, link.path)}
           class:list={[
-            "block rounded-lg px-4 py-3 font-ui text-base font-medium no-underline transition-colors",
+            "block rounded-lg px-4 py-3 font-heading text-lg no-underline transition-colors",
             isActive(link.path)
               ? "bg-brand-wine/5 text-brand-wine-text"
               : "text-warm-700 hover:bg-warm-50 dark:text-warm-200 dark:hover:bg-warm-800/50",
