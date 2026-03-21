@@ -80,6 +80,14 @@
       "publishedDate": "2026-03-16",
       "lastSyncedDate": "2026-03-16",
       "status": "published"
+    },
+    "22": {
+      "notionTitle": "Northern Thai Beef Tartare Recipe",
+      "slug": "northern-thai-beef-tartare",
+      "type": "recipe",
+      "publishedDate": "2026-03-20",
+      "lastSyncedDate": "2026-03-20",
+      "status": "published"
     }
   }
 }
