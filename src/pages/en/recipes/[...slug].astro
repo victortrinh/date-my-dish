@@ -96,7 +96,7 @@ const ratingData = (ratingsData as Record<string, { averageRating: number; ratin
       />
 
       <!-- Hero Section -->
-      <header class="no-print mb-8 bg-warm-50 p-6 dark:bg-warm-900/50 sm:p-8 lg:px-0 lg:py-12">
+      <header class="no-print mb-8 p-6 sm:p-8 lg:px-0 lg:py-12">
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <!-- Left: Content -->
           <div class="order-2 flex flex-col justify-start lg:order-1">
@@ -142,7 +142,7 @@ const ratingData = (ratingsData as Record<string, { averageRating: number; ratin
               </div>
               <a
                 href="#recipe-card"
-                class="rounded-full bg-brand-wine px-6 py-3 font-ui text-body-sm font-semibold text-white no-underline transition-colors hover:bg-brand-wine/90"
+                class="btn btn-primary rounded-full px-8 py-4 text-base shadow-lg shadow-brand-wine/20 hover:shadow-xl"
               >
                 {t(locale, "recipe.jumpToRecipe")}
               </a>
