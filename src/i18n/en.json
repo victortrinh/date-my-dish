@@ -9,6 +9,7 @@
     "about": "About",
     "contact": "Contact",
     "articles": "Articles",
+    "reviews": "Reviews",
     "search": "Search",
     "toggleMenu": "Toggle menu",
     "breadcrumb": "Breadcrumb"
@@ -137,7 +138,10 @@
     "culinaryNarratives": "Culinary Narratives",
     "theJournal": "The Sunday Journal",
     "viewAllArticles": "View All Articles",
-    "readArticle": "Read Article"
+    "readArticle": "Read Article",
+    "viewAllReviews": "View All Reviews",
+    "latestReviews": "Where to Take Your Date",
+    "readReview": "Read Review"
   },
   "article": {
     "readTime": "min read",
@@ -148,12 +152,33 @@
     "share": "Share this article",
     "backToArticles": "Back to Articles"
   },
+  "review": {
+    "readTime": "min read",
+    "publishedOn": "Published on",
+    "faq": "Frequently Asked Questions",
+    "share": "Share this review",
+    "backToReviews": "Back to Reviews",
+    "dateScore": "Date Score",
+    "priceRange": "Price Range",
+    "cuisine": "Cuisine",
+    "neighborhood": "Neighborhood",
+    "bestFor": "Best For",
+    "reservation": "Reservation",
+    "costPerPerson": "Cost Per Person",
+    "quickFacts": "Quick Facts",
+    "dishHighlights": "What to Order",
+    "dateTypeFit": "Date Type Fit",
+    "visitWebsite": "Visit Website",
+    "viewOnMap": "View on Map"
+  },
   "listing": {
     "allRecipes": "All Recipes",
     "allArticles": "All Articles",
     "allCategories": "All",
     "noRecipesFound": "No recipes found.",
-    "noArticlesFound": "No articles found."
+    "noArticlesFound": "No articles found.",
+    "allReviews": "All Reviews",
+    "noReviewsFound": "No reviews found."
   },
   "about": {
     "title": "About Victor",
@@ -220,14 +245,17 @@
     "recipesTitle": "All Recipes | Date My Dish",
     "recipesDescription": "Browse our collection of simple, delicious recipes. Find your next favorite meal.",
     "articlesTitle": "Cooking Articles & Guides | Date My Dish",
-    "articlesDescription": "Expert cooking guides, food science explanations, and kitchen tips to elevate your date night dinners."
+    "articlesDescription": "Expert cooking guides, food science explanations, and kitchen tips to elevate your date night dinners.",
+    "reviewsTitle": "Restaurant Reviews | Date My Dish",
+    "reviewsDescription": "Honest restaurant reviews for date nights in Montreal. We rate the vibe, the food, and whether it's worth dressing up for."
   },
   "breadcrumbs": {
     "home": "Home",
     "recipes": "Recipes",
     "articles": "Articles",
     "occasion": "Occasion",
-    "tag": "Tag"
+    "tag": "Tag",
+    "reviews": "Reviews"
   },
   "categories": {
     "breakfast": "Breakfast",

@@ -9,6 +9,7 @@
     "about": "À propos",
     "contact": "Contact",
     "articles": "Articles",
+    "reviews": "Critiques",
     "search": "Recherche",
     "toggleMenu": "Basculer le menu",
     "breadcrumb": "Fil d'Ariane"
@@ -137,7 +138,10 @@
     "culinaryNarratives": "Histoires culinaires",
     "theJournal": "Le journal du dimanche",
     "viewAllArticles": "Voir tous les articles",
-    "readArticle": "Lire l'article"
+    "readArticle": "Lire l'article",
+    "viewAllReviews": "Voir toutes les critiques",
+    "latestReviews": "Où emmener votre date",
+    "readReview": "Lire la critique"
   },
   "article": {
     "readTime": "min de lecture",
@@ -148,12 +152,33 @@
     "share": "Partager cet article",
     "backToArticles": "Retour aux articles"
   },
+  "review": {
+    "readTime": "min de lecture",
+    "publishedOn": "Publié le",
+    "faq": "Questions fréquentes",
+    "share": "Partager cette critique",
+    "backToReviews": "Retour aux critiques",
+    "dateScore": "Score rendez-vous",
+    "priceRange": "Gamme de prix",
+    "cuisine": "Cuisine",
+    "neighborhood": "Quartier",
+    "bestFor": "Idéal pour",
+    "reservation": "Réservation",
+    "costPerPerson": "Coût par personne",
+    "quickFacts": "En bref",
+    "dishHighlights": "Quoi commander",
+    "dateTypeFit": "Type de rendez-vous",
+    "visitWebsite": "Visiter le site",
+    "viewOnMap": "Voir sur la carte"
+  },
   "listing": {
     "allRecipes": "Toutes les recettes",
     "allArticles": "Tous les articles",
     "allCategories": "Toutes",
     "noRecipesFound": "Aucune recette trouvée.",
-    "noArticlesFound": "Aucun article trouvé."
+    "noArticlesFound": "Aucun article trouvé.",
+    "allReviews": "Toutes les critiques",
+    "noReviewsFound": "Aucune critique trouvée."
   },
   "about": {
     "title": "À propos de Victor",
@@ -220,14 +245,17 @@
     "recipesTitle": "Toutes les recettes | Date My Dish",
     "recipesDescription": "Parcourez notre collection de recettes simples et délicieuses. Trouvez votre prochain coup de cœur.",
     "articlesTitle": "Articles et guides de cuisine | Date My Dish",
-    "articlesDescription": "Guides de cuisine experts, explications de science alimentaire et astuces pour sublimer vos soupers en amoureux."
+    "articlesDescription": "Guides de cuisine experts, explications de science alimentaire et astuces pour sublimer vos soupers en amoureux.",
+    "reviewsTitle": "Critiques de restaurants | Date My Dish",
+    "reviewsDescription": "Critiques honnêtes de restaurants pour vos soirées en amoureux à Montréal. On évalue l'ambiance, la bouffe et si ça vaut la peine de se mettre chic."
   },
   "breadcrumbs": {
     "home": "Accueil",
     "recipes": "Recettes",
     "articles": "Articles",
     "occasion": "Occasion",
-    "tag": "Étiquette"
+    "tag": "Étiquette",
+    "reviews": "Critiques"
   },
   "categories": {
     "breakfast": "Déjeuner",
