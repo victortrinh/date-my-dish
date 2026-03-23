@@ -4,18 +4,18 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import AuthorBioCard from "@components/AuthorBioCard.astro";
 import { t } from "@i18n/utils";
+import { SITE_URL } from "@utils/constants";
 import heroImage from "@assets/images/victor-about.webp";
 import recipeDevImage from "@assets/images/recipes/zucchini-eggplant-chips.webp";
 
 const locale = "fr";
-const siteUrl = "https://datemydish.com";
-const heroImageUrl = `${siteUrl}/images/victor-about.webp`;
+const heroImageUrl = `${SITE_URL}/images/victor-about.webp`;
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Victor Vu",
-  url: `${siteUrl}/fr/a-propos/`,
+  url: `${SITE_URL}/fr/a-propos/`,
   image: heroImageUrl,
   jobTitle: "Cuisinier amateur et créateur de recettes",
   description: "Cuisinier amateur montréalais derrière Date My Dish, partageant des recettes romantiques et de l'inspiration pour des soirées en amoureux.",
@@ -30,7 +30,7 @@ const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: t(locale, "about.pageTitle"),
-  url: `${siteUrl}/fr/a-propos/`,
+  url: `${SITE_URL}/fr/a-propos/`,
   description: "Découvrez Victor, le cuisinier montréalais derrière Date My Dish. Recettes romantiques, conseils pour soirées en amoureux et inspiration culinaire.",
   mainEntity: {
     "@type": "Person",

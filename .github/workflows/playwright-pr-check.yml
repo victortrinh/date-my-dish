@@ -19,25 +19,42 @@ env:
 jobs:
   e2e:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Clean stale test artifacts
+        run: rm -f .playwright-pages.json
+
+      - name: Detect test scope
+        id: scope
+        run: node scripts/generate-playwright-pages.cjs --base=origin/${{ github.event.pull_request.base.ref }}
+
+      - name: Skip message
+        if: steps.scope.outputs.test_scope == 'none'
+        run: echo "No runtime changes detected — skipping Playwright tests"
 
       - uses: actions/setup-node@v4
+        if: steps.scope.outputs.test_scope != 'none'
         with:
           node-version: 20
           cache: npm
 
       - run: npm ci
+        if: steps.scope.outputs.test_scope != 'none'
 
       # Cache Playwright browser binaries
       - name: Get Playwright version
+        if: steps.scope.outputs.test_scope != 'none'
         id: pw-version
         run: |
           VERSION=$(node -e "console.log(require('./package-lock.json').packages['node_modules/@playwright/test'].version)")
           echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Cache Playwright browsers
+        if: steps.scope.outputs.test_scope != 'none'
         id: pw-cache
         uses: actions/cache@v5
         with:
@@ -45,20 +62,23 @@ jobs:
           key: playwright-${{ runner.os }}-${{ steps.pw-version.outputs.version }}
 
       - name: Install Playwright (no cache)
-        if: steps.pw-cache.outputs.cache-hit != 'true'
+        if: steps.scope.outputs.test_scope != 'none' && steps.pw-cache.outputs.cache-hit != 'true'
         run: npx playwright install chromium --with-deps
 
       - name: Install Playwright OS deps (cache hit)
-        if: steps.pw-cache.outputs.cache-hit == 'true'
+        if: steps.scope.outputs.test_scope != 'none' && steps.pw-cache.outputs.cache-hit == 'true'
         run: npx playwright install-deps chromium
 
       # Build site (includes Pagefind via postbuild)
       - run: npm run build
+        if: steps.scope.outputs.test_scope != 'none'
 
       - name: Run Playwright tests
+        if: steps.scope.outputs.test_scope != 'none'
         run: npx playwright test
         env:
           CI: "true"
+          PLAYWRIGHT_SCOPE: pr
 
       # Upload HTML report on failure
       - name: Upload Playwright report
@@ -76,37 +96,47 @@ jobs:
         with:
           script: |
             const fs = require('fs');
+            const scope = '${{ steps.scope.outputs.test_scope }}';
+            const pageCount = '${{ steps.scope.outputs.page_count }}';
 
             let body = '<!-- playwright-e2e-results -->\n';
             body += '## Playwright E2E Results\n\n';
 
-            const reportPath = 'playwright-report/results.json';
-            if (fs.existsSync(reportPath)) {
-              const report = JSON.parse(fs.readFileSync(reportPath, 'utf-8'));
-              const suites = report.suites || [];
-              let passed = 0, failed = 0, skipped = 0;
+            if (scope === 'none') {
+              body += '⏭️ **Skipped** — no runtime changes detected\n';
+            } else {
+              const scopeLabel = scope === 'full' ? 'full (all pages, 2 projects)'
+                : scope === 'sample' ? `sample (${pageCount} pages, 2 projects)`
+                : `changed (${pageCount} pages, 2 projects)`;
+              body += `**Scope:** ${scopeLabel}\n\n`;
 
-              function countSpecs(suite) {
-                for (const spec of suite.specs || []) {
-                  for (const test of spec.tests || []) {
-                    if (test.status === 'expected') passed++;
-                    else if (test.status === 'unexpected') failed++;
-                    else if (test.status === 'skipped') skipped++;
+              const reportPath = 'playwright-report/results.json';
+              if (fs.existsSync(reportPath)) {
+                const report = JSON.parse(fs.readFileSync(reportPath, 'utf-8'));
+                const suites = report.suites || [];
+                let passed = 0, failed = 0, skipped = 0;
+
+                function countSpecs(suite) {
+                  for (const spec of suite.specs || []) {
+                    for (const test of spec.tests || []) {
+                      if (test.status === 'expected') passed++;
+                      else if (test.status === 'unexpected') failed++;
+                      else if (test.status === 'skipped') skipped++;
+                    }
+                  }
+                  for (const child of suite.suites || []) {
+                    countSpecs(child);
                   }
                 }
-                for (const child of suite.suites || []) {
-                  countSpecs(child);
-                }
-              }
-              suites.forEach(countSpecs);
+                suites.forEach(countSpecs);
 
-              const icon = failed > 0 ? '🔴' : '🟢';
-              body += `${icon} **${passed} passed**, **${failed} failed**, **${skipped} skipped**\n`;
-            } else {
-              body += 'No test report found.\n';
+                const icon = failed > 0 ? '🔴' : '🟢';
+                body += `${icon} **${passed} passed**, **${failed} failed**, **${skipped} skipped**\n`;
+              } else {
+                body += 'No test report found.\n';
+              }
             }
 
-            // Upsert comment (same pattern as lighthouse-pr-check.yml)
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
               repo: context.repo.repo,

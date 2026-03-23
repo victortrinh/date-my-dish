@@ -33,7 +33,22 @@ export async function GET(context: APIContext) {
     };
   });
 
-  const allItems = [...recipeItems, ...articleItems].sort(
+  const reviews = await getCollection("reviews");
+  const enReviews = reviews
+    .filter((r) => r.data.lang === "en")
+    .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+
+  const reviewItems = enReviews.map((review) => {
+    const slug = review.id.replace(/^en\//, "");
+    return {
+      title: review.data.title,
+      description: review.data.description,
+      pubDate: review.data.publishDate,
+      link: `/en/reviews/${slug}/`,
+    };
+  });
+
+  const allItems = [...recipeItems, ...articleItems, ...reviewItems].sort(
     (a, b) => b.pubDate.getTime() - a.pubDate.getTime(),
   );
 

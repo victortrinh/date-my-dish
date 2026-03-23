@@ -5,6 +5,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t, getRecipeLocalizedPath, getCuisineLocalizedPath, getCuisineFromSlug } from "@i18n/utils";
 import { getCollection } from "astro:content";
 import type { ImageMetadata } from "astro";
+import { SITE_URL } from "@utils/constants";
 
 const locale = "en";
 
@@ -77,7 +78,7 @@ const metaDescription = `${cuisineLabel} date night recipes that impress. From q
         return {
           "@type": "ListItem",
           position: i + 1,
-          url: `https://datemydish.com${getRecipeLocalizedPath(locale, slug)}`,
+          url: `${SITE_URL}${getRecipeLocalizedPath(locale, slug)}`,
           name: recipe.data.title,
         };
       }),

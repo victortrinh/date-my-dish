@@ -3,6 +3,47 @@ import { defineConfig, devices } from "@playwright/test";
 const PORT = 8788;
 const BASE_URL = `http://localhost:${PORT}`;
 
+const allProjects = [
+  {
+    name: "desktop-light",
+    use: {
+      ...devices["Desktop Chrome"],
+      colorScheme: "light" as const,
+      viewport: { width: 1280, height: 900 },
+    },
+  },
+  {
+    name: "desktop-dark",
+    use: {
+      ...devices["Desktop Chrome"],
+      colorScheme: "dark" as const,
+      viewport: { width: 1280, height: 900 },
+    },
+  },
+  {
+    name: "mobile-light",
+    use: {
+      ...devices["Pixel 5"],
+      colorScheme: "light" as const,
+    },
+  },
+  {
+    name: "mobile-dark",
+    use: {
+      ...devices["Pixel 5"],
+      colorScheme: "dark" as const,
+    },
+  },
+];
+
+// PR mode: desktop-light + mobile-dark (covers both viewport and theme dimensions)
+const prProjects = allProjects.filter(
+  (p) => p.name === "desktop-light" || p.name === "mobile-dark",
+);
+
+const scope = process.env.PLAYWRIGHT_SCOPE;
+const projects = scope === "pr" ? prProjects : allProjects;
+
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
@@ -28,38 +69,7 @@ export default defineConfig({
     timeout: 10_000,
   },
 
-  projects: [
-    {
-      name: "desktop-light",
-      use: {
-        ...devices["Desktop Chrome"],
-        colorScheme: "light",
-        viewport: { width: 1280, height: 900 },
-      },
-    },
-    {
-      name: "desktop-dark",
-      use: {
-        ...devices["Desktop Chrome"],
-        colorScheme: "dark",
-        viewport: { width: 1280, height: 900 },
-      },
-    },
-    {
-      name: "mobile-light",
-      use: {
-        ...devices["Pixel 5"],
-        colorScheme: "light",
-      },
-    },
-    {
-      name: "mobile-dark",
-      use: {
-        ...devices["Pixel 5"],
-        colorScheme: "dark",
-      },
-    },
-  ],
+  projects,
 
   webServer: {
     command: `npx wrangler dev --port ${PORT}`,
