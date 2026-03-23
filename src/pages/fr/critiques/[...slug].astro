@@ -1,0 +1,174 @@
+---
+import { getCollection, render } from "astro:content";
+import { Picture } from "astro:assets";
+import ReviewLayout from "@layouts/ReviewLayout.astro";
+import ReviewSchema from "@components/ReviewSchema.astro";
+import ReviewQuickFacts from "@components/ReviewQuickFacts.astro";
+import AuthorBioCard from "@components/AuthorBioCard.astro";
+import FAQSection from "@components/FAQSection.astro";
+import ShareButton from "@components/ShareButton.astro";
+import NewsletterSignup from "@components/NewsletterSignup.astro";
+import SocialShareButtons from "@components/SocialShareButtons.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t, getReviewLocalizedPath } from "@i18n/utils";
+import type { ImageMetadata } from "astro";
+
+export async function getStaticPaths() {
+  const reviews = await getCollection("reviews");
+  return reviews
+    .filter((review) => review.data.lang === "fr")
+    .map((review) => {
+      const slug = review.id.replace(/^fr\//, "");
+      return {
+        params: { slug },
+        props: { review },
+      };
+    });
+}
+
+const { review } = Astro.props;
+const { Content } = await render(review);
+const { data } = review;
+const locale = "fr";
+const slug = review.id.replace(/^fr\//, "");
+const heroImage = data.heroImage as ImageMetadata;
+const sourceUrl = `https://datemydish.com${getReviewLocalizedPath(locale, slug)}`;
+
+const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<ReviewLayout
+  title={`${data.restaurantName} Review | Date My Dish`}
+  description={data.description}
+  locale={locale}
+  ogImage={heroImage.src}
+  translationSlug={data.translationSlug}
+  publishDate={data.publishDate}
+  updatedDate={data.updatedDate}
+>
+  <Fragment slot="head">
+    <script is:inline>window.pintrk&&pintrk('track','pagevisit');</script>
+  </Fragment>
+  <ReviewSchema
+    slot="head"
+    title={data.title}
+    description={data.description}
+    slug={slug}
+    lang={locale}
+    author={data.author ?? "Victor"}
+    publishDate={data.publishDate}
+    updatedDate={data.updatedDate}
+    heroImageUrl={heroImage.src}
+    keywords={data.keywords}
+    faqs={data.faqs}
+    restaurantName={data.restaurantName}
+    address={data.address}
+    city={data.city}
+    cuisine={data.cuisine}
+    priceRange={data.priceRange}
+    dateScore={data.dateScore}
+    website={data.website}
+    phone={data.phone}
+  />
+
+  <article class="mx-auto max-w-content px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
+    <div class="mx-auto max-w-prose">
+      <Breadcrumbs
+        locale={locale}
+        items={[
+          { label: t(locale, "breadcrumbs.reviews"), href: "/fr/critiques/" },
+          { label: data.restaurantName },
+        ]}
+      />
+
+      <!-- Hero Image -->
+      <div class="no-print relative mb-8 overflow-hidden rounded-2xl">
+        <Picture
+          src={heroImage}
+          alt={data.heroImageAlt}
+          widths={[400, 600, 900]}
+          sizes="(max-width: 896px) 100vw, 896px"
+          formats={["avif", "webp"]}
+          class="w-full max-h-[280px] object-cover sm:max-h-[380px] lg:max-h-[500px]"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+
+      <!-- Title & Meta -->
+      <header class="no-print mb-8">
+        <h1 class="mb-4 font-heading text-heading-1 font-normal text-warm-900 sm:text-4xl dark:text-warm-100">
+          {data.title}
+        </h1>
+        <p class="mb-6 text-body-lg text-warm-600 dark:text-warm-400">{data.description}</p>
+
+        <!-- Meta Bar -->
+        <div class="mb-6 flex flex-wrap items-center gap-4 text-body-sm text-warm-500 dark:text-warm-400">
+          <div class="flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span>{formattedDate}</span>
+          </div>
+          {data.readingTime && (
+            <>
+              <div class="h-4 w-px bg-warm-300 dark:bg-warm-600"></div>
+              <div class="flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{data.readingTime} {t(locale, "article.readTime")}</span>
+              </div>
+            </>
+          )}
+          <div class="h-4 w-px bg-warm-300 dark:bg-warm-600"></div>
+          <ShareButton locale={locale} title={data.title} url={sourceUrl} />
+          <SocialShareButtons locale={locale} url={sourceUrl} title={data.title} imageUrl={heroImage.src} description={data.description} />
+        </div>
+      </header>
+
+      <!-- Quick Facts -->
+      <div class="no-print mb-8">
+        <ReviewQuickFacts
+          locale={locale}
+          restaurantName={data.restaurantName}
+          neighborhood={data.neighborhood}
+          address={data.address}
+          cuisine={data.cuisine}
+          priceRange={data.priceRange}
+          dateScore={data.dateScore}
+          costPerPerson={data.costPerPerson}
+          bestFor={data.bestFor}
+          reservationTip={data.reservationTip}
+          website={data.website}
+          phone={data.phone}
+          dishHighlights={data.dishHighlights}
+          dateTypeFit={data.dateTypeFit}
+        />
+      </div>
+
+      <!-- Blog Prose -->
+      <div class="prose mb-12 max-w-none">
+        <Content />
+      </div>
+
+      <!-- Author Bio -->
+      <div class="mt-8 no-print">
+        <AuthorBioCard locale={locale} />
+      </div>
+
+      <!-- Newsletter -->
+      <div class="mt-8 no-print">
+        <NewsletterSignup locale={locale} compact={true} />
+      </div>
+
+      <!-- FAQs -->
+      <FAQSection locale={locale} faqs={data.faqs} />
+
+    </div>
+  </article>
+</ReviewLayout>
