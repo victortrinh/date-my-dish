@@ -11,6 +11,7 @@ import NewsletterSignup from "@components/NewsletterSignup.astro";
 import SocialShareButtons from "@components/SocialShareButtons.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t, getReviewLocalizedPath } from "@i18n/utils";
+import authorPhoto from "@assets/images/victor-vu.webp";
 import type { ImageMetadata } from "astro";
 
 export async function getStaticPaths() {
@@ -76,7 +77,8 @@ const formattedDate = data.publishDate.toLocaleDateString("en-US", {
   />
 
   <article class="mx-auto max-w-content px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
-    <div class="mx-auto max-w-prose">
+    <!-- Full-width zone: Breadcrumbs + Hero + Meta -->
+    <div class="mx-auto max-w-prose lg:max-w-none">
       <Breadcrumbs
         locale={locale}
         items={[
@@ -85,51 +87,136 @@ const formattedDate = data.publishDate.toLocaleDateString("en-US", {
         ]}
       />
 
-      <!-- Hero Image -->
-      <div class="no-print relative mb-8 overflow-hidden rounded-2xl">
-        <Picture
-          src={heroImage}
-          alt={data.heroImageAlt}
-          widths={[400, 600, 900]}
-          sizes="(max-width: 896px) 100vw, 896px"
-          formats={["avif", "webp"]}
-          class="w-full max-h-[280px] object-cover sm:max-h-[380px] lg:max-h-[500px]"
-          loading="eager"
-          fetchpriority="high"
-        />
-      </div>
+      <!-- Hero Section (editorial two-column layout matching recipes) -->
+      <header class="no-print mb-8 p-6 sm:p-8 lg:px-0 lg:py-12">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+          <!-- Left: Content -->
+          <div class="order-2 flex flex-col justify-start lg:order-1">
+            <div class="mb-4 flex flex-wrap items-center gap-2">
+              <span class="inline-block rounded-full bg-brand-wine/10 px-4 py-1.5 font-ui text-caption font-semibold uppercase tracking-wider text-brand-wine dark:bg-brand-wine-dark/10 dark:text-brand-wine-dark">
+                {data.cuisine}
+              </span>
+              <span class="inline-block rounded-full bg-warm-200 px-3 py-1 font-ui text-caption font-medium text-warm-600 dark:bg-warm-700 dark:text-warm-300">
+                {data.neighborhood}
+              </span>
+            </div>
 
-      <!-- Title & Meta -->
-      <header class="no-print mb-8">
-        <h1 class="mb-4 font-heading text-heading-1 font-normal text-warm-900 sm:text-4xl dark:text-warm-100">
-          {data.title}
-        </h1>
-        <p class="mb-6 text-body-lg text-warm-600 dark:text-warm-400">{data.description}</p>
+            <h1 class="mb-4 font-heading text-4xl italic text-warm-900 dark:text-warm-100 sm:text-display">
+              {data.title}
+            </h1>
 
-        <!-- Meta Bar -->
-        <div class="mb-6 flex flex-wrap items-center gap-4 text-body-sm text-warm-500 dark:text-warm-400">
-          <div class="flex items-center gap-1.5">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span>{formattedDate}</span>
-          </div>
-          {data.readingTime && (
-            <>
-              <div class="h-4 w-px bg-warm-300 dark:bg-warm-600"></div>
-              <div class="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{data.readingTime} {t(locale, "article.readTime")}</span>
+            <p class="mb-8 font-body text-body-lg text-warm-600 dark:text-warm-400">
+              {data.description}
+            </p>
+
+            <!-- Author + Date Score -->
+            <div class="mb-8 flex flex-wrap items-center gap-5">
+              <div class="flex items-center gap-3">
+                <div class="h-12 w-12 shrink-0 overflow-hidden rounded-full">
+                  <Picture
+                    src={authorPhoto}
+                    alt={t(locale, "author.photoAlt")}
+                    widths={[48, 96]}
+                    sizes="48px"
+                    formats={["avif", "webp"]}
+                    class="h-full w-full object-cover"
+                    loading="eager"
+                    data-pin-nopin="true"
+                  />
+                </div>
+                <div>
+                  <span class="block font-ui text-body-sm font-semibold text-warm-800 dark:text-warm-200">
+                    {t(locale, "author.by")} {data.author || "Victor"}
+                  </span>
+                  <span class="block font-ui text-caption font-medium text-warm-500 dark:text-warm-400">
+                    {formattedDate}
+                  </span>
+                </div>
               </div>
-            </>
-          )}
-          <div class="h-4 w-px bg-warm-300 dark:bg-warm-600"></div>
-          <ShareButton locale={locale} title={data.title} url={sourceUrl} />
-          <SocialShareButtons locale={locale} url={sourceUrl} title={data.title} imageUrl={heroImage.src} description={data.description} />
+              <div class="flex items-center gap-2">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-wine text-xl font-bold text-white shadow-lg shadow-brand-wine/20 dark:bg-brand-wine-dark">
+                  {data.dateScore}
+                </div>
+                <div>
+                  <span class="block font-ui text-body-sm font-semibold text-warm-800 dark:text-warm-200">
+                    {t(locale, "review.dateScore")}
+                  </span>
+                  <span class="block font-ui text-caption font-medium text-warm-500 dark:text-warm-400">/ 10</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Meta Bar: Restaurant Quick Stats -->
+            <div class="grid grid-cols-2 gap-4 rounded-xl border border-brand-wine/5 bg-white p-4 shadow-sm sm:grid-cols-4 dark:border-warm-700 dark:bg-warm-800">
+              <div class="text-center border-r border-brand-wine/10 dark:border-warm-700">
+                <p class="mb-1 font-ui text-[10px] font-bold uppercase tracking-wider text-brand-wine/50 dark:text-brand-rose">
+                  {t(locale, "review.cuisine")}
+                </p>
+                <p class="font-body text-sm font-bold text-warm-800 dark:text-warm-200">
+                  {data.cuisine}
+                </p>
+              </div>
+              <div class="text-center sm:border-r border-brand-wine/10 dark:border-warm-700">
+                <p class="mb-1 font-ui text-[10px] font-bold uppercase tracking-wider text-brand-wine/50 dark:text-brand-rose">
+                  {t(locale, "review.priceRange")}
+                </p>
+                <p class="font-body text-sm font-bold text-warm-800 dark:text-warm-200">
+                  {data.priceRange}
+                </p>
+              </div>
+              <div class="text-center border-r border-brand-wine/10 dark:border-warm-700">
+                <p class="mb-1 font-ui text-[10px] font-bold uppercase tracking-wider text-brand-wine/50 dark:text-brand-rose">
+                  {t(locale, "review.neighborhood")}
+                </p>
+                <p class="font-body text-sm font-bold text-warm-800 dark:text-warm-200">
+                  {data.neighborhood}
+                </p>
+              </div>
+              <div class="text-center">
+                <p class="mb-1 font-ui text-[10px] font-bold uppercase tracking-wider text-brand-wine/50 dark:text-brand-rose">
+                  {t(locale, "review.costPerPerson")}
+                </p>
+                <p class="font-body text-sm font-bold text-warm-800 dark:text-warm-200">
+                  {data.costPerPerson}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Hero Image -->
+          <div class="relative order-1 lg:order-2">
+            <Picture
+              src={heroImage}
+              alt={data.heroImageAlt}
+              widths={[400, 600, 900]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              formats={["avif", "webp"]}
+              class="h-[600px] w-full rounded-2xl object-cover"
+              loading="eager"
+              fetchpriority="high"
+              data-pin-url={sourceUrl}
+              data-pin-description={`${data.title} | ${data.description} | Date My Dish`}
+            />
+            <!-- Best For tags overlay -->
+            <div class="absolute bottom-4 left-4 flex max-w-[280px] flex-wrap gap-1.5 sm:bottom-6 sm:left-6">
+              {data.bestFor.map((item) => (
+                <span class="rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-warm-700 shadow backdrop-blur-sm dark:bg-warm-800/90 dark:text-warm-300">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </header>
+    </div>
+
+    <!-- Content zone: prose width -->
+    <div class="mx-auto max-w-prose">
+      <!-- Share Bar -->
+      <div class="no-print mb-8 flex flex-wrap items-center gap-4 text-body-sm text-warm-500 dark:text-warm-400">
+        <ShareButton locale={locale} title={data.title} url={sourceUrl} />
+        <SocialShareButtons locale={locale} url={sourceUrl} title={data.title} imageUrl={heroImage.src} description={data.description} />
+      </div>
 
       <!-- Quick Facts -->
       <div class="no-print mb-8">
