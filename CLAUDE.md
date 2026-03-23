@@ -285,8 +285,9 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 - **Background**: `bg-gray-100` (light) / `bg-neutral-950` (dark) -- NOT cream (cream is legacy)
 
 ### Fonts
-- **Fira Sans** 600/700 -- Headings (uppercase)
-- **Bitter** 400/500/600/700 -- Body text + UI
+- **Playfair Display** 400-900 -- Headings (italic)
+- **Source Serif 4** 400-700 -- Body text
+- **Inter** 400-700 -- UI elements
 - **Caveat** 400/700 -- Handwritten accents
 - Loaded via `<link>` with `preconnect` in `<head>` -- never CSS `@import`
 
