@@ -1,0 +1,125 @@
+---
+import type { Locale } from "@i18n/utils";
+import { getReviewLocalizedPath } from "@i18n/utils";
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  lang: Locale;
+  author: string;
+  publishDate: Date;
+  updatedDate?: Date;
+  heroImageUrl: string;
+  keywords: string[];
+  faqs: FAQ[];
+  restaurantName: string;
+  address: string;
+  city: string;
+  cuisine: string;
+  priceRange: string;
+  dateScore: number;
+  website?: string;
+  phone?: string;
+}
+
+const {
+  title,
+  description,
+  slug,
+  lang,
+  author,
+  publishDate,
+  updatedDate,
+  heroImageUrl,
+  keywords,
+  faqs,
+  restaurantName,
+  address,
+  city,
+  cuisine,
+  priceRange,
+  dateScore,
+  website,
+  phone,
+} = Astro.props;
+
+const siteUrl = "https://datemydish.com";
+const reviewPath = getReviewLocalizedPath(lang, slug);
+const canonicalUrl = `${siteUrl}${reviewPath}`;
+
+const restaurantJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  name: restaurantName,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: address,
+    addressLocality: city,
+    addressRegion: "QC",
+    addressCountry: "CA",
+  },
+  servesCuisine: cuisine,
+  priceRange,
+  image: [heroImageUrl.startsWith("http") ? heroImageUrl : `${siteUrl}${heroImageUrl}`],
+  ...(website ? { url: website } : {}),
+  ...(phone ? { telephone: phone } : {}),
+};
+
+const reviewJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Review",
+  name: title,
+  reviewBody: description,
+  author: {
+    "@type": "Person",
+    name: author,
+    url: `${siteUrl}/${lang}/${lang === "fr" ? "a-propos" : "about"}/`,
+  },
+  datePublished: publishDate.toISOString().split("T")[0],
+  ...(updatedDate ? { dateModified: updatedDate.toISOString().split("T")[0] } : {}),
+  itemReviewed: restaurantJsonLd,
+  reviewRating: {
+    "@type": "Rating",
+    ratingValue: dateScore,
+    bestRating: 10,
+    worstRating: 1,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Date My Dish",
+    url: siteUrl,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/favicon.svg`,
+    },
+  },
+  url: canonicalUrl,
+  inLanguage: lang,
+  keywords: keywords.join(", "),
+};
+
+const faqJsonLd = faqs.length > 0
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    }
+  : null;
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(restaurantJsonLd)} />
+<script type="application/ld+json" is:inline set:html={JSON.stringify(reviewJsonLd)} />
+{faqJsonLd && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqJsonLd)} />}

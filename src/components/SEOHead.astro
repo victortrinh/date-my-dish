@@ -14,7 +14,7 @@ interface Props {
   updatedDate?: Date;
   /** For content pages: the translation slug to build hreflang for the paired content */
   translationSlug?: string;
-  contentType?: "recipe" | "article";
+  contentType?: "recipe" | "article" | "review";
 }
 
 const {
@@ -47,6 +47,8 @@ if (translationSlug && contentType) {
   let prefix: string;
   if (contentType === "recipe") {
     prefix = targetLocale === "fr" ? "recettes" : "recipes";
+  } else if (contentType === "review") {
+    prefix = targetLocale === "fr" ? "critiques" : "reviews";
   } else {
     prefix = "articles";
   }

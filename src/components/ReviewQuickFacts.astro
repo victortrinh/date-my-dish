@@ -1,0 +1,133 @@
+---
+import { t, type Locale } from "@i18n/utils";
+
+interface DateTypeFit {
+  type: string;
+  score: number;
+  note?: string;
+}
+
+interface DishHighlight {
+  name: string;
+  description: string;
+}
+
+interface Props {
+  locale: Locale;
+  restaurantName: string;
+  neighborhood: string;
+  address: string;
+  cuisine: string;
+  priceRange: string;
+  dateScore: number;
+  costPerPerson: string;
+  bestFor: string[];
+  reservationTip?: string;
+  website?: string;
+  phone?: string;
+  dishHighlights?: DishHighlight[];
+  dateTypeFit?: DateTypeFit[];
+}
+
+const {
+  locale,
+  neighborhood,
+  address,
+  cuisine,
+  priceRange,
+  dateScore,
+  costPerPerson,
+  bestFor,
+  reservationTip,
+  website,
+  phone,
+  dateTypeFit,
+} = Astro.props;
+
+const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+---
+
+<aside class="rounded-2xl border border-warm-200 bg-warm-50 p-6 dark:border-warm-700 dark:bg-warm-900">
+  <h2 class="mb-4 font-heading text-xl font-normal text-warm-800 dark:text-warm-100">
+    {t(locale, "review.quickFacts")}
+  </h2>
+
+  <!-- Date Score -->
+  <div class="mb-4 flex items-center gap-3">
+    <div class="flex h-14 w-14 items-center justify-center rounded-xl bg-brand-wine text-2xl font-bold text-white dark:bg-brand-wine-dark">
+      {dateScore}
+    </div>
+    <div>
+      <div class="text-sm font-medium text-warm-800 dark:text-warm-200">{t(locale, "review.dateScore")}</div>
+      <div class="text-xs text-warm-500 dark:text-warm-400">/ 10</div>
+    </div>
+  </div>
+
+  <dl class="space-y-3 text-sm">
+    <div>
+      <dt class="font-medium text-warm-600 dark:text-warm-400">{t(locale, "review.cuisine")}</dt>
+      <dd class="text-warm-800 dark:text-warm-200">{cuisine}</dd>
+    </div>
+    <div>
+      <dt class="font-medium text-warm-600 dark:text-warm-400">{t(locale, "review.priceRange")}</dt>
+      <dd class="text-warm-800 dark:text-warm-200">{priceRange}</dd>
+    </div>
+    <div>
+      <dt class="font-medium text-warm-600 dark:text-warm-400">{t(locale, "review.neighborhood")}</dt>
+      <dd class="text-warm-800 dark:text-warm-200">{neighborhood}</dd>
+    </div>
+    <div>
+      <dt class="font-medium text-warm-600 dark:text-warm-400">{t(locale, "review.costPerPerson")}</dt>
+      <dd class="text-warm-800 dark:text-warm-200">{costPerPerson}</dd>
+    </div>
+    <div>
+      <dt class="font-medium text-warm-600 dark:text-warm-400">{t(locale, "review.bestFor")}</dt>
+      <dd class="flex flex-wrap gap-1.5">
+        {bestFor.map((item) => (
+          <span class="inline-block rounded-full bg-warm-200 px-2.5 py-0.5 text-xs font-medium text-warm-700 dark:bg-warm-700 dark:text-warm-300">
+            {item}
+          </span>
+        ))}
+      </dd>
+    </div>
+    {reservationTip && (
+      <div>
+        <dt class="font-medium text-warm-600 dark:text-warm-400">{t(locale, "review.reservation")}</dt>
+        <dd class="text-warm-800 dark:text-warm-200">{reservationTip}</dd>
+      </div>
+    )}
+  </dl>
+
+  <!-- Address & Links -->
+  <div class="mt-4 space-y-2 border-t border-warm-200 pt-4 dark:border-warm-700">
+    <p class="text-sm text-warm-600 dark:text-warm-400">{address}</p>
+    {phone && <p class="text-sm text-warm-600 dark:text-warm-400">{phone}</p>}
+    <div class="flex flex-wrap gap-2">
+      {website && (
+        <a href={website} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 rounded-lg bg-warm-200 px-3 py-1.5 text-xs font-medium text-warm-700 hover:bg-warm-300 dark:bg-warm-700 dark:text-warm-300 dark:hover:bg-warm-600">
+          {t(locale, "review.visitWebsite")}
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+        </a>
+      )}
+      <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 rounded-lg bg-warm-200 px-3 py-1.5 text-xs font-medium text-warm-700 hover:bg-warm-300 dark:bg-warm-700 dark:text-warm-300 dark:hover:bg-warm-600">
+        {t(locale, "review.viewOnMap")}
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Date Type Fit -->
+  {dateTypeFit && dateTypeFit.length > 0 && (
+    <div class="mt-4 border-t border-warm-200 pt-4 dark:border-warm-700">
+      <h3 class="mb-3 text-sm font-medium text-warm-600 dark:text-warm-400">{t(locale, "review.dateTypeFit")}</h3>
+      <div class="space-y-2">
+        {dateTypeFit.map((fit) => (
+          <div class="flex items-center justify-between text-sm">
+            <span class="text-warm-700 dark:text-warm-300">{fit.type}</span>
+            <span class="font-medium text-warm-800 dark:text-warm-200">{fit.score}/5</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+</aside>
