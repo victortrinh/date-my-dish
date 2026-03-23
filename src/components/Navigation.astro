@@ -169,6 +169,14 @@ function isActive(linkPath: string): boolean {
       if (isOpen) { closeMenu(); } else { openMenu(); }
     });
 
+    // Click outside closes mobile menu
+    document.addEventListener('click', function(e) {
+      var isOpen = !menu.classList.contains('hidden');
+      if (isOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
     // Escape key closes mobile menu
     menu.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
