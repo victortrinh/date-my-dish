@@ -1,10 +1,64 @@
 {
   "pages": {
-    "/fr/": {
+    "/en/recipes/crispy-vegan-calamari/": {
       "queries": [
         {
-          "keyword": "lemon posset brulee",
-          "avgPosition": 12,
+          "keyword": "calamari vegan",
+          "avgPosition": 62.7,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "mushroom calamari",
+          "avgPosition": 43,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "oyster mushroom calamari",
+          "avgPosition": 36,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegan calamari",
+          "avgPosition": 69.6,
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegetarian calamari",
+          "avgPosition": 57,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 12
+    },
+    "/en/recipes/quinoa-crusted-salmon/": {
+      "queries": [
+        {
+          "keyword": "quinoa crusted salmon",
+          "avgPosition": 46.3,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 3
+    },
+    "/fr/recettes/saumon-en-croute-de-quinoa/": {
+      "queries": [
+        {
+          "keyword": "recette causa thon",
+          "avgPosition": 1,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -12,24 +66,11 @@
       ],
       "totalClicks": 0,
       "totalImpressions": 1
-    },
-    "/quinoa-crusted-salmon/": {
-      "queries": [
-        {
-          "keyword": "quinoa crusted salmon",
-          "avgPosition": 39,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 2
     }
   },
   "dateRange": {
-    "start": "2026-03-06",
-    "end": "2026-03-13"
+    "start": "2026-03-13",
+    "end": "2026-03-20"
   },
-  "rowCount": 2
+  "rowCount": 7
 }
