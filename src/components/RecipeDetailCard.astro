@@ -53,6 +53,7 @@ const {
 } = Astro.props;
 
 const hasNutrition = nutrition && (nutrition.calories || nutrition.fatContent || nutrition.carbohydrateContent || nutrition.proteinContent);
+const allSingleStep = instructionGroups.every((g) => g.steps.length === 1);
 
 const hearts = impressFactor ? Array.from({ length: 5 }, (_, i) => i < impressFactor) : [];
 ---
@@ -127,39 +128,37 @@ const hearts = impressFactor ? Array.from({ length: 5 }, (_, i) => i < impressFa
       <!-- Nutrition -->
       {hasNutrition && (
         <div class="p-6 lg:p-8">
-          <div class="rounded-xl border border-warm-200 p-4 dark:border-warm-700">
-            <h3 class="mb-3 font-heading text-base font-normal text-warm-900 dark:text-warm-100">
-              {t(locale, "recipe.nutrition")}
-              <span class="ml-2 text-xs font-normal text-warm-500 dark:text-warm-400">
-                ({t(locale, "recipe.perServing")})
-              </span>
-            </h3>
-            <div class="grid grid-cols-2 gap-4">
-              {nutrition!.calories && (
-                <div class="text-center">
-                  <p class="text-lg font-bold text-brand-wine-text">{nutrition!.calories}</p>
-                  <p class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.calories")}</p>
-                </div>
-              )}
-              {nutrition!.fatContent && (
-                <div class="text-center">
-                  <p class="text-lg font-bold text-brand-wine-text">{nutrition!.fatContent}</p>
-                  <p class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.fat")}</p>
-                </div>
-              )}
-              {nutrition!.carbohydrateContent && (
-                <div class="text-center">
-                  <p class="text-lg font-bold text-brand-wine-text">{nutrition!.carbohydrateContent}</p>
-                  <p class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.carbs")}</p>
-                </div>
-              )}
-              {nutrition!.proteinContent && (
-                <div class="text-center">
-                  <p class="text-lg font-bold text-brand-wine-text">{nutrition!.proteinContent}</p>
-                  <p class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.protein")}</p>
-                </div>
-              )}
-            </div>
+          <h3 class="mb-3 font-heading text-base font-normal text-warm-900 dark:text-warm-100">
+            {t(locale, "recipe.nutrition")}
+            <span class="ml-2 text-xs font-normal text-warm-500 dark:text-warm-400">
+              ({t(locale, "recipe.perServing")})
+            </span>
+          </h3>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {nutrition!.calories && (
+              <div class="rounded-lg bg-warm-50 p-3 text-center dark:bg-warm-800">
+                <p class="text-base font-bold text-brand-wine-text">{nutrition!.calories}</p>
+                <p class="text-xs font-medium uppercase tracking-wider text-warm-500 dark:text-warm-400">{t(locale, "recipe.calories")}</p>
+              </div>
+            )}
+            {nutrition!.fatContent && (
+              <div class="rounded-lg bg-warm-50 p-3 text-center dark:bg-warm-800">
+                <p class="text-base font-bold text-brand-wine-text">{nutrition!.fatContent}</p>
+                <p class="text-xs font-medium uppercase tracking-wider text-warm-500 dark:text-warm-400">{t(locale, "recipe.fat")}</p>
+              </div>
+            )}
+            {nutrition!.carbohydrateContent && (
+              <div class="rounded-lg bg-warm-50 p-3 text-center dark:bg-warm-800">
+                <p class="text-base font-bold text-brand-wine-text">{nutrition!.carbohydrateContent}</p>
+                <p class="text-xs font-medium uppercase tracking-wider text-warm-500 dark:text-warm-400">{t(locale, "recipe.carbs")}</p>
+              </div>
+            )}
+            {nutrition!.proteinContent && (
+              <div class="rounded-lg bg-warm-50 p-3 text-center dark:bg-warm-800">
+                <p class="text-base font-bold text-brand-wine-text">{nutrition!.proteinContent}</p>
+                <p class="text-xs font-medium uppercase tracking-wider text-warm-500 dark:text-warm-400">{t(locale, "recipe.protein")}</p>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -206,30 +205,52 @@ const hearts = impressFactor ? Array.from({ length: 5 }, (_, i) => i < impressFa
           <h3 class="mb-4 font-heading text-xl font-normal text-warm-900 dark:text-warm-100">
             {t(locale, "recipe.instructions")}
           </h3>
-          {instructionGroups.map((group) => (
-            <div class="mb-6 last:mb-0">
-              {group.group && (
-                <h4 class="mb-3 font-heading text-xs font-semibold normal-case tracking-wide text-warm-500 dark:text-warm-400">
-                  {group.group}
-                </h4>
-              )}
-              <ol class="space-y-4">
-                {group.steps.map((step, i) => (
+          {allSingleStep ? (
+            <ol class="space-y-4">
+              {instructionGroups.map((group, idx) => {
+                const step = group.steps[0];
+                return (
                   <li itemprop="recipeInstructions" class="flex gap-3">
                     <span
                       aria-hidden="true"
                       class="recipe-detail-step-number flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-wine font-ui text-xs font-bold text-white"
                     >
-                      {i + 1}
+                      {idx + 1}
                     </span>
                     <p class="pt-0.5 text-body-sm leading-relaxed text-warm-700 dark:text-warm-300">
+                      {group.group && <strong class="text-warm-900 dark:text-warm-100">{group.group}: </strong>}
                       {step.text}
                     </p>
                   </li>
-                ))}
-              </ol>
-            </div>
-          ))}
+                );
+              })}
+            </ol>
+          ) : (
+            instructionGroups.map((group) => (
+              <div class="mb-6 last:mb-0">
+                {group.group && (
+                  <h4 class="mb-3 font-heading text-xs font-semibold normal-case tracking-wide text-warm-500 dark:text-warm-400">
+                    {group.group}
+                  </h4>
+                )}
+                <ol class="space-y-4">
+                  {group.steps.map((step, i) => (
+                    <li itemprop="recipeInstructions" class="flex gap-3">
+                      <span
+                        aria-hidden="true"
+                        class="recipe-detail-step-number flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-wine font-ui text-xs font-bold text-white"
+                      >
+                        {i + 1}
+                      </span>
+                      <p class="pt-0.5 text-body-sm leading-relaxed text-warm-700 dark:text-warm-300">
+                        {step.text}
+                      </p>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))
+          )}
         </section>
 
       </div>

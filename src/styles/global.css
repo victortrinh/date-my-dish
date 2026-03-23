@@ -206,6 +206,10 @@
   }
 
   /* Title: compact */
+  .recipe-detail-card-print-title {
+    padding-top: 0 !important;
+  }
+
   .recipe-detail-card [itemprop="name"] {
     font-size: 13pt !important;
     margin-bottom: 0.4rem !important;
@@ -327,8 +331,39 @@
     break-inside: avoid;
   }
 
-  .nutrition-grid {
-    break-inside: avoid;
+  /* Nutrition: compact inline layout for print */
+  .recipe-detail-card-content h3:has(+ .grid) {
+    display: inline !important;
+    font-size: 9pt !important;
+    margin: 0 !important;
+  }
+
+  .recipe-detail-card-content h3:has(+ .grid) + .grid {
+    display: inline-flex !important;
+    gap: 0.75rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .recipe-detail-card-content h3:has(+ .grid) + .grid > div {
+    display: inline-flex !important;
+    gap: 0.2rem !important;
+    align-items: baseline !important;
+    padding: 0 !important;
+    background: none !important;
+    border-radius: 0 !important;
+  }
+
+  .recipe-detail-card-content h3:has(+ .grid) + .grid > div p:first-child {
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+    color: #000 !important;
+  }
+
+  .recipe-detail-card-content h3:has(+ .grid) + .grid > div p:last-child {
+    font-size: 8pt !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
   }
 
   /* Orphan/widow control */
