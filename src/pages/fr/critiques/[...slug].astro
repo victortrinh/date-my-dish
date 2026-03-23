@@ -13,6 +13,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t, getReviewLocalizedPath } from "@i18n/utils";
 import authorPhoto from "@assets/images/victor-vu.webp";
 import type { ImageMetadata } from "astro";
+import { SITE_URL } from "@utils/constants";
 
 export async function getStaticPaths() {
   const reviews = await getCollection("reviews");
@@ -33,7 +34,7 @@ const { data } = review;
 const locale = "fr";
 const slug = review.id.replace(/^fr\//, "");
 const heroImage = data.heroImage as ImageMetadata;
-const sourceUrl = `https://datemydish.com${getReviewLocalizedPath(locale, slug)}`;
+const sourceUrl = `${SITE_URL}${getReviewLocalizedPath(locale, slug)}`;
 
 const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
   year: "numeric",
@@ -42,7 +43,7 @@ const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
 });
 
 const quickFactsProps = {
-  locale,
+  locale: locale as const,
   neighborhood: data.neighborhood,
   address: data.address,
   cuisine: data.cuisine,

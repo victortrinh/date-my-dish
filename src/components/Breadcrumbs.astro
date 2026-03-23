@@ -1,5 +1,6 @@
 ---
 import { t, getLocalizedPath, type Locale } from "@i18n/utils";
+import { SITE_URL } from "@utils/constants";
 
 interface BreadcrumbItem {
   label: string;
@@ -12,8 +13,6 @@ interface Props {
 }
 
 const { locale, items } = Astro.props;
-
-const siteUrl = "https://datemydish.com";
 
 // Build full breadcrumb list with Home prepended
 const breadcrumbs: BreadcrumbItem[] = [
@@ -29,7 +28,7 @@ const jsonLd = {
     "@type": "ListItem",
     position: i + 1,
     name: item.label,
-    ...(item.href ? { item: `${siteUrl}${item.href}` } : {}),
+    ...(item.href ? { item: `${SITE_URL}${item.href}` } : {}),
   })),
 };
 ---

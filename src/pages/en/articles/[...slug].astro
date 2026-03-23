@@ -13,6 +13,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t, getArticleLocalizedPath } from "@i18n/utils";
 import authorPhoto from "@assets/images/victor-vu.webp";
 import type { ImageMetadata } from "astro";
+import { SITE_URL } from "@utils/constants";
 
 export async function getStaticPaths() {
   const articles = await getCollection("articles");
@@ -33,7 +34,7 @@ const { data } = article;
 const locale = "en";
 const slug = article.id.replace(/^en\//, "");
 const heroImage = data.heroImage as ImageMetadata;
-const sourceUrl = `https://datemydish.com${getArticleLocalizedPath(locale, slug)}`;
+const sourceUrl = `${SITE_URL}${getArticleLocalizedPath(locale, slug)}`;
 
 const formattedDate = data.publishDate.toLocaleDateString("en-US", {
   year: "numeric",
