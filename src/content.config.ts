@@ -113,4 +113,61 @@ const articles = defineCollection({
     }),
 });
 
-export const collections = { recipes, articles };
+const ReviewCategorySchema = z.enum([
+  "dinner",
+  "brunch",
+  "cocktails",
+  "casual",
+  "fine-dining",
+]);
+
+const DishHighlightSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+});
+
+const DateTypeFitSchema = z.object({
+  type: z.string(),
+  score: z.number().min(1).max(5),
+  note: z.string().optional(),
+});
+
+const reviews = defineCollection({
+  loader: glob({ pattern: "**/*.mdx", base: "./src/content/reviews" }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      lang: z.enum(["en", "fr"]),
+      translationSlug: z.string(),
+      description: z.string().max(160),
+      author: z.string().default("Victor"),
+      publishDate: z.coerce.date(),
+      updatedDate: z.coerce.date().optional(),
+      heroImage: image(),
+      heroImageAlt: z.string(),
+      keywords: z.array(z.string()),
+      tags: z.array(z.string()).optional(),
+      readingTime: z.number().optional(),
+      restaurantName: z.string(),
+      neighborhood: z.string(),
+      city: z.string().default("Montreal"),
+      address: z.string(),
+      website: z.string().url().optional(),
+      phone: z.string().optional(),
+      cuisine: z.string(),
+      priceRange: z.enum(["$", "$$", "$$$", "$$$$"]),
+      dateScore: z.number().min(1).max(10),
+      reviewCategory: ReviewCategorySchema,
+      bestFor: z.array(z.string()),
+      costPerPerson: z.string(),
+      reservationTip: z.string().optional(),
+      dishHighlights: z.array(DishHighlightSchema).optional(),
+      dateTypeFit: z.array(DateTypeFitSchema).optional(),
+      relatedRecipes: z.array(z.string()).optional(),
+      faqs: z
+        .array(z.object({ question: z.string(), answer: z.string() }))
+        .min(1),
+    }),
+});
+
+export const collections = { recipes, articles, reviews };

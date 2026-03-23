@@ -2,8 +2,9 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
 import { Picture } from "astro:assets";
-import { t, getRecipeLocalizedPath, getArticleLocalizedPath } from "@i18n/utils";
+import { t, getRecipeLocalizedPath, getArticleLocalizedPath, getReviewLocalizedPath } from "@i18n/utils";
 import { difficultyBadge } from "@utils/recipe";
+import { SITE_URL } from "@utils/constants";
 import { formatDuration } from "@utils/format";
 import { getCollection } from "astro:content";
 import type { ImageMetadata } from "astro";
@@ -16,8 +17,7 @@ const recipes = allRecipes
   .filter((r) => r.data.lang === "fr")
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
-const featuredRecipe = recipes[0];
-const featuredSlug = featuredRecipe?.id.replace(/^fr\//, "") ?? null;
+
 
 const allArticles = await getCollection("articles");
 const articles = allArticles
@@ -26,6 +26,12 @@ const articles = allArticles
 
 const recentRecipes = recipes.slice(0, 3);
 const recentArticles = articles.slice(0, 3);
+
+const allReviews = await getCollection("reviews");
+const recentReviews = allReviews
+  .filter((r) => r.data.lang === "fr")
+  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
+  .slice(0, 2);
 
 const FAVORITE_SLUGS = ["calamars-vegetaliens-croustillants", "posset-brulee-au-citron", "saumon-en-croute-de-quinoa"];
 const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
@@ -44,11 +50,11 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
       "@type": "WebSite",
       name: "Date My Dish",
       alternateName: "datemydish.com",
-      url: "https://datemydish.com",
+      url: SITE_URL,
       inLanguage: ["en", "fr"],
       potentialAction: {
         "@type": "SearchAction",
-        target: "https://datemydish.com/fr/recherche/?q={search_term_string}",
+        target: `${SITE_URL}/fr/recherche/?q={search_term_string}`,
         "query-input": "required name=search_term_string",
       },
     })} />
@@ -56,8 +62,8 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
       "@context": "https://schema.org",
       "@type": "Organization",
       name: "Date My Dish",
-      url: "https://datemydish.com",
-      logo: "https://datemydish.com/images/og-default.jpg",
+      url: SITE_URL,
+      logo: `${SITE_URL}/images/og-default.jpg`,
       sameAs: [
         "https://www.instagram.com/datemydishdotcom",
         "https://www.pinterest.com/datemydish",
@@ -329,6 +335,61 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
               );
             })}
           </div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Where to Take Your Date -->
+  {recentReviews.length > 0 && (
+    <section class="bg-warm-50 px-4 py-section dark:bg-warm-950" aria-labelledby="latest-reviews">
+      <div class="mx-auto max-w-content">
+        <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 id="latest-reviews" class="font-heading text-heading-1 font-normal text-warm-900 dark:text-warm-100">
+              {t(locale, "home.latestReviews")}
+            </h2>
+          </div>
+          <a
+            href={`/${locale}/critiques/`}
+            class="font-ui text-sm font-bold uppercase tracking-widest text-warm-800 underline decoration-brand-wine decoration-2 underline-offset-8 hover:text-brand-wine dark:text-warm-200 dark:decoration-brand-wine-dark dark:hover:text-brand-wine-dark"
+          >
+            {t(locale, "home.viewAllReviews")}
+          </a>
+        </div>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+          {recentReviews.map((review) => {
+            const slug = review.id.replace(/^fr\//, "");
+            return (
+              <a href={getReviewLocalizedPath(locale, slug)} class="group flex flex-col gap-4 sm:flex-row">
+                <div class="relative shrink-0 overflow-hidden rounded-xl border border-warm-200 dark:border-warm-700 sm:w-48">
+                  <Picture
+                    src={review.data.heroImage as ImageMetadata}
+                    alt={review.data.heroImageAlt}
+                    widths={[200, 400]}
+                    sizes="(max-width: 640px) 100vw, 192px"
+                    formats={["avif", "webp"]}
+                    class="aspect-[4/3] h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div class="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-lg bg-brand-wine text-sm font-bold text-white shadow dark:bg-brand-wine-dark">
+                    {review.data.dateScore}
+                  </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                  <span class="font-ui text-xs font-bold uppercase tracking-wider text-brand-wine dark:text-brand-wine-dark">
+                    {review.data.neighborhood} · {review.data.priceRange}
+                  </span>
+                  <h3 class="mt-1 font-heading text-lg font-normal text-warm-800 dark:text-warm-100">
+                    {review.data.restaurantName}
+                  </h3>
+                  <p class="mt-1 text-sm text-warm-500 dark:text-warm-400">
+                    {review.data.description}
+                  </p>
+                </div>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 ---
 import { getAlternateUrl, type Locale } from "@i18n/utils";
+import { SITE_URL } from "@utils/constants";
 
 interface Props {
   title: string;
@@ -14,7 +15,7 @@ interface Props {
   updatedDate?: Date;
   /** For content pages: the translation slug to build hreflang for the paired content */
   translationSlug?: string;
-  contentType?: "recipe" | "article";
+  contentType?: "recipe" | "article" | "review";
 }
 
 const {
@@ -32,12 +33,11 @@ const {
   contentType,
 } = Astro.props;
 
-const siteUrl = "https://datemydish.com";
-const fullCanonical = canonical.startsWith("http") ? canonical : `${siteUrl}${canonical}`;
+const fullCanonical = canonical.startsWith("http") ? canonical : `${SITE_URL}${canonical}`;
 const resolvedOgImage = ogImage || "/images/og-default.jpg";
 const fullOgImage = resolvedOgImage.startsWith("http")
   ? resolvedOgImage
-  : `${siteUrl}${resolvedOgImage}`;
+  : `${SITE_URL}${resolvedOgImage}`;
 
 // Build hreflang URLs
 const targetLocale = locale === "en" ? "fr" : "en";
@@ -47,13 +47,15 @@ if (translationSlug && contentType) {
   let prefix: string;
   if (contentType === "recipe") {
     prefix = targetLocale === "fr" ? "recettes" : "recipes";
+  } else if (contentType === "review") {
+    prefix = targetLocale === "fr" ? "critiques" : "reviews";
   } else {
     prefix = "articles";
   }
-  alternateUrl = `${siteUrl}/${targetLocale}/${prefix}/${translationSlug}`;
+  alternateUrl = `${SITE_URL}/${targetLocale}/${prefix}/${translationSlug}`;
 } else {
   // Non-recipe page: use route mapping
-  alternateUrl = `${siteUrl}${getAlternateUrl(Astro.url, targetLocale)}`;
+  alternateUrl = `${SITE_URL}${getAlternateUrl(Astro.url, targetLocale)}`;
 }
 
 const currentUrl = fullCanonical;

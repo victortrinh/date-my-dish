@@ -88,6 +88,22 @@
       "publishedDate": "2026-03-20",
       "lastSyncedDate": "2026-03-20",
       "status": "published"
+    },
+    "55": {
+      "notionTitle": "Moccione Restaurant Review: Villeray's Cozy Italian Date-Night Gem",
+      "slug": "moccione-montreal",
+      "type": "review",
+      "publishedDate": "2026-03-23",
+      "lastSyncedDate": "2026-03-23",
+      "status": "published"
+    },
+    "53": {
+      "notionTitle": "McKiernan Brunch Review: Lachine Canal's Big, Lively Daytime Hang",
+      "slug": "mckiernan-montreal",
+      "type": "review",
+      "publishedDate": "2026-03-23",
+      "lastSyncedDate": "2026-03-23",
+      "status": "published"
     }
   }
 }
