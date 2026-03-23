@@ -1,7 +1,6 @@
 ---
-import { t, getLocalizedPath, getOccasionLocalizedPath, type Locale } from "@i18n/utils";
+import { t, getLocalizedPath, type Locale } from "@i18n/utils";
 import NewsletterSignup from "./NewsletterSignup.astro";
-import { getCollection } from "astro:content";
 
 interface Props {
   locale: Locale;
@@ -9,20 +8,6 @@ interface Props {
 
 const { locale } = Astro.props;
 const year = new Date().getFullYear();
-
-const allRecipes = await getCollection("recipes");
-const recipes = allRecipes.filter((r) => r.data.lang === locale);
-
-const OCCASION_ORDER = ["date-night", "weeknight", "entertaining", "comfort", "celebration", "quick-meal"];
-const occasions = [...new Set(recipes.flatMap((r) => r.data.occasion || []))];
-occasions.sort((a, b) => {
-  const ai = OCCASION_ORDER.indexOf(a);
-  const bi = OCCASION_ORDER.indexOf(b);
-  if (ai !== -1 && bi !== -1) return ai - bi;
-  if (ai !== -1) return -1;
-  if (bi !== -1) return 1;
-  return a.localeCompare(b);
-});
 
 const recipesPath = locale === "fr" ? "/recettes/" : "/recipes/";
 const aboutPath = locale === "fr" ? "/a-propos/" : "/about/";
@@ -32,7 +17,7 @@ const termsPath = locale === "fr" ? "/conditions-dutilisation/" : "/terms-of-ser
 
 <footer class="no-print mt-auto bg-warm-800 dark:bg-warm-950">
   <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1fr_auto_auto_1fr] lg:gap-16">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
       <!-- Brand -->
       <div>
         <a href={getLocalizedPath(locale, "/")} class="inline-block no-underline">
@@ -76,25 +61,6 @@ const termsPath = locale === "fr" ? "/conditions-dutilisation/" : "/terms-of-ser
           </a>
         </nav>
       </div>
-
-      <!-- Occasions -->
-      {occasions.length > 0 && (
-        <div>
-          <h3 class="mb-4 font-ui text-sm font-bold uppercase tracking-widest text-warm-100">
-            {t(locale, "occasion.occasions")}
-          </h3>
-          <nav class="flex flex-col gap-3" aria-label={t(locale, "occasion.occasions")}>
-            {occasions.slice(0, 4).map((occ) => (
-              <a
-                href={`${getOccasionLocalizedPath(locale, occ)}/`}
-                class="font-body text-warm-300 no-underline transition-colors hover:text-white"
-              >
-                {t(locale, `occasion.${occ}` as any) || occ}
-              </a>
-            ))}
-          </nav>
-        </div>
-      )}
 
       <!-- Newsletter -->
       <div class="rounded-xl border border-warm-600 p-6">

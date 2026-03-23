@@ -16,7 +16,7 @@ import DateNightTips from "@components/DateNightTips.astro";
 import FAQSection from "@components/FAQSection.astro";
 import RelatedRecipes from "@components/RelatedRecipes.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import { t, getRecipeLocalizedPath, getOccasionLocalizedPath } from "@i18n/utils";
+import { t, getRecipeLocalizedPath } from "@i18n/utils";
 import authorPhoto from "@assets/images/victor-vu.webp";
 import { formatDuration } from "@utils/format";
 import { difficultyBadge } from "@utils/recipe";
@@ -100,13 +100,7 @@ const ratingData = (ratingsData as Record<string, { averageRating: number; ratin
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <!-- Left: Content -->
           <div class="order-2 flex flex-col justify-start lg:order-1">
-            {(data.occasion && data.occasion.length > 0) ? (
-              <div class="mb-4">
-                <a href={`${getOccasionLocalizedPath(locale, data.occasion[0])}/`} class="inline-block rounded-full bg-brand-wine/10 px-4 py-1.5 font-ui text-caption font-semibold uppercase tracking-wider text-brand-wine no-underline transition-colors hover:bg-brand-wine/20 dark:bg-brand-wine-dark/10 dark:text-brand-wine-dark dark:hover:bg-brand-wine-dark/20">
-                  {t(locale, `occasion.${data.occasion[0]}` as any)}
-                </a>
-              </div>
-            ) : data.recipeCategory && data.recipeCategory.length > 0 ? (
+            {data.recipeCategory && data.recipeCategory.length > 0 ? (
               <div class="mb-4">
                 <span class="inline-block rounded-full bg-brand-wine/10 px-4 py-1.5 font-ui text-caption font-semibold uppercase tracking-wider text-brand-wine dark:bg-brand-wine-dark/10 dark:text-brand-wine-dark">
                   {t(locale, `categories.${data.recipeCategory[0]}` as any) || data.recipeCategory[0]}

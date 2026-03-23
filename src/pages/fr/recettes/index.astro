@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import { t, getRecipeLocalizedPath, getOccasionLocalizedPath } from "@i18n/utils";
+import { t, getRecipeLocalizedPath } from "@i18n/utils";
 import { getCollection } from "astro:content";
 import type { ImageMetadata } from "astro";
 
@@ -13,16 +13,6 @@ const recipes = allRecipes
   .filter((r) => r.data.lang === "fr")
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
-const OCCASION_ORDER = ["date-night", "weeknight", "entertaining", "comfort", "celebration", "quick-meal"];
-const occasions = [...new Set(recipes.flatMap((r) => r.data.occasion || []))];
-occasions.sort((a, b) => {
-  const ai = OCCASION_ORDER.indexOf(a);
-  const bi = OCCASION_ORDER.indexOf(b);
-  if (ai !== -1 && bi !== -1) return ai - bi;
-  if (ai !== -1) return -1;
-  if (bi !== -1) return 1;
-  return a.localeCompare(b);
-});
 ---
 
 <BaseLayout
@@ -62,25 +52,6 @@ occasions.sort((a, b) => {
         {recipes.length} {recipes.length === 1 ? "recette" : "recettes"}
       </p>
     </div>
-
-    <!-- Browse by Occasion -->
-    {occasions.length > 0 && (
-      <div class="mb-10">
-        <h2 class="mb-4 font-heading text-lg font-normal text-warm-900 dark:text-warm-100">
-          {t(locale, "occasion.browseByOccasion")}
-        </h2>
-        <div class="flex flex-wrap gap-2">
-          {occasions.map((occ) => (
-            <a
-              href={`${getOccasionLocalizedPath(locale, occ)}/`}
-              class="rounded-lg border border-brand-rose/30 bg-brand-rose/5 px-4 py-2 font-ui text-body-sm font-medium text-brand-rose-text no-underline transition-colors hover:border-brand-rose hover:bg-brand-rose/10 dark:border-brand-rose/20 dark:text-brand-rose"
-            >
-              {t(locale, `occasion.${occ}` as any) || occ}
-            </a>
-          ))}
-        </div>
-      </div>
-    )}
 
     <!-- Recipe Grid -->
     {recipes.length > 0 ? (
