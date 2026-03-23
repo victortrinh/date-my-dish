@@ -22,46 +22,83 @@ interface Props {
 
 const { locale, instructionGroups, recipeUrl, recipeTitle } = Astro.props;
 let globalStepNumber = 0;
+const allSingleStep = instructionGroups.every((g) => g.steps.length === 1);
 ---
 
 <section class="instruction-steps">
   <h2 class="mb-6 font-heading text-heading-2 font-normal text-warm-900 dark:text-warm-100">
     {t(locale, "recipe.instructions")}
   </h2>
-  {instructionGroups.map((group) => (
-    <div class="mb-8 last:mb-0">
-      {group.group && (
-        <h3 class="mb-4 font-heading text-heading-3 font-semibold text-warm-700 dark:text-warm-300">{group.group}</h3>
-      )}
-      <ol class="space-y-6">
-        {group.steps.map((step, i) => {
-          globalStepNumber++;
-          return (
-            <li class="flex gap-4">
-              <span aria-hidden="true" class="step-number flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-wine font-ui text-sm font-bold text-white">
-                {i + 1}
-              </span>
-              <div class="pt-0.5">
-                <p class="text-warm-700 dark:text-warm-300">{step.text}</p>
-                {step.image && (
-                  <Picture
-                    src={step.image}
-                    alt={`${t(locale, "recipe.instructions")} ${i + 1}: ${step.text.slice(0, 120)}`}
-                    widths={[400, 600, 900]}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 60vw"
-                    formats={["avif", "webp"]}
-                    class="step-image mt-4 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[60%]"
-                    loading="lazy"
-                    decoding="async"
-                    data-pin-url={recipeUrl}
-                    data-pin-description={recipeTitle ? `${recipeTitle} - Step ${globalStepNumber}: ${step.text.slice(0, 200)} | Date My Dish` : undefined}
-                  />
-                )}
-              </div>
-            </li>
-          );
-        })}
-      </ol>
-    </div>
-  ))}
+  {allSingleStep ? (
+    <ol class="space-y-6">
+      {instructionGroups.map((group) => {
+        const step = group.steps[0];
+        globalStepNumber++;
+        return (
+          <li class="flex gap-4">
+            <span aria-hidden="true" class="step-number flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-wine font-ui text-sm font-bold text-white">
+              {globalStepNumber}
+            </span>
+            <div class="pt-0.5">
+              <p class="text-warm-700 dark:text-warm-300">
+                {group.group && <strong class="text-warm-900 dark:text-warm-100">{group.group}: </strong>}
+                {step.text}
+              </p>
+              {step.image && (
+                <Picture
+                  src={step.image}
+                  alt={`${t(locale, "recipe.instructions")} ${globalStepNumber}: ${step.text.slice(0, 120)}`}
+                  widths={[400, 600, 900]}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 60vw"
+                  formats={["avif", "webp"]}
+                  class="step-image mt-4 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[60%]"
+                  loading="lazy"
+                  decoding="async"
+                  data-pin-url={recipeUrl}
+                  data-pin-description={recipeTitle ? `${recipeTitle} - Step ${globalStepNumber}: ${step.text.slice(0, 200)} | Date My Dish` : undefined}
+                />
+              )}
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  ) : (
+    instructionGroups.map((group) => (
+      <div class="mb-8 last:mb-0">
+        {group.group && (
+          <h3 class="mb-4 font-heading text-heading-3 font-semibold text-warm-700 dark:text-warm-300">{group.group}</h3>
+        )}
+        <ol class="space-y-6">
+          {group.steps.map((step, i) => {
+            globalStepNumber++;
+            return (
+              <li class="flex gap-4">
+                <span aria-hidden="true" class="step-number flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-wine font-ui text-sm font-bold text-white">
+                  {i + 1}
+                </span>
+                <div class="pt-0.5">
+                  <p class="text-warm-700 dark:text-warm-300">{step.text}</p>
+                  {step.image && (
+                    <Picture
+                      src={step.image}
+                      alt={`${t(locale, "recipe.instructions")} ${i + 1}: ${step.text.slice(0, 120)}`}
+                      widths={[400, 600, 900]}
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 60vw"
+                      formats={["avif", "webp"]}
+                      class="step-image mt-4 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[60%]"
+                      loading="lazy"
+                      decoding="async"
+                      data-pin-url={recipeUrl}
+                      data-pin-description={recipeTitle ? `${recipeTitle} - Step ${globalStepNumber}: ${step.text.slice(0, 200)} | Date My Dish` : undefined}
+                    />
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    ))
+  )}
 </section>
