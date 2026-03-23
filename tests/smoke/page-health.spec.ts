@@ -40,7 +40,7 @@ for (const { path, name } of pages) {
     });
 
     const response = await page.goto(path);
-    await page.waitForLoadState("networkidle");
+    await page.waitForLoadState("domcontentloaded");
 
     // Assert HTTP 200
     expect(response?.status(), `${path} returned ${response?.status()}`).toBe(
