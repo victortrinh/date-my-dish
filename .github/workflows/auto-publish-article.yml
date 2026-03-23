@@ -85,13 +85,25 @@ jobs:
 
           ## Your Tasks
 
-          ### 1. Optimize the hero image
+          ### 1. Optimize images
+          **IMPORTANT: ONLY optimize images from the Notion download in `/tmp/notion-images/`. Do NOT re-optimize or touch any existing images in `src/assets/images/articles/`.**
+
           The hero image has already been downloaded to the path in `notion-article-content.json` → `heroImage.localPath`.
-          Convert to WebP, resize to max 1200px wide, quality 82:
+
+          **Hero image**: Convert the downloaded file to WebP, resize to max 1200px wide, quality 82:
           ```
           convert {heroImage.localPath} -auto-orient -resize '1200x>' -quality 82 src/assets/images/articles/{slug}.webp
           ```
-          If the result exceeds 200KB, reduce quality incrementally until it fits.
+          If the result exceeds 200KB, reduce quality by 5 incrementally until it fits.
+
+          **Inline images**: For each image block in the JSON `blocks` array that has a `localPath` (in `/tmp/notion-images/`), convert to WebP, resize to max 900px wide, quality 80:
+          ```
+          convert {localPath} -auto-orient -resize '900x>' -quality 80 src/assets/images/articles/{slug}-{descriptor}.webp
+          ```
+          If the result exceeds 150KB, reduce quality by 5 incrementally until it fits.
+          Use descriptive filenames like `{slug}-inline-1.webp`, `{slug}-inline-2.webp`, etc.
+
+          Only process images listed in the JSON content. Never glob or batch-process existing images.
 
           ### 2. Generate the EN slug
           If mode is "update", use the `existing_slug` from the selection JSON.
@@ -136,11 +148,17 @@ jobs:
           - Read `.claude/commands/humanizer.md` for anti-AI-pattern rules to apply
 
           **Body**: Write 800-1500 words of SEO-optimized prose:
-          - Start with `import { Picture } from "astro:assets";` and `import heroImg from "../../../assets/images/articles/{en-slug}.webp";`
+          - Start with `import { Picture } from "astro:assets";` and import statements for the hero image AND all inline images you optimized in step 1:
+            ```
+            import heroImg from "../../../assets/images/articles/{en-slug}.webp";
+            import inlineImg1 from "../../../assets/images/articles/{en-slug}-inline-1.webp";
+            // ... one import per optimized inline image
+            ```
           - Opening paragraph (no heading) -- engaging hook related to date night cooking
           - 5-8 H2 sections covering the article's topics
-          - One `<Picture>` component after the first or second section
-          - Use the Notion content as an outline but REWRITE the prose -- make it more engaging, detailed, and SEO-friendly
+          - Include ALL images from the Notion content as `<Picture>` components placed at the same positions they appeared in the original Notion page. Use descriptive alt text for each. If no inline images were downloaded, use the hero image once after the first or second section.
+          - **Content completeness**: The Notion content is the source of truth. Every section, callout, tip, detail, and data point from the Notion blocks MUST appear in the final prose. You may rewrite for voice and flow, but do NOT drop content. If the Notion content has 8 sections, the MDX should cover all 8. After writing, compare your output against the Notion blocks and verify nothing was omitted.
+          - Use the Notion content as a foundation but REWRITE the prose -- make it more engaging, detailed, and SEO-friendly
           - Include the "date night" angle throughout (this is a date night cooking blog)
           - **GEO/AI Citation Optimization**:
             - Include 1-2 sourced citations in the prose (food science studies, expert quotes, or historical context). Example: "According to Harold McGee...", "Research published in [journal] found that..."
