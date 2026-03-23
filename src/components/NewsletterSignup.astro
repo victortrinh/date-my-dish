@@ -24,7 +24,7 @@ const { locale, compact = false } = Astro.props;
       "mb-2 font-heading font-normal",
       compact ? "text-lg text-warm-900 dark:text-warm-100" : "text-xl text-warm-100",
     ]}>
-      {t(locale, compact ? "newsletter.compactTitle" as any : "newsletter.title")}
+      {t(locale, compact ? "newsletter.compactTitle" : "newsletter.title")}
     </h3>
     <p class:list={[
       "mb-4 text-body-sm",

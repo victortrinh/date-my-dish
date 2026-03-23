@@ -1,10 +1,10 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
+import { SITE_URL } from "@utils/constants";
 
 export const GET: APIRoute = async () => {
   const recipes = await getCollection("recipes");
   const articles = await getCollection("articles");
-  const siteUrl = "https://datemydish.com";
 
   const enRecipes = recipes
     .filter((r) => r.data.lang === "en")
@@ -42,7 +42,7 @@ export const GET: APIRoute = async () => {
   const formatRecipe = (recipe: (typeof enRecipes)[0], locale: "en" | "fr") => {
     const slug = recipe.id.replace(new RegExp(`^${locale}/`), "");
     const prefix = locale === "fr" ? "recettes" : "recipes";
-    const url = `${siteUrl}/${locale}/${prefix}/${slug}/`;
+    const url = `${SITE_URL}/${locale}/${prefix}/${slug}/`;
     const summary = recipe.data.summary ? ` - ${recipe.data.summary}` : ` - ${recipe.data.description}`;
     const meta = [
       recipe.data.recipeCuisine,
@@ -55,7 +55,7 @@ export const GET: APIRoute = async () => {
 
   const formatArticle = (article: (typeof enArticles)[0], locale: "en" | "fr") => {
     const slug = article.id.replace(new RegExp(`^${locale}/`), "");
-    const url = `${siteUrl}/${locale}/articles/${slug}/`;
+    const url = `${SITE_URL}/${locale}/articles/${slug}/`;
     return `- [${article.data.title}](${url}) - ${article.data.description}`;
   };
 
@@ -111,16 +111,16 @@ export const GET: APIRoute = async () => {
     "",
     "## Pages",
     "",
-    `- [Home (EN)](${siteUrl}/en/)`,
-    `- [Accueil (FR)](${siteUrl}/fr/)`,
-    `- [All Recipes (EN)](${siteUrl}/en/recipes/)`,
-    `- [Toutes les recettes (FR)](${siteUrl}/fr/recettes/)`,
-    `- [All Articles (EN)](${siteUrl}/en/articles/)`,
-    `- [Tous les articles (FR)](${siteUrl}/fr/articles/)`,
-    `- [About](${siteUrl}/en/about/)`,
-    `- [À propos](${siteUrl}/fr/a-propos/)`,
-    `- [Contact (EN)](${siteUrl}/en/contact/)`,
-    `- [Contact (FR)](${siteUrl}/fr/contact/)`,
+    `- [Home (EN)](${SITE_URL}/en/)`,
+    `- [Accueil (FR)](${SITE_URL}/fr/)`,
+    `- [All Recipes (EN)](${SITE_URL}/en/recipes/)`,
+    `- [Toutes les recettes (FR)](${SITE_URL}/fr/recettes/)`,
+    `- [All Articles (EN)](${SITE_URL}/en/articles/)`,
+    `- [Tous les articles (FR)](${SITE_URL}/fr/articles/)`,
+    `- [About](${SITE_URL}/en/about/)`,
+    `- [À propos](${SITE_URL}/fr/a-propos/)`,
+    `- [Contact (EN)](${SITE_URL}/en/contact/)`,
+    `- [Contact (FR)](${SITE_URL}/fr/contact/)`,
     "",
   );
 

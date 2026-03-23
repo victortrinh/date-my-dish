@@ -181,7 +181,8 @@ jobs:
               loading="lazy"
             />
             ```
-          - Use the Notion content as an outline but REWRITE the prose — make it more engaging, detailed, and SEO-friendly
+          - **Content completeness**: The Notion content is the source of truth. Every section, callout, tip, and detail from the Notion blocks MUST appear in the final prose. You may rewrite for voice and flow, but do NOT drop content. After writing, compare your output against the Notion blocks and verify nothing was omitted.
+          - Use the Notion content as a foundation but REWRITE the prose — make it more engaging, detailed, and SEO-friendly
           - Include the "date night" angle throughout (this is a date night cooking blog)
           - **GEO/AI Citation Optimization**:
             - Start the prose with a "What is [dish]?" paragraph (40-60 words, directly quotable by AI engines)
