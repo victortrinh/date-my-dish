@@ -38,6 +38,7 @@ lighthouse-manifest.json
 # Playwright
 test-results/
 playwright-report/
+.playwright-pages.json
 
 # Build-time generated data
 data/ratings.json
