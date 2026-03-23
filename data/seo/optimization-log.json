@@ -17,5 +17,26 @@
         }
       }
     ]
+  },
+  {
+    "date": "2026-03-23",
+    "runId": "23429019896",
+    "prNumber": 104,
+    "mergedAt": null,
+    "pages": [
+      {
+        "path": "/en/recipes/quinoa-crusted-salmon/",
+        "actions": [
+          "auto-optimized"
+        ],
+        "keywords": [
+          "quinoa crusted salmon"
+        ],
+        "positionAtTime": {
+          "serp": 6,
+          "gsc": 46.3
+        }
+      }
+    ]
   }
 ]
