@@ -39,7 +39,7 @@ function isActive(linkPath: string): boolean {
         </span>
       </a>
 
-      <div class="hidden items-center gap-2 md:flex">
+      <div class="hidden items-center gap-2 lg:flex">
         {navLinks.map((link) => (
           <a
             href={getLocalizedPath(locale, link.path)}
@@ -61,7 +61,7 @@ function isActive(linkPath: string): boolean {
     </div>
 
     <!-- Right group: Action icons (desktop) -->
-    <div class="hidden items-center gap-1 md:flex">
+    <div class="hidden items-center gap-1 lg:flex">
       <button
         id="nav-search-btn"
         class="btn btn-ghost"
@@ -87,7 +87,7 @@ function isActive(linkPath: string): boolean {
     </div>
 
     <!-- Mobile: search + hamburger -->
-    <div class="flex items-center gap-1 md:hidden">
+    <div class="flex items-center gap-1 lg:hidden">
       <button
         id="nav-search-btn-mobile"
         class="btn btn-ghost"
@@ -114,7 +114,7 @@ function isActive(linkPath: string): boolean {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden bg-warm-50/95 backdrop-blur-xl md:hidden dark:bg-warm-950/95">
+  <div id="mobile-menu" class="hidden bg-warm-50/95 backdrop-blur-xl lg:hidden dark:bg-warm-950/95">
     <div class="mx-auto max-w-content space-y-1 px-4 py-3">
       {navLinks.map((link) => (
         <a
