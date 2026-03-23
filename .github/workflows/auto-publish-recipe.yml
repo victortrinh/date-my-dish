@@ -34,6 +34,14 @@ jobs:
 
       - run: npm ci
 
+      - name: Restore Astro image cache
+        uses: actions/cache@v5
+        with:
+          path: node_modules/.astro
+          key: astro-image-cache-${{ runner.os }}-${{ hashFiles('src/assets/images/**') }}
+          restore-keys: |
+            astro-image-cache-${{ runner.os }}-
+
       # Step 1: Fetch recipe from public Notion database (no auth needed)
       # Uses notion-client (unofficial API) to query the publicly shared database.
       # Note: notion-client depends on Notion's internal /api/v3/ — if it breaks,
