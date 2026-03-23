@@ -40,10 +40,26 @@ const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
   month: "long",
   day: "numeric",
 });
+
+const quickFactsProps = {
+  locale,
+  neighborhood: data.neighborhood,
+  address: data.address,
+  cuisine: data.cuisine,
+  priceRange: data.priceRange,
+  dateScore: data.dateScore,
+  costPerPerson: data.costPerPerson,
+  bestFor: data.bestFor,
+  reservationTip: data.reservationTip,
+  website: data.website,
+  phone: data.phone,
+  dishHighlights: data.dishHighlights,
+  dateTypeFit: data.dateTypeFit,
+};
 ---
 
 <ReviewLayout
-  title={`${data.restaurantName} Review | Date My Dish`}
+  title={`${data.title} | Date My Dish`}
   description={data.description}
   locale={locale}
   ogImage={heroImage.src}
@@ -192,44 +208,14 @@ const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
       <!-- Sidebar (desktop only) -->
       <aside class="hidden lg:col-span-4 lg:block">
         <div>
-          <ReviewQuickFacts
-            locale={locale}
-            restaurantName={data.restaurantName}
-            neighborhood={data.neighborhood}
-            address={data.address}
-            cuisine={data.cuisine}
-            priceRange={data.priceRange}
-            dateScore={data.dateScore}
-            costPerPerson={data.costPerPerson}
-            bestFor={data.bestFor}
-            reservationTip={data.reservationTip}
-            website={data.website}
-            phone={data.phone}
-            dishHighlights={data.dishHighlights}
-            dateTypeFit={data.dateTypeFit}
-          />
+          <ReviewQuickFacts {...quickFactsProps} />
         </div>
       </aside>
     </div>
 
     <!-- Quick Facts (mobile/tablet only) -->
     <div class="mx-auto mt-8 max-w-prose lg:hidden">
-      <ReviewQuickFacts
-        locale={locale}
-        restaurantName={data.restaurantName}
-        neighborhood={data.neighborhood}
-        address={data.address}
-        cuisine={data.cuisine}
-        priceRange={data.priceRange}
-        dateScore={data.dateScore}
-        costPerPerson={data.costPerPerson}
-        bestFor={data.bestFor}
-        reservationTip={data.reservationTip}
-        website={data.website}
-        phone={data.phone}
-        dishHighlights={data.dishHighlights}
-        dateTypeFit={data.dateTypeFit}
-      />
+      <ReviewQuickFacts {...quickFactsProps} />
     </div>
 
     <!-- Below-sidebar content -->
