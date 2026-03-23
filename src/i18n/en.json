@@ -131,7 +131,6 @@
     "featuredRecipes": "Featured Recipes",
     "exploreRecipes": "Explore Recipes",
     "viewAllRecipes": "View All Recipes",
-    "categories": "Browse by Category",
     "freshFromKitchen": "Give In to These Temptations",
     "ourFavorites": "Our Favorites",
     "readMore": "Read More",
@@ -152,7 +151,6 @@
   "listing": {
     "allRecipes": "All Recipes",
     "allArticles": "All Articles",
-    "filterByCategory": "Filter by Category",
     "allCategories": "All",
     "noRecipesFound": "No recipes found.",
     "noArticlesFound": "No articles found."
@@ -208,12 +206,10 @@
   "footer": {
     "copyright": "All rights reserved.",
     "madeWith": "Made with love in Montreal",
-    "categories": "Categories",
     "navigation": "Navigation",
     "legal": "Legal",
     "legalNav": "Legal navigation",
     "nav": "Footer navigation",
-    "categoriesNav": "Recipe categories",
     "instagramLabel": "Follow us on Instagram",
     "pinterestLabel": "Follow us on Pinterest"
   },
@@ -230,7 +226,6 @@
     "home": "Home",
     "recipes": "Recipes",
     "articles": "Articles",
-    "category": "Category",
     "occasion": "Occasion",
     "tag": "Tag"
   },

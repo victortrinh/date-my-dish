@@ -6,8 +6,6 @@ const recipePages = discoverPages().filter(
     (p.path.startsWith("/en/recipes/") || p.path.startsWith("/fr/recettes/")) &&
     // Exclude listing/category/tag/occasion/cuisine pages
     p.path.split("/").filter(Boolean).length >= 3 &&
-    !p.path.includes("/category/") &&
-    !p.path.includes("/categorie/") &&
     !p.path.includes("/tag/") &&
     !p.path.includes("/etiquette/") &&
     !p.path.includes("/occasion/") &&

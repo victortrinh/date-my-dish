@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
 import { Picture } from "astro:assets";
-import { t, getCategorySlug, getRecipeLocalizedPath, getArticleLocalizedPath } from "@i18n/utils";
+import { t, getRecipeLocalizedPath, getArticleLocalizedPath } from "@i18n/utils";
 import { difficultyBadge } from "@utils/recipe";
 import { formatDuration } from "@utils/format";
 import { getCollection } from "astro:content";
@@ -32,28 +32,6 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
   recipes.find((r) => r.id.replace(/^fr\//, "") === slug)
 ).filter((r): r is NonNullable<typeof r> => r != null);
 
-const CATEGORY_ORDER = ["appetizer", "dinner", "dessert"];
-const categories = [...new Set(recipes.flatMap((r) => r.data.recipeCategory))];
-categories.sort((a, b) => {
-  const ai = CATEGORY_ORDER.indexOf(a);
-  const bi = CATEGORY_ORDER.indexOf(b);
-  if (ai !== -1 && bi !== -1) return ai - bi;
-  if (ai !== -1) return -1;
-  if (bi !== -1) return 1;
-  return a.localeCompare(b);
-});
-
-const categoryIcons: Record<string, string> = {
-  appetizer: "🍽️",
-  dinner: "🥘",
-  dessert: "🍰",
-  breakfast: "🥞",
-  lunch: "🥗",
-  snack: "🍿",
-  "side-dish": "🥦",
-  drink: "🍹",
-  sauce: "🫙",
-};
 ---
 
 <BaseLayout
@@ -356,28 +334,4 @@ const categoryIcons: Record<string, string> = {
     </section>
   )}
 
-  <!-- Categories -->
-  {categories.length > 0 && (
-    <section class="bg-warm-100 px-4 py-section dark:bg-warm-900" aria-labelledby="browse-categories">
-      <div class="mx-auto max-w-content">
-        <div class="mb-10 text-center">
-          <h2 id="browse-categories" class="font-heading text-heading-1 font-normal text-warm-900 dark:text-warm-100">
-            {t(locale, "home.categories")}
-          </h2>
-          <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-rose"></div>
-        </div>
-        <div class="flex flex-wrap justify-center gap-3">
-          {categories.map((cat) => (
-            <a
-              href={`/fr/recettes/categorie/${getCategorySlug(cat, locale)}/`}
-              class="inline-flex items-center gap-2 rounded-full border border-warm-200 bg-white px-6 py-2.5 font-ui text-sm font-medium text-warm-700 no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-wine hover:text-brand-wine hover:shadow-md dark:border-warm-700 dark:bg-warm-800 dark:text-warm-300"
-            >
-              <span aria-hidden="true">{categoryIcons[cat] || "🍴"}</span>
-              {t(locale, `categories.${cat}` as any) || cat}
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
 </BaseLayout>

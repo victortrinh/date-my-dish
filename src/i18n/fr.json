@@ -131,7 +131,6 @@
     "featuredRecipes": "Recettes en vedette",
     "exploreRecipes": "Explorer les recettes",
     "viewAllRecipes": "Voir toutes les recettes",
-    "categories": "Parcourir par catégorie",
     "freshFromKitchen": "Succombez à ces tentations",
     "ourFavorites": "Nos coups de cœur",
     "readMore": "Lire la suite",
@@ -152,7 +151,6 @@
   "listing": {
     "allRecipes": "Toutes les recettes",
     "allArticles": "Tous les articles",
-    "filterByCategory": "Filtrer par catégorie",
     "allCategories": "Toutes",
     "noRecipesFound": "Aucune recette trouvée.",
     "noArticlesFound": "Aucun article trouvé."
@@ -208,12 +206,10 @@
   "footer": {
     "copyright": "Tous droits réservés.",
     "madeWith": "Fait avec amour à Montréal",
-    "categories": "Catégories",
     "navigation": "Navigation",
     "legal": "Légal",
     "legalNav": "Navigation légale",
     "nav": "Navigation du pied de page",
-    "categoriesNav": "Catégories de recettes",
     "instagramLabel": "Suivez-nous sur Instagram",
     "pinterestLabel": "Suivez-nous sur Pinterest"
   },
@@ -230,7 +226,6 @@
     "home": "Accueil",
     "recipes": "Recettes",
     "articles": "Articles",
-    "category": "Catégorie",
     "occasion": "Occasion",
     "tag": "Étiquette"
   },

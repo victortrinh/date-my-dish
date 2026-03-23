@@ -13,17 +13,6 @@ const recipes = allRecipes
   .filter((r) => r.data.lang === "en")
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
-const CATEGORY_ORDER = ["appetizer", "dinner", "dessert"];
-const categories = [...new Set(recipes.flatMap((r) => r.data.recipeCategory))];
-categories.sort((a, b) => {
-  const ai = CATEGORY_ORDER.indexOf(a);
-  const bi = CATEGORY_ORDER.indexOf(b);
-  if (ai !== -1 && bi !== -1) return ai - bi;
-  if (ai !== -1) return -1;
-  if (bi !== -1) return 1;
-  return a.localeCompare(b);
-});
-
 const OCCASION_ORDER = ["date-night", "weeknight", "entertaining", "comfort", "celebration", "quick-meal"];
 const occasions = [...new Set(recipes.flatMap((r) => r.data.occasion || []))];
 occasions.sort((a, b) => {
@@ -73,27 +62,6 @@ occasions.sort((a, b) => {
         {recipes.length} {recipes.length === 1 ? "recipe" : "recipes"}
       </p>
     </div>
-
-    <!-- Category Filter -->
-    {categories.length > 0 && (
-      <div class="mb-10 flex flex-wrap gap-2">
-        <a
-          href="/en/recipes/"
-          class="rounded-lg bg-brand-wine px-4 py-2 font-ui text-body-sm font-medium text-white no-underline transition-shadow hover:shadow-md dark:text-white dark:hover:text-white"
-          aria-current="page"
-        >
-          {t(locale, "listing.allCategories")}
-        </a>
-        {categories.map((cat) => (
-          <a
-            href={`/en/recipes/category/${cat}/`}
-            class="rounded-lg border border-warm-200 bg-white px-4 py-2 font-ui text-body-sm font-medium text-warm-700 no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-wine hover:text-brand-wine hover:shadow-md dark:border-warm-700 dark:bg-warm-800 dark:text-warm-300"
-          >
-            {t(locale, `categories.${cat}` as any) || cat}
-          </a>
-        ))}
-      </div>
-    )}
 
     <!-- Browse by Occasion -->
     {occasions.length > 0 && (

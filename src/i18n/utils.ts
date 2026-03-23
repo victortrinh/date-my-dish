@@ -54,8 +54,6 @@ export function getAlternateUrl(
   const routeMap: Record<string, Record<Locale, string>> = {
     recipes: { en: "recipes", fr: "recettes" },
     recettes: { en: "recipes", fr: "recettes" },
-    category: { en: "category", fr: "categorie" },
-    categorie: { en: "category", fr: "categorie" },
     about: { en: "about", fr: "a-propos" },
     "a-propos": { en: "about", fr: "a-propos" },
     search: { en: "search", fr: "recherche" },
@@ -87,13 +85,8 @@ export function getAlternateUrl(
     if (routeMap[part]) {
       return routeMap[part][targetLocale];
     }
-    // Translate category slugs when the previous part is "category" or "categorie"
-    const prev = arr[index - 1];
-    if (prev === "category" || prev === "categorie") {
-      const canonical = getCategoryFromSlug(part, currentLocale);
-      return getCategorySlug(canonical, targetLocale);
-    }
     // Translate occasion slugs
+    const prev = arr[index - 1];
     if (prev === "occasion") {
       const canonical = getOccasionFromSlug(part, currentLocale);
       return getOccasionSlug(canonical, targetLocale);
@@ -230,38 +223,6 @@ export function getTagFromSlug(slug: string, locale: Locale): string {
 export function getTagLocalizedPath(locale: Locale, tag: string): string {
   const prefix = locale === "fr" ? "recettes/etiquette" : "recipes/tag";
   const slug = getTagSlug(tag, locale);
-  return `/${locale}/${prefix}/${slug}`;
-}
-
-export const categorySlugMap: Record<string, Record<Locale, string>> = {
-  appetizer: { en: "appetizer", fr: "entree" },
-  dinner: { en: "dinner", fr: "souper" },
-  dessert: { en: "dessert", fr: "dessert" },
-  breakfast: { en: "breakfast", fr: "dejeuner" },
-  lunch: { en: "lunch", fr: "diner" },
-  snack: { en: "snack", fr: "collation" },
-  "side-dish": { en: "side-dish", fr: "accompagnement" },
-  drink: { en: "drink", fr: "boisson" },
-  sauce: { en: "sauce", fr: "sauce" },
-};
-
-export function getCategorySlug(category: string, locale: Locale): string {
-  return categorySlugMap[category]?.[locale] ?? category;
-}
-
-export function getCategoryFromSlug(slug: string, locale: Locale): string {
-  for (const [canonical, slugs] of Object.entries(categorySlugMap)) {
-    if (slugs[locale] === slug) return canonical;
-  }
-  return slug;
-}
-
-export function getCategoryLocalizedPath(
-  locale: Locale,
-  category: string,
-): string {
-  const prefix = locale === "fr" ? "recettes/categorie" : "recipes/category";
-  const slug = getCategorySlug(category, locale);
   return `/${locale}/${prefix}/${slug}`;
 }
 
