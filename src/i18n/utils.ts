@@ -75,6 +75,8 @@ export function getAlternateUrl(
       fr: "conditions-dutilisation",
     },
     articles: { en: "articles", fr: "articles" },
+    reviews: { en: "reviews", fr: "critiques" },
+    critiques: { en: "reviews", fr: "critiques" },
     occasion: { en: "occasion", fr: "occasion" },
     cuisine: { en: "cuisine", fr: "cuisine" },
     tag: { en: "tag", fr: "etiquette" },
@@ -120,6 +122,14 @@ export function getArticleLocalizedPath(
   slug: string,
 ): string {
   return `/${locale}/articles/${slug}`;
+}
+
+export function getReviewLocalizedPath(
+  locale: Locale,
+  slug: string,
+): string {
+  const prefix = locale === "fr" ? "critiques" : "reviews";
+  return `/${locale}/${prefix}/${slug}`;
 }
 
 export const occasionSlugMap: Record<string, Record<Locale, string>> = {
