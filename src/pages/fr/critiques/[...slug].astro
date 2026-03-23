@@ -1,0 +1,238 @@
+---
+import { getCollection, render } from "astro:content";
+import { Picture } from "astro:assets";
+import ReviewLayout from "@layouts/ReviewLayout.astro";
+import ReviewSchema from "@components/ReviewSchema.astro";
+import ReviewQuickFacts from "@components/ReviewQuickFacts.astro";
+import AuthorBioCard from "@components/AuthorBioCard.astro";
+import FAQSection from "@components/FAQSection.astro";
+import ShareButton from "@components/ShareButton.astro";
+import NewsletterSignup from "@components/NewsletterSignup.astro";
+import SocialShareButtons from "@components/SocialShareButtons.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t, getReviewLocalizedPath } from "@i18n/utils";
+import authorPhoto from "@assets/images/victor-vu.webp";
+import type { ImageMetadata } from "astro";
+import { SITE_URL } from "@utils/constants";
+
+export async function getStaticPaths() {
+  const reviews = await getCollection("reviews");
+  return reviews
+    .filter((review) => review.data.lang === "fr")
+    .map((review) => {
+      const slug = review.id.replace(/^fr\//, "");
+      return {
+        params: { slug },
+        props: { review },
+      };
+    });
+}
+
+const { review } = Astro.props;
+const { Content } = await render(review);
+const { data } = review;
+const locale = "fr";
+const slug = review.id.replace(/^fr\//, "");
+const heroImage = data.heroImage as ImageMetadata;
+const sourceUrl = `${SITE_URL}${getReviewLocalizedPath(locale, slug)}`;
+
+const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const quickFactsProps = {
+  locale: locale as const,
+  neighborhood: data.neighborhood,
+  address: data.address,
+  cuisine: data.cuisine,
+  priceRange: data.priceRange,
+  dateScore: data.dateScore,
+  costPerPerson: data.costPerPerson,
+  bestFor: data.bestFor,
+  reservationTip: data.reservationTip,
+  website: data.website,
+  phone: data.phone,
+  dishHighlights: data.dishHighlights,
+  dateTypeFit: data.dateTypeFit,
+};
+---
+
+<ReviewLayout
+  title={`${data.title} | Date My Dish`}
+  description={data.description}
+  locale={locale}
+  ogImage={heroImage.src}
+  translationSlug={data.translationSlug}
+  publishDate={data.publishDate}
+  updatedDate={data.updatedDate}
+>
+  <Fragment slot="head">
+    <script is:inline>window.pintrk&&pintrk('track','pagevisit');</script>
+  </Fragment>
+  <ReviewSchema
+    slot="head"
+    title={data.title}
+    description={data.description}
+    slug={slug}
+    lang={locale}
+    author={data.author}
+    publishDate={data.publishDate}
+    updatedDate={data.updatedDate}
+    heroImageUrl={heroImage.src}
+    keywords={data.keywords}
+    faqs={data.faqs}
+    restaurantName={data.restaurantName}
+    address={data.address}
+    city={data.city}
+    cuisine={data.cuisine}
+    priceRange={data.priceRange}
+    dateScore={data.dateScore}
+    website={data.website}
+    phone={data.phone}
+  />
+
+  <article class="mx-auto max-w-content px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
+    <!-- Full-width zone: Breadcrumbs + Hero + Meta -->
+    <div class="mx-auto max-w-prose lg:max-w-none">
+      <Breadcrumbs
+        locale={locale}
+        items={[
+          { label: t(locale, "breadcrumbs.reviews"), href: "/fr/critiques/" },
+          { label: data.restaurantName },
+        ]}
+      />
+
+      <!-- Hero Section (editorial two-column layout matching recipes) -->
+      <header class="no-print mb-8 p-6 sm:p-8 lg:px-0 lg:py-12">
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+          <!-- Left: Content -->
+          <div class="order-2 flex flex-col justify-start lg:order-1">
+            <h1 class="mb-4 font-heading text-4xl italic text-warm-900 dark:text-warm-100 sm:text-display">
+              {data.title}
+            </h1>
+
+            <p class="mb-8 font-body text-body-lg text-warm-600 dark:text-warm-400">
+              {data.description}
+            </p>
+
+            <!-- Author + Date Score -->
+            <div class="mb-8 flex flex-wrap items-center gap-5">
+              <div class="flex items-center gap-3">
+                <div class="h-12 w-12 shrink-0 overflow-hidden rounded-full">
+                  <Picture
+                    src={authorPhoto}
+                    alt={t(locale, "author.photoAlt")}
+                    widths={[48, 96]}
+                    sizes="48px"
+                    formats={["avif", "webp"]}
+                    class="h-full w-full object-cover"
+                    loading="eager"
+                    data-pin-nopin="true"
+                  />
+                </div>
+                <div>
+                  <span class="block font-ui text-body-sm font-semibold text-warm-800 dark:text-warm-200">
+                    {t(locale, "author.by")} {data.author || "Victor"}
+                  </span>
+                  <span class="block font-ui text-caption font-medium text-warm-500 dark:text-warm-400">
+                    {formattedDate}
+                  </span>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-wine text-xl font-bold text-white shadow-lg shadow-brand-wine/20 dark:bg-brand-wine-dark">
+                  {data.dateScore}
+                </div>
+                <div>
+                  <span class="block font-ui text-body-sm font-semibold text-warm-800 dark:text-warm-200">
+                    {t(locale, "review.dateScore")}
+                  </span>
+                  <span class="block font-ui text-caption font-medium text-warm-500 dark:text-warm-400">/ 10</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Meta Bar: Restaurant Quick Stats -->
+            <div class="flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-brand-wine/10 bg-white px-3 py-1.5 text-sm dark:border-warm-700 dark:bg-warm-800">
+                <span class="font-ui text-[10px] font-bold uppercase tracking-wider text-brand-wine/50 dark:text-brand-rose">{t(locale, "review.priceRange")}</span>
+                <span class="font-body font-bold text-warm-800 dark:text-warm-200">{data.priceRange}</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-brand-wine/10 bg-white px-3 py-1.5 text-sm dark:border-warm-700 dark:bg-warm-800">
+                <span class="font-ui text-[10px] font-bold uppercase tracking-wider text-brand-wine/50 dark:text-brand-rose">{t(locale, "review.neighborhood")}</span>
+                <span class="font-body font-bold text-warm-800 dark:text-warm-200">{data.neighborhood}</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full border border-brand-wine/10 bg-white px-3 py-1.5 text-sm dark:border-warm-700 dark:bg-warm-800">
+                <span class="font-ui text-[10px] font-bold uppercase tracking-wider text-brand-wine/50 dark:text-brand-rose">{t(locale, "review.costPerPerson")}</span>
+                <span class="font-body font-bold text-warm-800 dark:text-warm-200">{data.costPerPerson}</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Right: Hero Image -->
+          <div class="relative order-1 lg:order-2">
+            <Picture
+              src={heroImage}
+              alt={data.heroImageAlt}
+              widths={[400, 600, 900]}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              formats={["avif", "webp"]}
+              class="h-[600px] w-full rounded-2xl object-cover"
+              loading="eager"
+              fetchpriority="high"
+              data-pin-url={sourceUrl}
+              data-pin-description={`${data.title} | ${data.description} | Date My Dish`}
+            />
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <!-- Two-column zone: Prose + Quick Facts sidebar -->
+    <div class="no-print mx-auto grid max-w-prose grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-12 lg:gap-12">
+      <!-- Main column -->
+      <div class="min-w-0 lg:col-span-8">
+        <!-- Share Bar -->
+        <div class="mb-8 flex flex-wrap items-center gap-4 text-body-sm text-warm-500 dark:text-warm-400">
+          <ShareButton locale={locale} title={data.title} url={sourceUrl} />
+          <SocialShareButtons locale={locale} url={sourceUrl} title={data.title} imageUrl={heroImage.src} description={data.description} />
+        </div>
+
+        <!-- Blog Prose -->
+        <div class="prose mb-12 max-w-none">
+          <Content />
+        </div>
+      </div>
+
+      <!-- Sidebar (desktop only) -->
+      <aside class="hidden lg:col-span-4 lg:block">
+        <div>
+          <ReviewQuickFacts {...quickFactsProps} />
+        </div>
+      </aside>
+    </div>
+
+    <!-- Quick Facts (mobile/tablet only) -->
+    <div class="mx-auto mt-8 max-w-prose lg:hidden">
+      <ReviewQuickFacts {...quickFactsProps} />
+    </div>
+
+    <!-- Below-sidebar content -->
+    <div class="mx-auto max-w-prose">
+      <!-- Author Bio -->
+      <div class="mt-8 no-print">
+        <AuthorBioCard locale={locale} />
+      </div>
+
+      <!-- Newsletter -->
+      <div class="mt-8 no-print">
+        <NewsletterSignup locale={locale} compact={true} />
+      </div>
+
+      <!-- FAQs -->
+      <FAQSection locale={locale} faqs={data.faqs} />
+    </div>
+  </article>
+</ReviewLayout>

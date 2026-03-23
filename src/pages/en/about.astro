@@ -4,18 +4,18 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import AuthorBioCard from "@components/AuthorBioCard.astro";
 import { t } from "@i18n/utils";
+import { SITE_URL } from "@utils/constants";
 import heroImage from "@assets/images/victor-about.webp";
 import recipeDevImage from "@assets/images/recipes/zucchini-eggplant-chips.webp";
 
 const locale = "en";
-const siteUrl = "https://datemydish.com";
-const heroImageUrl = `${siteUrl}/images/victor-about.webp`;
+const heroImageUrl = `${SITE_URL}/images/victor-about.webp`;
 
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Victor Vu",
-  url: `${siteUrl}/en/about/`,
+  url: `${SITE_URL}/en/about/`,
   image: heroImageUrl,
   jobTitle: "Home Cook & Recipe Creator",
   description: "Montreal-based home cook behind Date My Dish, sharing romantic recipes and date night cooking inspiration.",
@@ -30,7 +30,7 @@ const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   name: t(locale, "about.pageTitle"),
-  url: `${siteUrl}/en/about/`,
+  url: `${SITE_URL}/en/about/`,
   description: "Meet Victor, the Montreal home cook behind Date My Dish. Romantic recipes, date night tips, and cooking inspiration for unforgettable evenings together.",
   mainEntity: {
     "@type": "Person",

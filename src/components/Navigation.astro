@@ -6,7 +6,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
 interface Props {
   locale: Locale;
   translationSlug?: string;
-  contentType?: "recipe" | "article";
+  contentType?: "recipe" | "article" | "review";
 }
 
 const { locale, translationSlug, contentType } = Astro.props;
@@ -17,6 +17,7 @@ const navLinks = [
   { label: t(locale, "nav.home"), path: "/" },
   { label: t(locale, "nav.recipes"), path: locale === "fr" ? "/recettes/" : "/recipes/" },
   { label: t(locale, "nav.articles"), path: "/articles/" },
+  { label: t(locale, "nav.reviews"), path: locale === "fr" ? "/critiques/" : "/reviews/" },
   { label: t(locale, "nav.about"), path: locale === "fr" ? "/a-propos/" : "/about/" },
   { label: t(locale, "nav.contact"), path: "/contact/" },
 ];
@@ -38,7 +39,7 @@ function isActive(linkPath: string): boolean {
         </span>
       </a>
 
-      <div class="hidden items-center gap-2 md:flex">
+      <div class="hidden items-center gap-2 lg:flex">
         {navLinks.map((link) => (
           <a
             href={getLocalizedPath(locale, link.path)}
@@ -60,7 +61,7 @@ function isActive(linkPath: string): boolean {
     </div>
 
     <!-- Right group: Action icons (desktop) -->
-    <div class="hidden items-center gap-1 md:flex">
+    <div class="hidden items-center gap-1 lg:flex">
       <button
         id="nav-search-btn"
         class="btn btn-ghost"
@@ -86,7 +87,7 @@ function isActive(linkPath: string): boolean {
     </div>
 
     <!-- Mobile: search + hamburger -->
-    <div class="flex items-center gap-1 md:hidden">
+    <div class="flex items-center gap-1 lg:hidden">
       <button
         id="nav-search-btn-mobile"
         class="btn btn-ghost"
@@ -113,7 +114,7 @@ function isActive(linkPath: string): boolean {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden bg-warm-50/95 backdrop-blur-xl md:hidden dark:bg-warm-950/95">
+  <div id="mobile-menu" class="hidden bg-warm-50/95 backdrop-blur-xl lg:hidden dark:bg-warm-950/95">
     <div class="mx-auto max-w-content space-y-1 px-4 py-3">
       {navLinks.map((link) => (
         <a
@@ -166,6 +167,14 @@ function isActive(linkPath: string): boolean {
     menuBtn.addEventListener('click', function() {
       var isOpen = !menu.classList.contains('hidden');
       if (isOpen) { closeMenu(); } else { openMenu(); }
+    });
+
+    // Click outside closes mobile menu
+    document.addEventListener('click', function(e) {
+      var isOpen = !menu.classList.contains('hidden');
+      if (isOpen && !menu.contains(e.target) && !menuBtn.contains(e.target)) {
+        closeMenu();
+      }
     });
 
     // Escape key closes mobile menu
