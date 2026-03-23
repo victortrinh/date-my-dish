@@ -129,8 +129,6 @@
     "heroHeadline": "Cuisiner, c'est le nouveau",
     "heroHeadlineAccent": "préliminaire",
     "heroDescription": "Des recettes pour créer l'ambiance, alimenter la conversation et nourrir l'âme.",
-    "recentPosts": "Publications récentes",
-    "featuredRecipes": "Recettes en vedette",
     "exploreRecipes": "Explorer les recettes",
     "viewAllRecipes": "Voir toutes les recettes",
     "freshFromKitchen": "Succombez à ces tentations",
@@ -146,19 +144,10 @@
   },
   "article": {
     "readTime": "min de lecture",
-    "publishedOn": "Publié le",
     "relatedRecipes": "Recettes associées",
-    "relatedArticles": "Articles similaires",
-    "faq": "Questions fréquentes",
-    "share": "Partager cet article",
-    "backToArticles": "Retour aux articles"
+    "relatedArticles": "Articles similaires"
   },
   "review": {
-    "readTime": "min de lecture",
-    "publishedOn": "Publié le",
-    "faq": "Questions fréquentes",
-    "share": "Partager cette critique",
-    "backToReviews": "Retour aux critiques",
     "dateScore": "Score rendez-vous",
     "priceRange": "Gamme de prix",
     "cuisine": "Cuisine",

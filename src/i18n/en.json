@@ -129,8 +129,6 @@
     "heroHeadline": "Cooking is the new",
     "heroHeadlineAccent": "foreplay",
     "heroDescription": "Discover recipes designed to set the mood, ignite conversation, and nourish the soul.",
-    "recentPosts": "Recent Posts",
-    "featuredRecipes": "Featured Recipes",
     "exploreRecipes": "Explore Recipes",
     "viewAllRecipes": "View All Recipes",
     "freshFromKitchen": "Give In to These Temptations",
@@ -146,19 +144,10 @@
   },
   "article": {
     "readTime": "min read",
-    "publishedOn": "Published on",
     "relatedRecipes": "Related Recipes",
-    "relatedArticles": "Related Articles",
-    "faq": "Frequently Asked Questions",
-    "share": "Share this article",
-    "backToArticles": "Back to Articles"
+    "relatedArticles": "Related Articles"
   },
   "review": {
-    "readTime": "min read",
-    "publishedOn": "Published on",
-    "faq": "Frequently Asked Questions",
-    "share": "Share this review",
-    "backToReviews": "Back to Reviews",
     "dateScore": "Date Score",
     "priceRange": "Price Range",
     "cuisine": "Cuisine",
