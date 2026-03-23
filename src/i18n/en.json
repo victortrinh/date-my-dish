@@ -42,14 +42,18 @@
     "category": "Category",
     "cuisine": "Cuisine",
     "share": "Share",
-    "copied": "Link Copied!"
+    "copied": "Link Copied!",
+    "theOfficialRecipe": "The Official Recipe",
+    "continueJourney": "Continue your culinary journey",
+    "viewAllRecipes": "View all recipes"
   },
   "dateNight": {
     "tips": "Date Night Tips",
     "wine": "Wine Pairing",
-    "music": "Set the Mood",
-    "platingTip": "Plating Tip",
-    "impressFactor": "Impress Factor"
+    "music": "Music",
+    "platingTip": "Plating",
+    "impressFactor": "Impress Factor",
+    "footer": "Enjoy your meal!"
   },
   "occasion": {
     "date-night": "Date Night",
@@ -128,7 +132,7 @@
     "exploreRecipes": "Explore Recipes",
     "viewAllRecipes": "View All Recipes",
     "categories": "Browse by Category",
-    "freshFromKitchen": "Fresh from the Kitchen",
+    "freshFromKitchen": "Give In to These Temptations",
     "ourFavorites": "Our Favorites",
     "readMore": "Read More",
     "culinaryNarratives": "Culinary Narratives",

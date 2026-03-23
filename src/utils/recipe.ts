@@ -11,7 +11,7 @@ export const difficultyColors: Record<"easy" | "medium" | "hard", string> = {
 
 /** Full difficulty badge classes (structure + color). */
 export const difficultyBadge: Record<"easy" | "medium" | "hard", string> = {
-  easy: "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium " + difficultyColors.easy,
-  medium: "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium " + difficultyColors.medium,
-  hard: "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium " + difficultyColors.hard,
+  easy: "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase " + difficultyColors.easy,
+  medium: "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase " + difficultyColors.medium,
+  hard: "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase " + difficultyColors.hard,
 };

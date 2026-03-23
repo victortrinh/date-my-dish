@@ -21,7 +21,7 @@ const { locale, faqs } = Astro.props;
     </h2>
     <div class="space-y-3">
       {faqs.map((faq) => (
-        <details class="group rounded-lg border border-warm-200 bg-white open:border-l-4 open:border-l-brand-wine dark:border-warm-600 dark:bg-warm-900/80">
+        <details class="group rounded-xl border border-brand-wine/10 bg-white open:border-l-4 open:border-l-brand-wine dark:border-brand-wine/30 dark:bg-warm-900/80">
           <summary class="flex cursor-pointer items-center justify-between px-5 py-4 font-ui font-medium text-warm-800 hover:text-brand-wine dark:text-warm-200">
             {faq.question}
             <svg

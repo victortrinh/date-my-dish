@@ -42,14 +42,18 @@
     "category": "Catégorie",
     "cuisine": "Cuisine",
     "share": "Partager",
-    "copied": "Lien copié!"
+    "copied": "Lien copié!",
+    "theOfficialRecipe": "La recette officielle",
+    "continueJourney": "Poursuivez votre aventure culinaire",
+    "viewAllRecipes": "Voir toutes les recettes"
   },
   "dateNight": {
     "tips": "Conseils soirée en amoureux",
     "wine": "Accord vin",
-    "music": "Ambiance musicale",
-    "platingTip": "Conseil de dressage",
-    "impressFactor": "Facteur wow"
+    "music": "Musique",
+    "platingTip": "Dressage",
+    "impressFactor": "Facteur wow",
+    "footer": "Bon Appétit!"
   },
   "occasion": {
     "date-night": "Soirée en amoureux",
@@ -128,7 +132,7 @@
     "exploreRecipes": "Explorer les recettes",
     "viewAllRecipes": "Voir toutes les recettes",
     "categories": "Parcourir par catégorie",
-    "freshFromKitchen": "Frais sorti de la cuisine",
+    "freshFromKitchen": "Succombez à ces tentations",
     "ourFavorites": "Nos coups de cœur",
     "readMore": "Lire la suite",
     "culinaryNarratives": "Histoires culinaires",

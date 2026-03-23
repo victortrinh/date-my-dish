@@ -1,9 +1,5 @@
 ---
-import { Picture } from "astro:assets";
 import { t, type Locale } from "@i18n/utils";
-import { formatDuration } from "@utils/format";
-import { difficultyColors } from "@utils/recipe";
-import ImpressFactor from "@components/ImpressFactor.astro";
 import type { ImageMetadata } from "astro";
 
 interface IngredientGroup {
@@ -21,19 +17,23 @@ interface InstructionGroup {
   steps: HowToStep[];
 }
 
+interface Nutrition {
+  calories?: string;
+  fatContent?: string;
+  carbohydrateContent?: string;
+  proteinContent?: string;
+}
+
 interface Props {
   locale: Locale;
   title: string;
-  heroImage: ImageMetadata;
-  heroImageAlt: string;
   prepTime: string;
   cookTime: string;
   totalTime: string;
   recipeYield: string;
-  difficulty: "easy" | "medium" | "hard";
   ingredientGroups: IngredientGroup[];
   instructionGroups: InstructionGroup[];
-  calories?: string;
+  nutrition?: Nutrition;
   impressFactor?: number;
   sourceUrl: string;
 }
@@ -41,123 +41,128 @@ interface Props {
 const {
   locale,
   title,
-  heroImage,
-  heroImageAlt,
   prepTime,
   cookTime,
   totalTime,
   recipeYield,
-  difficulty,
   ingredientGroups,
   instructionGroups,
-  calories,
+  nutrition,
   impressFactor,
   sourceUrl,
 } = Astro.props;
 
+const hasNutrition = nutrition && (nutrition.calories || nutrition.fatContent || nutrition.carbohydrateContent || nutrition.proteinContent);
+
+const hearts = impressFactor ? Array.from({ length: 5 }, (_, i) => i < impressFactor) : [];
 ---
 
 <article
   id="recipe-card"
   itemscope
   itemtype="https://schema.org/Recipe"
-  class="recipe-detail-card scroll-mt-20 overflow-hidden rounded-xl border border-warm-200 bg-white shadow-sm dark:border-warm-700 dark:bg-warm-900"
+  class="recipe-detail-card scroll-mt-20 overflow-hidden rounded-2xl border border-brand-wine/5 bg-white shadow-2xl dark:border-warm-700 dark:bg-warm-900"
 >
-  <!-- Hero Image (hidden in print) -->
-  <div class="recipe-detail-card-image">
-    <Picture
-      src={heroImage}
-      alt={heroImageAlt}
-      widths={[400, 600, 900]}
-      sizes="(max-width: 768px) 100vw, 768px"
-      formats={["avif", "webp"]}
-      class="h-56 w-full object-cover sm:h-72"
-      loading="lazy"
-      data-pin-nopin="true"
-      itemprop="image"
-    />
+  <!-- Burgundy Header Bar -->
+  <div class="no-print flex flex-wrap items-center justify-between bg-brand-wine px-6 py-5 lg:px-8">
+    <div>
+      <h2 class="font-heading text-2xl italic text-white sm:text-3xl">
+        {t(locale, "recipe.theOfficialRecipe")}
+      </h2>
+      <meta itemprop="name" content={title} />
+      {impressFactor && (
+        <div class="mt-1 flex items-center gap-2">
+          <span class="text-xs font-medium uppercase tracking-widest text-white/60">
+            {t(locale, "dateNight.impressFactor")}:
+          </span>
+          <div class="flex gap-0.5">
+            {hearts.map((filled) => (
+              <svg xmlns="http://www.w3.org/2000/svg" class:list={["h-4 w-4", filled ? "text-brand-rose" : "text-white/30"]} viewBox="0 0 24 24" fill="currentColor">
+                <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+              </svg>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+    <div class="mt-4 flex gap-2 sm:mt-0">
+      <button
+        onclick="window.print()"
+        class="rounded-lg bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+        aria-label={t(locale, "recipe.printRecipe")}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+        </svg>
+      </button>
+      <button
+        class="card-share-btn rounded-lg bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+        data-url={sourceUrl}
+        data-title={title}
+        aria-label={t(locale, "recipe.share")}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Print-only title -->
+  <div class="recipe-detail-card-print-title px-6 pt-6 lg:px-8">
+    <h2 itemprop="name" class="font-heading text-2xl font-normal text-warm-900 sm:text-3xl dark:text-warm-100">
+      {title}
+    </h2>
   </div>
 
   <!-- Recipe Details -->
   <div class="recipe-detail-card-content divide-y divide-warm-100 dark:divide-warm-800">
 
-      <!-- Title + Meta Stats -->
-      <div class="p-6 lg:p-8">
-        <h2
-          itemprop="name"
-          class="mb-5 font-heading text-2xl font-normal text-warm-900 sm:text-3xl dark:text-warm-100"
-        >
-          {title}
-        </h2>
+      <!-- Hidden structured data meta tags -->
+      <meta itemprop="prepTime" content={prepTime} />
+      <meta itemprop="cookTime" content={cookTime} />
+      <meta itemprop="totalTime" content={totalTime} />
+      <meta itemprop="recipeYield" content={recipeYield} />
 
-        <!-- Meta Stats Bar -->
-        <div class="recipe-detail-card-meta flex flex-wrap items-center gap-x-4 gap-y-3 rounded-xl bg-warm-100 px-4 py-3 dark:bg-warm-800">
-
-          <!-- Prep time -->
-          <div class="flex flex-col items-start">
-            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.prepTime")}</span>
-            <time itemprop="prepTime" datetime={prepTime} class="text-sm font-semibold text-warm-900 dark:text-warm-100">
-              {formatDuration(prepTime, locale)}
-            </time>
+      <!-- Nutrition -->
+      {hasNutrition && (
+        <div class="p-6 lg:p-8">
+          <div class="rounded-xl border border-warm-200 p-4 dark:border-warm-700">
+            <h3 class="mb-3 font-heading text-base font-normal text-warm-900 dark:text-warm-100">
+              {t(locale, "recipe.nutrition")}
+              <span class="ml-2 text-xs font-normal text-warm-500 dark:text-warm-400">
+                ({t(locale, "recipe.perServing")})
+              </span>
+            </h3>
+            <div class="grid grid-cols-2 gap-4">
+              {nutrition!.calories && (
+                <div class="text-center">
+                  <p class="text-lg font-bold text-brand-wine-text">{nutrition!.calories}</p>
+                  <p class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.calories")}</p>
+                </div>
+              )}
+              {nutrition!.fatContent && (
+                <div class="text-center">
+                  <p class="text-lg font-bold text-brand-wine-text">{nutrition!.fatContent}</p>
+                  <p class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.fat")}</p>
+                </div>
+              )}
+              {nutrition!.carbohydrateContent && (
+                <div class="text-center">
+                  <p class="text-lg font-bold text-brand-wine-text">{nutrition!.carbohydrateContent}</p>
+                  <p class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.carbs")}</p>
+                </div>
+              )}
+              {nutrition!.proteinContent && (
+                <div class="text-center">
+                  <p class="text-lg font-bold text-brand-wine-text">{nutrition!.proteinContent}</p>
+                  <p class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.protein")}</p>
+                </div>
+              )}
+            </div>
           </div>
-
-          <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
-
-          <!-- Cook time -->
-          <div class="flex flex-col items-start">
-            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.cookTime")}</span>
-            <time itemprop="cookTime" datetime={cookTime} class="text-sm font-semibold text-warm-900 dark:text-warm-100">
-              {formatDuration(cookTime, locale)}
-            </time>
-          </div>
-
-          <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
-
-          <!-- Total time -->
-          <div class="flex flex-col items-start">
-            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.totalTime")}</span>
-            <time itemprop="totalTime" datetime={totalTime} class="text-sm font-semibold text-warm-900 dark:text-warm-100">
-              {formatDuration(totalTime, locale)}
-            </time>
-          </div>
-
-          <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
-
-          <!-- Servings -->
-          <div class="flex flex-col items-start">
-            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.servings")}</span>
-            <span itemprop="recipeYield" class="text-sm font-semibold text-warm-900 dark:text-warm-100">{recipeYield}</span>
-          </div>
-
-          <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
-
-          <!-- Difficulty -->
-          <div class="flex flex-col items-start">
-            <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.difficulty")}</span>
-            <span class={`mt-0.5 rounded-full px-2.5 py-0.5 text-xs font-medium ${difficultyColors[difficulty]}`}>
-              {t(locale, `recipe.${difficulty}` as "recipe.easy" | "recipe.medium" | "recipe.hard")}
-            </span>
-          </div>
-
-          {calories && (
-            <>
-              <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
-              <div class="flex flex-col items-start">
-                <span class="text-xs text-warm-500 dark:text-warm-400">{t(locale, "recipe.calories")}</span>
-                <span class="text-sm font-semibold text-warm-900 dark:text-warm-100">{calories}</span>
-              </div>
-            </>
-          )}
-
-          {impressFactor && (
-            <>
-              <div aria-hidden="true" class="h-8 w-px bg-warm-200 dark:bg-warm-700"></div>
-              <ImpressFactor locale={locale} rating={impressFactor} />
-            </>
-          )}
-
         </div>
-      </div>
+      )}
 
       <!-- Ingredients + Instructions -->
       <div class="recipe-detail-card-body grid grid-cols-1 gap-8 p-6 sm:grid-cols-2 lg:p-8">
@@ -229,6 +234,9 @@ const {
 
       </div>
 
+      <!-- Social Actions Slot -->
+      <slot name="social" />
+
       <!-- Print-only source footer -->
       <div class="recipe-detail-card-footer px-6 py-3 text-center text-xs text-warm-500">
         {t(locale, "recipe.source")}: {sourceUrl}
@@ -238,13 +246,37 @@ const {
 </article>
 
 <style>
+  .recipe-detail-card-print-title {
+    display: none;
+  }
+
   .recipe-detail-card-footer {
     display: none;
   }
 
   @media print {
+    .recipe-detail-card-print-title {
+      display: block;
+    }
+
     .recipe-detail-card-footer {
       display: block;
     }
   }
 </style>
+
+<script is:inline>
+  document.querySelectorAll('.card-share-btn').forEach(function(btn) {
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = 'true';
+    btn.addEventListener('click', async function() {
+      var url = this.dataset.url;
+      var title = this.dataset.title;
+      if (navigator.share) {
+        try { await navigator.share({ title: title, url: url }); } catch (e) {}
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(url);
+      }
+    });
+  });
+</script>
