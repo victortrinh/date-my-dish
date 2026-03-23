@@ -26,9 +26,22 @@ const related = allRecipes
 
 {related.length > 0 && (
   <section class="no-print mt-12 mb-8">
-    <h2 class="mb-6 font-heading text-2xl font-bold text-neutral-900 dark:text-neutral-100">
-      {t(locale, "recipe.relatedRecipes")}
-    </h2>
+    <div class="mb-8 flex items-end justify-between">
+      <div>
+        <h2 class="font-heading text-2xl italic text-warm-900 dark:text-warm-100">
+          {t(locale, "recipe.relatedRecipes")}
+        </h2>
+        <p class="text-sm font-medium text-brand-wine/60 dark:text-brand-wine-dark/60">
+          {t(locale, "recipe.continueJourney")}
+        </p>
+      </div>
+      <a
+        href={locale === "fr" ? "/fr/recettes/" : "/en/recipes/"}
+        class="text-sm font-bold text-brand-wine underline decoration-brand-wine/30 underline-offset-4 hover:decoration-brand-wine dark:text-brand-wine-dark dark:decoration-brand-wine-dark/30 dark:hover:decoration-brand-wine-dark"
+      >
+        {t(locale, "recipe.viewAllRecipes")}
+      </a>
+    </div>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {related.map((recipe) => {
         const slug = recipe.id.replace(/^(en|fr)\//, "");

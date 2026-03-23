@@ -8,3 +8,10 @@ export const difficultyColors: Record<"easy" | "medium" | "hard", string> = {
   medium: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400",
   hard: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400",
 };
+
+/** Full difficulty badge classes (structure + color). */
+export const difficultyBadge: Record<"easy" | "medium" | "hard", string> = {
+  easy: "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase " + difficultyColors.easy,
+  medium: "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase " + difficultyColors.medium,
+  hard: "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium uppercase " + difficultyColors.hard,
+};

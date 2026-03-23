@@ -47,9 +47,9 @@ const difficultyLabels = {
 
 <div id="recipe" class="scroll-mt-20">
   <!-- Print-only header -->
-  <div class="print-recipe-header print-only mb-6 border-b border-neutral-200 pb-6 dark:border-neutral-600">
-    <h2 class="mb-3 font-heading text-2xl font-bold text-neutral-900 dark:text-neutral-100">{title}</h2>
-    <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-neutral-700 dark:text-neutral-300">
+  <div class="print-recipe-header print-only mb-6 border-b border-warm-200 pb-6 dark:border-warm-600">
+    <h2 class="mb-3 font-heading text-2xl font-normal text-warm-900 dark:text-warm-100">{title}</h2>
+    <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-warm-700 dark:text-warm-300">
       <span>{t(locale, "recipe.prepTime")}: {formatDuration(prepTime, locale)}</span>
       <span>{t(locale, "recipe.cookTime")}: {formatDuration(cookTime, locale)}</span>
       <span>{t(locale, "recipe.totalTime")}: {formatDuration(totalTime, locale)}</span>
@@ -62,7 +62,7 @@ const difficultyLabels = {
   <InstructionSteps locale={locale} instructionGroups={instructionGroups} recipeUrl={sourceUrl} recipeTitle={title} />
 
   <!-- Print-only source URL -->
-  <footer class="print-recipe-footer print-only border-t border-neutral-300 pt-3 text-center text-xs text-neutral-500">
+  <footer class="print-recipe-footer print-only border-t border-warm-300 pt-3 text-center text-xs text-warm-500">
     {t(locale, "recipe.source")}: {sourceUrl}
   </footer>
 </div>

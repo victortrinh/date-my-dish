@@ -8,8 +8,8 @@ const { id, class: className } = Astro.props;
 ---
 
 <div class:list={["mb-10 text-center", className]}>
-  <h2 id={id} class="font-heading text-heading-1 font-bold text-neutral-900 dark:text-neutral-100">
+  <h2 id={id} class="font-heading text-heading-1 font-normal text-warm-900 dark:text-warm-100">
     <slot />
   </h2>
-  <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-accent"></div>
+  <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-rose"></div>
 </div>

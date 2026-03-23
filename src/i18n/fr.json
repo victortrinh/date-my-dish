@@ -20,6 +20,9 @@
     "prepTime": "Préparation",
     "cookTime": "Cuisson",
     "totalTime": "Temps total",
+    "prep": "Prépa",
+    "cook": "Cuisson",
+    "total": "Total",
     "servings": "Portions",
     "difficulty": "Difficulté",
     "nutrition": "Nutrition",
@@ -39,14 +42,18 @@
     "category": "Catégorie",
     "cuisine": "Cuisine",
     "share": "Partager",
-    "copied": "Lien copié!"
+    "copied": "Lien copié!",
+    "theOfficialRecipe": "La recette officielle",
+    "continueJourney": "Poursuivez votre aventure culinaire",
+    "viewAllRecipes": "Voir toutes les recettes"
   },
   "dateNight": {
     "tips": "Conseils soirée en amoureux",
     "wine": "Accord vin",
-    "music": "Ambiance musicale",
-    "platingTip": "Conseil de dressage",
-    "impressFactor": "Facteur wow"
+    "music": "Musique",
+    "platingTip": "Dressage",
+    "impressFactor": "Facteur wow",
+    "footer": "Bon Appétit!"
   },
   "occasion": {
     "date-night": "Soirée en amoureux",
@@ -56,7 +63,8 @@
     "celebration": "Célébration",
     "quick-meal": "Repas rapide",
     "browseByOccasion": "Parcourir par occasion",
-    "allOccasions": "Toutes les occasions"
+    "allOccasions": "Toutes les occasions",
+    "occasions": "Occasions"
   },
   "tags": {
     "appetizer": "Entrée",
@@ -116,12 +124,20 @@
     "zucchini": "Courgette"
   },
   "home": {
-    "heroTitle": "Recettes romantiques pour des soirées inoubliables",
-    "heroSubtitle": "Des plats simples pour impressionner, préparés avec amour",
+    "heroHeadline": "Cuisiner, c'est le nouveau",
+    "heroHeadlineAccent": "préliminaire",
+    "heroDescription": "Des recettes pour créer l'ambiance, alimenter la conversation et nourrir l'âme.",
     "recentPosts": "Publications récentes",
     "featuredRecipes": "Recettes en vedette",
+    "exploreRecipes": "Explorer les recettes",
     "viewAllRecipes": "Voir toutes les recettes",
-    "categories": "Parcourir par catégorie"
+    "freshFromKitchen": "Succombez à ces tentations",
+    "ourFavorites": "Nos coups de cœur",
+    "readMore": "Lire la suite",
+    "culinaryNarratives": "Histoires culinaires",
+    "theJournal": "Le journal du dimanche",
+    "viewAllArticles": "Voir tous les articles",
+    "readArticle": "Lire l'article"
   },
   "article": {
     "readTime": "min de lecture",
@@ -135,18 +151,48 @@
   "listing": {
     "allRecipes": "Toutes les recettes",
     "allArticles": "Tous les articles",
-    "filterByCategory": "Filtrer par catégorie",
     "allCategories": "Toutes",
     "noRecipesFound": "Aucune recette trouvée.",
     "noArticlesFound": "Aucun article trouvé."
   },
   "about": {
     "title": "À propos de Victor",
-    "pageTitle": "À propos"
+    "pageTitle": "À propos",
+    "subtitle": "La philosophie",
+    "whyHeading": "Pourquoi « Date My Dish »?",
+    "howHeading": "Comment je développe mes recettes",
+    "whatHeading": "Ce que vous trouverez ici",
+    "montrealHeading": "Une histoire culinaire montréalaise",
+    "testing": "3x tests minimum",
+    "timings": "100% temps honnêtes",
+    "card1Title": "Collections romantiques",
+    "card1Desc": "Des collections de recettes de l'entrée au dessert, testées en cuisine maison.",
+    "card2Title": "Techniques culinaires",
+    "card2Desc": "Des articles sur la science alimentaire pour aiguiser vos talents.",
+    "card3Title": "Conseils planification",
+    "card3Desc": "Planification de soirées, accords vins et conseils d'ambiance pour la soirée parfaite.",
+    "card4Title": "Inspiration saisonnière",
+    "card4Desc": "Cuisines italienne, asiatique, méditerranéenne et fusion pour varier les plaisirs.",
+    "card5Title": "Instructions honnêtes",
+    "card5Desc": "Étape par étape avec des temps honnêtes issus de vrais tests en cuisine.",
+    "card6Title": "Recettes bilingues",
+    "card6Desc": "Chaque recette disponible en français et en anglais."
   },
   "contact": {
     "title": "Contact",
-    "pageTitle": "Nous joindre"
+    "pageTitle": "Nous joindre",
+    "heroQuote": "Cuisiner, c'est rendre l'amour visible.",
+    "howToConnect": "Comment me joindre",
+    "howToConnectDesc": "La meilleure façon de me contacter est par message privé sur Instagram. Je réponds habituellement dans les 24 à 48 heures!",
+    "whatToReachOut": "À quel sujet me contacter",
+    "topicRecipesTitle": "Questions sur les recettes",
+    "topicRecipesDesc": "Substitutions d'ingrédients, techniques, modifications ou dépannage.",
+    "topicDateNightTitle": "Planification de soirées",
+    "topicDateNightDesc": "Suggestions de menus, accords vins, conseils d'ambiance.",
+    "topicCollabTitle": "Collaboration & médias",
+    "topicCollabDesc": "Partenariats, presse, entrevues et reportages.",
+    "topicFeedbackTitle": "Commentaires & suggestions",
+    "topicFeedbackDesc": "Partagez vos expériences avec les recettes ou suggérez de nouveaux plats."
   },
   "search": {
     "title": "Rechercher des recettes",
@@ -160,12 +206,10 @@
   "footer": {
     "copyright": "Tous droits réservés.",
     "madeWith": "Fait avec amour à Montréal",
-    "categories": "Catégories",
     "navigation": "Navigation",
     "legal": "Légal",
     "legalNav": "Navigation légale",
     "nav": "Navigation du pied de page",
-    "categoriesNav": "Catégories de recettes",
     "instagramLabel": "Suivez-nous sur Instagram",
     "pinterestLabel": "Suivez-nous sur Pinterest"
   },
@@ -182,7 +226,6 @@
     "home": "Accueil",
     "recipes": "Recettes",
     "articles": "Articles",
-    "category": "Catégorie",
     "occasion": "Occasion",
     "tag": "Étiquette"
   },
@@ -220,6 +263,8 @@
   },
   "author": {
     "bioShort": "Victor est un cuisinier montréalais avec une décennie d'expérience en recettes pour soirées en amoureux. Chaque plat est testé au moins trois fois avant publication.",
+    "by": "Par",
+    "recipeAuthor": "Auteur de recettes",
     "aboutLink": "À propos de l'auteur",
     "photoAlt": "Victor, créateur de Date My Dish"
   },
@@ -246,8 +291,10 @@
     "alreadyRated": "Vous avez déjà noté cette recette"
   },
   "newsletter": {
-    "title": "Recevez nos recettes par courriel",
-    "description": "De nouvelles recettes pour vos soirées en amoureux chaque semaine. Pas de pourriel, désabonnement facile.",
+    "title": "Restez Intimes",
+    "footerTitle": "Restez Intimes",
+    "compactTitle": "Recevez nos recettes par courriel",
+    "description": "Recevez nos recettes pour créer l'ambiance chaque semaine.",
     "emailPlaceholder": "Votre adresse courriel",
     "subscribe": "S'abonner",
     "success": "Vous êtes abonné! Vérifiez votre courriel pour confirmer.",

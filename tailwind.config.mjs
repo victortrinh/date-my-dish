@@ -6,23 +6,39 @@ export default {
     extend: {
       colors: {
         brand: {
-          primary: "#C4704B",
-          "primary-dark": "#A85D3D",
-          "primary-text": "#9A5439", // Darker terracotta for small text — WCAG AA on white
-          accent: "#D4A853",
-          "accent-dark": "#B8923F", // Used for hover states; avoid for text (fails WCAG)
-          "accent-text": "#7D631C", // Gold text on light backgrounds — WCAG AA (5.72:1)
+          // Wine Burgundy (primary)
+          wine: "#7B2D3B", // Decorative, backgrounds, large text — 9.21:1 on white (AAA)
+          "wine-text": "#7B2D3B", // Body text on light backgrounds — same value, passes AAA
+          "wine-dark": "#C4697A", // Dark mode primary — lighter rose for contrast on dark bg
+
+          // Rose Gold (accent)
+          rose: "#D4A08A", // Decorative only in light mode (2.28:1 — fails WCAG). Safe for text in dark mode.
+          "rose-text": "#8B5A45", // Light mode text variant — 5.76:1 on white (AA)
+          "rose-dark": "#B8896E", // Hover states in light mode
+        },
+        warm: {
+          50: "#FAF7F5", // Light bg
+          100: "#F3EEEB", // Section alt bg
+          200: "#E4DBD8", // Borders, dividers
+          300: "#CBC0BD", // Muted borders
+          400: "#A19491", // Muted text, icons
+          500: "#786A68", // Secondary text
+          600: "#584C4B", // Body text secondary
+          700: "#433739", // Dark borders
+          800: "#2D2226", // Body text primary / dark mode card bg
+          900: "#1F1A1C", // Dark mode section alt
+          950: "#1E1416", // Dark mode body bg
         },
       },
       fontFamily: {
-        // font-heading: section titles, recipe titles, card headings (uppercase, bold)
-        heading: ['"Fira Sans"', "sans-serif"],
-        // font-body: article prose, descriptions, body text (mixed-case)
-        body: ["Bitter", "serif"],
-        // font-handwritten: logo, decorative accents (Caveat)
-        handwritten: ["Caveat", "cursive"],
-        // font-ui: buttons, labels, nav links, metadata (same face as heading, but non-uppercase contexts)
-        ui: ['"Fira Sans"', "sans-serif"],
+        // font-heading: section titles, recipe titles, card headings (mixed-case, editorial serif)
+        heading: ['"Playfair Display"', "serif"],
+        // font-body: article prose, descriptions, body text
+        body: ['"Source Serif 4"', "serif"],
+        // font-ui: buttons, labels, nav links, metadata (clean sans-serif)
+        ui: ["Inter", "sans-serif"],
+        // font-caveat: handwritten accents, quotes, decorative text
+        caveat: ["Caveat", "cursive"],
       },
       fontSize: {
         display: ["3.5rem", { lineHeight: "1.1" }],

@@ -1,7 +1,6 @@
 ---
-import { t, getLocalizedPath, getCategorySlug, getOccasionLocalizedPath, type Locale } from "@i18n/utils";
+import { t, getLocalizedPath, type Locale } from "@i18n/utils";
 import NewsletterSignup from "./NewsletterSignup.astro";
-import { getCollection } from "astro:content";
 
 interface Props {
   locale: Locale;
@@ -10,59 +9,33 @@ interface Props {
 const { locale } = Astro.props;
 const year = new Date().getFullYear();
 
-// Get categories from recipes for dynamic category links
-const allRecipes = await getCollection("recipes");
-const recipes = allRecipes.filter((r) => r.data.lang === locale);
-const CATEGORY_ORDER = ["appetizer", "dinner", "dessert"];
-const categories = [...new Set(recipes.flatMap((r) => r.data.recipeCategory))];
-categories.sort((a, b) => {
-  const ai = CATEGORY_ORDER.indexOf(a);
-  const bi = CATEGORY_ORDER.indexOf(b);
-  if (ai !== -1 && bi !== -1) return ai - bi;
-  if (ai !== -1) return -1;
-  if (bi !== -1) return 1;
-  return a.localeCompare(b);
-});
-
-const OCCASION_ORDER = ["date-night", "weeknight", "entertaining", "comfort", "celebration", "quick-meal"];
-const occasions = [...new Set(recipes.flatMap((r) => r.data.occasion || []))];
-occasions.sort((a, b) => {
-  const ai = OCCASION_ORDER.indexOf(a);
-  const bi = OCCASION_ORDER.indexOf(b);
-  if (ai !== -1 && bi !== -1) return ai - bi;
-  if (ai !== -1) return -1;
-  if (bi !== -1) return 1;
-  return a.localeCompare(b);
-});
-
 const recipesPath = locale === "fr" ? "/recettes/" : "/recipes/";
 const aboutPath = locale === "fr" ? "/a-propos/" : "/about/";
 const privacyPath = locale === "fr" ? "/politique-de-confidentialite/" : "/privacy-policy/";
 const termsPath = locale === "fr" ? "/conditions-dutilisation/" : "/terms-of-service/";
-const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/recipes/category/";
 ---
 
-<footer class="no-print mt-auto border-t border-neutral-100 bg-neutral-200 dark:border-neutral-800 dark:bg-neutral-900">
+<footer class="no-print mt-auto bg-warm-800 dark:bg-warm-950">
   <div class="mx-auto max-w-content px-4 py-12 sm:py-16">
-    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
       <!-- Brand -->
-      <div class="sm:col-span-2 lg:col-span-1">
+      <div>
         <a href={getLocalizedPath(locale, "/")} class="inline-block no-underline">
-          <span class="font-heading text-xl font-bold tracking-wide text-neutral-900 dark:text-neutral-100">Date My Dish</span>
+          <span class="font-heading text-3xl text-warm-50">Date My Dish</span>
         </a>
-        <p class="mt-3 text-body-sm text-neutral-600 dark:text-neutral-400">
+        <p class="mt-3 font-heading text-lg italic text-warm-400">
           {t(locale, "footer.madeWith")}
         </p>
         <!-- Social Links -->
-        <div class="mt-4 flex gap-3">
-          <a href="https://www.instagram.com/datemydishdotcom" target="_blank" rel="noopener noreferrer" class="rounded-lg p-2 text-neutral-500 no-underline transition-colors hover:bg-neutral-100 hover:text-brand-primary dark:text-neutral-400 dark:hover:bg-neutral-800" aria-label={t(locale, "footer.instagramLabel")}>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+        <div class="mt-6 flex gap-3">
+          <a href="https://www.pinterest.com/datemydish" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full border border-warm-600 text-warm-300 no-underline transition-colors hover:border-brand-wine-dark hover:text-brand-wine-dark" aria-label={t(locale, "footer.pinterestLabel")}>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
             </svg>
           </a>
-          <a href="https://www.pinterest.com/datemydish" target="_blank" rel="noopener noreferrer" class="rounded-lg p-2 text-neutral-500 no-underline transition-colors hover:bg-neutral-100 hover:text-brand-primary dark:text-neutral-400 dark:hover:bg-neutral-800" aria-label={t(locale, "footer.pinterestLabel")}>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+          <a href="https://www.instagram.com/datemydishdotcom" target="_blank" rel="noopener noreferrer" class="flex h-10 w-10 items-center justify-center rounded-full border border-warm-600 text-warm-300 no-underline transition-colors hover:border-brand-wine-dark hover:text-brand-wine-dark" aria-label={t(locale, "footer.instagramLabel")}>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
             </svg>
           </a>
         </div>
@@ -70,90 +43,44 @@ const categoryBasePath = locale === "fr" ? "/fr/recettes/categorie/" : "/en/reci
 
       <!-- Navigation -->
       <div>
-        <h3 class="mb-4 font-heading text-sm font-bold tracking-wider text-neutral-900 dark:text-neutral-100">
+        <h3 class="mb-4 font-ui text-sm font-bold uppercase tracking-widest text-warm-100">
           {t(locale, "footer.navigation")}
         </h3>
-        <nav class="flex flex-col gap-2.5" aria-label={t(locale, "footer.nav")}>
-          <a href={getLocalizedPath(locale, "/")} class="font-ui text-body-sm text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
+        <nav class="flex flex-col gap-3" aria-label={t(locale, "footer.nav")}>
+          <a href={getLocalizedPath(locale, "/")} class="font-body text-warm-300 no-underline transition-colors hover:text-white">
             {t(locale, "nav.home")}
           </a>
-          <a href={getLocalizedPath(locale, recipesPath)} class="font-ui text-body-sm text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
+          <a href={getLocalizedPath(locale, recipesPath)} class="font-body text-warm-300 no-underline transition-colors hover:text-white">
             {t(locale, "nav.recipes")}
           </a>
-          <a href={getLocalizedPath(locale, "/articles/")} class="font-ui text-body-sm text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
+          <a href={getLocalizedPath(locale, "/articles/")} class="font-body text-warm-300 no-underline transition-colors hover:text-white">
             {t(locale, "nav.articles")}
           </a>
-          <a href={getLocalizedPath(locale, aboutPath)} class="font-ui text-body-sm text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
+          <a href={getLocalizedPath(locale, aboutPath)} class="font-body text-warm-300 no-underline transition-colors hover:text-white">
             {t(locale, "nav.about")}
           </a>
-          <a href={getLocalizedPath(locale, "/contact/")} class="font-ui text-body-sm text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
-            {t(locale, "nav.contact")}
-          </a>
         </nav>
       </div>
 
-      <!-- Categories -->
-      <div>
-        <h3 class="mb-4 font-heading text-sm font-bold tracking-wider text-neutral-900 dark:text-neutral-100">
-          {t(locale, "footer.categories")}
-        </h3>
-        <nav class="flex flex-col gap-2.5" aria-label={t(locale, "footer.categoriesNav")}>
-          {categories.slice(0, 6).map((cat) => (
-            <a
-              href={`${categoryBasePath}${locale === "fr" ? getCategorySlug(cat, locale) : cat}/`}
-              class="font-ui text-body-sm text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400"
-            >
-              {t(locale, `categories.${cat}` as any) || cat}
-            </a>
-          ))}
-        </nav>
-      </div>
-
-      <!-- Occasions -->
-      {occasions.length > 0 && (
-        <div>
-          <h3 class="mb-4 font-heading text-sm font-bold tracking-wider text-neutral-900 dark:text-neutral-100">
-            {t(locale, "occasion.browseByOccasion")}
-          </h3>
-          <nav class="flex flex-col gap-2.5" aria-label={t(locale, "occasion.browseByOccasion")}>
-            {occasions.slice(0, 6).map((occ) => (
-              <a
-                href={`${getOccasionLocalizedPath(locale, occ)}/`}
-                class="font-ui text-body-sm text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400"
-              >
-                {t(locale, `occasion.${occ}` as any) || occ}
-              </a>
-            ))}
-          </nav>
-        </div>
-      )}
-
-      <!-- Legal -->
-      <div>
-        <h3 class="mb-4 font-heading text-sm font-bold tracking-wider text-neutral-900 dark:text-neutral-100">
-          {t(locale, "footer.legal")}
-        </h3>
-        <nav class="flex flex-col gap-2.5" aria-label={t(locale, "footer.legalNav")}>
-          <a href={getLocalizedPath(locale, privacyPath)} class="font-ui text-body-sm text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
-            {t(locale, "privacy.pageTitle")}
-          </a>
-          <a href={getLocalizedPath(locale, termsPath)} class="font-ui text-body-sm text-neutral-600 no-underline transition-colors hover:text-brand-primary dark:text-neutral-400">
-            {t(locale, "terms.pageTitle")}
-          </a>
-        </nav>
+      <!-- Newsletter -->
+      <div class="rounded-xl border border-warm-600 p-6">
+        <NewsletterSignup locale={locale} />
       </div>
     </div>
 
-    <!-- Newsletter -->
-    <div class="mt-10 rounded-xl bg-brand-primary/5 p-6 text-center dark:bg-brand-primary/10 sm:p-8">
-      <NewsletterSignup locale={locale} />
-    </div>
-
-    <!-- Copyright -->
-    <div class="mt-10 border-t border-neutral-200 pt-6 dark:border-neutral-800">
-      <p class="text-center text-caption text-neutral-600 dark:text-neutral-400">
+    <!-- Bottom bar -->
+    <div class="mt-12 flex flex-col items-center gap-4 border-t border-warm-700 pt-6 sm:flex-row sm:justify-between">
+      <p class="font-ui text-xs uppercase tracking-widest text-warm-400">
         &copy; {year} Date My Dish. {t(locale, "footer.copyright")}
       </p>
+      <nav class="flex gap-6" aria-label={t(locale, "footer.legalNav")}>
+        <a href={getLocalizedPath(locale, privacyPath)} class="font-ui text-xs uppercase tracking-widest text-warm-400 no-underline transition-colors hover:text-white">
+          {t(locale, "privacy.pageTitle")}
+        </a>
+        <a href={getLocalizedPath(locale, termsPath)} class="font-ui text-xs uppercase tracking-widest text-warm-400 no-underline transition-colors hover:text-white">
+          {t(locale, "terms.pageTitle")}
+        </a>
+      </nav>
     </div>
   </div>
 </footer>

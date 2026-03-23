@@ -77,7 +77,7 @@ jobs:
           RULES:
           - Maximum 2-3 reverse links per new recipe (don't over-link)
           - Links must use absolute paths with trailing slashes: /en/recipes/{slug}/, /fr/recettes/{slug}/
-          - FR links use localized category slugs (souper not dinner, entree not appetizer)
+          - Do NOT link to category pages (they have been removed). Link to individual recipes or the main listing page instead
           - Weave links naturally into existing paragraphs, don't create new sections
           - Never use em-dashes
           - Keep brand voice intact

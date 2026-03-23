@@ -8,14 +8,14 @@
   }
 
   body {
-    @apply font-body text-neutral-800 antialiased dark:text-neutral-200;
+    @apply font-body text-warm-800 antialiased dark:text-warm-50;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply font-heading font-bold uppercase tracking-wide;
+    @apply font-heading font-normal;
   }
 
   /* Headings get scroll-margin to clear sticky nav */
@@ -25,17 +25,17 @@
   }
 
   a {
-    @apply text-brand-primary-text transition-colors hover:text-brand-accent dark:text-brand-primary dark:hover:text-brand-accent;
+    @apply text-brand-wine-text transition-colors hover:text-brand-rose-text dark:text-brand-wine-dark dark:hover:text-brand-rose;
   }
 }
 
 @layer components {
   .prose h2 {
-    @apply mt-10 mb-4 text-heading-2 font-bold text-neutral-900 dark:text-neutral-100;
+    @apply mt-10 mb-4 text-heading-2 font-bold text-warm-800 dark:text-warm-100;
   }
 
   .prose h3 {
-    @apply mt-8 mb-3 text-heading-3 font-semibold text-neutral-800 dark:text-neutral-200;
+    @apply mt-8 mb-3 text-heading-3 font-semibold text-warm-800 dark:text-warm-200;
   }
 
   .prose p {
@@ -59,11 +59,11 @@
   }
 
   .prose blockquote {
-    @apply my-6 border-l-4 border-brand-primary pl-4 italic text-neutral-600 dark:text-neutral-400 dark:border-brand-primary;
+    @apply my-6 border-l-4 border-brand-wine pl-4 italic text-warm-500 dark:text-warm-400 dark:border-brand-wine-dark;
   }
 
   .prose a {
-    @apply text-brand-primary-text underline decoration-brand-primary/30 underline-offset-2 transition-colors hover:text-brand-accent hover:decoration-brand-accent/50;
+    @apply text-brand-wine-text underline decoration-brand-wine/30 underline-offset-2 transition-colors hover:text-brand-rose-text hover:decoration-brand-rose/50;
   }
 
   /* ─── Button system ─────────────────────────────────────────────────── */
@@ -73,29 +73,29 @@
     @apply inline-flex items-center gap-2 rounded-lg font-ui text-sm font-medium transition-colors;
   }
 
-  /* Filled terracotta — primary CTAs (hero, view-all alternative) */
+  /* Filled wine burgundy — primary CTAs (hero, view-all alternative) */
   .btn-primary {
-    @apply bg-brand-primary-dark px-6 py-3 text-white no-underline shadow-sm hover:bg-brand-primary hover:text-white dark:text-white dark:hover:text-white;
+    @apply bg-brand-wine px-6 py-3 text-white no-underline shadow-sm hover:bg-brand-wine/90 hover:text-white dark:text-white dark:hover:text-white;
   }
 
-  /* Filled gold — jump-to-recipe and accent CTAs */
+  /* Filled rose gold — jump-to-recipe and accent CTAs */
   .btn-accent {
-    @apply bg-brand-accent px-6 py-3 font-semibold text-white no-underline shadow-sm hover:bg-brand-accent-dark hover:text-white hover:shadow-md dark:text-white dark:hover:text-white;
+    @apply bg-brand-rose px-6 py-3 font-semibold text-white no-underline shadow-sm hover:bg-brand-rose-dark hover:text-white hover:shadow-md dark:text-white dark:hover:text-white;
   }
 
   /* Bordered neutral — secondary actions (print, share) */
   .btn-outline {
-    @apply border border-neutral-200 px-5 py-3 text-neutral-600 hover:bg-neutral-100 dark:border-neutral-600 dark:text-neutral-400 dark:hover:bg-neutral-800;
+    @apply border border-warm-200 px-5 py-3 text-warm-600 hover:bg-warm-100 dark:border-warm-600 dark:text-warm-400 dark:hover:bg-warm-800;
   }
 
   /* Bordered brand — "View all" links */
   .btn-outline-brand {
-    @apply border-2 border-brand-primary px-6 py-2.5 font-semibold text-brand-primary-text no-underline hover:bg-brand-primary-dark hover:text-white dark:text-white dark:hover:text-white;
+    @apply border-2 border-brand-wine px-6 py-2.5 font-semibold text-brand-wine-text no-underline hover:bg-brand-wine hover:text-white dark:text-white dark:hover:text-white;
   }
 
   /* Ghost — icon-only nav buttons */
   .btn-ghost {
-    @apply p-2 text-neutral-400 hover:bg-neutral-100 hover:text-neutral-600 dark:text-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-300;
+    @apply p-2 text-warm-400 hover:bg-warm-100 hover:text-warm-600 dark:text-warm-500 dark:hover:bg-warm-800 dark:hover:text-warm-300;
   }
 }
 
@@ -119,12 +119,12 @@
 }
 
 *:focus-visible {
-  outline: 3px solid theme('colors.brand.primary-text');
+  outline: 3px solid theme('colors.brand.wine');
   outline-offset: 2px;
 }
 
 :root.dark *:focus-visible {
-  outline-color: theme('colors.brand.accent');
+  outline-color: theme('colors.brand.rose');
 }
 
 /* Reduced motion — disable animations for vestibular-sensitive users */
@@ -171,18 +171,18 @@
   }
 
   /* Remove background colors for ink savings */
-  .bg-neutral-50,
-  .bg-neutral-100,
-  .bg-neutral-200 {
+  .bg-warm-50,
+  .bg-warm-100,
+  .bg-warm-200 {
     background: none !important;
   }
 
-  .bg-brand-primary {
+  .bg-brand-wine {
     background: #000 !important;
   }
 
-  .text-brand-primary,
-  .text-brand-primary-text {
+  .text-brand-wine,
+  .text-brand-wine-text {
     color: #000 !important;
   }
 
@@ -323,7 +323,6 @@
     break-after: avoid;
   }
 
-
   li {
     break-inside: avoid;
   }
@@ -337,6 +336,4 @@
     orphans: 3;
     widows: 3;
   }
-
 }
-

@@ -20,6 +20,9 @@
     "prepTime": "Prep Time",
     "cookTime": "Cook Time",
     "totalTime": "Total Time",
+    "prep": "Prep",
+    "cook": "Cook",
+    "total": "Total",
     "servings": "Servings",
     "difficulty": "Difficulty",
     "nutrition": "Nutrition",
@@ -39,14 +42,18 @@
     "category": "Category",
     "cuisine": "Cuisine",
     "share": "Share",
-    "copied": "Link Copied!"
+    "copied": "Link Copied!",
+    "theOfficialRecipe": "The Official Recipe",
+    "continueJourney": "Continue your culinary journey",
+    "viewAllRecipes": "View all recipes"
   },
   "dateNight": {
     "tips": "Date Night Tips",
     "wine": "Wine Pairing",
-    "music": "Set the Mood",
-    "platingTip": "Plating Tip",
-    "impressFactor": "Impress Factor"
+    "music": "Music",
+    "platingTip": "Plating",
+    "impressFactor": "Impress Factor",
+    "footer": "Enjoy your meal!"
   },
   "occasion": {
     "date-night": "Date Night",
@@ -56,7 +63,8 @@
     "celebration": "Celebration",
     "quick-meal": "Quick Meal",
     "browseByOccasion": "Browse by Occasion",
-    "allOccasions": "All Occasions"
+    "allOccasions": "All Occasions",
+    "occasions": "Occasions"
   },
   "tags": {
     "appetizer": "Appetizer",
@@ -116,12 +124,20 @@
     "zucchini": "Zucchini"
   },
   "home": {
-    "heroTitle": "Romantic Recipes for Unforgettable Date Nights",
-    "heroSubtitle": "Simple dishes to impress, crafted with love",
+    "heroHeadline": "Cooking is the new",
+    "heroHeadlineAccent": "foreplay",
+    "heroDescription": "Discover recipes designed to set the mood, ignite conversation, and nourish the soul.",
     "recentPosts": "Recent Posts",
     "featuredRecipes": "Featured Recipes",
+    "exploreRecipes": "Explore Recipes",
     "viewAllRecipes": "View All Recipes",
-    "categories": "Browse by Category"
+    "freshFromKitchen": "Give In to These Temptations",
+    "ourFavorites": "Our Favorites",
+    "readMore": "Read More",
+    "culinaryNarratives": "Culinary Narratives",
+    "theJournal": "The Sunday Journal",
+    "viewAllArticles": "View All Articles",
+    "readArticle": "Read Article"
   },
   "article": {
     "readTime": "min read",
@@ -135,18 +151,48 @@
   "listing": {
     "allRecipes": "All Recipes",
     "allArticles": "All Articles",
-    "filterByCategory": "Filter by Category",
     "allCategories": "All",
     "noRecipesFound": "No recipes found.",
     "noArticlesFound": "No articles found."
   },
   "about": {
     "title": "About Victor",
-    "pageTitle": "About"
+    "pageTitle": "About",
+    "subtitle": "The Philosophy",
+    "whyHeading": "Why \"Date My Dish\"?",
+    "howHeading": "How I Develop Recipes",
+    "whatHeading": "What You'll Find Here",
+    "montrealHeading": "A Montreal Food Story",
+    "testing": "3x Minimum Testing",
+    "timings": "100% Honest Timings",
+    "card1Title": "Romantic Collections",
+    "card1Desc": "Recipe collections from appetizers through desserts, tested in a real home kitchen.",
+    "card2Title": "Cooking Techniques",
+    "card2Desc": "Food science articles to sharpen your skills and deepen your understanding.",
+    "card3Title": "Planning Guidance",
+    "card3Desc": "Date night planning, wine pairings, and atmosphere tips for the perfect evening.",
+    "card4Title": "Seasonal Inspiration",
+    "card4Desc": "Italian, Asian, Mediterranean, and fusion cuisines to keep things exciting.",
+    "card5Title": "Honest Instructions",
+    "card5Desc": "Step-by-step with honest prep and cook times from real testing sessions.",
+    "card6Title": "Bilingual Recipes",
+    "card6Desc": "Every recipe available in both English and French."
   },
   "contact": {
     "title": "Contact",
-    "pageTitle": "Get in Touch"
+    "pageTitle": "Get in Touch",
+    "heroQuote": "Cooking is love made visible.",
+    "howToConnect": "How to Connect",
+    "howToConnectDesc": "The best way to reach me is through Instagram DMs. I typically respond within 24-48 hours!",
+    "whatToReachOut": "What You Can Reach Out About",
+    "topicRecipesTitle": "Recipe questions",
+    "topicRecipesDesc": "Ingredient substitutions, techniques, modifications, or troubleshooting.",
+    "topicDateNightTitle": "Date night planning",
+    "topicDateNightDesc": "Menu suggestions, wine pairings, atmosphere tips.",
+    "topicCollabTitle": "Collaboration & media",
+    "topicCollabDesc": "Partnerships, press, interviews, and media features.",
+    "topicFeedbackTitle": "Feedback & suggestions",
+    "topicFeedbackDesc": "Share your recipe experiences or suggest new dishes you'd like to see."
   },
   "search": {
     "title": "Search Recipes",
@@ -160,12 +206,10 @@
   "footer": {
     "copyright": "All rights reserved.",
     "madeWith": "Made with love in Montreal",
-    "categories": "Categories",
     "navigation": "Navigation",
     "legal": "Legal",
     "legalNav": "Legal navigation",
     "nav": "Footer navigation",
-    "categoriesNav": "Recipe categories",
     "instagramLabel": "Follow us on Instagram",
     "pinterestLabel": "Follow us on Pinterest"
   },
@@ -182,7 +226,6 @@
     "home": "Home",
     "recipes": "Recipes",
     "articles": "Articles",
-    "category": "Category",
     "occasion": "Occasion",
     "tag": "Tag"
   },
@@ -220,6 +263,8 @@
   },
   "author": {
     "bioShort": "Victor is a Montreal home cook with a decade of experience developing date night recipes. Every dish is tested at least three times before publishing.",
+    "by": "By",
+    "recipeAuthor": "Recipe Author",
     "aboutLink": "About the author",
     "photoAlt": "Victor, creator of Date My Dish"
   },
@@ -246,8 +291,10 @@
     "alreadyRated": "You've already rated this recipe"
   },
   "newsletter": {
-    "title": "Get Recipes in Your Inbox",
-    "description": "New date night recipes delivered weekly. No spam, unsubscribe anytime.",
+    "title": "Stay Intimate",
+    "footerTitle": "Stay Intimate",
+    "compactTitle": "Get Recipes in Your Inbox",
+    "description": "Get the latest mood-setting recipes delivered weekly.",
     "emailPlaceholder": "Your email address",
     "subscribe": "Subscribe",
     "success": "You're subscribed! Check your email to confirm.",

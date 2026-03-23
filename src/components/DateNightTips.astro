@@ -8,54 +8,54 @@ interface Props {
     music?: string;
     platingTip?: string;
   };
+  compact?: boolean;
 }
 
-const { locale, tips } = Astro.props;
+const { locale, tips, compact = false } = Astro.props;
 const hasTips = tips.wine || tips.music || tips.platingTip;
 ---
 
 {hasTips && (
-  <section class="no-print mt-8 rounded-2xl border border-brand-accent/30 bg-neutral-50 dark:bg-neutral-800/50 p-6 sm:p-8">
-    <h2 class="mb-5 flex items-center gap-2 font-heading text-xl font-bold text-neutral-900 dark:text-neutral-100">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-accent" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-      </svg>
+  <section class:list={["no-print rounded-2xl border border-brand-rose/30 border-l-4 border-l-brand-primary bg-warm-50 dark:bg-warm-800/50 p-6 sm:p-8", !compact && "mt-8"]}>
+    <h2 class="mb-5 font-caveat text-2xl italic text-warm-900 dark:text-warm-100">
       {t(locale, "dateNight.tips")}
     </h2>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class:list={[compact ? "space-y-4" : "grid gap-4 sm:grid-cols-2 lg:grid-cols-3"]}>
       {tips.wine && (
         <div class="flex gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-warm-500 dark:text-warm-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.5 2.25l-.75 6c-.06.48.01.96.22 1.39A4.49 4.49 0 0011.25 12v8.25H9a.75.75 0 000 1.5h6a.75.75 0 000-1.5h-2.25V12a4.49 4.49 0 004.28-2.36c.21-.43.28-.91.22-1.39l-.75-6H7.5z" />
           </svg>
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wide text-brand-primary-text">{t(locale, "dateNight.wine")}</p>
-            <p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">{tips.wine}</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-warm-800 dark:text-warm-200">{t(locale, "dateNight.wine")}</p>
+            <p class="mt-1 text-sm text-warm-700 dark:text-warm-300">{tips.wine}</p>
           </div>
         </div>
       )}
       {tips.music && (
         <div class="flex gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-warm-500 dark:text-warm-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.952 1.651a.75.75 0 01.298.599V16.303a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.403-4.909l2.311-.66a1.5 1.5 0 001.088-1.442V6.994l-9 2.572v9.737a3 3 0 01-2.176 2.884l-1.32.377a2.553 2.553 0 11-1.402-4.909l2.31-.66a1.5 1.5 0 001.088-1.442V5.25a.75.75 0 01.544-.721l10.5-3a.75.75 0 01.706.122z" />
           </svg>
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wide text-brand-primary-text">{t(locale, "dateNight.music")}</p>
-            <p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">{tips.music}</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-warm-800 dark:text-warm-200">{t(locale, "dateNight.music")}</p>
+            <p class="mt-1 text-sm text-warm-700 dark:text-warm-300">{tips.music}</p>
           </div>
         </div>
       )}
       {tips.platingTip && (
         <div class="flex gap-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="mt-0.5 h-5 w-5 shrink-0 text-warm-500 dark:text-warm-400" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3 8.5V5.75A.75.75 0 013.75 5h.5a.75.75 0 01.75.75V12h-.5A1.5 1.5 0 013 10.5V8.5zM6 12V5.75A.75.75 0 016.75 5h.5a.75.75 0 01.75.75V12H6zM8.75 5a.75.75 0 00-.75.75V12h1.5V5.75A.75.75 0 008.75 5zM5 13a2.99 2.99 0 002 1.118V20.25a.75.75 0 001.5 0v-6.132A2.99 2.99 0 0010.5 13H5zM14.25 5a.75.75 0 00-.75.75v5.5c0 .97.433 1.839 1.116 2.425l-.366 6.575a.75.75 0 001.496.084l.366-6.576A3.001 3.001 0 0017.5 11.25v-5.5a.75.75 0 00-.75-.75h-2.5z" />
           </svg>
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wide text-brand-primary-text">{t(locale, "dateNight.platingTip")}</p>
-            <p class="mt-1 text-sm text-neutral-700 dark:text-neutral-300">{tips.platingTip}</p>
+            <p class="text-xs font-semibold uppercase tracking-wide text-warm-800 dark:text-warm-200">{t(locale, "dateNight.platingTip")}</p>
+            <p class="mt-1 text-sm text-warm-700 dark:text-warm-300">{tips.platingTip}</p>
           </div>
         </div>
       )}
     </div>
+    <hr class="my-5 border-brand-rose/20" />
+    <p class="text-center font-caveat text-lg text-brand-rose">{t(locale, "dateNight.footer")}</p>
   </section>
 )}

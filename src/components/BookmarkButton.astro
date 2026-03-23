@@ -10,7 +10,7 @@ const { locale, enSlug } = Astro.props;
 ---
 
 <button
-  class="bookmark-btn no-print inline-flex items-center gap-1.5 rounded-lg border border-neutral-200 px-4 py-3 font-ui text-body-sm font-medium text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-red-500 dark:border-neutral-600 dark:text-neutral-400 dark:hover:bg-neutral-800 dark:hover:text-red-400"
+  class="bookmark-btn no-print inline-flex items-center gap-1.5 rounded-lg border border-warm-200 px-4 py-3 font-ui text-body-sm font-medium text-warm-500 transition-colors hover:bg-warm-100 hover:text-red-500 dark:border-warm-600 dark:text-warm-400 dark:hover:bg-warm-800 dark:hover:text-red-400"
   data-en-slug={enSlug}
   aria-pressed="false"
   aria-label={t(locale, "bookmark.save")}
@@ -58,11 +58,11 @@ const { locale, enSlug } = Astro.props;
       if (saved) {
         icon.setAttribute('fill', 'currentColor');
         btn.classList.add('text-red-500', 'dark:text-red-400', 'border-red-200', 'dark:border-red-800');
-        btn.classList.remove('text-neutral-500', 'dark:text-neutral-400', 'border-neutral-200', 'dark:border-neutral-600');
+        btn.classList.remove('text-warm-500', 'dark:text-warm-400', 'border-warm-200', 'dark:border-warm-600');
       } else {
         icon.setAttribute('fill', 'none');
         btn.classList.remove('text-red-500', 'dark:text-red-400', 'border-red-200', 'dark:border-red-800');
-        btn.classList.add('text-neutral-500', 'dark:text-neutral-400', 'border-neutral-200', 'dark:border-neutral-600');
+        btn.classList.add('text-warm-500', 'dark:text-warm-400', 'border-warm-200', 'dark:border-warm-600');
       }
     }
 

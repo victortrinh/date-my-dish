@@ -2,7 +2,7 @@
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import { t, getRecipeLocalizedPath, getOccasionLocalizedPath } from "@i18n/utils";
+import { t, getRecipeLocalizedPath } from "@i18n/utils";
 import { getCollection } from "astro:content";
 import type { ImageMetadata } from "astro";
 
@@ -13,27 +13,6 @@ const recipes = allRecipes
   .filter((r) => r.data.lang === "en")
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
 
-const CATEGORY_ORDER = ["appetizer", "dinner", "dessert"];
-const categories = [...new Set(recipes.flatMap((r) => r.data.recipeCategory))];
-categories.sort((a, b) => {
-  const ai = CATEGORY_ORDER.indexOf(a);
-  const bi = CATEGORY_ORDER.indexOf(b);
-  if (ai !== -1 && bi !== -1) return ai - bi;
-  if (ai !== -1) return -1;
-  if (bi !== -1) return 1;
-  return a.localeCompare(b);
-});
-
-const OCCASION_ORDER = ["date-night", "weeknight", "entertaining", "comfort", "celebration", "quick-meal"];
-const occasions = [...new Set(recipes.flatMap((r) => r.data.occasion || []))];
-occasions.sort((a, b) => {
-  const ai = OCCASION_ORDER.indexOf(a);
-  const bi = OCCASION_ORDER.indexOf(b);
-  if (ai !== -1 && bi !== -1) return ai - bi;
-  if (ai !== -1) return -1;
-  if (bi !== -1) return 1;
-  return a.localeCompare(b);
-});
 ---
 
 <BaseLayout
@@ -65,54 +44,14 @@ occasions.sort((a, b) => {
     />
 
     <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-bold text-neutral-900 sm:text-4xl dark:text-neutral-100">
+      <h1 class="mb-3 font-heading text-heading-1 font-normal text-warm-900 sm:text-4xl dark:text-warm-100">
         {t(locale, "listing.allRecipes")}
       </h1>
-      <div class="mb-4 h-1 w-12 rounded-full bg-brand-accent"></div>
-      <p class="text-body-sm text-neutral-500 dark:text-neutral-400">
+      <div class="mb-4 h-1 w-12 rounded-full bg-brand-rose"></div>
+      <p class="text-body-sm text-warm-500 dark:text-warm-400">
         {recipes.length} {recipes.length === 1 ? "recipe" : "recipes"}
       </p>
     </div>
-
-    <!-- Category Filter -->
-    {categories.length > 0 && (
-      <div class="mb-10 flex flex-wrap gap-2">
-        <a
-          href="/en/recipes/"
-          class="rounded-lg bg-brand-primary-dark px-4 py-2 font-ui text-body-sm font-medium text-white no-underline transition-shadow hover:shadow-md dark:text-white dark:hover:text-white"
-          aria-current="page"
-        >
-          {t(locale, "listing.allCategories")}
-        </a>
-        {categories.map((cat) => (
-          <a
-            href={`/en/recipes/category/${cat}/`}
-            class="rounded-lg border border-neutral-200 bg-white px-4 py-2 font-ui text-body-sm font-medium text-neutral-700 no-underline shadow-sm transition-all hover:-translate-y-0.5 hover:border-brand-primary hover:text-brand-primary hover:shadow-md dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
-          >
-            {t(locale, `categories.${cat}` as any) || cat}
-          </a>
-        ))}
-      </div>
-    )}
-
-    <!-- Browse by Occasion -->
-    {occasions.length > 0 && (
-      <div class="mb-10">
-        <h2 class="mb-4 font-heading text-lg font-bold text-neutral-900 dark:text-neutral-100">
-          {t(locale, "occasion.browseByOccasion")}
-        </h2>
-        <div class="flex flex-wrap gap-2">
-          {occasions.map((occ) => (
-            <a
-              href={`${getOccasionLocalizedPath(locale, occ)}/`}
-              class="rounded-lg border border-brand-accent/30 bg-brand-accent/5 px-4 py-2 font-ui text-body-sm font-medium text-brand-accent-text no-underline transition-colors hover:border-brand-accent hover:bg-brand-accent/10 dark:border-brand-accent/20 dark:text-brand-accent"
-            >
-              {t(locale, `occasion.${occ}` as any) || occ}
-            </a>
-          ))}
-        </div>
-      </div>
-    )}
 
     <!-- Recipe Grid -->
     {recipes.length > 0 ? (
@@ -136,7 +75,7 @@ occasions.sort((a, b) => {
         })}
       </div>
     ) : (
-      <p class="text-neutral-500 dark:text-neutral-400">{t(locale, "listing.noRecipesFound")}</p>
+      <p class="text-warm-500 dark:text-warm-400">{t(locale, "listing.noRecipesFound")}</p>
     )}
   </div>
 </BaseLayout>
