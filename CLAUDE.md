@@ -55,6 +55,13 @@ getCollection("articles") -> filter by article.data.lang === locale
 -> render(article) returns { Content }
 ```
 
+### Data Flow for Reviews
+```
+getCollection("reviews") -> filter by review.data.lang === locale
+-> extract slug: review.id.replace(/^(en|fr)\//, "")
+-> render(review) returns { Content }
+```
+
 Content IDs in Astro 5 are locale-prefixed (e.g., `en/cacio-e-pepe`). Always strip the prefix.
 Homepage merges both collections into "recent posts" sorted by `publishDate`.
 
@@ -139,9 +146,51 @@ Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*
 | `readingTime` | number | Estimated reading time in minutes |
 | `relatedRecipes` | string[] | EN recipe slugs for cross-linking (rendered by `ArticleRelatedRecipes.astro`) |
 
+## Review Schema Quick-Reference
+
+Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*.mdx", base: "./src/content/reviews" })`
+
+### Required Fields
+| Field | Type | Constraint |
+|-------|------|------------|
+| `title` | string | Review title |
+| `lang` | enum | `"en"` or `"fr"` |
+| `translationSlug` | string | Slug of the paired translation |
+| `description` | string | Max 160 chars (SEO meta) |
+| `publishDate` | date | YYYY-MM-DD (coerced) |
+| `heroImage` | image() | Relative import path |
+| `heroImageAlt` | string | Descriptive, ~125 chars |
+| `keywords` | string[] | SEO keywords |
+| `restaurantName` | string | Restaurant name |
+| `neighborhood` | string | e.g., "Villeray" |
+| `address` | string | Full street address |
+| `cuisine` | string | e.g., "Seasonal Italian" |
+| `priceRange` | enum | `"$"`, `"$$"`, `"$$$"`, or `"$$$$"` |
+| `dateScore` | number | 1-10 rating |
+| `reviewCategory` | enum | `dinner`, `brunch`, `cocktails`, `casual`, `fine-dining` |
+| `bestFor` | string[] | e.g., `["Date nights", "Anniversaries"]` |
+| `costPerPerson` | string | e.g., "$120-200+ CAD" |
+| `faqs` | array | Min 1. `{ question: string, answer: string }` |
+
+### Optional Fields
+| Field | Type | Notes |
+|-------|------|-------|
+| `author` | string | Defaults to `"Victor"` |
+| `updatedDate` | date | YYYY-MM-DD |
+| `tags` | string[] | e.g., `["italian", "date-night"]` |
+| `readingTime` | number | Estimated reading time in minutes |
+| `city` | string | Defaults to `"Montreal"` |
+| `website` | string (url) | Restaurant website |
+| `phone` | string | Phone number |
+| `reservationTip` | string | Booking advice |
+| `dishHighlights` | array | `{ name: string, description: string }` |
+| `dateTypeFit` | array | `{ type: string, score: number (1-5), note?: string }` |
+| `relatedRecipes` | string[] | EN recipe slugs for cross-linking |
+
 ## Content Structure
 - **Recipes**: MDX in `src/content/recipes/{en,fr}/` with extensive YAML frontmatter (ingredients, instructions, nutrition, FAQs)
 - **Articles**: MDX in `src/content/articles/{en,fr}/` with lighter frontmatter (no ingredients/instructions). Components: `ArticleCard`, `ArticleRelatedRecipes`, `ArticleSchema`
+- **Reviews**: MDX in `src/content/reviews/{en,fr}/` with restaurant-specific frontmatter (address, cuisine, priceRange, dateScore, dishHighlights)
 - Every recipe/article must have an EN + FR pair linked via `translationSlug`
 - Recipe ingredients and instructions live in frontmatter (needed for JSON-LD generation)
 - MDX body is the SEO blog prose (target 800-1500 words, 5-8 H2 sections)
@@ -189,6 +238,7 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 | `/en/contact/` | `/fr/contact/` |
 | `/en/privacy-policy/` | `/fr/politique-de-confidentialite/` |
 | `/en/terms-of-service/` | `/fr/conditions-dutilisation/` |
+| `/en/reviews/` | `/fr/critiques/` |
 
 ### Category Slug Map (canonical EN key -> localized slug)
 | Canonical | EN | FR |
@@ -301,6 +351,7 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 ### Content Publishing
 - `auto-publish-recipe.yml` -- Thursdays 3AM UTC: Notion -> Claude generates EN+FR MDX + images -> PR
 - `auto-publish-article.yml` -- Mondays 3AM UTC: same pipeline for articles
+- `auto-publish-review.yml` -- Wednesdays 3AM UTC: Notion -> Claude generates EN+FR MDX + images -> PR
 - `social-post-on-deploy.yml` -- Auto-posts new recipes to Instagram/Pinterest on deploy
 - `token-refresh.yml` -- 1st + 25th of month: refreshes OAuth tokens (Pinterest 30d, Instagram 60d)
 
