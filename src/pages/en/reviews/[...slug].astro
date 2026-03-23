@@ -92,15 +92,6 @@ const formattedDate = data.publishDate.toLocaleDateString("en-US", {
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <!-- Left: Content -->
           <div class="order-2 flex flex-col justify-start lg:order-1">
-            <div class="mb-4 flex flex-wrap items-center gap-2">
-              <span class="inline-block rounded-full bg-brand-wine/10 px-4 py-1.5 font-ui text-caption font-semibold uppercase tracking-wider text-brand-wine dark:bg-brand-wine-dark/10 dark:text-brand-wine-dark">
-                {data.cuisine}
-              </span>
-              <span class="inline-block rounded-full bg-warm-200 px-3 py-1 font-ui text-caption font-medium text-warm-600 dark:bg-warm-700 dark:text-warm-300">
-                {data.neighborhood}
-              </span>
-            </div>
-
             <h1 class="mb-4 font-heading text-4xl italic text-warm-900 dark:text-warm-100 sm:text-display">
               {data.title}
             </h1>
@@ -177,14 +168,6 @@ const formattedDate = data.publishDate.toLocaleDateString("en-US", {
               data-pin-url={sourceUrl}
               data-pin-description={`${data.title} | ${data.description} | Date My Dish`}
             />
-            <!-- Best For tags overlay -->
-            <div class="absolute bottom-4 left-4 flex max-w-[280px] flex-wrap gap-1.5 sm:bottom-6 sm:left-6">
-              {data.bestFor.map((item) => (
-                <span class="rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-warm-700 shadow backdrop-blur-sm dark:bg-warm-800/90 dark:text-warm-300">
-                  {item}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </header>
