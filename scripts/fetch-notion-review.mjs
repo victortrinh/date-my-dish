@@ -2,9 +2,12 @@
 // Fetches the next restaurant review to publish from a public Notion database using
 // notion-client (unofficial API, no auth needed for public pages).
 //
-// Outputs:
+// Previously output two files:
 //   - notion-review-selection.json  (review metadata + mode)
 //   - notion-review-content.json    (structured content blocks + FAQs + images)
+//
+// Now outputs a single pending file:
+//   - notion/pending-review.json    (combined pending schema for scheduled task pickup)
 //   - $GITHUB_OUTPUT                (found, mode, recipe_num)
 //
 // Usage:
@@ -28,8 +31,7 @@ import {
 // Config
 // ---------------------------------------------------------------------------
 const DATABASE_PAGE_ID = "9ce95183503543d68450194d1010824b";
-const SELECTION_FILE = "notion-review-selection.json";
-const CONTENT_FILE = "notion-review-content.json";
+const PENDING_FILE = "notion/pending-review.json";
 
 // ---------------------------------------------------------------------------
 // Main
@@ -258,40 +260,44 @@ async function main() {
     );
   }
 
-  // Step 8: Write output files
-  console.log("\nStep 8: Writing output files...");
+  // Step 8: Write pending file
+  console.log("\nStep 8: Writing pending file...");
 
   const existingSlug =
     mode === "update"
       ? published.entries[String(selected.recipeNum)]?.slug || null
       : null;
 
-  const selectionJson = {
-    pageId: selected.pageId,
-    recipeNum: selected.recipeNum,
+  // Build images array from downloaded blocks
+  const images = blocks
+    .filter((b) => b.type === "image" && b.localPath)
+    .map((b, idx) => ({
+      localPath: b.localPath,
+      caption: b.caption || "",
+      isHero: idx === 0 && b.localPath === heroImage?.localPath,
+    }));
+
+  const pendingJson = {
+    source: "notion",
+    fetchedAt: new Date().toISOString(),
+    notionPageId: selected.pageId,
     title: selected.title,
     mode,
     existingSlug,
-  };
-
-  const contentJson = {
-    pageId: selected.pageId,
-    title: selected.title,
     recipeNum: selected.recipeNum,
     lastEditedTime: new Date(selected.lastEditedTime).toISOString(),
     heroImage,
+    images,
     blocks,
     faqs,
   };
 
-  writeFileSync(SELECTION_FILE, JSON.stringify(selectionJson, null, 2) + "\n");
-  writeFileSync(CONTENT_FILE, JSON.stringify(contentJson, null, 2) + "\n");
+  writeFileSync(PENDING_FILE, JSON.stringify(pendingJson, null, 2) + "\n");
 
-  console.log(`  ${SELECTION_FILE} written`);
-  console.log(`  ${CONTENT_FILE} written`);
+  console.log(`  ${PENDING_FILE} written`);
 
   // Validate output
-  if (!selectionJson.title || blocks.length === 0) {
+  if (!pendingJson.title || blocks.length === 0) {
     console.error("[ERROR] Output validation failed: empty title or blocks.");
     process.exit(1);
   }
