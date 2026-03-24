@@ -1,0 +1,115 @@
+name: Reverse Internal Linking
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/recipes/en/**/*.mdx'
+  workflow_dispatch:
+
+concurrency:
+  group: reverse-internal-linking
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  reverse-link:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect new recipe files
+        id: detect
+        run: |
+          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'src/content/recipes/en/*.mdx' || true)
+          if [ -z "$NEW_FILES" ]; then
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "No new EN recipe files detected."
+          else
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "new_files=$NEW_FILES" >> $GITHUB_OUTPUT
+            echo "New recipe files: $NEW_FILES"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.detect.outputs.found == 'true'
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.detect.outputs.found == 'true'
+        run: npm ci
+
+      - name: Generate ratings.json
+        if: steps.detect.outputs.found == 'true'
+        run: node scripts/fetch-ratings.mjs
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_KV_NAMESPACE_ID: ${{ secrets.CF_KV_NAMESPACE_ID }}
+
+      - name: Add reverse internal links
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          cat <<'PROMPT' | npx @anthropic-ai/claude-code@latest --print \
+            --model claude-sonnet-4-6 \
+            --max-turns 15 \
+            --allowedTools "Edit,Read,Glob,Grep,Bash(npm run:*),Bash(node:*)"
+          New recipe files were just merged to main:
+          ${{ steps.detect.outputs.new_files }}
+
+          For each new recipe:
+          1. Read its frontmatter to understand cuisine, category, occasion, and tags
+          2. Find 2-3 existing related recipes (by cuisine, category, occasion, or complementary dishes)
+          3. Add a natural cross-link sentence in each related recipe's EN prose body pointing to the new recipe
+          4. Add the same cross-link in the corresponding FR recipe prose body (use localized paths)
+
+          RULES:
+          - Maximum 2-3 reverse links per new recipe (don't over-link)
+          - Links must use absolute paths with trailing slashes: /en/recipes/{slug}/, /fr/recettes/{slug}/
+          - Do NOT link to category pages (they have been removed). Link to individual recipes or the main listing page instead
+          - Weave links naturally into existing paragraphs, don't create new sections
+          - Never use em-dashes
+          - Keep brand voice intact
+          - Only modify MDX prose body, never frontmatter
+          - Run npm run check after making changes
+
+          After making changes, list which files were modified and what links were added.
+          PROMPT
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Create PR
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="seo/reverse-links-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
+          git add src/content/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "feat(seo): add reverse internal links for new recipes
+
+          Co-Authored-By: Claude <noreply@anthropic.com>"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "SEO: Add reverse internal links" \
+            --body "Automatically adds cross-links from existing recipes to newly published recipes.
+
+          🤖 Generated with [Claude Code](https://claude.com/claude-code)" \
+            --label "seo-reverse-links"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
