@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="src/assets/images/logo-datemydish-inline.png" alt="Date My Dish" width="320" />
-
 ### Elevate your dinner. Impress your date.
 
 A bilingual recipe blog for couples who believe great food is the secret ingredient to a memorable evening.
@@ -28,6 +26,7 @@ A bilingual recipe blog for couples who believe great food is the secret ingredi
 
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
 - [About](#about)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -35,7 +34,9 @@ A bilingual recipe blog for couples who believe great food is the secret ingredi
 - [Project Structure](#project-structure)
 - [Commands](#commands)
 - [Content Authoring](#content-authoring)
-- [CI/CD & Automation](#cicd--automation)
+- [CI/CD \& Automation](#cicd--automation)
+  - [Content Publishing](#content-publishing)
+  - [Quality Gates](#quality-gates)
 - [Brand](#brand)
 - [License](#license)
 
@@ -62,18 +63,18 @@ Date My Dish is a curated collection of date-night recipes, food articles, and M
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| **Framework** | [Astro 5](https://astro.build) + TypeScript (strict) + MDX |
-| **Styling** | [Tailwind CSS 3.4](https://tailwindcss.com) with class-based dark mode |
-| **Content** | MDX with Zod-validated frontmatter schemas (recipes, articles, reviews) |
-| **Search** | [Pagefind](https://pagefind.app) - static, zero-JS search indexing |
-| **i18n** | Subdirectory routing (`/en/`, `/fr/`) with type-safe translations |
-| **Images** | Astro `<Picture>` with AVIF/WebP, compile-time optimization |
-| **Hosting** | [Cloudflare Pages](https://pages.cloudflare.com) via Wrangler |
-| **Testing** | [Playwright](https://playwright.dev) E2E + [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) |
-| **AI** | Claude API for content generation and social media captions |
-| **CI/CD** | GitHub Actions (auto-publish, SEO audits, dependency updates) |
+| Layer         | Technology                                                                                                |
+| ------------- | --------------------------------------------------------------------------------------------------------- |
+| **Framework** | [Astro 5](https://astro.build) + TypeScript (strict) + MDX                                                |
+| **Styling**   | [Tailwind CSS 3.4](https://tailwindcss.com) with class-based dark mode                                    |
+| **Content**   | MDX with Zod-validated frontmatter schemas (recipes, articles, reviews)                                   |
+| **Search**    | [Pagefind](https://pagefind.app) - static, zero-JS search indexing                                        |
+| **i18n**      | Subdirectory routing (`/en/`, `/fr/`) with type-safe translations                                         |
+| **Images**    | Astro `<Picture>` with AVIF/WebP, compile-time optimization                                               |
+| **Hosting**   | [Cloudflare Pages](https://pages.cloudflare.com) via Wrangler                                             |
+| **Testing**   | [Playwright](https://playwright.dev) E2E + [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) |
+| **AI**        | Claude API for content generation and social media captions                                               |
+| **CI/CD**     | GitHub Actions (auto-publish, SEO audits, dependency updates)                                             |
 
 ## Getting Started
 
@@ -119,14 +120,14 @@ tests/                        # Playwright E2E specs + fixtures
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server |
-| `npm run build` | Production build (Pagefind runs via postbuild) |
-| `npm run preview` | Build + local Cloudflare Workers preview |
-| `npm run check` | TypeScript and content schema validation |
-| `npm run deploy` | Build + deploy to Cloudflare Pages |
-| `npx playwright test` | Run Playwright E2E tests |
+| Command               | Description                                    |
+| --------------------- | ---------------------------------------------- |
+| `npm run dev`         | Start dev server                               |
+| `npm run build`       | Production build (Pagefind runs via postbuild) |
+| `npm run preview`     | Build + local Cloudflare Workers preview       |
+| `npm run check`       | TypeScript and content schema validation       |
+| `npm run deploy`      | Build + deploy to Cloudflare Pages             |
+| `npx playwright test` | Run Playwright E2E tests                       |
 
 ## Content Authoring
 
@@ -173,35 +174,35 @@ Reviews include restaurant-specific frontmatter (address, cuisine, priceRange, d
 <summary><strong>Click to expand</strong></summary>
 
 ### Content Publishing
-| Workflow | Schedule | Description |
-|----------|----------|-------------|
-| `auto-publish-recipe.yml` | Thursdays 3AM UTC | Notion to Claude-generated EN+FR MDX + images |
-| `auto-publish-article.yml` | Mondays 3AM UTC | Same pipeline for articles |
-| `auto-publish-review.yml` | Wednesdays 3AM UTC | Same pipeline for reviews |
-| `social-post-on-deploy.yml` | On deploy | Auto-posts new content to Instagram/Pinterest |
-| `token-refresh.yml` | 1st + 25th monthly | Refreshes OAuth tokens (Pinterest, Instagram) |
+| Workflow                    | Schedule           | Description                                   |
+| --------------------------- | ------------------ | --------------------------------------------- |
+| `auto-publish-recipe.yml`   | Thursdays 3AM UTC  | Notion to Claude-generated EN+FR MDX + images |
+| `auto-publish-article.yml`  | Mondays 3AM UTC    | Same pipeline for articles                    |
+| `auto-publish-review.yml`   | Wednesdays 3AM UTC | Same pipeline for reviews                     |
+| `social-post-on-deploy.yml` | On deploy          | Auto-posts new content to Instagram/Pinterest |
+| `token-refresh.yml`         | 1st + 25th monthly | Refreshes OAuth tokens (Pinterest, Instagram) |
 
 ### Quality Gates
-| Workflow | Trigger | Description |
-|----------|---------|-------------|
-| `playwright-pr-check.yml` | PR | E2E smoke tests (desktop/mobile, light/dark) |
-| `lighthouse-pr-check.yml` | PR | Performance and accessibility checks |
-| `weekly-seo-audit.yml` | Sundays 3AM | Full Lighthouse CI audit |
-| `weekly-seo-ranking.yml` | Mondays 8AM | Google Search Console + SERP tracking |
-| `seo-auto-optimize.yml` | On ranking data | Claude optimizes underperforming content |
+| Workflow                  | Trigger         | Description                                  |
+| ------------------------- | --------------- | -------------------------------------------- |
+| `playwright-pr-check.yml` | PR              | E2E smoke tests (desktop/mobile, light/dark) |
+| `lighthouse-pr-check.yml` | PR              | Performance and accessibility checks         |
+| `weekly-seo-audit.yml`    | Sundays 3AM     | Full Lighthouse CI audit                     |
+| `weekly-seo-ranking.yml`  | Mondays 8AM     | Google Search Console + SERP tracking        |
+| `seo-auto-optimize.yml`   | On ranking data | Claude optimizes underperforming content     |
 
 </details>
 
 ## Brand
 
-| Element | Value |
-|---------|-------|
-| **Primary** | Terracotta `#C4704B` (decorative) / `#9A5439` (text, WCAG AA) |
-| **Accent** | Warm Gold `#D4A853` (decorative) / `#7D631C` (text, WCAG AA) |
-| **Headings** | Playfair Display 400-900 (italic) |
-| **Body** | Source Serif 4 400-700 |
-| **UI** | Inter 400-700 |
-| **Handwritten** | Caveat 400/700 |
+| Element         | Value                                                         |
+| --------------- | ------------------------------------------------------------- |
+| **Primary**     | Terracotta `#C4704B` (decorative) / `#9A5439` (text, WCAG AA) |
+| **Accent**      | Warm Gold `#D4A853` (decorative) / `#7D631C` (text, WCAG AA)  |
+| **Headings**    | Playfair Display 400-900 (italic)                             |
+| **Body**        | Source Serif 4 400-700                                        |
+| **UI**          | Inter 400-700                                                 |
+| **Handwritten** | Caveat 400/700                                                |
 
 ## License
 
