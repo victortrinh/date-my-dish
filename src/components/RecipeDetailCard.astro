@@ -72,7 +72,6 @@ const hearts = impressFactor ? Array.from({ length: 5 }, (_, i) => i < impressFa
       <h2 class="font-heading text-2xl italic text-white sm:text-3xl">
         {t(locale, "recipe.theOfficialRecipe")}
       </h2>
-      <meta itemprop="name" content={title} />
       <meta itemprop="image" content={heroImageSrc} />
       {impressFactor && (
         <div class="mt-1 flex items-center gap-2">
