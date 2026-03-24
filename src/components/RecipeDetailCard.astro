@@ -27,6 +27,7 @@ interface Nutrition {
 interface Props {
   locale: Locale;
   title: string;
+  heroImageSrc: string;
   prepTime: string;
   cookTime: string;
   totalTime: string;
@@ -41,6 +42,7 @@ interface Props {
 const {
   locale,
   title,
+  heroImageSrc,
   prepTime,
   cookTime,
   totalTime,
@@ -71,6 +73,7 @@ const hearts = impressFactor ? Array.from({ length: 5 }, (_, i) => i < impressFa
         {t(locale, "recipe.theOfficialRecipe")}
       </h2>
       <meta itemprop="name" content={title} />
+      <meta itemprop="image" content={heroImageSrc} />
       {impressFactor && (
         <div class="mt-1 flex items-center gap-2">
           <span class="text-xs font-medium uppercase tracking-widest text-white/60">
