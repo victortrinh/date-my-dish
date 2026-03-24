@@ -9,7 +9,6 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, basename } from "path";
 import matter from "gray-matter";
-import Anthropic from "@anthropic-ai/sdk";
 
 const SITE_URL = "https://datemydish.com";
 const RECIPES_DIR = "src/content/recipes";
@@ -25,7 +24,6 @@ const FETCH_HEADERS = {
 // Env vars
 // ---------------------------------------------------------------------------
 const {
-  ANTHROPIC_API_KEY,
   INSTAGRAM_ACCESS_TOKEN,
   INSTAGRAM_USER_ID,
   PINTEREST_ACCESS_TOKEN,
@@ -126,95 +124,44 @@ async function resolveHeroImageUrl(slug) {
 }
 
 // ---------------------------------------------------------------------------
-// Caption generation via Claude
+// Caption generation from frontmatter (with template fallback)
 // ---------------------------------------------------------------------------
 async function generateCaptions(enData, frData) {
-  if (!ANTHROPIC_API_KEY) {
-    throw new Error("ANTHROPIC_API_KEY is required for caption generation");
+  // Check if socialCaption exists in frontmatter
+  if (enData.socialCaption) {
+    const sc = enData.socialCaption;
+    return {
+      instagram_caption: sc.instagram || buildInstagramTemplate(enData, frData),
+      pinterest_title: sc.pinterest ? sc.pinterest.split('\n')[0] : enData.title,
+      pinterest_description: sc.pinterest || buildPinterestTemplate(enData),
+      pinterest_title_v2: enData.title,
+      pinterest_description_v2: sc.pinterest || buildPinterestTemplate(enData),
+      pinterest_title_v3: enData.title,
+      pinterest_description_v3: sc.pinterest || buildPinterestTemplate(enData),
+    };
   }
 
-  const anthropic = new Anthropic();
+  // Fallback: generate from title + description (no Claude API needed)
+  // Note: pin rotation quality degrades for pre-migration recipes (identical variants)
+  return {
+    instagram_caption: buildInstagramTemplate(enData, frData),
+    pinterest_title: enData.title,
+    pinterest_description: buildPinterestTemplate(enData),
+    pinterest_title_v2: enData.title,
+    pinterest_description_v2: buildPinterestTemplate(enData),
+    pinterest_title_v3: enData.title,
+    pinterest_description_v3: buildPinterestTemplate(enData),
+  };
+}
 
-  const frTitle = frData ? frData.title : enData.title;
-  const frDescription = frData ? frData.description : enData.description;
-  const frSlug = frData ? frData.slug : enData.slug;
+function buildInstagramTemplate(enData, frData) {
+  const tags = (enData.tags || []).map(t => `#${t.replace(/\s+/g, '')}`).join(' ');
+  const frTitle = frData ? `\n${frData.title}` : '';
+  return `${enData.title}${frTitle}\n\n${enData.description}\n\nFull recipe on datemydish.com\n\n${tags}`;
+}
 
-  const response = await anthropic.messages.create({
-    model: "claude-haiku-4-5-20251001",
-    max_tokens: 2500,
-    messages: [
-      {
-        role: "user",
-        content: `Generate social media captions for this recipe from Date My Dish, a bilingual (English/French) date night recipe blog.
-
-RECIPE DATA (English):
-- Title: ${enData.title}
-- Description: ${enData.description}
-- Cuisine: ${enData.recipeCuisine}
-- Categories: ${(enData.recipeCategory || []).join(", ")}
-- Keywords: ${(enData.keywords || []).join(", ")}
-- Tags: ${(enData.tags || []).join(", ")}
-- Occasions: ${(enData.occasion || []).join(", ")}
-- Difficulty: ${enData.difficulty}
-- Total Time: ${enData.totalTime}
-- Yield: ${enData.recipeYield}
-- Date Night Tips: ${JSON.stringify(enData.dateNightTips || {})}
-
-RECIPE DATA (French):
-- Title: ${frTitle}
-- Description: ${frDescription}
-
-RECIPE URLs:
-- English: ${SITE_URL}/en/recipes/${enData.slug}/
-- French: ${SITE_URL}/fr/recettes/${frSlug}/
-
-WRITING RULES (follow strictly):
-- Write like a real person, not a marketing bot. Vary sentence length and structure.
-- NEVER use these AI-tell words: elevate, unlock, discover, master, journey, vibrant, nestled, tapestry, testament, showcase, underscore, highlight (as verb), landscape (abstract), pivotal, crucial, fostering, encompassing, delve, interplay, intricate.
-- NEVER use em-dashes (--). Use commas, periods, or semicolons instead.
-- NEVER use the rule of three pattern (listing exactly 3 adjectives or phrases in parallel).
-- NEVER use "Not only X, but Y" or "It's not just X, it's Y" constructions.
-- NEVER use -ing participial phrases tacked onto sentences for fake depth (e.g., "showcasing how...", "ensuring that...", "reflecting the...").
-- NEVER use "serves as", "stands as", or "marks a" when "is" works fine.
-- NEVER start with "Discover", "Unlock", "Master", "Elevate", or "Dive into".
-- Avoid promotional puffery: "game-changing", "next-level", "restaurant-quality" (use sparingly if at all).
-- Be specific and concrete. Say what the food tastes like, not that it's "impressive".
-- Keep it cheeky and confident, like you're texting a friend who loves food.
-- Each variant should sound genuinely different, not the same idea with synonym swaps.
-
-Return a JSON object with exactly these keys:
-
-1. "instagram_caption": A bilingual Instagram caption following this structure:
-   - Engaging hook line in English (1 line)
-   - 1-2 sentence description in English
-   - If date night tips exist, include a wine/music/plating tip
-   - Recipe link (English)
-   - A separator line "---"
-   - French version of the above (hook + description + tip)
-   - Recipe link (French)
-   - A blank line, then 20-30 hashtags mixing: #datemydish, cuisine-specific, food-general, French hashtags
-
-2. "pinterest_title": English only, catchy, max 100 characters (Pin variant 1: straightforward recipe title)
-
-3. "pinterest_description": English only, SEO-friendly, max 500 characters. Mention key ingredients and cooking method naturally. Do NOT include the recipe URL, it's handled separately via the pin link.
-
-4. "pinterest_title_v2": Alternate angle pin title: focus on the occasion or date night vibe. Max 100 characters.
-
-5. "pinterest_description_v2": Alternate angle description: emphasize the occasion, date night tips, or how it makes people feel. Max 500 characters. Do NOT include the recipe URL.
-
-6. "pinterest_title_v3": Seasonal/lifestyle angle: focus on cuisine, difficulty, or time. Max 100 characters.
-
-7. "pinterest_description_v3": Seasonal/lifestyle angle description: emphasize ease, cuisine style, or when to make it. Max 500 characters. Do NOT include the recipe URL.
-
-Return ONLY the JSON object, no markdown fences.`,
-      },
-    ],
-  });
-
-  const text = response.content[0].text.trim();
-  // Handle potential markdown code fences
-  const cleaned = text.replace(/^```json?\n?/, "").replace(/\n?```$/, "");
-  return JSON.parse(cleaned);
+function buildPinterestTemplate(data) {
+  return `${data.description} Get the full recipe at datemydish.com!`;
 }
 
 // ---------------------------------------------------------------------------

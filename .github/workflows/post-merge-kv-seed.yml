@@ -1,0 +1,43 @@
+name: Seed Rating to KV on Recipe Merge
+on:
+  pull_request:
+    types: [closed]
+    paths:
+      - 'src/content/recipes/en/**/*.mdx'
+
+jobs:
+  seed:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Find new recipe slugs and seed ratings
+        run: |
+          # Get the list of added recipe files in this PR
+          ADDED_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'src/content/recipes/en/**/*.mdx' || echo "")
+
+          for file in $ADDED_FILES; do
+            slug=$(basename "$file" .mdx)
+            echo "Seeding rating for: $slug"
+            node scripts/seed-rating-to-kv.mjs "$slug" 4.8 42
+
+            # Also seed French version
+            fr_slug=$(grep 'translationSlug:' "$file" | head -1 | sed 's/.*translationSlug: *"\(.*\)"/\1/' | tr -d '"' | tr -d ' ')
+            if [ -n "$fr_slug" ]; then
+              echo "Seeding FR rating for: $fr_slug"
+              node scripts/seed-rating-to-kv.mjs "$fr_slug" 4.8 42
+            fi
+          done
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_KV_NAMESPACE_ID: ${{ secrets.CF_KV_NAMESPACE_ID }}

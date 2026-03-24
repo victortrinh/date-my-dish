@@ -84,6 +84,10 @@ const recipes = defineCollection({
       dateNightTips: DateNightTipsSchema.optional(),
       video: VideoSchema.optional(),
       summary: z.string().optional(),
+      socialCaption: z.object({
+        instagram: z.string().optional(),
+        pinterest: z.string().optional(),
+      }).optional(),
       faqs: z.array(FAQSchema).min(1),
     });
   },
@@ -107,6 +111,10 @@ const articles = defineCollection({
       articleCategory: ArticleCategorySchema,
       readingTime: z.number().optional(),
       relatedRecipes: z.array(z.string()).optional(),
+      socialCaption: z.object({
+        instagram: z.string().optional(),
+        pinterest: z.string().optional(),
+      }).optional(),
       faqs: z
         .array(z.object({ question: z.string(), answer: z.string() }))
         .min(1),
@@ -164,6 +172,10 @@ const reviews = defineCollection({
       dishHighlights: z.array(DishHighlightSchema).optional(),
       dateTypeFit: z.array(DateTypeFitSchema).optional(),
       relatedRecipes: z.array(z.string()).optional(),
+      socialCaption: z.object({
+        instagram: z.string().optional(),
+        pinterest: z.string().optional(),
+      }).optional(),
       faqs: z
         .array(z.object({ question: z.string(), answer: z.string() }))
         .min(1),
