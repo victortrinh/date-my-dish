@@ -1,5 +1,4 @@
 ---
-import ProductCard from "./ProductCard.astro";
 import { t, type Locale } from "@i18n/utils";
 
 interface Props {
@@ -12,17 +11,42 @@ const { products, locale } = Astro.props;
 
 {products && products.length > 0 && (
   <section class="no-print mt-12 mb-8">
-    <h2 class="mb-6 font-heading text-2xl font-normal text-warm-800 dark:text-warm-100">
-      {t(locale, "affiliate.recommendedProducts")}
-    </h2>
+    <div class="mb-6 flex items-center gap-3">
+      <div class="h-px flex-1 bg-warm-200 dark:bg-warm-700" />
+      <h2 class="shrink-0 font-heading text-xl text-warm-800 dark:text-warm-100">
+        {t(locale, "affiliate.recommendedProducts")}
+      </h2>
+      <div class="h-px flex-1 bg-warm-200 dark:bg-warm-700" />
+    </div>
     <div class="grid gap-4 sm:grid-cols-2">
       {products.map((product) => (
-        <ProductCard
-          name={product.name}
-          url={product.url}
-          description={product.description}
-          locale={locale}
-        />
+        <a
+          href={product.url}
+          target="_blank"
+          rel="sponsored nofollow"
+          class="group flex flex-col rounded-xl border border-warm-200 bg-warm-50 p-5 transition-colors hover:border-warm-300 hover:bg-warm-100 dark:border-warm-700 dark:bg-warm-900 dark:hover:border-warm-600 dark:hover:bg-warm-800"
+        >
+          <p class="font-heading text-base text-warm-800 dark:text-warm-100">
+            {product.name}
+          </p>
+          {product.description && (
+            <p class="mt-1.5 font-body text-body-sm text-warm-500 dark:text-warm-400">
+              {product.description}
+            </p>
+          )}
+          <div class="mt-3 flex items-center gap-1.5 font-ui text-sm font-medium text-brand-wine transition-colors group-hover:text-brand-wine-dark dark:text-brand-wine-dark dark:group-hover:text-brand-rose">
+            {t(locale, "affiliate.viewOnAmazon")}
+            <svg
+              class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+            </svg>
+          </div>
+        </a>
       ))}
     </div>
   </section>
