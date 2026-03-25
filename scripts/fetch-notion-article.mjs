@@ -34,6 +34,60 @@ const DATABASE_PAGE_ID = "9ce95183503543d68450194d1010824b";
 const PENDING_FILE = "notion/pending-article.json";
 
 // ---------------------------------------------------------------------------
+// Affiliate product extraction
+// ---------------------------------------------------------------------------
+
+/**
+ * Extracts Amazon affiliate products from structured content blocks.
+ *
+ * After blockToStructured + groupListItems, links appear as Markdown inline
+ * syntax within the `text` field (paragraphs, headings, quotes, toggles) or
+ * within the `items` array (lists). Format: [link text](url)
+ *
+ * @param {Array<{type: string, text?: string, items?: string[]}>} blocks
+ * @returns {Array<{name: string, url: string}>}
+ */
+function extractAffiliateProducts(blocks) {
+  const amazonPattern =
+    /\[([^\]]+)\]\((https?:\/\/(?:[a-z0-9-]+\.)?(?:amzn\.to|amazon\.)[^\s)]+)\)/gi;
+  const products = [];
+
+  for (const block of blocks) {
+    const candidates = [];
+
+    if (typeof block.text === "string") {
+      candidates.push(block.text);
+    }
+
+    if (Array.isArray(block.items)) {
+      for (const item of block.items) {
+        if (typeof item === "string") {
+          candidates.push(item);
+        }
+      }
+    }
+
+    for (const text of candidates) {
+      let match;
+      amazonPattern.lastIndex = 0;
+      while ((match = amazonPattern.exec(text)) !== null) {
+        products.push({ name: match[1].trim(), url: match[2] });
+      }
+    }
+  }
+
+  if (products.length === 0) {
+    console.log(
+      "  [WARN] No Amazon affiliate links found in article blocks."
+    );
+  } else {
+    console.log(`  ${products.length} affiliate product(s) extracted.`);
+  }
+
+  return products;
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 async function main() {
@@ -143,14 +197,15 @@ async function main() {
 
   console.log(`  Parsed ${rows.length} valid rows\n`);
 
-  // Step 4: Filter for Ready to Publish + Informative Posts
+  // Step 4: Filter for Ready to Publish + article post types
   console.log("Step 4: Filtering articles...");
+  const ARTICLE_POST_TYPES = ["Informative Posts", "Affiliate Links"];
   const readyArticles = rows.filter(
     (r) =>
-      r.status === "Ready to Publish" && r.postType === "Informative Posts"
+      r.status === "Ready to Publish" && ARTICLE_POST_TYPES.includes(r.postType)
   );
   console.log(
-    `  ${readyArticles.length} articles with "Ready to Publish" + "Informative Posts"\n`
+    `  ${readyArticles.length} articles with "Ready to Publish" + article post types\n`
   );
 
   // Step 5: Cross-reference published.json
@@ -282,6 +337,7 @@ async function main() {
     fetchedAt: new Date().toISOString(),
     notionPageId: selected.pageId,
     title: selected.title,
+    postType: selected.postType,
     mode,
     existingSlug,
     recipeNum: selected.recipeNum,
@@ -291,6 +347,11 @@ async function main() {
     blocks,
     faqs,
   };
+
+  // Extract affiliate products if this is an affiliate article
+  if (selected.postType === "Affiliate Links") {
+    pendingJson.products = extractAffiliateProducts(blocks);
+  }
 
   writeFileSync(PENDING_FILE, JSON.stringify(pendingJson, null, 2) + "\n");
 
