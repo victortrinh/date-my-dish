@@ -27,7 +27,7 @@ affiliateProducts: z.array(z.object({
 
 - `isAffiliate`: When `true`, renders FTC disclosure banner and enables the recommended products section.
 - `affiliateProducts`: Array of products displayed in both inline `<ProductCard>` components and the bottom "Recommended Products" section.
-- **No product images in initial scope.** Product cards render as text + CTA button only. Product images can be added later by extending the schema with an `image: image()` field and placing photos in `src/assets/images/articles/`. Amazon product images cannot legally be hotlinked.
+- **Product images**: If the Notion article contains images (uploaded product photos, screenshots, etc.), the fetch script downloads them and the publish task includes them in the MDX body using the standard `<Picture>` component pattern. These are author-provided images from Notion, not hotlinked Amazon images. The `affiliateProducts` frontmatter array does not include images; images stay inline in the MDX body where the author placed them.
 - **Article category**: Affiliate articles use `articleCategory: "guides"` since they are product recommendation guides.
 
 ## New Components
@@ -134,6 +134,14 @@ Update to handle affiliate articles:
 5. Add the affiliate disclosure callout in the prose.
 6. Adjust prose generation to use helpful product guidance tone rather than pure technique/education.
 
+### Content Preservation Rule
+
+**The publish pipeline must never remove content from the Notion source.** All text, headings, lists, callouts, images, and links from the Notion article body must be preserved in the generated MDX. The pipeline may:
+
+- **Modify**: Reword for brand voice, add `rel` attributes to links, wrap products in `<ProductCard>` components, adjust heading levels
+- **Add**: Affiliate disclosure, `<Picture>` component imports, frontmatter fields, i18n translations
+- **Never remove**: Prose paragraphs, product descriptions, tips, callouts, images, or any author-written content from Notion
+
 ## i18n
 
 New translation keys in `src/i18n/en.json` and `src/i18n/fr.json`:
@@ -154,10 +162,9 @@ New translation keys in `src/i18n/en.json` and `src/i18n/fr.json`:
 
 - Amazon Product Advertising API integration (can layer on later if sales volume justifies it)
 - Live pricing display
-- Product image auto-fetching from Amazon
+- Product image auto-fetching from Amazon (author-uploaded Notion images ARE included)
 - Dedicated `/affiliate/` routes (affiliate articles live under `/articles/`)
 - Product comparison tables or ratings systems
-- Product images (can be added later by extending schema with `image: image()`)
 - Affiliate link expiration monitoring
 
 ## Notion Content Structure (Reference)
