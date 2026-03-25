@@ -11,7 +11,7 @@ interface Props {
 const { name, url, description, locale } = Astro.props;
 ---
 
-<aside class="no-print my-8 rounded-xl border border-warm-200 bg-warm-50 px-6 pt-5 pb-6 text-center dark:border-warm-700 dark:bg-warm-900">
+<aside class="no-print my-8 rounded-xl border border-warm-200 bg-warm-50 px-6 pt-0 pb-8 text-center dark:border-warm-700 dark:bg-warm-900">
   <h3 class="font-heading text-2xl text-warm-800 dark:text-warm-100">
     {name}
   </h3>
@@ -25,7 +25,7 @@ const { name, url, description, locale } = Astro.props;
       href={url}
       target="_blank"
       rel="sponsored nofollow"
-      class="inline-flex items-center gap-2 rounded-full border border-brand-wine bg-brand-wine px-6 py-3 font-ui text-sm font-medium text-white transition-colors hover:bg-brand-wine/90 dark:border-brand-rose dark:bg-brand-rose/20 dark:text-brand-rose dark:hover:bg-brand-rose/30"
+      class="btn btn-outline rounded-full"
     >
       {t(locale, "affiliate.viewOnAmazon")}
       <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
