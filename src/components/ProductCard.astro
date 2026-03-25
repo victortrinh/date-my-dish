@@ -11,36 +11,26 @@ interface Props {
 const { name, url, description, locale } = Astro.props;
 ---
 
-<aside class="no-print my-8 overflow-hidden rounded-xl border border-warm-200 bg-warm-50 dark:border-warm-700 dark:bg-warm-900">
-  <div class="px-5 py-4 sm:px-6">
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-      <div class="min-w-0 flex-1">
-        <p class="font-heading text-lg text-warm-800 dark:text-warm-100">
-          {name}
-        </p>
-        {description && (
-          <p class="mt-1.5 font-body text-body-sm text-warm-500 dark:text-warm-400">
-            {description}
-          </p>
-        )}
-      </div>
-      <a
-        href={url}
-        target="_blank"
-        rel="sponsored nofollow"
-        class="group mt-1 inline-flex shrink-0 items-center gap-1.5 font-ui text-sm font-medium text-brand-wine transition-colors hover:text-brand-wine-dark dark:text-brand-wine-dark dark:hover:text-brand-rose sm:mt-1"
-      >
-        {t(locale, "affiliate.viewOnAmazon")}
-        <svg
-          class="h-4 w-4 transition-transform group-hover:translate-x-0.5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          viewBox="0 0 24 24"
-        >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-        </svg>
-      </a>
-    </div>
+<aside class="no-print my-8 rounded-xl border border-warm-200 bg-warm-50 px-6 py-8 text-center dark:border-warm-700 dark:bg-warm-900">
+  <h3 class="font-heading text-2xl text-warm-800 dark:text-warm-100">
+    {name}
+  </h3>
+  {description && (
+    <p class="mx-auto mt-3 max-w-lg font-body text-base text-warm-500 dark:text-warm-400">
+      {description}
+    </p>
+  )}
+  <div class="mt-6">
+    <a
+      href={url}
+      target="_blank"
+      rel="sponsored nofollow"
+      class="inline-flex items-center gap-2 rounded-full border border-brand-wine bg-brand-wine px-6 py-3 font-ui text-sm font-medium text-white transition-colors hover:bg-brand-wine/90 dark:border-brand-rose dark:bg-brand-rose/20 dark:text-brand-rose dark:hover:bg-brand-rose/30"
+    >
+      {t(locale, "affiliate.viewOnAmazon")}
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+      </svg>
+    </a>
   </div>
 </aside>
