@@ -333,5 +333,10 @@
     "empty": "No saved recipes yet. Browse recipes and tap the bookmark icon to save your favorites.",
     "pageTitle": "My Saved Recipes",
     "removedFromSaved": "Removed from saved"
+  },
+  "affiliate": {
+    "disclosure": "As an Amazon Associate I earn from qualifying purchases. Product links on this page are affiliate links.",
+    "viewOnAmazon": "View on Amazon",
+    "recommendedProducts": "Recommended Products"
   }
 }

@@ -6,6 +6,8 @@ import ArticleSchema from "@components/ArticleSchema.astro";
 import AuthorBioCard from "@components/AuthorBioCard.astro";
 import FAQSection from "@components/FAQSection.astro";
 import ArticleRelatedRecipes from "@components/ArticleRelatedRecipes.astro";
+import AffiliateDisclosure from "@components/AffiliateDisclosure.astro";
+import RecommendedProducts from "@components/RecommendedProducts.astro";
 import ShareButton from "@components/ShareButton.astro";
 import NewsletterSignup from "@components/NewsletterSignup.astro";
 import SocialShareButtons from "@components/SocialShareButtons.astro";
@@ -156,6 +158,9 @@ const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
 
     <!-- Content zone: prose width -->
     <div class="mx-auto max-w-prose">
+      {data.isAffiliate && (
+        <AffiliateDisclosure locale={locale} />
+      )}
       <!-- Blog Prose -->
       <div class="prose mb-12 max-w-none">
         <Content />
@@ -164,6 +169,11 @@ const formattedDate = data.publishDate.toLocaleDateString("fr-CA", {
       <!-- Related Recipes -->
       {data.relatedRecipes && data.relatedRecipes.length > 0 && (
         <ArticleRelatedRecipes locale={locale} recipeSlugs={data.relatedRecipes} />
+      )}
+
+      <!-- Recommended Products (affiliate) -->
+      {data.isAffiliate && data.affiliateProducts && data.affiliateProducts.length > 0 && (
+        <RecommendedProducts products={data.affiliateProducts} locale={locale} />
       )}
 
       <!-- Author Bio -->

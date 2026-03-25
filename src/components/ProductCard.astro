@@ -1,0 +1,36 @@
+---
+import { t, type Locale } from "@i18n/utils";
+
+interface Props {
+  name: string;
+  url: string;
+  description?: string;
+  locale: Locale;
+}
+
+const { name, url, description, locale } = Astro.props;
+---
+
+<aside class="no-print my-8 rounded-xl border border-warm-200 bg-warm-50 px-6 pt-0 pb-8 text-center dark:border-warm-700 dark:bg-warm-900">
+  <h3 class="font-heading text-2xl text-warm-800 dark:text-warm-100">
+    {name}
+  </h3>
+  {description && (
+    <p class="mx-auto mt-3 max-w-lg font-body text-base text-warm-500 dark:text-warm-400">
+      {description}
+    </p>
+  )}
+  <div class="mt-6">
+    <a
+      href={url}
+      target="_blank"
+      rel="sponsored nofollow"
+      class="btn btn-primary rounded-full !text-white !no-underline"
+    >
+      {t(locale, "affiliate.viewOnAmazon")}
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+      </svg>
+    </a>
+  </div>
+</aside>
