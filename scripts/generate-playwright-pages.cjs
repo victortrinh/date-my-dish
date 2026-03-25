@@ -42,7 +42,7 @@ const SAMPLE_PAGES = [
   '/en/recipes/cacio-e-pepe/',
   '/fr/recettes/cacio-e-pepe/',
   '/en/articles/cooking-oils-guide/',
-  '/fr/articles/cooking-oils-guide/',
+  '/fr/articles/guide-huiles-de-cuisson/',
   '/en/recipes/cuisine/italian/',
   '/fr/recettes/cuisine/italien/',
   '/en/about/',
