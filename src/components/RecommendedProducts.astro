@@ -1,0 +1,29 @@
+---
+import ProductCard from "./ProductCard.astro";
+import { t, type Locale } from "@i18n/utils";
+
+interface Props {
+  products: { name: string; url: string; description?: string }[];
+  locale: Locale;
+}
+
+const { products, locale } = Astro.props;
+---
+
+{products && products.length > 0 && (
+  <section class="no-print mt-12 mb-8">
+    <h2 class="mb-6 font-heading text-2xl font-normal text-warm-800 dark:text-warm-100">
+      {t(locale, "affiliate.recommendedProducts")}
+    </h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {products.map((product) => (
+        <ProductCard
+          name={product.name}
+          url={product.url}
+          description={product.description}
+          locale={locale}
+        />
+      ))}
+    </div>
+  </section>
+)}
