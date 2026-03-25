@@ -22,12 +22,13 @@ affiliateProducts: z.array(z.object({
   name: z.string(),
   url: z.string().url(),
   description: z.string().optional(),
-  image: image().optional(),
 })).optional(),
 ```
 
 - `isAffiliate`: When `true`, renders FTC disclosure banner and enables the recommended products section.
 - `affiliateProducts`: Array of products displayed in both inline `<ProductCard>` components and the bottom "Recommended Products" section.
+- **No product images in initial scope.** Product cards render as text + CTA button only. Product images can be added later by extending the schema with an `image: image()` field and placing photos in `src/assets/images/articles/`. Amazon product images cannot legally be hotlinked.
+- **Article category**: Affiliate articles use `articleCategory: "guides"` since they are product recommendation guides.
 
 ## New Components
 
@@ -39,15 +40,15 @@ Inline product recommendation card used within MDX body.
 - `name: string` (required)
 - `url: string` (required, Amazon affiliate URL)
 - `description?: string`
-- `image?: ImageMetadata` (Astro image import)
 - `locale: Locale`
 
 **Behavior:**
-- Renders product name, optional description, optional image via `<Picture>`, and a "View on Amazon" CTA button
+- Renders product name, optional description, and a "View on Amazon" CTA button
 - All Amazon links get `rel="sponsored nofollow"` and `target="_blank"`
-- Schema.org `Product` microdata on the card
+- Semantic markup only (no Schema.org `Product` type, which requires `offers` or `review` for rich results). Uses a simple `<aside>` with appropriate ARIA.
 - Light/dark mode styling matching the site's editorial look
 - Not "ad-like"; blends with article prose
+- Gets `no-print` class (product links are not useful in print)
 
 ### 2. `AffiliateDisclosure.astro`
 
@@ -67,7 +68,7 @@ FTC-required disclosure banner.
 Bottom-of-article product summary grid.
 
 **Props:**
-- `products: AffiliateProduct[]` (from frontmatter)
+- `products: { name: string; url: string; description?: string }[]` (from frontmatter)
 - `locale: Locale`
 
 **Behavior:**
@@ -75,6 +76,7 @@ Bottom-of-article product summary grid.
 - Grid of `ProductCard` components from the `affiliateProducts` frontmatter
 - Only renders when `affiliateProducts` array is non-empty
 - Acts as a quick-reference for readers who skip the article prose
+- Gets `no-print` class
 
 ## Article Page Template Changes
 
@@ -82,12 +84,21 @@ In `src/pages/en/articles/[...slug].astro` and `src/pages/fr/articles/[...slug].
 
 ```
 if (article.data.isAffiliate) {
-  - Render <AffiliateDisclosure> after the hero section
-  - Render <RecommendedProducts> before the FAQ section
+  - Render <AffiliateDisclosure> inside the max-w-prose content zone, immediately before <Content />
+  - Render <RecommendedProducts> after Related Recipes, before Author Bio
 }
 ```
 
 No changes to existing components. Conditional rendering only.
+
+### Inline Amazon Link Handling
+
+Affiliate articles contain Amazon links directly in the MDX prose body (from Notion content). These inline links also need `rel="sponsored nofollow"`. Two options:
+
+- **Option A (recommended)**: The `daily-content-publish` task wraps all Amazon links in the generated MDX with explicit `rel` and `target` attributes during generation.
+- **Option B**: A custom rehype plugin that detects `amzn.to` or `amazon.` domains and automatically adds the attributes at build time.
+
+Option A is simpler and avoids adding build-time plugins.
 
 ## Fetch Pipeline Changes
 
@@ -95,7 +106,7 @@ No changes to existing components. Conditional rendering only.
 
 1. **Expand the filter** to also match rows where `Post Type === "Affiliate Links"` (currently only fetches "Informative Posts").
 2. **Add a `postType` field** to the pending JSON output so downstream tasks know the article type.
-3. **Extract product data** from the article body: detect the Notion pattern of H4 heading + prose + Amazon link, and structure each product into a `products` array in the pending JSON:
+3. **Extract product data** from the article body: detect the Notion pattern of H4 heading + prose + Amazon link, and structure each product into a `products` array in the pending JSON. If pattern matching fails for some products, still publish the article with whatever products were successfully extracted and log a warning:
    ```json
    {
      "postType": "Affiliate Links",
@@ -133,8 +144,8 @@ New translation keys in `src/i18n/en.json` and `src/i18n/fr.json`:
 
 ## SEO & Compliance
 
-- **Schema.org**: Each `ProductCard` gets `Product` structured data (name, description, url). No price markup.
-- **Link attributes**: All Amazon affiliate links get `rel="sponsored nofollow"` per Google guidelines.
+- **No Schema.org Product markup**: Bare `Product` type without `offers`/`review` triggers Search Console warnings. Product cards use semantic HTML only. The article itself retains `BlogPosting` + `FAQPage` JSON-LD.
+- **Link attributes**: All Amazon affiliate links (both in `ProductCard` components and inline MDX prose) get `rel="sponsored nofollow"` per Google guidelines.
 - **FTC disclosure**: Visible on every affiliate article per FTC requirements. EN and FR versions.
 - **Hreflang**: Works automatically via existing `translationSlug` system.
 - **No duplicate content**: Product descriptions are written by the author in Notion, not sourced from Amazon.
@@ -146,6 +157,8 @@ New translation keys in `src/i18n/en.json` and `src/i18n/fr.json`:
 - Product image auto-fetching from Amazon
 - Dedicated `/affiliate/` routes (affiliate articles live under `/articles/`)
 - Product comparison tables or ratings systems
+- Product images (can be added later by extending schema with `image: image()`)
+- Affiliate link expiration monitoring
 
 ## Notion Content Structure (Reference)
 
