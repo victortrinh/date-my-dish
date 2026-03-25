@@ -111,6 +111,16 @@ const articles = defineCollection({
       articleCategory: ArticleCategorySchema,
       readingTime: z.number().optional(),
       relatedRecipes: z.array(z.string()).optional(),
+      isAffiliate: z.boolean().optional().default(false),
+      affiliateProducts: z
+        .array(
+          z.object({
+            name: z.string(),
+            url: z.string().url(),
+            description: z.string().optional(),
+          })
+        )
+        .optional(),
       socialCaption: z.object({
         instagram: z.string().optional(),
         pinterest: z.string().optional(),
