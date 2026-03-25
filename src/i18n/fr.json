@@ -333,5 +333,10 @@
     "empty": "Aucune recette sauvegardée. Parcourez les recettes et appuyez sur l'icône de signet pour sauvegarder vos favorites.",
     "pageTitle": "Mes recettes sauvegardées",
     "removedFromSaved": "Retiré des favoris"
+  },
+  "affiliate": {
+    "disclosure": "En tant que partenaire Amazon, je touche une commission sur les achats admissibles. Les liens de produits sur cette page sont des liens affiliés.",
+    "viewOnAmazon": "Voir sur Amazon",
+    "recommendedProducts": "Produits recommandés"
   }
 }
