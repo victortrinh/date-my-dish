@@ -42,8 +42,23 @@ faqs:
 ---
 
 import ProductCard from "../../../components/ProductCard.astro";
+import { Picture } from "astro:assets";
+import imgKitchenTools from "../../../assets/images/articles/cooking-essentials-starter-kit.webp";
+import imgChefsKnife from "../../../assets/images/articles/cooking-essentials-chefs-knife.webp";
+import imgStainlessSkillet from "../../../assets/images/articles/cooking-essentials-stainless-skillet.webp";
+import imgThermometer from "../../../assets/images/articles/cooking-essentials-thermometer.webp";
 
 Tout le monde commence quelque part. Peut-être que vous venez d'emménager dans votre premier appart, ou peut-être que vous survivez au take-out et au micro-ondes depuis dix ans et que vous avez enfin décidé de changer ça. Dans les deux cas, bienvenue. Vous allez découvrir que cuisiner à la maison, c'est moins une question de talent et plus une question d'avoir les bons outils à portée de main.
+
+<Picture
+  src={imgKitchenTools}
+  alt="Outils de cuisine professionnels et casseroles en cuivre suspendus dans une cuisine chaleureuse"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
 L'internet va essayer de vous vendre un kit de 47 morceaux pour 89 $. Ne tombez pas dans le panneau. La plupart de ces pièces finissent au fond d'un tiroir, coincées entre un presse-ail utilisé une fois et un vide-pomme oublié depuis belle lurette. Ce qu'il vous faut, c'est une collection serrée et réfléchie d'outils qui travaillent pour vrai.
 
@@ -61,6 +76,16 @@ Si vous n'achetez rien d'autre, achetez ces trois-là. Ils couvrent environ 80 %
 
 ### Le couteau
 
+<Picture
+  src={imgChefsKnife}
+  alt="Gros plan d'un couteau de chef bien aiguisé sur une planche à découper en bois avec des fines herbes fraîchement hachées"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
 Un couteau de chef est l'outil le plus important dans n'importe quelle cuisine. Pas un ensemble de couteaux (c'est surtout du remplissage), pas un couteau d'office (utile mais secondaire), pas un santoku (correct, mais moins polyvalent pour les débutants). Un couteau de chef de 8 pouces hache l'ail, tranche les oignons, découpe un poulet et cisèle les fines herbes. Un seul couteau, des tâches sans fin.
 
 Le Victorinox Fibrox, c'est le couteau que les écoles culinaires donnent aux étudiants de première année. Il prend et garde son fil, le manche est confortable pour des heures de préparation, et il coûte moins cher qu'un bon souper au restaurant. Il n'y a sincèrement aucune raison de dépenser 200 $ sur un couteau de débutant quand celui-ci existe.
@@ -77,6 +102,16 @@ La planche OXO Good Grips coche toutes les cases. Des pattes antidérapantes, un
 
 ### La poêle
 
+<Picture
+  src={imgStainlessSkillet}
+  alt="Poêle en inox sur une cuisinière à gaz avec des légumes saisis et un beau fond doré"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
 Les poêles antiadhésives ont leur place (oeufs, crêpes, poisson délicat), mais l'inox, c'est là que la vraie cuisine se passe. Ce beau fond de poêle, les morceaux dorés collés au fond après avoir saisi un steak, c'est la base de toute grande sauce. L'antiadhésif ne peut pas vous donner ça.
 
 La Tramontina Tri-Ply est un cheval de bataille de l'industrie de la restauration. Distribution uniforme de la chaleur, compatible au four jusqu'à 500F, et elle coûte une fraction du All-Clad qui fait la même job. Assaisonnez-la correctement, apprenez à la préchauffer, et cette poêle va durer plus longtemps que toutes les antiadhésives que vous achèterez.
@@ -88,6 +123,16 @@ La Tramontina Tri-Ply est un cheval de bataille de l'industrie de la restauratio
 Ces deux outils séparent le "je pense que c'est cuit" du "je sais que c'est cuit." L'un élimine les devinettes sur les températures internes. L'autre élimine les devinettes sur les quantités.
 
 ### Le thermomètre
+
+<Picture
+  src={imgThermometer}
+  alt="Cuisinier vérifiant la température d'une viande grillée avec un thermomètre numérique à lecture instantanée"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
 Un thermomètre à lecture instantanée, c'est le chemin le plus rapide vers la confiance en cuisine. Plus besoin de couper un blanc de poulet pour vérifier la cuisson. Plus de côtelettes de porc soit crues au milieu, soit sèches comme du carton. Vous plantez la sonde, vous lisez le chiffre, et vous savez exactement où vous en êtes.
 
