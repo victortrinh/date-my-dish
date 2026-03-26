@@ -10,6 +10,7 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   fetch:
@@ -30,14 +31,24 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
 
-      - name: Commit pending file if created
+      - name: Create PR with pending file
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           if [ -f notion/pending-recipe.json ]; then
+            BRANCH="notion/pending-recipe-$(date +%Y%m%d)"
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
+            git checkout -b "$BRANCH"
             git add notion/pending-recipe.json notion/published.json "src/assets/images/recipes/**"
             git commit -m "chore: fetch pending recipe from Notion" || echo "No changes to commit"
-            git push
+            git push -u origin "$BRANCH"
+            gh pr create \
+              --title "chore: fetch pending recipe from Notion" \
+              --body "Automated: fetched pending recipe data and images from Notion." \
+              --base main \
+              --head "$BRANCH"
           else
             echo "No recipe ready to publish"
           fi
