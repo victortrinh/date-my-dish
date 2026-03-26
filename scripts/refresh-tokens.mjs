@@ -42,12 +42,17 @@ async function refreshInstagram() {
   const expiresIn = data.expires_in;
   console.log(`Instagram token refreshed. Expires in ${Math.round(expiresIn / 86400)} days.`);
 
-  // Update GitHub Secret
-  execSync(`echo "${newToken}" | gh secret set INSTAGRAM_ACCESS_TOKEN`, {
-    stdio: "inherit",
-    env: { ...process.env, GH_TOKEN },
-  });
-  console.log("GitHub Secret INSTAGRAM_ACCESS_TOKEN updated.");
+  // Update GitHub Secret via stdin (avoids leaking token in command args/logs)
+  try {
+    execSync("gh secret set INSTAGRAM_ACCESS_TOKEN", {
+      input: newToken,
+      stdio: ["pipe", "inherit", "pipe"],
+      env: { ...process.env, GH_TOKEN },
+    });
+    console.log("GitHub Secret INSTAGRAM_ACCESS_TOKEN updated.");
+  } catch {
+    throw new Error("Failed to update INSTAGRAM_ACCESS_TOKEN secret. Ensure PAT_TOKEN has the 'repo' scope.");
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -91,16 +96,22 @@ async function refreshPinterest() {
     `Pinterest tokens refreshed. Access expires in ${Math.round(data.expires_in / 86400)} days.`
   );
 
-  // Update both secrets — Pinterest rotates both tokens on refresh
-  execSync(`echo "${newAccessToken}" | gh secret set PINTEREST_ACCESS_TOKEN`, {
-    stdio: "inherit",
-    env: { ...process.env, GH_TOKEN },
-  });
-  execSync(`echo "${newRefreshToken}" | gh secret set PINTEREST_REFRESH_TOKEN`, {
-    stdio: "inherit",
-    env: { ...process.env, GH_TOKEN },
-  });
-  console.log("GitHub Secrets PINTEREST_ACCESS_TOKEN and PINTEREST_REFRESH_TOKEN updated.");
+  // Update both secrets via stdin (avoids leaking tokens in command args/logs)
+  try {
+    execSync("gh secret set PINTEREST_ACCESS_TOKEN", {
+      input: newAccessToken,
+      stdio: ["pipe", "inherit", "pipe"],
+      env: { ...process.env, GH_TOKEN },
+    });
+    execSync("gh secret set PINTEREST_REFRESH_TOKEN", {
+      input: newRefreshToken,
+      stdio: ["pipe", "inherit", "pipe"],
+      env: { ...process.env, GH_TOKEN },
+    });
+    console.log("GitHub Secrets PINTEREST_ACCESS_TOKEN and PINTEREST_REFRESH_TOKEN updated.");
+  } catch {
+    throw new Error("Failed to update Pinterest secrets. Ensure PAT_TOKEN has the 'repo' scope.");
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -131,28 +142,34 @@ async function main() {
 }
 
 function createFailureIssue(platform, error) {
+  // Sanitize error message to avoid leaking tokens in GitHub issues
+  const safeMessage = error.message
+    .replace(/pina_[A-Za-z0-9]+/g, "[REDACTED]")
+    .replace(/IGQV[A-Za-z0-9_-]+/g, "[REDACTED]");
+
   const title = `Token refresh failed: ${platform}`;
   const body = [
-    `## Token Refresh Failure`,
-    ``,
-    `| Field | Value |`,
-    `|-------|-------|`,
+    "## Token Refresh Failure",
+    "",
+    "| Field | Value |",
+    "|-------|-------|",
     `| **Platform** | ${platform} |`,
-    `| **Error** | ${error.message} |`,
+    `| **Error** | ${safeMessage} |`,
     `| **Timestamp** | ${new Date().toISOString()} |`,
-    ``,
-    `### Recovery`,
-    `Manually generate a new token following the setup guide:`,
-    `\`docs/guides/social-media-api-setup.md\``,
+    "",
+    "### Recovery",
+    "Manually generate a new token following the setup guide:",
+    "`docs/guides/social-media-api-setup.md`",
   ].join("\n");
 
   try {
-    execSync(
-      `gh issue create --title "${title}" --body "${body.replace(/"/g, '\\"')}" --label "social-media-failure"`,
-      { stdio: "inherit", env: { ...process.env, GH_TOKEN } }
-    );
-  } catch (issueErr) {
-    console.error("Failed to create GitHub issue:", issueErr.message);
+    execSync("gh issue create --title " + JSON.stringify(title) + " --body -", {
+      input: body,
+      stdio: ["pipe", "inherit", "pipe"],
+      env: { ...process.env, GH_TOKEN },
+    });
+  } catch {
+    console.error("Failed to create GitHub issue (check PAT_TOKEN permissions).");
   }
 }
 
