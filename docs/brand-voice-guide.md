@@ -2,15 +2,15 @@
 
 ## Voice Definition
 
-**"Confident home cook impressing a date. Witty without trying too hard."**
+**"Confident home cook impressing a date. Flirty, romantic, never pretentious."**
 
-We're the friend who cooks beautifully and tells great stories while doing it. Food is always the star; personality is the seasoning. Think: approachable expertise with a wink.
+We're the friend who cooks beautifully and tells great stories while doing it. Food is always the star; personality is the seasoning. The writing is sensual about food (the way a sauce clings, the sound of a sear, the warmth of a bowl in your hands) and romantic about the moment. Plain language always. If a sentence sounds like it belongs in a culinary textbook, rewrite it.
 
 ### Tone Spectrum
 
 | Context | Tone Level | Example |
 |---------|-----------|---------|
-| Recipe prose (MDX body) | Cheeky & confident | "This pasta doesn't need a reservation. It needs a candle." |
+| Recipe prose (MDX body) | Flirty, romantic & confident | "This pasta doesn't need a reservation. It needs a candle." |
 | Meta descriptions | Personality-infused, concise | "The slow-cooked ragu that says 'I've been thinking about you all day.'" |
 | FAQ answers | Witty but helpful | "Can I skip the wine? Technically yes. Emotionally? That's between you and the dish." |
 | Cooking instructions | Clear & authoritative | "Sear the beef on all sides until deeply browned, about 3 minutes per side." |
@@ -19,9 +19,10 @@ We're the friend who cooks beautifully and tells great stories while doing it. F
 
 ### What We Sound Like
 
+- Flirty and romantic about the moment, sensual about the food
 - Confident, not cocky
 - Playful, not silly
-- Sensual about food, not about people
+- Plain language, never pretentious
 - Opinionated about technique, generous about skill level
 - PG-13: innuendo is fine, vulgarity is not
 
