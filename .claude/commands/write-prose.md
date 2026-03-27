@@ -26,12 +26,13 @@ Generate SEO blog prose (MDX body) for an English recipe that has completed fron
    - Identify hero image (`{slug}.jpg` or similar) and step/process images
    - These will be imported and placed as `<Picture>` components in the prose
 
-5. **Analyze existing recipe prose for patterns:**
-   - Read 2-3 existing recipes' MDX bodies (e.g., `cacio-e-pepe.mdx`, `quinoa-crusted-salmon.mdx`) to match:
+5. **Read the brand voice guide and study existing recipes:**
+   - Read `docs/brand-voice-guide.md` for tone calibration (cheeky & confident, not generic)
+   - Read 2-3 existing recipes' MDX bodies (e.g., `cacio-e-pepe.mdx`, `penne-alla-vodka.mdx`) to match:
      - H2 section structure (typically 5-8 sections)
-     - Tone and voice (authoritative, technique-focused, warm)
-     - Cross-link placement patterns
-     - `<Picture>` component placement within sections
+     - Tone and voice: confident, opinionated, first-person where natural ("This is my go-to", "I won't budge on")
+     - Cross-link placement patterns (final 1-2 sections)
+     - `<Picture>` component placement within sections (5-7 images distributed across sections)
 
 6. **Select internal cross-links:**
    - List all EN recipe slugs and their `recipeCategory` values
@@ -91,9 +92,17 @@ Generate SEO blog prose (MDX body) for an English recipe that has completed fron
    - Naturally weave in keywords from the frontmatter `keywords` array (no keyword stuffing)
    - Reference ingredients and techniques from the frontmatter but do NOT repeat instruction steps verbatim
    - Place `<Picture>` components at contextually relevant spots (e.g., image of sauce-making near the sauce section)
+   - Use ALL available images (5-7 per recipe), not just 3-4
    - Cross-links should read naturally in context, not feel forced
-   - Write in second person or third person, not first person ("you" not "I")
-   - Use the authoritative, technique-focused tone of existing recipes
+   - First person is fine and encouraged where natural ("This is my go-to", "I won't budge on"). Mix with second person ("you") for variety
+   - Match the cheeky & confident tone from `docs/brand-voice-guide.md` and existing recipes
+   - Variations/substitutions should be written as flowing prose paragraphs, NOT bold-label lists
+
+   **If a Notion pending file exists (`notion/pending-recipe.json`):**
+   - Read the `blocks` array for the author's original voice, stories, and tips
+   - Incorporate the Notion content's personality, anecdotes, and specific advice into the prose
+   - Use the Notion text as the foundation, then expand and structure it for SEO
+   - Do NOT discard the Notion content and write from scratch
 
 8. **Write the prose:**
    - Write ONLY the MDX body (everything after the closing `---` of frontmatter)
