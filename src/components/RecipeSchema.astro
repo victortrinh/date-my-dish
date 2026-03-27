@@ -105,7 +105,13 @@ const instructionSections = instructionGroups.map((group) => {
     "@type": "HowToStep" as const,
     text: step.text,
     position: i + 1,
-    ...(step.image ? { image: step.image.src.startsWith("http") ? step.image.src : `${SITE_URL}${step.image.src}` } : {}),
+    ...(() => {
+      const imgs = [
+        ...(step.image ? [step.image] : []),
+        ...(step.images || []),
+      ].map((img) => img.src.startsWith("http") ? img.src : `${SITE_URL}${img.src}`);
+      return imgs.length > 0 ? { image: imgs.length === 1 ? imgs[0] : imgs } : {};
+    })(),
   }));
 
   if (group.group) {
