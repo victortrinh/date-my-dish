@@ -112,6 +112,14 @@
       "publishedDate": "2026-03-23",
       "lastSyncedDate": "2026-03-23",
       "status": "published"
+    },
+    "61": {
+      "notionTitle": "Miso Udon Carbonara (Silky, No-Cream, Bacon + Egg Yolk)",
+      "slug": "miso-udon-carbonara",
+      "type": "recipe",
+      "publishedDate": "2026-03-27",
+      "lastSyncedDate": "2026-03-27",
+      "status": "published"
     }
   }
 }
