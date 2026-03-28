@@ -54,23 +54,19 @@ instructionGroups:
   - group: ""
     steps:
       - text: "Add bacon to a cold pan and set over medium heat. Cook until crisp and a good amount of fat has rendered, about 8 minutes."
-        images:
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-2.jpg
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-3.jpg
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-2.jpg
       - text: "Lower the heat. Stir in minced garlic for 20-30 seconds until fragrant but not browned. Scoop the garlic out with a spoon, leaving the bacon fat in the pan. Turn the heat off."
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-3.jpg
       - text: "In a bowl, whisk together egg yolks, grated cheese, miso, and black pepper. Add 1-2 tbsp of hot udon water and whisk until smooth. Set aside."
-        images:
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-4.jpg
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-5.jpg
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-5.jpg
       - text: "Boil udon just until loosened, about 60-90 seconds for frozen. Reserve at least 1/2 cup (120 ml) of the starchy cooking water, then drain."
       - text: "Let the pan sit off heat for 30-60 seconds. This is the step that separates silky carbonara from scrambled egg bits."
       - text: "Add drained udon to the pan and toss to coat evenly in the bacon fat."
         image: ../../../assets/images/recipes/miso-udon-carbonara-step-6.jpg
       - text: "Pour in the yolk-cheese mixture and toss vigorously off heat. Add reserved udon water a splash at a time, tossing between each addition, until the sauce turns shiny and clingy."
-        images:
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-7.jpg
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-8.jpg
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-7.jpg
       - text: "Divide between warm bowls. Top with chives or green onion, extra black pepper, and nori flakes or furikake if using. Serve immediately."
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-8.jpg
 nutrition:
   calories: "780 kcal"
   fatContent: "38g"
@@ -99,47 +95,109 @@ faqs:
 ---
 
 import { Picture } from "astro:assets";
+import imgIngredients from "../../../assets/images/recipes/miso-udon-carbonara-step-1.jpg";
+import imgBaconRendering from "../../../assets/images/recipes/miso-udon-carbonara-step-3.jpg";
+import imgSauceUnmixed from "../../../assets/images/recipes/miso-udon-carbonara-step-4.jpg";
+import imgSauceMixed from "../../../assets/images/recipes/miso-udon-carbonara-step-5.jpg";
+import imgUdonInPan from "../../../assets/images/recipes/miso-udon-carbonara-step-6.jpg";
+import imgSauceCoated from "../../../assets/images/recipes/miso-udon-carbonara-step-7.jpg";
 import imgPlated from "../../../assets/images/recipes/miso-udon-carbonara-step-8.jpg";
 
-This is my go-to "date night at home" move: **miso udon carbonara**. Chewy udon noodles get tossed in a glossy, no-cream sauce made from **egg yolk + cheese + black pepper**, with a tiny hit of **white miso** for extra depth. Bacon makes it feel indulgent, and the whole thing comes together in about 20 minutes.
+This is my go-to "date night at home" move. Chewy udon noodles tossed in a glossy, no-cream sauce built from egg yolk, cheese, and black pepper, with a quiet hit of white miso for depth. Bacon makes it feel indulgent. The whole thing comes together in about 20 minutes. If you want a dish that says *I planned this* even when you absolutely did not, this is it.
 
-If you want a dish that says *I planned this* (even if you didn't), this is it.
+## The story behind the bowl
 
-## The story behind this bowl
+<Picture
+  src={imgIngredients}
+  alt="Ingredients for miso udon carbonara laid out on a dark surface: grated Parmesan, frozen udon, diced bacon, egg yolks, miso paste, and black pepper"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
-Carbonara is basically the ultimate homecook flex. It's simple, it's fast, and when it's good it feels restaurant-level. The magic is that you get a creamy sauce **without cream** by emulsifying yolk, melted cheese, and starchy noodle water.
+Carbonara is the ultimate homecook flex. Simple, fast, and when it lands, genuinely restaurant-level. The magic is that you get a creamy sauce without cream by emulsifying yolk, melted cheese, and starchy noodle water.
 
-Udon is my twist because it's **thick and bouncy**, so it grabs sauce like it was built for it. It also makes the dish feel playful and modern. Like: yes, it's carbonara, but it's also a cozy noodle bowl you'd absolutely order on a rainy Montreal night.
+Udon is the twist here because it is thick and bouncy, so it grabs sauce like it was built for it. The dish feels playful and modern: yes, it is carbonara, but it is also a cozy noodle bowl you would absolutely order on a rainy Montreal night.
 
-And then the miso. I'm not trying to turn this into miso soup. I'm using **just enough** white miso to add umami, round out the cheese, and make the whole thing taste more layered. It's the kind of upgrade that makes people lean in for the second bite.
+And then the miso. Not trying to turn this into miso soup. Just enough white miso to add umami, round out the cheese, and make the whole thing taste more layered. Two teaspoons disappear into the sauce, but you notice when they are gone.
 
-## Why this works
+## Why each ingredient pulls its weight
 
-This is one of those recipes where a few "small" ingredients do a lot of heavy lifting.
+<Picture
+  src={imgBaconRendering}
+  alt="Diced bacon rendering in a stainless steel pan, fat bubbling and pieces turning golden and crisp"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
-**Udon = chew + sauce grip.** Those thick noodles hold onto the emulsion, so every bite stays glossy instead of sliding off. **Bacon fat = the base note.** It carries the pepper and coats the noodles before the sauce even goes in, with a quick garlic-infused moment if you want it. **Egg yolk + cheese = the sauce (no cream required).** The yolks thicken gently, the cheese melts, and the starchy noodle water ties it together.
+Udon noodles grip sauce the way thinner pasta simply cannot. Those thick noodles hold onto the emulsion, so every bite stays glossy instead of sliding off. The starch content is higher and the chew gives the finished bowl a satisfying weight that spaghetti never quite delivers.
 
-**White miso = the quiet upgrade.** It doesn't make this taste like miso soup. It makes the cheese taste deeper and a little sweeter, like the sauce got "aged" overnight. **Black pepper = the finish.** Freshly cracked pepper is not optional here. It's what keeps the whole bowl from tasting flat.
+Bacon fat is the base note. It carries the garlic aromatics and coats the noodles before the egg mixture even arrives. Starting with a cold pan and rendering slowly means you extract more usable fat, and that fat layer is what makes the sauce emulsify cleanly rather than seize or separate.
 
-Frozen udon is my default for best chew, and it's hard to mess up. Fresh udon is also great. Bacon is easier and still slaps; pancetta is a little cleaner and more "classic." For cheese, Pecorino is sharper and saltier, Parmesan is nuttier. Use what you have. And keep the miso white (shiro). Don't use a super funky red miso here unless you really want it to take over.
+Egg yolks and cheese build the sauce without cream. As Harold McGee explains in *On Food and Cooking*, egg yolk proteins begin to denature around 65 C, well below the temperature of a hot pan but above room temperature. The residual heat of freshly cooked noodles is exactly enough to thicken the yolks gently without scrambling them, as long as the pan has had 30-60 seconds off heat first.
+
+White miso is the ingredient people question and then never leave out again. Fermentation produces glutamate-rich compounds that amplify the savory quality of the cheese without making the dish taste like miso soup. Miso plus aged cheese creates depth that neither produces on its own. The sauce ends up tasting *aged*, like it got overnight depth in twenty minutes. Stick to white (shiro) miso here. Red miso has a stronger fermented punch that tends to take over.
 
 ## The one rule that keeps it silky
 
-If carbonara has ever betrayed you, it's always the same reason: **too much heat**. If the pan is ripping hot when the yolk mixture goes in, you'll get tiny egg curds. Still edible, still tasty, but not the vibe when you're trying to impress.
+<Picture
+  src={imgSauceUnmixed}
+  alt="Egg yolks, grated Parmesan, and miso paste sitting together in a glass container before whisking"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
-My default: turn heat off, wait 30-60 seconds, then toss hard. That pause is the entire margin between silky and scrambled. The noodles provide the heat; the pan just needs to cool enough to stop the proteins from seizing. If you want to be ultra-safe, coat noodles in the bacon fat first, then do the sauce step completely off heat while tossing.
+If carbonara has ever betrayed you, it is always the same reason: too much heat. Yolk proteins that hit a screaming-hot surface tighten immediately and form curds. Still edible, still tasty, but not the vibe when you are trying to impress.
 
-If you remember one thing: **turn the heat off before you add the yolk mixture**, then use noodle water to dial in the texture until it turns shiny and clingy.
+The fix: turn the heat off, wait 30-60 seconds, then toss hard. That pause is the entire margin between silky and scrambled. The noodles stay hot enough to thicken the sauce; the pan cools just enough to stop the proteins from seizing.
+
+<Picture
+  src={imgSauceMixed}
+  alt="Golden egg yolk, cheese, and miso mixture whisked smooth in a glass container, ready to toss with the noodles"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
+Udon water does the rest. The starch in udon cooking water is higher than in standard pasta water, so it binds fat and protein into a stable emulsion quickly. Add it in small splashes while tossing vigorously, and stop the moment the sauce turns shiny and stops pooling at the base of the pan. Whisking a tablespoon of hot udon water into the yolk mixture beforehand also helps: it warms the eggs slightly and dissolves the miso fully so there are no unmixed bits to chase later.
 
 ## Bringing it all together
 
-Grate the cheese finely. It melts smoother. Pre-grated from a bag has anti-caking agents that block the emulsion. A microplane and thirty seconds of grating is the difference between a sauce that flows and a sauce that clumps.
+<Picture
+  src={imgUdonInPan}
+  alt="Udon noodles in a pan with the golden yolk-cheese-miso sauce dolloped on top, about to be tossed together"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
-Use noodle water like a knob: add a little, toss, and stop the moment it turns glossy. Salt last. Cheese and miso can be intense, so taste before reaching for the salt.
+A few things that make the difference between good and *really* good here. Grate the cheese finely. Pre-grated from a bag has anti-caking agents that block the emulsion. A microplane and thirty seconds of grating is the difference between a sauce that flows and a sauce that clumps.
 
-If it looks too thick, it's not ruined. It just needs more water and aggressive tossing. If the sauce scrambled, you went in too hot. Next time, cool the pan longer. For now, add water and toss to smooth it out. If it's too salty, add lemon, add greens, or add more noodles.
+Use noodle water like a dial: add a little, toss, and stop the moment it turns glossy. Salt last, if at all. Cheese and miso together are already intense, so taste before reaching for the salt.
 
-This dish is best fresh. That's the point. But if you want to prep ahead for date night: mince the garlic, grate the cheese, whisk yolks, miso, pepper, and cheese in a bowl and keep it at room temp. Then when you're ready, dinner is basically: crisp bacon, boil udon, toss, serve. If you do have leftovers, reheat gently with a splash of water on low heat. It won't be as glossy as the first round, but it'll still be good.
+<Picture
+  src={imgSauceCoated}
+  alt="Glossy udon noodles fully coated in the silky carbonara sauce in a stainless steel pan, the emulsion shiny and clinging to every strand"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
+If it looks too thick, it is not ruined. It just needs more water and aggressive tossing. If it scrambled, add water and toss off heat. It will smooth out, not perfectly glossy, but still very good. If it is too salty, a squeeze of lemon, a handful of wilted greens, or more noodles will bring it back.
 
 ## Making it a date night
 
@@ -153,18 +211,16 @@ This dish is best fresh. That's the point. But if you want to prep ahead for dat
   loading="lazy"
 />
 
-This dish is fast, which is exactly why it works for a night in. The goal isn't to "stay busy." It's to make the kitchen feel relaxed and a little intimate while dinner basically makes itself.
+Twenty minutes means the kitchen stays relaxed. No hour-long braise, no timing anxiety, no one stuck at the stove while the other person sits around. You can have a drink and a real conversation while the bacon renders.
 
-Put on something warm in the background. Jazz, R&B, or anything that makes the room slow down. Share one small task: grating cheese or slicing chives takes 2 minutes and feels quietly collaborative. Taste together and decide if you're feeling more sharp (Pecorino) or more mellow (Parmesan).
+Prep before your date arrives: grate the cheese, mince the garlic, whisk the yolks with the miso and pepper. Put the bowl next to the stove. When they show up, the only active work is crisping the bacon and boiling the udon. About 10 minutes, start to finish.
 
-Warm the bowls with hot tap water while you cook. Twist the udon into a neat mound with tongs. Finish with black pepper, extra cheese, and a shower of chives. Add nori or furikake only at the end so it stays crisp. Bowls warmed, lights a little lower, and dinner on the table the second it turns glossy.
-
-Nothing performative. Just a simple rhythm that makes "dinner at home" feel like a date.
+Share one small task. Grating cheese or slicing chives takes two minutes and feels quietly collaborative. Taste together and decide if you are feeling more sharp (Pecorino) or more mellow (Parmesan). Warm the bowls with hot tap water while you cook, twist the udon into a neat mound with tongs, and add nori or furikake only at the very end so it stays crisp. Nothing performative. Just a simple rhythm that makes dinner at home feel like a date.
 
 ## Variations worth trying
 
 If you want to skip the pork, brown mushrooms hard in butter or olive oil until the liquid evaporates and the edges caramelize. Use that fat in place of bacon fat and proceed from the sauce step. Deeply browned mushrooms bring the same glutamate hit that makes the miso base work.
 
-For heat, chili crisp or gochugaru at the end is better than cooking chili paste into the fat. For a slightly looser, more forgiving sauce, add 1 whole egg alongside the 4 yolks. Nori flakes on top push the whole thing in a more Japanese direction, and they're amazing with miso.
+For heat, chili crisp or a pinch of gochugaru at the end gives clean, adjustable spice without cooking bitterness into the fat. For a more forgiving sauce, add one whole egg alongside the four yolks. The extra white makes the emulsion slightly looser, which helps if you are still building confidence with heat control. Nori flakes on top push the whole thing in a more Japanese direction, and they pair with the miso in a way that makes the bowl feel complete.
 
 Browse all [date night recipes](/en/recipes/occasion/date-night/) for more ideas along those lines. If the emulsion technique interests you, [cacio e pepe](/en/recipes/cacio-e-pepe/) is the Roman original this recipe borrows from. For the same glossy noodle energy but with a lot more fire, [gochujang kimchi seafood bucatini](/en/recipes/gochujang-kimchi-seafood-bucatini/) is the answer. And if you want to slow things down, [pork osso buco](/en/recipes/pork-osso-buco/) is the braised counterpart for a longer evening in.

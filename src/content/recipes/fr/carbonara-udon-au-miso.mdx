@@ -54,23 +54,19 @@ instructionGroups:
   - group: ""
     steps:
       - text: "Mettre le bacon dans une poêle froide et chauffer à feu moyen. Cuire jusqu'à ce qu'il soit croustillant et qu'une bonne quantité de gras soit rendu, environ 8 minutes."
-        images:
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-2.jpg
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-3.jpg
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-2.jpg
       - text: "Baisser le feu. Ajouter l'ail haché et faire revenir 20-30 secondes jusqu'à ce qu'il soit parfumé mais pas doré. Retirer l'ail avec une cuillère en laissant la graisse de bacon dans la poêle. Éteindre le feu."
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-3.jpg
       - text: "Dans un bol, fouetter ensemble les jaunes d'oeufs, le fromage râpé, le miso et le poivre. Ajouter 1-2 c. à soupe d'eau de cuisson chaude des udon et fouetter jusqu'à consistance lisse. Réserver."
-        images:
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-4.jpg
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-5.jpg
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-5.jpg
       - text: "Faire bouillir les udon jusqu'à ce qu'ils soient assouplis, environ 60-90 secondes pour les surgelés. Réserver au moins 120 ml de l'eau de cuisson riche en amidon, puis égoutter."
       - text: "Laisser la poêle reposer hors du feu pendant 30-60 secondes. C'est cette pause qui fait la différence entre une sauce soyeuse et des oeufs brouillés."
       - text: "Ajouter les udon égouttés dans la poêle et mélanger pour bien les enrober de graisse de bacon."
         image: ../../../assets/images/recipes/miso-udon-carbonara-step-6.jpg
       - text: "Verser le mélange jaunes d'oeufs et fromage et mélanger vigoureusement hors du feu. Ajouter l'eau de cuisson réservée par petites giclées en remuant entre chaque ajout, jusqu'à ce que la sauce soit brillante et nappante."
-        images:
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-7.jpg
-          - ../../../assets/images/recipes/miso-udon-carbonara-step-8.jpg
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-7.jpg
       - text: "Répartir dans des bols chauds. Garnir de ciboulette ou d'oignons verts, de poivre noir supplémentaire et de flocons de nori ou de furikake si désiré. Servir immédiatement."
+        image: ../../../assets/images/recipes/miso-udon-carbonara-step-8.jpg
 nutrition:
   calories: "780 kcal"
   fatContent: "38g"
@@ -99,47 +95,109 @@ faqs:
 ---
 
 import { Picture } from "astro:assets";
+import imgIngredients from "../../../assets/images/recipes/miso-udon-carbonara-step-1.jpg";
+import imgBaconRendering from "../../../assets/images/recipes/miso-udon-carbonara-step-3.jpg";
+import imgSauceUnmixed from "../../../assets/images/recipes/miso-udon-carbonara-step-4.jpg";
+import imgSauceMixed from "../../../assets/images/recipes/miso-udon-carbonara-step-5.jpg";
+import imgUdonInPan from "../../../assets/images/recipes/miso-udon-carbonara-step-6.jpg";
+import imgSauceCoated from "../../../assets/images/recipes/miso-udon-carbonara-step-7.jpg";
 import imgPlated from "../../../assets/images/recipes/miso-udon-carbonara-step-8.jpg";
 
-C'est mon arme secrète pour les soirées en amoureux à la maison: la **carbonara udon au miso**. Des udon moelleux enrobés d'une sauce brillante sans crème, faite de **jaunes d'oeufs + fromage + poivre noir**, avec une touche de **miso blanc** pour la profondeur. Le bacon rend le tout gourmand, et tout se prépare en 20 minutes environ.
+C'est mon arme secrète pour les soirées en amoureux à la maison. Des udon moelleux enrobés d'une sauce brillante sans crème, faite de jaunes d'oeufs, de fromage et de poivre noir, avec une touche de miso blanc pour la profondeur. Le bacon rend le tout gourmand. Tout se prépare en 20 minutes environ. Si vous cherchez un plat qui dit *j'ai prévu le coup* même quand ce n'est pas du tout le cas, c'est celui-ci.
 
-Si vous cherchez un plat qui dit *j'ai prévu le coup* (même quand ce n'est pas du tout le cas), c'est celui-ci.
+## L'histoire derrière le bol
 
-## L'histoire derrière ce bol
+<Picture
+  src={imgIngredients}
+  alt="Ingrédients pour la carbonara udon au miso disposés sur une surface sombre: Parmesan râpé, udon surgelés, bacon en dés, jaunes d'oeufs, pâte de miso et poivre noir"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
-La carbonara, c'est le flex ultime du cuisinier maison. C'est simple, c'est rapide, et quand c'est réussi, ça goûte le restaurant. La magie, c'est qu'on obtient une sauce crémeuse **sans crème** en émulsifiant les jaunes, le fromage fondu et l'eau de cuisson amidonnée.
+La carbonara, c'est le flex ultime du cuisinier maison. Simple, rapide, et quand c'est réussi, c'est du calibre de restaurant. La magie, c'est qu'on obtient une sauce crémeuse sans crème en émulsifiant les jaunes, le fromage fondu et l'eau de cuisson amidonnée.
 
-L'udon, c'est mon twist. **Épais et rebondis**, ces nouilles captent la sauce comme si elles avaient été conçues pour ça. Le plat devient ludique et actuel: oui, c'est une carbonara, mais c'est aussi un bol de nouilles réconfortant que vous commanderiez sans hésiter un soir de pluie à Montréal.
+L'udon, c'est le twist. Épais et rebondis, ces nouilles captent la sauce comme si elles avaient été conçues pour ça. Le plat devient ludique et actuel: oui, c'est une carbonara, mais c'est aussi un bol de nouilles réconfortant que vous commanderiez sans hésiter un soir de pluie à Montréal.
 
-Et le miso. Pas question d'en faire une soupe miso. J'utilise **juste assez** de miso blanc pour ajouter de l'umami, arrondir le fromage et donner au tout une couche de plus. C'est le genre d'upgrade qui fait que les gens se penchent pour la deuxième bouchée.
+Et le miso. Pas question d'en faire une soupe miso. Juste assez de miso blanc pour ajouter de l'umami, arrondir le fromage et donner au tout une couche de plus. Deux c. à thé disparaissent dans la sauce, mais vous le remarquez quand elles n'y sont pas.
 
-## Pourquoi ça marche
+## Pourquoi chaque ingrédient compte
 
-C'est une de ces recettes où quelques ingrédients "simples" font un travail de fou.
+<Picture
+  src={imgBaconRendering}
+  alt="Bacon en dés qui fond dans une poêle en acier inoxydable, le gras qui bouillonne et les morceaux qui deviennent dorés et croustillants"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
-**Udon = texture + accroche.** Ces nouilles épaisses retiennent l'émulsion, chaque bouchée reste brillante au lieu de glisser. **Graisse de bacon = la note de fond.** Elle transporte le poivre et enrobe les nouilles avant même que la sauce n'arrive, avec un petit moment d'ail parfumé. **Jaunes d'oeufs + fromage = la sauce (sans crème).** Les jaunes épaississent en douceur, le fromage fond, et l'eau de cuisson amidonnée lie le tout.
+Les nouilles udon accrochent la sauce d'une façon que les pâtes plus fines ne peuvent tout simplement pas égaler. Ces nouilles épaisses retiennent l'émulsion, chaque bouchée reste brillante au lieu de glisser. La teneur en amidon est plus élevée et la texture moelleuse donne au bol un poids satisfaisant que les spaghettis ne livrent jamais tout à fait.
 
-**Miso blanc = l'upgrade discret.** Ça ne donne pas un goût de soupe miso. Ça rend le fromage plus profond et un peu plus doux, comme si la sauce avait pris de la profondeur pendant la nuit. **Poivre noir = la touche finale.** Le poivre fraîchement concassé n'est pas optionnel ici. C'est ce qui empêche le bol de goûter plat.
+La graisse de bacon est la note de fond. Elle transporte les arômes d'ail et enrobe les nouilles avant même que le mélange d'oeufs n'arrive. Commencer avec une poêle froide et faire fondre lentement permet d'extraire plus de gras utilisable, et c'est cette couche de gras qui permet à la sauce d'émulsionner proprement plutôt que de saisir.
 
-Les udon surgelés sont mon choix par défaut pour la meilleure texture, et c'est difficile à rater. Les udon frais sont aussi très bien. Le bacon est plus simple et fait la job; la pancetta est un peu plus fine et plus "classique." Pour le fromage, le Pecorino est plus piquant et salé, le Parmesan plus noisette. Utilisez ce que vous avez. Et gardez le miso blanc (shiro). N'utilisez pas un miso rouge super funky ici, sauf si vous voulez qu'il prenne le dessus.
+Les jaunes d'oeufs et le fromage construisent la sauce sans crème. Comme Harold McGee l'explique dans *De la cuisine*, les protéines du jaune d'oeuf commencent à se dénaturer autour de 65 C, bien en dessous de la température d'une poêle chaude mais au-dessus de la température ambiante. La chaleur résiduelle des nouilles fraîchement cuites suffit pour épaissir les jaunes en douceur sans les brouiller, à condition que la poêle ait eu 30-60 secondes hors du feu.
+
+Le miso blanc est l'ingrédient que les gens remettent en question, puis ne retirent plus jamais. La fermentation produit des composés riches en glutamate qui amplifient le caractère savoureux du fromage sans donner au plat un goût de soupe miso. Le miso combiné au fromage vieilli crée une profondeur qu'aucun des deux ne produit seul. La sauce finit par goûter comme si elle avait gagné de la profondeur pendant la nuit, en vingt minutes. Tenez-vous en au miso blanc (shiro) ici. Le miso rouge a un côté fermenté plus fort qui tend à prendre le dessus.
 
 ## La règle qui fait toute la différence
 
-Si la carbonara vous a déjà trahi, c'est toujours la même raison: **trop de chaleur**. Si la poêle est brûlante quand le mélange de jaunes arrive, vous allez avoir de petits morceaux d'oeufs. Encore mangeable, encore bon, mais pas le résultat recherché quand on essaie d'impressionner.
+<Picture
+  src={imgSauceUnmixed}
+  alt="Jaunes d'oeufs, Parmesan râpé et pâte de miso dans un contenant de verre avant d'être fouettés"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
-Ma méthode: éteindre le feu, attendre 30-60 secondes, puis mélanger vigoureusement. Cette pause, c'est toute la différence entre soyeux et brouillé. Les nouilles fournissent la chaleur; la poêle n'a qu'à refroidir assez pour ne pas saisir les protéines. Si vous voulez être ultra-prudent, enrobez les nouilles dans la graisse de bacon d'abord, puis faites l'étape de la sauce complètement hors du feu.
+Si la carbonara vous a déjà trahi, c'est toujours pour la même raison: trop de chaleur. Les protéines du jaune qui frappent une surface brûlante se resserrent immédiatement et forment des morceaux. Encore mangeable, encore bon, mais pas le résultat recherché quand on essaie d'impressionner.
 
-Si vous retenez une seule chose: **éteignez le feu avant d'ajouter le mélange de jaunes**, puis utilisez l'eau de cuisson pour ajuster la texture jusqu'à ce que ça devienne brillant et nappant.
+La solution: éteindre le feu, attendre 30-60 secondes, puis mélanger vigoureusement. Cette pause est toute la différence entre soyeux et brouillé. Les nouilles restent assez chaudes pour épaissir la sauce; la poêle refroidit juste assez pour éviter que les protéines ne saisissent.
+
+<Picture
+  src={imgSauceMixed}
+  alt="Mélange doré de jaune d'oeuf, fromage et miso fouetté jusqu'à consistance lisse dans un contenant de verre, prêt à enrober les nouilles"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
+L'eau de cuisson des udon fait le reste. La teneur en amidon de cette eau est plus élevée que celle des pâtes ordinaires, donc elle lie le gras et les protéines en une émulsion stable rapidement. Ajoutez-la par petites giclées tout en mélangeant vigoureusement, et arrêtez au moment où la sauce devient brillante et cesse de s'accumuler au fond de la poêle. Fouetter une c. à soupe d'eau chaude dans le mélange de jaunes au préalable aide aussi: ça réchauffe légèrement les oeufs et dissout le miso complètement.
 
 ## Assembler le tout
 
-Râpez le fromage finement. Ça fond mieux. Le fromage pré-râpé en sac contient des agents anti-agglutination qui bloquent l'émulsion. Une microplane et trente secondes de râpage, c'est la différence entre une sauce fluide et une sauce en morceaux.
+<Picture
+  src={imgUdonInPan}
+  alt="Nouilles udon dans une poêle avec la sauce dorée aux jaunes d'oeufs, fromage et miso déposée par-dessus, prêtes à être mélangées"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
 
-Utilisez l'eau de cuisson comme un cadran: ajoutez un peu, mélangez, et arrêtez dès que ça devient brillant. Salez en dernier. Le fromage et le miso ensemble sont déjà intenses, alors goûtez avant de chercher le sel.
+Quelques détails qui font la différence entre bon et *vraiment* bon. Râpez le fromage finement. Le fromage pré-râpé en sac contient des agents anti-agglutination qui bloquent l'émulsion. Une microplane et trente secondes de râpage, c'est la différence entre une sauce fluide et une sauce en morceaux.
 
-Si ça semble trop épais, ce n'est pas raté. Il suffit d'ajouter de l'eau et de mélanger vigoureusement. Si la sauce a brouillé, vous avez mis le feu trop fort. La prochaine fois, laissez la poêle refroidir plus longtemps. Pour l'instant, ajoutez de l'eau et mélangez hors du feu. Si c'est trop salé, un filet de citron, une poignée de verdures ou plus de nouilles vont rétablir l'équilibre.
+Utilisez l'eau de cuisson comme un cadran: ajoutez un peu, mélangez, et arrêtez dès que ça devient brillant. Salez en dernier, si nécessaire. Le fromage et le miso ensemble sont déjà intenses, alors goûtez avant de chercher le sel.
 
-Ce plat est meilleur frais. C'est justement le but. Mais si vous voulez préparer à l'avance pour une soirée: hachez l'ail, râpez le fromage, fouettez les jaunes avec le miso, le poivre et le fromage dans un bol et gardez à température ambiante. Quand vous êtes prêt, le souper c'est: croustiller le bacon, bouillir les udon, mélanger, servir. Si vous avez des restes, réchauffez doucement avec un peu d'eau à feu doux. Ce ne sera pas aussi brillant que la première fois, mais ça va rester bon.
+<Picture
+  src={imgSauceCoated}
+  alt="Udon brillants entièrement enrobés de la sauce carbonara soyeuse dans une poêle en acier inoxydable, l'émulsion lustrée accrochant chaque nouille"
+  widths={[400, 600, 900]}
+  sizes="(max-width: 896px) 100vw, 896px"
+  formats={["avif", "webp"]}
+  class="my-6 w-full rounded-lg"
+  loading="lazy"
+/>
+
+Si ça semble trop épais, ce n'est pas raté. Il suffit d'ajouter de l'eau et de mélanger vigoureusement. Si la sauce a brouillé, ajoutez de l'eau et mélangez hors du feu. Ça va s'uniformiser, pas parfaitement brillant, mais encore très bon. Si c'est trop salé, un filet de citron, une poignée de verdures ou plus de nouilles vont rétablir l'équilibre.
 
 ## En faire une soirée romantique
 
@@ -153,18 +211,16 @@ Ce plat est meilleur frais. C'est justement le but. Mais si vous voulez prépare
   loading="lazy"
 />
 
-Ce plat est rapide, et c'est exactement pourquoi ça marche pour une soirée à deux. L'objectif n'est pas de "rester occupé." C'est de rendre la cuisine détendue et un peu intime pendant que le souper se fait tout seul.
+Vingt minutes, ça veut dire que la cuisine reste détendue. Pas de braisé d'une heure, pas de stress de timing, personne cloué au fourneau pendant que l'autre attend. Vous pouvez prendre un verre et avoir une vraie conversation pendant que le bacon fond.
 
-Mettez quelque chose de chaleureux en fond. Du jazz, du R&B, ou n'importe quoi qui fait ralentir la pièce. Partagez une petite tâche: râper du fromage ou trancher de la ciboulette prend 2 minutes et crée un moment de complicité. Goûtez ensemble et décidez si vous préférez le piquant (Pecorino) ou le moelleux (Parmesan).
+Préparez avant l'arrivée de votre invité: râper le fromage, hacher l'ail, fouetter les jaunes avec le miso et le poivre. Poser le bol à côté du fourneau. Quand il ou elle arrive, il ne reste qu'à faire croustiller le bacon et bouillir les udon. Environ 10 minutes de travail actif.
 
-Réchauffez les bols avec de l'eau chaude du robinet pendant la cuisson. Torsadez les udon en monticule avec des pinces. Finissez avec du poivre, du fromage supplémentaire et une pluie de ciboulette. Ajoutez le nori ou le furikake à la toute fin pour qu'ils restent croustillants. Bols chauds, lumières tamisées, et le souper sur la table à la seconde où ça devient brillant.
-
-Rien de forcé. Juste un rythme simple qui transforme un souper à la maison en soirée à deux.
+Partagez une petite tâche. Râper du fromage ou trancher de la ciboulette prend deux minutes et crée un moment de complicité. Goûtez ensemble et décidez si vous préférez le piquant (Pecorino) ou le moelleux (Parmesan). Réchauffez les bols avec de l'eau chaude du robinet pendant la cuisson, torsadez les udon en monticule avec des pinces, et ajoutez le nori ou le furikake à la toute fin pour qu'ils restent croustillants. Rien de forcé. Juste un rythme simple qui transforme un souper à la maison en soirée à deux.
 
 ## Variantes à essayer
 
 Si vous voulez éviter le porc, faites revenir des champignons à feu vif dans le beurre ou l'huile d'olive jusqu'à ce que le liquide s'évapore et que les bords caramélisent. Utilisez ce gras à la place de la graisse de bacon et poursuivez à l'étape de la sauce. Les champignons bien dorés apportent le même punch de glutamate qui fait fonctionner la base de miso.
 
-Pour du piquant, du chili crisp ou du gochugaru à la fin, c'est mieux que de cuire de la pâte de chili dans le gras. Pour une sauce plus souple et indulgente, ajoutez 1 oeuf entier aux 4 jaunes. Les flocons de nori par-dessus poussent le tout dans une direction plus japonaise, et ils se marient parfaitement avec le miso.
+Pour du piquant, du chili crisp ou une pincée de gochugaru à la fin donnent une chaleur propre et ajustable sans cuire d'amertume dans le gras. Pour une sauce plus indulgente, ajoutez un oeuf entier aux quatre jaunes. Le blanc supplémentaire rend l'émulsion plus souple, ce qui aide si vous bâtissez encore votre confiance avec le contrôle de la chaleur. Les flocons de nori par-dessus poussent le tout dans une direction plus japonaise, et ils se marient avec le miso d'une façon qui complète le bol.
 
 Consultez les [recettes pour soirée romantique](/fr/recettes/occasion/date-night/) pour d'autres idées dans la même veine. Si la technique d'émulsion vous intéresse, le [cacio e pepe](/fr/recettes/cacio-e-pepe/) est l'original romain dont cette recette emprunte la logique. Pour le même format de nouilles nappantes mais avec beaucoup plus de feu, le [bucatini aux fruits de mer gochujang-kimchi](/fr/recettes/bucatini-fruits-de-mer-gochujang/) est la réponse. Et si vous voulez ralentir le rythme, l'[osso buco de porc](/fr/recettes/osso-buco-au-porc/) est le contrepoint braisé pour une soirée plus longue à la maison.
