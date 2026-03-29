@@ -49,6 +49,7 @@ const recipes = defineCollection({
     const HowToStepSchema = z.object({
       text: z.string(),
       image: image().optional(),
+      images: z.array(image()).optional(),
     });
 
     const InstructionGroupSchema = z.object({

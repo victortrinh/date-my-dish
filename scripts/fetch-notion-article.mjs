@@ -25,6 +25,7 @@ import {
   traverseBlocks,
   extractFaqs,
   downloadImage,
+  slugify,
 } from "./notion-utils.mjs";
 
 // ---------------------------------------------------------------------------
@@ -287,18 +288,21 @@ async function main() {
   console.log(`  ${faqs.length} FAQs extracted`);
   console.log(`  ${imageCount} images found\n`);
 
-  // Step 7: Download images
+  // Step 7: Download images to src/assets/images/articles/ with slug-based names
   console.log("Step 7: Downloading images...");
+  const slug = slugify(selected.title);
+  const imageDir = "src/assets/images/articles";
   let heroImage = null;
-  let imgIndex = 0;
+  let stepIndex = 0;
 
   for (const block of blocks) {
     if (block.type === "image" && block.url) {
-      imgIndex++;
-      const ext = block.url.match(/\.(png|jpg|jpeg|webp|gif)/i)?.[1] || "png";
+      const ext = block.url.match(/\.(png|jpg|jpeg|webp|gif)/i)?.[1] || "jpg";
       const isHero = heroImage === null;
-      const filename = isHero ? `hero.${ext}` : `img-${imgIndex}.${ext}`;
-      const localPath = await downloadImage(block.url, filename);
+      const filename = isHero
+        ? `${slug}.${ext}`
+        : `${slug}-${++stepIndex}.${ext}`;
+      const localPath = await downloadImage(block.url, filename, imageDir);
 
       if (localPath) {
         block.localPath = localPath;

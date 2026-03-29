@@ -14,7 +14,6 @@ import { join } from "path";
 // ---------------------------------------------------------------------------
 // Shared constants
 // ---------------------------------------------------------------------------
-export const IMAGE_DIR = "/tmp/notion-images";
 export const MAX_RETRIES = 3;
 export const RETRY_BASE_MS = 1000;
 export const PUBLISHED_JSON = "notion/published.json";
@@ -254,12 +253,23 @@ export function extractFaqs(blocks) {
 }
 
 // ---------------------------------------------------------------------------
+// Slugify helper
+// ---------------------------------------------------------------------------
+export function slugify(title) {
+  return title
+    .toLowerCase()
+    .replace(/['']/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+// ---------------------------------------------------------------------------
 // Image download
 // ---------------------------------------------------------------------------
-export async function downloadImage(url, filename) {
+export async function downloadImage(url, filename, targetDir) {
   if (!url) return null;
-  mkdirSync(IMAGE_DIR, { recursive: true });
-  const outPath = join(IMAGE_DIR, filename);
+  mkdirSync(targetDir, { recursive: true });
+  const outPath = join(targetDir, filename);
 
   try {
     const res = await fetch(url);
