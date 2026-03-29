@@ -13,6 +13,7 @@ concurrency:
 permissions:
   contents: write
   issues: write
+  pull-requests: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -58,11 +59,21 @@ jobs:
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
         run: node scripts/social-post.mjs ${{ steps.detect.outputs.recipes }}
 
-      - name: Commit post log
+      - name: Create PR with post log
         if: steps.detect.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="chore/social-log-deploy-$(date +%Y%m%d-%H%M)"
+          git checkout -b "$BRANCH"
           git add data/social-posts-log.json
-          git diff --cached --quiet || git commit -m "chore: update social posts log"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: update social posts log"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --title "chore: update social posts log" \
+            --body "Automated: social media post log update after deploy." \
+            --base main \
+            --head "$BRANCH"

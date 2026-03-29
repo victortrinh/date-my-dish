@@ -11,6 +11,8 @@ const dirs = [
   "src/content/recipes/fr",
   "src/content/articles/en",
   "src/content/articles/fr",
+  "src/content/reviews/en",
+  "src/content/reviews/fr",
 ];
 
 let errors = 0;

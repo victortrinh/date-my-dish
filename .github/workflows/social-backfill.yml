@@ -23,6 +23,7 @@ concurrency:
 permissions:
   contents: write
   issues: write
+  pull-requests: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -53,10 +54,20 @@ jobs:
           RECIPES_PER_RUN: ${{ inputs.recipes_per_run }}
         run: node scripts/social-post.mjs --backfill
 
-      - name: Commit post log
+      - name: Create PR with post log
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="chore/social-log-backfill-$(date +%Y%m%d-%H%M)"
+          git checkout -b "$BRANCH"
           git add data/social-posts-log.json
-          git diff --cached --quiet || git commit -m "chore: update social posts log (backfill)"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "chore: update social posts log (backfill)"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --title "chore: update social posts log (backfill)" \
+            --body "Automated: social media backfill log update." \
+            --base main \
+            --head "$BRANCH"

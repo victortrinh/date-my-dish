@@ -56,6 +56,10 @@ jobs:
           restore-keys: |
             astro-image-cache-${{ runner.os }}-
 
+      - name: Validate content frontmatter
+        if: steps.content.outputs.skip == 'false'
+        run: node scripts/validate-descriptions.mjs
+
       - run: npm run build
         if: steps.content.outputs.skip == 'false'
 

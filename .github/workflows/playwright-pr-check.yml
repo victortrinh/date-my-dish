@@ -78,6 +78,10 @@ jobs:
         if: steps.scope.outputs.test_scope != 'none' && steps.pw-cache.outputs.cache-hit == 'true'
         run: npx playwright install-deps chromium
 
+      - name: Validate content frontmatter
+        if: steps.scope.outputs.test_scope != 'none'
+        run: node scripts/validate-descriptions.mjs
+
       # Build site (includes Pagefind via postbuild)
       - run: npm run build
         if: steps.scope.outputs.test_scope != 'none'
