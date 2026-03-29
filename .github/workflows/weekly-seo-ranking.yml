@@ -17,6 +17,7 @@ concurrency:
 permissions:
   contents: write
   issues: write
+  pull-requests: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -60,14 +61,24 @@ jobs:
         run: node scripts/seo/generate-report.mjs
         continue-on-error: true
 
-      - name: Commit snapshot
+      - name: Create PR with ranking snapshot
         if: steps.report.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="chore/seo-ranking-$(date +%Y-%m-%d)"
+          git checkout -b "$BRANCH"
           git add data/seo/
-          git diff --cached --quiet || git commit -m "chore(seo): weekly ranking snapshot $(date +%Y-%m-%d)"
-          git push
+          git diff --cached --quiet && exit 0
+          git commit -m "chore(seo): weekly ranking snapshot $(date +%Y-%m-%d)"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --title "chore(seo): weekly ranking snapshot $(date +%Y-%m-%d)" \
+            --body "Automated: weekly SEO ranking data from GSC and SERP." \
+            --base main \
+            --head "$BRANCH"
 
       - name: Close previous ranking issue
         if: steps.report.outcome == 'success'

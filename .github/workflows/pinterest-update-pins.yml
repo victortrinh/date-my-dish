@@ -23,6 +23,10 @@ on:
         type: boolean
         default: false
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   update-pins:
     runs-on: ubuntu-latest
@@ -56,11 +60,21 @@ jobs:
           fi
           node scripts/pinterest-update-pins.mjs $ARGS
 
-      - name: Commit updated log
+      - name: Create PR with updated log
         if: inputs.dry_run == false
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="chore/pinterest-update-pins-$(date +%Y%m%d-%H%M)"
+          git checkout -b "$BRANCH"
           git add data/social-posts-log.json
-          git diff --staged --quiet || git commit -m "chore: update Pinterest pin metadata"
-          git push
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: update Pinterest pin metadata"
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --title "chore: update Pinterest pin metadata" \
+            --body "Automated: Pinterest pin metadata update log." \
+            --base main \
+            --head "$BRANCH"

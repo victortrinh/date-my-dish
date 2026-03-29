@@ -11,6 +11,7 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -65,12 +66,21 @@ jobs:
           artifactName: lighthouse-results-mobile
           temporaryPublicStorage: true
 
-      - name: Commit Lighthouse results
+      - name: Create PR with Lighthouse results
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
           mkdir -p data/lighthouse
           cp .lighthouseci/manifest.json data/lighthouse/lighthouse-$(date +%Y-%m-%d).json 2>/dev/null || cp lighthouse-manifest.json data/lighthouse/lighthouse-$(date +%Y-%m-%d).json 2>/dev/null || echo "No manifest found"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="chore/lighthouse-results-$(date +%Y-%m-%d)"
+          git checkout -b "$BRANCH"
           git add data/lighthouse/
-          git commit -m "chore: save Lighthouse results for $(date +%Y-%m-%d)" || echo "No changes"
-          git push
+          git commit -m "chore: save Lighthouse results for $(date +%Y-%m-%d)" || exit 0
+          git push -u origin "$BRANCH"
+          gh pr create \
+            --title "chore: save Lighthouse results for $(date +%Y-%m-%d)" \
+            --body "Automated: weekly Lighthouse CI audit results." \
+            --base main \
+            --head "$BRANCH"
