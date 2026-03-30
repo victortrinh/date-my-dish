@@ -1,4 +1,4 @@
-# SEO Ranking Report — 2026-03-23
+# SEO Ranking Report — 2026-03-30
 
 ## Data Sources
 
@@ -6,8 +6,15 @@
 |--------|--------|
 | Google Search Console | OK |
 | Serper.dev SERP | OK |
-| Date Range | 2026-03-13 to 2026-03-20 |
+| Date Range | 2026-03-20 to 2026-03-27 |
 | Keywords Tracked | 60 |
+
+## Top Movers (Improved)
+
+| Page | Keyword | Position | Change |
+|------|---------|----------|--------|
+| /en/recipes/quinoa-crusted-salmon/ | salmón nikkei | 46.3 → 13.0 | +33.3 |
+| /en/recipes/crispy-vegan-calamari/ | oyster mushroom calamari | 36.0 → 35.0 | +1.0 |
 
 ## SERP Position Trends (Live Snapshot)
 
@@ -15,19 +22,19 @@ Position changes in live Google SERPs across weekly snapshots.
 
 | Keyword | Current | First Seen | Total Change | Data Points |
 |---------|---------|------------|-------------|-------------|
-| quinoa-crusted salmon with spicy orange miso sauce | #6 | #3 | -3 | 6 |
+| quinoa-crusted salmon with spicy orange miso sauce | #4 | #3 | -1 | 7 |
 
 ## Content Gap Opportunities
 
-> Content gap analysis requires 20+ GSC query rows. Currently: 7.
+> Content gap analysis requires 20+ GSC query rows. Currently: 5.
 
 ## Per-Page Summary
 
 | Page | Top Keyword | Avg Position | Clicks | Impressions | CTR |
 |------|-------------|-------------|--------|-------------|-----|
-| /en/recipes/crispy-vegan-calamari/ | oyster mushroom calamari | 36 | 0 | 12 | 0.0% |
-| /en/recipes/quinoa-crusted-salmon/ | quinoa crusted salmon | 46.3 | 0 | 3 | 0.0% |
-| /fr/recettes/saumon-en-croute-de-quinoa/ | recette causa thon | 1 | 0 | 1 | 0.0% |
+| /en/articles/sous-vide-date-night/ | date sous vide | 8 | 0 | 3 | 0.0% |
+| /en/recipes/crispy-vegan-calamari/ | oyster mushroom calamari | 35 | 0 | 4 | 0.0% |
+| /en/recipes/quinoa-crusted-salmon/ | salmón nikkei | 13 | 0 | 9 | 0.0% |
 
 ## Competitor Snapshot
 
@@ -35,24 +42,25 @@ Top domains appearing across your tracked keywords:
 
 | Domain | Keywords Ranking For |
 |--------|---------------------|
-| seriouseats.com | 14 |
-| youtube.com | 13 |
-| recipetineats.com | 11 |
-| facebook.com | 11 |
-| food52.com | 8 |
-| instagram.com | 8 |
-| loveandlemons.com | 6 |
-| pinchofyum.com | 5 |
-| allrecipes.com | 5 |
-| foodnetwork.com | 4 |
+| youtube.com | 25 |
+| instagram.com | 21 |
+| facebook.com | 20 |
+| pinterest.com | 12 |
+| tiktok.com | 10 |
+| food52.com | 5 |
+| dessertfortwo.com | 5 |
+| asimplepalate.com | 4 |
+| seriouseats.com | 4 |
+| reddit.com | 4 |
 
 ## Our SERP Positions
 
 | Keyword | Position | Featured |
 |---------|----------|----------|
-| quinoa crusted salmon date night | 1 | No |
-| crispy vegan calamari with king oyster mushrooms | 2 | No |
-| quinoa-crusted salmon with spicy orange miso sauce | 6 | No |
+| spicy gochujang-kimchi seafood bucatini | 1 | No |
+| lemon posset brulee easy 3-ingredient no-bake dessert | 1 | No |
+| quinoa-crusted salmon with spicy orange miso sauce | 4 | No |
+| quinoa crusted salmon date night | 9 | No |
 
 ---
 *Generated automatically by [weekly-seo-ranking](../../.github/workflows/weekly-seo-ranking.yml)*

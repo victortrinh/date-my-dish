@@ -1,5 +1,780 @@
 {
-  "results": {
+  "version": 1,
+  "generatedAt": "2026-03-30T09:10:32.810Z",
+  "dateRange": {
+    "start": "2026-03-20",
+    "end": "2026-03-27"
+  },
+  "config": {
+    "serpLocale": "en",
+    "serpCountry": "ca",
+    "keywordLimit": 60
+  },
+  "derivedKeywords": [
+    {
+      "keyword": "slow-cooked beef ragu with pappardelle pasta",
+      "source": "title",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night italian pasta recipe",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "slow cooked beef ragu for two",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic pappardelle dinner recipe",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "brussels sprouts salad with crispy leaves and fish sauce vinaigrette",
+      "source": "title",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy brussels sprouts salad recipe",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night appetizer salad",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "fish sauce vinaigrette dressing recipe",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "southeast asian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "authentic cacio e pepe roman cheese and pepper pasta",
+      "source": "title",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "authentic cacio e pepe recipe",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic italian pasta for two",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night cacio e pepe dinner",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "roasted cauliflower steaks with smoky romesco sauce",
+      "source": "title",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "roasted cauliflower steak with romesco",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vegan date night dinner recipe",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "impressive plant-based main course",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spanish recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy vegan calamari with king oyster mushrooms",
+      "source": "title",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vegan calamari king oyster mushroom",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy plant-based appetizer recipe",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night vegan starter idea",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "mediterranean recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spicy gochujang-kimchi seafood bucatini",
+      "source": "title",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "gochujang seafood pasta recipe",
+      "source": "keywords",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "kimchi bucatini date night",
+      "source": "keywords",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spicy korean italian fusion pasta",
+      "source": "keywords",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "korean-italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lemon posset brulee easy 3-ingredient no-bake dessert",
+      "source": "title",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lemon posset brulee recipe",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic date night dessert easy",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "no bake dessert for two",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "british recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "miso udon carbonara silky, no-cream",
+      "source": "title",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "miso udon carbonara recipe",
+      "source": "keywords",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "no cream carbonara with udon noodles",
+      "source": "keywords",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "japanese italian fusion pasta date night",
+      "source": "keywords",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "japanese-italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "northern thai beef tartare recipe",
+      "source": "title",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "laab beef tartare date night",
+      "source": "keywords",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "raw beef tartare thai herbs",
+      "source": "keywords",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "thai recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "creamy penne alla vodka with italian sausage",
+      "source": "title",
+      "url": "/en/recipes/penne-alla-vodka/",
+      "lang": "en"
+    },
+    {
+      "keyword": "penne alla vodka date night recipe",
+      "source": "keywords",
+      "url": "/en/recipes/penne-alla-vodka/",
+      "lang": "en"
+    },
+    {
+      "keyword": "creamy vodka sauce pasta for two",
+      "source": "keywords",
+      "url": "/en/recipes/penne-alla-vodka/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic italian pasta dinner easy",
+      "source": "keywords",
+      "url": "/en/recipes/penne-alla-vodka/",
+      "lang": "en"
+    },
+    {
+      "keyword": "pork osso buco with creamy polenta",
+      "source": "title",
+      "url": "/en/recipes/pork-osso-buco/",
+      "lang": "en"
+    },
+    {
+      "keyword": "pork osso buco date night recipe",
+      "source": "keywords",
+      "url": "/en/recipes/pork-osso-buco/",
+      "lang": "en"
+    },
+    {
+      "keyword": "braised pork shanks with polenta",
+      "source": "keywords",
+      "url": "/en/recipes/pork-osso-buco/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic italian braised dinner for two",
+      "source": "keywords",
+      "url": "/en/recipes/pork-osso-buco/",
+      "lang": "en"
+    },
+    {
+      "keyword": "quinoa-crusted salmon with spicy orange miso sauce",
+      "source": "title",
+      "url": "/en/recipes/quinoa-crusted-salmon/",
+      "lang": "en"
+    },
+    {
+      "keyword": "quinoa crusted salmon",
+      "source": "keywords",
+      "url": "/en/recipes/quinoa-crusted-salmon/",
+      "lang": "en"
+    },
+    {
+      "keyword": "quinoa crusted salmon date night",
+      "source": "keywords",
+      "url": "/en/recipes/quinoa-crusted-salmon/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spicy orange miso salmon recipe",
+      "source": "keywords",
+      "url": "/en/recipes/quinoa-crusted-salmon/",
+      "lang": "en"
+    },
+    {
+      "keyword": "nikkei recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/quinoa-crusted-salmon/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vietnamese pickled vegetables do chua",
+      "source": "title",
+      "url": "/en/recipes/vietnamese-pickled-vegetables/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vietnamese do chua recipe easy",
+      "source": "keywords",
+      "url": "/en/recipes/vietnamese-pickled-vegetables/",
+      "lang": "en"
+    },
+    {
+      "keyword": "quick pickled daikon and carrots",
+      "source": "keywords",
+      "url": "/en/recipes/vietnamese-pickled-vegetables/",
+      "lang": "en"
+    },
+    {
+      "keyword": "homemade banh mi pickles recipe",
+      "source": "keywords",
+      "url": "/en/recipes/vietnamese-pickled-vegetables/",
+      "lang": "en"
+    }
+  ],
+  "pages": {
+    "/en/articles/sous-vide-date-night/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "date sous vide",
+            "avgPosition": 8,
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 3
+      },
+      "serp": null
+    },
+    "/en/recipes/crispy-vegan-calamari/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "mushroom calamari",
+            "avgPosition": 40,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "oyster mushroom calamari",
+            "avgPosition": 35,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 4
+      },
+      "serp": {
+        "primaryKeyword": "crispy vegan calamari with king oyster mushrooms",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "youtube.com",
+            "position": 1
+          },
+          {
+            "domain": "instagram.com",
+            "position": 2
+          },
+          {
+            "domain": "tiktok.com",
+            "position": 3
+          },
+          {
+            "domain": "facebook.com",
+            "position": 4
+          },
+          {
+            "domain": "pinterest.com",
+            "position": 8
+          }
+        ]
+      }
+    },
+    "/en/recipes/quinoa-crusted-salmon/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "quinoa crusted salmon",
+            "avgPosition": 31.9,
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0
+          },
+          {
+            "keyword": "salmón nikkei",
+            "avgPosition": 13,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 9
+      },
+      "serp": {
+        "primaryKeyword": "quinoa-crusted salmon with spicy orange miso sauce",
+        "position": 4,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "foodandwine.com",
+            "position": 1
+          },
+          {
+            "domain": "punchfork.com",
+            "position": 2
+          },
+          {
+            "domain": "drfabio.com",
+            "position": 3
+          },
+          {
+            "domain": "youtube.com",
+            "position": 5
+          },
+          {
+            "domain": "facebook.com",
+            "position": 6
+          }
+        ]
+      }
+    },
+    "/en/recipes/beef-ragu-pappardelle/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "slow-cooked beef ragu with pappardelle pasta",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "facebook.com",
+            "position": 1
+          },
+          {
+            "domain": "youtube.com",
+            "position": 2
+          },
+          {
+            "domain": "instagram.com",
+            "position": 3
+          },
+          {
+            "domain": "tiktok.com",
+            "position": 6
+          }
+        ]
+      }
+    },
+    "/en/recipes/brussels-sprouts-salad/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "brussels sprouts salad with crispy leaves and fish sauce vinaigrette",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "facebook.com",
+            "position": 1
+          },
+          {
+            "domain": "youtube.com",
+            "position": 2
+          },
+          {
+            "domain": "pinterest.com",
+            "position": 4
+          },
+          {
+            "domain": "instagram.com",
+            "position": 7
+          }
+        ]
+      }
+    },
+    "/en/recipes/cacio-e-pepe/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "authentic cacio e pepe roman cheese and pepper pasta",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "seriouseats.com",
+            "position": 1
+          },
+          {
+            "domain": "mission-food.com",
+            "position": 2
+          },
+          {
+            "domain": "pinabresciani.com",
+            "position": 3
+          },
+          {
+            "domain": "spoonforkbacon.com",
+            "position": 4
+          },
+          {
+            "domain": "chuonthis.ca",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/cauliflower-steak-with-romesco-sauce/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "roasted cauliflower steaks with smoky romesco sauce",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "youtube.com",
+            "position": 1
+          },
+          {
+            "domain": "instagram.com",
+            "position": 2
+          },
+          {
+            "domain": "tiktok.com",
+            "position": 3
+          },
+          {
+            "domain": "facebook.com",
+            "position": 6
+          },
+          {
+            "domain": "pinterest.com",
+            "position": 10
+          }
+        ]
+      }
+    },
+    "/en/recipes/gochujang-kimchi-seafood-bucatini/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "spicy gochujang-kimchi seafood bucatini",
+        "position": 1,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "instagram.com",
+            "position": 2
+          },
+          {
+            "domain": "tiktok.com",
+            "position": 3
+          },
+          {
+            "domain": "youtube.com",
+            "position": 4
+          }
+        ]
+      }
+    },
+    "/en/recipes/lemon-posset-brulee/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "lemon posset brulee easy 3-ingredient no-bake dessert",
+        "position": 1,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "etsy.com",
+            "position": 2
+          },
+          {
+            "domain": "in.pinterest.com",
+            "position": 3
+          },
+          {
+            "domain": "alanarecipes.com",
+            "position": 4
+          }
+        ]
+      }
+    },
+    "/en/recipes/miso-udon-carbonara/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "miso udon carbonara silky, no-cream",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "chefjacooks.com",
+            "position": 1
+          },
+          {
+            "domain": "adayinthekitchen.com",
+            "position": 2
+          },
+          {
+            "domain": "youtube.com",
+            "position": 3
+          },
+          {
+            "domain": "nigella.com",
+            "position": 4
+          },
+          {
+            "domain": "cheapandcheerfulcooking.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/northern-thai-beef-tartare/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "northern thai beef tartare recipe",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "multicarbs.com",
+            "position": 1
+          },
+          {
+            "domain": "farmtofork.com.au",
+            "position": 2
+          },
+          {
+            "domain": "instagram.com",
+            "position": 3
+          },
+          {
+            "domain": "ateliersetsaveurs.com",
+            "position": 4
+          },
+          {
+            "domain": "facebook.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/penne-alla-vodka/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "creamy penne alla vodka with italian sausage",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "pinterest.com",
+            "position": 1
+          },
+          {
+            "domain": "everydaykitchenmeals.com",
+            "position": 3
+          }
+        ]
+      }
+    },
+    "/en/recipes/pork-osso-buco/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "pork osso buco with creamy polenta",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "facebook.com",
+            "position": 1
+          },
+          {
+            "domain": "recipe-studio.com",
+            "position": 2
+          },
+          {
+            "domain": "in.pinterest.com",
+            "position": 3
+          }
+        ]
+      }
+    },
+    "/en/recipes/vietnamese-pickled-vegetables/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "vietnamese pickled vegetables do chua",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "youtube.com",
+            "position": 1
+          },
+          {
+            "domain": "tiktok.com",
+            "position": 2
+          },
+          {
+            "domain": "tifflovestofu.com",
+            "position": 4
+          },
+          {
+            "domain": "instagram.com",
+            "position": 5
+          },
+          {
+            "domain": "facebook.com",
+            "position": 9
+          }
+        ]
+      }
+    }
+  },
+  "serpResults": {
     "slow-cooked beef ragu with pappardelle pasta": {
       "position": null,
       "featured": false,
@@ -1421,6 +2196,5 @@
       ]
     }
   },
-  "errors": [],
-  "queriedAt": "2026-03-30T09:10:32.760Z"
+  "errors": []
 }

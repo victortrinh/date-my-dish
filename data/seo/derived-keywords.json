@@ -204,6 +204,36 @@
     "lang": "en"
   },
   {
+    "keyword": "miso udon carbonara silky, no-cream",
+    "source": "title",
+    "url": "/en/recipes/miso-udon-carbonara/",
+    "lang": "en"
+  },
+  {
+    "keyword": "miso udon carbonara recipe",
+    "source": "keywords",
+    "url": "/en/recipes/miso-udon-carbonara/",
+    "lang": "en"
+  },
+  {
+    "keyword": "no cream carbonara with udon noodles",
+    "source": "keywords",
+    "url": "/en/recipes/miso-udon-carbonara/",
+    "lang": "en"
+  },
+  {
+    "keyword": "japanese italian fusion pasta date night",
+    "source": "keywords",
+    "url": "/en/recipes/miso-udon-carbonara/",
+    "lang": "en"
+  },
+  {
+    "keyword": "japanese-italian recipe",
+    "source": "cuisine",
+    "url": "/en/recipes/miso-udon-carbonara/",
+    "lang": "en"
+  },
+  {
     "keyword": "northern thai beef tartare recipe",
     "source": "title",
     "url": "/en/recipes/northern-thai-beef-tartare/",
@@ -282,6 +312,12 @@
     "lang": "en"
   },
   {
+    "keyword": "quinoa crusted salmon",
+    "source": "keywords",
+    "url": "/en/recipes/quinoa-crusted-salmon/",
+    "lang": "en"
+  },
+  {
     "keyword": "quinoa crusted salmon date night",
     "source": "keywords",
     "url": "/en/recipes/quinoa-crusted-salmon/",
@@ -289,12 +325,6 @@
   },
   {
     "keyword": "spicy orange miso salmon recipe",
-    "source": "keywords",
-    "url": "/en/recipes/quinoa-crusted-salmon/",
-    "lang": "en"
-  },
-  {
-    "keyword": "nikkei fusion dinner for two",
     "source": "keywords",
     "url": "/en/recipes/quinoa-crusted-salmon/",
     "lang": "en"
@@ -327,36 +357,6 @@
     "keyword": "homemade banh mi pickles recipe",
     "source": "keywords",
     "url": "/en/recipes/vietnamese-pickled-vegetables/",
-    "lang": "en"
-  },
-  {
-    "keyword": "vietnamese recipe",
-    "source": "cuisine",
-    "url": "/en/recipes/vietnamese-pickled-vegetables/",
-    "lang": "en"
-  },
-  {
-    "keyword": "crispy zucchini and eggplant chips with sparkling water batter",
-    "source": "title",
-    "url": "/en/recipes/zucchini-eggplant-chips/",
-    "lang": "en"
-  },
-  {
-    "keyword": "crispy zucchini eggplant chips recipe",
-    "source": "keywords",
-    "url": "/en/recipes/zucchini-eggplant-chips/",
-    "lang": "en"
-  },
-  {
-    "keyword": "sparkling water batter vegetables",
-    "source": "keywords",
-    "url": "/en/recipes/zucchini-eggplant-chips/",
-    "lang": "en"
-  },
-  {
-    "keyword": "date night appetizer fried veggies",
-    "source": "keywords",
-    "url": "/en/recipes/zucchini-eggplant-chips/",
     "lang": "en"
   }
 ]
