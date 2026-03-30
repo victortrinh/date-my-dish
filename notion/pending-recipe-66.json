@@ -1,0 +1,441 @@
+{
+  "source": "notion",
+  "fetchedAt": "2026-03-30T22:48:04.550Z",
+  "notionPageId": "66f26374-6755-4b67-88fd-311bad8fbf77",
+  "title": "Pâte à Choux Recipe (Foolproof Choux Pastry for Cream Puffs + Gougères)",
+  "mode": "publish",
+  "existingSlug": null,
+  "recipeNum": 66,
+  "lastEditedTime": "2026-03-20T17:33:14.962Z",
+  "cookTime": "25-30 minutes",
+  "prepTime": "15 minutes",
+  "totalTime": "40-45 minutes",
+  "difficulty": "hard",
+  "servings": 30,
+  "category": "Desserts",
+  "heroImage": {
+    "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res.jpg",
+    "caption": null
+  },
+  "images": [
+    {
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res.jpg",
+      "caption": "",
+      "isHero": true
+    },
+    {
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-1.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-2.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-3.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-4.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-5.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-6.jpg",
+      "caption": "",
+      "isHero": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Quick Overview"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Prep time: 15 minutes",
+        "Cook time: 25–30 minutes",
+        "Total time: 40–45 minutes",
+        "Yield: about 30 medium puffs"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Why This Is a Date-Night Power Move"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pâte à choux is one of those “looks like you know what you’re doing” doughs. You make it once, pipe a few puffs, and suddenly dessert feels like it came from a pastry shop."
+    },
+    {
+      "type": "paragraph",
+      "text": "It’s not just dessert energy. It’s *competence* energy. This dough is the foundation for cream puffs, éclairs, profiteroles, Paris–Brest rings, and even savory gougères. If you can nail this, you’ve basically unlocked a whole wing of the French bakery."
+    },
+    {
+      "type": "paragraph",
+      "text": "And if you’re cooking for a date, this is the kind of thing that gets you that look across the table that says, “Okay… so you *do* have range.”"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/a8cd2191-efb4-4440-833f-8b182b5637be/DSCF4709.jpg?table=block&id=329c3484-e8de-8082-af97-cea97d7b2dd3&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=OUwYJcmfXvo69M9g4QAHH2PZyb3rKUvVMQJKQCnXnmI",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What Is Pâte à Choux?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pâte à choux (pronounced “pat-ah-shoo”) is a light pastry dough that’s cooked twice."
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "First, you cook the dough on the stovetop to create a smooth paste (called the *panade*).",
+        "Then, you bake it so the moisture turns into steam, which inflates the dough into a hollow, crisp shell."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "No yeast. No baking powder. Just technique."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Ingredients"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "113 g water",
+        "113 g whole milk",
+        "113 g unsalted butter, cut into 1/2-inch pieces",
+        "12 g granulated sugar",
+        "3 g kosher salt (about 3/4 teaspoon)",
+        "140 g bread flour",
+        "225 g eggs (4 to 5 large eggs), lightly beaten"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/6b344a96-ebad-44fe-b3ac-499a5508dbde/DSCF3604.jpg?table=block&id=329c3484-e8de-8040-a1b2-f131d3641234&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=H2TL1d-Vii5Kb_ZIB1rjYYy8HdeWr3nKAcjfZOQao7w",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-1.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Ingredient Notes (So You Don’t Overthink It)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Water + milk:** Water gives you better puff and structure. Milk gives you flavor and nicer browning. This half-and-half situation is the sweet spot.",
+        "**Butter:** This is your flavor base. Use unsalted so you control the salt.",
+        "**Sugar:** You are not making it “sweet.” You are helping browning and balancing the dough. Even for savory choux, a little sugar is normal.",
+        "**Bread flour:** Higher protein = stronger structure = better rise. All-purpose will still work in a pinch, but bread flour gives you a little more forgiveness.",
+        "**Eggs:** Eggs are not just moisture. They are structure, sheen, and elasticity. The dough needs enough egg to be pipeable, glossy, and able to expand without tearing."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Big Secret: Learn What “Correct Dough” Looks Like"
+    },
+    {
+      "type": "paragraph",
+      "text": "Choux is one of those recipes where the exact number of eggs can vary slightly depending on how much moisture cooked off in the pan."
+    },
+    {
+      "type": "paragraph",
+      "text": "You want dough that is:"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "smooth and glossy",
+        "thick but pipeable",
+        "able to hold a peak that gently droops (not stiff like frosting, not runny like batter)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "If you’re ever unsure, you are better off stopping slightly short than making it too loose. Too much egg = spread-out, flat puffs."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Step-by-Step Instructions"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1) Make the panade (the cooked dough base)"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "In a 3-quart saucepan, combine water, milk, butter, sugar, and salt.",
+        "Bring to a full boil over medium heat.",
+        "Remove from heat. Add the flour all at once.",
+        "Stir vigorously until the mixture forms a smooth ball and pulls away from the sides of the pan."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**What you’re looking for:** no dry flour left, and the dough looks like one cohesive mass."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/e46bdd5b-e17d-4467-850c-3401662118af/DSCF3605.jpg?table=block&id=329c3484-e8de-80bd-b453-e51f00a1678e&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=t5OMozoLIoIP8Ymkd4nBgN0wPbabUsCRJF3OEcllw-c",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-2.jpg"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/1397920f-dc8e-4999-ac0b-15920f0c068a/DSCF3608.jpg?table=block&id=329c3484-e8de-80e9-8c2f-da2a29debd4f&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=Qp7WsKTR5PHNlkMU6OlrTaed5M7c_fNvBTUglK9Mpi8",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-3.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2) Dry out the dough"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Return the saucepan to medium heat.",
+        "Cook, stirring frequently, until the dough feels dry to the touch.",
+        "If using an instant-read thermometer, you’re aiming for 165°F (74°C) to 175°F (79°C), about 3 minutes."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Why this matters:** You are evaporating excess water so the dough can take the right amount of egg and still puff properly in the oven."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/2cfd5019-79bf-489b-a508-b5fb3455f2bd/DSCF3609.jpg?table=block&id=329c3484-e8de-80a3-b32f-e75ded6cd1a0&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=U6PnnTEWo-bFWchRGb_BSpUt7kT_yvf4OyGc0ZHuog4",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-4.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "3) Incorporate the eggs"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Transfer the dough to a food processor.",
+        "Process until the dough cools to 140°F (60°C) to 145°F (63°C), about 30 seconds.",
+        "With the processor running, slowly stream in the eggs.",
+        "Process until fully incorporated, about 20 seconds.",
+        "Stop and scrape down the sides and bottom.",
+        "Process again until smooth and homogenous, about 30 seconds more."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**If you don’t have a food processor:** Use a stand mixer with the paddle attachment. Beat the dough for a minute to cool it slightly, then add eggs gradually, mixing until glossy and smooth."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/765f722d-3aa7-4a06-8ae6-03898623a9bc/DSCF3611.jpg?table=block&id=329c3484-e8de-8045-9d3f-d87c5da6ff6c&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=aFpxyakOjDXIO4b0r3KRjR7gccsfSAEdF5eN6ELFzHs",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-5.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4) Rest the dough (so it pipes cleanly)"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Transfer choux dough to a piping bag fitted with a 1/2-inch round tip or a closed star tip.",
+        "Refrigerate until firm to the touch and within 70°F (21°C) to 80°F (27°C), about 30 minutes.",
+        "If resting at room temp, plan for about 1 hour."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Why rest at all?** Resting makes the dough easier to pipe cleanly and helps it hold its shape."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/6cf91f30-8213-4b10-9272-cce7294e31e5/DSCF3612.jpg?table=block&id=329c3484-e8de-809c-8507-d078e82bf6af&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=ptvCv82bQKOSeTgJmi3TGKZmrERSZla8UeuNlina57E",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/p-te-choux-recipe-foolproof-choux-pastry-for-cream-puffs-goug-res-step-6.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "How to Pipe (Without Making It Weird)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Pipe straight down, not at an angle.",
+        "Keep the tip close to the tray so you don’t create “tails.”",
+        "If you do get little peaks, dab your finger in water and gently press them down so they don’t burn."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "If you’re making gougères, a star tip gives you more surface area and crisp edges. For cream puffs, a round tip gives you that classic smooth dome."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Baking Notes (The Part That Makes or Breaks It)"
+    },
+    {
+      "type": "paragraph",
+      "text": "This page is focused on the dough itself, but here are the baking rules that keep choux from collapsing:"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Bake hot enough to create steam quickly.** That steam is the lift.",
+        "**Do not open the oven early.** If you open the door before the shells set, they can deflate.",
+        "**Dry them out at the end.** Even after they’re browned, a few extra minutes helps evaporate moisture so they stay crisp."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "If your puffs look beautiful but collapse as they cool, they usually needed more bake time to dry out."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Variation: Cheesy Gougères"
+    },
+    {
+      "type": "paragraph",
+      "text": "Gougères are the savory, cheesy version: crisp outside, tender inside. They’re also an elite move for a date-night snack board. Wine, cheese puffs, a little music, and suddenly the night feels curated."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Add:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "150 g Gruyère, grated"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**How:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "After the eggs are incorporated, add the Gruyère and process until evenly mixed, about 30 seconds."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Extra credit:** Add a pinch of black pepper or cayenne. Not enough to make it “spicy.” Just enough to make it interesting."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Troubleshooting (So You Don’t Panic)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Dough is too stiff:** You likely cooked off a bit too much moisture. Next time, shorten the drying step slightly. You can sometimes fix it by adding a small amount of egg (a tablespoon at a time) until it becomes glossy and pipeable.",
+        "**Dough is too loose:** Too much egg. Next time, stop early and check consistency. Loose dough spreads instead of puffing.",
+        "**Puffs don’t rise:** Oven not hot enough, dough too wet, or you opened the oven too early.",
+        "**Puffs rise then collapse:** They weren’t baked long enough to dry out."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Pairings (Full Meal Course)"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you’re building a full meal, make choux the grand finale."
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Starter:** ‣",
+        "**Main:** ‣",
+        "**Side:** ‣",
+        "**Dessert:** You’re here.",
+        "**Extra:** ‣"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "“During the Date” Notes"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you want to make pâte à choux feel like a whole moment:"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Pipe and bake the shells earlier in the day.",
+        "Right before serving, crisp them for a few minutes in a low oven.",
+        "Fill them at the last second so they stay crisp."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Cream puffs that crunch lightly when you bite in? That is the kind of detail people remember."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Notes"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Resting at 70–80°F makes the dough easier to pipe.",
+        "This recipe yields about 30 medium puffs."
+      ]
+    }
+  ],
+  "faqs": []
+}

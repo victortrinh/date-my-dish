@@ -1,0 +1,566 @@
+{
+  "source": "notion",
+  "fetchedAt": "2026-03-30T22:47:53.957Z",
+  "notionPageId": "dcff04b9-b130-41df-85c9-a4f46bd2dcef",
+  "title": "Lamb Meatballs with Gochujang Glaze + Kabocha Purée (Peanut Crunch)",
+  "mode": "publish",
+  "existingSlug": null,
+  "recipeNum": 63,
+  "lastEditedTime": "2026-03-20T17:33:11.288Z",
+  "cookTime": "30 minutes",
+  "prepTime": "35 minutes",
+  "totalTime": "1 hour 5 minutes",
+  "difficulty": "hard",
+  "servings": 2,
+  "category": "Main",
+  "heroImage": {
+    "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch.jpg",
+    "caption": null
+  },
+  "images": [
+    {
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch.jpg",
+      "caption": "",
+      "isHero": true
+    },
+    {
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-1.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-2.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-3.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-4.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-5.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-6.jpg",
+      "caption": "",
+      "isHero": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "callout",
+      "icon": "🛒",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Affiliate note:** If you see product links on this site, they may be affiliate links. If you buy through them, I may earn a small commission at no extra cost to you."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Quick Overview"
+    },
+    {
+      "type": "paragraph",
+      "text": "I made this on a night where I wanted dinner to feel like a *special occasion* without leaving Montreal or fighting for a reservation. The plan was simple: cook something that looks dramatic, tastes expensive, and still lets you spend most of the night talking instead of panicking."
+    },
+    {
+      "type": "paragraph",
+      "text": "These **lamb meatballs** are sweet-savory and a little spicy, lacquered in a sticky **gochujang glaze**. They land on a silky **kabocha squash purée** with miso, sake, and mirin (yes, it’s that kind of cozy). Then you hit it with **peanut crunch** so every bite has something to bite back."
+    },
+    {
+      "type": "paragraph",
+      "text": "It’s the kind of plate that makes someone pause after the first bite. Not because it’s complicated. Because it feels like you meant it."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/89e959ea-639b-40fe-84af-908b04958bae/DSCF3587.jpg?table=block&id=31fc3484-e8de-808b-9f81-ec2a060004fb&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=t6EuHTqSpbL-EhImi6do-rU4ngOlIZSlZ2d9YCNZjo0",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Why You’ll Love This"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Big flavor with a clean structure:** meatballs, glaze, purée, crunch.",
+        "**Looks restaurant-level** but the steps are mostly repeatable patterns.",
+        "**Sweet, spicy, nutty, and creamy** all in one bite.",
+        "**Date-night friendly:** you can prep components ahead, then assemble like you’re calm and mysterious."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Ingredients (Serves 2)"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/c4ae1056-6670-4aae-9758-6402b97b4cf3/DSCF3557.jpg?table=block&id=31fc3484-e8de-801e-a1a8-fde7af1e2eca&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=uWHtR9xNhb91zY6NboyHP5Kr7ChncEy6Pj0HafrbvY8",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-1.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Kabocha Squash Purée (Yield: ~1 cup)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "2 tbsp canola oil",
+        "8 oz kabocha squash, peeled and diced",
+        "1 tbsp miso",
+        "½ cup sake",
+        "½ cup mirin"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Peanut Crunch (Yield: ~½ cup)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "4 oz skin-on Spanish peanuts",
+        "2 tbsp granulated sugar",
+        "2 tbsp perilla seeds",
+        "2 tbsp perilla oil",
+        "1 tsp kosher salt"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Gochujang Glaze (Yield: ~8 oz)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "1 tbsp canola oil",
+        "1 oz chopped garlic",
+        "½ oz chopped ginger",
+        "½ tsp ground coriander",
+        "½ tsp ground cumin",
+        "6 oz hoisin",
+        "1 oz gochujang",
+        "6 oz sake",
+        "1 tbsp sherry vinegar"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Lamb Meatballs (Yield: as many as you like)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "1 lb ground lamb",
+        "2 oz brown sugar",
+        "1 oz chopped garlic",
+        "1 oz chopped ginger",
+        "1 oz soy sauce",
+        "¼ cup chopped mint",
+        "¼ cup chopped cilantro",
+        "1 tbsp gochugaru"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "To Assemble and Serve (Yield: 2 servings)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "2 tbsp canola oil",
+        "½ cup fresh herb mix (mint, cilantro, Thai basil)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Shopping Notes (So You Don’t Overthink It)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Kabocha:** Look for a deep green squash with dull skin and a heavy feel. It’s sweet, chestnutty, and makes purée taste naturally rich.",
+        "**Perilla oil + seeds:** If you have them, use them. If you don’t, you can still make a great crunch with sesame oil + sesame seeds. (But perilla is a little more “what *is* that flavor?” in the best way.)",
+        "**Lamb:** Ground lamb can vary in fattiness. If yours is very lean, a small drizzle of oil in the mix helps keep meatballs juicy.",
+        "**Garlic + ginger amounts:** These are bold by design. It’s date-night food, not background music."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step-by-Step"
+    },
+    {
+      "type": "paragraph",
+      "text": "1) Make the kabocha purée"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Heat 2 tbsp canola oil in a small pot over medium heat.",
+        "Add diced kabocha. Cook 3–4 minutes to get it coated and lightly golden in spots.",
+        "Add miso, sake, and mirin. Stir, bring to a simmer, then cover and cook until kabocha is very tender, about 12–15 minutes.",
+        "Uncover and simmer 2–3 minutes to reduce slightly.",
+        "Blend until completely smooth. (If needed, add a small splash of water to loosen.)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Texture goal:** silky enough to swipe with a spoon, thick enough to hold meatballs on top."
+    },
+    {
+      "type": "paragraph",
+      "text": "2) Make the peanut crunch"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "In a small pan over medium heat, toast peanuts until they smell like peanut butter, 3–5 minutes.",
+        "Add sugar and stir until it melts and coats the peanuts.",
+        "Stir in perilla seeds, perilla oil, and salt.",
+        "Spread on a plate to cool, then chop into a crunchy rubble."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Tip:** Do not walk away when sugar is in the pan. It goes from “perfect” to “why does it taste like campfire” fast."
+    },
+    {
+      "type": "paragraph",
+      "text": "3) Make the gochujang glaze"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Heat 1 tbsp canola oil in a small pot.",
+        "Add garlic and ginger and cook 30–60 seconds until fragrant.",
+        "Add coriander and cumin. Stir 15 seconds.",
+        "Add hoisin, gochujang, sake, and sherry vinegar.",
+        "Simmer 8–12 minutes until glossy and slightly thick."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Consistency check:** It should coat the back of a spoon and leave a clean line when you drag your finger through."
+    },
+    {
+      "type": "paragraph",
+      "text": "4) Make and cook the lamb meatballs"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "In a bowl, combine ground lamb, brown sugar, garlic, ginger, soy sauce, mint, cilantro, and gochugaru."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/0aed2a9e-1fc6-4d1c-927a-f8207b968a2f/DSCF3559.jpg?table=block&id=320c3484-e8de-8044-b735-d10c26c1d970&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=AH6BXuw7JEVMt4E1KdVNKLXzThAOtaa49ag8NsrMSCI",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-2.jpg"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Mix gently until combined. Don’t overwork it."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/5ed7b8d4-6920-4dba-adcd-aa1b523c57ac/DSCF3560.jpg?table=block&id=320c3484-e8de-8076-b7bc-d3d61c969cd3&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=WUESqoDUOLEi4IvdWAIqWUoRHLADcm8eCPTpsAiinaM",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-3.jpg"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Form meatballs in whatever size you want."
+      ]
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Smaller meatballs feel more snacky and “shared plate” friendly.",
+        "Larger meatballs feel more main-character and dinner-plate worthy."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/8ccad16a-e8a2-42f5-98e0-821a13c2c6cd/DSCF3561.jpg?table=block&id=320c3484-e8de-80a7-b292-c865b3be28d0&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=GHyCnDZBBG7ew5i4epHxztQHbths7VAPRXS5ZPcuUTQ",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-4.jpg"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Heat 2 tbsp canola oil in a skillet over medium-high heat."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/913c0684-5db0-4195-9e52-fc89e0b325d1/DSCF3564.jpg?table=block&id=320c3484-e8de-8004-9770-d7e9b97362ff&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=lX8DUvC-HJoyjCFcVBgYEGZIe8hC_eVG6ABoqZQ5OtA",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-5.jpg"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Brown meatballs on all sides, then lower heat to medium and cook until done, about 8–10 minutes total depending on size."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "5) Glaze + assemble"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Toss hot meatballs in the gochujang glaze."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/eeb1c24f-a09b-4522-b8e4-46512195fd3d/DSCF3565.jpg?table=block&id=320c3484-e8de-8042-9700-df8d580a549d&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1774936800000&signature=yrd01P3cS34JfmOHLJIwQCg_Bagz_2eUnoLCGUaH8sc",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/lamb-meatballs-with-gochujang-glaze-kabocha-pur-e-peanut-crunch-step-6.jpg"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Spoon a swoosh of kabocha purée onto each plate.",
+        "Add meatballs.",
+        "Shower with peanut crunch.",
+        "Finish with fresh herbs."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "During the Date (What to Do While Things Simmer)"
+    },
+    {
+      "type": "paragraph",
+      "text": "This recipe has built-in little pauses. Use them."
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**While the kabocha cooks:** rinse herbs, put on music, and decide what you’re drinking.",
+        "**Two-person prep split:** one person rolls meatballs, one person makes the glaze. You’ll finish faster and it feels like you’re cooking *together*.",
+        "**Taste test moment:** dip a spoon into the glaze and ask, “More heat, or are we being nice tonight?”",
+        "**Plate together:** let your date sprinkle the peanut crunch and herbs at the table. It’s small, it’s interactive, and it makes the dish feel collaborative."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Expert Tips"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Keep the purée warm** (low heat with a lid) so plating feels smooth and effortless.",
+        "**Glaze at the end.** If you glaze too early and keep cooking, you can burn the sugars.",
+        "**Herbs are not decoration.** They are the fresh, green counterbalance that keeps the whole plate from feeling heavy."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "What to Serve With"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Pairings (Full Meal Course)"
+    },
+    {
+      "type": "paragraph",
+      "text": "A full menu using internal links:"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Starter:** ‣",
+        "**Main:** You’re here.",
+        "**Side:** ‣",
+        "**Dessert:** ‣",
+        "Steamed rice or warm flatbread (to catch glaze)",
+        "A crisp cucumber salad with vinegar and salt",
+        "Something cold and clean to drink (sparkling water with citrus, or a crisp white)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "FAQs"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Can I prep this ahead?**"
+    },
+    {
+      "type": "paragraph",
+      "text": "Yes. Make the purée and glaze ahead. Reheat gently. Cook meatballs fresh, then glaze and assemble."
+    },
+    {
+      "type": "paragraph",
+      "text": "**What if I can’t find perilla oil?**"
+    },
+    {
+      "type": "paragraph",
+      "text": "Use toasted sesame oil for the crunch. It will be different, but still delicious."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Is the glaze very spicy?**"
+    },
+    {
+      "type": "paragraph",
+      "text": "It’s sweet-first, then warm heat. Adjust by using less gochujang or adding a little more hoisin."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Recipe Card"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lamb Meatballs with Gochujang Glaze + Kabocha Purée (Peanut Crunch)**"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Kabocha Squash Purée (Yield: 1 cup)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "2 tbsp canola oil",
+        "8 oz kabocha squash, peeled and diced",
+        "1 tbsp miso",
+        "½ cup sake",
+        "½ cup mirin"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Peanut Crunch (Yield: ½ cup)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "4 oz skin-on Spanish peanuts",
+        "2 tbsp sugar",
+        "2 tbsp perilla seeds",
+        "2 tbsp perilla oil",
+        "1 tsp kosher salt"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Gochujang Glaze (Yield: 8 oz)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "1 tbsp canola oil",
+        "1 oz chopped garlic",
+        "½ oz chopped ginger",
+        "½ tsp coriander",
+        "½ tsp cumin",
+        "6 oz hoisin",
+        "1 oz gochujang",
+        "6 oz sake",
+        "1 tbsp sherry vinegar"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lamb Meatballs (Yield: as many as you like)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "1 lb ground lamb",
+        "2 oz brown sugar",
+        "1 oz chopped garlic",
+        "1 oz chopped ginger",
+        "1 oz soy sauce",
+        "¼ cup chopped mint",
+        "¼ cup chopped cilantro",
+        "1 tbsp gochugaru"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**To Serve (Yield: 2 servings)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "2 tbsp canola oil",
+        "½ cup herb mix (mint, cilantro, Thai basil)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Method (Summary)**"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Simmer kabocha with miso, sake, mirin until tender. Blend smooth.",
+        "Make peanut crunch: toast peanuts, caramelize lightly with sugar, stir in perilla seeds/oil + salt. Cool and chop.",
+        "Make glaze: sauté garlic/ginger + spices, simmer with hoisin, gochujang, sake, vinegar until glossy.",
+        "Mix and form lamb meatballs to your preferred size. Pan-brown and cook through.",
+        "Toss meatballs in glaze. Plate over purée. Top with crunch + herbs."
+      ]
+    }
+  ],
+  "faqs": []
+}
