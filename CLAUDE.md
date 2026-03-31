@@ -94,7 +94,7 @@ Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*
 | `heroImageAlt` | string | Descriptive, ~125 chars |
 | `prepTime` | string | ISO 8601 duration (e.g., `PT10M`) |
 | `cookTime` | string | ISO 8601 duration (e.g., `PT30M`) |
-| `totalTime` | string | ISO 8601 duration (e.g., `PT45M`) |
+| `totalTime` | string | ISO 8601 duration (e.g., `PT45M`, `P3DT2H50M`). Includes passive time when applicable. |
 | `recipeYield` | string | e.g., "2 servings" |
 | `difficulty` | enum | `"easy"`, `"medium"`, or `"hard"` |
 | `recipeCategory` | string[] | Canonical EN keys (e.g., `["dinner"]`) |
@@ -109,6 +109,7 @@ Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*
 |-------|------|-------|
 | `author` | string | Defaults to `"Victor"` |
 | `updatedDate` | date | YYYY-MM-DD |
+| `passiveTime` | string | ISO 8601 duration for curing/chilling/marinating (e.g., `P3D`, `PT4H`) |
 | `pinterestImage` | image() | Deferred until 30+ recipes |
 | `tags` | string[] | e.g., `["italian", "pasta", "quick", "vegetarian"]` |
 | `nutrition` | object | `{ calories?, fatContent?, carbohydrateContent?, proteinContent? }` (all optional strings) |
