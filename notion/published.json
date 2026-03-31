@@ -120,6 +120,38 @@
       "publishedDate": "2026-03-27",
       "lastSyncedDate": "2026-03-27",
       "status": "published"
+    },
+    "63": {
+      "notionTitle": "Lamb Meatballs with Gochujang Glaze + Kabocha Purée (Peanut Crunch)",
+      "slug": "lamb-meatballs-gochujang-glaze",
+      "type": "recipe",
+      "publishedDate": "2026-03-30",
+      "lastSyncedDate": "2026-03-30",
+      "status": "published"
+    },
+    "65": {
+      "notionTitle": "3-Day Aged Miso Duck Breast (Shatter-Crisp Skin)",
+      "slug": "3-day-aged-miso-duck-breast",
+      "type": "recipe",
+      "publishedDate": "2026-03-30",
+      "lastSyncedDate": "2026-03-30",
+      "status": "published"
+    },
+    "66": {
+      "notionTitle": "Pâte à Choux Recipe (Foolproof Choux Pastry for Cream Puffs + Gougères)",
+      "slug": "pate-a-choux",
+      "type": "recipe",
+      "publishedDate": "2026-03-30",
+      "lastSyncedDate": "2026-03-30",
+      "status": "published"
+    },
+    "73": {
+      "notionTitle": "Chocolate Tofu Pudding with Candied Cacao Nibs + Banana",
+      "slug": "chocolate-tofu-pudding",
+      "type": "recipe",
+      "publishedDate": "2026-03-30",
+      "lastSyncedDate": "2026-03-30",
+      "status": "published"
     }
   }
 }
