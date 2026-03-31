@@ -127,30 +127,42 @@ async function resolveHeroImageUrl(slug) {
 // Caption generation from frontmatter (with template fallback)
 // ---------------------------------------------------------------------------
 async function generateCaptions(enData, frData) {
-  // Check if socialCaption exists in frontmatter
-  if (enData.socialCaption) {
-    const sc = enData.socialCaption;
-    return {
-      instagram_caption: sc.instagram || buildInstagramTemplate(enData, frData),
-      pinterest_title: sc.pinterest ? sc.pinterest.split('\n')[0] : enData.title,
-      pinterest_description: sc.pinterest || buildPinterestTemplate(enData),
-      pinterest_title_v2: enData.title,
-      pinterest_description_v2: sc.pinterest || buildPinterestTemplate(enData),
-      pinterest_title_v3: enData.title,
-      pinterest_description_v3: sc.pinterest || buildPinterestTemplate(enData),
-    };
-  }
+  const baseDescription = enData.socialCaption?.pinterest || buildPinterestTemplate(enData);
 
-  // Fallback: generate from title + description (no Claude API needed)
-  // Note: pin rotation quality degrades for pre-migration recipes (identical variants)
+  // Variant 1: always use recipe title
+  const baseTitle = enData.title;
+
+  // Variant 2: time + cuisine + category hook
+  const timeMatch = enData.totalTime?.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
+  const hours = timeMatch?.[1] ? parseInt(timeMatch[1]) : 0;
+  const mins = timeMatch?.[2] ? parseInt(timeMatch[2]) : 0;
+  const totalMins = hours * 60 + mins;
+  // Use hours when >= 120 minutes
+  const timeStr = totalMins >= 120
+    ? `${Math.round(totalMins / 60)}-Hour`
+    : totalMins > 0
+      ? `${totalMins}-Minute`
+      : null;
+
+  const cuisine = enData.recipeCuisine || "Homemade";
+  const category = enData.recipeCategory?.[0] || "Recipe";
+  const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+
+  const v2Title = timeStr
+    ? `${timeStr} ${cuisine} ${categoryLabel}`
+    : `${cuisine} ${enData.title}`;
+
+  // Variant 3: "{title} | Perfect for Date Night"
+  const v3Title = `${enData.title} | Perfect for Date Night`;
+
   return {
-    instagram_caption: buildInstagramTemplate(enData, frData),
-    pinterest_title: enData.title,
-    pinterest_description: buildPinterestTemplate(enData),
-    pinterest_title_v2: enData.title,
-    pinterest_description_v2: buildPinterestTemplate(enData),
-    pinterest_title_v3: enData.title,
-    pinterest_description_v3: buildPinterestTemplate(enData),
+    instagram_caption: enData.socialCaption?.instagram || buildInstagramTemplate(enData, frData),
+    pinterest_title: baseTitle.slice(0, 100),
+    pinterest_description: baseDescription,
+    pinterest_title_v2: v2Title.slice(0, 100),
+    pinterest_description_v2: baseDescription,
+    pinterest_title_v3: v3Title.slice(0, 100),
+    pinterest_description_v3: baseDescription,
   };
 }
 
@@ -161,7 +173,7 @@ function buildInstagramTemplate(enData, frData) {
 }
 
 function buildPinterestTemplate(data) {
-  return `${data.description} Get the full recipe at datemydish.com!`;
+  return data.description;
 }
 
 // ---------------------------------------------------------------------------
