@@ -92,35 +92,49 @@ async function waitForDeploy(slug) {
 }
 
 // ---------------------------------------------------------------------------
-// Hero image URL resolution (from live JSON-LD)
+// Hero image URL resolution (from live JSON-LD, with local build fallback)
 // ---------------------------------------------------------------------------
-async function resolveHeroImageUrl(slug) {
-  const url = `${SITE_URL}/en/recipes/${slug}/`;
-  const res = await fetch(url, { headers: FETCH_HEADERS });
-
-  if (!res.ok) {
-    throw new Error(
-      `Failed to fetch ${url}: HTTP ${res.status} ${res.statusText}`
-    );
-  }
-
-  const html = await res.text();
-
-  // Extract the first JSON-LD script (Recipe schema)
+function extractImageFromHtml(html, source) {
   const match = html.match(
     /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/
   );
   if (!match) {
-    console.error(`Page HTML length: ${html.length}, first 500 chars: ${html.slice(0, 500)}`);
-    throw new Error(`No JSON-LD found on ${url}`);
+    throw new Error(`No JSON-LD found in ${source}`);
   }
 
   const jsonLd = JSON.parse(match[1]);
   // Recipe JSON-LD image is always array format per CLAUDE.md
   const image = Array.isArray(jsonLd.image) ? jsonLd.image[0] : jsonLd.image;
-  if (!image) throw new Error(`No image in JSON-LD on ${url}`);
+  if (!image) throw new Error(`No image in JSON-LD from ${source}`);
 
   return image;
+}
+
+async function resolveHeroImageUrl(slug) {
+  const url = `${SITE_URL}/en/recipes/${slug}/`;
+
+  // Try live site first
+  try {
+    const res = await fetch(url, { headers: FETCH_HEADERS });
+    if (res.ok) {
+      const html = await res.text();
+      return extractImageFromHtml(html, url);
+    }
+    console.warn(`Live fetch failed (HTTP ${res.status}), trying local build...`);
+  } catch (err) {
+    console.warn(`Live fetch failed (${err.message}), trying local build...`);
+  }
+
+  // Fallback: read from local build output
+  const localPath = join("dist", "en", "recipes", slug, "index.html");
+  if (existsSync(localPath)) {
+    const html = readFileSync(localPath, "utf-8");
+    return extractImageFromHtml(html, localPath);
+  }
+
+  throw new Error(
+    `Cannot resolve hero image for ${slug}: live site unreachable and no local build at ${localPath}`
+  );
 }
 
 // ---------------------------------------------------------------------------
