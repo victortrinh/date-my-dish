@@ -157,7 +157,7 @@ async function generateCaptions(enData, frData) {
 
   return {
     instagram_caption: enData.socialCaption?.instagram || buildInstagramTemplate(enData, frData),
-    pinterest_title: baseTitle,
+    pinterest_title: baseTitle.slice(0, 100),
     pinterest_description: baseDescription,
     pinterest_title_v2: v2Title.slice(0, 100),
     pinterest_description_v2: baseDescription,
