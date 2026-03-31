@@ -52,8 +52,7 @@ jobs:
             }
           ")
 
-          ALL_NEW=$(echo -e "${NEW_RECIPES}
-${UNPOSTED}" | sort -u | grep -v '^$' || true)
+          ALL_NEW=$(printf '%s\n%s' "${NEW_RECIPES}" "${UNPOSTED}" | sort -u | grep -v '^$' || true)
 
           if [ -z "$ALL_NEW" ]; then
             echo "count=0" >> $GITHUB_OUTPUT
