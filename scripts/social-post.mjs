@@ -161,7 +161,7 @@ function buildInstagramTemplate(enData, frData) {
 }
 
 function buildPinterestTemplate(data) {
-  return `${data.description} Get the full recipe at datemydish.com!`;
+  return data.description;
 }
 
 // ---------------------------------------------------------------------------
