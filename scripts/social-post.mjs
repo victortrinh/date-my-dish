@@ -92,65 +92,91 @@ async function waitForDeploy(slug) {
 }
 
 // ---------------------------------------------------------------------------
-// Hero image URL resolution (from live JSON-LD)
+// Hero image URL resolution (from live JSON-LD, with local build fallback)
 // ---------------------------------------------------------------------------
-async function resolveHeroImageUrl(slug) {
-  const url = `${SITE_URL}/en/recipes/${slug}/`;
-  const res = await fetch(url, { headers: FETCH_HEADERS });
-
-  if (!res.ok) {
-    throw new Error(
-      `Failed to fetch ${url}: HTTP ${res.status} ${res.statusText}`
-    );
-  }
-
-  const html = await res.text();
-
-  // Extract the first JSON-LD script (Recipe schema)
+function extractImageFromHtml(html, source) {
   const match = html.match(
     /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/
   );
   if (!match) {
-    console.error(`Page HTML length: ${html.length}, first 500 chars: ${html.slice(0, 500)}`);
-    throw new Error(`No JSON-LD found on ${url}`);
+    throw new Error(`No JSON-LD found in ${source}`);
   }
 
   const jsonLd = JSON.parse(match[1]);
   // Recipe JSON-LD image is always array format per CLAUDE.md
   const image = Array.isArray(jsonLd.image) ? jsonLd.image[0] : jsonLd.image;
-  if (!image) throw new Error(`No image in JSON-LD on ${url}`);
+  if (!image) throw new Error(`No image in JSON-LD from ${source}`);
 
   return image;
+}
+
+async function resolveHeroImageUrl(slug) {
+  const url = `${SITE_URL}/en/recipes/${slug}/`;
+
+  // Try live site first
+  try {
+    const res = await fetch(url, { headers: FETCH_HEADERS });
+    if (res.ok) {
+      const html = await res.text();
+      return extractImageFromHtml(html, url);
+    }
+    console.warn(`Live fetch failed (HTTP ${res.status}), trying local build...`);
+  } catch (err) {
+    console.warn(`Live fetch failed (${err.message}), trying local build...`);
+  }
+
+  // Fallback: read from local build output
+  const localPath = join("dist", "en", "recipes", slug, "index.html");
+  if (existsSync(localPath)) {
+    const html = readFileSync(localPath, "utf-8");
+    return extractImageFromHtml(html, localPath);
+  }
+
+  throw new Error(
+    `Cannot resolve hero image for ${slug}: live site unreachable and no local build at ${localPath}`
+  );
 }
 
 // ---------------------------------------------------------------------------
 // Caption generation from frontmatter (with template fallback)
 // ---------------------------------------------------------------------------
 async function generateCaptions(enData, frData) {
-  // Check if socialCaption exists in frontmatter
-  if (enData.socialCaption) {
-    const sc = enData.socialCaption;
-    return {
-      instagram_caption: sc.instagram || buildInstagramTemplate(enData, frData),
-      pinterest_title: sc.pinterest ? sc.pinterest.split('\n')[0] : enData.title,
-      pinterest_description: sc.pinterest || buildPinterestTemplate(enData),
-      pinterest_title_v2: enData.title,
-      pinterest_description_v2: sc.pinterest || buildPinterestTemplate(enData),
-      pinterest_title_v3: enData.title,
-      pinterest_description_v3: sc.pinterest || buildPinterestTemplate(enData),
-    };
-  }
+  const baseDescription = enData.socialCaption?.pinterest || buildPinterestTemplate(enData);
 
-  // Fallback: generate from title + description (no Claude API needed)
-  // Note: pin rotation quality degrades for pre-migration recipes (identical variants)
+  // Variant 1: always use recipe title
+  const baseTitle = enData.title;
+
+  // Variant 2: time + cuisine + category hook
+  const timeMatch = enData.totalTime?.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
+  const hours = timeMatch?.[1] ? parseInt(timeMatch[1]) : 0;
+  const mins = timeMatch?.[2] ? parseInt(timeMatch[2]) : 0;
+  const totalMins = hours * 60 + mins;
+  // Use hours when >= 120 minutes
+  const timeStr = totalMins >= 120
+    ? `${Math.round(totalMins / 60)}-Hour`
+    : totalMins > 0
+      ? `${totalMins}-Minute`
+      : null;
+
+  const cuisine = enData.recipeCuisine || "Homemade";
+  const category = enData.recipeCategory?.[0] || "Recipe";
+  const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+
+  const v2Title = timeStr
+    ? `${timeStr} ${cuisine} ${categoryLabel}`
+    : `${cuisine} ${enData.title}`;
+
+  // Variant 3: "{title} | Perfect for Date Night"
+  const v3Title = `${enData.title} | Perfect for Date Night`;
+
   return {
-    instagram_caption: buildInstagramTemplate(enData, frData),
-    pinterest_title: enData.title,
-    pinterest_description: buildPinterestTemplate(enData),
-    pinterest_title_v2: enData.title,
-    pinterest_description_v2: buildPinterestTemplate(enData),
-    pinterest_title_v3: enData.title,
-    pinterest_description_v3: buildPinterestTemplate(enData),
+    instagram_caption: enData.socialCaption?.instagram || buildInstagramTemplate(enData, frData),
+    pinterest_title: baseTitle.slice(0, 100),
+    pinterest_description: baseDescription,
+    pinterest_title_v2: v2Title.slice(0, 100),
+    pinterest_description_v2: baseDescription,
+    pinterest_title_v3: v3Title.slice(0, 100),
+    pinterest_description_v3: baseDescription,
   };
 }
 
@@ -161,7 +187,7 @@ function buildInstagramTemplate(enData, frData) {
 }
 
 function buildPinterestTemplate(data) {
-  return `${data.description} Get the full recipe at datemydish.com!`;
+  return data.description;
 }
 
 // ---------------------------------------------------------------------------
@@ -523,8 +549,17 @@ async function runBackfill() {
   console.log(`Backfill: ${pending.length} recipes pending, posting up to ${limit}`);
 
   const batch = pending.slice(0, limit);
+  let posted = 0;
+  let failed = 0;
   for (const filePath of batch) {
-    await processRecipe(filePath, log, { backfill: true, platform });
+    try {
+      await processRecipe(filePath, log, { backfill: true, platform });
+      posted++;
+    } catch (err) {
+      const slug = basename(filePath, ".mdx");
+      console.error(`Failed ${slug}: ${err.message}`);
+      failed++;
+    }
     // Small delay between posts to be respectful to APIs
     if (batch.indexOf(filePath) < batch.length - 1) {
       console.log("Waiting 10s between posts...");
@@ -532,7 +567,10 @@ async function runBackfill() {
     }
   }
 
-  console.log(`\nBackfill complete. Posted ${batch.length} recipes.`);
+  console.log(`\nBackfill complete. Posted: ${posted}, Failed: ${failed}, Total: ${batch.length}.`);
+  if (failed > 0) {
+    console.error(`${failed} recipe(s) failed. Re-run backfill to retry.`);
+  }
 }
 
 // ---------------------------------------------------------------------------

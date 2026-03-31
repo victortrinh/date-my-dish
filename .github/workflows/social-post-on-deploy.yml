@@ -39,16 +39,31 @@ jobs:
         id: detect
         run: |
           NEW_RECIPES=$(git diff --name-only --diff-filter=A HEAD~1 -- 'src/content/recipes/en/*.mdx' || true)
-          if [ -z "$NEW_RECIPES" ]; then
+
+          UNPOSTED=$(node -e "
+            const fs = require('fs');
+            const log = JSON.parse(fs.readFileSync('data/social-posts-log.json'));
+            const recipes = fs.readdirSync('src/content/recipes/en')
+              .filter(f => f.endsWith('.mdx'))
+              .map(f => f.replace('.mdx',''));
+            const missing = recipes.filter(r => !log[r]);
+            if (missing.length) {
+              console.log(missing.map(r => 'src/content/recipes/en/' + r + '.mdx').join('\n'));
+            }
+          ")
+
+          ALL_NEW=$(printf '%s\n%s' "${NEW_RECIPES}" "${UNPOSTED}" | sort -u | grep -v '^$' || true)
+
+          if [ -z "$ALL_NEW" ]; then
             echo "count=0" >> $GITHUB_OUTPUT
             echo "recipes=" >> $GITHUB_OUTPUT
           else
             echo "recipes<<EOF" >> $GITHUB_OUTPUT
-            echo "$NEW_RECIPES" >> $GITHUB_OUTPUT
+            echo "$ALL_NEW" >> $GITHUB_OUTPUT
             echo "EOF" >> $GITHUB_OUTPUT
-            echo "count=$(echo "$NEW_RECIPES" | wc -l | tr -d ' ')" >> $GITHUB_OUTPUT
+            echo "count=$(echo "$ALL_NEW" | wc -l | tr -d ' ')" >> $GITHUB_OUTPUT
           fi
-          echo "Detected new recipes: $NEW_RECIPES"
+          echo "Detected recipes to post: $ALL_NEW"
 
       - name: Post to social media
         if: steps.detect.outputs.count != '0'
