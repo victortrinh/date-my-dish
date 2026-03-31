@@ -352,5 +352,201 @@
         }
       ]
     }
+  },
+  "3-day-aged-miso-duck-breast": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "3-Day Aged Miso Duck Breast (Shatter-Crisp Skin)",
+          "description": "3-day aged miso duck breast with shatter-crisp skin: a miso cure, slow render, sous vide, and a blistering final sear. The most impressive date night dinner you can make at home. Full recipe with step photos.",
+          "status": "posted",
+          "id": "1050746156852453510",
+          "postedAt": "2026-03-31T05:31:26.294Z"
+        },
+        {
+          "variant": 2,
+          "title": "3-Hour Japanese-French Dinner",
+          "description": "3-day aged miso duck breast with shatter-crisp skin: a miso cure, slow render, sous vide, and a blistering final sear. The most impressive date night dinner you can make at home. Full recipe with step photos.",
+          "scheduledFor": "2026-04-05T05:31:25.367Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "3-Day Aged Miso Duck Breast (Shatter-Crisp Skin) | Perfect for Date Night",
+          "description": "3-day aged miso duck breast with shatter-crisp skin: a miso cure, slow render, sous vide, and a blistering final sear. The most impressive date night dinner you can make at home. Full recipe with step photos.",
+          "scheduledFor": "2026-04-12T05:31:25.367Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "chocolate-tofu-pudding": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Chocolate Tofu Pudding with Candied Cacao Nibs and Banana",
+          "description": "Chocolate tofu pudding recipe with candied cacao nibs and banana: silky, rich, and make-ahead friendly. The secret ingredient is silken tofu blended with dates and milk chocolate. Perfect impressive dessert for date night at home.",
+          "status": "posted",
+          "id": "1050746156852453512",
+          "postedAt": "2026-03-31T05:31:37.156Z"
+        },
+        {
+          "variant": 2,
+          "title": "60-Minute Fusion Dessert",
+          "description": "Chocolate tofu pudding recipe with candied cacao nibs and banana: silky, rich, and make-ahead friendly. The secret ingredient is silken tofu blended with dates and milk chocolate. Perfect impressive dessert for date night at home.",
+          "scheduledFor": "2026-04-05T05:31:36.327Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Chocolate Tofu Pudding with Candied Cacao Nibs and Banana | Perfect for Date Night",
+          "description": "Chocolate tofu pudding recipe with candied cacao nibs and banana: silky, rich, and make-ahead friendly. The secret ingredient is silken tofu blended with dates and milk chocolate. Perfect impressive dessert for date night at home.",
+          "scheduledFor": "2026-04-12T05:31:36.327Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "lamb-meatballs-gochujang-glaze": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Lamb Meatballs with Gochujang Glaze + Kabocha Puree (Peanut Crunch)",
+          "description": "Lamb meatballs with gochujang glaze and kabocha puree recipe: spicy-sweet glazed lamb over silky miso squash puree with caramelized peanut crunch. A stunning date night dinner for two that looks restaurant-level.",
+          "status": "posted",
+          "id": "1050746156852453518",
+          "postedAt": "2026-03-31T05:31:48.045Z"
+        },
+        {
+          "variant": 2,
+          "title": "65-Minute Korean-Japanese Dinner",
+          "description": "Lamb meatballs with gochujang glaze and kabocha puree recipe: spicy-sweet glazed lamb over silky miso squash puree with caramelized peanut crunch. A stunning date night dinner for two that looks restaurant-level.",
+          "scheduledFor": "2026-04-05T05:31:47.184Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Lamb Meatballs with Gochujang Glaze + Kabocha Puree (Peanut Crunch) | Perfect for Date Night",
+          "description": "Lamb meatballs with gochujang glaze and kabocha puree recipe: spicy-sweet glazed lamb over silky miso squash puree with caramelized peanut crunch. A stunning date night dinner for two that looks restaurant-level.",
+          "scheduledFor": "2026-04-12T05:31:47.184Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "miso-udon-carbonara": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Miso Udon Carbonara (Silky, No-Cream)",
+          "description": "Miso udon carbonara recipe (silky, no-cream): thick chewy udon in a glossy egg yolk and cheese sauce with white miso and crispy bacon. Ready in 20 minutes. The best date night noodle bowl for two.",
+          "status": "posted",
+          "id": "1050746156852453520",
+          "postedAt": "2026-03-31T05:31:58.890Z"
+        },
+        {
+          "variant": 2,
+          "title": "20-Minute Japanese-Italian Dinner",
+          "description": "Miso udon carbonara recipe (silky, no-cream): thick chewy udon in a glossy egg yolk and cheese sauce with white miso and crispy bacon. Ready in 20 minutes. The best date night noodle bowl for two.",
+          "scheduledFor": "2026-04-05T05:31:58.072Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Miso Udon Carbonara (Silky, No-Cream) | Perfect for Date Night",
+          "description": "Miso udon carbonara recipe (silky, no-cream): thick chewy udon in a glossy egg yolk and cheese sauce with white miso and crispy bacon. Ready in 20 minutes. The best date night noodle bowl for two.",
+          "scheduledFor": "2026-04-12T05:31:58.072Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "northern-thai-beef-tartare": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Northern Thai Beef Tartare Recipe",
+          "description": "Northern Thai beef tartare: thinly sliced AAA striploin tossed with laab powder, garlic oil, fish sauce, lime, and a pile of fresh herbs. Served in lettuce cups. 15 minutes, no cooking. The appetizer that starts every good date night.",
+          "status": "posted",
+          "id": "1050746156852453530",
+          "postedAt": "2026-03-31T05:32:09.626Z"
+        },
+        {
+          "variant": 2,
+          "title": "15-Minute Thai Appetizer",
+          "description": "Northern Thai beef tartare: thinly sliced AAA striploin tossed with laab powder, garlic oil, fish sauce, lime, and a pile of fresh herbs. Served in lettuce cups. 15 minutes, no cooking. The appetizer that starts every good date night.",
+          "scheduledFor": "2026-04-05T05:32:08.919Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Northern Thai Beef Tartare Recipe | Perfect for Date Night",
+          "description": "Northern Thai beef tartare: thinly sliced AAA striploin tossed with laab powder, garlic oil, fish sauce, lime, and a pile of fresh herbs. Served in lettuce cups. 15 minutes, no cooking. The appetizer that starts every good date night.",
+          "scheduledFor": "2026-04-12T05:32:08.919Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "pate-a-choux": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Pâte à Choux (Foolproof Choux Pastry for Cream Puffs and Gougères)",
+          "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
+          "status": "posted",
+          "id": "1050746156852453537",
+          "postedAt": "2026-03-31T05:32:20.557Z"
+        },
+        {
+          "variant": 2,
+          "title": "45-Minute French Dessert",
+          "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
+          "scheduledFor": "2026-04-05T05:32:19.653Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Pâte à Choux (Foolproof Choux Pastry for Cream Puffs and Gougères) | Perfect for Date Night",
+          "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
+          "scheduledFor": "2026-04-12T05:32:19.653Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "pork-osso-buco": {
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "title": "Pork Osso Buco with Creamy Polenta",
+          "description": "Pork osso buco with creamy polenta: braised pork shanks in white wine until fall-apart tender, spooned over polenta, topped with lemon-parsley gremolata. 4 hours, mostly hands-off. The slow dinner that turns any night into an occasion.",
+          "status": "posted",
+          "id": "1050746156852453543",
+          "postedAt": "2026-03-31T05:32:31.520Z"
+        },
+        {
+          "variant": 2,
+          "title": "4-Hour Italian Dinner",
+          "description": "Pork osso buco with creamy polenta: braised pork shanks in white wine until fall-apart tender, spooned over polenta, topped with lemon-parsley gremolata. 4 hours, mostly hands-off. The slow dinner that turns any night into an occasion.",
+          "scheduledFor": "2026-04-05T05:32:30.594Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "title": "Pork Osso Buco with Creamy Polenta | Perfect for Date Night",
+          "description": "Pork osso buco with creamy polenta: braised pork shanks in white wine until fall-apart tender, spooned over polenta, topped with lemon-parsley gremolata. 4 hours, mostly hands-off. The slow dinner that turns any night into an occasion.",
+          "scheduledFor": "2026-04-12T05:32:30.594Z",
+          "status": "pending"
+        }
+      ]
+    }
   }
 }
