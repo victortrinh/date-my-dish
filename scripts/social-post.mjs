@@ -535,8 +535,17 @@ async function runBackfill() {
   console.log(`Backfill: ${pending.length} recipes pending, posting up to ${limit}`);
 
   const batch = pending.slice(0, limit);
+  let posted = 0;
+  let failed = 0;
   for (const filePath of batch) {
-    await processRecipe(filePath, log, { backfill: true, platform });
+    try {
+      await processRecipe(filePath, log, { backfill: true, platform });
+      posted++;
+    } catch (err) {
+      const slug = basename(filePath, ".mdx");
+      console.error(`Failed ${slug}: ${err.message}`);
+      failed++;
+    }
     // Small delay between posts to be respectful to APIs
     if (batch.indexOf(filePath) < batch.length - 1) {
       console.log("Waiting 10s between posts...");
@@ -544,7 +553,10 @@ async function runBackfill() {
     }
   }
 
-  console.log(`\nBackfill complete. Posted ${batch.length} recipes.`);
+  console.log(`\nBackfill complete. Posted: ${posted}, Failed: ${failed}, Total: ${batch.length}.`);
+  if (failed > 0) {
+    console.error(`${failed} recipe(s) failed. Re-run backfill to retry.`);
+  }
 }
 
 // ---------------------------------------------------------------------------
