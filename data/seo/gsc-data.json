@@ -1,18 +1,5 @@
 {
   "pages": {
-    "/en/articles/sous-vide-date-night/": {
-      "queries": [
-        {
-          "keyword": "date sous vide",
-          "avgPosition": 8,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 3
-    },
     "/en/recipes/crispy-vegan-calamari/": {
       "queries": [
         {
@@ -24,39 +11,86 @@
         },
         {
           "keyword": "oyster mushroom calamari",
-          "avgPosition": 35,
+          "avgPosition": 34,
           "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 4
-    },
-    "/en/recipes/quinoa-crusted-salmon/": {
-      "queries": [
-        {
-          "keyword": "quinoa crusted salmon",
-          "avgPosition": 31.9,
-          "clicks": 0,
-          "impressions": 8,
+          "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "salmón nikkei",
-          "avgPosition": 13,
+          "keyword": "vegan calamari",
+          "avgPosition": 65,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegetarian calamari",
+          "avgPosition": 61,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 9
+      "totalImpressions": 5
+    },
+    "/en/recipes/quinoa-crusted-salmon/": {
+      "queries": [
+        {
+          "keyword": "duck breast orange miso nobu",
+          "avgPosition": 6,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "quinoa crusted salmon",
+          "avgPosition": 34.8,
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0
+        },
+        {
+          "keyword": "what about quinoa?",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 10
+    },
+    "/fr/articles/": {
+      "queries": [
+        {
+          "keyword": "veloutage",
+          "avgPosition": 38,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 1
+    },
+    "/fr/recettes/saumon-en-croute-de-quinoa/": {
+      "queries": [
+        {
+          "keyword": "sauce aji miso",
+          "avgPosition": 6,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 1
     }
   },
   "dateRange": {
-    "start": "2026-03-20",
-    "end": "2026-03-27"
+    "start": "2026-03-27",
+    "end": "2026-04-03"
   },
-  "rowCount": 5
+  "rowCount": 9
 }
