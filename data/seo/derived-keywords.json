@@ -1,5 +1,35 @@
 [
   {
+    "keyword": "3-day aged miso duck breast shatter-crisp skin",
+    "source": "title",
+    "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+    "lang": "en"
+  },
+  {
+    "keyword": "miso duck breast recipe",
+    "source": "keywords",
+    "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+    "lang": "en"
+  },
+  {
+    "keyword": "crispy skin duck breast date night",
+    "source": "keywords",
+    "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+    "lang": "en"
+  },
+  {
+    "keyword": "3 day miso cured duck",
+    "source": "keywords",
+    "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+    "lang": "en"
+  },
+  {
+    "keyword": "japanese-french recipe",
+    "source": "cuisine",
+    "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+    "lang": "en"
+  },
+  {
     "keyword": "slow-cooked beef ragu with pappardelle pasta",
     "source": "title",
     "url": "/en/recipes/beef-ragu-pappardelle/",
@@ -114,6 +144,36 @@
     "lang": "en"
   },
   {
+    "keyword": "chocolate tofu pudding with candied cacao nibs and banana",
+    "source": "title",
+    "url": "/en/recipes/chocolate-tofu-pudding/",
+    "lang": "en"
+  },
+  {
+    "keyword": "chocolate tofu pudding recipe",
+    "source": "keywords",
+    "url": "/en/recipes/chocolate-tofu-pudding/",
+    "lang": "en"
+  },
+  {
+    "keyword": "healthy chocolate pudding date night",
+    "source": "keywords",
+    "url": "/en/recipes/chocolate-tofu-pudding/",
+    "lang": "en"
+  },
+  {
+    "keyword": "candied cacao nibs dessert",
+    "source": "keywords",
+    "url": "/en/recipes/chocolate-tofu-pudding/",
+    "lang": "en"
+  },
+  {
+    "keyword": "fusion recipe",
+    "source": "cuisine",
+    "url": "/en/recipes/chocolate-tofu-pudding/",
+    "lang": "en"
+  },
+  {
     "keyword": "crispy vegan calamari with king oyster mushrooms",
     "source": "title",
     "url": "/en/recipes/crispy-vegan-calamari/",
@@ -171,6 +231,36 @@
     "keyword": "korean-italian recipe",
     "source": "cuisine",
     "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+    "lang": "en"
+  },
+  {
+    "keyword": "lamb meatballs with gochujang glaze + kabocha puree peanut crunch",
+    "source": "title",
+    "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+    "lang": "en"
+  },
+  {
+    "keyword": "lamb meatballs gochujang glaze recipe",
+    "source": "keywords",
+    "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+    "lang": "en"
+  },
+  {
+    "keyword": "kabocha squash puree miso",
+    "source": "keywords",
+    "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+    "lang": "en"
+  },
+  {
+    "keyword": "date night lamb meatball dinner",
+    "source": "keywords",
+    "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+    "lang": "en"
+  },
+  {
+    "keyword": "korean-japanese recipe",
+    "source": "cuisine",
+    "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
     "lang": "en"
   },
   {
@@ -258,105 +348,15 @@
     "lang": "en"
   },
   {
-    "keyword": "creamy penne alla vodka with italian sausage",
+    "keyword": "pâte à choux foolproof choux pastry for cream puffs and gougères",
     "source": "title",
-    "url": "/en/recipes/penne-alla-vodka/",
+    "url": "/en/recipes/pate-a-choux/",
     "lang": "en"
   },
   {
-    "keyword": "penne alla vodka date night recipe",
+    "keyword": "pate a choux recipe",
     "source": "keywords",
-    "url": "/en/recipes/penne-alla-vodka/",
-    "lang": "en"
-  },
-  {
-    "keyword": "creamy vodka sauce pasta for two",
-    "source": "keywords",
-    "url": "/en/recipes/penne-alla-vodka/",
-    "lang": "en"
-  },
-  {
-    "keyword": "romantic italian pasta dinner easy",
-    "source": "keywords",
-    "url": "/en/recipes/penne-alla-vodka/",
-    "lang": "en"
-  },
-  {
-    "keyword": "pork osso buco with creamy polenta",
-    "source": "title",
-    "url": "/en/recipes/pork-osso-buco/",
-    "lang": "en"
-  },
-  {
-    "keyword": "pork osso buco date night recipe",
-    "source": "keywords",
-    "url": "/en/recipes/pork-osso-buco/",
-    "lang": "en"
-  },
-  {
-    "keyword": "braised pork shanks with polenta",
-    "source": "keywords",
-    "url": "/en/recipes/pork-osso-buco/",
-    "lang": "en"
-  },
-  {
-    "keyword": "romantic italian braised dinner for two",
-    "source": "keywords",
-    "url": "/en/recipes/pork-osso-buco/",
-    "lang": "en"
-  },
-  {
-    "keyword": "quinoa-crusted salmon with spicy orange miso sauce",
-    "source": "title",
-    "url": "/en/recipes/quinoa-crusted-salmon/",
-    "lang": "en"
-  },
-  {
-    "keyword": "quinoa crusted salmon",
-    "source": "keywords",
-    "url": "/en/recipes/quinoa-crusted-salmon/",
-    "lang": "en"
-  },
-  {
-    "keyword": "quinoa crusted salmon date night",
-    "source": "keywords",
-    "url": "/en/recipes/quinoa-crusted-salmon/",
-    "lang": "en"
-  },
-  {
-    "keyword": "spicy orange miso salmon recipe",
-    "source": "keywords",
-    "url": "/en/recipes/quinoa-crusted-salmon/",
-    "lang": "en"
-  },
-  {
-    "keyword": "nikkei recipe",
-    "source": "cuisine",
-    "url": "/en/recipes/quinoa-crusted-salmon/",
-    "lang": "en"
-  },
-  {
-    "keyword": "vietnamese pickled vegetables do chua",
-    "source": "title",
-    "url": "/en/recipes/vietnamese-pickled-vegetables/",
-    "lang": "en"
-  },
-  {
-    "keyword": "vietnamese do chua recipe easy",
-    "source": "keywords",
-    "url": "/en/recipes/vietnamese-pickled-vegetables/",
-    "lang": "en"
-  },
-  {
-    "keyword": "quick pickled daikon and carrots",
-    "source": "keywords",
-    "url": "/en/recipes/vietnamese-pickled-vegetables/",
-    "lang": "en"
-  },
-  {
-    "keyword": "homemade banh mi pickles recipe",
-    "source": "keywords",
-    "url": "/en/recipes/vietnamese-pickled-vegetables/",
+    "url": "/en/recipes/pate-a-choux/",
     "lang": "en"
   }
 ]
