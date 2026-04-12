@@ -1,0 +1,818 @@
+[
+  {
+    "url": "http://localhost:8788/en/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_-2026_04_12_05_39_15.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_-2026_04_12_05_39_15.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_-2026_04_12_05_39_27.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_-2026_04_12_05_39_27.report.json",
+    "summary": {
+      "performance": 0.79,
+      "accessibility": 0.95,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_-2026_04_12_05_39_39.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_-2026_04_12_05_39_39.report.json",
+    "summary": {
+      "performance": 0.85,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_-2026_04_12_05_39_51.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_-2026_04_12_05_39_51.report.json",
+    "summary": {
+      "performance": 0.82,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_-2026_04_12_05_40_02.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_-2026_04_12_05_40_02.report.json",
+    "summary": {
+      "performance": 0.87,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_-2026_04_12_05_40_14.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_-2026_04_12_05_40_14.report.json",
+    "summary": {
+      "performance": 0.84,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/about/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_about_-2026_04_12_05_40_26.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_about_-2026_04_12_05_40_26.report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/a-propos/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_a_propos_-2026_04_12_05_40_37.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_a_propos_-2026_04_12_05_40_37.report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/contact/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_contact_-2026_04_12_05_40_48.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_contact_-2026_04_12_05_40_48.report.json",
+    "summary": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/contact/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_contact_-2026_04_12_05_40_59.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_contact_-2026_04_12_05_40_59.report.json",
+    "summary": {
+      "performance": 0.88,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/3-day-aged-miso-duck-breast/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_3_day_aged_miso_duck_breast_-2026_04_12_05_41_10.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_3_day_aged_miso_duck_breast_-2026_04_12_05_41_10.report.json",
+    "summary": {
+      "performance": 0.86,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/beef-ragu-pappardelle/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_beef_ragu_pappardelle_-2026_04_12_05_41_22.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_beef_ragu_pappardelle_-2026_04_12_05_41_22.report.json",
+    "summary": {
+      "performance": 0.82,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/brussels-sprouts-salad/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_brussels_sprouts_salad_-2026_04_12_05_41_35.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_brussels_sprouts_salad_-2026_04_12_05_41_35.report.json",
+    "summary": {
+      "performance": 0.82,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/cacio-e-pepe/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_cacio_e_pepe_-2026_04_12_05_41_47.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_cacio_e_pepe_-2026_04_12_05_41_47.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/cauliflower-steak-with-romesco-sauce/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_cauliflower_steak_with_romesco_sauce_-2026_04_12_05_41_59.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_cauliflower_steak_with_romesco_sauce_-2026_04_12_05_41_59.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/chocolate-tofu-pudding/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_chocolate_tofu_pudding_-2026_04_12_05_42_11.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_chocolate_tofu_pudding_-2026_04_12_05_42_11.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/crispy-vegan-calamari/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_crispy_vegan_calamari_-2026_04_12_05_42_23.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_crispy_vegan_calamari_-2026_04_12_05_42_23.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/gochujang-kimchi-seafood-bucatini/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_gochujang_kimchi_seafood_bucatini_-2026_04_12_05_42_35.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_gochujang_kimchi_seafood_bucatini_-2026_04_12_05_42_35.report.json",
+    "summary": {
+      "performance": 0.84,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/lamb-meatballs-gochujang-glaze/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_lamb_meatballs_gochujang_glaze_-2026_04_12_05_42_47.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_lamb_meatballs_gochujang_glaze_-2026_04_12_05_42_47.report.json",
+    "summary": {
+      "performance": 0.67,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/lemon-posset-brulee/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_lemon_posset_brulee_-2026_04_12_05_42_59.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_lemon_posset_brulee_-2026_04_12_05_42_59.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/miso-udon-carbonara/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_miso_udon_carbonara_-2026_04_12_05_43_11.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_miso_udon_carbonara_-2026_04_12_05_43_11.report.json",
+    "summary": {
+      "performance": 0.64,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/northern-thai-beef-tartare/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_northern_thai_beef_tartare_-2026_04_12_05_43_23.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_northern_thai_beef_tartare_-2026_04_12_05_43_23.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/pate-a-choux/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_pate_a_choux_-2026_04_12_05_43_35.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_pate_a_choux_-2026_04_12_05_43_35.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/penne-alla-vodka/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_penne_alla_vodka_-2026_04_12_05_43_47.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_penne_alla_vodka_-2026_04_12_05_43_47.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/pork-osso-buco/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_pork_osso_buco_-2026_04_12_05_43_59.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_pork_osso_buco_-2026_04_12_05_43_59.report.json",
+    "summary": {
+      "performance": 0.74,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/quinoa-crusted-salmon/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_quinoa_crusted_salmon_-2026_04_12_05_44_11.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_quinoa_crusted_salmon_-2026_04_12_05_44_11.report.json",
+    "summary": {
+      "performance": 0.75,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/vietnamese-pickled-vegetables/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_vietnamese_pickled_vegetables_-2026_04_12_05_44_23.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_vietnamese_pickled_vegetables_-2026_04_12_05_44_23.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/recipes/zucchini-eggplant-chips/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_zucchini_eggplant_chips_-2026_04_12_05_44_35.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_recipes_zucchini_eggplant_chips_-2026_04_12_05_44_35.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/boulettes-agneau-gochujang/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_boulettes_agneau_gochujang_-2026_04_12_05_44_47.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_boulettes_agneau_gochujang_-2026_04_12_05_44_47.report.json",
+    "summary": {
+      "performance": 0.67,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/bucatini-fruits-de-mer-gochujang/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_bucatini_fruits_de_mer_gochujang_-2026_04_12_05_44_59.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_bucatini_fruits_de_mer_gochujang_-2026_04_12_05_44_59.report.json",
+    "summary": {
+      "performance": 0.93,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/cacio-e-pepe/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_cacio_e_pepe_-2026_04_12_05_45_11.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_cacio_e_pepe_-2026_04_12_05_45_11.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/calamars-vegetaliens-croustillants/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_calamars_vegetaliens_croustillants_-2026_04_12_05_45_23.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_calamars_vegetaliens_croustillants_-2026_04_12_05_45_23.report.json",
+    "summary": {
+      "performance": 0.92,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/carbonara-udon-au-miso/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_carbonara_udon_au_miso_-2026_04_12_05_45_35.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_carbonara_udon_au_miso_-2026_04_12_05_45_35.report.json",
+    "summary": {
+      "performance": 0.82,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/chips-de-courgettes-et-aubergines/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_chips_de_courgettes_et_aubergines_-2026_04_12_05_45_48.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_chips_de_courgettes_et_aubergines_-2026_04_12_05_45_48.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/legumes-marines-vietnamiens/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_legumes_marines_vietnamiens_-2026_04_12_05_46_00.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_legumes_marines_vietnamiens_-2026_04_12_05_46_00.report.json",
+    "summary": {
+      "performance": 0.89,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/magret-canard-miso-3-jours/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_magret_canard_miso_3_jours_-2026_04_12_05_46_12.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_magret_canard_miso_3_jours_-2026_04_12_05_46_12.report.json",
+    "summary": {
+      "performance": 0.74,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/osso-buco-au-porc/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_osso_buco_au_porc_-2026_04_12_05_46_24.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_osso_buco_au_porc_-2026_04_12_05_46_24.report.json",
+    "summary": {
+      "performance": 0.82,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/pappardelle-au-ragu-de-boeuf/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_pappardelle_au_ragu_de_boeuf_-2026_04_12_05_46_36.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_pappardelle_au_ragu_de_boeuf_-2026_04_12_05_46_36.report.json",
+    "summary": {
+      "performance": 0.7,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/pate-a-choux/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_pate_a_choux_-2026_04_12_05_46_48.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_pate_a_choux_-2026_04_12_05_46_48.report.json",
+    "summary": {
+      "performance": 0.93,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/penne-alla-vodka/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_penne_alla_vodka_-2026_04_12_05_47_00.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_penne_alla_vodka_-2026_04_12_05_47_00.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/posset-brulee-au-citron/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_posset_brulee_au_citron_-2026_04_12_05_47_12.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_posset_brulee_au_citron_-2026_04_12_05_47_12.report.json",
+    "summary": {
+      "performance": 0.93,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/pouding-au-chocolat-et-tofu/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_pouding_au_chocolat_et_tofu_-2026_04_12_05_47_24.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_pouding_au_chocolat_et_tofu_-2026_04_12_05_47_24.report.json",
+    "summary": {
+      "performance": 0.92,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/salade-de-choux-de-bruxelles/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_salade_de_choux_de_bruxelles_-2026_04_12_05_47_36.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_salade_de_choux_de_bruxelles_-2026_04_12_05_47_36.report.json",
+    "summary": {
+      "performance": 0.93,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/saumon-en-croute-de-quinoa/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_saumon_en_croute_de_quinoa_-2026_04_12_05_47_48.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_saumon_en_croute_de_quinoa_-2026_04_12_05_47_48.report.json",
+    "summary": {
+      "performance": 0.74,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/steak-de-chou-fleur-sauce-romesco/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_steak_de_chou_fleur_sauce_romesco_-2026_04_12_05_48_00.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_steak_de_chou_fleur_sauce_romesco_-2026_04_12_05_48_00.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/recettes/tartare-boeuf-thai/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_tartare_boeuf_thai_-2026_04_12_05_48_12.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_recettes_tartare_boeuf_thai_-2026_04_12_05_48_12.report.json",
+    "summary": {
+      "performance": 0.93,
+      "accessibility": 0.96,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/clarified-butter-and-ghee/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_clarified_butter_and_ghee_-2026_04_12_05_48_24.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_clarified_butter_and_ghee_-2026_04_12_05_48_24.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/cooking-essentials-starter-kit/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_cooking_essentials_starter_kit_-2026_04_12_05_48_36.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_cooking_essentials_starter_kit_-2026_04_12_05_48_36.report.json",
+    "summary": {
+      "performance": 0.79,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/cooking-oils-guide/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_cooking_oils_guide_-2026_04_12_05_48_47.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_cooking_oils_guide_-2026_04_12_05_48_47.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/how-to-choose-fresh-seafood-for-a-perfect-date-night/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_how_to_choose_fresh_seafood_for_a_perfect_date_night_-2026_04_12_05_48_59.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_how_to_choose_fresh_seafood_for_a_perfect_date_night_-2026_04_12_05_48_59.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/perfect-steak-date-night-guide/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_perfect_steak_date_night_guide_-2026_04_12_05_49_10.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_perfect_steak_date_night_guide_-2026_04_12_05_49_10.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/sous-vide-date-night/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_sous_vide_date_night_-2026_04_12_05_49_21.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_sous_vide_date_night_-2026_04_12_05_49_21.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/truth-about-msg/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_truth_about_msg_-2026_04_12_05_49_33.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_truth_about_msg_-2026_04_12_05_49_33.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/velveting-stir-fry-technique/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_velveting_stir_fry_technique_-2026_04_12_05_49_44.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_velveting_stir_fry_technique_-2026_04_12_05_49_44.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/well-done-steak-date-night/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_well_done_steak_date_night_-2026_04_12_05_49_56.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_well_done_steak_date_night_-2026_04_12_05_49_56.report.json",
+    "summary": {
+      "performance": 0.93,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/why-not-wash-chicken/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_why_not_wash_chicken_-2026_04_12_05_50_07.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_why_not_wash_chicken_-2026_04_12_05_50_07.report.json",
+    "summary": {
+      "performance": 0.94,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/articles/wok-hei-at-home/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_wok_hei_at_home_-2026_04_12_05_50_18.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_articles_wok_hei_at_home_-2026_04_12_05_50_18.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/beurre-clarifie-et-ghee/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_beurre_clarifie_et_ghee_-2026_04_12_05_50_30.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_beurre_clarifie_et_ghee_-2026_04_12_05_50_30.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/choisir-fruits-de-mer-frais-souper-romantique/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_choisir_fruits_de_mer_frais_souper_romantique_-2026_04_12_05_50_41.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_choisir_fruits_de_mer_frais_souper_romantique_-2026_04_12_05_50_41.report.json",
+    "summary": {
+      "performance": 0.78,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/essentiels-cuisine-kit-depart/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_essentiels_cuisine_kit_depart_-2026_04_12_05_50_53.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_essentiels_cuisine_kit_depart_-2026_04_12_05_50_53.report.json",
+    "summary": {
+      "performance": 0.73,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/guide-huiles-de-cuisson/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_guide_huiles_de_cuisson_-2026_04_12_05_51_04.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_guide_huiles_de_cuisson_-2026_04_12_05_51_04.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/guide-steak-parfait-souper-amoureux/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_guide_steak_parfait_souper_amoureux_-2026_04_12_05_51_16.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_guide_steak_parfait_souper_amoureux_-2026_04_12_05_51_16.report.json",
+    "summary": {
+      "performance": 0.94,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/pourquoi-ne-pas-laver-le-poulet/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_pourquoi_ne_pas_laver_le_poulet_-2026_04_12_05_51_27.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_pourquoi_ne_pas_laver_le_poulet_-2026_04_12_05_51_27.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/sous-vide-soiree-romantique/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_sous_vide_soiree_romantique_-2026_04_12_05_51_38.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_sous_vide_soiree_romantique_-2026_04_12_05_51_38.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/steak-bien-cuit-rendez-vous/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_steak_bien_cuit_rendez_vous_-2026_04_12_05_51_50.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_steak_bien_cuit_rendez_vous_-2026_04_12_05_51_50.report.json",
+    "summary": {
+      "performance": 0.8,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/technique-du-veloutage/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_technique_du_veloutage_-2026_04_12_05_52_01.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_technique_du_veloutage_-2026_04_12_05_52_01.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/verite-sur-le-msg/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_verite_sur_le_msg_-2026_04_12_05_52_13.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_verite_sur_le_msg_-2026_04_12_05_52_13.report.json",
+    "summary": {
+      "performance": 0.93,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/articles/wok-hei-a-la-maison/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_wok_hei_a_la_maison_-2026_04_12_05_52_24.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_articles_wok_hei_a_la_maison_-2026_04_12_05_52_24.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  }
+]
