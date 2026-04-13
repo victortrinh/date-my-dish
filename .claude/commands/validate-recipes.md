@@ -8,7 +8,11 @@ Validate the integrity of the entire content collection (recipes + articles): EN
 
 ## Steps
 
-1. **Collect all content files:**
+1. **SEO metadata validation:**
+   - Run `node scripts/validate-descriptions.mjs` to check all titles (max 46 chars) and descriptions (120-160 chars)
+   - Flag any failures before proceeding
+
+2. **Collect all content files:**
    - List all `.mdx` files in `src/content/recipes/en/`, `src/content/recipes/fr/`, `src/content/articles/en/`, and `src/content/articles/fr/`
    - Parse frontmatter from each file
    - Build maps: `recipes/{locale}/{slug}` -> frontmatter data, `articles/{locale}/{slug}` -> frontmatter data
@@ -38,6 +42,13 @@ Validate the integrity of the entire content collection (recipes + articles): EN
    - For article links (`/en/articles/{slug}/` or `/fr/articles/{slug}/`): verify the target article file exists
    - For category links (`/en/recipes/category/{cat}/` or `/fr/recettes/categorie/{cat}/`): verify at least one recipe has that category in its `recipeCategory` array
    - Flag: broken links with the source file and line
+
+   **e. Cross-link locale consistency:**
+   - FR content (`src/content/*/fr/*.mdx`) must use FR slugs in recipe links: `/fr/recettes/{fr-slug}/` not `/fr/recettes/{en-slug}/`
+   - FR occasion links must use FR slugs from `occasionSlugMap` in `src/i18n/utils.ts` (e.g., `soiree-en-amoureux` not `date-night`)
+   - FR category links must use FR slugs from category slug map (e.g., `/fr/recettes/categorie/souper/` not `/fr/recettes/categorie/dinner/`)
+   - All internal links must include trailing slashes
+   - Flag: locale mismatches and missing trailing slashes
 
 3. **Pass 2 — Recipe Content Parity Validation (EN/FR pairs):**
 

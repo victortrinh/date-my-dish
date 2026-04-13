@@ -59,4 +59,12 @@ Assist with translating an article between English and French, using proper culi
 - Use Quebec French conventions (not France French) for culinary terms
 - Keep SEO keywords natural -- don't keyword-stuff
 - FAQs should feel native, not translated
-- Cross-links in prose: translate the link text but keep the URL path structure correct (`/fr/articles/{slug}/`, `/fr/recettes/{slug}/`)
+- Cross-links in prose: translate the link text AND use FR slugs for the URL (e.g., `/fr/recettes/{fr-slug}/` not `/fr/recettes/{en-slug}/`)
+
+## SEO Constraints (must validate)
+- Title: max 46 chars (site appends " | Date My Dish", must stay under 60 total in Google)
+- Description: 120-160 chars (under 120 triggers Ahrefs "too short" warning)
+- ALL internal links must include trailing slashes
+- FR prose must use FR recipe slugs (check `translationSlug` in the FR recipe file to confirm the correct FR slug)
+- FR occasion/category links must use FR slugs from `occasionSlugMap` / `cuisineSlugMap` in `src/i18n/utils.ts`
+- Run `node scripts/validate-descriptions.mjs` after translation to verify

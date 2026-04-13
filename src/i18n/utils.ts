@@ -106,7 +106,8 @@ export function getAlternateUrl(
     return part;
   });
 
-  return `/${targetLocale}/${translatedParts.join("/")}`;
+  const result = `/${targetLocale}/${translatedParts.join("/")}`;
+  return result.endsWith("/") ? result : `${result}/`;
 }
 
 export function getRecipeLocalizedPath(
@@ -114,14 +115,14 @@ export function getRecipeLocalizedPath(
   slug: string,
 ): string {
   const prefix = locale === "fr" ? "recettes" : "recipes";
-  return `/${locale}/${prefix}/${slug}`;
+  return `/${locale}/${prefix}/${slug}/`;
 }
 
 export function getArticleLocalizedPath(
   locale: Locale,
   slug: string,
 ): string {
-  return `/${locale}/articles/${slug}`;
+  return `/${locale}/articles/${slug}/`;
 }
 
 export function getReviewLocalizedPath(
@@ -129,7 +130,7 @@ export function getReviewLocalizedPath(
   slug: string,
 ): string {
   const prefix = locale === "fr" ? "critiques" : "reviews";
-  return `/${locale}/${prefix}/${slug}`;
+  return `/${locale}/${prefix}/${slug}/`;
 }
 
 export const occasionSlugMap: Record<string, Record<Locale, string>> = {
@@ -216,7 +217,7 @@ export function getOccasionLocalizedPath(
 ): string {
   const prefix = locale === "fr" ? "recettes/occasion" : "recipes/occasion";
   const slug = getOccasionSlug(occasion, locale);
-  return `/${locale}/${prefix}/${slug}`;
+  return `/${locale}/${prefix}/${slug}/`;
 }
 
 export function getTagSlug(tag: string, locale: Locale): string {
@@ -233,7 +234,7 @@ export function getTagFromSlug(slug: string, locale: Locale): string {
 export function getTagLocalizedPath(locale: Locale, tag: string): string {
   const prefix = locale === "fr" ? "recettes/etiquette" : "recipes/tag";
   const slug = getTagSlug(tag, locale);
-  return `/${locale}/${prefix}/${slug}`;
+  return `/${locale}/${prefix}/${slug}/`;
 }
 
 export function getBookmarksLocalizedPath(locale: Locale): string {
@@ -270,7 +271,7 @@ export function getCuisineLocalizedPath(
 ): string {
   const prefix = locale === "fr" ? "recettes/cuisine" : "recipes/cuisine";
   const slug = getCuisineSlug(cuisine, locale);
-  return `/${locale}/${prefix}/${slug}`;
+  return `/${locale}/${prefix}/${slug}/`;
 }
 
 export const locales: Locale[] = ["en", "fr"];

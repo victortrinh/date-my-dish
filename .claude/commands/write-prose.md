@@ -80,6 +80,7 @@ Generate SEO blog prose (MDX body) for an English recipe that has completed fron
    - Link to a related recipe: [recipe name](/en/recipes/{slug}/)
    - Link to another recipe: [recipe name](/en/recipes/{slug}/)
    - Link to a category page: [category](/en/recipes/category/{category}/)
+   - For FR prose: use FR slugs and routes (e.g., /fr/recettes/{fr-slug}/, /fr/recettes/categorie/{fr-category}/, /fr/recettes/occasion/{fr-occasion}/)
 
    ## [Why This Recipe Stands Out / Final Thought]
 
@@ -94,6 +95,9 @@ Generate SEO blog prose (MDX body) for an English recipe that has completed fron
    - Place `<Picture>` components at contextually relevant spots (e.g., image of sauce-making near the sauce section)
    - Use ALL available images (5-7 per recipe), not just 3-4
    - Cross-links should read naturally in context, not feel forced
+   - ALL internal links MUST include trailing slashes (e.g., `/en/recipes/cacio-e-pepe/` not `/en/recipes/cacio-e-pepe`)
+   - FR prose MUST use FR recipe slugs in links (e.g., `/fr/recettes/pappardelle-au-ragu-de-boeuf/` not `/fr/recettes/beef-ragu-pappardelle/`)
+   - FR occasion links use FR slugs from occasionSlugMap (e.g., `/fr/recettes/occasion/soiree-en-amoureux/` not `/fr/recettes/occasion/date-night/`)
    - First person is fine and encouraged where natural ("This is my go-to", "I won't budge on"). Mix with second person ("you") for variety
    - Match the cheeky & confident tone from `docs/brand-voice-guide.md` and existing recipes
    - Variations/substitutions should be written as flowing prose paragraphs, NOT bold-label lists

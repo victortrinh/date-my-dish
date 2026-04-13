@@ -9,7 +9,8 @@ Audit a recipe or article for SEO completeness, structured data validity, conten
 
 ### 1. Frontmatter Completeness
 - [ ] All required fields present (title, lang, translationSlug, description, author, publishDate, heroImage, heroImageAlt, prepTime, cookTime, totalTime, recipeYield, difficulty, recipeCategory, recipeCuisine, keywords, ingredientGroups, instructionGroups, faqs)
-- [ ] Description is <= 160 characters
+- [ ] Title is <= 46 characters (renders as "title | Date My Dish" in Google, must stay under 60 total)
+- [ ] Description is 120-160 characters (under 120 triggers Ahrefs "too short" warning)
 - [ ] Times are valid ISO 8601 durations (PT format)
 - [ ] At least 3 FAQs
 - [ ] Translation pair exists and translationSlug matches
