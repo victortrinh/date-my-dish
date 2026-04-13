@@ -4,7 +4,7 @@
 # www to apex — handle via Cloudflare DNS (CNAME redirect) instead of _redirects
 
 # Root to English (static fallback for non-JS clients)
-/  /en/  302
+/  /en/  301
 
 # Old WordPress URL redirects
 /brussels-sprouts-salad/                    /en/recipes/brussels-sprouts-salad/                    301
