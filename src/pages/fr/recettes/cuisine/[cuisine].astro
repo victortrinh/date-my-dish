@@ -137,7 +137,7 @@ const metaDescription = `Recettes ${cuisineLabel.toLowerCase()} pour soirées en
         const cLabel = t(locale, `cuisines.${getCuisineFromSlug(cSlug, locale)}` as any) || c;
         return (
           <a
-            href={`${getCuisineLocalizedPath(locale, c)}/`}
+            href={getCuisineLocalizedPath(locale, c)}
             class:list={[
               "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
               c === cuisineName

@@ -14,7 +14,9 @@ export default defineConfig({
       filter: (page) =>
         !page.includes("/search") &&
         !page.includes("/recherche") &&
-        page !== "https://datemydish.com/",
+        !page.includes("/bookmarks") &&
+        !page.includes("/signets") &&
+        !page.includes("/404"),
       i18n: {
         defaultLocale: "en",
         locales: {

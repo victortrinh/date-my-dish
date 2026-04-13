@@ -114,7 +114,7 @@ const occasionDescriptions: Record<string, string> = {
       </a>
       {allOccasions.map((occ) => (
         <a
-          href={`${getOccasionLocalizedPath(locale, occ)}/`}
+          href={getOccasionLocalizedPath(locale, occ)}
           class:list={[
             "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
             occ === occasion

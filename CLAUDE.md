@@ -85,10 +85,10 @@ Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*
 ### Required Fields
 | Field | Type | Constraint |
 |-------|------|------------|
-| `title` | string | Recipe title |
+| `title` | string | Max 46 chars (site appends " \| Date My Dish", total must stay under 60 for Google) |
 | `lang` | enum | `"en"` or `"fr"` |
 | `translationSlug` | string | Slug of the paired translation |
-| `description` | string | Max 160 chars (SEO meta) |
+| `description` | string | 120-160 chars (under 120 triggers Ahrefs "too short" warning) |
 | `publishDate` | date | YYYY-MM-DD (coerced) |
 | `heroImage` | image() | Relative import path (e.g., `"../../../assets/images/recipes/slug.webp"`) |
 | `heroImageAlt` | string | Descriptive, ~125 chars |
@@ -128,7 +128,7 @@ Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*
 ### Required Fields
 | Field | Type | Constraint |
 |-------|------|------------|
-| `title` | string | Article title |
+| `title` | string | Max 46 chars (renders as "title \| Date My Dish" in Google) |
 | `lang` | enum | `"en"` or `"fr"` |
 | `translationSlug` | string | Slug of the paired translation |
 | `description` | string | Max 160 chars (SEO meta) |
@@ -156,7 +156,7 @@ Source of truth: `src/content.config.ts`. Content loader: `glob({ pattern: "**/*
 ### Required Fields
 | Field | Type | Constraint |
 |-------|------|------------|
-| `title` | string | Review title |
+| `title` | string | Max 46 chars (renders as "title \| Date My Dish" in Google) |
 | `lang` | enum | `"en"` or `"fr"` |
 | `translationSlug` | string | Slug of the paired translation |
 | `description` | string | Max 160 chars (SEO meta) |
@@ -404,5 +404,11 @@ Key gotchas from `docs/solutions/` -- read the full docs for detailed context.
 18. `relatedRecipes` in article frontmatter must reference valid EN recipe slugs
 19. Homepage merges recipes + articles -- schema changes to either collection can break the homepage
 20. Article routes use `/articles/` in both EN and FR (no localization needed for this segment)
+21. All URL builder functions in `src/i18n/utils.ts` must return trailing slashes -- Astro 301-redirects non-trailing-slash URLs, which tanks Ahrefs Health Score
+22. FR MDX prose must use FR recipe slugs in links (e.g., `/fr/recettes/salade-de-choux-de-bruxelles/` not `/fr/recettes/brussels-sprouts-salad/`) -- check the FR file's actual filename
+23. FR occasion/category/tag links must use FR slugs from the slug maps in `src/i18n/utils.ts` (e.g., `soiree-en-amoureux` not `date-night`)
+24. Titles must be max 46 chars (site appends " | Date My Dish" for 60 total in Google). Descriptions must be 120-160 chars. Validate with `node scripts/validate-descriptions.mjs`
+25. Sitemap filter in `astro.config.ts` must exclude all noindex pages (search, bookmarks, 404) -- Astro sitemap does NOT read noindex meta tags
+26. Never manually append `/` after calling path utility functions -- they already include trailing slashes
 
 For detailed context on any lesson, see `docs/solutions/`.

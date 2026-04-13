@@ -9,7 +9,7 @@ Scaffold a new bilingual recipe (EN + FR MDX file pair) with all required frontm
 
 1. Ask for recipe details if not provided:
    - Recipe name (EN + FR)
-   - Description (EN + FR, max 160 chars)
+   - Description (EN + FR, 120-160 chars for SEO)
    - Prep time, cook time, total time (ISO 8601: PT15M)
    - Servings
    - Difficulty (easy/medium/hard)
@@ -47,10 +47,10 @@ Scaffold a new bilingual recipe (EN + FR MDX file pair) with all required frontm
 ## Frontmatter Template Reference
 
 ```yaml
-title: ""
+title: ""  # Max 46 chars (renders as "title | Date My Dish" in Google, must stay under 60 total)
 lang: en
 translationSlug: ""
-description: ""  # Max 160 chars, personality-infused CTA
+description: ""  # 120-160 chars, personality-infused CTA (under 120 triggers Ahrefs "too short" warning)
 summary: ""  # GEO: 40-60 word factual summary for AI citation (what the dish is, key technique)
 author: "Victor"
 publishDate: YYYY-MM-DD

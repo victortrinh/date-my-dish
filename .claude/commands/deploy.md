@@ -5,6 +5,7 @@ Run pre-deploy checks, commit changes, and push to trigger Cloudflare Pages auto
 ## Steps
 
 1. **Pre-deploy checks:**
+   - Run `node scripts/validate-descriptions.mjs` — must pass with 0 errors (titles max 46 chars, descriptions 120-160 chars)
    - Run `npx astro check` — must pass with 0 errors
    - Run `npm run build` — must complete successfully
    - Verify all recipe MDX files have matching EN/FR pairs (check translationSlug references)

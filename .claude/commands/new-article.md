@@ -8,8 +8,8 @@ Scaffold a new bilingual article (EN + FR MDX file pair) with all required front
 ## Steps
 
 1. Ask for article details if not provided:
-   - Article title (EN + FR)
-   - Description (EN + FR, max 160 chars)
+   - Article title (EN + FR, max 46 chars each -- renders as "title | Date My Dish" in Google, must stay under 60 total)
+   - Description (EN + FR, 120-160 chars for SEO)
    - Article category (one of: `cooking-techniques`, `food-science`, `guides`, `ingredients`, `kitchen-tips`, `drinks`)
    - Keywords (EN + FR)
    - Related recipe slugs (optional -- list existing EN recipe slugs for selection)

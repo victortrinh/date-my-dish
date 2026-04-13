@@ -60,3 +60,11 @@ Assist with translating a recipe between English and French, using proper culina
 - Keep SEO keywords natural -- don't keyword-stuff
 - FAQs should feel native, not translated
 - Measurements: keep both metric and imperial where helpful
+
+## SEO Constraints (must validate)
+- Title: max 46 chars (site appends " | Date My Dish", must stay under 60 total in Google)
+- Description: 120-160 chars (under 120 triggers Ahrefs "too short" warning)
+- ALL internal links must include trailing slashes
+- FR prose must use FR recipe slugs (e.g., `/fr/recettes/salade-de-choux-de-bruxelles/` not `/fr/recettes/brussels-sprouts-salad/`)
+- FR occasion/category links must use FR slugs from `occasionSlugMap` / `cuisineSlugMap` in `src/i18n/utils.ts`
+- Run `node scripts/validate-descriptions.mjs` after translation to verify

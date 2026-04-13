@@ -1,38 +1,30 @@
 {
   "pages": {
-    "/en/recipes/crispy-vegan-calamari/": {
+    "/en/articles/cooking-oils-guide/": {
       "queries": [
         {
-          "keyword": "mushroom calamari",
-          "avgPosition": 40,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "oyster mushroom calamari",
-          "avgPosition": 34,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegan calamari",
-          "avgPosition": 65,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegetarian calamari",
-          "avgPosition": 61,
+          "keyword": "dinner oil",
+          "avgPosition": 4,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 5
+      "totalImpressions": 1
+    },
+    "/en/articles/why-not-wash-chicken/": {
+      "queries": [
+        {
+          "keyword": "usda \"do not wash raw chicken\"",
+          "avgPosition": 11.3,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 4
     },
     "/en/recipes/quinoa-crusted-salmon/": {
       "queries": [
@@ -47,25 +39,18 @@
           "keyword": "quinoa crusted salmon",
           "avgPosition": 34.8,
           "clicks": 0,
-          "impressions": 8,
-          "ctr": 0
-        },
-        {
-          "keyword": "what about quinoa?",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
+          "impressions": 4,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 10
+      "totalImpressions": 5
     },
-    "/fr/articles/": {
+    "/fr/articles/pourquoi-ne-pas-laver-le-poulet/": {
       "queries": [
         {
-          "keyword": "veloutage",
-          "avgPosition": 38,
+          "keyword": "laver le poulet",
+          "avgPosition": 84,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -82,15 +67,22 @@
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
+        },
+        {
+          "keyword": "sauce nikkei recette",
+          "avgPosition": 6,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 1
+      "totalImpressions": 2
     }
   },
   "dateRange": {
-    "start": "2026-03-27",
-    "end": "2026-04-03"
+    "start": "2026-04-03",
+    "end": "2026-04-10"
   },
-  "rowCount": 9
+  "rowCount": 7
 }

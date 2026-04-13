@@ -8,7 +8,11 @@ Run SEO audits across all recipes and articles, producing a summary scorecard sh
 
 ## Steps
 
-1. **Build the site (once):**
+1. **SEO metadata validation:**
+   - Run `node scripts/validate-descriptions.mjs` to check all titles (max 46 chars) and descriptions (120-160 chars)
+   - Report any failures
+
+2. **Build the site (once):**
    - Run `npm run build`
    - This generates all HTML pages in `dist/` with JSON-LD, hreflang tags, and SEO meta
    - If build fails, report the error and stop

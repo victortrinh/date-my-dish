@@ -186,10 +186,15 @@ async function main() {
     const recipeNum = parseInt(recipeNumRaw, 10);
     if (isNaN(recipeNum) || recipeNum === 0) continue;
 
+    const trimmedTitle = String(title).trim();
+    if (trimmedTitle.length > 46) {
+      console.warn(`  ⚠️  Title "${trimmedTitle}" is ${trimmedTitle.length} chars (max 46 for SEO). Will need shortening during MDX generation.`);
+    }
+
     rows.push({
       pageId: blockId,
       recipeNum,
-      title: String(title).trim(),
+      title: trimmedTitle,
       status: String(status).trim(),
       postType: String(postType).trim(),
       lastEditedTime: lastEdited,

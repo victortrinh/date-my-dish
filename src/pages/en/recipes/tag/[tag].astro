@@ -111,7 +111,7 @@ const allTags = [...tagCounts.entries()]
         const tagItemLabel = t(locale, `tags.${tagItem}` as any) || tagItem.charAt(0).toUpperCase() + tagItem.slice(1);
         return (
           <a
-            href={`${getTagLocalizedPath(locale, tagItem)}/`}
+            href={getTagLocalizedPath(locale, tagItem)}
             class:list={[
               "rounded-lg px-4 py-2 font-ui text-body-sm font-medium no-underline",
               tagItem === tag
