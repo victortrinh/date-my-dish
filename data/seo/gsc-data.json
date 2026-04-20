@@ -1,88 +1,36 @@
 {
   "pages": {
-    "/en/articles/cooking-oils-guide/": {
+    "/en/recipes/crispy-vegan-calamari/": {
       "queries": [
         {
-          "keyword": "dinner oil",
-          "avgPosition": 4,
+          "keyword": "vegan calamari",
+          "avgPosition": 71,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegan squid",
+          "avgPosition": 57,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 1
-    },
-    "/en/articles/why-not-wash-chicken/": {
-      "queries": [
+        },
         {
-          "keyword": "usda \"do not wash raw chicken\"",
-          "avgPosition": 11.3,
+          "keyword": "vegetarian calamari",
+          "avgPosition": 63,
           "clicks": 0,
-          "impressions": 4,
+          "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
       "totalImpressions": 4
-    },
-    "/en/recipes/quinoa-crusted-salmon/": {
-      "queries": [
-        {
-          "keyword": "duck breast orange miso nobu",
-          "avgPosition": 6,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "quinoa crusted salmon",
-          "avgPosition": 34.8,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 5
-    },
-    "/fr/articles/pourquoi-ne-pas-laver-le-poulet/": {
-      "queries": [
-        {
-          "keyword": "laver le poulet",
-          "avgPosition": 84,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 1
-    },
-    "/fr/recettes/saumon-en-croute-de-quinoa/": {
-      "queries": [
-        {
-          "keyword": "sauce aji miso",
-          "avgPosition": 6,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "sauce nikkei recette",
-          "avgPosition": 6,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 2
     }
   },
   "dateRange": {
-    "start": "2026-04-03",
-    "end": "2026-04-10"
+    "start": "2026-04-10",
+    "end": "2026-04-17"
   },
-  "rowCount": 7
+  "rowCount": 3
 }
