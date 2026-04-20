@@ -1,6 +1,6 @@
 [
   {
-    "keyword": "3-day aged miso duck breast shatter-crisp skin",
+    "keyword": "3-day miso duck breast crisp skin",
     "source": "title",
     "url": "/en/recipes/3-day-aged-miso-duck-breast/",
     "lang": "en"
@@ -60,7 +60,7 @@
     "lang": "en"
   },
   {
-    "keyword": "brussels sprouts salad with crispy leaves and fish sauce vinaigrette",
+    "keyword": "crispy brussels sprouts salad",
     "source": "title",
     "url": "/en/recipes/brussels-sprouts-salad/",
     "lang": "en"
@@ -90,14 +90,8 @@
     "lang": "en"
   },
   {
-    "keyword": "authentic cacio e pepe roman cheese and pepper pasta",
-    "source": "title",
-    "url": "/en/recipes/cacio-e-pepe/",
-    "lang": "en"
-  },
-  {
     "keyword": "authentic cacio e pepe recipe",
-    "source": "keywords",
+    "source": "title",
     "url": "/en/recipes/cacio-e-pepe/",
     "lang": "en"
   },
@@ -114,7 +108,7 @@
     "lang": "en"
   },
   {
-    "keyword": "roasted cauliflower steaks with smoky romesco sauce",
+    "keyword": "cauliflower steaks with romesco sauce",
     "source": "title",
     "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
     "lang": "en"
@@ -144,14 +138,8 @@
     "lang": "en"
   },
   {
-    "keyword": "chocolate tofu pudding with candied cacao nibs and banana",
-    "source": "title",
-    "url": "/en/recipes/chocolate-tofu-pudding/",
-    "lang": "en"
-  },
-  {
     "keyword": "chocolate tofu pudding recipe",
-    "source": "keywords",
+    "source": "title",
     "url": "/en/recipes/chocolate-tofu-pudding/",
     "lang": "en"
   },
@@ -174,7 +162,7 @@
     "lang": "en"
   },
   {
-    "keyword": "crispy vegan calamari with king oyster mushrooms",
+    "keyword": "crispy vegan calamari recipe",
     "source": "title",
     "url": "/en/recipes/crispy-vegan-calamari/",
     "lang": "en"
@@ -234,7 +222,7 @@
     "lang": "en"
   },
   {
-    "keyword": "lamb meatballs with gochujang glaze + kabocha puree peanut crunch",
+    "keyword": "gochujang lamb meatballs with kabocha",
     "source": "title",
     "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
     "lang": "en"
@@ -264,7 +252,7 @@
     "lang": "en"
   },
   {
-    "keyword": "lemon posset brulee easy 3-ingredient no-bake dessert",
+    "keyword": "lemon posset brulee no-bake dessert",
     "source": "title",
     "url": "/en/recipes/lemon-posset-brulee/",
     "lang": "en"
@@ -348,13 +336,25 @@
     "lang": "en"
   },
   {
-    "keyword": "pâte à choux foolproof choux pastry for cream puffs and gougères",
+    "keyword": "pâte à choux foolproof recipe",
     "source": "title",
     "url": "/en/recipes/pate-a-choux/",
     "lang": "en"
   },
   {
     "keyword": "pate a choux recipe",
+    "source": "keywords",
+    "url": "/en/recipes/pate-a-choux/",
+    "lang": "en"
+  },
+  {
+    "keyword": "choux pastry from scratch",
+    "source": "keywords",
+    "url": "/en/recipes/pate-a-choux/",
+    "lang": "en"
+  },
+  {
+    "keyword": "cream puff dough recipe",
     "source": "keywords",
     "url": "/en/recipes/pate-a-choux/",
     "lang": "en"
