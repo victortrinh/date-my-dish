@@ -1,36 +1,56 @@
 {
   "pages": {
-    "/en/recipes/crispy-vegan-calamari/": {
+    "/en/articles/cooking-oils-guide/": {
       "queries": [
         {
-          "keyword": "vegan calamari",
-          "avgPosition": 71,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegan squid",
-          "avgPosition": 57,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegetarian calamari",
-          "avgPosition": 63,
+          "keyword": "ghee smoke point 450°f 230°c",
+          "avgPosition": 6,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 4
+      "totalImpressions": 1
+    },
+    "/en/recipes/crispy-vegan-calamari/": {
+      "queries": [
+        {
+          "keyword": "oyster mushroom calamari",
+          "avgPosition": 38,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegan calamari",
+          "avgPosition": 71.3,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegane calamares",
+          "avgPosition": 62.3,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegetarian calamari",
+          "avgPosition": 62.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 9
     }
   },
   "dateRange": {
-    "start": "2026-04-10",
-    "end": "2026-04-17"
+    "start": "2026-04-17",
+    "end": "2026-04-24"
   },
-  "rowCount": 3
+  "rowCount": 5
 }
