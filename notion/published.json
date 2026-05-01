@@ -176,6 +176,14 @@
       "publishedDate": "2026-04-15",
       "lastSyncedDate": "2026-04-15",
       "status": "published"
+    },
+    "38": {
+      "notionTitle": "The Foolproof Egg Formula",
+      "slug": "the-foolproof-egg-formula",
+      "type": "article",
+      "publishedDate": "2026-05-01",
+      "lastSyncedDate": "2026-05-01",
+      "status": "published"
     }
   }
 }
