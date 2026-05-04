@@ -1,10 +1,30 @@
 {
   "pages": {
-    "/en/articles/cooking-oils-guide/": {
+    "/en/": {
       "queries": [
         {
-          "keyword": "ghee smoke point 450°f 230°c",
-          "avgPosition": 6,
+          "keyword": "date dish",
+          "avgPosition": 9,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "days dish",
+          "avgPosition": 15,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 2
+    },
+    "/en/articles/why-not-wash-chicken/": {
+      "queries": [
+        {
+          "keyword": "usda washing raw chicken not recommended splashing bacteria",
+          "avgPosition": 11,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -16,41 +36,89 @@
     "/en/recipes/crispy-vegan-calamari/": {
       "queries": [
         {
+          "keyword": "calamari vegan",
+          "avgPosition": 68,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "calamari vegetarian",
+          "avgPosition": 88,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "mushroom calamari",
+          "avgPosition": 59,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
           "keyword": "oyster mushroom calamari",
-          "avgPosition": 38,
+          "avgPosition": 37.7,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "vega opties",
+          "avgPosition": 21,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
           "keyword": "vegan calamari",
-          "avgPosition": 71.3,
+          "avgPosition": 72.5,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 2,
           "ctr": 0
         },
         {
           "keyword": "vegane calamares",
-          "avgPosition": 62.3,
+          "avgPosition": 64.7,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 7,
+          "ctr": 0
+        },
+        {
+          "keyword": "veganes calamari",
+          "avgPosition": 70.5,
+          "clicks": 0,
+          "impressions": 8,
           "ctr": 0
         },
         {
           "keyword": "vegetarian calamari",
-          "avgPosition": 62.5,
+          "avgPosition": 78,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 9
+      "totalImpressions": 26
+    },
+    "/fr/recettes/calamars-vegetaliens-croustillants/": {
+      "queries": [
+        {
+          "keyword": "calamar vegan",
+          "avgPosition": 15.3,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 3
     }
   },
   "dateRange": {
-    "start": "2026-04-17",
-    "end": "2026-04-24"
+    "start": "2026-04-24",
+    "end": "2026-05-01"
   },
-  "rowCount": 5
+  "rowCount": 13
 }
