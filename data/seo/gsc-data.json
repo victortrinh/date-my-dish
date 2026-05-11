@@ -4,27 +4,7 @@
       "queries": [
         {
           "keyword": "date dish",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "days dish",
-          "avgPosition": 15,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 2
-    },
-    "/en/articles/why-not-wash-chicken/": {
-      "queries": [
-        {
-          "keyword": "usda washing raw chicken not recommended splashing bacteria",
-          "avgPosition": 11,
+          "avgPosition": 6,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -33,18 +13,31 @@
       "totalClicks": 0,
       "totalImpressions": 1
     },
+    "/en/articles/the-ultimate-guide-to-crafting-the-perfect-cocktail-for-date-night/": {
+      "queries": [
+        {
+          "keyword": "date night cocktail recipe",
+          "avgPosition": 5.3,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "date night cocktail recipe",
+          "avgPosition": 9,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 4
+    },
     "/en/recipes/crispy-vegan-calamari/": {
       "queries": [
         {
           "keyword": "calamari vegan",
           "avgPosition": 68,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "calamari vegetarian",
-          "avgPosition": 88,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -58,67 +51,79 @@
         },
         {
           "keyword": "oyster mushroom calamari",
-          "avgPosition": 37.7,
+          "avgPosition": 47.6,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 5,
           "ctr": 0
         },
         {
-          "keyword": "vega opties",
-          "avgPosition": 21,
+          "keyword": "vegane calamares",
+          "avgPosition": 73.3,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "veganes calamari",
+          "avgPosition": 74,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 15
+    },
+    "/en/recipes/lemon-posset-brulee/": {
+      "queries": [
+        {
+          "keyword": "lemon posset brulee",
+          "avgPosition": 9,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 1
+    },
+    "/fr/articles/guide-cocktail-parfait-soiree-romantique/": {
+      "queries": [
+        {
+          "keyword": "cocktail date",
+          "avgPosition": 11,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "vegan calamari",
-          "avgPosition": 72.5,
+          "keyword": "cocktail tendresse",
+          "avgPosition": 17,
           "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegane calamares",
-          "avgPosition": 64.7,
-          "clicks": 0,
-          "impressions": 7,
-          "ctr": 0
-        },
-        {
-          "keyword": "veganes calamari",
-          "avgPosition": 70.5,
-          "clicks": 0,
-          "impressions": 8,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegetarian calamari",
-          "avgPosition": 78,
-          "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 26
+      "totalImpressions": 2
     },
     "/fr/recettes/calamars-vegetaliens-croustillants/": {
       "queries": [
         {
           "keyword": "calamar vegan",
-          "avgPosition": 15.3,
+          "avgPosition": 13,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 4,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 3
+      "totalImpressions": 4
     }
   },
   "dateRange": {
-    "start": "2026-04-24",
-    "end": "2026-05-01"
+    "start": "2026-05-01",
+    "end": "2026-05-08"
   },
-  "rowCount": 13
+  "rowCount": 12
 }
