@@ -172,7 +172,7 @@ async function main() {
     `  ${readyRecipes.length} recipes with "Ready to Publish" + "Recipes"\n`
   );
 
-  // Step 5: Cross-reference published.json
+  // Step 5: Cross-reference published.json + build candidate queue
   console.log("Step 5: Cross-referencing published.json...");
   const published = readPublishedJson();
 
@@ -180,73 +180,103 @@ async function main() {
     .filter((a) => !published.entries[String(a.recipeNum)])
     .sort((a, b) => a.recipeNum - b.recipeNum);
 
-  console.log(`  ${unpublished.length} unpublished recipes`);
+  const stale = readyRecipes
+    .filter((a) => {
+      const entry = published.entries[String(a.recipeNum)];
+      if (!entry) return false;
+      const syncDate = new Date(entry.lastSyncedDate + "T23:59:59Z");
+      const editDate = new Date(a.lastEditedTime);
+      return editDate > syncDate;
+    })
+    .sort((a, b) => a.recipeNum - b.recipeNum);
+
+  console.log(`  ${unpublished.length} unpublished, ${stale.length} stale`);
+
+  const candidates = [
+    ...unpublished.map((r) => ({ ...r, candidateMode: "publish" })),
+    ...stale.map((r) => ({ ...r, candidateMode: "update" })),
+  ];
+
+  if (candidates.length === 0) {
+    console.log("\nNo new or updated recipes found. Exiting.");
+    writeGitHubOutput("found", "false");
+    process.exit(0);
+  }
+
+  // Step 6: Try each candidate until one has at least one image block.
+  // The fetch step downloads images and treats the first one as the hero,
+  // so a page with zero images can't produce a usable recipe. Skip it and
+  // try the next candidate rather than aborting the whole run.
+  console.log(`\nStep 6: Evaluating ${candidates.length} candidate(s)...`);
 
   let selected = null;
   let mode = "publish";
+  let blocks = null;
+  let faqs = null;
+  const skipped = [];
 
-  if (unpublished.length > 0) {
-    selected = unpublished[0];
-    mode = "publish";
-    console.log(
-      `  Selected for publish: #${selected.recipeNum} - ${selected.title}\n`
+  for (const candidate of candidates) {
+    console.log(`\n  Trying #${candidate.recipeNum} - ${candidate.title}`);
+
+    const pageRecordMap = await withRetry(
+      () => api.getPage(candidate.pageId, { signFileUrls: true }),
+      `getPage(recipe #${candidate.recipeNum})`
     );
-  } else {
-    // Check for stale recipes (edited since last sync)
-    console.log("  No unpublished recipes. Checking for stale recipes...");
-    const stale = readyRecipes
-      .filter((a) => {
-        const entry = published.entries[String(a.recipeNum)];
-        if (!entry) return false;
-        const syncDate = new Date(entry.lastSyncedDate + "T23:59:59Z");
-        const editDate = new Date(a.lastEditedTime);
-        return editDate > syncDate;
-      })
-      .sort((a, b) => a.recipeNum - b.recipeNum);
 
-    console.log(`  ${stale.length} stale recipes`);
-
-    if (stale.length === 0) {
-      console.log("\nNo new or updated recipes found. Exiting.");
-      writeGitHubOutput("found", "false");
-      process.exit(0);
+    const pageBlockRecord = pageRecordMap.block[candidate.pageId];
+    const pageBlock = pageBlockRecord?.value?.value || pageBlockRecord?.value;
+    if (!pageBlock) {
+      console.log(`    [WARN] Could not find page block. Skipping.`);
+      skipped.push({ recipeNum: candidate.recipeNum, title: candidate.title, reason: "no page block" });
+      continue;
     }
 
-    selected = stale[0];
-    mode = "update";
-    console.log(
-      `  Selected for update: #${selected.recipeNum} - ${selected.title}\n`
+    const childIds = pageBlock.content || [];
+    const rawBlocks = traverseBlocks(
+      pageRecordMap.block,
+      childIds,
+      pageRecordMap.signed_urls,
+      0
     );
+
+    const candidateBlocks = groupListItems(rawBlocks);
+    const hasImage = candidateBlocks.some((b) => b.type === "image" && b.url);
+
+    if (!hasImage) {
+      console.log(`    [WARN] No hero image in recipe page. Skipping.`);
+      skipped.push({ recipeNum: candidate.recipeNum, title: candidate.title, reason: "no hero image" });
+      continue;
+    }
+
+    selected = candidate;
+    mode = candidate.candidateMode;
+    blocks = candidateBlocks;
+    faqs = extractFaqs(candidateBlocks);
+    console.log(`    [OK] Selected for ${mode}.`);
+    break;
   }
 
-  // Step 6: Fetch the selected recipe's page blocks
-  console.log("Step 6: Fetching recipe page blocks...");
-  const pageRecordMap = await withRetry(
-    () => api.getPage(selected.pageId, { signFileUrls: true }),
-    "getPage(recipe)"
-  );
-
-  // Walk the block tree with recursive traversal (depth-limited to 3)
-  const pageBlockRecord = pageRecordMap.block[selected.pageId];
-  const pageBlock = pageBlockRecord?.value?.value || pageBlockRecord?.value;
-  if (!pageBlock) {
-    console.error("[ERROR] Could not find page block for selected recipe.");
-    process.exit(1);
+  if (!selected) {
+    console.log("\n[WARN] No candidate recipe has a hero image. Exiting.");
+    if (skipped.length > 0) {
+      console.log(`Skipped ${skipped.length} recipe(s):`);
+      for (const s of skipped) {
+        console.log(`  - #${s.recipeNum} ${s.title} (${s.reason})`);
+      }
+    }
+    writeGitHubOutput("found", "false");
+    process.exit(0);
   }
 
-  const childIds = pageBlock.content || [];
-  const rawBlocks = traverseBlocks(
-    pageRecordMap.block,
-    childIds,
-    pageRecordMap.signed_urls,
-    0
-  );
-
-  const blocks = groupListItems(rawBlocks);
-  const faqs = extractFaqs(blocks);
+  if (skipped.length > 0) {
+    console.log(`\n  Skipped ${skipped.length} earlier candidate(s):`);
+    for (const s of skipped) {
+      console.log(`    - #${s.recipeNum} ${s.title} (${s.reason})`);
+    }
+  }
 
   const imageCount = blocks.filter((b) => b.type === "image").length;
-  console.log(`  ${blocks.length} content blocks`);
+  console.log(`\n  ${blocks.length} content blocks`);
   console.log(`  ${faqs.length} FAQs extracted`);
   console.log(`  ${imageCount} images found\n`);
 
