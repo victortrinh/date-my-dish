@@ -21,3 +21,7 @@
 # Category pages removed (revisit at 30+ recipes) — redirect to listing pages
 /en/recipes/category/*     /en/recipes/     301
 /fr/recettes/categorie/*   /fr/recettes/    301
+
+# Removed roundup article (not in Notion, deleted) — redirect to article listing
+/en/articles/date-night-recipes-guide/        /en/articles/     301
+/fr/articles/guide-recettes-soiree-romantique/  /fr/articles/   301

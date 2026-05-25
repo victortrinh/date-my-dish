@@ -365,7 +365,7 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 ### SEO & Quality Gates
 - `weekly-seo-ranking.yml` -- Mondays 8AM: GSC + SERP data -> `data/seo/`
 - `weekly-seo-audit.yml` -- Sundays 3AM: Lighthouse CI, commits results to `data/lighthouse/`
-- **`weekly-seo-maintenance` scheduled task** -- Sundays 5AM UTC: audits content (/bulk-audit), optimizes underperformers from ranking data, adds internal links for new content, creates PR (runs on Claude Max, no API key needed)
+- **`weekly-seo-maintenance` scheduled task** -- Sundays 5AM UTC: audits content (/bulk-audit), optimizes underperformers from ranking data, adds internal links for new content, creates PR (runs on Claude Max, no API key needed). **Must only edit existing files; never creates new recipes or articles** (see SEO audit rule below).
 - `playwright-pr-check.yml` -- E2E smoke tests on PRs (desktop-light/dark, mobile-light/dark)
 - `lighthouse-pr-check.yml` -- Performance checks on PRs
 - `auto-merge.yml` -- Auto-merges Renovate dependency updates
@@ -410,5 +410,6 @@ Key gotchas from `docs/solutions/` -- read the full docs for detailed context.
 24. Titles must be max 46 chars (site appends " | Date My Dish" for 60 total in Google). Descriptions must be 120-160 chars. Validate with `node scripts/validate-descriptions.mjs`
 25. Sitemap filter in `astro.config.ts` must exclude all noindex pages (search, bookmarks, 404) -- Astro sitemap does NOT read noindex meta tags
 26. Never manually append `/` after calling path utility functions -- they already include trailing slashes
+27. **SEO audits and `weekly-seo-maintenance` must never create new content.** No new files under `src/content/recipes/{en,fr}/` or `src/content/articles/{en,fr}/` may be created in response to keyword gaps, ranking opportunities, or roundup/pillar-page suggestions surfaced by an audit. All new recipes and articles enter through the Notion pipeline only (`auto-publish-*.yml` -> `daily-content-publish` scheduled task -> `notion/published.json`). Audits may report content gaps; they may not author the fill. Allowed audit edits are limited to existing files: frontmatter, prose, alt text, internal links, image paths, translation parity, and `public/_redirects` only for fixing broken internal links. This rule was added after a "SEO fixes" commit (Apr 13, 2026) created `date-night-recipes-guide` outside the Notion pipeline.
 
 For detailed context on any lesson, see `docs/solutions/`.

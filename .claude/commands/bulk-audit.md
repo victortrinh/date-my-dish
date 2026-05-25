@@ -2,6 +2,17 @@
 
 Run SEO audits across all recipes and articles, producing a summary scorecard showing collection-wide health.
 
+## Scope (hard rules)
+
+This command is **read-and-edit-only**. It MUST NOT create new content under any circumstances:
+
+- NEVER create new files under `src/content/recipes/{en,fr}/` or `src/content/articles/{en,fr}/`.
+- NEVER scaffold a "roundup", "pillar page", "hub page", or any new article in response to keyword gaps, ranking opportunities, or missing-coverage findings. Report the gap in the scorecard and stop.
+- ALL new content goes through the Notion pipeline (`auto-publish-article.yml` / `auto-publish-recipe.yml` -> `daily-content-publish` scheduled task). Audits may flag opportunities; creation happens in Notion, not here.
+- Allowed writes are limited to fixing existing files: frontmatter tweaks, prose edits, alt-text fixes, internal-link additions, image-path corrections, translation parity fixes. Editing `public/_redirects` is allowed only for fixing broken internal links.
+
+If the audit identifies a topic that should exist but doesn't, list it under "Content gaps to queue in Notion" in the scorecard, not as a file to create.
+
 ## Input
 - No arguments required (audits all recipes and articles)
 - Optional: `--skip-build` to skip the build step and only check source files

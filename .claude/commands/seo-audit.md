@@ -2,6 +2,15 @@
 
 Audit a recipe or article for SEO completeness, structured data validity, content quality, and image optimization.
 
+## Scope (hard rules)
+
+This command is **read-and-edit-only**. It MUST NOT create new content under any circumstances:
+
+- NEVER create new files under `src/content/recipes/{en,fr}/` or `src/content/articles/{en,fr}/`.
+- NEVER scaffold a "roundup", "pillar page", "hub page", or any new article in response to gaps the audit surfaces. Report the gap and stop.
+- ALL new content goes through the Notion pipeline. The audit may recommend topics; creation happens in Notion, not here.
+- Allowed writes are limited to fixing the audited file: frontmatter tweaks, prose edits, alt-text fixes, internal-link additions, image-path corrections, translation parity fixes.
+
 ## Input
 - Recipe or article slug or file path: $ARGUMENTS
 
