@@ -1,79 +1,60 @@
 {
   "pages": {
-    "/en/recipes/quinoa-crusted-salmon/": {
-      "queries": [
-        {
-          "keyword": "quinoa crusted salmon",
-          "avgPosition": 14.8,
-          "clicks": 1,
-          "impressions": 5,
-          "ctr": 0.2
-        },
-        {
-          "keyword": "nikkei glaze",
-          "avgPosition": 13,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 1,
-      "totalImpressions": 6
-    },
-    "/en/": {
-      "queries": [
-        {
-          "keyword": "date dish",
-          "avgPosition": 6,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 1
-    },
     "/en/articles/the-ultimate-guide-to-crafting-the-perfect-cocktail-for-date-night/": {
       "queries": [
         {
-          "keyword": "date night cocktail recipe",
-          "avgPosition": 1,
+          "keyword": "best drinks for date night",
+          "avgPosition": 49,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "date night cocktail recipe",
-          "avgPosition": 9,
+          "keyword": "cocktail date night at home",
+          "avgPosition": 79,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "date night cocktail",
+          "avgPosition": 62,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
           "keyword": "date night cocktails",
-          "avgPosition": 69.3,
+          "avgPosition": 71.5,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "date night cocktails at home",
+          "avgPosition": 63,
+          "clicks": 0,
+          "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 5
+      "totalImpressions": 6
     },
     "/en/recipes/crispy-vegan-calamari/": {
       "queries": [
         {
           "keyword": "calamari vegan",
-          "avgPosition": 82,
+          "avgPosition": 78,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "calamari vegetarian",
-          "avgPosition": 71,
+          "keyword": "mushroom calamari",
+          "avgPosition": 57.3,
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 4,
           "ctr": 0
         },
         {
@@ -85,7 +66,14 @@
         },
         {
           "keyword": "oyster mushroom calamari",
-          "avgPosition": 59.5,
+          "avgPosition": 56.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegan calamari",
+          "avgPosition": 62.5,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
@@ -105,59 +93,107 @@
           "ctr": 0
         },
         {
-          "keyword": "vegetarian calamari",
-          "avgPosition": 69,
+          "keyword": "vegane calamares",
+          "avgPosition": 67,
           "clicks": 0,
           "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegetarian calamari",
+          "avgPosition": 57.5,
+          "clicks": 0,
+          "impressions": 2,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 9
+      "totalImpressions": 16
     },
     "/en/recipes/lemon-posset-brulee/": {
       "queries": [
         {
           "keyword": "brulee lemon",
-          "avgPosition": 77,
+          "avgPosition": 74.5,
           "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "bruleed lemon",
-          "avgPosition": 90,
-          "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0
         },
         {
           "keyword": "lemon brulee",
-          "avgPosition": 86,
+          "avgPosition": 70.5,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "lemon brulee recipe",
+          "avgPosition": 70,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
           "keyword": "lemon posset brulee",
-          "avgPosition": 21,
+          "avgPosition": 48.3,
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 3,
           "ctr": 0
         },
         {
           "keyword": "lemon posset brûlée",
-          "avgPosition": 20.5,
+          "avgPosition": 32,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 7
+      "totalImpressions": 12
+    },
+    "/en/recipes/quinoa-crusted-salmon/": {
+      "queries": [
+        {
+          "keyword": "nikkei glaze",
+          "avgPosition": 13.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "quinoa crusted salmon",
+          "avgPosition": 10.9,
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0
+        },
+        {
+          "keyword": "sauce nikkei recette",
+          "avgPosition": 3,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 17
     },
     "/en/reviews/moccione-montreal/": {
       "queries": [
+        {
+          "keyword": "moccione menu",
+          "avgPosition": 48,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "moccione montreal",
+          "avgPosition": 44,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
         {
           "keyword": "moccione",
           "avgPosition": 39,
@@ -167,26 +203,40 @@
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 1
+      "totalImpressions": 3
     },
     "/fr/articles/guide-cocktail-parfait-soiree-romantique/": {
       "queries": [
         {
+          "keyword": "cocktail d amour",
+          "avgPosition": 74,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
           "keyword": "cocktail date",
-          "avgPosition": 11,
+          "avgPosition": 10,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "cocktail tendresse",
+          "avgPosition": 16,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 1
+      "totalImpressions": 3
     },
     "/fr/critiques/moccione-montreal/": {
       "queries": [
         {
-          "keyword": "moccione montreal",
-          "avgPosition": 56,
+          "keyword": "moccione",
+          "avgPosition": 54,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -199,19 +249,47 @@
       "queries": [
         {
           "keyword": "calamar vegan",
-          "avgPosition": 15.3,
+          "avgPosition": 7.8,
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0
+        },
+        {
+          "keyword": "calamars vegan",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "calamar vegan",
+          "avgPosition": 8.3,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "calamar vegan",
+          "avgPosition": 8.3,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "calamar vegan",
+          "avgPosition": 8.3,
           "clicks": 0,
           "impressions": 4,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 4
+      "totalImpressions": 20
     },
-    "/fr/recettes/pate-a-choux/": {
+    "/fr/recettes/saumon-en-croute-de-quinoa/": {
       "queries": [
         {
-          "keyword": "panade choux",
+          "keyword": "sauce nikkei recette",
           "avgPosition": 3,
           "clicks": 0,
           "impressions": 1,
@@ -220,31 +298,11 @@
       ],
       "totalClicks": 0,
       "totalImpressions": 1
-    },
-    "/fr/recettes/saumon-en-croute-de-quinoa/": {
-      "queries": [
-        {
-          "keyword": "recette causa thon",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "sauce nikkei recette",
-          "avgPosition": 4,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 2
     }
   },
   "dateRange": {
-    "start": "2026-05-08",
-    "end": "2026-05-15"
+    "start": "2026-05-15",
+    "end": "2026-05-22"
   },
-  "rowCount": 25
+  "rowCount": 35
 }
