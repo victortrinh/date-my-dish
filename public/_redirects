@@ -25,3 +25,56 @@
 # Removed roundup article (not in Notion, deleted) — redirect to article listing
 /en/articles/date-night-recipes-guide/        /en/articles/     301
 /fr/articles/guide-recettes-soiree-romantique/  /fr/articles/   301
+
+# 404 cleanup — FR cuisine slugs that don't exist (Ahrefs site audit, Jun 2026)
+/fr/recettes/cuisine/méditerranéenne/              /fr/recettes/cuisine/mediterraneen/          301
+/fr/recettes/cuisine/italienne/                    /fr/recettes/cuisine/italien/                301
+/fr/recettes/cuisine/vietnamienne/                 /fr/recettes/cuisine/vietnamien/             301
+/fr/recettes/cuisine/espagnole/                    /fr/recettes/cuisine/espagnol/               301
+/fr/recettes/cuisine/coréenne-italienne/           /fr/recettes/cuisine/coreen-italien/         301
+/fr/recettes/cuisine/asiatique-du-sud-est/         /fr/recettes/cuisine/asie-du-sud-est/        301
+/fr/recettes/cuisine/thai/                         /fr/recettes/cuisine/thaïlandaise/           301
+/fr/recettes/cuisine/french/                       /fr/recettes/cuisine/française/              301
+/fr/recettes/cuisine/japanese-french/              /fr/recettes/cuisine/japonaise-française/    301
+/fr/recettes/cuisine/japanese-italian/             /fr/recettes/cuisine/japonaise-italienne/    301
+/fr/recettes/cuisine/korean-japanese/              /fr/recettes/cuisine/coréenne-japonaise/     301
+
+# 404 cleanup — EN cuisine slugs (wrong language)
+/en/recipes/cuisine/japonaise-française/           /en/recipes/cuisine/japanese-french/         301
+/en/recipes/cuisine/française/                     /en/recipes/cuisine/french/                  301
+/en/recipes/cuisine/japonaise-italienne/           /en/recipes/cuisine/japanese-italian/        301
+/en/recipes/cuisine/thaïlandaise/                  /en/recipes/cuisine/thai/                    301
+/en/recipes/cuisine/coréenne-japonaise/            /en/recipes/cuisine/korean-japanese/         301
+
+# 404 cleanup — Tag slug mismatches
+/fr/recettes/etiquette/french/                     /fr/recettes/etiquette/francais/             301
+/fr/recettes/etiquette/japanese/                   /fr/recettes/etiquette/japonais/             301
+/fr/recettes/etiquette/coreen/                     /fr/recettes/                                301
+/fr/recettes/etiquette/epice/                      /fr/recettes/                                301
+/en/recipes/tag/japonais/                          /en/recipes/tag/japanese/                    301
+/en/recipes/tag/francais/                          /en/recipes/tag/french/                      301
+/en/recipes/tag/soiree-romantique/                 /en/recipes/tag/date-night/                  301
+
+# 404 cleanup — FR recipe slug typos (external backlinks)
+/fr/recettes/miso-udon-carbonara/                  /fr/recettes/carbonara-udon-au-miso/         301
+/fr/recettes/pappardelle-ragu-de-boeuf/            /fr/recettes/pappardelle-au-ragu-de-boeuf/   301
+/fr/recettes/ragout-boeuf-pappardelle/             /fr/recettes/pappardelle-au-ragu-de-boeuf/   301
+/fr/recettes/bucatini-fruits-de-mer-gochujang-kimchi/  /fr/recettes/bucatini-fruits-de-mer-gochujang/  301
+/fr/recettes/croustilles-de-courgettes-et-daubergines/  /fr/recettes/chips-de-courgettes-et-aubergines/  301
+/fr/recettes/steak-de-chou-fleur-avec-sauce-romesco/    /fr/recettes/steak-de-chou-fleur-sauce-romesco/  301
+/fr/recettes/osso-buco-de-porc/                    /fr/recettes/osso-buco-au-porc/              301
+/fr/recettes/osso-buco-porc/                       /fr/recettes/osso-buco-au-porc/              301
+
+# 404 cleanup — Article slug typos
+/fr/articles/sous-vide-souper-en-amoureux/         /fr/articles/sous-vide-soiree-romantique/    301
+/fr/articles/wok-hei-at-home/                      /fr/articles/wok-hei-a-la-maison/            301
+/fr/articles/a-propos/                             /fr/a-propos/                                301
+/fr/articles/a-propos                              /fr/a-propos/                                301
+/en/articles/about/                                /en/about/                                   301
+/en/articles/about                                 /en/about/                                   301
+
+# 404 cleanup — Removed bookmarks feature
+/en/signets/                                       /en/                                         301
+/fr/signets/                                       /fr/                                         301
+/fr/bookmarks/                                     /fr/                                         301
+/en/bookmarks/                                     /en/                                         301
