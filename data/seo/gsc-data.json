@@ -1,107 +1,92 @@
 {
   "pages": {
-    "/en/articles/the-ultimate-guide-to-crafting-the-perfect-cocktail-for-date-night/": {
+    "/en/": {
       "queries": [
         {
-          "keyword": "best drinks for date night",
-          "avgPosition": 49,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "cocktail date night at home",
-          "avgPosition": 79,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "date night cocktail",
-          "avgPosition": 62,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "date night cocktails",
-          "avgPosition": 71.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "date night cocktails at home",
-          "avgPosition": 63,
+          "keyword": "date dish",
+          "avgPosition": 8,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 6
+      "totalImpressions": 1
+    },
+    "/en/articles/the-ultimate-guide-to-crafting-the-perfect-cocktail-for-date-night/": {
+      "queries": [
+        {
+          "keyword": "cocktail date",
+          "avgPosition": 12,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "date night cocktail recipe",
+          "avgPosition": 8.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "date night cocktails",
+          "avgPosition": 53,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 4
     },
     "/en/recipes/crispy-vegan-calamari/": {
       "queries": [
         {
           "keyword": "calamari vegan",
-          "avgPosition": 78,
+          "avgPosition": 68,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
           "keyword": "mushroom calamari",
-          "avgPosition": 57.3,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
-          "keyword": "mushroom calamari recipe",
-          "avgPosition": 46,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "oyster mushroom calamari",
-          "avgPosition": 56.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegan calamari",
-          "avgPosition": 62.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegan calamari recipe",
-          "avgPosition": 37.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegan calamari rings",
-          "avgPosition": 37,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegane calamares",
           "avgPosition": 67,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
+          "keyword": "oyster mushroom calamari",
+          "avgPosition": 58,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegan calamari",
+          "avgPosition": 67.3,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegan calamari recipe",
+          "avgPosition": 59,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegane calamares",
+          "avgPosition": 70.3,
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0
+        },
+        {
           "keyword": "vegetarian calamari",
-          "avgPosition": 57.5,
+          "avgPosition": 43,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
@@ -113,62 +98,41 @@
     "/en/recipes/lemon-posset-brulee/": {
       "queries": [
         {
-          "keyword": "brulee lemon",
-          "avgPosition": 74.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon brulee",
-          "avgPosition": 70.5,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
           "keyword": "lemon brulee recipe",
-          "avgPosition": 70,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon posset brulee",
-          "avgPosition": 48.3,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon posset brûlée",
-          "avgPosition": 32,
+          "avgPosition": 73.5,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 12
+      "totalImpressions": 2
     },
     "/en/recipes/quinoa-crusted-salmon/": {
       "queries": [
         {
-          "keyword": "nikkei glaze",
-          "avgPosition": 13.5,
+          "keyword": "nikkei sauce",
+          "avgPosition": 12.5,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
         },
         {
-          "keyword": "quinoa crusted salmon",
-          "avgPosition": 10.9,
+          "keyword": "quinoa crusted fish",
+          "avgPosition": 11,
           "clicks": 0,
-          "impressions": 14,
+          "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "sauce nikkei recette",
+          "keyword": "quinoa crusted salmon",
+          "avgPosition": 20.7,
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0
+        },
+        {
+          "keyword": "sauce nikkei",
           "avgPosition": 3,
           "clicks": 0,
           "impressions": 1,
@@ -176,17 +140,10 @@
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 17
+      "totalImpressions": 11
     },
     "/en/reviews/moccione-montreal/": {
       "queries": [
-        {
-          "keyword": "moccione menu",
-          "avgPosition": 48,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
         {
           "keyword": "moccione montreal",
           "avgPosition": 44,
@@ -196,41 +153,48 @@
         },
         {
           "keyword": "moccione",
-          "avgPosition": 39,
+          "avgPosition": 26,
           "clicks": 0,
           "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "moccione menu",
+          "avgPosition": 45,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "moccione montreal",
+          "avgPosition": 46,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "moccione restaurant",
+          "avgPosition": 46,
+          "clicks": 0,
+          "impressions": 2,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 3
+      "totalImpressions": 6
     },
     "/fr/articles/guide-cocktail-parfait-soiree-romantique/": {
       "queries": [
         {
-          "keyword": "cocktail d amour",
-          "avgPosition": 74,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
           "keyword": "cocktail date",
-          "avgPosition": 10,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "cocktail tendresse",
-          "avgPosition": 16,
+          "avgPosition": 6,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 3
+      "totalImpressions": 1
     },
     "/fr/critiques/moccione-montreal/": {
       "queries": [
@@ -240,56 +204,70 @@
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
+        },
+        {
+          "keyword": "moccione photos",
+          "avgPosition": 62,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "resto moccione",
+          "avgPosition": 49,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 1
+      "totalImpressions": 3
     },
     "/fr/recettes/calamars-vegetaliens-croustillants/": {
       "queries": [
         {
           "keyword": "calamar vegan",
-          "avgPosition": 7.8,
+          "avgPosition": 8,
           "clicks": 0,
           "impressions": 6,
           "ctr": 0
         },
         {
-          "keyword": "calamars vegan",
+          "keyword": "calamar vegan",
+          "avgPosition": 8,
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0
+        },
+        {
+          "keyword": "calamar vegan",
+          "avgPosition": 8,
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0
+        },
+        {
+          "keyword": "calamar vegan",
+          "avgPosition": 8,
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 24
+    },
+    "/fr/recettes/saumon-en-croute-de-quinoa/": {
+      "queries": [
+        {
+          "keyword": "poisson nobu",
           "avgPosition": 1,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
         },
         {
-          "keyword": "calamar vegan",
-          "avgPosition": 8.3,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
-          "keyword": "calamar vegan",
-          "avgPosition": 8.3,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
-          "keyword": "calamar vegan",
-          "avgPosition": 8.3,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 20
-    },
-    "/fr/recettes/saumon-en-croute-de-quinoa/": {
-      "queries": [
-        {
-          "keyword": "sauce nikkei recette",
+          "keyword": "sauce nikkei",
           "avgPosition": 3,
           "clicks": 0,
           "impressions": 1,
@@ -297,12 +275,12 @@
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 1
+      "totalImpressions": 3
     }
   },
   "dateRange": {
-    "start": "2026-05-15",
-    "end": "2026-05-22"
+    "start": "2026-05-22",
+    "end": "2026-05-29"
   },
-  "rowCount": 35
+  "rowCount": 31
 }

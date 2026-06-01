@@ -1,5 +1,1069 @@
 {
-  "results": {
+  "version": 1,
+  "generatedAt": "2026-06-01T13:34:33.505Z",
+  "dateRange": {
+    "start": "2026-05-22",
+    "end": "2026-05-29"
+  },
+  "config": {
+    "serpLocale": "en",
+    "serpCountry": "ca",
+    "keywordLimit": 60
+  },
+  "derivedKeywords": [
+    {
+      "keyword": "3-day miso duck breast crisp skin",
+      "source": "title",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "miso duck breast recipe",
+      "source": "keywords",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy skin duck breast date night",
+      "source": "keywords",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "3 day miso cured duck",
+      "source": "keywords",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "japanese-french recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "slow-cooked beef ragu with pappardelle pasta",
+      "source": "title",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night italian pasta recipe",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "slow cooked beef ragu for two",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic pappardelle dinner recipe",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy brussels sprouts salad",
+      "source": "title",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy brussels sprouts salad recipe",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night appetizer salad",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "fish sauce vinaigrette dressing recipe",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "southeast asian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "authentic cacio e pepe recipe",
+      "source": "title",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic italian pasta for two",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night cacio e pepe dinner",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "cauliflower steaks with romesco sauce",
+      "source": "title",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "roasted cauliflower steak with romesco",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vegan date night dinner recipe",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "impressive plant-based main course",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spanish recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "chocolate tofu pudding recipe",
+      "source": "title",
+      "url": "/en/recipes/chocolate-tofu-pudding/",
+      "lang": "en"
+    },
+    {
+      "keyword": "healthy chocolate pudding date night",
+      "source": "keywords",
+      "url": "/en/recipes/chocolate-tofu-pudding/",
+      "lang": "en"
+    },
+    {
+      "keyword": "candied cacao nibs dessert",
+      "source": "keywords",
+      "url": "/en/recipes/chocolate-tofu-pudding/",
+      "lang": "en"
+    },
+    {
+      "keyword": "fusion recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/chocolate-tofu-pudding/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy vegan calamari recipe",
+      "source": "title",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vegan calamari king oyster mushroom",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy plant-based appetizer recipe",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night vegan starter idea",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "mediterranean recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spicy gochujang-kimchi seafood bucatini",
+      "source": "title",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "gochujang seafood pasta recipe",
+      "source": "keywords",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "kimchi bucatini date night",
+      "source": "keywords",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spicy korean italian fusion pasta",
+      "source": "keywords",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "korean-italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "gochujang lamb meatballs with kabocha",
+      "source": "title",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lamb meatballs gochujang glaze recipe",
+      "source": "keywords",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "kabocha squash puree miso",
+      "source": "keywords",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night lamb meatball dinner",
+      "source": "keywords",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "korean-japanese recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lemon posset brulee no-bake dessert",
+      "source": "title",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lemon posset brulee recipe",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic date night dessert easy",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "no bake dessert for two",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "british recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "miso udon carbonara silky, no-cream",
+      "source": "title",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "miso udon carbonara recipe",
+      "source": "keywords",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "no cream carbonara with udon noodles",
+      "source": "keywords",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "japanese italian fusion pasta date night",
+      "source": "keywords",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "japanese-italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "northern thai beef tartare recipe",
+      "source": "title",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "laab beef tartare date night",
+      "source": "keywords",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "raw beef tartare thai herbs",
+      "source": "keywords",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "thai recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "pâte à choux foolproof recipe",
+      "source": "title",
+      "url": "/en/recipes/pate-a-choux/",
+      "lang": "en"
+    },
+    {
+      "keyword": "pate a choux recipe",
+      "source": "keywords",
+      "url": "/en/recipes/pate-a-choux/",
+      "lang": "en"
+    },
+    {
+      "keyword": "choux pastry from scratch",
+      "source": "keywords",
+      "url": "/en/recipes/pate-a-choux/",
+      "lang": "en"
+    },
+    {
+      "keyword": "cream puff dough recipe",
+      "source": "keywords",
+      "url": "/en/recipes/pate-a-choux/",
+      "lang": "en"
+    }
+  ],
+  "pages": {
+    "/en/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "date dish",
+            "avgPosition": 8,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 1
+      },
+      "serp": null
+    },
+    "/en/articles/the-ultimate-guide-to-crafting-the-perfect-cocktail-for-date-night/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "cocktail date",
+            "avgPosition": 12,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "date night cocktail recipe",
+            "avgPosition": 8.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "date night cocktails",
+            "avgPosition": 53,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 4
+      },
+      "serp": null
+    },
+    "/en/recipes/crispy-vegan-calamari/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "calamari vegan",
+            "avgPosition": 68,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "mushroom calamari",
+            "avgPosition": 67,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "oyster mushroom calamari",
+            "avgPosition": 58,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "vegan calamari",
+            "avgPosition": 67.3,
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0
+          },
+          {
+            "keyword": "vegan calamari recipe",
+            "avgPosition": 59,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "vegane calamares",
+            "avgPosition": 70.3,
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0
+          },
+          {
+            "keyword": "vegetarian calamari",
+            "avgPosition": 43,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 16
+      },
+      "serp": {
+        "primaryKeyword": "crispy vegan calamari recipe",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "hotforfoodblog.com",
+            "position": 1
+          },
+          {
+            "domain": "itdoesnttastelikechicken.com",
+            "position": 2
+          },
+          {
+            "domain": "sweetsimplevegan.com",
+            "position": 3
+          },
+          {
+            "domain": "apinchofparsley.com",
+            "position": 4
+          },
+          {
+            "domain": "youtube.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/lemon-posset-brulee/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "lemon brulee recipe",
+            "avgPosition": 73.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 2
+      },
+      "serp": {
+        "primaryKeyword": "lemon posset brulee no-bake dessert",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "instagram.com",
+            "position": 1
+          },
+          {
+            "domain": "facebook.com",
+            "position": 2
+          },
+          {
+            "domain": "happytummy702.com",
+            "position": 3
+          },
+          {
+            "domain": "notquitenigella.com",
+            "position": 4
+          },
+          {
+            "domain": "fromourplace.ca",
+            "position": 6
+          }
+        ]
+      }
+    },
+    "/en/recipes/quinoa-crusted-salmon/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "nikkei sauce",
+            "avgPosition": 12.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "quinoa crusted fish",
+            "avgPosition": 11,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "quinoa crusted salmon",
+            "avgPosition": 20.7,
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0
+          },
+          {
+            "keyword": "sauce nikkei",
+            "avgPosition": 3,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 11
+      },
+      "serp": null
+    },
+    "/en/reviews/moccione-montreal/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "moccione montreal",
+            "avgPosition": 44,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "moccione",
+            "avgPosition": 26,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "moccione menu",
+            "avgPosition": 45,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "moccione montreal",
+            "avgPosition": 46,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "moccione restaurant",
+            "avgPosition": 46,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 6
+      },
+      "serp": null
+    },
+    "/fr/articles/guide-cocktail-parfait-soiree-romantique/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "cocktail date",
+            "avgPosition": 6,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 1
+      },
+      "serp": null
+    },
+    "/fr/critiques/moccione-montreal/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "moccione",
+            "avgPosition": 54,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "moccione photos",
+            "avgPosition": 62,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "resto moccione",
+            "avgPosition": 49,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 3
+      },
+      "serp": null
+    },
+    "/fr/recettes/calamars-vegetaliens-croustillants/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "calamar vegan",
+            "avgPosition": 8,
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0
+          },
+          {
+            "keyword": "calamar vegan",
+            "avgPosition": 8,
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0
+          },
+          {
+            "keyword": "calamar vegan",
+            "avgPosition": 8,
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0
+          },
+          {
+            "keyword": "calamar vegan",
+            "avgPosition": 8,
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 24
+      },
+      "serp": null
+    },
+    "/fr/recettes/saumon-en-croute-de-quinoa/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "poisson nobu",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "sauce nikkei",
+            "avgPosition": 3,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 3
+      },
+      "serp": null
+    },
+    "/en/recipes/3-day-aged-miso-duck-breast/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "3-day miso duck breast crisp skin",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "instagram.com",
+            "position": 1
+          },
+          {
+            "domain": "reddit.com",
+            "position": 2
+          },
+          {
+            "domain": "facebook.com",
+            "position": 3
+          },
+          {
+            "domain": "edibleberkshires.com",
+            "position": 4
+          },
+          {
+            "domain": "thecoeliacsrevenge.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/beef-ragu-pappardelle/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "slow-cooked beef ragu with pappardelle pasta",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "recipetineats.com",
+            "position": 1
+          },
+          {
+            "domain": "pinchofyum.com",
+            "position": 2
+          },
+          {
+            "domain": "littlespicejar.com",
+            "position": 3
+          },
+          {
+            "domain": "seasonedskilletblog.com",
+            "position": 4
+          },
+          {
+            "domain": "foodnetwork.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/brussels-sprouts-salad/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "crispy brussels sprouts salad",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "halfbakedharvest.com",
+            "position": 1
+          },
+          {
+            "domain": "themom100.com",
+            "position": 2
+          },
+          {
+            "domain": "vegetarianventures.com",
+            "position": 3
+          },
+          {
+            "domain": "plantbasedrdblog.com",
+            "position": 4
+          },
+          {
+            "domain": "urbanfoodiekitchen.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/cacio-e-pepe/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "authentic cacio e pepe recipe",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "anitalianinmykitchen.com",
+            "position": 1
+          },
+          {
+            "domain": "urbanfarmie.com",
+            "position": 2
+          },
+          {
+            "domain": "pinabresciani.com",
+            "position": 3
+          },
+          {
+            "domain": "seriouseats.com",
+            "position": 4
+          },
+          {
+            "domain": "youtube.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/cauliflower-steak-with-romesco-sauce/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "cauliflower steaks with romesco sauce",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "feastingathome.com",
+            "position": 1
+          },
+          {
+            "domain": "cookprimalgourmet.com",
+            "position": 2
+          },
+          {
+            "domain": "wearesovegan.com",
+            "position": 3
+          },
+          {
+            "domain": "loveandlemons.com",
+            "position": 4
+          },
+          {
+            "domain": "thefeastlocal.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/chocolate-tofu-pudding/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "chocolate tofu pudding recipe",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "thefullhelping.com",
+            "position": 1
+          },
+          {
+            "domain": "aseasyasapplepie.com",
+            "position": 2
+          },
+          {
+            "domain": "cooking.nytimes.com",
+            "position": 3
+          },
+          {
+            "domain": "lovelydelites.com",
+            "position": 4
+          },
+          {
+            "domain": "sarahsvegankitchen.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/gochujang-kimchi-seafood-bucatini/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "spicy gochujang-kimchi seafood bucatini",
+        "position": 1,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "chrisseenplace.com",
+            "position": 2
+          },
+          {
+            "domain": "tiffycooks.com",
+            "position": 3
+          },
+          {
+            "domain": "jeccachantilly.com",
+            "position": 4
+          },
+          {
+            "domain": "instagram.com",
+            "position": 5
+          },
+          {
+            "domain": "doobydobap.com",
+            "position": 7
+          }
+        ]
+      }
+    },
+    "/en/recipes/lamb-meatballs-gochujang-glaze/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "gochujang lamb meatballs with kabocha",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "americanlamb.com",
+            "position": 1
+          },
+          {
+            "domain": "streetsmartnutrition.com",
+            "position": 2
+          },
+          {
+            "domain": "holisticfoodie.com",
+            "position": 3
+          },
+          {
+            "domain": "food52.com",
+            "position": 4
+          },
+          {
+            "domain": "creative-culinary.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/miso-udon-carbonara/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "miso udon carbonara silky, no-cream",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "adayinthekitchen.com",
+            "position": 1
+          },
+          {
+            "domain": "tiffycooks.com",
+            "position": 2
+          },
+          {
+            "domain": "chefjacooks.com",
+            "position": 3
+          },
+          {
+            "domain": "facebook.com",
+            "position": 4
+          },
+          {
+            "domain": "tiktok.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/northern-thai-beef-tartare/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "northern thai beef tartare recipe",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "multicarbs.com",
+            "position": 1
+          },
+          {
+            "domain": "ateliersetsaveurs.com",
+            "position": 2
+          },
+          {
+            "domain": "instagram.com",
+            "position": 3
+          },
+          {
+            "domain": "farmtofork.com.au",
+            "position": 4
+          },
+          {
+            "domain": "tiktok.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/pate-a-choux/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "pâte à choux foolproof recipe",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "theflavorbender.com",
+            "position": 1
+          },
+          {
+            "domain": "sallysbakingaddiction.com",
+            "position": 2
+          },
+          {
+            "domain": "bigkitchendreams.com",
+            "position": 3
+          },
+          {
+            "domain": "delscookingtwist.com",
+            "position": 4
+          },
+          {
+            "domain": "biggerbolderbaking.com",
+            "position": 5
+          }
+        ]
+      }
+    }
+  },
+  "serpResults": {
     "3-day miso duck breast crisp skin": {
       "position": null,
       "featured": false,
@@ -1561,6 +2625,5 @@
       ]
     }
   },
-  "errors": [],
-  "queriedAt": "2026-06-01T13:34:33.457Z"
+  "errors": []
 }
