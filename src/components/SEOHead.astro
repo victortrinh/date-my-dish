@@ -52,7 +52,7 @@ if (translationSlug && contentType) {
   } else {
     prefix = "articles";
   }
-  alternateUrl = `${SITE_URL}/${targetLocale}/${prefix}/${translationSlug}`;
+  alternateUrl = `${SITE_URL}/${targetLocale}/${prefix}/${translationSlug}/`;
 } else {
   // Non-recipe page: use route mapping
   alternateUrl = `${SITE_URL}${getAlternateUrl(Astro.url, targetLocale)}`;

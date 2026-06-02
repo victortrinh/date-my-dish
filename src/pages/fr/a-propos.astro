@@ -52,8 +52,6 @@ const cards = [
   title={`${t(locale, "about.pageTitle")} | Date My Dish`}
   description="Découvrez Victor, le cuisinier montréalais derrière Date My Dish. Recettes romantiques, conseils pour soirées en amoureux et inspiration culinaire."
   ogImage={heroImageUrl}
-  translationSlug="about"
-  contentType="article"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
@@ -94,7 +92,7 @@ const cards = [
               alt="Victor Vu, cuisinier amateur et créateur de Date My Dish, debout dans sa cuisine montréalaise portant un tablier les bras croisés"
               widths={[400, 600, 900]}
               sizes="(max-width: 1024px) 100vw, 40vw"
-              formats={["avif", "webp"]}
+              formats={["avif", "webp"]} fallbackFormat="webp"
               class="aspect-[3/4] w-full object-cover object-[center_30%]"
               loading="eager"
             />
@@ -200,7 +198,7 @@ const cards = [
               alt="Chips croustillantes de courgettes et aubergines en pâte à l'eau pétillante, dorées et fraîchement frites"
               widths={[400, 600, 900]}
               sizes="(max-width: 1024px) 100vw, 40vw"
-              formats={["avif", "webp"]}
+              formats={["avif", "webp"]} fallbackFormat="webp"
               class="aspect-[3/4] w-full object-cover object-[center_30%]"
               loading="lazy"
             />

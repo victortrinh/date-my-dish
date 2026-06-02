@@ -112,7 +112,7 @@ const formattedDate = data.publishDate.toLocaleDateString("en-US", {
                     alt={t(locale, "author.photoAlt")}
                     widths={[48, 96]}
                     sizes="48px"
-                    formats={["avif", "webp"]}
+                    formats={["avif", "webp"]} fallbackFormat="webp"
                     class="h-full w-full object-cover"
                     loading="eager"
                     data-pin-nopin="true"
@@ -144,7 +144,7 @@ const formattedDate = data.publishDate.toLocaleDateString("en-US", {
               alt={data.heroImageAlt}
               widths={[400, 600, 900]}
               sizes="(max-width: 1024px) 100vw, 50vw"
-              formats={["avif", "webp"]}
+              formats={["avif", "webp"]} fallbackFormat="webp"
               class="h-[600px] w-full rounded-2xl object-cover"
               loading="eager"
               fetchpriority="high"

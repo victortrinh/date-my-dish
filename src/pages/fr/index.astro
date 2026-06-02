@@ -103,7 +103,7 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
             alt="Saumon en croûte de quinoa avec sauce miso épicée à l'orange et concombre frais"
             widths={[400, 600, 800]}
             sizes="(max-width: 768px) 100vw, 45vw"
-            formats={["avif", "webp"]}
+            formats={["avif", "webp"]} fallbackFormat="webp"
             class="h-full w-full object-cover"
             loading="eager"
             fetchpriority="high"
@@ -133,7 +133,7 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
                 alt={recentRecipes[0].data.heroImageAlt}
                 widths={[400, 600, 800]}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 35vw"
-                formats={["avif", "webp"]}
+                formats={["avif", "webp"]} fallbackFormat="webp"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
@@ -175,7 +175,7 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
                       alt={card.data.heroImageAlt}
                       widths={[400, 600]}
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
-                      formats={["avif", "webp"]}
+                      formats={["avif", "webp"]} fallbackFormat="webp"
                       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
@@ -276,7 +276,7 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
                 alt={recentArticles[0].data.heroImageAlt}
                 widths={[400, 600, 800]}
                 sizes="(max-width: 1024px) 100vw, 55vw"
-                formats={["avif", "webp"]}
+                formats={["avif", "webp"]} fallbackFormat="webp"
                 class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 loading="lazy"
               />
@@ -315,7 +315,7 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
                       alt={article.data.heroImageAlt}
                       widths={[200, 400]}
                       sizes="(max-width: 640px) 100vw, 192px"
-                      formats={["avif", "webp"]}
+                      formats={["avif", "webp"]} fallbackFormat="webp"
                       class="aspect-[4/3] h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
@@ -368,7 +368,7 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
                     alt={review.data.heroImageAlt}
                     widths={[200, 400]}
                     sizes="(max-width: 640px) 100vw, 192px"
-                    formats={["avif", "webp"]}
+                    formats={["avif", "webp"]} fallbackFormat="webp"
                     class="aspect-[4/3] h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />

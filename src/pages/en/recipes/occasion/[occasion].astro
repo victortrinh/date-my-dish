@@ -54,11 +54,23 @@ const occasionDescriptions: Record<string, string> = {
   celebration: "Special occasion recipes worth celebrating. From anniversaries to milestones.",
   "quick-meal": "Delicious meals ready in no time. Fast, fresh, and full of flavor.",
 };
+
+const occasionMetaDescriptions: Record<string, string> = {
+  "date-night": "Romantic date night recipes built to impress: bold flavors, beautiful plating, and timing that works while you light the candles and pick the playlist.",
+  weeknight: "Fast weeknight recipes that still taste like you tried. Smart technique and punchy flavors get a real dinner on the table in about 30 minutes, no sad shortcuts.",
+  entertaining: "Entertaining recipes you can prep ahead and serve without stress. Stunning dishes that don't demand constant attention, so you can enjoy your own party too.",
+  comfort: "Cozy comfort food recipes for nights in: slow braises, rich sauces, and crusty bread for dipping. Deep, satisfying flavors that are worth staying home for.",
+  celebration: "Special occasion recipes worth celebrating, from anniversaries to milestones. Showstopping dishes that turn a big moment into an unforgettable meal at home.",
+  "quick-meal": "Quick meal recipes that are fast, fresh, and full of flavor. Weeknight-friendly dishes ready in no time, proving short on time never means short on taste.",
+};
+
+const metaDescription = occasionMetaDescriptions[occasion] ||
+  `Browse our ${occasionLabel.toLowerCase()} recipes for date night and beyond, tested in a real kitchen with honest timings and bold, dependable flavors.`;
 ---
 
 <BaseLayout
   title={`${occasionLabel} Recipes | Date My Dish`}
-  description={occasionDescriptions[occasion] || `Browse our ${occasionLabel.toLowerCase()} recipes. Find your next favorite dish.`}
+  description={metaDescription}
   noindex={shouldNoindex}
 >
   <Fragment slot="head">

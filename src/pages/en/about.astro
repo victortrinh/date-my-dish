@@ -52,8 +52,6 @@ const cards = [
   title={`${t(locale, "about.pageTitle")} | Date My Dish`}
   description="Meet Victor, the Montreal home cook behind Date My Dish. Romantic recipes, date night tips, and cooking inspiration for unforgettable evenings together."
   ogImage={heroImageUrl}
-  translationSlug="a-propos"
-  contentType="article"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(aboutPageSchema)} />
@@ -93,7 +91,7 @@ const cards = [
               alt="Victor Vu, home cook and creator of Date My Dish, standing in his Montreal kitchen wearing an apron with arms crossed"
               widths={[400, 600, 900]}
               sizes="(max-width: 1024px) 100vw, 40vw"
-              formats={["avif", "webp"]}
+              formats={["avif", "webp"]} fallbackFormat="webp"
               class="aspect-[3/4] w-full object-cover object-[center_30%]"
               loading="eager"
             />
@@ -195,7 +193,7 @@ const cards = [
               alt="Crispy zucchini and eggplant chips with sparkling water batter, golden and freshly fried"
               widths={[400, 600, 900]}
               sizes="(max-width: 1024px) 100vw, 40vw"
-              formats={["avif", "webp"]}
+              formats={["avif", "webp"]} fallbackFormat="webp"
               class="aspect-[3/4] w-full object-cover object-[center_30%]"
               loading="lazy"
             />

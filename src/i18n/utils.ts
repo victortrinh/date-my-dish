@@ -162,12 +162,14 @@ export const tagSlugMap: Record<string, Record<Locale, string>> = {
   elegant: { en: "elegant", fr: "elegant" },
   "food-safety": { en: "food-safety", fr: "securite-alimentaire" },
   "food-science": { en: "food-science", fr: "science-alimentaire" },
+  french: { en: "french", fr: "francais" },
   fried: { en: "fried", fr: "frit" },
   fusion: { en: "fusion", fr: "fusion" },
   guides: { en: "guides", fr: "guides" },
   healthy: { en: "healthy", fr: "sante" },
   ingredients: { en: "ingredients", fr: "ingredients" },
   italian: { en: "italian", fr: "italien" },
+  japanese: { en: "japanese", fr: "japonais" },
   "kitchen-tips": { en: "kitchen-tips", fr: "astuces-cuisine" },
   korean: { en: "korean", fr: "coreen" },
   lemon: { en: "lemon", fr: "citron" },
@@ -237,11 +239,6 @@ export function getTagLocalizedPath(locale: Locale, tag: string): string {
   return `/${locale}/${prefix}/${slug}/`;
 }
 
-export function getBookmarksLocalizedPath(locale: Locale): string {
-  const segment = locale === "fr" ? "signets" : "bookmarks";
-  return `/${locale}/${segment}/`;
-}
-
 export const cuisineSlugMap: Record<string, Record<Locale, string>> = {
   italian: { en: "italian", fr: "italien" },
   mediterranean: { en: "mediterranean", fr: "mediterraneen" },
@@ -251,18 +248,54 @@ export const cuisineSlugMap: Record<string, Record<Locale, string>> = {
   "southeast-asian": { en: "southeast-asian", fr: "asie-du-sud-est" },
   nikkei: { en: "nikkei", fr: "nikkei" },
   "korean-italian": { en: "korean-italian", fr: "coreen-italien" },
+  french: { en: "french", fr: "francaise" },
+  fusion: { en: "fusion", fr: "fusion" },
+  "japanese-french": { en: "japanese-french", fr: "japonaise-francaise" },
+  "japanese-italian": { en: "japanese-italian", fr: "japonaise-italienne" },
+  "korean-japanese": { en: "korean-japanese", fr: "coreen-japonais" },
+  thai: { en: "thai", fr: "thailandaise" },
 };
 
+// Maps a cuisine display name (EN or FR, accents and spaces ignored) to its canonical key,
+// so EN<->FR slug translation works for every cuisine that appears in recipe frontmatter.
+const cuisineNameToCanonical: Record<string, string> = {
+  italienne: "italian",
+  mediterraneenne: "mediterranean",
+  espagnole: "spanish",
+  vietnamienne: "vietnamese",
+  britannique: "british",
+  "asiatique-du-sud-est": "southeast-asian",
+  "coreenne-italienne": "korean-italian",
+  francaise: "french",
+  "japonaise-francaise": "japanese-french",
+  "japonaise-italienne": "japanese-italian",
+  "coreenne-japonaise": "korean-japanese",
+  thailandaise: "thai",
+};
+
+function normalizeCuisineKey(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .replace(/\s+/g, "-");
+}
+
+export function getCuisineCanonical(cuisine: string): string {
+  const key = normalizeCuisineKey(cuisine);
+  return cuisineNameToCanonical[key] ?? key;
+}
+
 export function getCuisineSlug(cuisine: string, locale: Locale): string {
-  const key = cuisine.toLowerCase().replace(/\s+/g, "-");
-  return cuisineSlugMap[key]?.[locale] ?? key;
+  const canonical = getCuisineCanonical(cuisine);
+  return cuisineSlugMap[canonical]?.[locale] ?? canonical;
 }
 
 export function getCuisineFromSlug(slug: string, locale: Locale): string {
   for (const [canonical, slugs] of Object.entries(cuisineSlugMap)) {
     if (slugs[locale] === slug) return canonical;
   }
-  return slug;
+  return getCuisineCanonical(slug);
 }
 
 export function getCuisineLocalizedPath(

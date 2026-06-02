@@ -55,11 +55,23 @@ const occasionDescriptions: Record<string, string> = {
   celebration: "Des recettes pour les grandes occasions. Des anniversaires aux moments marquants.",
   "quick-meal": "Des repas délicieux prêts en un rien de temps. Rapides, frais et pleins de saveur.",
 };
+
+const occasionMetaDescriptions: Record<string, string> = {
+  "date-night": "Recettes de soirée en amoureux pour impressionner : saveurs audacieuses, beau dressage et un timing qui fonctionne même en allumant les chandelles.",
+  weeknight: "Recettes de soir de semaine rapides qui ont du goût. Technique futée et saveurs punchy pour un vrai souper sur la table en environ 30 minutes, sans raccourcis.",
+  entertaining: "Recettes pour recevoir, à préparer d'avance et à servir sans stress. Des plats spectaculaires qui ne réclament pas votre attention durant toute la soirée.",
+  comfort: "Recettes réconfortantes pour les soirées à la maison : braisés lents, sauces riches et pain croûté à tremper. Des saveurs profondes qui font du bien.",
+  celebration: "Recettes pour les grandes occasions, des anniversaires aux moments marquants. Des plats spectaculaires qui transforment un grand moment en souper inoubliable.",
+  "quick-meal": "Recettes de repas rapide, fraîches et pleines de saveur. Des plats prêts en un rien de temps qui prouvent que manquer de temps ne veut pas dire manquer de goût.",
+};
+
+const metaDescription = occasionMetaDescriptions[canonicalOccasion] ||
+  `Parcourez nos recettes pour ${occasionLabel.toLowerCase()}, testées dans une vraie cuisine avec des temps honnêtes et des saveurs audacieuses et fiables.`;
 ---
 
 <BaseLayout
   title={`Recettes ${occasionLabel} | Date My Dish`}
-  description={occasionDescriptions[canonicalOccasion] || `Parcourez nos recettes pour ${occasionLabel.toLowerCase()}. Trouvez votre prochain plat coup de cœur.`}
+  description={metaDescription}
   noindex={shouldNoindex}
 >
   <Fragment slot="head">

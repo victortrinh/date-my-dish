@@ -63,7 +63,7 @@ function getStepImages(step: HowToStep): ImageMetadata[] {
                         alt={`${t(locale, "recipe.instructions")} ${globalStepNumber}: ${step.text.slice(0, 120)}`}
                         widths={[300, 450, 600]}
                         sizes={isMulti ? "(max-width: 640px) 100vw, 45vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 60vw"}
-                        formats={["avif", "webp"]}
+                        formats={["avif", "webp"]} fallbackFormat="webp"
                         class={isMulti ? "step-image w-full rounded-lg" : "step-image mt-4 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[60%]"}
                         loading="lazy"
                         decoding="async"
@@ -106,7 +106,7 @@ function getStepImages(step: HowToStep): ImageMetadata[] {
                             alt={`${t(locale, "recipe.instructions")} ${i + 1}: ${step.text.slice(0, 120)}`}
                             widths={[300, 450, 600]}
                             sizes={isMulti ? "(max-width: 640px) 100vw, 45vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 60vw"}
-                            formats={["avif", "webp"]}
+                            formats={["avif", "webp"]} fallbackFormat="webp"
                             class={isMulti ? "step-image w-full rounded-lg" : "step-image mt-4 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[60%]"}
                             loading="lazy"
                             decoding="async"

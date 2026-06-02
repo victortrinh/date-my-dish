@@ -31,7 +31,7 @@ const url = getRecipeLocalizedPath(locale, slug);
       alt={heroImageAlt}
       widths={[400, 600]}
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
-      formats={["avif", "webp"]}
+      formats={["avif", "webp"]} fallbackFormat="webp"
       class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
       loading={loading}
       decoding="async"
