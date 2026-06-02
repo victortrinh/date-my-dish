@@ -8,8 +8,9 @@ Validate the integrity of the entire content collection (recipes + articles): EN
 
 ## Steps
 
-1. **SEO metadata validation:**
-   - Run `node scripts/validate-descriptions.mjs` to check all titles (max 46 chars) and descriptions (120-160 chars)
+1. **SEO regression guards:**
+   - Run `npm run validate:source` -- checks titles (max 46 chars), descriptions (120-160 chars), `<Picture>` `fallbackFormat`, tag translations, and EN/FR tag parity
+   - If you have a fresh `dist/` (after `npm run build`), also run `npm run validate:build` for hreflang/sitemap/links/image checks
    - Flag any failures before proceeding
 
 2. **Collect all content files:**

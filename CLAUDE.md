@@ -13,10 +13,12 @@ Bilingual recipe blog (EN/FR) built with Astro 5, deployed on Cloudflare Pages.
 
 ## Key Commands
 - `npm run dev` -- Start dev server
-- `npm run build` -- Build site (Pagefind runs automatically via `postbuild`)
+- `npm run build` -- Build site. Gated by SEO validators: `validate-source` runs via `prebuild`, `validate-build` runs via `postbuild` (after Pagefind). A failing check fails the build.
 - `npm run check` -- TypeScript and content schema validation
+- `npm run validate:source` -- Pre-build SEO guard (`<Picture>` fallbackFormat, tag translations, EN/FR tag parity, frontmatter title/description lengths)
+- `npm run validate:build` -- Post-build SEO guard against `dist/` (hreflang validity, sitemap hygiene, meta lengths, links-to-redirect, untranslated i18n keys, oversized images)
 - `npm run preview` -- Build + local Cloudflare Workers preview
-- `npm run deploy` -- Build + deploy to Cloudflare Pages
+- `npm run deploy` -- Build + deploy to Cloudflare Pages (build gate runs first)
 
 ## Architecture & Conventions
 
@@ -366,9 +368,14 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 - `weekly-seo-ranking.yml` -- Mondays 8AM: GSC + SERP data -> `data/seo/`
 - `weekly-seo-audit.yml` -- Sundays 3AM: Lighthouse CI, commits results to `data/lighthouse/`
 - **`weekly-seo-maintenance` scheduled task** -- Sundays 5AM UTC: audits content (/bulk-audit), optimizes underperformers from ranking data, adds internal links for new content, creates PR (runs on Claude Max, no API key needed). **Must only edit existing files; never creates new recipes or articles** (see SEO audit rule below).
-- `playwright-pr-check.yml` -- E2E smoke tests on PRs (desktop-light/dark, mobile-light/dark)
+- `playwright-pr-check.yml` -- E2E smoke tests on PRs (desktop-light/dark, mobile-light/dark). Runs `npm run validate:source` before building; the build itself runs `validate-build` via `postbuild`.
 - `lighthouse-pr-check.yml` -- Performance checks on PRs
 - `auto-merge.yml` -- Auto-merges Renovate dependency updates
+
+### SEO Regression Guards (wired into every build)
+- **`scripts/validate-source.mjs`** (`prebuild`) -- Fails the build on: a `<Picture>` missing `fallbackFormat`, a tag that generates a page but lacks a translation, or EN/FR recipe pairs with mismatched tag sets.
+- **`scripts/validate-build.mjs`** (`postbuild`) -- Fails the build on: hreflang pointing to a redirect/404 or missing a trailing slash, noindex/bare-root/redirecting URLs in the sitemap, indexable meta descriptions outside 120-160, internal `<a>` links to a `_redirects` source, untranslated i18n keys (`tags.x`/`cuisines.x`) in titles/meta, or `dist/_astro` images over 500 KB.
+- These run on local `npm run build`, the PR check, and the Cloudflare deploy build on push-to-main, so SEO regressions cannot ship. When adding a check, add a matching CLAUDE.md lesson.
 
 ### Key Files (do not delete)
 - `notion/published.json`, `notion/pending-*.json`, `data/seo/`, `data/lighthouse/`, `data/social-posts-log.json` -- automation state
@@ -411,5 +418,9 @@ Key gotchas from `docs/solutions/` -- read the full docs for detailed context.
 25. Sitemap filter in `astro.config.ts` must exclude all noindex pages (search, bookmarks, 404) -- Astro sitemap does NOT read noindex meta tags
 26. Never manually append `/` after calling path utility functions -- they already include trailing slashes
 27. **SEO audits and `weekly-seo-maintenance` must never create new content.** No new files under `src/content/recipes/{en,fr}/` or `src/content/articles/{en,fr}/` may be created in response to keyword gaps, ranking opportunities, or roundup/pillar-page suggestions surfaced by an audit. All new recipes and articles enter through the Notion pipeline only (`auto-publish-*.yml` -> `daily-content-publish` scheduled task -> `notion/published.json`). Audits may report content gaps; they may not author the fill. Allowed audit edits are limited to existing files: frontmatter, prose, alt text, internal links, image paths, translation parity, and `public/_redirects` only for fixing broken internal links. This rule was added after a "SEO fixes" commit (Apr 13, 2026) created `date-night-recipes-guide` outside the Notion pipeline.
+28. **Every `<Picture>` must set `fallbackFormat="webp"`.** Astro's default `<img>` fallback for webp/avif sources is PNG, which balloons photos to 1-3 MB. The avif/webp `<source>` variants stay small but Ahrefs flags the giant PNG fallback. Enforced by `validate-source`.
+29. **Content-page hreflang/alternate URLs must end in a trailing slash.** `SEOHead.astro` builds the content alternate as `${SITE_URL}/${locale}/${prefix}/${slug}/`; dropping the slash makes every recipe/article/review hreflang 301-redirect (lesson #21 for the link-builder version). Enforced by `validate-build`.
+30. **Taxonomy slug maps must cover every value in content, and EN/FR recipe pairs must use identical canonical tags.** Cuisine/tag pages translate canonical keys to localized slugs via `cuisineSlugMap`/`tagSlugMap` + `cuisines.*`/`tags.*` translations. A `recipeCuisine`/tag value with no map entry renders a raw key (`cuisines.thai`) and produces a 404/redirecting hreflang. Recipes store canonical (English) tags; the slug map localizes the URL. Enforced by `validate-source` (tags) + `validate-build` (rendered keys + hreflang).
+31. **Never link to a `_redirects` source, the bare apex, or a removed feature.** Internal `<a href>`s must point at final 200 URLs. Linking to `/bookmarks/`, `https://datemydish.com` (apex redirects to `/en/`), or any `_redirects` `from` path creates a "links to redirect" issue on every page that includes it. Enforced by `validate-build`.
 
 For detailed context on any lesson, see `docs/solutions/`.
