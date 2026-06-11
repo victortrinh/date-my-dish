@@ -1,0 +1,613 @@
+{
+  "source": "notion",
+  "fetchedAt": "2026-06-11T05:48:34.051Z",
+  "notionPageId": "9173641e-521f-4176-a481-54e160e43206",
+  "title": "Bold Spicy Miso Ramen Recipe (Restaurant-Style at Home)",
+  "mode": "publish",
+  "existingSlug": null,
+  "recipeNum": 9,
+  "lastEditedTime": "2026-06-08T02:32:25.723Z",
+  "cookTime": "30 minutes",
+  "prepTime": "45 minutes",
+  "totalTime": "75 minutes",
+  "difficulty": "hard",
+  "servings": 2,
+  "category": "Main",
+  "heroImage": {
+    "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home.jpg",
+    "caption": null
+  },
+  "images": [
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home.jpg",
+      "caption": "",
+      "isHero": true
+    },
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-1.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-2.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-3.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-4.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-5.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-6.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-7.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-8.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-9.jpg",
+      "caption": "",
+      "isHero": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "callout",
+      "icon": "🛒",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Affiliate note:** Some links in this post may be affiliate links. If you buy through them, it helps support Date My Dish at no extra cost to you."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Quick Overview"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**What it is:** Spicy, creamy miso ramen with pork and a garlic-togarashi oil that turns every spoonful into a problem.",
+        "**Skill level:** Intermediate (multiple components), but each step is straightforward.",
+        "**Why it’s a date dish:** You can prep the “big flavor” pieces ahead, then assemble bowls together like a cozy little ramen shop at home."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Introduction (special date / occasion story)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The first time I made spicy miso ramen for a date, I was aiming for that *restaurant bowl at home* moment - the kind where the steam hits your face, the room smells like toasted sesame and garlic, and the conversation gets quieter because the broth is doing… a lot."
+    },
+    {
+      "type": "paragraph",
+      "text": "I love ramen as a date-night move because it forces you to slow down. You can’t eat it politely. You have to lean in. You have to slurp a little. And when you’re both hovering over the pot, tasting and tweaking the broth together, it stops being “dinner” and starts being a shared project."
+    },
+    {
+      "type": "paragraph",
+      "text": "This version is adapted from the style I learned from Mandy Lee (Lady and Pups): the **spicy miso paste** is the engine. Make it once, keep it in the fridge, and suddenly you can pull off ramen-night magic without turning your whole day into a kitchen shift."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/ab0e69ce-3043-437c-b42d-8770973d7f3b/DSCF5358.jpg?table=block&id=379c3484-e8de-8007-b858-d5d2f8235d0d&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=vlOqU-xDz4LWc09cQQ_wdM7bHPpjsFEHP2UWq6bgWnM",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home.jpg"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Why You’ll Love This"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Deep, layered broth** without a 12-hour tonkotsu situation.",
+        "**Make-ahead friendly:** miso paste, eggs, and garlic oil can all live in your fridge.",
+        "**Rich but balanced:** soy milk makes it creamy without tasting like “soy milk ramen.”",
+        "**Date-night payoff:** it tastes like a ramen shop bowl, but it’s yours."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Ingredients"
+    },
+    {
+      "type": "callout",
+      "icon": "🍽️",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Template note:** This recipe is written for **2 servings**. The spicy miso paste + garlic oil make extra (on purpose) so future ramen nights are easy."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Spicy miso paste (makes enough for at least 8 servings)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "130 g white miso paste (1/2 cup)",
+        "130 g red miso paste (1/2 cup)",
+        "80 g Sichuan douban chili paste (1/3 cup)",
+        "1 small onion (or 3/4 medium), cut into chunks",
+        "6 cloves garlic, smashed",
+        "33 g ginger (about 2 inches), cut into chunks",
+        "60 g mirin (3 tbsp)",
+        "2 tbsp vegetable oil",
+        "1 tbsp toasted sesame oil",
+        "1 tbsp dashi granules",
+        "17 g sesame paste (2 tsp) (or tahini)"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/70a1fdef-3560-4f20-829a-cd6996cfbd35/DSCF5368.jpg?table=block&id=379c3484-e8de-803c-8c9b-f7b33dfe49fd&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=r7T1MNEkptYVwZyLkR3w_NpSp9hAkBoNoda892oDh0E",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-1.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Garlic + togarashi oil (makes extra)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "2 small shallots, finely minced",
+        "2 cloves garlic, finely minced",
+        "1/2 tsp sesame seeds",
+        "Pinch of sea salt",
+        "1/4 cup vegetable oil",
+        "2 1/2 tbsp shichimi togarashi"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Spicy miso ramen (for 2 servings)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "220 g fatty ground pork",
+        "1 tbsp toasted sesame oil",
+        "1/4 tsp freshly ground black pepper",
+        "1 tbsp dried shiitake mushrooms, rinsed and finely chopped (no soaking)",
+        "1/2 tsp MSG (optional, but highly recommended)",
+        "2 cups unsalted chicken or pork stock (475 g)",
+        "1 cup unsweetened, unflavored soy milk (227 g)",
+        "3/4 cup spicy miso paste total (1/2 cup + 1/4 cup)",
+        "2 servings fresh ramen noodles",
+        "4 tbsp finely diced scallions",
+        "1 sheet nori, cut into rectangles"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/f73c9aa2-9b45-48dd-b825-50bdf0785f7c/DSCF5345.jpg?table=block&id=379c3484-e8de-802a-b510-de35b1be10b0&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=EE1xEhqtqMdbbNYZ89riwPwnmGzEmlnf-RBpI6IP1Ag",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-2.jpg"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Shopping Notes (So You Don’t Overthink It)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Douban (Pixian doubanjiang):** Fermented chili bean paste that makes the ramen taste legit.",
+        "**Dashi granules:** Instant umami inside the miso paste. (If you don’t eat fish, use kombu powder.)",
+        "**Soy milk:** Must be unsweetened + unflavored. Sweet soy milk will ruin the whole vibe.",
+        "**Fresh ramen noodles:** Refrigerated noodles > dried noodles > instant noodles.",
+        "**Very fine sieve:** Not mandatory, but it’s the texture cheat code."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Step-by-Step"
+    },
+    {
+      "type": "paragraph",
+      "text": "1) Make the spicy miso paste (big batch)"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Add all miso paste ingredients to a blender and blend until smoothly pureed. Scrape down as needed.",
+        "Transfer to a pot over medium heat. Bring to a low simmer and cook, stirring, **5 minutes**.",
+        "Cool completely, then store airtight in the fridge."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "2) Make the garlic + togarashi oil"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Combine shallots, garlic, sesame seeds, salt, and vegetable oil in a small pot.",
+        "Cook over **low heat**, stirring, until garlic is crispy and lightly browned, **5-6 minutes**.",
+        "Turn off heat and stir in shichimi togarashi.",
+        "Let sit a few hours (or overnight) to bloom."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/e7a33bda-a948-4a97-9d40-d6942bdc896f/DSCF5349.jpg?table=block&id=379c3484-e8de-80bb-83fc-eee5d627e9fb&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=CtrwUASRuLlH_LabXRszLISdBnsXBRthEak1LEL6pNY",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-3.jpg"
+    },
+    {
+      "type": "callout",
+      "icon": "✅",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Make-ahead win:** The miso paste, eggs, and garlic oil can all be made ahead and kept in the fridge. Date night becomes “just cook pork + noodles + assemble.”"
+    },
+    {
+      "type": "paragraph",
+      "text": "4) Make the ramen (2 servings)"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Add MSG (if using): Stir it in with the broth (start with 1/2 tsp, then taste).",
+        "In a large pot, heat toasted sesame oil on high heat. Brown the ground pork with black pepper until deeply browned and it has released fat."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/115f3476-27b0-4a27-8a5a-211738ca2841/DSCF5346.jpg?table=block&id=379c3484-e8de-803e-9462-ff336f33ca5f&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=dK24L6SDm7TCkVL511-ZnkSPwfVKzcJzkzpWbeG1Gs4",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-4.jpg"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Add **1/4 cup** spicy miso paste and cook **1 minute** until fragrant."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/b54a67fc-6abd-4bfb-a269-8a71c105b1fa/DSCF5347.jpg?table=block&id=379c3484-e8de-80c8-a47b-cccf060d0dfa&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=yWCNsX2mYIkKEOA3uHgd5wM7ixxBLwjmjYmibQS6_Dk",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-5.jpg"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Add stock and soy milk. Bring to a simmer."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/6c7931ea-ccf6-403a-86f4-387c504e62c3/DSCF5348.jpg?table=block&id=379c3484-e8de-80ba-8f3a-dc7a4938f284&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=LgpP7SbPxjVALrnd-llUabedWrseT-uPD2DtylhRRO0",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-6.jpg"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Put **1/2 cup** spicy miso paste on top of a **very fine sieve**. Lower the sieve halfway into the simmering soup and use a spoon to slowly dissolve the paste into the broth. Discard solids left in the sieve.",
+        "Simmer **5 minutes**.",
+        "Cook ramen noodles according to package instructions. Drain well.",
+        "Divide noodles between two bowls and ladle broth on top.",
+        "Top each bowl with scallions, nori, and **2 tsp** garlic + togarashi oil.",
+        "Serve immediately. Slurping is encouraged."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/eeaf2bdc-b63a-48e2-819d-e13d751edeff/DSCF5351.jpg?table=block&id=379c3484-e8de-8071-bc68-faac2e51a41f&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=9HCnLrE_5C2j1a_v7eybZo734K-eNGtVOEyMiaM2sKU",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-7.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Date-night workflow (Person 1 + Person 2)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Before the date (Person 1):** Make/confirm miso paste + garlic oil are ready. Portion toppings (scallions, nori).",
+        "**Before the date (Person 2):** Set up bowls + chopsticks/spoons and prep toppings.",
+        "**During the date (Person 1):** Browns pork + builds broth.",
+        "**During the date (Person 2):** Cooks noodles + sets up toppings.",
+        "**Serving window (together):** Sieve in miso, taste, ladle, top, and eat while it’s screaming hot."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Expert Tips"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**It should taste salty.** If it’s “perfect” in the pot, it’ll taste bland once noodles hit.",
+        "**Don’t dump miso paste straight into the soup.** The sieve method keeps it creamy, not gritty.",
+        "**Keep soy milk below a boil.** Gentle simmer prevents weird texture.",
+        "**Make extra garlic oil.** You’ll put it on eggs, rice, roasted vegetables… everything."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "What to Serve With"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Edamame with sea salt (or chili crisp if you’re feeling bold)",
+        "Quick cucumber salad (rice vinegar + sesame oil)",
+        "Gyoza (store-bought is totally valid)"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Pairings (Full Meal Course)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Turn ramen night into a full Date My Dish menu:"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Starter:** Edamame or cucumber salad",
+        "**Main:** Spicy miso ramen (you’re here)",
+        "**Side / extra:** Quick cucumber salad or gyoza",
+        "**Dessert:** ‣"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/36d309e5-bf5f-4eab-9ca8-04f6135cb99e/DSCF5355.jpg?table=block&id=379c3484-e8de-807f-a88d-eccbfdc12cda&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=oyKNmFCEcUWz3dw4xsHoBYBV_NC4dDe9GJDq1QfgVC4",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-8.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Date Night Notes / During the Date"
+    },
+    {
+      "type": "paragraph",
+      "text": "Wine pairing"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ramen isn’t precious, so don’t overcomplicate it:"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Cold beer** (Japanese lager style is perfect)",
+        "**Dry cider** (super underrated with spicy broth)",
+        "**Chilled sake** (junmai or ginjo)",
+        "**Non-alcoholic:** Sparkling water with lime"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Music"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Japanese city pop",
+        "Lo-fi beats",
+        "Anything warm and low-BPM (no chaos)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Plating"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Warm the bowls if you can.",
+        "Noodles first, broth second.",
+        "Toppings on top like you’re building a little edible mood board.",
+        "Finish with that garlic-togarashi oil right at the end."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Flirty activity"
+    },
+    {
+      "type": "paragraph",
+      "text": "Do a “broth draft”:"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Each of you gets one bowl.",
+        "Take turns picking the next tweak: one extra spoon of miso base, a little more garlic oil, more scallions, more nori.",
+        "You’re basically seasoning each other’s bowls, and it gets surprisingly intimate."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "FAQs"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Can I make this vegetarian?**"
+    },
+    {
+      "type": "paragraph",
+      "text": "Yes. Skip pork, use veggie stock, and use kombu powder instead of dashi granules."
+    },
+    {
+      "type": "paragraph",
+      "text": "**How long does the spicy miso paste last?**"
+    },
+    {
+      "type": "paragraph",
+      "text": "In an airtight container in the fridge, it keeps well for at least a week (often longer)."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Is soy milk mandatory?**"
+    },
+    {
+      "type": "paragraph",
+      "text": "Strongly recommended. It gives that ramen-shop creaminess."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Why the sieve method?**"
+    },
+    {
+      "type": "paragraph",
+      "text": "It dissolves the good stuff and keeps gritty solids out so the broth stays rich but not thick and “sauce-like.”"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/3e223f63-6b73-405b-b329-78b4db882f0a/DSCF5353.jpg?table=block&id=379c3484-e8de-8091-9802-ee6ab3d9f178&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781179200000&signature=1aD9q1TFhUnTtaK8nl9_7xg2pNEG1w_MjFJJ3qyTEVI",
+      "caption": null,
+      "localPath": "src/assets/images/recipes/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-9.jpg"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Recipe Card (concise)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Bold Spicy Miso Ramen (2 servings)**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Prep:** ~45 min (less if components are prepped)",
+        "**Cook:** ~30 min",
+        "**Total:** ~1 hr 15 min"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Ramen night steps**"
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "Brown pork with sesame oil + pepper.",
+        "Cook 1/4 cup miso paste 1 min.",
+        "Add shiitake, stock, soy milk; simmer.",
+        "Dissolve 1/2 cup miso paste through a fine sieve into broth; discard solids.",
+        "Simmer 5 min. Cook noodles. Assemble with scallions, nori, garlic oil."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "callout",
+      "icon": "✅",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Reference checklist (non-negotiables met):**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Intro tied to a real date or special occasion",
+        "“During the date” section included (wine, music, plating + flirty activity)",
+        "Clear headings and scannable lists",
+        "FAQs included",
+        "Recipe Card kept concise"
+      ]
+    }
+  ],
+  "faqs": []
+}
