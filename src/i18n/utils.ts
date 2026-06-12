@@ -254,6 +254,7 @@ export const cuisineSlugMap: Record<string, Record<Locale, string>> = {
   "japanese-italian": { en: "japanese-italian", fr: "japonaise-italienne" },
   "korean-japanese": { en: "korean-japanese", fr: "coreen-japonais" },
   thai: { en: "thai", fr: "thailandaise" },
+  japanese: { en: "japanese", fr: "japonaise" },
 };
 
 // Maps a cuisine display name (EN or FR, accents and spaces ignored) to its canonical key,
@@ -271,6 +272,7 @@ const cuisineNameToCanonical: Record<string, string> = {
   "japonaise-italienne": "japanese-italian",
   "coreenne-japonaise": "korean-japanese",
   thailandaise: "thai",
+  japonaise: "japanese",
 };
 
 function normalizeCuisineKey(value: string): string {

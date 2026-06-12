@@ -208,6 +208,14 @@
       "publishedDate": "2026-06-02",
       "lastSyncedDate": "2026-06-02",
       "status": "published"
+    },
+    "9": {
+      "notionTitle": "Bold Spicy Miso Ramen Recipe (Restaurant-Style at Home)",
+      "slug": "bold-spicy-miso-ramen",
+      "type": "recipe",
+      "publishedDate": "2026-06-12",
+      "lastSyncedDate": "2026-06-12",
+      "status": "published"
     }
   }
 }
