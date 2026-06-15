@@ -60,6 +60,36 @@
     "lang": "en"
   },
   {
+    "keyword": "bold spicy miso ramen restaurant-style",
+    "source": "title",
+    "url": "/en/recipes/bold-spicy-miso-ramen/",
+    "lang": "en"
+  },
+  {
+    "keyword": "spicy miso ramen recipe",
+    "source": "keywords",
+    "url": "/en/recipes/bold-spicy-miso-ramen/",
+    "lang": "en"
+  },
+  {
+    "keyword": "restaurant-style miso ramen at home",
+    "source": "keywords",
+    "url": "/en/recipes/bold-spicy-miso-ramen/",
+    "lang": "en"
+  },
+  {
+    "keyword": "bold spicy miso ramen for two",
+    "source": "keywords",
+    "url": "/en/recipes/bold-spicy-miso-ramen/",
+    "lang": "en"
+  },
+  {
+    "keyword": "japanese recipe",
+    "source": "cuisine",
+    "url": "/en/recipes/bold-spicy-miso-ramen/",
+    "lang": "en"
+  },
+  {
     "keyword": "crispy brussels sprouts salad",
     "source": "title",
     "url": "/en/recipes/brussels-sprouts-salad/",
@@ -327,36 +357,6 @@
     "keyword": "raw beef tartare thai herbs",
     "source": "keywords",
     "url": "/en/recipes/northern-thai-beef-tartare/",
-    "lang": "en"
-  },
-  {
-    "keyword": "thai recipe",
-    "source": "cuisine",
-    "url": "/en/recipes/northern-thai-beef-tartare/",
-    "lang": "en"
-  },
-  {
-    "keyword": "pâte à choux foolproof recipe",
-    "source": "title",
-    "url": "/en/recipes/pate-a-choux/",
-    "lang": "en"
-  },
-  {
-    "keyword": "pate a choux recipe",
-    "source": "keywords",
-    "url": "/en/recipes/pate-a-choux/",
-    "lang": "en"
-  },
-  {
-    "keyword": "choux pastry from scratch",
-    "source": "keywords",
-    "url": "/en/recipes/pate-a-choux/",
-    "lang": "en"
-  },
-  {
-    "keyword": "cream puff dough recipe",
-    "source": "keywords",
-    "url": "/en/recipes/pate-a-choux/",
     "lang": "en"
   }
 ]
