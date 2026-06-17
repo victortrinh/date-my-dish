@@ -1,0 +1,563 @@
+{
+  "source": "notion",
+  "fetchedAt": "2026-06-17T06:18:28.550Z",
+  "notionPageId": "33470cfd-a561-40f0-880e-2cb93be4a9fc",
+  "title": "Hoogan et Beaufort Restaurant Review: Montréal’s Michelin-Star Tasting Menu Experience",
+  "mode": "publish",
+  "existingSlug": null,
+  "recipeNum": 80,
+  "lastEditedTime": "2026-06-13T15:30:22.459Z",
+  "heroImage": {
+    "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience.jpg",
+    "caption": null
+  },
+  "images": [
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience.jpg",
+      "caption": "",
+      "isHero": true
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-1.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-2.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-3.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-4.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-5.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-6.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-7.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-8.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-9.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-10.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-11.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-12.jpg",
+      "caption": "",
+      "isHero": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Hoogan et Beaufort feels like the kind of place you pick when you want the night to feel intentional. It’s lively, warm, and a little dramatic in the best way - open-fire energy in the background, a dining room with momentum, and a setting that makes even a regular weeknight feel like you made a plan."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/71662aed-c5cd-421c-b9b4-6cbb30ca3e40/DSCF5887.jpg?table=block&id=37ec3484-e8de-8088-9f76-f147b3de33dd&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=aCfQXSK_BeGvkJMhbIaIAUpdL3JuSWdJ088zrkVK6C4",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "In 2026, it earned a Michelin star, which changes the way I would approach the meal. Not because “Michelin” automatically means “best,” but because it usually signals that the restaurant is trying to show a complete point of view. If I’m going here, I’m going to treat it like an experience and see what they’re capable of."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/ea410d70-800f-47bd-b4af-1bd99f63419a/DSCF5885.jpg?table=block&id=37ec3484-e8de-808f-85f7-c1cf926f6d00&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=x3sDHh2amUqDxrkYKhtTql7WzvyL6osuBUCwdphqUeg",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-1.jpg"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hoogan et Beaufort"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Location:** Rosemont - La Petite-Patrie, Montréal  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Price Range:** $$$-$$$$ (special-occasion energy)  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cuisine:** Seasonal, wood-fired / live-fire cooking  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Dress Code:** Casual to Smart Casual  "
+    },
+    {
+      "type": "callout",
+      "icon": "📖",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Quick Verdict:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Best For: Food-focused nights out, celebrations, tasting menu dinners",
+        "Conversation Friendly: 3.5/5 (lively room, not chaotic)",
+        "Ambiance: Industrial-chic, warm, energetic",
+        "Reservation: Recommended",
+        "**Date Night Score: 8.5/10**"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Vibe"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hoogan et Beaufort sits in a converted industrial space that somehow feels both big and intimate. The lighting is warm, the room has a steady hum, and the live-fire cooking gives everything a subtle sense of motion."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lighting:** Warm, flattering, a little dramatic  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Noise Level:** Medium to loud at peak hours  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best Seats:** A two-top along the wall for easier conversation, or a table where you can feel the room’s energy without being in the center of it  "
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What to Order (Tasting Menu Game Plan)"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you’re coming here for the full experience, do the tasting menu. For Michelin-star spots, the tasting is usually the clearest window into the kitchen’s intent and consistency, and it’s the easiest way to see the full arc of what they do well."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "What I ordered (Tasting Menu, $125)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Hot oysters, cider sabayon** (extra) - signature add-on (about $30 for 6)"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/4f059b2b-bb64-49a3-b61a-43405bdc7c2e/DSCF5901.jpg?table=block&id=37ec3484-e8de-806f-aec8-f0b46b38a396&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=vBvhxI6srLOAbx_G6_-C-cg8Bi1E1-y3PTv7uwpocpc",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-2.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Dish notes:** Perfect texture on the poached oysters, and a really nice way to kick off the meal. Our waitress recommended it to start and called it their “undoubted signature” dish. I enjoyed it a lot, but if I’m being picky, I’m not sure it’s quite signature-level unforgettable.",
+        "**Crab, dashi broth, tomatillo**"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/51792638-c308-410c-a097-1c2f9a1a6941/DSCF5905.jpg?table=block&id=37ec3484-e8de-80e1-8b7a-fcda65c0a2b3&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=TqrXN8EriIHr_kJ8LAHSw8_gZgY7cblN3yaoAKoUczI",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-3.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Dish notes:** I really liked this flavor combination - you can taste the freshness and the umami right away. Sweet crab against a savory, sea-leaning dashi, with tomatillo bringing that green acidity that keeps the bowl feeling sharp and modern. Presentation was clean and polished too.",
+        "**Green asparagus, snap peas, pistachio**"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/edbb230c-96aa-460f-a0c3-3a9c726b55d9/DSCF5912.jpg?table=block&id=37ec3484-e8de-8058-bbfe-e7c699ce6745&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=PM89cvKly4G1xp04ilwjwCggHQfFlX8YhpMUyoVkwd4",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-4.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Dish notes:** You can taste that the vegetables are locally produced - even the microherbs feel vibrant and fresh. They source microgreens from Tulsi Farm (they specialize in different microgreens), and it shows here. Asparagus and snap peas keep it crisp and green, with pistachio adding buttery richness and crunch. It’s the kind of “reset course” that makes you ready for pasta.",
+        "**Spaghetti, ramps, Louis d’Or cheese**"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/a20cec4d-3ae8-45a4-ac6f-3f8585f01a6b/DSCF5917.jpg?table=block&id=37ec3484-e8de-80d7-8b00-df2a5eb0117d&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=4MMUupsXctZX_TvfWzPqsZpV2bwCGiV1ga_uLIfJjIA",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-5.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Dish notes:** Visually, this one is really pretty and refined. Flavor-wise, it tastes like a very well-made pasta dish rather than something totally surprising - ramps for that gentle garlicky hit, Louis d’Or for nutty depth, and a sauce that clings nicely to the noodle.",
+        "**Grilled focaccia, whipped butter**"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/0321bc56-9c71-4dc1-bec1-b09c1ac73d85/DSCF5921.jpg?table=block&id=37ec3484-e8de-8028-ac37-ca490b567a7b&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=oBU1QaJfmq66c_xqmHDQTIbirG-uvInwsNiWy9fX0jE",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-6.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Dish notes:** This one didn’t quite land for me. Even though it’s listed as focaccia, it ate more like a simple grilled bread - I didn’t get the airy bubbles or that chewy, olive-oil richness you normally expect from a great focaccia. They mention it’s fire-baked, but I didn’t notice much extra flavor from that, and the whipped butter was pretty subtle too. I normally wouldn’t overthink bread, but since it’s called out on the menu, I was hoping for something that really stood out.",
+        "**Beef, maitake mushrooms, black cardamom**"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/d338b893-6157-4d6b-baa1-da3a43703ddf/DSCF5923.jpg?table=block&id=37ec3484-e8de-8040-a345-c7a70d722d5b&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=K_fd05Vo-tZni-dmUztieyxBcc5X4JJV5GyWDNYyVsg",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-7.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Dish notes:** Solid main course and a good piece of beef, but nothing really jumped out as memorable for me. The maitake and black cardamom add an earthy, smoky backdrop, but overall it lands more as “well-executed beef” than a true standout of the menu.",
+        "**Rhubarb, cherry blossom, shiso**"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/e88954cc-adbe-45ff-98d5-dc1d8e26338c/DSCF5932.jpg?table=block&id=37ec3484-e8de-807b-854e-f0ae22639554&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=yGiWHJP4YfE-qQlJcBbK3VbrHGsUieq9P4XSpvezcCw",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-8.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Dish notes:** Light, bright, and pretty refreshing as a closer. The rhubarb brings that tart, fruity acidity, with a gentle floral note from cherry blossom and a subtle herbal lift from shiso. It finishes clean and keeps the dessert from feeling too sweet or heavy."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/b125beb9-0e23-4fa3-865f-e407786e6074/DSCF5898.jpg?table=block&id=bcd790eb-6278-44b9-94e2-7fd171664935&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=yg_5oJ_IDxXqfmRHtSB5DZ5ZVA69F3assDo3x_eHjSs",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-9.jpg"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/8dc62099-4cb7-484f-9c39-50cdda7d34da/DSCF5927.jpg?table=block&id=37ec3484-e8de-80d8-9a7f-fd05863e37ac&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=sTDq-KmkL4EPMFUZqLbFnEeggcUm3s6qJw8Ims1Cj24",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-10.jpg"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/447f07ef-901a-4a08-a6d9-5b5b6aee95e4/DSCF5934.jpg?table=block&id=37ec3484-e8de-800b-9f5b-f8674edfa93c&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=JXVPTkHjBufLL_HCUOonIYblRLK741agCj7iJZgtBrI",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-11.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Bonus shot notes:** Between courses, there were a few small add-ons and little touches like this that helped the experience feel more thoughtful and taken care of."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "How to order it (tasting menu version)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**1) Commit to the tasting menu**"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is the best way to see what they’re capable of, and it keeps the night feeling intentional."
+    },
+    {
+      "type": "paragraph",
+      "text": "**2) Add a smart a la carte upgrade if something genuinely grabs you**"
+    },
+    {
+      "type": "paragraph",
+      "text": "I wouldn’t automatically pile on extra plates, but if a server recommends something that sounds interesting, it can really elevate the experience."
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Example:** we added the **hot oysters, cider sabayon** as an extra (about $30 for 6), and it was a great way to kick off the meal."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**3) Use pacing to your advantage**"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you’re thinking about an add-on, decide early (before the first couple courses land). After that, let the tasting flow so you don’t end up over-ordering."
+    },
+    {
+      "type": "paragraph",
+      "text": "**4) Beverage strategy**"
+    },
+    {
+      "type": "paragraph",
+      "text": "Start with one cocktail, then switch to wine so the pairings stay clean through the seafood and pasta courses."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/34c02589-3b68-4361-9755-d1b0b8c314f3/DSCF5893.jpg?table=block&id=37ec3484-e8de-8008-b85e-d2f3a45c7599&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1781704800000&signature=SdmbsdvwJzNRBAs6mHf-RON8wejfVaywB0kKJjUwvLA",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/hoogan-et-beaufort-restaurant-review-montr-al-s-michelin-star-tasting-menu-experience-12.jpg"
+    },
+    {
+      "type": "callout",
+      "icon": "✅",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Easy tasting move for two:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Tasting menu",
+        "1 a la carte add-on (only if it feels worth it)",
+        "1 cocktail each to start",
+        "Wine for the middle",
+        "Coffee or a digestif if you want to stretch the night"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Food (Flavor + Execution)"
+    },
+    {
+      "type": "paragraph",
+      "text": "The cooking is clean, confident, and well executed, with balanced seasoning and a lot of polish in the presentation. Even though the restaurant leans hard into the live-fire identity, the flavors on my tasting menu didn’t come across as especially smoky or char-forward. Instead, it felt more refined and ingredient-driven - freshness, umami, and restraint - with the fire element sitting more in the background than on the palate."
+    },
+    {
+      "type": "paragraph",
+      "text": "The tasting menu is still the best way to see their range, from lighter seafood and greens through richer mains and dessert."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Notes from the meal (plating, flavors, and execution)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Always hunting for new ideas, plating inspiration, and flavor combinations. Here are the quick notes I wrote down during the meal."
+    },
+    {
+      "type": "list",
+      "style": "ordered",
+      "items": [
+        "**Fire vs. flavor:** They really lean into the live-fire story, but on my menu I didn’t taste much smokiness or char coming through. Everything tasted clean and well executed, just not particularly “fire-forward.”",
+        "**Oyster add-on:** Our waitress suggested the hot oysters with cider sabayon to kick things off and called it their signature. Texture was excellent and it’s a nice opener, but I’m still not sure it’s signature-level unforgettable.",
+        "**Bread check:** The grilled “focaccia” didn’t eat like a true focaccia to me (no bubbles, not chewy), and the butter was subtle. Since it’s called out on the menu, I expected it to stand out more.",
+        "**Overall execution:** Flavor combinations felt balanced and familiar in a good way, with solid freshness and quality across the meal.",
+        "**Service:** Friendly and warm throughout."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Drinks"
+    },
+    {
+      "type": "paragraph",
+      "text": "The drink program pairs naturally with live-fire food."
+    },
+    {
+      "type": "paragraph",
+      "text": "If you want easy wins:"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Crisp whites** cut through richer, charred plates.",
+        "**Light-bodied reds with acidity** stay refreshing even with smoke.",
+        "**Cocktails** are a great opener, especially if you want the night to feel like an event."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Date tip:** Start with cocktails, switch to wine for the middle of the meal, and finish with something bitter (amaro) if you’re doing dessert."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Real Cost (So You Can Plan)"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a medium-to-high end night out."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Tasting Menu:** $125 (plus extras, beverages, tax, and tip)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Per Person:** $110-180+ (CAD, depending on drinks and how many plates you order)  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Worth it?** Yes, when you want a night that feels like a plan - the room and the cooking deliver the “occasion” feeling.  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Save money (without downgrading the night):** Do one cocktail each, then switch to a bottle or a couple of well-picked glasses instead of multiple rounds.  "
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Booking & Timing"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Reservations:** Recommended, especially Thu-Sat.  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best time for dates:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Early (5:30-6:30pm):** calmer, more conversation-friendly",
+        "**Later (8pm+):** louder, more “night out” energy  "
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Tip:** Definitely check ahead for prime time slots - the best times can book up."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date Type Fit"
+    },
+    {
+      "type": "paragraph",
+      "text": "**First Date:** 2.5/5  "
+    },
+    {
+      "type": "paragraph",
+      "text": "Not my first choice. It can feel like you’re trying to make a statement, and for me the “statement” isn’t totally worth it here. It’s a good restaurant, but it didn’t have that big wow effect you might expect from a Michelin star or a more classic white-glove experience."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Anniversary:** 4.5/5  "
+    },
+    {
+      "type": "paragraph",
+      "text": "Great for celebrating something real - a milestone, an achievement, or a special occasion where you want to dress up a bit and make a night of it. The tasting menu gives the evening a clear arc, and the room has enough energy to feel festive without turning into a party. If you book a prime time slot and lean into a few intentional touches (a great bottle, the oyster add-on, dessert), it lands as a polished “we’re celebrating” kind of dinner."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hoogan et Beaufort is a strong pick when you want the night to feel like an event without being overly formal. Go for the tasting menu, add the oyster course if you want the “signature” move, and let the kitchen show you the full experience. If you like seasonal cooking with polish and a lively room, it’s a great night out."
+    },
+    {
+      "type": "callout",
+      "icon": "📍",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Details**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**City:** Montréal, QC",
+        "**Neighborhood:** Rosemont - La Petite-Patrie",
+        "**Tip:** If your date is sensitive to noise, book early."
+      ]
+    }
+  ],
+  "faqs": []
+}
