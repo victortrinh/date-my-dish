@@ -216,6 +216,14 @@
       "publishedDate": "2026-06-12",
       "lastSyncedDate": "2026-06-12",
       "status": "published"
+    },
+    "80": {
+      "notionTitle": "Hoogan et Beaufort Restaurant Review: Montréal's Michelin-Star Tasting Menu Experience",
+      "slug": "hoogan-et-beaufort-montreal",
+      "type": "review",
+      "publishedDate": "2026-06-18",
+      "lastSyncedDate": "2026-06-18",
+      "status": "published"
     }
   }
 }
