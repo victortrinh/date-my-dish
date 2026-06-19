@@ -43,6 +43,10 @@ const sortedRecipes = recipes.sort(
   (a: any, b: any) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
 );
 
+const MIN_RECIPES_FOR_INDEX = 3;
+const shouldNoindex = sortedRecipes.length < MIN_RECIPES_FOR_INDEX;
+const tagIntro = `Chaque recette ${tagLabel.toLowerCase()} ici est développée et testée dans une vraie cuisine, avec des temps de préparation et de cuisson honnêtes, des notes sur les ingrédients et des étapes claires. Parcourez la collection ci-dessous et revenez régulièrement, car nous ajoutons de nouveaux plats.`;
+
 // Get all qualifying tags for filter chips
 const allRecipes = await getCollection("recipes");
 const frRecipes = allRecipes.filter((r) => r.data.lang === "fr");
@@ -61,6 +65,7 @@ const allTags = [...tagCounts.entries()]
 <BaseLayout
   title={`Recettes ${tagLabel} | Date My Dish`}
   description={`Parcourez ${sortedRecipes.length} recettes ${tagLabel.toLowerCase()} de Date My Dish, testées dans une vraie cuisine avec des temps honnêtes et des saveurs audacieuses.`}
+  noindex={shouldNoindex}
 >
   <Fragment slot="head">
     <script is:inline>window.pintrk&&pintrk('track','viewcategory');</script>
@@ -95,6 +100,9 @@ const allTags = [...tagCounts.entries()]
         {tagLabel}
       </h1>
       <div class="mb-4 h-1 w-12 rounded-full bg-brand-rose"></div>
+      <p class="mb-2 text-body-sm text-warm-500 dark:text-warm-400">
+        {tagIntro}
+      </p>
       <p class="text-body-sm text-warm-500 dark:text-warm-400">
         {sortedRecipes.length} {sortedRecipes.length === 1 ? "recette" : "recettes"}
       </p>
