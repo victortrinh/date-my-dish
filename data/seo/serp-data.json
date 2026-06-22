@@ -1,7 +1,7 @@
 {
   "results": {
     "3-day miso duck breast crisp skin": {
-      "position": 4,
+      "position": 3,
       "featured": false,
       "topCompetitors": [
         {
@@ -13,16 +13,16 @@
           "position": 2
         },
         {
-          "domain": "instagram.com",
-          "position": 3
+          "domain": "reddit.com",
+          "position": 4
         },
         {
-          "domain": "thecoeliacsrevenge.com",
-          "position": 5
+          "domain": "instagram.com",
+          "position": 7
         },
         {
           "domain": "tokusen.store",
-          "position": 6
+          "position": 8
         }
       ]
     },
@@ -31,11 +31,11 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "tokusen.store",
+          "domain": "edibleberkshires.com",
           "position": 1
         },
         {
-          "domain": "edibleberkshires.com",
+          "domain": "tokusen.store",
           "position": 2
         },
         {
@@ -43,11 +43,11 @@
           "position": 3
         },
         {
-          "domain": "dartagnan.com",
+          "domain": "gustotv.com",
           "position": 4
         },
         {
-          "domain": "gustotv.com",
+          "domain": "foodforhunters.blogspot.com",
           "position": 5
         }
       ]
@@ -57,23 +57,23 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "recipetineats.com",
+          "domain": "seriouseats.com",
           "position": 1
         },
         {
-          "domain": "seriouseats.com",
+          "domain": "recipetineats.com",
           "position": 2
         },
         {
-          "domain": "jesspryles.com",
+          "domain": "alexandracooks.com",
           "position": 3
         },
         {
-          "domain": "gressinghamduck.co.uk",
+          "domain": "wellseasonedstudio.com",
           "position": 4
         },
         {
-          "domain": "wellseasonedstudio.com",
+          "domain": "tanorriastable.com",
           "position": 5
         }
       ]
@@ -83,11 +83,11 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "facebook.com",
+          "domain": "reddit.com",
           "position": 1
         },
         {
-          "domain": "reddit.com",
+          "domain": "facebook.com",
           "position": 2
         },
         {
@@ -95,12 +95,12 @@
           "position": 3
         },
         {
-          "domain": "tokusen.store",
-          "position": 5
+          "domain": "instagram.com",
+          "position": 4
         },
         {
-          "domain": "instagram.com",
-          "position": 6
+          "domain": "tokusen.store",
+          "position": 5
         }
       ]
     },
@@ -151,7 +151,7 @@
           "position": 4
         },
         {
-          "domain": "instagram.com",
+          "domain": "playswellwithbutter.com",
           "position": 5
         }
       ]
@@ -177,7 +177,7 @@
           "position": 4
         },
         {
-          "domain": "olivieri.ca",
+          "domain": "bromabakery.com",
           "position": 5
         }
       ]
@@ -203,7 +203,7 @@
           "position": 4
         },
         {
-          "domain": "pinchofyum.com",
+          "domain": "youtube.com",
           "position": 5
         }
       ]
@@ -239,23 +239,23 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "italianfoodforever.com",
+          "domain": "italianchef.com",
           "position": 1
         },
         {
-          "domain": "italianchef.com",
+          "domain": "lacucinaitaliana.com",
           "position": 2
         },
         {
-          "domain": "giallozafferano.com",
+          "domain": "italianfoodforever.com",
           "position": 3
         },
         {
-          "domain": "pinterest.com",
+          "domain": "giallozafferano.com",
           "position": 4
         },
         {
-          "domain": "cookingwithnonna.com",
+          "domain": "memoriediangelina.com",
           "position": 5
         }
       ]
@@ -273,15 +273,15 @@
           "position": 2
         },
         {
-          "domain": "ministryofcurry.com",
+          "domain": "youtube.com",
           "position": 3
         },
         {
-          "domain": "instagram.com",
+          "domain": "ministryofcurry.com",
           "position": 4
         },
         {
-          "domain": "reddit.com",
+          "domain": "instagram.com",
           "position": 5
         }
       ]
@@ -295,19 +295,19 @@
           "position": 1
         },
         {
-          "domain": "justonecookbook.com",
+          "domain": "sandravalvassori.com",
           "position": 2
         },
         {
-          "domain": "sandravalvassori.com",
+          "domain": "justonecookbook.com",
           "position": 3
         },
         {
-          "domain": "reddit.com",
+          "domain": "thefoodietakesflight.com",
           "position": 4
         },
         {
-          "domain": "thefoodietakesflight.com",
+          "domain": "youtube.com",
           "position": 5
         }
       ]
@@ -325,15 +325,15 @@
           "position": 2
         },
         {
-          "domain": "thefoodietakesflight.com",
+          "domain": "youtube.com",
           "position": 3
         },
         {
-          "domain": "youtube.com",
+          "domain": "allrecipes.com",
           "position": 4
         },
         {
-          "domain": "nataliecooks.com",
+          "domain": "thefoodietakesflight.com",
           "position": 5
         }
       ]
@@ -343,7 +343,7 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "justonecookbook.com",
+          "domain": "dishingouthealth.com",
           "position": 1
         },
         {
@@ -351,7 +351,7 @@
           "position": 2
         },
         {
-          "domain": "dishingouthealth.com",
+          "domain": "justonecookbook.com",
           "position": 3
         },
         {
@@ -373,7 +373,7 @@
           "position": 1
         },
         {
-          "domain": "japan.recipetineats.com",
+          "domain": "japancentre.com",
           "position": 2
         },
         {
@@ -381,11 +381,11 @@
           "position": 3
         },
         {
-          "domain": "okonomikitchen.com",
+          "domain": "japan.recipetineats.com",
           "position": 4
         },
         {
-          "domain": "japancentre.com",
+          "domain": "okonomikitchen.com",
           "position": 5
         }
       ]
@@ -411,7 +411,7 @@
           "position": 4
         },
         {
-          "domain": "instagram.com",
+          "domain": "loveandlemons.com",
           "position": 5
         }
       ]
@@ -489,7 +489,7 @@
           "position": 4
         },
         {
-          "domain": "cookswithoutborders.com",
+          "domain": "youtube.com",
           "position": 5
         }
       ]
@@ -499,11 +499,11 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "foodandwine.com",
+          "domain": "seriouseats.com",
           "position": 1
         },
         {
-          "domain": "seriouseats.com",
+          "domain": "foodandwine.com",
           "position": 2
         },
         {
@@ -525,19 +525,19 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "anitalianinmykitchen.com",
+          "domain": "pinabresciani.com",
           "position": 1
         },
         {
-          "domain": "seriouseats.com",
+          "domain": "urbanfarmie.com",
           "position": 2
         },
         {
-          "domain": "pinabresciani.com",
+          "domain": "anitalianinmykitchen.com",
           "position": 3
         },
         {
-          "domain": "urbanfarmie.com",
+          "domain": "seriouseats.com",
           "position": 4
         },
         {
@@ -555,19 +555,19 @@
           "position": 1
         },
         {
-          "domain": "food52.com",
+          "domain": "seriouseats.com",
           "position": 2
         },
         {
-          "domain": "seriouseats.com",
+          "domain": "food52.com",
           "position": 3
         },
         {
-          "domain": "instagram.com",
+          "domain": "pinchofyum.com",
           "position": 4
         },
         {
-          "domain": "pinchofyum.com",
+          "domain": "noplatelikehome.com",
           "position": 5
         }
       ]
@@ -581,11 +581,11 @@
           "position": 1
         },
         {
-          "domain": "spoonforkbacon.com",
+          "domain": "facebook.com",
           "position": 2
         },
         {
-          "domain": "instagram.com",
+          "domain": "spoonforkbacon.com",
           "position": 3
         },
         {
@@ -593,7 +593,7 @@
           "position": 4
         },
         {
-          "domain": "gimmesomeoven.com",
+          "domain": "instagram.com",
           "position": 5
         }
       ]
@@ -615,11 +615,11 @@
           "position": 3
         },
         {
-          "domain": "loveandlemons.com",
+          "domain": "instagram.com",
           "position": 4
         },
         {
-          "domain": "thefeastlocal.com",
+          "domain": "loveandlemons.com",
           "position": 5
         }
       ]
@@ -645,7 +645,7 @@
           "position": 4
         },
         {
-          "domain": "loveandlemons.com",
+          "domain": "instagram.com",
           "position": 5
         }
       ]
@@ -663,11 +663,11 @@
           "position": 2
         },
         {
-          "domain": "reddit.com",
+          "domain": "delish.com",
           "position": 3
         },
         {
-          "domain": "delish.com",
+          "domain": "reddit.com",
           "position": 4
         },
         {
@@ -689,7 +689,7 @@
           "position": 2
         },
         {
-          "domain": "feastingathome.com",
+          "domain": "themediterraneandish.com",
           "position": 3
         },
         {
@@ -697,7 +697,7 @@
           "position": 4
         },
         {
-          "domain": "youtube.com",
+          "domain": "feastingathome.com",
           "position": 5
         }
       ]
@@ -707,23 +707,23 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "spanishsabores.com",
+          "domain": "seriouseats.com",
           "position": 1
         },
         {
-          "domain": "olivemagazine.com",
+          "domain": "spanishrecipesbynuria.com",
           "position": 2
         },
         {
-          "domain": "tienda.com",
+          "domain": "spanishsabores.com",
           "position": 3
         },
         {
-          "domain": "spanishrecipesbynuria.com",
+          "domain": "tienda.com",
           "position": 4
         },
         {
-          "domain": "seriouseats.com",
+          "domain": "olivemagazine.com",
           "position": 5
         }
       ]
@@ -749,7 +749,7 @@
           "position": 4
         },
         {
-          "domain": "allrecipes.com",
+          "domain": "simplyrecipes.com",
           "position": 5
         }
       ]
@@ -759,11 +759,11 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "chocolatecoveredkatie.com",
+          "domain": "makingthymeforhealth.com",
           "position": 1
         },
         {
-          "domain": "makingthymeforhealth.com",
+          "domain": "chocolatecoveredkatie.com",
           "position": 2
         },
         {
@@ -775,7 +775,7 @@
           "position": 4
         },
         {
-          "domain": "paleorunningmomma.com",
+          "domain": "youtube.com",
           "position": 5
         }
       ]
@@ -793,15 +793,15 @@
           "position": 2
         },
         {
-          "domain": "seriouseats.com",
+          "domain": "davidlebovitz.com",
           "position": 3
         },
         {
-          "domain": "createmindfully.com",
+          "domain": "seriouseats.com",
           "position": 4
         },
         {
-          "domain": "davidlebovitz.com",
+          "domain": "pinterest.com",
           "position": 5
         }
       ]
@@ -819,11 +819,11 @@
           "position": 2
         },
         {
-          "domain": "reddit.com",
+          "domain": "foodfusion.mystagingwebsite.com",
           "position": 3
         },
         {
-          "domain": "foodfusion.com",
+          "domain": "reddit.com",
           "position": 5
         },
         {
@@ -871,15 +871,15 @@
           "position": 2
         },
         {
-          "domain": "theedgyveg.com",
+          "domain": "dailyvegan.recipes",
           "position": 3
         },
         {
-          "domain": "dailyvegan.recipes",
+          "domain": "theedgyveg.com",
           "position": 4
         },
         {
-          "domain": "thevibrantveggie.com",
+          "domain": "youtube.com",
           "position": 5
         }
       ]
@@ -905,7 +905,7 @@
           "position": 4
         },
         {
-          "domain": "sharonpalmer.com",
+          "domain": "youtube.com",
           "position": 5
         }
       ]
@@ -915,23 +915,23 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "vegangela.com",
+          "domain": "mydarlingvegan.com",
           "position": 1
         },
         {
-          "domain": "mydarlingvegan.com",
+          "domain": "vegangela.com",
           "position": 2
         },
         {
-          "domain": "bbcgoodfood.com",
+          "domain": "floraandvino.com",
           "position": 3
         },
         {
-          "domain": "greatbritishchefs.com",
+          "domain": "bbcgoodfood.com",
           "position": 4
         },
         {
-          "domain": "loveandlemons.com",
+          "domain": "youtube.com",
           "position": 5
         }
       ]
@@ -941,11 +941,11 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "youtube.com",
+          "domain": "mediterraneanliving.com",
           "position": 1
         },
         {
-          "domain": "mediterraneanliving.com",
+          "domain": "instagram.com",
           "position": 2
         },
         {
@@ -953,17 +953,17 @@
           "position": 3
         },
         {
-          "domain": "instagram.com",
+          "domain": "themediterraneandish.com",
           "position": 4
         },
         {
-          "domain": "themediterraneandish.com",
+          "domain": "seriouseats.com",
           "position": 5
         }
       ]
     },
     "spicy gochujang-kimchi seafood bucatini": {
-      "position": 3,
+      "position": 2,
       "featured": false,
       "topCompetitors": [
         {
@@ -971,19 +971,19 @@
           "position": 1
         },
         {
-          "domain": "doobydobap.com",
-          "position": 2
+          "domain": "tiffycooks.com",
+          "position": 3
         },
         {
-          "domain": "tiffycooks.com",
+          "domain": "facebook.com",
           "position": 4
         },
         {
-          "domain": "instagram.com",
+          "domain": "doobydobap.com",
           "position": 5
         },
         {
-          "domain": "jeccachantilly.com",
+          "domain": "youtube.com",
           "position": 6
         }
       ]
@@ -997,19 +997,19 @@
           "position": 1
         },
         {
-          "domain": "tiffycooks.com",
+          "domain": "cooking.nytimes.com",
           "position": 2
         },
         {
-          "domain": "cooking.nytimes.com",
+          "domain": "tiffycooks.com",
           "position": 3
         },
         {
-          "domain": "reddit.com",
+          "domain": "youtube.com",
           "position": 4
         },
         {
-          "domain": "chrisseenplace.com",
+          "domain": "reddit.com",
           "position": 5
         }
       ]
@@ -1019,19 +1019,19 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "instagram.com",
+          "domain": "tiktok.com",
           "position": 1
         },
         {
-          "domain": "twoplaidaprons.com",
+          "domain": "norecipes.com",
           "position": 2
         },
         {
-          "domain": "tiktok.com",
+          "domain": "twoplaidaprons.com",
           "position": 3
         },
         {
-          "domain": "norecipes.com",
+          "domain": "instagram.com",
           "position": 4
         },
         {
@@ -1061,7 +1061,7 @@
           "position": 4
         },
         {
-          "domain": "sugaryums.com",
+          "domain": "instagram.com",
           "position": 5
         }
       ]
@@ -1079,11 +1079,11 @@
           "position": 2
         },
         {
-          "domain": "theflouredcamera.com",
+          "domain": "eatfigsnotpigs.com",
           "position": 3
         },
         {
-          "domain": "eatfigsnotpigs.com",
+          "domain": "theflouredcamera.com",
           "position": 4
         },
         {
@@ -1101,7 +1101,7 @@
           "position": 1
         },
         {
-          "domain": "streetsmartnutrition.com",
+          "domain": "holisticfoodie.com",
           "position": 3
         },
         {
@@ -1109,11 +1109,11 @@
           "position": 4
         },
         {
-          "domain": "holisticfoodie.com",
+          "domain": "streetsmartnutrition.com",
           "position": 5
         },
         {
-          "domain": "melieskitchen.com",
+          "domain": "hellofresh.ca",
           "position": 6
         }
       ]
@@ -1157,15 +1157,15 @@
           "position": 2
         },
         {
-          "domain": "dadcooksdinner.com",
+          "domain": "justonecookbook.com",
           "position": 3
         },
         {
-          "domain": "amalgamkitchen.com",
+          "domain": "nutsaboutgreens.com",
           "position": 4
         },
         {
-          "domain": "justonecookbook.com",
+          "domain": "amalgamkitchen.com",
           "position": 5
         }
       ]
@@ -1179,19 +1179,19 @@
           "position": 1
         },
         {
-          "domain": "foolproofliving.com",
+          "domain": "shekeepsalovelyhome.com",
           "position": 2
         },
         {
-          "domain": "bowlofdelicious.com",
+          "domain": "seriouseats.com",
           "position": 3
         },
         {
-          "domain": "themediterraneandish.com",
+          "domain": "bowlofdelicious.com",
           "position": 4
         },
         {
-          "domain": "shekeepsalovelyhome.com",
+          "domain": "cooking.nytimes.com",
           "position": 5
         }
       ]
@@ -1205,7 +1205,7 @@
           "position": 1
         },
         {
-          "domain": "purrfectbliss.com",
+          "domain": "mykoreankitchen.com",
           "position": 2
         },
         {
@@ -1213,7 +1213,7 @@
           "position": 3
         },
         {
-          "domain": "mykoreankitchen.com",
+          "domain": "purrfectbliss.com",
           "position": 4
         },
         {
@@ -1231,7 +1231,7 @@
           "position": 1
         },
         {
-          "domain": "natashaskitchen.com",
+          "domain": "notquitenigella.com",
           "position": 2
         },
         {
@@ -1239,7 +1239,7 @@
           "position": 3
         },
         {
-          "domain": "notquitenigella.com",
+          "domain": "happytummy702.com",
           "position": 4
         },
         {
@@ -1261,11 +1261,11 @@
           "position": 2
         },
         {
-          "domain": "instagram.com",
+          "domain": "agoodtable.substack.com",
           "position": 3
         },
         {
-          "domain": "agoodtable.substack.com",
+          "domain": "instagram.com",
           "position": 4
         },
         {
@@ -1283,19 +1283,19 @@
           "position": 1
         },
         {
-          "domain": "reddit.com",
+          "domain": "tasteofhome.com",
           "position": 2
         },
         {
-          "domain": "realsimple.com",
+          "domain": "reddit.com",
           "position": 3
         },
         {
-          "domain": "tasteofhome.com",
+          "domain": "pinterest.com",
           "position": 4
         },
         {
-          "domain": "pinterest.com",
+          "domain": "realsimple.com",
           "position": 5
         }
       ]
@@ -1313,16 +1313,16 @@
           "position": 2
         },
         {
-          "domain": "sugarspunrun.com",
+          "domain": "butterandbliss.net",
           "position": 3
         },
         {
-          "domain": "thekitchn.com",
+          "domain": "sugarspunrun.com",
           "position": 4
         },
         {
-          "domain": "youtube.com",
-          "position": 6
+          "domain": "thekitchn.com",
+          "position": 5
         }
       ]
     },
@@ -1331,23 +1331,23 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "greatbritishrecipes.com",
+          "domain": "bbcgoodfood.com",
           "position": 1
         },
         {
-          "domain": "bbcgoodfood.com",
+          "domain": "greatbritishrecipes.com",
           "position": 2
         },
         {
-          "domain": "ourmodernkitchen.com",
+          "domain": "britishfoodhistory.com",
           "position": 3
         },
         {
-          "domain": "britishfoodhistory.com",
+          "domain": "ourmodernkitchen.com",
           "position": 4
         },
         {
-          "domain": "youtube.com",
+          "domain": "jamieoliver.com",
           "position": 5
         }
       ]
@@ -1391,11 +1391,11 @@
           "position": 2
         },
         {
-          "domain": "tiktok.com",
+          "domain": "nigella.com",
           "position": 3
         },
         {
-          "domain": "nigella.com",
+          "domain": "tiktok.com",
           "position": 4
         },
         {
@@ -1409,19 +1409,19 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "youtube.com",
+          "domain": "tiffycooks.com",
           "position": 1
         },
         {
-          "domain": "tiffycooks.com",
+          "domain": "youtube.com",
           "position": 2
         },
         {
-          "domain": "bonappetit.com",
+          "domain": "desertislanddishes.co",
           "position": 3
         },
         {
-          "domain": "desertislanddishes.co",
+          "domain": "bonappetit.com",
           "position": 4
         },
         {
@@ -1439,19 +1439,19 @@
           "position": 1
         },
         {
-          "domain": "instagram.com",
+          "domain": "reddit.com",
           "position": 2
         },
         {
-          "domain": "corner.inc",
+          "domain": "eatcarino.com",
           "position": 3
         },
         {
-          "domain": "eatcarino.com",
+          "domain": "corner.inc",
           "position": 4
         },
         {
-          "domain": "reddit.com",
+          "domain": "instagram.com",
           "position": 5
         }
       ]
@@ -1461,23 +1461,23 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "reddit.com",
+          "domain": "coolmomeats.com",
           "position": 1
         },
         {
-          "domain": "coolmomeats.com",
+          "domain": "reddit.com",
           "position": 2
         },
         {
-          "domain": "cookpad.com",
+          "domain": "youtube.com",
           "position": 3
         },
         {
-          "domain": "youtube.com",
+          "domain": "cookpad.com",
           "position": 4
         },
         {
-          "domain": "facebook.com",
+          "domain": "pinterest.com",
           "position": 5
         }
       ]
@@ -1495,12 +1495,12 @@
           "position": 2
         },
         {
-          "domain": "youtube.com",
-          "position": 4
+          "domain": "farmtofork.com.au",
+          "position": 3
         },
         {
-          "domain": "farmtofork.com.au",
-          "position": 5
+          "domain": "youtube.com",
+          "position": 4
         },
         {
           "domain": "facebook.com",
@@ -1513,15 +1513,15 @@
       "featured": false,
       "topCompetitors": [
         {
-          "domain": "instagram.com",
+          "domain": "facebook.com",
           "position": 1
         },
         {
-          "domain": "zimmysnook.ca",
+          "domain": "reddit.com",
           "position": 2
         },
         {
-          "domain": "facebook.com",
+          "domain": "zimmysnook.ca",
           "position": 3
         },
         {
@@ -1529,7 +1529,7 @@
           "position": 4
         },
         {
-          "domain": "pinterest.com",
+          "domain": "miltonhousedesign.com",
           "position": 5
         }
       ]
@@ -1548,19 +1548,19 @@
         },
         {
           "domain": "facebook.com",
-          "position": 3
-        },
-        {
-          "domain": "mission-food.com",
           "position": 4
         },
         {
-          "domain": "reddit.com",
+          "domain": "mission-food.com",
           "position": 5
+        },
+        {
+          "domain": "en.wikipedia.org",
+          "position": 6
         }
       ]
     }
   },
   "errors": [],
-  "queriedAt": "2026-06-15T13:53:18.984Z"
+  "queriedAt": "2026-06-22T13:33:23.794Z"
 }
