@@ -1,0 +1,545 @@
+{
+  "source": "notion",
+  "fetchedAt": "2026-06-24T05:04:34.180Z",
+  "notionPageId": "a6d7eb1b-98f4-4df9-9c1c-7271bded63da",
+  "title": "Othym Restaurant Review: Montréal’s BYOB Seasonal Standout",
+  "mode": "publish",
+  "existingSlug": null,
+  "recipeNum": 81,
+  "lastEditedTime": "2026-06-20T18:04:01.958Z",
+  "heroImage": {
+    "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout.jpg",
+    "caption": null
+  },
+  "images": [
+    {
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout.jpg",
+      "caption": "",
+      "isHero": true
+    },
+    {
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-1.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-2.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-3.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-4.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-5.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-6.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-7.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-8.jpg",
+      "caption": "",
+      "isHero": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Othym sits right in the heart of Montréal’s Village, led by chef Noé Lainesse and front-of-house partner Kevin Duguay. The whole vibe is relaxed, but the intention is serious: healthy, responsible cooking built on a strictly local supply chain and a real respect for Québec producers."
+    },
+    {
+      "type": "paragraph",
+      "text": "They’ve earned a Michelin Guide recommendation (2025) plus a few local credibility badges (including “Restaurateur - Aliments du Québec au menu” in 2022, and membership in Fourchette Bleue and Table Ronde). None of it feels arrogant, though. It reads more like a neighborhood restaurant that happens to have a very dialed point of view."
+    },
+    {
+      "type": "paragraph",
+      "text": "They’re also proudly BYOB, which adds a personal layer to the meal and helps you save a couple of bucks on alcohol. If you want a quick, easy move, Expérience Bière is a short walk away for Québec wines and beers."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/7c0db5c4-1988-4df5-8b39-15befce1bda7/DSCF6051.jpg?table=block&id=384c3484-e8de-80aa-9a91-da2b25a957bb&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1782302400000&signature=iXFRUQ1XKagpdaNZeFwtRu0H9jubUCAHLg0-lHFX0wI",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout.jpg"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Othym"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Location:** Ville-Marie (The Village), Montréal  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Price Range:** $$-$$$ (excellent value for the quality)  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cuisine:** Seasonal, Québec producers, rustic-regional  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Dress Code:** Casual  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Wine:** BYOB (bring a bottle you’re excited about)  "
+    },
+    {
+      "type": "callout",
+      "icon": "📖",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Quick Verdict:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Best For: Food-first dates, low-key celebrations, BYOB nights with friends",
+        "Conversation Friendly: 4.5/5 (relaxed room, easy pace)",
+        "Ambiance: Warm, simple, neighborhood energy",
+        "Reservation: Recommended (especially weekends)",
+        "**Date Night Score: 8.0/10**",
+        "**Overall: 7.2/10**"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Vibe"
+    },
+    {
+      "type": "paragraph",
+      "text": "Othym is warm and straightforward: a neighborhood dining room where the focus stays on what’s on the plate. It feels more like “great local restaurant” than “special-occasion destination,” which is exactly why it works."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lighting:** Warm, relaxed  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Noise Level:** Low to medium  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best Seats:** A cozy two-top if you want a calm date, or a larger table if you’re doing BYOB with friends  "
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What to Order (Tasting Menu Game Plan)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Othym is a menu-that-changes kind of place. Instead of coming in with a fixed order, the best move is to treat it like a seasonal snapshot."
+    },
+    {
+      "type": "paragraph",
+      "text": "One quick note on ordering style: I usually love the “order a bunch of dishes and share” model. It’s totally feasible here, but I didn’t find it that satisfying because the portions felt pretty small. If you’re hungry or you want the meal to feel like it has a real flow, I’d rather go with one plate per person per service."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/97be3fd3-101e-4c66-a26a-2e3523e10c2e/DSCF6055.jpg?table=block&id=384c3484-e8de-8074-819c-f116d02c15d0&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1782302400000&signature=8zde4oFXdU2e4iEy0PL9HTiHnEvI6PvzQAT1gn3Jino",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-1.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "What I ordered"
+    },
+    {
+      "type": "paragraph",
+      "text": "Mozzarella de bufflonne"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/b1902951-bca3-471d-8a37-3ff748a98757/DSCF6059.jpg?table=block&id=384c3484-e8de-802d-97f5-eb29e80dc88f&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1782302400000&signature=DUOMYkBPty5DgS_pTO0I8S4wbkJydSG6O4xJOIoD07s",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-2.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "A simple-looking plate built around fresh buffalo mozzarella, served cold and creamy as a clean opener, with aubergine, choux-rave (kohlrabi), and estragon. It sets the tone for the whole meal: rich and milky but not heavy, satisfying without flattening your palate, with eggplant bringing depth, kohlrabi adding crunch, and tarragon giving it a clean herbal lift. It isn’t trying to be flashy, it’s more of a quality check, and when it’s this well balanced it signals the kitchen understands restraint."
+    },
+    {
+      "type": "paragraph",
+      "text": "Têtes de violon"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/7c1e2c9e-5146-46bd-834e-597c2d6cdb09/DSCF6069.jpg?table=block&id=384c3484-e8de-80c5-99ac-ff72598d7b98&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1782302400000&signature=edlyEc4JF7HWmW3Y0oiDJGjPa2EyPY8nG9hwd2fyhxw",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-3.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Fiddleheads (têtes de violon) treated like a true seasonal feature, with that bright, green snap and a hint of pleasant bitterness, then rounded out with duck egg, crab bisque, and smoked breadcrumbs. It tastes very “Québec spring,” but the bisque adds depth and the chapelure fumée brings a savory crunch that makes the plate feel complete."
+    },
+    {
+      "type": "paragraph",
+      "text": "Tartelette de crevettes nordiques"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/5d480a6f-1682-4ef4-b8e9-bb70fc75f577/DSCF6080.jpg?table=block&id=384c3484-e8de-809f-9ab3-c3c6c66c7e81&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1782302400000&signature=OHQNSC7wvcMqV8TP9T7jmKPbkHxmr9A15ioqjvIYT5M",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-4.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "A small tartlet topped with sweet Nordic shrimp, built around that contrast of crisp shell and delicate, briny-sweet seafood. The supporting flavors (kiwi nordiques, fenouil, and agastache) keep it bright and aromatic, so the bite stays clean and lifted instead of getting weighed down."
+    },
+    {
+      "type": "paragraph",
+      "text": "Langue de boeuf"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/555f3dd9-5641-4042-8c1f-071d9a30e727/DSCF6079.jpg?table=block&id=384c3484-e8de-80ab-8b01-d78849c9f1dc&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1782302400000&signature=u9jPMO9sntfmPve-i5vT7RJTA_-E7xH_KHTy2tX0GBg",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-5.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Beef tongue cooked until properly tender, then brightened up with tomate, renouée du Japon (Japanese knotweed), and a sauce vierge style finish. It’s rich and meaty with that unmistakably silky texture, but the acidity and herbal, olive-oil freshness from the sauce keep it energetic instead of heavy."
+    },
+    {
+      "type": "paragraph",
+      "text": "Pain bio seigle et tournesol"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/919cdd12-74ed-4872-a8db-efe2000d4d5e/DSCF6057.jpg?table=block&id=384c3484-e8de-8018-9f6a-f01296b50c90&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1782302400000&signature=t5teSsnrxvbSJrLUntvs2boabIsJ44k5coksyJJQIpk",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-6.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Organic rye and sunflower bread that leans nutty, earthy, and hearty. It’s the kind of bread that tastes especially good alongside savory, fermented, or garum-style flavors, because the grain and seeds can stand up to deeper seasoning instead of getting lost."
+    },
+    {
+      "type": "paragraph",
+      "text": "Maitake à Simon"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/4ea1eb04-2dcc-4247-ae27-f25662ebb166/DSCF6087.jpg?table=block&id=384c3484-e8de-807b-9f00-c1085cec229e&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1782302400000&signature=F5Rt4jkf0Wd69_SPNTDDqMIHiL92ti47fGw5UVHEDyE",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-7.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Maitake mushrooms (Hen of the Woods) cooked to bring out that deep, savory side, where the edges get a little caramelized and the center stays juicy, then paired with wild rice, carrot, and sunflower. Maitake naturally carries a ton of umami, and with the extra chew from the rice plus the sweetness and nuttiness from the veg and seeds, the plate feels earthy and substantial even if the portion isn’t huge."
+    },
+    {
+      "type": "paragraph",
+      "text": "Dessert: baba"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/da50303f-6927-4a6d-9cb6-8894d05f0c9c/DSCF6095.jpg?table=block&id=384c3484-e8de-80f5-a735-c0735d9278a3&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1782302400000&signature=77HxdLodT0aotAbGtsoyCS6EQg93cw4SUu-LfcBYX9Q",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/othym-restaurant-review-montr-al-s-byob-seasonal-standout-8.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "A baba-style dessert (typically a soaked cake) with black beets bringing a deep, almost molasses-like sweetness. That “black” treatment gives a darker, more complex sweetness similar to black garlic, which keeps the dessert interesting instead of just tasting like sugar."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "The move"
+    },
+    {
+      "type": "paragraph",
+      "text": "**1) Ask what they’re most excited about today**  "
+    },
+    {
+      "type": "paragraph",
+      "text": "Menus like this are built around what’s best right now. Let the kitchen steer."
+    },
+    {
+      "type": "paragraph",
+      "text": "**2) Order 1 dish per person per service (instead of sharing everything)**  "
+    },
+    {
+      "type": "paragraph",
+      "text": "Sharing is fun, but the portions can feel tight. This approach keeps the pacing cleaner and makes sure each course actually lands."
+    },
+    {
+      "type": "paragraph",
+      "text": "**3) Add one “extra” if it truly enhances the meal**  "
+    },
+    {
+      "type": "paragraph",
+      "text": "If the server points out a must-have plate, that’s usually the right add-on. If nothing jumps out, don’t force it."
+    },
+    {
+      "type": "paragraph",
+      "text": "**4) BYOB strategy**  "
+    },
+    {
+      "type": "paragraph",
+      "text": "Bring one bottle with bright acidity (white or light red). It’s the safest match across vegetables, fish, and richer mains."
+    },
+    {
+      "type": "callout",
+      "icon": "✅",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Easy BYOB move for two:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "1 bottle with acidity (Chenin Blanc, Riesling, Gamay, Pinot Noir)",
+        "Let the staff pick the food flow",
+        "Add one standout plate if it’s recommended"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Food (Flavor + Execution)"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is ingredient-driven cooking that leans rustic, but still feels clean and thoughtful. The best plates land because the flavors make sense, not because the plating is trying to impress."
+    },
+    {
+      "type": "paragraph",
+      "text": "What I really liked is how much of the flavor is built in-house. They do their own fermentations, and it shows in the depth of the sauces and seasoning."
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Garum:** a fermented sauce (traditionally fish-based, like an ancient ancestor of fish sauce) that adds savory umami.",
+        "**Cheong:** a Korean-style fruit syrup made by macerating fruit with sugar; it brings a clean sweetness and bright fruit acidity.",
+        "**House-blend spices:** their own spice mixes that give certain plates an extra lift and make the dishes taste more “theirs.”"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Notes from the meal (plating, flavors, and execution)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Seasonality is real:** You can feel that the menu is built around what’s available.",
+        "**Vegetables shine:** Even when there’s meat or fish, the produce often steals the show.",
+        "**Execution over spectacle:** More “comfort with precision” than “fine dining performance.”"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Drinks (BYOB)"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is where Othym can become a perfect date-night spot: you can bring something you actually love, control the budget, and it instantly makes the night feel more personal."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "What to bring (easy pairings)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Crisp whites with acidity** (Chenin Blanc, Riesling, dry cider-ish whites): best with vegetable-forward plates, anything fermented, and dishes that lean bright and tangy.",
+        "**Light reds with freshness** (Gamay, Pinot Noir, light Cabernet Franc): great if the menu swings toward mushrooms, duck, lamb, or anything a little richer."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "A simple BYOB plan for two"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**1 bottle total** is usually enough if you’re doing a normal dinner pace.",
+        "If you want to level it up without overthinking: **start with a white**, then add a **light red** only if you see a richer main on the board."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Pro tips (so it actually feels smooth)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Serve it slightly cooler than you think** (especially reds). It keeps the wine refreshing and flexible across the menu.",
+        "If you’re unsure, tell the staff what you brought. They can usually guide you toward the best-matching dishes that night.",
+        "If you want the “Montréal move,” grab something local (Québec wine, cider, or bière de saison) and keep it casual."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Real Cost (So You Can Plan)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Othym tends to feel like strong value because BYOB keeps the total under control."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Food for two:** closer to $160 (CAD) for a full meal, before tax  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Bring-your-own wine:** whatever you paid for the bottle  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Worth noting:** even with a “full meal” order, you might not leave totally full. That can be an issue if you want a heavier, filling dinner."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Booking & Timing"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Reservations:** Easy to book in my experience - no issues. Still recommended for Fri-Sat.  "
+    },
+    {
+      "type": "paragraph",
+      "text": "**Tip:** Check in advance for prime time slots - the best times can book up."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date Type Fit"
+    },
+    {
+      "type": "paragraph",
+      "text": "**First Date:** 4.0/5  "
+    },
+    {
+      "type": "paragraph",
+      "text": "Relaxed, not intimidating, and the BYOB makes it feel personal."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Anniversary:** 4.0/5  "
+    },
+    {
+      "type": "paragraph",
+      "text": "Great for a low-key milestone when you want a special meal without the formal fine-dining vibe. Bring a bottle that means something and let the food do the rest."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Impressing someone who likes food:** 3/5  "
+    },
+    {
+      "type": "paragraph",
+      "text": "Seasonal plates, real flavor, and a menu that rewards curiosity."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "text": "Othym is a strong Montréal pick when you want seasonal, ingredient-driven cooking in a relaxed BYOB setting. Come hungry, bring a bottle you’re excited about, and let the kitchen guide the night."
+    },
+    {
+      "type": "callout",
+      "icon": "⚠️",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**End note:** I enjoyed the food, but I wouldn’t call it outstanding, and it’s not at the top of my recommendations."
+    },
+    {
+      "type": "paragraph",
+      "text": "The biggest issue is portion size. Even after ordering what felt like a full meal for two (around $160 before tax), I still left a bit unfilled. I wasn’t starving, but if you’re dining with someone who has a bigger appetite, there’s a good chance they won’t feel fully satisfied."
+    },
+    {
+      "type": "paragraph",
+      "text": "You can also argue the plates feel expensive for the quantity, especially if you don’t fully appreciate the craft behind the ingredients and techniques (garums, cheongs, fermentations) that take a lot of time and prep. For many people, that could limit the experience, and there are other restaurants that might be better options depending on what you’re looking for."
+    },
+    {
+      "type": "callout",
+      "icon": "📍",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Details**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**City:** Montréal, QC",
+        "**Neighborhood:** The Village (Ville-Marie)",
+        "**Tip:** BYOB is the cheat code here - bring something with acidity."
+      ]
+    }
+  ],
+  "faqs": []
+}
