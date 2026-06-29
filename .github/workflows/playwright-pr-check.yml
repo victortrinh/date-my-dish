@@ -47,7 +47,7 @@ jobs:
 
       - name: Restore Astro image cache
         if: steps.scope.outputs.test_scope != 'none'
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: node_modules/.astro
           key: astro-image-cache-${{ runner.os }}-${{ hashFiles('src/assets/images/**') }}
@@ -65,7 +65,7 @@ jobs:
       - name: Cache Playwright browsers
         if: steps.scope.outputs.test_scope != 'none'
         id: pw-cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ~/.cache/ms-playwright
           key: playwright-${{ runner.os }}-${{ steps.pw-version.outputs.version }}
