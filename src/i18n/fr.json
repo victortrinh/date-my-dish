@@ -155,6 +155,7 @@
   },
   "review": {
     "dateScore": "Score rendez-vous",
+    "dateScoreNote": "Note pour l'ambiance d'un rendez-vous, pas la bouffe.",
     "priceRange": "Gamme de prix",
     "cuisine": "Cuisine",
     "neighborhood": "Quartier",

@@ -1,8 +1,9 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import RecipeCard from "@components/RecipeCard.astro";
+import ReviewCard from "@components/ReviewCard.astro";
 import { Picture } from "astro:assets";
-import { t, getRecipeLocalizedPath, getArticleLocalizedPath, getReviewLocalizedPath } from "@i18n/utils";
+import { t, getRecipeLocalizedPath, getArticleLocalizedPath } from "@i18n/utils";
 import { difficultyBadge } from "@utils/recipe";
 import { SITE_URL } from "@utils/constants";
 import { formatDuration } from "@utils/format";
@@ -31,7 +32,7 @@ const allReviews = await getCollection("reviews");
 const recentReviews = allReviews
   .filter((r) => r.data.lang === "en")
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
-  .slice(0, 2);
+  .slice(0, 3);
 
 const FAVORITE_SLUGS = ["crispy-vegan-calamari", "lemon-posset-brulee", "quinoa-crusted-salmon"];
 const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
@@ -114,9 +115,51 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
     </div>
   </section>
 
+  <!-- Where to Take Your Date -->
+  {recentReviews.length > 0 && (
+    <section class="bg-white px-4 py-section dark:bg-warm-950" aria-labelledby="latest-reviews">
+      <div class="mx-auto max-w-content">
+        <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 id="latest-reviews" class="font-heading text-heading-1 font-normal text-warm-900 dark:text-warm-100">
+              {t(locale, "home.latestReviews")}
+            </h2>
+          </div>
+          <a
+            href={`/${locale}/reviews/`}
+            class="font-ui text-sm font-bold uppercase tracking-widest text-warm-800 underline decoration-brand-wine decoration-2 underline-offset-8 hover:text-brand-wine dark:text-warm-200 dark:decoration-brand-wine-dark dark:hover:text-brand-wine-dark"
+          >
+            {t(locale, "home.viewAllReviews")}
+          </a>
+        </div>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {recentReviews.map((review) => {
+            const slug = review.id.replace(/^en\//, "");
+            return (
+              <ReviewCard
+                title={review.data.title}
+                description={review.data.description}
+                slug={slug}
+                locale={locale}
+                heroImage={review.data.heroImage as ImageMetadata}
+                heroImageAlt={review.data.heroImageAlt}
+                restaurantName={review.data.restaurantName}
+                neighborhood={review.data.neighborhood}
+                cuisine={review.data.cuisine}
+                priceRange={review.data.priceRange}
+                dateScore={review.data.dateScore}
+                headingLevel="h3"
+              />
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- Fresh from the Kitchen -->
   {recentRecipes.length >= 3 && (
-    <section class="bg-white px-4 py-section dark:bg-warm-950" aria-labelledby="fresh-kitchen">
+    <section class="bg-warm-50 px-4 py-section dark:bg-warm-950" aria-labelledby="fresh-kitchen">
       <div class="mx-auto max-w-content">
         <h2 id="fresh-kitchen" class="mb-8 font-heading text-3xl font-normal text-warm-800 dark:text-warm-100">
           {t(locale, "home.freshFromKitchen")}
@@ -205,7 +248,7 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
 
   <!-- Our Favorites -->
   {favoriteRecipes.length >= 3 && (
-    <section class="bg-warm-50 px-4 py-section dark:bg-warm-950" aria-labelledby="our-favorites">
+    <section class="bg-white px-4 py-section dark:bg-warm-950" aria-labelledby="our-favorites">
       <div class="mx-auto max-w-content">
         <div class="mb-10 text-center">
           <h2 id="our-favorites" class="font-heading text-heading-1 font-normal text-warm-900 dark:text-warm-100">
@@ -243,7 +286,7 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
 
   <!-- Culinary Narratives -->
   {recentArticles.length >= 3 && (
-    <section class="bg-white px-4 py-section dark:bg-warm-950" aria-labelledby="culinary-narratives">
+    <section class="bg-warm-50 px-4 py-section dark:bg-warm-950" aria-labelledby="culinary-narratives">
       <div class="mx-auto max-w-content">
         {/* Header */}
         <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -335,61 +378,6 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
               );
             })}
           </div>
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Where to Take Your Date -->
-  {recentReviews.length > 0 && (
-    <section class="bg-warm-50 px-4 py-section dark:bg-warm-950" aria-labelledby="latest-reviews">
-      <div class="mx-auto max-w-content">
-        <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 id="latest-reviews" class="font-heading text-heading-1 font-normal text-warm-900 dark:text-warm-100">
-              {t(locale, "home.latestReviews")}
-            </h2>
-          </div>
-          <a
-            href={`/${locale}/reviews/`}
-            class="font-ui text-sm font-bold uppercase tracking-widest text-warm-800 underline decoration-brand-wine decoration-2 underline-offset-8 hover:text-brand-wine dark:text-warm-200 dark:decoration-brand-wine-dark dark:hover:text-brand-wine-dark"
-          >
-            {t(locale, "home.viewAllReviews")}
-          </a>
-        </div>
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
-          {recentReviews.map((review) => {
-            const slug = review.id.replace(/^en\//, "");
-            return (
-              <a href={getReviewLocalizedPath(locale, slug)} class="group flex flex-col gap-4 sm:flex-row">
-                <div class="relative shrink-0 overflow-hidden rounded-xl border border-warm-200 dark:border-warm-700 sm:w-48">
-                  <Picture
-                    src={review.data.heroImage as ImageMetadata}
-                    alt={review.data.heroImageAlt}
-                    widths={[200, 400]}
-                    sizes="(max-width: 640px) 100vw, 192px"
-                    formats={["avif", "webp"]} fallbackFormat="webp"
-                    class="aspect-[4/3] h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div class="absolute right-2 top-2 flex h-8 w-8 items-center justify-center rounded-lg bg-brand-wine text-sm font-bold text-white shadow dark:bg-brand-wine-dark">
-                    {review.data.dateScore}
-                  </div>
-                </div>
-                <div class="flex flex-col justify-center">
-                  <span class="font-ui text-xs font-bold uppercase tracking-wider text-brand-wine dark:text-brand-wine-dark">
-                    {review.data.neighborhood} · {review.data.priceRange}
-                  </span>
-                  <h3 class="mt-1 font-heading text-lg font-normal text-warm-800 dark:text-warm-100">
-                    {review.data.restaurantName}
-                  </h3>
-                  <p class="mt-1 text-sm text-warm-500 dark:text-warm-400">
-                    {review.data.description}
-                  </p>
-                </div>
-              </a>
-            );
-          })}
         </div>
       </div>
     </section>

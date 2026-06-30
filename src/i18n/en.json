@@ -155,6 +155,7 @@
   },
   "review": {
     "dateScore": "Date Score",
+    "dateScoreNote": "Scored on date-night vibes, not the food.",
     "priceRange": "Price Range",
     "cuisine": "Cuisine",
     "neighborhood": "Neighborhood",
