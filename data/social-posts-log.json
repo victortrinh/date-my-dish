@@ -624,5 +624,140 @@
         }
       ]
     }
+  },
+  "hoogan-et-beaufort-montreal": {
+    "type": "review",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "img_w0omfr",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal",
+          "description": "Hoogan et Beaufort earned a Michelin star in 2026, and the tasting menu shows exactly why. Live-fire cooking, seasonal ingredients, and a room with just enough energy to make the night feel like a plan. Best for anniversaries and special occasions. Reserve early and ask about the hot oyster add-on.",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort.DvEzlauD.jpg",
+          "altText": "Warm, intimate dining room at Hoogan et Beaufort Montreal with pendant lights and live-fire kitchen visible in the background",
+          "isHero": true,
+          "status": "posted",
+          "id": "1050746156855456836",
+          "postedAt": "2026-07-01T18:23:56.309Z"
+        },
+        {
+          "imageKey": "img_1rl324h",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 2",
+          "description": "Intimate two-person table at Hoogan et Beaufort Montreal with warm overhead lighting, linen napkins, and the dining room bustling softly in the background",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-dining-room.DJP68G5-_EBV0z.webp",
+          "altText": "Intimate two-person table at Hoogan et Beaufort Montreal with warm overhead lighting, linen napkins, and the dining room bustling softly in the background",
+          "scheduledFor": "2026-07-06T18:23:55.251Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_17rmqk8",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 3",
+          "description": "Hot oysters with cider sabayon served on a bed of sea salt at Hoogan et Beaufort Montreal, the shells glistening under warm restaurant lighting",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-oysters.Br2YRr0H_2dob3I.webp",
+          "altText": "Hot oysters with cider sabayon served on a bed of sea salt at Hoogan et Beaufort Montreal, the shells glistening under warm restaurant lighting",
+          "scheduledFor": "2026-07-13T18:23:55.251Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_1nm2rsn",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 4",
+          "description": "Crab with dashi broth and tomatillo at Hoogan et Beaufort Montreal, delicate seafood arranged in a shallow bowl with precise, minimalist plating",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-crab-dashi.CcbnF_8Y_1UBCKR.webp",
+          "altText": "Crab with dashi broth and tomatillo at Hoogan et Beaufort Montreal, delicate seafood arranged in a shallow bowl with precise, minimalist plating",
+          "scheduledFor": "2026-07-20T18:23:55.251Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_1s9e4e",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 5",
+          "description": "Green asparagus and snap peas with pistachio and vibrant microgreens plated elegantly at Hoogan et Beaufort Montreal",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-asparagus.tGXbg52Y_1Rmb8v.webp",
+          "altText": "Green asparagus and snap peas with pistachio and vibrant microgreens plated elegantly at Hoogan et Beaufort Montreal",
+          "scheduledFor": "2026-07-27T18:23:55.251Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_ok8aap",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 6",
+          "description": "Spaghetti with ramps and Louis d'Or cheese at Hoogan et Beaufort Montreal, silky noodles coiled elegantly in a light creamy sauce",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-spaghetti.DiY5cU2V_1L8Jgy.webp",
+          "altText": "Spaghetti with ramps and Louis d'Or cheese at Hoogan et Beaufort Montreal, silky noodles coiled elegantly in a light creamy sauce",
+          "scheduledFor": "2026-08-03T18:23:55.251Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_1sotxda",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 7",
+          "description": "Grilled focaccia with whipped butter at Hoogan et Beaufort Montreal, sliced bread on a wooden board with a small ramekin of pale whipped butter",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-focaccia.DsZ9OxeE_1AfqvA.webp",
+          "altText": "Grilled focaccia with whipped butter at Hoogan et Beaufort Montreal, sliced bread on a wooden board with a small ramekin of pale whipped butter",
+          "scheduledFor": "2026-08-10T18:23:55.251Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_3bc372",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 8",
+          "description": "Beef with maitake mushrooms and black cardamom at Hoogan et Beaufort Montreal, a beautifully plated main course with rich dark jus and precise garnish",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-beef.CtaRhwPT_ZeRVjJ.webp",
+          "altText": "Beef with maitake mushrooms and black cardamom at Hoogan et Beaufort Montreal, a beautifully plated main course with rich dark jus and precise garnish",
+          "scheduledFor": "2026-08-17T18:23:55.251Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "mckiernan-montreal": {
+    "type": "review",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "img_kv2cda",
+          "title": "McKiernan: Canal Lachine Brunch Review",
+          "description": "McKiernan delivers rotisserie comfort and lively brunch energy by the Lachine Canal. Spacious room, great coffee, and generous shareable plates.",
+          "imageSrc": "https://datemydish.com/_astro/mckiernan-montreal.DPKKkM7M.webp",
+          "altText": "Bomba schnitzel with crispy golden breading and pickled vegetables at McKiernan restaurant near Lachine Canal, Montreal",
+          "isHero": true,
+          "status": "posted",
+          "id": "1050746156855456846",
+          "postedAt": "2026-07-01T18:24:07.498Z"
+        },
+        {
+          "imageKey": "img_sxgqrj",
+          "title": "McKiernan: Canal Lachine Brunch Review | Photo 2",
+          "description": "Zesty Italian beef tartare with endive leaves, fresh basil, shaved parmesan, and olive oil at McKiernan",
+          "imageSrc": "https://datemydish.com/_astro/mckiernan-beef-tartare.qOPy2qhD_Z1vOoIg.webp",
+          "altText": "Zesty Italian beef tartare with endive leaves, fresh basil, shaved parmesan, and olive oil at McKiernan",
+          "scheduledFor": "2026-07-06T18:24:06.352Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_1ffp1n8",
+          "title": "McKiernan: Canal Lachine Brunch Review | Photo 3",
+          "description": "Bomba schnitzel with golden crispy breading topped with spicy bomba relish and fresh herbs at McKiernan",
+          "imageSrc": "https://datemydish.com/_astro/mckiernan-bomba-schnitzel.Dxp7hQFZ_1lpWIV.webp",
+          "altText": "Bomba schnitzel with golden crispy breading topped with spicy bomba relish and fresh herbs at McKiernan",
+          "scheduledFor": "2026-07-13T18:24:06.352Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_187uw2y",
+          "title": "McKiernan: Canal Lachine Brunch Review | Photo 4",
+          "description": "Honey garlic spare ribs glazed with sticky sauce, topped with sesame seeds and green onions at McKiernan",
+          "imageSrc": "https://datemydish.com/_astro/mckiernan-spare-ribs.v8G_iyv6_Z17zWby.webp",
+          "altText": "Honey garlic spare ribs glazed with sticky sauce, topped with sesame seeds and green onions at McKiernan",
+          "scheduledFor": "2026-07-20T18:24:06.352Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_1g7fy6n",
+          "title": "McKiernan: Canal Lachine Brunch Review | Photo 5",
+          "description": "Homemade sugar-dusted and chocolate-glazed donuts served warm at McKiernan",
+          "imageSrc": "https://datemydish.com/_astro/mckiernan-donuts.CgeQuKSA_Z7SE0g.webp",
+          "altText": "Homemade sugar-dusted and chocolate-glazed donuts served warm at McKiernan",
+          "scheduledFor": "2026-07-27T18:24:06.352Z",
+          "status": "pending"
+        }
+      ]
+    }
   }
 }
