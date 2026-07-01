@@ -1,6 +1,6 @@
 ---
 import { Picture } from "astro:assets";
-import { getReviewLocalizedPath, type Locale } from "@i18n/utils";
+import { getReviewLocalizedPath, t, type Locale } from "@i18n/utils";
 import type { ImageMetadata } from "astro";
 
 interface Props {
@@ -38,8 +38,13 @@ const url = getReviewLocalizedPath(locale, slug);
       data-pin-nopin="true"
     />
     <!-- Date Score Badge -->
-    <div class="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-lg bg-brand-wine text-lg font-bold text-white shadow-lg dark:bg-brand-wine-dark">
-      {dateScore}
+    <div class="absolute right-3 top-3 flex flex-col items-center rounded-lg bg-brand-wine px-3 py-1.5 text-white shadow-lg dark:bg-brand-wine-dark">
+      <span class="text-[10px] font-semibold uppercase tracking-wide leading-none">
+        {t(locale, "review.dateScore")}
+      </span>
+      <span class="mt-0.5 text-lg font-bold leading-none">
+        {dateScore}<span class="text-xs font-normal opacity-80"> / 10</span>
+      </span>
     </div>
   </div>
   <div class="p-5">
