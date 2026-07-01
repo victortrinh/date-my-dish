@@ -53,6 +53,13 @@ jobs:
 
       - run: npm ci
 
+      - name: Build site for local image resolution fallback
+        # Best-effort only: live fetch is the primary path and this repo's
+        # build is gated by SEO validators that are irrelevant to social
+        # posting. If the build fails for any reason, don't block the
+        # backfill on it — just proceed without a local dist/ fallback.
+        run: npm run build || echo "Build failed, continuing without local fallback"
+
       - name: Run backfill
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
@@ -64,6 +71,7 @@ jobs:
           PLATFORM: ${{ inputs.platform }}
           RECIPES_PER_RUN: ${{ inputs.recipes_per_run }}
           CONTENT_TYPE: ${{ inputs.content_type }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: node scripts/social-post.mjs --backfill
 
       - name: Create PR with post log

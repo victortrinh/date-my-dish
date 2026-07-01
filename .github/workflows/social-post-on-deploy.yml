@@ -83,6 +83,7 @@ jobs:
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
           PINTEREST_BOARD_ID_ARTICLES: ${{ secrets.PINTEREST_BOARD_ID_ARTICLES }}
           PINTEREST_BOARD_ID_REVIEWS: ${{ secrets.PINTEREST_BOARD_ID_REVIEWS }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: node scripts/social-post.mjs ${{ steps.detect.outputs.recipes }}
 
       - name: Create PR with post log

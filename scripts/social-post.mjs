@@ -336,11 +336,24 @@ async function createFailureIssue(slug, type, platform, error, imageUrl) {
   ].join("\n");
 
   try {
-    const { execSync } = await import("child_process");
-    execSync(
-      `gh issue create --title "${title}" --body "${body.replace(/"/g, '\\"')}" --label "social-media-failure"`,
-      { stdio: "inherit" }
-    );
+    const { execFileSync } = await import("child_process");
+    const { writeFileSync, unlinkSync } = await import("fs");
+    const { tmpdir } = await import("os");
+    const { join: joinPath } = await import("path");
+    // Write the body to a temp file rather than interpolating it into a shell
+    // string: it can contain backticks, $, and quotes (recipe titles, error
+    // stack traces) that would otherwise be misparsed or executed by the shell.
+    const bodyFile = joinPath(tmpdir(), `gh-issue-body-${Date.now()}.md`);
+    writeFileSync(bodyFile, body);
+    try {
+      execFileSync(
+        "gh",
+        ["issue", "create", "--title", title, "--body-file", bodyFile, "--label", "social-media-failure"],
+        { stdio: "inherit" }
+      );
+    } finally {
+      unlinkSync(bodyFile);
+    }
   } catch (issueErr) {
     console.error("Failed to create GitHub issue:", issueErr.message);
   }
