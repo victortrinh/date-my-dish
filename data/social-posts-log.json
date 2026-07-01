@@ -548,5 +548,81 @@
         }
       ]
     }
+  },
+  "anova-vs-joule-sous-vide-comparison": {
+    "type": "article",
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "imageKey": "img_1ke0vh5",
+          "title": "Anova vs Joule: Sous Vide Buyer's Guide",
+          "description": "Anova vs Joule: honest first-time buyer breakdown. Which sous vide circulator is right for you? On-device controls vs sleek app-first cooking. Plus the 4 beginner mistakes that ruin your first cook and what to actually buy first.",
+          "imageSrc": "https://datemydish.com/_astro/anova-vs-joule-sous-vide-comparison.wGiYYGKS.webp",
+          "altText": "Two sous vide circulators on a steaming pot: compact Joule and larger Anova side by side on a clean white kitchen counter",
+          "status": "posted",
+          "id": "1050746156855456390",
+          "postedAt": "2026-07-01T18:07:16.675Z"
+        },
+        {
+          "variant": 2,
+          "imageKey": "img_1ke0vh6",
+          "title": "Homemade Anova vs Joule: Sous Vide Buyer's Guide",
+          "description": "Anova vs Joule: honest first-time buyer breakdown. Which sous vide circulator is right for you? On-device controls vs sleek app-first cooking. Plus the 4 beginner mistakes that ruin your first cook and what to actually buy first.",
+          "imageSrc": "https://datemydish.com/_astro/anova-vs-joule-sous-vide-comparison.wGiYYGKS.webp",
+          "altText": "Two sous vide circulators on a steaming pot: compact Joule and larger Anova side by side on a clean white kitchen counter",
+          "scheduledFor": "2026-07-06T18:07:15.455Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "imageKey": "img_1ke0vh7",
+          "title": "Anova vs Joule: Sous Vide Buyer's Guide | Perfect for Date Night",
+          "description": "Anova vs Joule: honest first-time buyer breakdown. Which sous vide circulator is right for you? On-device controls vs sleek app-first cooking. Plus the 4 beginner mistakes that ruin your first cook and what to actually buy first.",
+          "imageSrc": "https://datemydish.com/_astro/anova-vs-joule-sous-vide-comparison.wGiYYGKS.webp",
+          "altText": "Two sous vide circulators on a steaming pot: compact Joule and larger Anova side by side on a clean white kitchen counter",
+          "scheduledFor": "2026-07-13T18:07:15.455Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "best-cutting-board-material": {
+    "type": "article",
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "imageKey": "img_12ofjip",
+          "title": "Best Cutting Board Material for Home Cooks",
+          "description": "Wood vs plastic vs bamboo vs composite vs rubber vs titanium: which cutting board material is best for home cooks? Full comparison with Amazon links and the two-board setup that handles everything.",
+          "imageSrc": "https://datemydish.com/_astro/best-cutting-board-material.DRgfXYCA.webp",
+          "altText": "Several cutting boards in different materials including a thick end-grain maple board, white plastic boards, and a bamboo board arranged on a kitchen counter with a chef's knife",
+          "status": "posted",
+          "id": "1050746156855456393",
+          "postedAt": "2026-07-01T18:07:27.526Z"
+        },
+        {
+          "variant": 2,
+          "imageKey": "img_12ofjiq",
+          "title": "Homemade Best Cutting Board Material for Home Cooks",
+          "description": "Wood vs plastic vs bamboo vs composite vs rubber vs titanium: which cutting board material is best for home cooks? Full comparison with Amazon links and the two-board setup that handles everything.",
+          "imageSrc": "https://datemydish.com/_astro/best-cutting-board-material.DRgfXYCA.webp",
+          "altText": "Several cutting boards in different materials including a thick end-grain maple board, white plastic boards, and a bamboo board arranged on a kitchen counter with a chef's knife",
+          "scheduledFor": "2026-07-06T18:07:26.756Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "imageKey": "img_12ofjir",
+          "title": "Best Cutting Board Material for Home Cooks | Perfect for Date Night",
+          "description": "Wood vs plastic vs bamboo vs composite vs rubber vs titanium: which cutting board material is best for home cooks? Full comparison with Amazon links and the two-board setup that handles everything.",
+          "imageSrc": "https://datemydish.com/_astro/best-cutting-board-material.DRgfXYCA.webp",
+          "altText": "Several cutting boards in different materials including a thick end-grain maple board, white plastic boards, and a bamboo board arranged on a kitchen counter with a chef's knife",
+          "scheduledFor": "2026-07-13T18:07:26.756Z",
+          "status": "pending"
+        }
+      ]
+    }
   }
 }
