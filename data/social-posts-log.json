@@ -886,6 +886,33 @@
           "altText": "Beef with maitake mushrooms and black cardamom at Hoogan et Beaufort Montreal, a beautifully plated main course with rich dark jus and precise garnish",
           "scheduledFor": "2026-08-17T18:23:55.251Z",
           "status": "pending"
+        },
+        {
+          "imageKey": "img_1k2bsdd",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 9",
+          "description": "Rhubarb dessert with cherry blossom and shiso at Hoogan et Beaufort Montreal, a delicate, colorful plate with jewel-toned fruit and pale floral elements",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-rhubarb.Dm5NEeWB_ZEQFif.webp",
+          "altText": "Rhubarb dessert with cherry blossom and shiso at Hoogan et Beaufort Montreal, a delicate, colorful plate with jewel-toned fruit and pale floral elements",
+          "scheduledFor": "2026-08-24T18:54:52.650Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_19hnx83",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 10",
+          "description": "Amuse-bouche and small between-course bites at Hoogan et Beaufort Montreal, delicate one-bite preparations on slate, showing the kitchen's attention to detail",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-amuse.UzBHwyoQ_15kqH6.webp",
+          "altText": "Amuse-bouche and small between-course bites at Hoogan et Beaufort Montreal, delicate one-bite preparations on slate, showing the kitchen's attention to detail",
+          "scheduledFor": "2026-08-31T18:54:52.651Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "img_1byf38f",
+          "title": "Hoogan et Beaufort: Michelin Star Montreal | Photo 11",
+          "description": "Elegant cocktails at Hoogan et Beaufort Montreal, two glasses with citrus garnish on a marble bar, softly lit in the warm restaurant atmosphere",
+          "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-bar.9srQ3fog_Z1tPMHw.webp",
+          "altText": "Elegant cocktails at Hoogan et Beaufort Montreal, two glasses with citrus garnish on a marble bar, softly lit in the warm restaurant atmosphere",
+          "scheduledFor": "2026-09-07T18:54:52.651Z",
+          "status": "pending"
         }
       ]
     }
