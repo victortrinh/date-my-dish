@@ -12,9 +12,18 @@ on:
           - pinterest
         default: both
       recipes_per_run:
-        description: "Number of recipes to post in this run"
+        description: "Number of items to post in this run"
         type: number
         default: 2
+      content_type:
+        description: "Content type to backfill"
+        type: choice
+        options:
+          - all
+          - recipe
+          - article
+          - review
+        default: all
 
 concurrency:
   group: social-backfill
@@ -53,8 +62,11 @@ jobs:
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_BOARD_ID_ARTICLES: ${{ secrets.PINTEREST_BOARD_ID_ARTICLES }}
+          PINTEREST_BOARD_ID_REVIEWS: ${{ secrets.PINTEREST_BOARD_ID_REVIEWS }}
           PLATFORM: ${{ inputs.platform }}
           RECIPES_PER_RUN: ${{ inputs.recipes_per_run }}
+          CONTENT_TYPE: ${{ inputs.content_type }}
         run: node scripts/social-post.mjs --backfill
 
       - name: Create PR with post log

@@ -1,28 +1,38 @@
 // scripts/pinterest-rotate.mjs
-// Posts scheduled Pinterest pin variants that are due.
+// Posts scheduled Pinterest pin variants/images that are due.
 // Reads data/social-posts-log.json, finds pending pins with scheduledFor <= now,
 // posts them via Pinterest API, and updates the log.
+//
+// Content-type aware: each log entry may carry a `type` field ("recipe",
+// "article", or "review") added by social-post.mjs. Entries without a `type`
+// field predate this change and are treated as recipes (their original type).
+//
+// This script only ever creates new pins for pins already marked "pending"
+// in the log. It never edits or re-posts a pin that already has status
+// "posted". Editing live pins is a separate, manual tool
+// (scripts/pinterest-update-pins.mjs).
 //
 // Usage:
 //   node scripts/pinterest-rotate.mjs
 //
 // Rate limits: max 5 pins per run, 10s delay between posts.
 
-import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
-import { join, basename } from "path";
+import { readFileSync, writeFileSync, existsSync } from "fs";
+import { join } from "path";
 import matter from "gray-matter";
+import {
+  buildContentUrl,
+  contentDir,
+  boardIdForType,
+  fetchLiveHtml,
+  discoverImagesFromHtml,
+} from "./lib/content-images.mjs";
 
-const SITE_URL = "https://datemydish.com";
-const RECIPES_DIR = "src/content/recipes";
 const LOG_FILE = "data/social-posts-log.json";
 const MAX_PINS_PER_RUN = 5;
 const DELAY_BETWEEN_POSTS_MS = 10_000;
-const FETCH_HEADERS = {
-  "User-Agent":
-    "Mozilla/5.0 (compatible; DateMyDishBot/1.0; +https://datemydish.com)",
-};
 
-const { PINTEREST_ACCESS_TOKEN, PINTEREST_BOARD_ID } = process.env;
+const { PINTEREST_ACCESS_TOKEN } = process.env;
 
 // ---------------------------------------------------------------------------
 // Log helpers
@@ -37,36 +47,19 @@ function writeLog(log) {
 }
 
 // ---------------------------------------------------------------------------
-// Hero image URL resolution (from live JSON-LD)
+// Legacy hero resolution (for old pending pins that don't carry imageSrc)
 // ---------------------------------------------------------------------------
-async function resolveHeroImageUrl(slug) {
-  const url = `${SITE_URL}/en/recipes/${slug}/`;
-  const res = await fetch(url, { headers: FETCH_HEADERS });
-
-  if (!res.ok) {
-    throw new Error(
-      `Failed to fetch ${url}: HTTP ${res.status} ${res.statusText}`
-    );
-  }
-
-  const html = await res.text();
-  const match = html.match(
-    /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/
-  );
-  if (!match) throw new Error(`No JSON-LD found on ${url}`);
-
-  const jsonLd = JSON.parse(match[1]);
-  const image = Array.isArray(jsonLd.image) ? jsonLd.image[0] : jsonLd.image;
-  if (!image) throw new Error(`No image in JSON-LD on ${url}`);
-
-  return image;
+async function resolveLegacyHeroImageUrl(type, slug) {
+  const url = buildContentUrl(type, slug);
+  const html = await fetchLiveHtml(url);
+  const images = discoverImagesFromHtml(html, {});
+  const hero = images.find((i) => i.isHero);
+  if (!hero) throw new Error(`No hero image found on ${url}`);
+  return hero.src;
 }
 
-// ---------------------------------------------------------------------------
-// Get heroImageAlt from recipe frontmatter
-// ---------------------------------------------------------------------------
-function getHeroImageAlt(slug) {
-  const filePath = join(RECIPES_DIR, "en", `${slug}.mdx`);
+function getHeroImageAlt(type, slug) {
+  const filePath = join(contentDir(type, "en"), `${slug}.mdx`);
   if (!existsSync(filePath)) return "";
   const raw = readFileSync(filePath, "utf-8");
   const { data } = matter(raw);
@@ -76,9 +69,9 @@ function getHeroImageAlt(slug) {
 // ---------------------------------------------------------------------------
 // Pinterest API v5
 // ---------------------------------------------------------------------------
-async function postToPinterest(imageUrl, title, description, link, altText) {
-  if (!PINTEREST_ACCESS_TOKEN || !PINTEREST_BOARD_ID) {
-    throw new Error("Missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID");
+async function postToPinterest(boardId, imageUrl, title, description, link, altText) {
+  if (!PINTEREST_ACCESS_TOKEN || !boardId) {
+    throw new Error("Missing PINTEREST_ACCESS_TOKEN or board ID for this content type");
   }
 
   console.log(`  Posting pin: "${title.slice(0, 60)}..."`);
@@ -90,15 +83,12 @@ async function postToPinterest(imageUrl, title, description, link, altText) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      board_id: PINTEREST_BOARD_ID,
+      board_id: boardId,
       title: title.slice(0, 100),
       description: description.slice(0, 800),
       link,
       alt_text: (altText || "").slice(0, 500),
-      media_source: {
-        source_type: "image_url",
-        url: imageUrl,
-      },
+      media_source: { source_type: "image_url", url: imageUrl },
     }),
   });
 
@@ -108,11 +98,8 @@ async function postToPinterest(imageUrl, title, description, link, altText) {
   }
 
   const data = await res.json();
-
   if (!res.ok) {
-    throw new Error(
-      `Pinterest API error ${data.code || res.status}: ${data.message || JSON.stringify(data)}`
-    );
+    throw new Error(`Pinterest API error ${data.code || res.status}: ${data.message || JSON.stringify(data)}`);
   }
 
   console.log(`  Pin created: ${data.id}`);
@@ -122,22 +109,22 @@ async function postToPinterest(imageUrl, title, description, link, altText) {
 // ---------------------------------------------------------------------------
 // Create GitHub issue on failure
 // ---------------------------------------------------------------------------
-async function createFailureIssue(slug, variant, error) {
-  const title = `Pinterest pin rotation failed: ${slug} variant ${variant}`;
+async function createFailureIssue(slug, type, identifier, error) {
+  const title = `Pinterest pin rotation failed: ${slug} (${type}) ${identifier}`;
   const body = [
     `## Pinterest Pin Rotation Failure`,
     ``,
     `| Field | Value |`,
     `|-------|-------|`,
-    `| **Recipe** | \`${slug}\` |`,
-    `| **Variant** | ${variant} |`,
+    `| **Content** | \`${slug}\` (${type}) |`,
+    `| **Pin** | ${identifier} |`,
     `| **Error** | ${error.message} |`,
     `| **Timestamp** | ${new Date().toISOString()} |`,
     ``,
     `### Error Details`,
-    `\`\`\``,
+    "```",
     `${error.stack || error.message}`,
-    `\`\`\``,
+    "```",
     ``,
     `### Recovery`,
     `The pin will be retried on the next cron run.`,
@@ -162,10 +149,9 @@ async function main() {
   const now = new Date();
   let postsThisRun = 0;
 
-  // Collect all due pins across all recipes
   const duePins = [];
-
   for (const [slug, entry] of Object.entries(log)) {
+    const type = entry.type || "recipe"; // pre-existing entries predate the `type` field
     const pins = entry.pinterest?.pins;
     if (!pins) continue;
 
@@ -173,8 +159,7 @@ async function main() {
       if (pin.status !== "pending") continue;
       if (!pin.scheduledFor) continue;
       if (new Date(pin.scheduledFor) > now) continue;
-
-      duePins.push({ slug, pin });
+      duePins.push({ slug, type, pin });
     }
   }
 
@@ -183,23 +168,20 @@ async function main() {
     return;
   }
 
-  console.log(`Found ${duePins.length} pins due for posting (max ${MAX_PINS_PER_RUN} per run)`);
+  console.log(`Found ${duePins.length} pin(s) due for posting (max ${MAX_PINS_PER_RUN} per run)`);
 
-  for (const { slug, pin } of duePins.slice(0, MAX_PINS_PER_RUN)) {
-    console.log(`\nPosting ${slug} variant ${pin.variant}...`);
+  for (const { slug, type, pin } of duePins.slice(0, MAX_PINS_PER_RUN)) {
+    const identifier = pin.imageKey || `variant ${pin.variant}`;
+    console.log(`\nPosting ${slug} (${type}) ${identifier}...`);
 
     try {
-      const heroImageUrl = await resolveHeroImageUrl(slug);
-      const altText = getHeroImageAlt(slug);
-      const recipeUrl = `${SITE_URL}/en/recipes/${slug}/`;
+      const boardId = boardIdForType(type);
+      const url = buildContentUrl(type, slug);
+      // New-style pins store their own image; legacy pins re-resolve the hero live.
+      const imageUrl = pin.imageSrc || (await resolveLegacyHeroImageUrl(type, slug));
+      const altText = pin.altText || getHeroImageAlt(type, slug);
 
-      const pinId = await postToPinterest(
-        heroImageUrl,
-        pin.title,
-        pin.description,
-        recipeUrl,
-        altText
-      );
+      const pinId = await postToPinterest(boardId, imageUrl, pin.title, pin.description, url, altText);
 
       pin.id = pinId;
       pin.postedAt = new Date().toISOString();
@@ -209,14 +191,12 @@ async function main() {
       pin.status = "failed";
       pin.error = err.message;
       pin.failedAt = new Date().toISOString();
-      await createFailureIssue(slug, pin.variant, err);
+      await createFailureIssue(slug, type, identifier, err);
     }
 
-    // Save after each pin in case of crash
-    writeLog(log);
+    writeLog(log); // save after each pin in case of crash
     postsThisRun++;
 
-    // Rate limit delay (skip after last pin)
     if (postsThisRun < Math.min(duePins.length, MAX_PINS_PER_RUN)) {
       console.log(`  Waiting ${DELAY_BETWEEN_POSTS_MS / 1000}s...`);
       await new Promise((r) => setTimeout(r, DELAY_BETWEEN_POSTS_MS));
@@ -224,16 +204,14 @@ async function main() {
   }
 
   // Retry failed pins (set back to pending for next run)
-  for (const [slug, entry] of Object.entries(log)) {
+  for (const entry of Object.values(log)) {
     const pins = entry.pinterest?.pins;
     if (!pins) continue;
     for (const pin of pins) {
       if (pin.status === "failed") {
-        console.log(`Resetting failed pin ${slug} variant ${pin.variant} to pending for retry`);
+        console.log(`Resetting failed pin (${pin.imageKey || "variant " + pin.variant}) to pending for retry`);
         pin.status = "pending";
-        if (!pin.scheduledFor) {
-          pin.scheduledFor = new Date().toISOString();
-        }
+        if (!pin.scheduledFor) pin.scheduledFor = new Date().toISOString();
         delete pin.error;
         delete pin.failedAt;
       }
@@ -241,7 +219,7 @@ async function main() {
   }
   writeLog(log);
 
-  console.log(`\nDone. Posted ${postsThisRun} pins.`);
+  console.log(`\nDone. Posted ${postsThisRun} pin(s).`);
 }
 
 main().catch((err) => {

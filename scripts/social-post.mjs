@@ -1,24 +1,44 @@
 // scripts/social-post.mjs
-// Automatic social media posting for Date My Dish recipes.
-// Posts to Instagram (bilingual EN+FR) and Pinterest (EN only).
+// Automatic social media posting for Date My Dish.
+// Instagram: recipes only, bilingual EN+FR caption, single post.
+// Pinterest: recipes, articles, and reviews. Posts one pin per unique photo
+// found on the page (hero + body/step images), staggered over time. Content
+// with only one photo falls back to the original 3 title-variant pins on
+// that single photo.
+//
+// This script is strictly additive with respect to data/social-posts-log.json:
+// it never rewrites, reschedules, or removes an existing pin entry (posted,
+// pending, or failed-with-history). It only appends new pin entries for
+// images that aren't represented in the log yet. Editing already-live pins
+// is a separate, deliberate, manual tool: scripts/pinterest-update-pins.mjs.
 //
 // Usage:
 //   node scripts/social-post.mjs src/content/recipes/en/slug.mdx [...]
-//   node scripts/social-post.mjs --backfill
+//   node scripts/social-post.mjs src/content/articles/en/slug.mdx [...]
+//   node scripts/social-post.mjs src/content/reviews/en/slug.mdx [...]
+//   node scripts/social-post.mjs --backfill                # all types
+//   CONTENT_TYPE=review node scripts/social-post.mjs --backfill
 
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, basename } from "path";
 import matter from "gray-matter";
+import {
+  SITE_URL,
+  CONTENT_TYPES,
+  buildContentUrl,
+  contentDir,
+  boardIdForType,
+  fetchLiveHtml,
+  discoverImagesFromHtml,
+  imageKeyFor,
+} from "./lib/content-images.mjs";
 
-const SITE_URL = "https://datemydish.com";
-const RECIPES_DIR = "src/content/recipes";
 const LOG_FILE = "data/social-posts-log.json";
 const DEPLOY_POLL_INTERVAL_MS = 10_000;
 const DEPLOY_MAX_ATTEMPTS = 30;
-const FETCH_HEADERS = {
-  "User-Agent":
-    "Mozilla/5.0 (compatible; DateMyDishBot/1.0; +https://datemydish.com)",
-};
+const MAX_NEW_PINS_PER_ITEM = 8; // safety cap per recipe/article/review per run
+const STAGGER_FIRST_GAP_DAYS = 5;
+const STAGGER_STEP_DAYS = 7;
 
 // ---------------------------------------------------------------------------
 // Env vars
@@ -26,10 +46,9 @@ const FETCH_HEADERS = {
 const {
   INSTAGRAM_ACCESS_TOKEN,
   INSTAGRAM_USER_ID,
-  PINTEREST_ACCESS_TOKEN,
-  PINTEREST_BOARD_ID,
   PLATFORM = "both",
   RECIPES_PER_RUN = "50",
+  CONTENT_TYPE = "all", // recipe | article | review | all (backfill only)
 } = process.env;
 
 // ---------------------------------------------------------------------------
@@ -47,21 +66,26 @@ function writeLog(log) {
 // ---------------------------------------------------------------------------
 // Frontmatter parsing
 // ---------------------------------------------------------------------------
-function parseRecipe(filePath) {
+function parseContent(filePath) {
   const raw = readFileSync(filePath, "utf-8");
   const { data } = matter(raw);
   const slug = basename(filePath, ".mdx");
   return { ...data, slug };
 }
 
-function findFrTranslation(enSlug) {
-  const frDir = join(RECIPES_DIR, "fr");
+function typeFromPath(filePath) {
+  if (filePath.includes("/articles/")) return "article";
+  if (filePath.includes("/reviews/")) return "review";
+  return "recipe";
+}
+
+function findFrTranslation(type, enSlug) {
+  const frDir = contentDir(type, "fr");
+  if (!existsSync(frDir)) return null;
   const files = readdirSync(frDir).filter((f) => f.endsWith(".mdx"));
   for (const file of files) {
-    const frData = parseRecipe(join(frDir, file));
-    if (frData.translationSlug === enSlug) {
-      return frData;
-    }
+    const frData = parseContent(join(frDir, file));
+    if (frData.translationSlug === enSlug) return frData;
   }
   return null;
 }
@@ -69,172 +93,124 @@ function findFrTranslation(enSlug) {
 // ---------------------------------------------------------------------------
 // Deploy health check
 // ---------------------------------------------------------------------------
-async function waitForDeploy(slug) {
-  const url = `${SITE_URL}/en/recipes/${slug}/`;
+async function waitForDeploy(url) {
   console.log(`Waiting for deploy: ${url}`);
-
   for (let i = 0; i < DEPLOY_MAX_ATTEMPTS; i++) {
     try {
-      const res = await fetch(url, { method: "HEAD", headers: FETCH_HEADERS });
+      const res = await fetch(url, { method: "HEAD" });
       if (res.ok) {
-        console.log(`Deploy ready after ${(i + 1) * DEPLOY_POLL_INTERVAL_MS / 1000}s`);
+        console.log(`Deploy ready after ${((i + 1) * DEPLOY_POLL_INTERVAL_MS) / 1000}s`);
         return;
       }
     } catch {
-      // Network error, keep polling
+      // keep polling
     }
     await new Promise((r) => setTimeout(r, DEPLOY_POLL_INTERVAL_MS));
   }
-
   throw new Error(
     `Deploy not ready after ${(DEPLOY_MAX_ATTEMPTS * DEPLOY_POLL_INTERVAL_MS) / 1000}s: ${url}`
   );
 }
 
 // ---------------------------------------------------------------------------
-// Hero image URL resolution (from live JSON-LD, with local build fallback)
+// Image discovery, with local build fallback (mirrors old resolveHeroImageUrl)
 // ---------------------------------------------------------------------------
-function extractImageFromHtml(html, source) {
-  const match = html.match(
-    /<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/
-  );
-  if (!match) {
-    throw new Error(`No JSON-LD found in ${source}`);
-  }
+async function discoverContentImages(type, slug, heroAlt) {
+  const url = buildContentUrl(type, slug);
 
-  const jsonLd = JSON.parse(match[1]);
-  // Recipe JSON-LD image is always array format per CLAUDE.md
-  const image = Array.isArray(jsonLd.image) ? jsonLd.image[0] : jsonLd.image;
-  if (!image) throw new Error(`No image in JSON-LD from ${source}`);
-
-  return image;
-}
-
-async function resolveHeroImageUrl(slug) {
-  const url = `${SITE_URL}/en/recipes/${slug}/`;
-
-  // Try live site first
   try {
-    const res = await fetch(url, { headers: FETCH_HEADERS });
-    if (res.ok) {
-      const html = await res.text();
-      return extractImageFromHtml(html, url);
-    }
-    console.warn(`Live fetch failed (HTTP ${res.status}), trying local build...`);
+    const html = await fetchLiveHtml(url);
+    return { url, images: discoverImagesFromHtml(html, { heroAlt }) };
   } catch (err) {
     console.warn(`Live fetch failed (${err.message}), trying local build...`);
   }
 
-  // Fallback: read from local build output
-  const localPath = join("dist", "en", "recipes", slug, "index.html");
+  const localPath = join("dist", "en", CONTENT_TYPES[type].urlSegment, slug, "index.html");
   if (existsSync(localPath)) {
     const html = readFileSync(localPath, "utf-8");
-    return extractImageFromHtml(html, localPath);
+    return { url, images: discoverImagesFromHtml(html, { heroAlt }) };
   }
 
   throw new Error(
-    `Cannot resolve hero image for ${slug}: live site unreachable and no local build at ${localPath}`
+    `Cannot resolve images for ${slug}: live site unreachable and no local build at ${localPath}`
   );
 }
 
 // ---------------------------------------------------------------------------
-// Caption generation from frontmatter (with template fallback)
+// Caption generation
 // ---------------------------------------------------------------------------
-async function generateCaptions(enData, frData) {
-  const baseDescription = enData.socialCaption?.pinterest || buildPinterestTemplate(enData);
+function buildInstagramTemplate(enData, frData) {
+  const tags = (enData.tags || []).map((t) => `#${t.replace(/\s+/g, "")}`).join(" ");
+  const frTitle = frData ? `\n${frData.title}` : "";
+  return `${enData.title}${frTitle}\n\n${enData.description}\n\nFull recipe on datemydish.com\n\n${tags}`;
+}
 
-  // Variant 1: always use recipe title
-  const baseTitle = enData.title;
+function baseDescriptionFor(enData) {
+  return enData.socialCaption?.pinterest || enData.description;
+}
 
-  // Variant 2: time + cuisine + category hook
+function timeHookTitle(enData) {
   const timeMatch = enData.totalTime?.match(/PT(?:(\d+)H)?(?:(\d+)M)?/);
   const hours = timeMatch?.[1] ? parseInt(timeMatch[1]) : 0;
   const mins = timeMatch?.[2] ? parseInt(timeMatch[2]) : 0;
   const totalMins = hours * 60 + mins;
-  // Use hours when >= 120 minutes
-  const timeStr = totalMins >= 120
-    ? `${Math.round(totalMins / 60)}-Hour`
-    : totalMins > 0
-      ? `${totalMins}-Minute`
-      : null;
-
+  const timeStr =
+    totalMins >= 120 ? `${Math.round(totalMins / 60)}-Hour` : totalMins > 0 ? `${totalMins}-Minute` : null;
   const cuisine = enData.recipeCuisine || "Homemade";
   const category = enData.recipeCategory?.[0] || "Recipe";
   const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+  return timeStr ? `${timeStr} ${cuisine} ${categoryLabel}` : `${cuisine} ${enData.title}`;
+}
 
-  const v2Title = timeStr
-    ? `${timeStr} ${cuisine} ${categoryLabel}`
-    : `${cuisine} ${enData.title}`;
+// Single-photo fallback: the original 3 title-variant pins on one image.
+function buildSinglePhotoVariants(enData) {
+  const description = baseDescriptionFor(enData);
+  return [
+    { title: enData.title.slice(0, 100), description },
+    { title: timeHookTitle(enData).slice(0, 100), description },
+    { title: `${enData.title} | Perfect for Date Night`.slice(0, 100), description },
+  ];
+}
 
-  // Variant 3: "{title} | Perfect for Date Night"
-  const v3Title = `${enData.title} | Perfect for Date Night`;
+// Multi-photo case: one pin per unique image, using that image's own alt /
+// pinDescription when available, otherwise the content's general caption.
+function captionForImage(enData, image, index) {
+  if (image.isHero) {
+    return {
+      title: enData.title.slice(0, 100),
+      description: baseDescriptionFor(enData),
+    };
+  }
 
+  if (image.pinDescription) {
+    // Recipe step images carry a ready-made "{Title} - Step N: ..." string
+    // (see InstructionSteps.astro). Strip the leading title repeat since the
+    // pin's own title field already carries it.
+    const prefix = `${enData.title} - `;
+    const description = image.pinDescription.startsWith(prefix)
+      ? image.pinDescription.slice(prefix.length)
+      : image.pinDescription;
+    return {
+      title: enData.title.slice(0, 100),
+      description: description.slice(0, 800),
+    };
+  }
+
+  // Article/review body photo: lead with the recipe/article/review title,
+  // use the photo's own descriptive alt text as the pin description (this is
+  // real, hand-written copy from the MDX, e.g. review dish photos).
   return {
-    instagram_caption: enData.socialCaption?.instagram || buildInstagramTemplate(enData, frData),
-    pinterest_title: baseTitle.slice(0, 100),
-    pinterest_description: baseDescription,
-    pinterest_title_v2: v2Title.slice(0, 100),
-    pinterest_description_v2: baseDescription,
-    pinterest_title_v3: v3Title.slice(0, 100),
-    pinterest_description_v3: baseDescription,
+    title: `${enData.title} | Photo ${index + 1}`.slice(0, 100),
+    description: (image.alt || baseDescriptionFor(enData)).slice(0, 800),
   };
 }
 
-function buildInstagramTemplate(enData, frData) {
-  const tags = (enData.tags || []).map(t => `#${t.replace(/\s+/g, '')}`).join(' ');
-  const frTitle = frData ? `\n${frData.title}` : '';
-  return `${enData.title}${frTitle}\n\n${enData.description}\n\nFull recipe on datemydish.com\n\n${tags}`;
-}
-
-function buildPinterestTemplate(data) {
-  return data.description;
+function buildInstructionAlt(image, enData) {
+  return image.alt || enData.heroImageAlt || "";
 }
 
 // ---------------------------------------------------------------------------
-// Build pin variants array from captions
-// ---------------------------------------------------------------------------
-function buildPinVariants(captions, existingPins = []) {
-  const now = new Date();
-  const pin2Date = new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000);
-  const pin3Date = new Date(now.getTime() + 12 * 24 * 60 * 60 * 1000);
-
-  // Keep existing pins as-is, fill in missing variants
-  const pins = [...existingPins];
-
-  if (!pins.find((p) => p.variant === 1)) {
-    pins.push({
-      variant: 1,
-      title: captions.pinterest_title,
-      description: captions.pinterest_description,
-      status: "pending",
-    });
-  }
-
-  if (!pins.find((p) => p.variant === 2)) {
-    pins.push({
-      variant: 2,
-      title: captions.pinterest_title_v2,
-      description: captions.pinterest_description_v2,
-      scheduledFor: pin2Date.toISOString(),
-      status: "pending",
-    });
-  }
-
-  if (!pins.find((p) => p.variant === 3)) {
-    pins.push({
-      variant: 3,
-      title: captions.pinterest_title_v3,
-      description: captions.pinterest_description_v3,
-      scheduledFor: pin3Date.toISOString(),
-      status: "pending",
-    });
-  }
-
-  return pins.sort((a, b) => a.variant - b.variant);
-}
-
-// ---------------------------------------------------------------------------
-// Instagram Graph API
+// Instagram Graph API (recipes only)
 // ---------------------------------------------------------------------------
 async function postToInstagram(imageUrl, caption) {
   if (!INSTAGRAM_ACCESS_TOKEN || !INSTAGRAM_USER_ID) {
@@ -243,21 +219,14 @@ async function postToInstagram(imageUrl, caption) {
   }
 
   console.log("Creating Instagram media container...");
-
-  // Step 1: Create media container
   const containerRes = await fetch(
     `https://graph.instagram.com/v21.0/${INSTAGRAM_USER_ID}/media`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        image_url: imageUrl,
-        caption,
-        access_token: INSTAGRAM_ACCESS_TOKEN,
-      }),
+      body: JSON.stringify({ image_url: imageUrl, caption, access_token: INSTAGRAM_ACCESS_TOKEN }),
     }
   );
-
   const containerData = await containerRes.json();
   if (containerData.error) {
     throw new Error(
@@ -268,7 +237,6 @@ async function postToInstagram(imageUrl, caption) {
   const containerId = containerData.id;
   console.log(`Container created: ${containerId}`);
 
-  // Step 2: Poll until container is ready
   let status = "IN_PROGRESS";
   let attempts = 0;
   while (status === "IN_PROGRESS" && attempts < 30) {
@@ -282,34 +250,22 @@ async function postToInstagram(imageUrl, caption) {
     console.log(`Container status: ${status} (attempt ${attempts})`);
   }
 
-  if (status === "ERROR") {
-    throw new Error("Instagram media container processing failed");
-  }
-  if (status !== "FINISHED") {
-    throw new Error(`Instagram container not ready after ${attempts} attempts, status: ${status}`);
-  }
+  if (status === "ERROR") throw new Error("Instagram media container processing failed");
+  if (status !== "FINISHED") throw new Error(`Instagram container not ready after ${attempts} attempts, status: ${status}`);
 
-  // Step 3: Publish
   console.log("Publishing Instagram post...");
   const publishRes = await fetch(
     `https://graph.instagram.com/v21.0/${INSTAGRAM_USER_ID}/media_publish`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        creation_id: containerId,
-        access_token: INSTAGRAM_ACCESS_TOKEN,
-      }),
+      body: JSON.stringify({ creation_id: containerId, access_token: INSTAGRAM_ACCESS_TOKEN }),
     }
   );
-
   const publishData = await publishRes.json();
   if (publishData.error) {
-    throw new Error(
-      `Instagram publish failed: ${publishData.error.message} (code: ${publishData.error.code})`
-    );
+    throw new Error(`Instagram publish failed: ${publishData.error.message} (code: ${publishData.error.code})`);
   }
-
   console.log(`Instagram post published: ${publishData.id}`);
   return publishData.id;
 }
@@ -317,30 +273,26 @@ async function postToInstagram(imageUrl, caption) {
 // ---------------------------------------------------------------------------
 // Pinterest API v5
 // ---------------------------------------------------------------------------
-async function postToPinterest(imageUrl, title, description, link, altText) {
-  if (!PINTEREST_ACCESS_TOKEN || !PINTEREST_BOARD_ID) {
-    console.log("Skipping Pinterest: missing PINTEREST_ACCESS_TOKEN or PINTEREST_BOARD_ID");
+async function postToPinterest(boardId, imageUrl, title, description, link, altText) {
+  if (!process.env.PINTEREST_ACCESS_TOKEN || !boardId) {
+    console.log("Skipping Pinterest: missing PINTEREST_ACCESS_TOKEN or board ID for this content type");
     return null;
   }
 
-  console.log("Creating Pinterest pin...");
-
+  console.log(`Creating Pinterest pin on board ${boardId}...`);
   const res = await fetch("https://api.pinterest.com/v5/pins", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${PINTEREST_ACCESS_TOKEN}`,
+      Authorization: `Bearer ${process.env.PINTEREST_ACCESS_TOKEN}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      board_id: PINTEREST_BOARD_ID,
+      board_id: boardId,
       title: title.slice(0, 100),
       description: description.slice(0, 800),
       link,
       alt_text: (altText || "").slice(0, 500),
-      media_source: {
-        source_type: "image_url",
-        url: imageUrl,
-      },
+      media_source: { source_type: "image_url", url: imageUrl },
     }),
   });
 
@@ -350,11 +302,8 @@ async function postToPinterest(imageUrl, title, description, link, altText) {
   }
 
   const data = await res.json();
-
   if (!res.ok) {
-    throw new Error(
-      `Pinterest API error ${data.code || res.status}: ${data.message || JSON.stringify(data)}`
-    );
+    throw new Error(`Pinterest API error ${data.code || res.status}: ${data.message || JSON.stringify(data)}`);
   }
 
   console.log(`Pinterest pin created: ${data.id}`);
@@ -364,27 +313,26 @@ async function postToPinterest(imageUrl, title, description, link, altText) {
 // ---------------------------------------------------------------------------
 // Create GitHub issue on failure
 // ---------------------------------------------------------------------------
-async function createFailureIssue(slug, platform, error, imageUrl) {
-  // Uses gh CLI which is available in GitHub Actions
-  const title = `Social media post failed: ${slug} on ${platform}`;
+async function createFailureIssue(slug, type, platform, error, imageUrl) {
+  const title = `Social media post failed: ${slug} (${type}) on ${platform}`;
   const body = [
     `## Social Media Posting Failure`,
     ``,
     `| Field | Value |`,
     `|-------|-------|`,
-    `| **Recipe** | \`${slug}\` |`,
+    `| **Content** | \`${slug}\` (${type}) |`,
     `| **Platform** | ${platform} |`,
     `| **Error** | ${error.message} |`,
     `| **Image URL** | ${imageUrl || "N/A"} |`,
     `| **Timestamp** | ${new Date().toISOString()} |`,
     ``,
     `### Error Details`,
-    `\`\`\``,
+    "```",
     `${error.stack || error.message}`,
-    `\`\`\``,
+    "```",
     ``,
     `### Recovery`,
-    `Re-run the backfill workflow for this recipe, or manually post.`,
+    `Re-run the backfill workflow for this item, or manually post.`,
   ].join("\n");
 
   try {
@@ -399,124 +347,167 @@ async function createFailureIssue(slug, platform, error, imageUrl) {
 }
 
 // ---------------------------------------------------------------------------
-// Check if Pinterest pin 1 is already posted (multi-pin format)
+// Idempotency helpers
 // ---------------------------------------------------------------------------
-function isPinterestPin1Done(existing) {
+function hasLegacyVariantPins(existing) {
+  // Old format: 3 fixed variants of the same hero photo. If any of these
+  // exist, the hero is already represented in the log; never re-derive a
+  // hero-based candidate pin for it.
   if (!existing.pinterest) return false;
-  // New format: pins array
-  if (existing.pinterest.pins) {
-    return existing.pinterest.pins.some((p) => p.variant === 1 && p.status === "posted");
+  if (existing.pinterest.id) return true; // very old single-pin legacy format
+  if (!existing.pinterest.pins) return false;
+  return existing.pinterest.pins.some((p) => typeof p.variant === "number");
+}
+
+function existingImageKeys(existing) {
+  const keys = new Set();
+  for (const pin of existing.pinterest?.pins || []) {
+    if (pin.imageKey) keys.add(pin.imageKey);
   }
-  // Legacy format: single id at top level
-  return !!existing.pinterest.id;
+  return keys;
 }
 
-function isPinterestFullyScheduled(existing) {
-  if (!existing.pinterest?.pins) return false;
-  return [1, 2, 3].every((v) =>
-    existing.pinterest.pins.some((p) => p.variant === v && (p.status === "posted" || p.status === "pending"))
-  );
+function scheduleOffsetDays(index) {
+  if (index === 0) return 0;
+  return STAGGER_FIRST_GAP_DAYS + (index - 1) * STAGGER_STEP_DAYS;
 }
 
 // ---------------------------------------------------------------------------
-// Process a single recipe
+// Process a single piece of content (recipe, article, or review)
 // ---------------------------------------------------------------------------
-async function processRecipe(enFilePath, log, options = {}) {
-  const enData = parseRecipe(enFilePath);
+async function processContent(filePath, type, log, options = {}) {
+  const enData = parseContent(filePath);
   const slug = enData.slug;
-  const shouldPostInstagram =
-    options.platform === "both" || options.platform === "instagram";
-  const shouldPostPinterest =
-    options.platform === "both" || options.platform === "pinterest";
+  const shouldPostInstagram = type === "recipe" && (options.platform === "both" || options.platform === "instagram");
+  const shouldPostPinterest = options.platform === "both" || options.platform === "pinterest";
 
   console.log(`\n${"=".repeat(60)}`);
-  console.log(`Processing: ${slug}`);
+  console.log(`Processing: ${slug} (${type})`);
   console.log(`${"=".repeat(60)}`);
 
-  // Check idempotency
   const existing = log[slug] || {};
-  const instagramDone = existing.instagram?.id;
-  const pinterestPin1Done = isPinterestPin1Done(existing);
-  const pinterestFullyScheduled = isPinterestFullyScheduled(existing);
+  const instagramDone = !!existing.instagram?.id;
 
-  if (instagramDone && pinterestFullyScheduled) {
-    console.log(`Skipping ${slug}: already posted to both platforms (all variants scheduled)`);
-    return;
-  }
-  if (instagramDone && shouldPostInstagram && !shouldPostPinterest) {
-    console.log(`Skipping ${slug}: already posted to Instagram`);
-    return;
-  }
-  if (pinterestFullyScheduled && shouldPostPinterest && !shouldPostInstagram) {
-    console.log(`Skipping ${slug}: Pinterest all variants scheduled`);
+  if (!options.backfill) await waitForDeploy(buildContentUrl(type, slug));
+
+  const url = buildContentUrl(type, slug);
+  let discovered;
+  try {
+    discovered = await discoverContentImages(type, slug, enData.heroImageAlt);
+  } catch (err) {
+    console.error(`Image discovery failed for ${slug}: ${err.message}`);
+    if (shouldPostPinterest) await createFailureIssue(slug, type, "Pinterest", err);
     return;
   }
 
-  // Wait for deploy if not in backfill mode (backfill assumes already deployed)
-  if (!options.backfill) {
-    await waitForDeploy(slug);
-  }
+  const images = discovered.images;
+  const results = { ...existing, type };
 
-  // Resolve hero image URL from live site
-  const heroImageUrl = await resolveHeroImageUrl(slug);
-  console.log(`Hero image: ${heroImageUrl}`);
-
-  // Find FR translation for bilingual Instagram caption
-  const frData = findFrTranslation(slug);
-
-  // Generate captions (now includes all 3 pin variants)
-  console.log("Generating captions...");
-  const captions = await generateCaptions(enData, frData);
-
-  const recipeUrl = `${SITE_URL}/en/recipes/${slug}/`;
-  const results = { ...existing };
-
-  // Post to Instagram
+  // --- Instagram (recipes only, single post, unchanged behavior) ---
   if (shouldPostInstagram && !instagramDone) {
+    const frData = findFrTranslation(type, slug);
+    const caption = enData.socialCaption?.instagram || buildInstagramTemplate(enData, frData);
+    const heroUrl = images.find((i) => i.isHero)?.src || images[0]?.src;
     try {
-      const igPostId = await postToInstagram(heroImageUrl, captions.instagram_caption);
-      if (igPostId) {
-        results.instagram = { id: igPostId, postedAt: new Date().toISOString() };
-      }
+      const igPostId = await postToInstagram(heroUrl, caption);
+      if (igPostId) results.instagram = { id: igPostId, postedAt: new Date().toISOString() };
     } catch (err) {
       console.error(`Instagram failed for ${slug}:`, err.message);
-      await createFailureIssue(slug, "Instagram", err, heroImageUrl);
+      await createFailureIssue(slug, type, "Instagram", err, heroUrl);
       results.instagram = { error: err.message, failedAt: new Date().toISOString() };
     }
   }
 
-  // Post Pinterest pin 1 and schedule variants 2-3
-  if (shouldPostPinterest && !pinterestFullyScheduled) {
-    const existingPins = existing.pinterest?.pins || [];
-    const pins = buildPinVariants(captions, existingPins);
+  // --- Pinterest ---
+  if (shouldPostPinterest) {
+    const boardId = boardIdForType(type);
+    const existingPins = existing.pinterest?.pins ? [...existing.pinterest.pins] : [];
+    const legacyHeroCovered = hasLegacyVariantPins(existing);
+    const knownImageKeys = existingImageKeys(existing);
 
-    // Post pin variant 1 immediately
-    const pin1 = pins.find((p) => p.variant === 1);
-    if (pin1 && pin1.status !== "posted") {
+    let candidateImages;
+    if (images.length <= 1) {
+      candidateImages = null; // handled by the single-photo variant fallback below
+    } else {
+      candidateImages = images.filter((img) => {
+        const key = imageKeyFor(img);
+        if (knownImageKeys.has(key)) return false;
+        if (img.isHero && legacyHeroCovered) return false; // hero already posted under old scheme
+        return true;
+      });
+    }
+
+    const newPins = [];
+
+    if (candidateImages === null) {
+      // Single-photo content: only fill in the 3 legacy-style variants if
+      // none exist yet at all (brand new content). Never touch existing ones.
+      if (existingPins.length === 0) {
+        const variants = buildSinglePhotoVariants(enData);
+        const hero = images[0];
+        variants.forEach((v, i) => {
+          newPins.push({
+            variant: i + 1,
+            imageKey: imageKeyFor({ alt: `${hero?.alt || enData.heroImageAlt}__v${i + 1}` }),
+            title: v.title,
+            description: v.description,
+            imageSrc: hero?.src,
+            altText: hero?.alt || enData.heroImageAlt,
+            scheduledFor:
+              i === 0 ? undefined : new Date(Date.now() + scheduleOffsetDays(i) * 86400000).toISOString(),
+            status: "pending",
+          });
+        });
+      }
+    } else {
+      candidateImages.slice(0, MAX_NEW_PINS_PER_ITEM).forEach((img, i) => {
+        const scheduleIndex = existingPins.length + i; // keep staggering going past what's already posted
+        const caption = captionForImage(enData, img, scheduleIndex);
+        newPins.push({
+          imageKey: imageKeyFor(img),
+          title: caption.title,
+          description: caption.description,
+          imageSrc: img.src,
+          altText: buildInstructionAlt(img, enData),
+          isHero: img.isHero || undefined,
+          scheduledFor:
+            scheduleIndex === 0
+              ? undefined
+              : new Date(Date.now() + scheduleOffsetDays(scheduleIndex) * 86400000).toISOString(),
+          status: "pending",
+        });
+      });
+    }
+
+    if (newPins.length === 0 && existingPins.length > 0) {
+      console.log(`Pinterest: no new images to add for ${slug} (already covered)`);
+    }
+
+    // Post whichever new pin is scheduled for "now" (no scheduledFor / due)
+    // immediately; everything else stays pending for pinterest-rotate.mjs.
+    for (const pin of newPins) {
+      const isDueNow = !pin.scheduledFor || new Date(pin.scheduledFor) <= new Date();
+      if (!isDueNow) continue;
       try {
-        const pinId = await postToPinterest(
-          heroImageUrl,
-          pin1.title,
-          pin1.description,
-          recipeUrl,
-          enData.heroImageAlt
-        );
+        const pinId = await postToPinterest(boardId, pin.imageSrc, pin.title, pin.description, url, pin.altText);
         if (pinId) {
-          pin1.id = pinId;
-          pin1.postedAt = new Date().toISOString();
-          pin1.status = "posted";
+          pin.id = pinId;
+          pin.postedAt = new Date().toISOString();
+          pin.status = "posted";
         }
       } catch (err) {
-        console.error(`Pinterest pin 1 failed for ${slug}:`, err.message);
-        await createFailureIssue(slug, "Pinterest", err, heroImageUrl);
-        pin1.status = "failed";
-        pin1.error = err.message;
-        pin1.failedAt = new Date().toISOString();
+        console.error(`Pinterest pin failed for ${slug}:`, err.message);
+        await createFailureIssue(slug, type, "Pinterest", err, pin.imageSrc);
+        pin.status = "failed";
+        pin.error = err.message;
+        pin.failedAt = new Date().toISOString();
       }
     }
 
-    results.pinterest = { pins };
-    console.log(`Pinterest: pin 1 ${pin1?.status}, variants 2-3 scheduled`);
+    if (newPins.length > 0) {
+      results.pinterest = { pins: [...existingPins, ...newPins] };
+      console.log(`Pinterest: added ${newPins.length} new pin(s) for ${slug}`);
+    }
   }
 
   log[slug] = results;
@@ -524,53 +515,49 @@ async function processRecipe(enFilePath, log, options = {}) {
 }
 
 // ---------------------------------------------------------------------------
-// Backfill mode: post all existing EN recipes
+// Backfill mode: post all existing content for the requested type(s)
 // ---------------------------------------------------------------------------
+function allContentFiles(type) {
+  const dir = contentDir(type, "en");
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((f) => f.endsWith(".mdx"))
+    .map((f) => join(dir, f));
+}
+
 async function runBackfill() {
   const log = readLog();
   const platform = PLATFORM;
   const limit = parseInt(RECIPES_PER_RUN, 10);
+  const types = CONTENT_TYPE === "all" ? ["recipe", "article", "review"] : [CONTENT_TYPE];
 
-  const enDir = join(RECIPES_DIR, "en");
-  const allRecipes = readdirSync(enDir)
-    .filter((f) => f.endsWith(".mdx"))
-    .map((f) => join(enDir, f));
+  let allFiles = [];
+  for (const type of types) {
+    allFiles.push(...allContentFiles(type).map((filePath) => ({ filePath, type })));
+  }
 
-  // Filter to recipes not yet posted on the target platform(s)
-  const pending = allRecipes.filter((filePath) => {
-    const slug = basename(filePath, ".mdx");
-    const existing = log[slug] || {};
-    if (platform === "both") return !existing.instagram?.id || !isPinterestFullyScheduled(existing);
-    if (platform === "instagram") return !existing.instagram?.id;
-    if (platform === "pinterest") return !isPinterestFullyScheduled(existing);
-    return true;
-  });
+  console.log(`Backfill: scanning ${allFiles.length} item(s) across [${types.join(", ")}]`);
 
-  console.log(`Backfill: ${pending.length} recipes pending, posting up to ${limit}`);
-
-  const batch = pending.slice(0, limit);
-  let posted = 0;
+  const batch = allFiles.slice(0, limit);
+  let processed = 0;
   let failed = 0;
-  for (const filePath of batch) {
+  for (let i = 0; i < batch.length; i++) {
+    const { filePath, type } = batch[i];
     try {
-      await processRecipe(filePath, log, { backfill: true, platform });
-      posted++;
+      await processContent(filePath, type, log, { backfill: true, platform });
+      processed++;
     } catch (err) {
       const slug = basename(filePath, ".mdx");
       console.error(`Failed ${slug}: ${err.message}`);
       failed++;
     }
-    // Small delay between posts to be respectful to APIs
-    if (batch.indexOf(filePath) < batch.length - 1) {
-      console.log("Waiting 10s between posts...");
+    if (i < batch.length - 1) {
+      console.log("Waiting 10s between items...");
       await new Promise((r) => setTimeout(r, 10_000));
     }
   }
 
-  console.log(`\nBackfill complete. Posted: ${posted}, Failed: ${failed}, Total: ${batch.length}.`);
-  if (failed > 0) {
-    console.error(`${failed} recipe(s) failed. Re-run backfill to retry.`);
-  }
+  console.log(`\nBackfill complete. Processed: ${processed}, Failed: ${failed}, Total: ${batch.length}.`);
 }
 
 // ---------------------------------------------------------------------------
@@ -584,19 +571,19 @@ async function main() {
     return;
   }
 
-  // Normal mode: process specific recipe files passed as arguments
   const files = args.filter((a) => a.endsWith(".mdx"));
   if (files.length === 0) {
-    console.log("No recipe files to process. Exiting.");
+    console.log("No content files to process. Exiting.");
     process.exit(0);
   }
 
   const log = readLog();
   for (const file of files) {
-    await processRecipe(file, log, { platform: "both" });
+    const type = typeFromPath(file);
+    await processContent(file, type, log, { platform: "both" });
   }
 
-  console.log(`\nDone. Processed ${files.length} recipe(s).`);
+  console.log(`\nDone. Processed ${files.length} item(s).`);
 }
 
 main().catch((err) => {

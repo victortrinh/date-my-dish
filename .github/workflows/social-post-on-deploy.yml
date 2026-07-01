@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "src/content/recipes/en/**/*.mdx"
+      - "src/content/articles/en/**/*.mdx"
+      - "src/content/reviews/en/**/*.mdx"
 
 concurrency:
   group: social-post-${{ github.sha }}
@@ -35,24 +37,31 @@ jobs:
 
       - run: npm ci
 
-      - name: Detect new recipes
+      - name: Detect new content
         id: detect
         run: |
-          NEW_RECIPES=$(git diff --name-only --diff-filter=A HEAD~1 -- 'src/content/recipes/en/*.mdx' || true)
+          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 -- 'src/content/recipes/en/*.mdx' 'src/content/articles/en/*.mdx' 'src/content/reviews/en/*.mdx' || true)
 
           UNPOSTED=$(node -e "
             const fs = require('fs');
             const log = JSON.parse(fs.readFileSync('data/social-posts-log.json'));
-            const recipes = fs.readdirSync('src/content/recipes/en')
-              .filter(f => f.endsWith('.mdx'))
-              .map(f => f.replace('.mdx',''));
-            const missing = recipes.filter(r => !log[r]);
-            if (missing.length) {
-              console.log(missing.map(r => 'src/content/recipes/en/' + r + '.mdx').join('\n'));
+            const dirs = [
+              'src/content/recipes/en',
+              'src/content/articles/en',
+              'src/content/reviews/en',
+            ];
+            const missing = [];
+            for (const dir of dirs) {
+              if (!fs.existsSync(dir)) continue;
+              const slugs = fs.readdirSync(dir).filter(f => f.endsWith('.mdx')).map(f => f.replace('.mdx',''));
+              for (const slug of slugs) {
+                if (!log[slug]) missing.push(dir + '/' + slug + '.mdx');
+              }
             }
+            if (missing.length) console.log(missing.join('\n'));
           ")
 
-          ALL_NEW=$(printf '%s\n%s' "${NEW_RECIPES}" "${UNPOSTED}" | sort -u | grep -v '^$' || true)
+          ALL_NEW=$(printf '%s\n%s' "${NEW_FILES}" "${UNPOSTED}" | sort -u | grep -v '^$' || true)
 
           if [ -z "$ALL_NEW" ]; then
             echo "count=0" >> $GITHUB_OUTPUT
@@ -63,7 +72,7 @@ jobs:
             echo "EOF" >> $GITHUB_OUTPUT
             echo "count=$(echo "$ALL_NEW" | wc -l | tr -d ' ')" >> $GITHUB_OUTPUT
           fi
-          echo "Detected recipes to post: $ALL_NEW"
+          echo "Detected content to post: $ALL_NEW"
 
       - name: Post to social media
         if: steps.detect.outputs.count != '0'
@@ -72,6 +81,8 @@ jobs:
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
+          PINTEREST_BOARD_ID_ARTICLES: ${{ secrets.PINTEREST_BOARD_ID_ARTICLES }}
+          PINTEREST_BOARD_ID_REVIEWS: ${{ secrets.PINTEREST_BOARD_ID_REVIEWS }}
         run: node scripts/social-post.mjs ${{ steps.detect.outputs.recipes }}
 
       - name: Create PR with post log

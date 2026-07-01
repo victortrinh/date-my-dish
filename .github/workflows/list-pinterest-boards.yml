@@ -1,0 +1,38 @@
+name: List Pinterest Boards
+
+# One-off helper: prints your Pinterest board names + IDs to this run's log
+# using the existing PINTEREST_ACCESS_TOKEN secret, so you can find the IDs
+# for new boards without ever having to copy the raw access token out of
+# GitHub Secrets (which you can't view once saved anyway).
+#
+# Safe to keep around or delete after use — it only reads board metadata,
+# it never posts or modifies anything.
+
+on:
+  workflow_dispatch:
+
+jobs:
+  list-boards:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch and print boards
+        env:
+          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
+        run: |
+          curl -s -H "Authorization: Bearer $PINTEREST_ACCESS_TOKEN" \
+            "https://api.pinterest.com/v5/boards" \
+          | node -e "
+              let data = '';
+              process.stdin.on('data', (c) => data += c);
+              process.stdin.on('end', () => {
+                const json = JSON.parse(data);
+                if (!json.items) {
+                  console.log('No boards returned. Raw response:', data);
+                  return;
+                }
+                console.log('Your Pinterest boards:\n');
+                for (const board of json.items) {
+                  console.log(\`  \${board.name}  ->  \${board.id}\`);
+                }
+              });
+            "
