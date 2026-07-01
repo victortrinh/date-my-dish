@@ -1024,5 +1024,43 @@
         }
       ]
     }
+  },
+  "clarified-butter-and-ghee": {
+    "type": "article",
+    "pinterest": {
+      "pins": [
+        {
+          "variant": 1,
+          "imageKey": "img_1861maw",
+          "title": "Clarified Butter and Ghee: A Guide",
+          "description": "Clarified butter and ghee: pure butterfat that won't burn, even at searing heat. Learn the difference, make both at home, and cook with real confidence.",
+          "imageSrc": "https://datemydish.com/_astro/clarified-butter-and-ghee.BsIc-4vb.webp",
+          "altText": "Watercolor illustration of three glass jars of golden clarified butter and ghee beside a saucepan, warm light catching the translucent amber fat",
+          "status": "posted",
+          "id": "1050746156855457403",
+          "postedAt": "2026-07-01T18:44:43.059Z"
+        },
+        {
+          "variant": 2,
+          "imageKey": "img_1861max",
+          "title": "Homemade Clarified Butter and Ghee: A Guide",
+          "description": "Clarified butter and ghee: pure butterfat that won't burn, even at searing heat. Learn the difference, make both at home, and cook with real confidence.",
+          "imageSrc": "https://datemydish.com/_astro/clarified-butter-and-ghee.BsIc-4vb.webp",
+          "altText": "Watercolor illustration of three glass jars of golden clarified butter and ghee beside a saucepan, warm light catching the translucent amber fat",
+          "scheduledFor": "2026-07-06T18:44:42.071Z",
+          "status": "pending"
+        },
+        {
+          "variant": 3,
+          "imageKey": "img_1861may",
+          "title": "Clarified Butter and Ghee: A Guide | Perfect for Date Night",
+          "description": "Clarified butter and ghee: pure butterfat that won't burn, even at searing heat. Learn the difference, make both at home, and cook with real confidence.",
+          "imageSrc": "https://datemydish.com/_astro/clarified-butter-and-ghee.BsIc-4vb.webp",
+          "altText": "Watercolor illustration of three glass jars of golden clarified butter and ghee beside a saucepan, warm light catching the translucent amber fat",
+          "scheduledFor": "2026-07-13T18:44:42.071Z",
+          "status": "pending"
+        }
+      ]
+    }
   }
 }
