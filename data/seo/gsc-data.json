@@ -1,107 +1,562 @@
 {
   "pages": {
-    "/en/recipes/quinoa-crusted-salmon/": {
+    "/en/reviews/othym-montreal/": {
       "queries": [
         {
-          "keyword": "quinoa crusted fish",
-          "avgPosition": 5,
+          "keyword": "othym michelin",
+          "avgPosition": 6.3,
           "clicks": 1,
-          "impressions": 2,
-          "ctr": 0.5
+          "impressions": 6,
+          "ctr": 0.167
         },
         {
-          "keyword": "nikkei glaze",
-          "avgPosition": 11,
+          "keyword": "o thym",
+          "avgPosition": 50,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "quinoa crusted salmon",
+          "keyword": "o thym montreal",
+          "avgPosition": 42.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "o thym restaurant montreal",
+          "avgPosition": 38,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "o'thym montreal",
+          "avgPosition": 39.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "o-thym",
+          "avgPosition": 33,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "o-thym montreal",
           "avgPosition": 23,
           "clicks": 0,
-          "impressions": 7,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "o-thym photos",
+          "avgPosition": 40,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "o-thym reviews",
+          "avgPosition": 9.2,
+          "clicks": 0,
+          "impressions": 22,
+          "ctr": 0
+        },
+        {
+          "keyword": "othym",
+          "avgPosition": 13,
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0
+        },
+        {
+          "keyword": "othym restaurant",
+          "avgPosition": 20,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "restaurant o thym",
+          "avgPosition": 56,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "restaurant othym",
+          "avgPosition": 21.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "restaurant othym montreal",
+          "avgPosition": 20,
+          "clicks": 0,
+          "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 1,
-      "totalImpressions": 12
+      "totalImpressions": 53
     },
-    "/en/reviews/mckiernan-montreal/": {
+    "/en/articles/anova-vs-joule-sous-vide-comparison/": {
       "queries": [
         {
-          "keyword": "bomba schnitzel",
-          "avgPosition": 7.9,
-          "clicks": 1,
-          "impressions": 23,
-          "ctr": 0.043
-        },
-        {
-          "keyword": "mckiernan",
-          "avgPosition": 37,
+          "keyword": "anova precision cooker pro vs breville joule",
+          "avgPosition": 9,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "mckiernan brunch",
-          "avgPosition": 26,
+          "keyword": "anova sous vide comparison chart",
+          "avgPosition": 22,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 2,
           "ctr": 0
         },
         {
-          "keyword": "mckiernan montreal",
-          "avgPosition": 41,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "mckiernan restaurant",
+          "keyword": "anova vs joule sous vide",
           "avgPosition": 4,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "mckiernan rôtisserie",
-          "avgPosition": 18,
+          "keyword": "joule immersion circulator",
+          "avgPosition": 11,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "mckiernan rôtisserie menu",
+          "keyword": "joule sous vide",
+          "avgPosition": 31,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 6
+    },
+    "/en/articles/best-cutting-board-material/": {
+      "queries": [
+        {
+          "keyword": "best cutting board",
           "avgPosition": 3.5,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
         },
         {
-          "keyword": "mckiernan rôtisserie photos",
+          "keyword": "best cutting board for ceramic knives",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "best cutting board material",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "best cutting board materials",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "best material for cutting board",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "can you put a wooden cutting board in dishwasher",
           "avgPosition": 2,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "mckiernan rôtisserie reviews",
-          "avgPosition": 9.3,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        },
-        {
-          "keyword": "mckiernan's",
-          "avgPosition": 44,
+          "keyword": "for raw meat",
+          "avgPosition": 4,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "mckiernans",
+          "keyword": "hasegawa pro-pe lite cutting board () reviews",
+          "avgPosition": 10,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "polyvinyl acetate cutting board",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "the best cutting board material",
+          "avgPosition": 59,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "what is the best cutting board material",
+          "avgPosition": 58,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "what is the best material for cutting boards",
+          "avgPosition": 64.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "what is the best type of cutting board to use",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "what material is best for cutting boards",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "what's the best cutting board material",
+          "avgPosition": 44,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "will a titanium cutting board scratch",
+          "avgPosition": 2,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "wirecutter best cutting board",
+          "avgPosition": 5,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "worktop saver",
+          "avgPosition": 6,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 25
+    },
+    "/en/recipes/3-day-aged-miso-duck-breast/": {
+      "queries": [
+        {
+          "keyword": "how to cure burn skin",
+          "avgPosition": 9,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "miso duck",
+          "avgPosition": 8,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "miso duck breast",
+          "avgPosition": 6,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 5
+    },
+    "/en/recipes/bold-spicy-miso-ramen/": {
+      "queries": [
+        {
+          "keyword": "creamy ramen recipe",
+          "avgPosition": 3,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "how do you make ramen creamy",
+          "avgPosition": 2,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "how to make spicy miso ramen",
+          "avgPosition": 92,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "tograshi",
+          "avgPosition": 4,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "what is spicy miso ramen",
+          "avgPosition": 82.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 7
+    },
+    "/en/recipes/crispy-vegan-calamari/": {
+      "queries": [
+        {
+          "keyword": "calamari vegan",
+          "avgPosition": 65,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "fake calamari rings",
+          "avgPosition": 3,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "mushroom calamari",
+          "avgPosition": 61,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "oyster mushroom calamari",
+          "avgPosition": 47,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegan calamari",
+          "avgPosition": 42.7,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegane calamares",
+          "avgPosition": 56,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegetarian calamari",
+          "avgPosition": 60,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 12
+    },
+    "/en/recipes/lemon-posset-brulee/": {
+      "queries": [
+        {
+          "keyword": "already cooked",
+          "avgPosition": 6,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "brulee lemon",
+          "avgPosition": 67,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "bruleed lemon",
+          "avgPosition": 57,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "fine dining lemon desserts",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "lemon",
+          "avgPosition": 3,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "lemon brulee",
+          "avgPosition": 39.5,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "lemon brulee recipe",
+          "avgPosition": 71,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "lemon posset brulee",
+          "avgPosition": 21.2,
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0
+        },
+        {
+          "keyword": "lemon posset brûlée",
+          "avgPosition": 34.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "with lemons",
+          "avgPosition": 2,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 19
+    },
+    "/en/recipes/quinoa-crusted-salmon/": {
+      "queries": [
+        {
+          "keyword": "quinoa crusted fish",
+          "avgPosition": 7.8,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "quinoa crusted salmon",
+          "avgPosition": 23.7,
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 11
+    },
+    "/en/reviews/mckiernan-montreal/": {
+      "queries": [
+        {
+          "keyword": "bomba schnitzel",
+          "avgPosition": 8.9,
+          "clicks": 0,
+          "impressions": 16,
+          "ctr": 0
+        },
+        {
+          "keyword": "bomba schnitzel vs jager schnitzel",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "mckiernan",
+          "avgPosition": 41,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "mckiernan montreal",
+          "avgPosition": 38.3,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "mckiernan mtl",
+          "avgPosition": 40,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "mckiernan photos",
           "avgPosition": 45,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "mckiernan reservation",
+          "avgPosition": 10,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "mckiernan rôtisserie",
+          "avgPosition": 24.8,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "mckiernan rôtisserie photos",
+          "avgPosition": 2,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -114,447 +569,158 @@
           "ctr": 0
         }
       ],
-      "totalClicks": 1,
-      "totalImpressions": 41
-    },
-    "/en/": {
-      "queries": [
-        {
-          "keyword": "days dish",
-          "avgPosition": 23,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
       "totalClicks": 0,
-      "totalImpressions": 1
-    },
-    "/en/articles/best-cutting-board-material/": {
-      "queries": [
-        {
-          "keyword": "best cutting board material",
-          "avgPosition": 21,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "best material for chopping board",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "best material for cutting board",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "best material for cutting boards",
-          "avgPosition": 45.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "chopping boards for kitchen",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "cutting board brands",
-          "avgPosition": 5,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "deuter cutting board review",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "gigabyte cutting board review 2024",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "maui jim cutting board review",
-          "avgPosition": 12,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "saatva cutting board review 2024",
-          "avgPosition": 12,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "what is the best chopping board material",
-          "avgPosition": 71,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "what is the best cutting board for raw meat",
-          "avgPosition": 6,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "what is the best material for cutting board",
-          "avgPosition": 46,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "what is the best type of cutting board to use",
-          "avgPosition": 5,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "what material is best for a cutting board",
-          "avgPosition": 49,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 18
-    },
-    "/en/recipes/3-day-aged-miso-duck-breast/": {
-      "queries": [
-        {
-          "keyword": "miso duck",
-          "avgPosition": 6,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "miso duck breast",
-          "avgPosition": 5.7,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 5
-    },
-    "/en/recipes/bold-spicy-miso-ramen/": {
-      "queries": [
-        {
-          "keyword": "miso ramen bar menu",
-          "avgPosition": 11,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "spicy miso",
-          "avgPosition": 86,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "spicy miso ramen",
-          "avgPosition": 37,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 5
-    },
-    "/en/recipes/crispy-vegan-calamari/": {
-      "queries": [
-        {
-          "keyword": "calamari vegan",
-          "avgPosition": 64,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "calamari vegetarian",
-          "avgPosition": 68,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "mushroom calamari",
-          "avgPosition": 60,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "oyster mushroom calamari",
-          "avgPosition": 44,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegan calamari",
-          "avgPosition": 40.8,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegan squid",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegane calamares",
-          "avgPosition": 54,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegetarian calamari",
-          "avgPosition": 68.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 13
-    },
-    "/en/recipes/lemon-posset-brulee/": {
-      "queries": [
-        {
-          "keyword": "bruleed lemon",
-          "avgPosition": 59.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon brulee",
-          "avgPosition": 77,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon glaze for blueberry scones",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon glaze for bundt cake",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon glaze for cake",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon glaze for cookies",
-          "avgPosition": 4,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon glaze for pound cake",
-          "avgPosition": 5,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon posset brulee",
-          "avgPosition": 38,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon posset brûlée",
-          "avgPosition": 20,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "yes",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "как сделать корочку",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 17
+      "totalImpressions": 31
     },
     "/en/reviews/moccione-montreal/": {
       "queries": [
         {
           "keyword": "moccione",
-          "avgPosition": 31,
+          "avgPosition": 32,
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0
         },
         {
           "keyword": "moccione menu",
-          "avgPosition": 50,
+          "avgPosition": 12,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "moccione pizza",
-          "avgPosition": 52,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "moccione pizza montreal",
-          "avgPosition": 53,
+          "keyword": "moccione montreal",
+          "avgPosition": 33,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
           "keyword": "moccione reviews",
-          "avgPosition": 11,
+          "avgPosition": 10.2,
           "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "what are the price range",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
+          "impressions": 6,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 7
+      "totalImpressions": 9
     },
-    "/en/reviews/othym-montreal/": {
+    "/fr/articles/anova-vs-joule-comparatif-sous-vide/": {
       "queries": [
         {
-          "keyword": "o-thym reviews",
-          "avgPosition": 8,
+          "keyword": "joule vs anova",
+          "avgPosition": 3,
           "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "othym",
-          "avgPosition": 10,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        },
-        {
-          "keyword": "othym michelin",
-          "avgPosition": 4,
-          "clicks": 0,
-          "impressions": 1,
+          "impressions": 4,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 6
+      "totalImpressions": 4
     },
     "/fr/critiques/mckiernan-montreal/": {
       "queries": [
         {
           "keyword": "bomba schnitzel",
-          "avgPosition": 5.6,
+          "avgPosition": 8.8,
           "clicks": 0,
-          "impressions": 19,
+          "impressions": 8,
           "ctr": 0
         },
         {
-          "keyword": "brunch lachine",
-          "avgPosition": 9,
+          "keyword": "mckiernan",
+          "avgPosition": 36,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "mckiernan brunch",
-          "avgPosition": 9,
+          "keyword": "mckiernan rôtisserie",
+          "avgPosition": 40,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 21
+      "totalImpressions": 10
     },
     "/fr/critiques/moccione-montreal/": {
       "queries": [
         {
-          "keyword": "moccione reservation",
+          "keyword": "avis sur moccione",
           "avgPosition": 11,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "restaurant italien villeray",
+          "avgPosition": 16,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "restaurant moccione avis",
+          "avgPosition": 7,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 1
+      "totalImpressions": 3
+    },
+    "/fr/critiques/othym-montreal/": {
+      "queries": [
+        {
+          "keyword": "avis sur othym",
+          "avgPosition": 12,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "o-thym",
+          "avgPosition": 27,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "othym michelin",
+          "avgPosition": 10,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 5
     },
     "/fr/recettes/calamars-vegetaliens-croustillants/": {
       "queries": [
         {
           "keyword": "calamar vegan",
-          "avgPosition": 7.6,
+          "avgPosition": 6,
           "clicks": 0,
-          "impressions": 7,
+          "impressions": 5,
+          "ctr": 0
+        },
+        {
+          "keyword": "calamars vegan",
+          "avgPosition": 6,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "faux calamar",
+          "avgPosition": 3,
+          "clicks": 0,
+          "impressions": 1,
           "ctr": 0
         },
         {
@@ -563,90 +729,62 @@
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
-        },
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 8
+    },
+    "/fr/recettes/magret-canard-miso-3-jours/": {
+      "queries": [
         {
-          "keyword": "vegan calamari",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "calamar vegan",
+          "keyword": "eventail de magret de canard",
           "avgPosition": 10,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "calamar vegan",
-          "avgPosition": 8.2,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        },
-        {
-          "keyword": "calamar vegan",
-          "avgPosition": 8.2,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        },
-        {
-          "keyword": "calamar vegan",
-          "avgPosition": 8.2,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 25
-    },
-    "/fr/recettes/magret-canard-miso-3-jours/": {
-      "queries": [
-        {
           "keyword": "magret de canard recette 3 fois par jour",
           "avgPosition": 1,
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
       "totalImpressions": 2
     },
-    "/fr/recettes/posset-brulee-au-citron/": {
+    "/fr/recettes/saumon-en-croute-de-quinoa/": {
       "queries": [
         {
-          "keyword": "lemon posset brule",
-          "avgPosition": 9,
+          "keyword": "pate d'aji amarillo",
+          "avgPosition": 5,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "lemon posset brulee",
-          "avgPosition": 7.7,
+          "keyword": "recette quinoa chaud avec poisson",
+          "avgPosition": 1,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "posset brulee",
-          "avgPosition": 4,
+          "keyword": "saumon nikkei",
+          "avgPosition": 8.5,
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 5
+      "totalImpressions": 4
     }
   },
   "dateRange": {
-    "start": "2026-06-19",
-    "end": "2026-06-26"
+    "start": "2026-06-26",
+    "end": "2026-07-03"
   },
-  "rowCount": 79
+  "rowCount": 97
 }

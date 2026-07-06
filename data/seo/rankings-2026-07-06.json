@@ -1,0 +1,3146 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-06T12:03:18.356Z",
+  "dateRange": {
+    "start": "2026-06-26",
+    "end": "2026-07-03"
+  },
+  "config": {
+    "serpLocale": "en",
+    "serpCountry": "ca",
+    "keywordLimit": 60
+  },
+  "derivedKeywords": [
+    {
+      "keyword": "3-day miso duck breast crisp skin",
+      "source": "title",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "miso duck breast recipe",
+      "source": "keywords",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy skin duck breast date night",
+      "source": "keywords",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "3 day miso cured duck",
+      "source": "keywords",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "japanese-french recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/3-day-aged-miso-duck-breast/",
+      "lang": "en"
+    },
+    {
+      "keyword": "slow-cooked beef ragu with pappardelle pasta",
+      "source": "title",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night italian pasta recipe",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "slow cooked beef ragu for two",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic pappardelle dinner recipe",
+      "source": "keywords",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/beef-ragu-pappardelle/",
+      "lang": "en"
+    },
+    {
+      "keyword": "bold spicy miso ramen restaurant-style",
+      "source": "title",
+      "url": "/en/recipes/bold-spicy-miso-ramen/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spicy miso ramen recipe",
+      "source": "keywords",
+      "url": "/en/recipes/bold-spicy-miso-ramen/",
+      "lang": "en"
+    },
+    {
+      "keyword": "restaurant-style miso ramen at home",
+      "source": "keywords",
+      "url": "/en/recipes/bold-spicy-miso-ramen/",
+      "lang": "en"
+    },
+    {
+      "keyword": "bold spicy miso ramen for two",
+      "source": "keywords",
+      "url": "/en/recipes/bold-spicy-miso-ramen/",
+      "lang": "en"
+    },
+    {
+      "keyword": "japanese recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/bold-spicy-miso-ramen/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy brussels sprouts salad",
+      "source": "title",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy brussels sprouts salad recipe",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night appetizer salad",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "fish sauce vinaigrette dressing recipe",
+      "source": "keywords",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "southeast asian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/brussels-sprouts-salad/",
+      "lang": "en"
+    },
+    {
+      "keyword": "authentic cacio e pepe recipe",
+      "source": "title",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic italian pasta for two",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night cacio e pepe dinner",
+      "source": "keywords",
+      "url": "/en/recipes/cacio-e-pepe/",
+      "lang": "en"
+    },
+    {
+      "keyword": "cauliflower steaks with romesco sauce",
+      "source": "title",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "roasted cauliflower steak with romesco",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vegan date night dinner recipe",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "impressive plant-based main course",
+      "source": "keywords",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spanish recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/cauliflower-steak-with-romesco-sauce/",
+      "lang": "en"
+    },
+    {
+      "keyword": "chocolate tofu pudding recipe",
+      "source": "title",
+      "url": "/en/recipes/chocolate-tofu-pudding/",
+      "lang": "en"
+    },
+    {
+      "keyword": "healthy chocolate pudding date night",
+      "source": "keywords",
+      "url": "/en/recipes/chocolate-tofu-pudding/",
+      "lang": "en"
+    },
+    {
+      "keyword": "candied cacao nibs dessert",
+      "source": "keywords",
+      "url": "/en/recipes/chocolate-tofu-pudding/",
+      "lang": "en"
+    },
+    {
+      "keyword": "fusion recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/chocolate-tofu-pudding/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy vegan calamari recipe",
+      "source": "title",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "vegan calamari king oyster mushroom",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "crispy plant-based appetizer recipe",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night vegan starter idea",
+      "source": "keywords",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "mediterranean recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/crispy-vegan-calamari/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spicy gochujang-kimchi seafood bucatini",
+      "source": "title",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "gochujang seafood pasta recipe",
+      "source": "keywords",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "kimchi bucatini date night",
+      "source": "keywords",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "spicy korean italian fusion pasta",
+      "source": "keywords",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "korean-italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/gochujang-kimchi-seafood-bucatini/",
+      "lang": "en"
+    },
+    {
+      "keyword": "gochujang lamb meatballs with kabocha",
+      "source": "title",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lamb meatballs gochujang glaze recipe",
+      "source": "keywords",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "kabocha squash puree miso",
+      "source": "keywords",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "date night lamb meatball dinner",
+      "source": "keywords",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "korean-japanese recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/lamb-meatballs-gochujang-glaze/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lemon posset brulee no-bake dessert",
+      "source": "title",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "lemon posset brulee recipe",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "romantic date night dessert easy",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "no bake dessert for two",
+      "source": "keywords",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "british recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/lemon-posset-brulee/",
+      "lang": "en"
+    },
+    {
+      "keyword": "miso udon carbonara silky, no-cream",
+      "source": "title",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "miso udon carbonara recipe",
+      "source": "keywords",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "no cream carbonara with udon noodles",
+      "source": "keywords",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "japanese italian fusion pasta date night",
+      "source": "keywords",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "japanese-italian recipe",
+      "source": "cuisine",
+      "url": "/en/recipes/miso-udon-carbonara/",
+      "lang": "en"
+    },
+    {
+      "keyword": "northern thai beef tartare recipe",
+      "source": "title",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "laab beef tartare date night",
+      "source": "keywords",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    },
+    {
+      "keyword": "raw beef tartare thai herbs",
+      "source": "keywords",
+      "url": "/en/recipes/northern-thai-beef-tartare/",
+      "lang": "en"
+    }
+  ],
+  "pages": {
+    "/en/reviews/othym-montreal/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "othym michelin",
+            "avgPosition": 6.3,
+            "clicks": 1,
+            "impressions": 6,
+            "ctr": 0.167
+          },
+          {
+            "keyword": "o thym",
+            "avgPosition": 50,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "o thym montreal",
+            "avgPosition": 42.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "o thym restaurant montreal",
+            "avgPosition": 38,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "o'thym montreal",
+            "avgPosition": 39.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "o-thym",
+            "avgPosition": 33,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "o-thym montreal",
+            "avgPosition": 23,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "o-thym photos",
+            "avgPosition": 40,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "o-thym reviews",
+            "avgPosition": 9.2,
+            "clicks": 0,
+            "impressions": 22,
+            "ctr": 0
+          },
+          {
+            "keyword": "othym",
+            "avgPosition": 13,
+            "clicks": 0,
+            "impressions": 10,
+            "ctr": 0
+          },
+          {
+            "keyword": "othym restaurant",
+            "avgPosition": 20,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "restaurant o thym",
+            "avgPosition": 56,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "restaurant othym",
+            "avgPosition": 21.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "restaurant othym montreal",
+            "avgPosition": 20,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 1,
+        "totalImpressions": 53
+      },
+      "serp": null
+    },
+    "/en/articles/anova-vs-joule-sous-vide-comparison/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "anova precision cooker pro vs breville joule",
+            "avgPosition": 9,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "anova sous vide comparison chart",
+            "avgPosition": 22,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "anova vs joule sous vide",
+            "avgPosition": 4,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "joule immersion circulator",
+            "avgPosition": 11,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "joule sous vide",
+            "avgPosition": 31,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 6
+      },
+      "serp": null
+    },
+    "/en/articles/best-cutting-board-material/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "best cutting board",
+            "avgPosition": 3.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "best cutting board for ceramic knives",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "best cutting board material",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "best cutting board materials",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "best material for cutting board",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "can you put a wooden cutting board in dishwasher",
+            "avgPosition": 2,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "for raw meat",
+            "avgPosition": 4,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "hasegawa pro-pe lite cutting board () reviews",
+            "avgPosition": 10,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "polyvinyl acetate cutting board",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "the best cutting board material",
+            "avgPosition": 59,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "what is the best cutting board material",
+            "avgPosition": 58,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "what is the best material for cutting boards",
+            "avgPosition": 64.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "what is the best type of cutting board to use",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "what material is best for cutting boards",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "what's the best cutting board material",
+            "avgPosition": 44,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "will a titanium cutting board scratch",
+            "avgPosition": 2,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "wirecutter best cutting board",
+            "avgPosition": 5,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "worktop saver",
+            "avgPosition": 6,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 25
+      },
+      "serp": null
+    },
+    "/en/recipes/3-day-aged-miso-duck-breast/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "how to cure burn skin",
+            "avgPosition": 9,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "miso duck",
+            "avgPosition": 8,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "miso duck breast",
+            "avgPosition": 6,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 5
+      },
+      "serp": {
+        "primaryKeyword": "3-day miso duck breast crisp skin",
+        "position": 3,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "seriouseats.com",
+            "position": 1
+          },
+          {
+            "domain": "facebook.com",
+            "position": 2
+          },
+          {
+            "domain": "recipetineats.com",
+            "position": 4
+          },
+          {
+            "domain": "tokusen.store",
+            "position": 5
+          },
+          {
+            "domain": "thecoeliacsrevenge.com",
+            "position": 6
+          }
+        ]
+      }
+    },
+    "/en/recipes/bold-spicy-miso-ramen/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "creamy ramen recipe",
+            "avgPosition": 3,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "how do you make ramen creamy",
+            "avgPosition": 2,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "how to make spicy miso ramen",
+            "avgPosition": 92,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "tograshi",
+            "avgPosition": 4,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "what is spicy miso ramen",
+            "avgPosition": 82.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 7
+      },
+      "serp": {
+        "primaryKeyword": "bold spicy miso ramen restaurant-style",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "justonecookbook.com",
+            "position": 1
+          },
+          {
+            "domain": "ministryofcurry.com",
+            "position": 2
+          },
+          {
+            "domain": "dishingouthealth.com",
+            "position": 3
+          },
+          {
+            "domain": "instagram.com",
+            "position": 4
+          },
+          {
+            "domain": "sandravalvassori.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/crispy-vegan-calamari/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "calamari vegan",
+            "avgPosition": 65,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "fake calamari rings",
+            "avgPosition": 3,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "mushroom calamari",
+            "avgPosition": 61,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "oyster mushroom calamari",
+            "avgPosition": 47,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "vegan calamari",
+            "avgPosition": 42.7,
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0
+          },
+          {
+            "keyword": "vegane calamares",
+            "avgPosition": 56,
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0
+          },
+          {
+            "keyword": "vegetarian calamari",
+            "avgPosition": 60,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 12
+      },
+      "serp": {
+        "primaryKeyword": "crispy vegan calamari recipe",
+        "position": 6,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "hotforfoodblog.com",
+            "position": 1
+          },
+          {
+            "domain": "itdoesnttastelikechicken.com",
+            "position": 2
+          },
+          {
+            "domain": "sweetsimplevegan.com",
+            "position": 3
+          },
+          {
+            "domain": "kathysvegankitchen.com",
+            "position": 4
+          },
+          {
+            "domain": "apinchofparsley.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/lemon-posset-brulee/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "already cooked",
+            "avgPosition": 6,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "brulee lemon",
+            "avgPosition": 67,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "bruleed lemon",
+            "avgPosition": 57,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "fine dining lemon desserts",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "lemon",
+            "avgPosition": 3,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "lemon brulee",
+            "avgPosition": 39.5,
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0
+          },
+          {
+            "keyword": "lemon brulee recipe",
+            "avgPosition": 71,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "lemon posset brulee",
+            "avgPosition": 21.2,
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0
+          },
+          {
+            "keyword": "lemon posset brûlée",
+            "avgPosition": 34.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "with lemons",
+            "avgPosition": 2,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 19
+      },
+      "serp": {
+        "primaryKeyword": "lemon posset brulee no-bake dessert",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "natashaskitchen.com",
+            "position": 1
+          },
+          {
+            "domain": "facebook.com",
+            "position": 2
+          },
+          {
+            "domain": "youtube.com",
+            "position": 3
+          },
+          {
+            "domain": "notquitenigella.com",
+            "position": 4
+          },
+          {
+            "domain": "westoftheloop.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/quinoa-crusted-salmon/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "quinoa crusted fish",
+            "avgPosition": 7.8,
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0
+          },
+          {
+            "keyword": "quinoa crusted salmon",
+            "avgPosition": 23.7,
+            "clicks": 0,
+            "impressions": 7,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 11
+      },
+      "serp": null
+    },
+    "/en/reviews/mckiernan-montreal/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "bomba schnitzel",
+            "avgPosition": 8.9,
+            "clicks": 0,
+            "impressions": 16,
+            "ctr": 0
+          },
+          {
+            "keyword": "bomba schnitzel vs jager schnitzel",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "mckiernan",
+            "avgPosition": 41,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "mckiernan montreal",
+            "avgPosition": 38.3,
+            "clicks": 0,
+            "impressions": 3,
+            "ctr": 0
+          },
+          {
+            "keyword": "mckiernan mtl",
+            "avgPosition": 40,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "mckiernan photos",
+            "avgPosition": 45,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "mckiernan reservation",
+            "avgPosition": 10,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "mckiernan rôtisserie",
+            "avgPosition": 24.8,
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0
+          },
+          {
+            "keyword": "mckiernan rôtisserie photos",
+            "avgPosition": 2,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "what are the reviews",
+            "avgPosition": 2,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 31
+      },
+      "serp": null
+    },
+    "/en/reviews/moccione-montreal/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "moccione",
+            "avgPosition": 32,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "moccione menu",
+            "avgPosition": 12,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "moccione montreal",
+            "avgPosition": 33,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "moccione reviews",
+            "avgPosition": 10.2,
+            "clicks": 0,
+            "impressions": 6,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 9
+      },
+      "serp": null
+    },
+    "/fr/articles/anova-vs-joule-comparatif-sous-vide/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "joule vs anova",
+            "avgPosition": 3,
+            "clicks": 0,
+            "impressions": 4,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 4
+      },
+      "serp": null
+    },
+    "/fr/critiques/mckiernan-montreal/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "bomba schnitzel",
+            "avgPosition": 8.8,
+            "clicks": 0,
+            "impressions": 8,
+            "ctr": 0
+          },
+          {
+            "keyword": "mckiernan",
+            "avgPosition": 36,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "mckiernan rôtisserie",
+            "avgPosition": 40,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 10
+      },
+      "serp": null
+    },
+    "/fr/critiques/moccione-montreal/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "avis sur moccione",
+            "avgPosition": 11,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "restaurant italien villeray",
+            "avgPosition": 16,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "restaurant moccione avis",
+            "avgPosition": 7,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 3
+      },
+      "serp": null
+    },
+    "/fr/critiques/othym-montreal/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "avis sur othym",
+            "avgPosition": 12,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          },
+          {
+            "keyword": "o-thym",
+            "avgPosition": 27,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "othym michelin",
+            "avgPosition": 10,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 5
+      },
+      "serp": null
+    },
+    "/fr/recettes/calamars-vegetaliens-croustillants/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "calamar vegan",
+            "avgPosition": 6,
+            "clicks": 0,
+            "impressions": 5,
+            "ctr": 0
+          },
+          {
+            "keyword": "calamars vegan",
+            "avgPosition": 6,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "faux calamar",
+            "avgPosition": 3,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "texture fondante",
+            "avgPosition": 2,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 8
+      },
+      "serp": null
+    },
+    "/fr/recettes/magret-canard-miso-3-jours/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "eventail de magret de canard",
+            "avgPosition": 10,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "magret de canard recette 3 fois par jour",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 2
+      },
+      "serp": null
+    },
+    "/fr/recettes/saumon-en-croute-de-quinoa/": {
+      "gsc": {
+        "queries": [
+          {
+            "keyword": "pate d'aji amarillo",
+            "avgPosition": 5,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "recette quinoa chaud avec poisson",
+            "avgPosition": 1,
+            "clicks": 0,
+            "impressions": 1,
+            "ctr": 0
+          },
+          {
+            "keyword": "saumon nikkei",
+            "avgPosition": 8.5,
+            "clicks": 0,
+            "impressions": 2,
+            "ctr": 0
+          }
+        ],
+        "totalClicks": 0,
+        "totalImpressions": 4
+      },
+      "serp": null
+    },
+    "/en/recipes/beef-ragu-pappardelle/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "slow-cooked beef ragu with pappardelle pasta",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "recipetineats.com",
+            "position": 1
+          },
+          {
+            "domain": "pinchofyum.com",
+            "position": 2
+          },
+          {
+            "domain": "littlespicejar.com",
+            "position": 3
+          },
+          {
+            "domain": "foodnetwork.com",
+            "position": 4
+          },
+          {
+            "domain": "realsimple.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/brussels-sprouts-salad/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "crispy brussels sprouts salad",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "halfbakedharvest.com",
+            "position": 1
+          },
+          {
+            "domain": "themom100.com",
+            "position": 2
+          },
+          {
+            "domain": "vegetarianventures.com",
+            "position": 3
+          },
+          {
+            "domain": "lastingredient.com",
+            "position": 4
+          },
+          {
+            "domain": "loveandlemons.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/cacio-e-pepe/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "authentic cacio e pepe recipe",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "anitalianinmykitchen.com",
+            "position": 1
+          },
+          {
+            "domain": "urbanfarmie.com",
+            "position": 2
+          },
+          {
+            "domain": "pinabresciani.com",
+            "position": 3
+          },
+          {
+            "domain": "seriouseats.com",
+            "position": 4
+          },
+          {
+            "domain": "christinascucina.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/cauliflower-steak-with-romesco-sauce/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "cauliflower steaks with romesco sauce",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "feastingathome.com",
+            "position": 1
+          },
+          {
+            "domain": "cookprimalgourmet.com",
+            "position": 2
+          },
+          {
+            "domain": "wearesovegan.com",
+            "position": 3
+          },
+          {
+            "domain": "thefeastlocal.com",
+            "position": 4
+          },
+          {
+            "domain": "supperinthesuburbs.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/chocolate-tofu-pudding/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "chocolate tofu pudding recipe",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "thefullhelping.com",
+            "position": 1
+          },
+          {
+            "domain": "aseasyasapplepie.com",
+            "position": 2
+          },
+          {
+            "domain": "sarahsvegankitchen.com",
+            "position": 3
+          },
+          {
+            "domain": "allrecipes.com",
+            "position": 4
+          },
+          {
+            "domain": "lovelydelites.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/gochujang-kimchi-seafood-bucatini/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "spicy gochujang-kimchi seafood bucatini",
+        "position": 2,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "chrisseenplace.com",
+            "position": 1
+          },
+          {
+            "domain": "tiffycooks.com",
+            "position": 3
+          },
+          {
+            "domain": "seriouseats.com",
+            "position": 4
+          },
+          {
+            "domain": "mxriyum.com",
+            "position": 5
+          },
+          {
+            "domain": "thesoupspoon.com",
+            "position": 6
+          }
+        ]
+      }
+    },
+    "/en/recipes/lamb-meatballs-gochujang-glaze/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "gochujang lamb meatballs with kabocha",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "starchefs.com",
+            "position": 1
+          },
+          {
+            "domain": "food52.com",
+            "position": 2
+          },
+          {
+            "domain": "holisticfoodie.com",
+            "position": 3
+          },
+          {
+            "domain": "streetsmartnutrition.com",
+            "position": 4
+          },
+          {
+            "domain": "halfbakedharvest.com",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/miso-udon-carbonara/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "miso udon carbonara silky, no-cream",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "adayinthekitchen.com",
+            "position": 1
+          },
+          {
+            "domain": "tiffycooks.com",
+            "position": 2
+          },
+          {
+            "domain": "facebook.com",
+            "position": 3
+          },
+          {
+            "domain": "reddit.com",
+            "position": 4
+          },
+          {
+            "domain": "new.milk.org",
+            "position": 5
+          }
+        ]
+      }
+    },
+    "/en/recipes/northern-thai-beef-tartare/": {
+      "gsc": null,
+      "serp": {
+        "primaryKeyword": "northern thai beef tartare recipe",
+        "position": null,
+        "featured": false,
+        "topCompetitors": [
+          {
+            "domain": "multicarbs.com",
+            "position": 1
+          },
+          {
+            "domain": "reddit.com",
+            "position": 2
+          },
+          {
+            "domain": "instagram.com",
+            "position": 3
+          },
+          {
+            "domain": "farmtofork.com.au",
+            "position": 4
+          },
+          {
+            "domain": "youtube.com",
+            "position": 5
+          }
+        ]
+      }
+    }
+  },
+  "serpResults": {
+    "3-day miso duck breast crisp skin": {
+      "position": 3,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "facebook.com",
+          "position": 2
+        },
+        {
+          "domain": "recipetineats.com",
+          "position": 4
+        },
+        {
+          "domain": "tokusen.store",
+          "position": 5
+        },
+        {
+          "domain": "thecoeliacsrevenge.com",
+          "position": 6
+        }
+      ]
+    },
+    "miso duck breast recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "tokusen.store",
+          "position": 1
+        },
+        {
+          "domain": "edibleberkshires.com",
+          "position": 2
+        },
+        {
+          "domain": "thecoeliacsrevenge.com",
+          "position": 3
+        },
+        {
+          "domain": "gustotv.com",
+          "position": 4
+        },
+        {
+          "domain": "foodforhunters.blogspot.com",
+          "position": 5
+        }
+      ]
+    },
+    "crispy skin duck breast date night": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "recipetineats.com",
+          "position": 1
+        },
+        {
+          "domain": "alexandracooks.com",
+          "position": 2
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 3
+        },
+        {
+          "domain": "gressinghamduck.co.uk",
+          "position": 4
+        },
+        {
+          "domain": "wellseasonedstudio.com",
+          "position": 5
+        }
+      ]
+    },
+    "3 day miso cured duck": {
+      "position": 2,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "facebook.com",
+          "position": 1
+        },
+        {
+          "domain": "reddit.com",
+          "position": 3
+        },
+        {
+          "domain": "umamimart.com",
+          "position": 4
+        },
+        {
+          "domain": "tokusen.store",
+          "position": 5
+        },
+        {
+          "domain": "instagram.com",
+          "position": 6
+        }
+      ]
+    },
+    "japanese-french recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "eatingwithkirby.com",
+          "position": 1
+        },
+        {
+          "domain": "kikkomanusa.com",
+          "position": 2
+        },
+        {
+          "domain": "sudachirecipes.com",
+          "position": 3
+        },
+        {
+          "domain": "nicolaspujol.com",
+          "position": 4
+        },
+        {
+          "domain": "pinterest.com",
+          "position": 5
+        }
+      ]
+    },
+    "slow-cooked beef ragu with pappardelle pasta": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "recipetineats.com",
+          "position": 1
+        },
+        {
+          "domain": "pinchofyum.com",
+          "position": 2
+        },
+        {
+          "domain": "littlespicejar.com",
+          "position": 3
+        },
+        {
+          "domain": "foodnetwork.com",
+          "position": 4
+        },
+        {
+          "domain": "realsimple.com",
+          "position": 5
+        }
+      ]
+    },
+    "date night italian pasta recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "asimplepalate.com",
+          "position": 1
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 2
+        },
+        {
+          "domain": "food52.com",
+          "position": 3
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 4
+        },
+        {
+          "domain": "bromabakery.com",
+          "position": 5
+        }
+      ]
+    },
+    "slow cooked beef ragu for two": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "recipetineats.com",
+          "position": 1
+        },
+        {
+          "domain": "simplehomeedit.com",
+          "position": 2
+        },
+        {
+          "domain": "kitchensanctuary.com",
+          "position": 3
+        },
+        {
+          "domain": "whatmollymade.com",
+          "position": 4
+        },
+        {
+          "domain": "pinchofyum.com",
+          "position": 5
+        }
+      ]
+    },
+    "romantic pappardelle dinner recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "delallo.com",
+          "position": 1
+        },
+        {
+          "domain": "cookingwithayeh.com",
+          "position": 2
+        },
+        {
+          "domain": "cravingsomethinghealthy.com",
+          "position": 3
+        },
+        {
+          "domain": "lastingredient.com",
+          "position": 4
+        },
+        {
+          "domain": "youtube.com",
+          "position": 5
+        }
+      ]
+    },
+    "italian recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "italianchef.com",
+          "position": 1
+        },
+        {
+          "domain": "lacucinaitaliana.com",
+          "position": 2
+        },
+        {
+          "domain": "giallozafferano.com",
+          "position": 3
+        },
+        {
+          "domain": "recipetineats.com",
+          "position": 4
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 5
+        }
+      ]
+    },
+    "bold spicy miso ramen restaurant-style": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "justonecookbook.com",
+          "position": 1
+        },
+        {
+          "domain": "ministryofcurry.com",
+          "position": 2
+        },
+        {
+          "domain": "dishingouthealth.com",
+          "position": 3
+        },
+        {
+          "domain": "instagram.com",
+          "position": 4
+        },
+        {
+          "domain": "sandravalvassori.com",
+          "position": 5
+        }
+      ]
+    },
+    "spicy miso ramen recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "dishingouthealth.com",
+          "position": 1
+        },
+        {
+          "domain": "sandravalvassori.com",
+          "position": 2
+        },
+        {
+          "domain": "justonecookbook.com",
+          "position": 3
+        },
+        {
+          "domain": "reddit.com",
+          "position": 4
+        },
+        {
+          "domain": "tiffycooks.com",
+          "position": 5
+        }
+      ]
+    },
+    "restaurant-style miso ramen at home": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "justonecookbook.com",
+          "position": 1
+        },
+        {
+          "domain": "inquiringchef.com",
+          "position": 2
+        },
+        {
+          "domain": "pickledplum.com",
+          "position": 3
+        },
+        {
+          "domain": "dishingouthealth.com",
+          "position": 4
+        },
+        {
+          "domain": "dinnerbydennis.com",
+          "position": 5
+        }
+      ]
+    },
+    "bold spicy miso ramen for two": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "justonecookbook.com",
+          "position": 1
+        },
+        {
+          "domain": "ministryofcurry.com",
+          "position": 2
+        },
+        {
+          "domain": "ladyandpups.com",
+          "position": 3
+        },
+        {
+          "domain": "feastingathome.com",
+          "position": 4
+        },
+        {
+          "domain": "facebook.com",
+          "position": 5
+        }
+      ]
+    },
+    "japanese recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "justonecookbook.com",
+          "position": 1
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 2
+        },
+        {
+          "domain": "japancentre.com",
+          "position": 3
+        },
+        {
+          "domain": "okonomikitchen.com",
+          "position": 4
+        },
+        {
+          "domain": "japan.recipetineats.com",
+          "position": 5
+        }
+      ]
+    },
+    "crispy brussels sprouts salad": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "halfbakedharvest.com",
+          "position": 1
+        },
+        {
+          "domain": "themom100.com",
+          "position": 2
+        },
+        {
+          "domain": "vegetarianventures.com",
+          "position": 3
+        },
+        {
+          "domain": "lastingredient.com",
+          "position": 4
+        },
+        {
+          "domain": "loveandlemons.com",
+          "position": 5
+        }
+      ]
+    },
+    "crispy brussels sprouts salad recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "halfbakedharvest.com",
+          "position": 1
+        },
+        {
+          "domain": "themom100.com",
+          "position": 2
+        },
+        {
+          "domain": "vegetarianventures.com",
+          "position": 3
+        },
+        {
+          "domain": "lastingredient.com",
+          "position": 4
+        },
+        {
+          "domain": "loveandlemons.com",
+          "position": 5
+        }
+      ]
+    },
+    "date night appetizer salad": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "loveandlemons.com",
+          "position": 1
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 2
+        },
+        {
+          "domain": "bibleoftaste.com",
+          "position": 3
+        },
+        {
+          "domain": "tastyrewards.com",
+          "position": 4
+        },
+        {
+          "domain": "acouplecooks.com",
+          "position": 5
+        }
+      ]
+    },
+    "fish sauce vinaigrette dressing recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "thedeliciouslife.com",
+          "position": 1
+        },
+        {
+          "domain": "thekitchn.com",
+          "position": 2
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 3
+        },
+        {
+          "domain": "food52.com",
+          "position": 4
+        },
+        {
+          "domain": "tastecooking.com",
+          "position": 5
+        }
+      ]
+    },
+    "southeast asian recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "foodandwine.com",
+          "position": 2
+        },
+        {
+          "domain": "pinterest.com",
+          "position": 3
+        },
+        {
+          "domain": "mission-food.com",
+          "position": 4
+        },
+        {
+          "domain": "asianinspirations.com.au",
+          "position": 5
+        }
+      ]
+    },
+    "authentic cacio e pepe recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "anitalianinmykitchen.com",
+          "position": 1
+        },
+        {
+          "domain": "urbanfarmie.com",
+          "position": 2
+        },
+        {
+          "domain": "pinabresciani.com",
+          "position": 3
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 4
+        },
+        {
+          "domain": "christinascucina.com",
+          "position": 5
+        }
+      ]
+    },
+    "romantic italian pasta for two": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "asimplepalate.com",
+          "position": 1
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 2
+        },
+        {
+          "domain": "quora.com",
+          "position": 3
+        },
+        {
+          "domain": "facebook.com",
+          "position": 4
+        },
+        {
+          "domain": "noplatelikehome.com",
+          "position": 5
+        }
+      ]
+    },
+    "date night cacio e pepe dinner": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "spoonforkbacon.com",
+          "position": 2
+        },
+        {
+          "domain": "loveandlemons.com",
+          "position": 3
+        },
+        {
+          "domain": "facebook.com",
+          "position": 4
+        },
+        {
+          "domain": "gimmesomeoven.com",
+          "position": 5
+        }
+      ]
+    },
+    "cauliflower steaks with romesco sauce": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "feastingathome.com",
+          "position": 1
+        },
+        {
+          "domain": "cookprimalgourmet.com",
+          "position": 2
+        },
+        {
+          "domain": "wearesovegan.com",
+          "position": 3
+        },
+        {
+          "domain": "thefeastlocal.com",
+          "position": 4
+        },
+        {
+          "domain": "supperinthesuburbs.com",
+          "position": 5
+        }
+      ]
+    },
+    "roasted cauliflower steak with romesco": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "feastingathome.com",
+          "position": 1
+        },
+        {
+          "domain": "cookprimalgourmet.com",
+          "position": 2
+        },
+        {
+          "domain": "thefeastlocal.com",
+          "position": 3
+        },
+        {
+          "domain": "wearesovegan.com",
+          "position": 4
+        },
+        {
+          "domain": "loveandlemons.com",
+          "position": 5
+        }
+      ]
+    },
+    "vegan date night dinner recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "mydarlingvegan.com",
+          "position": 1
+        },
+        {
+          "domain": "oohlalaitsvegan.com",
+          "position": 2
+        },
+        {
+          "domain": "floraandvino.com",
+          "position": 3
+        },
+        {
+          "domain": "bbcgoodfood.com",
+          "position": 4
+        },
+        {
+          "domain": "rabbitandwolves.com",
+          "position": 5
+        }
+      ]
+    },
+    "impressive plant-based main course": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "plantyou.com",
+          "position": 1
+        },
+        {
+          "domain": "feastingathome.com",
+          "position": 2
+        },
+        {
+          "domain": "bbcgoodfood.com",
+          "position": 3
+        },
+        {
+          "domain": "forksoverknives.com",
+          "position": 4
+        },
+        {
+          "domain": "thevegspace.co.uk",
+          "position": 5
+        }
+      ]
+    },
+    "spanish recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "seriouseats.com",
+          "position": 1
+        },
+        {
+          "domain": "spanishsabores.com",
+          "position": 2
+        },
+        {
+          "domain": "tienda.com",
+          "position": 3
+        },
+        {
+          "domain": "spanishrecipesbynuria.com",
+          "position": 4
+        },
+        {
+          "domain": "olivemagazine.com",
+          "position": 5
+        }
+      ]
+    },
+    "chocolate tofu pudding recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "thefullhelping.com",
+          "position": 1
+        },
+        {
+          "domain": "aseasyasapplepie.com",
+          "position": 2
+        },
+        {
+          "domain": "sarahsvegankitchen.com",
+          "position": 3
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 4
+        },
+        {
+          "domain": "lovelydelites.com",
+          "position": 5
+        }
+      ]
+    },
+    "healthy chocolate pudding date night": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "makingthymeforhealth.com",
+          "position": 1
+        },
+        {
+          "domain": "chocolatecoveredkatie.com",
+          "position": 2
+        },
+        {
+          "domain": "food52.com",
+          "position": 3
+        },
+        {
+          "domain": "elanaspantry.com",
+          "position": 4
+        },
+        {
+          "domain": "paleorunningmomma.com",
+          "position": 5
+        }
+      ]
+    },
+    "candied cacao nibs dessert": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "theglutenfreeaustrian.com",
+          "position": 1
+        },
+        {
+          "domain": "thespruceeats.com",
+          "position": 2
+        },
+        {
+          "domain": "davidlebovitz.com",
+          "position": 3
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 4
+        },
+        {
+          "domain": "pinterest.com",
+          "position": 5
+        }
+      ]
+    },
+    "fusion recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "thefeedfeed.com",
+          "position": 1
+        },
+        {
+          "domain": "chefsouschef.com",
+          "position": 2
+        },
+        {
+          "domain": "cooking-therapy.com",
+          "position": 3
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 4
+        },
+        {
+          "domain": "hellofresh.ca",
+          "position": 5
+        }
+      ]
+    },
+    "crispy vegan calamari recipe": {
+      "position": 6,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "hotforfoodblog.com",
+          "position": 1
+        },
+        {
+          "domain": "itdoesnttastelikechicken.com",
+          "position": 2
+        },
+        {
+          "domain": "sweetsimplevegan.com",
+          "position": 3
+        },
+        {
+          "domain": "kathysvegankitchen.com",
+          "position": 4
+        },
+        {
+          "domain": "apinchofparsley.com",
+          "position": 5
+        }
+      ]
+    },
+    "vegan calamari king oyster mushroom": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "sweetsimplevegan.com",
+          "position": 1
+        },
+        {
+          "domain": "hotforfoodblog.com",
+          "position": 2
+        },
+        {
+          "domain": "dailyvegan.recipes",
+          "position": 3
+        },
+        {
+          "domain": "theedgyveg.com",
+          "position": 4
+        },
+        {
+          "domain": "sidechef.com",
+          "position": 5
+        }
+      ]
+    },
+    "crispy plant-based appetizer recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "loveandlemons.com",
+          "position": 1
+        },
+        {
+          "domain": "forksoverknives.com",
+          "position": 2
+        },
+        {
+          "domain": "thefirstmess.com",
+          "position": 3
+        },
+        {
+          "domain": "plantyou.com",
+          "position": 4
+        },
+        {
+          "domain": "sharonpalmer.com",
+          "position": 5
+        }
+      ]
+    },
+    "date night vegan starter idea": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "vegangela.com",
+          "position": 1
+        },
+        {
+          "domain": "mydarlingvegan.com",
+          "position": 2
+        },
+        {
+          "domain": "bbcgoodfood.com",
+          "position": 3
+        },
+        {
+          "domain": "thefirstmess.com",
+          "position": 4
+        },
+        {
+          "domain": "greatbritishchefs.com",
+          "position": 5
+        }
+      ]
+    },
+    "mediterranean recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "themediterraneandish.com",
+          "position": 1
+        },
+        {
+          "domain": "mediterraneanliving.com",
+          "position": 2
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 3
+        },
+        {
+          "domain": "recipetineats.com",
+          "position": 4
+        },
+        {
+          "domain": "downshiftology.com",
+          "position": 5
+        }
+      ]
+    },
+    "spicy gochujang-kimchi seafood bucatini": {
+      "position": 2,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "chrisseenplace.com",
+          "position": 1
+        },
+        {
+          "domain": "tiffycooks.com",
+          "position": 3
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 4
+        },
+        {
+          "domain": "mxriyum.com",
+          "position": 5
+        },
+        {
+          "domain": "thesoupspoon.com",
+          "position": 6
+        }
+      ]
+    },
+    "gochujang seafood pasta recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "doobydobap.com",
+          "position": 1
+        },
+        {
+          "domain": "cooking.nytimes.com",
+          "position": 2
+        },
+        {
+          "domain": "tiffycooks.com",
+          "position": 3
+        },
+        {
+          "domain": "chrisseenplace.com",
+          "position": 4
+        },
+        {
+          "domain": "reddit.com",
+          "position": 5
+        }
+      ]
+    },
+    "kimchi bucatini date night": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "twoplaidaprons.com",
+          "position": 1
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 2
+        },
+        {
+          "domain": "instagram.com",
+          "position": 3
+        },
+        {
+          "domain": "thesubversivetable.com",
+          "position": 5
+        },
+        {
+          "domain": "norecipes.com",
+          "position": 6
+        }
+      ]
+    },
+    "spicy korean italian fusion pasta": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "takestwoeggs.com",
+          "position": 1
+        },
+        {
+          "domain": "eatfigsnotpigs.com",
+          "position": 2
+        },
+        {
+          "domain": "beatthebudget.com",
+          "position": 3
+        },
+        {
+          "domain": "theflouredcamera.com",
+          "position": 4
+        },
+        {
+          "domain": "reddit.com",
+          "position": 5
+        }
+      ]
+    },
+    "korean-italian recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "iheartumami.com",
+          "position": 1
+        },
+        {
+          "domain": "eatfigsnotpigs.com",
+          "position": 2
+        },
+        {
+          "domain": "theflouredcamera.com",
+          "position": 3
+        },
+        {
+          "domain": "facebook.com",
+          "position": 4
+        },
+        {
+          "domain": "takestwoeggs.com",
+          "position": 5
+        }
+      ]
+    },
+    "gochujang lamb meatballs with kabocha": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "starchefs.com",
+          "position": 1
+        },
+        {
+          "domain": "food52.com",
+          "position": 2
+        },
+        {
+          "domain": "holisticfoodie.com",
+          "position": 3
+        },
+        {
+          "domain": "streetsmartnutrition.com",
+          "position": 4
+        },
+        {
+          "domain": "halfbakedharvest.com",
+          "position": 5
+        }
+      ]
+    },
+    "lamb meatballs gochujang glaze recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "omgyummy.com",
+          "position": 1
+        },
+        {
+          "domain": "food52.com",
+          "position": 2
+        },
+        {
+          "domain": "starchefs.com",
+          "position": 3
+        },
+        {
+          "domain": "streetsmartnutrition.com",
+          "position": 4
+        },
+        {
+          "domain": "creative-culinary.com",
+          "position": 5
+        }
+      ]
+    },
+    "kabocha squash puree miso": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "heartbeetkitchen.com",
+          "position": 1
+        },
+        {
+          "domain": "mortarpestlecooking.com",
+          "position": 2
+        },
+        {
+          "domain": "amalgamkitchen.com",
+          "position": 3
+        },
+        {
+          "domain": "justonecookbook.com",
+          "position": 4
+        },
+        {
+          "domain": "nutsaboutgreens.com",
+          "position": 5
+        }
+      ]
+    },
+    "date night lamb meatball dinner": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "cooking.nytimes.com",
+          "position": 1
+        },
+        {
+          "domain": "whatsgabycooking.com",
+          "position": 2
+        },
+        {
+          "domain": "dudethatcookz.com",
+          "position": 3
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 4
+        },
+        {
+          "domain": "rachlmansfield.com",
+          "position": 5
+        }
+      ]
+    },
+    "korean-japanese recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "recipetineats.com",
+          "position": 1
+        },
+        {
+          "domain": "mykoreankitchen.com",
+          "position": 2
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 3
+        },
+        {
+          "domain": "purrfectbliss.com",
+          "position": 4
+        },
+        {
+          "domain": "quora.com",
+          "position": 5
+        }
+      ]
+    },
+    "lemon posset brulee no-bake dessert": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "natashaskitchen.com",
+          "position": 1
+        },
+        {
+          "domain": "facebook.com",
+          "position": 2
+        },
+        {
+          "domain": "youtube.com",
+          "position": 3
+        },
+        {
+          "domain": "notquitenigella.com",
+          "position": 4
+        },
+        {
+          "domain": "westoftheloop.com",
+          "position": 5
+        }
+      ]
+    },
+    "lemon posset brulee recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "xoxobella.com",
+          "position": 1
+        },
+        {
+          "domain": "notquitenigella.com",
+          "position": 2
+        },
+        {
+          "domain": "agoodtable.substack.com",
+          "position": 3
+        },
+        {
+          "domain": "happytummy702.com",
+          "position": 4
+        },
+        {
+          "domain": "fromourplace.ca",
+          "position": 5
+        }
+      ]
+    },
+    "romantic date night dessert easy": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "chocolatemoosey.com",
+          "position": 1
+        },
+        {
+          "domain": "realsimple.com",
+          "position": 2
+        },
+        {
+          "domain": "sallysbakingaddiction.com",
+          "position": 3
+        },
+        {
+          "domain": "tasteofhome.com",
+          "position": 4
+        },
+        {
+          "domain": "reddit.com",
+          "position": 5
+        }
+      ]
+    },
+    "no bake dessert for two": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "dessertfortwo.com",
+          "position": 1
+        },
+        {
+          "domain": "tasteofhome.com",
+          "position": 2
+        },
+        {
+          "domain": "sugarspunrun.com",
+          "position": 3
+        },
+        {
+          "domain": "allrecipes.com",
+          "position": 4
+        },
+        {
+          "domain": "foodnetwork.com",
+          "position": 5
+        }
+      ]
+    },
+    "british recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "bbcgoodfood.com",
+          "position": 1
+        },
+        {
+          "domain": "greatbritishrecipes.com",
+          "position": 2
+        },
+        {
+          "domain": "ourmodernkitchen.com",
+          "position": 3
+        },
+        {
+          "domain": "greatbritishchefs.com",
+          "position": 4
+        },
+        {
+          "domain": "seriouseats.com",
+          "position": 5
+        }
+      ]
+    },
+    "miso udon carbonara silky, no-cream": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "adayinthekitchen.com",
+          "position": 1
+        },
+        {
+          "domain": "tiffycooks.com",
+          "position": 2
+        },
+        {
+          "domain": "facebook.com",
+          "position": 3
+        },
+        {
+          "domain": "reddit.com",
+          "position": 4
+        },
+        {
+          "domain": "new.milk.org",
+          "position": 5
+        }
+      ]
+    },
+    "miso udon carbonara recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "tiffycooks.com",
+          "position": 1
+        },
+        {
+          "domain": "adayinthekitchen.com",
+          "position": 2
+        },
+        {
+          "domain": "nigella.com",
+          "position": 3
+        },
+        {
+          "domain": "instagram.com",
+          "position": 4
+        },
+        {
+          "domain": "tastecanada.org",
+          "position": 5
+        }
+      ]
+    },
+    "no cream carbonara with udon noodles": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "tiffycooks.com",
+          "position": 1
+        },
+        {
+          "domain": "youtube.com",
+          "position": 2
+        },
+        {
+          "domain": "annainthekitchen.com",
+          "position": 3
+        },
+        {
+          "domain": "feedmi.org",
+          "position": 4
+        },
+        {
+          "domain": "facebook.com",
+          "position": 5
+        }
+      ]
+    },
+    "japanese italian fusion pasta date night": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "corner.inc",
+          "position": 1
+        },
+        {
+          "domain": "facebook.com",
+          "position": 2
+        },
+        {
+          "domain": "eatcarino.com",
+          "position": 3
+        },
+        {
+          "domain": "mtlblog.com",
+          "position": 4
+        },
+        {
+          "domain": "guide.michelin.com",
+          "position": 5
+        }
+      ]
+    },
+    "japanese-italian recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "coolmomeats.com",
+          "position": 1
+        },
+        {
+          "domain": "reddit.com",
+          "position": 2
+        },
+        {
+          "domain": "cookpad.com",
+          "position": 3
+        },
+        {
+          "domain": "savorjapan.com",
+          "position": 4
+        },
+        {
+          "domain": "justonecookbook.com",
+          "position": 5
+        }
+      ]
+    },
+    "northern thai beef tartare recipe": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "multicarbs.com",
+          "position": 1
+        },
+        {
+          "domain": "reddit.com",
+          "position": 2
+        },
+        {
+          "domain": "instagram.com",
+          "position": 3
+        },
+        {
+          "domain": "farmtofork.com.au",
+          "position": 4
+        },
+        {
+          "domain": "youtube.com",
+          "position": 5
+        }
+      ]
+    },
+    "laab beef tartare date night": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "instagram.com",
+          "position": 1
+        },
+        {
+          "domain": "facebook.com",
+          "position": 2
+        },
+        {
+          "domain": "zimmysnook.ca",
+          "position": 3
+        },
+        {
+          "domain": "miltonhousedesign.com",
+          "position": 5
+        },
+        {
+          "domain": "youtube.com",
+          "position": 6
+        }
+      ]
+    },
+    "raw beef tartare thai herbs": {
+      "position": null,
+      "featured": false,
+      "topCompetitors": [
+        {
+          "domain": "multicarbs.com",
+          "position": 1
+        },
+        {
+          "domain": "facebook.com",
+          "position": 2
+        },
+        {
+          "domain": "mission-food.com",
+          "position": 3
+        },
+        {
+          "domain": "instagram.com",
+          "position": 4
+        },
+        {
+          "domain": "en.wikipedia.org",
+          "position": 5
+        }
+      ]
+    }
+  },
+  "errors": []
+}
