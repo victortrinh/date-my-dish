@@ -1,0 +1,417 @@
+{
+  "source": "notion",
+  "fetchedAt": "2026-07-08T04:16:35.212Z",
+  "notionPageId": "db13ded7-a3ca-450a-8b03-b4f198bed99f",
+  "title": "McKiernan Brunch Review: Lachine Canal’s Big, Lively Daytime Hang",
+  "mode": "update",
+  "existingSlug": "mckiernan-montreal",
+  "recipeNum": 53,
+  "lastEditedTime": "2026-06-30T01:06:21.853Z",
+  "heroImage": {
+    "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang.jpg",
+    "caption": null
+  },
+  "images": [
+    {
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang.jpg",
+      "caption": "",
+      "isHero": true
+    },
+    {
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang-1.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang-2.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang-3.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang-4.jpg",
+      "caption": "",
+      "isHero": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "McKiernan is my pick when I want **brunch-lunch energy** in Montreal: big room, lots of light, and food that feels like a treat without requiring a whole “special occasion” plan. It’s the kind of place you go, drink coffee, eat something comforting, and then walk it off along the canal."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "McKiernan"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Location:** Sud-Ouest (Lachine Canal), Montreal"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Price Range:**  $$-$$$"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cuisine:** Rotisserie / Quebec comfort food (with brunch + daytime classics)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Dress Code:** Casual"
+    },
+    {
+      "type": "callout",
+      "icon": "📖",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Quick Verdict:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Best For: Brunch dates, daytime catch-ups, out-of-town visitors",
+        "Conversation Friendly: 4/5 (still lively, but easier in the day)",
+        "Ambiance: Big-room, airy, industrial-warm",
+        "Reservation: Nice to have on weekends",
+        "**Brunch Score: 8/10**"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Vibe"
+    },
+    {
+      "type": "paragraph",
+      "text": "McKiernan sits in an industrial-feeling space right by the canal, and it leans into that: high ceilings, lots of light, and a “come as you are” room that still feels like a destination."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lighting:** Bright and warm"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Noise Level:** Lively, but not overwhelming in the daytime"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best Seats:** Anywhere works, but edges of the room feel calmer if you want to linger"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What I Ordered (and why it slapped)"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Devilled Brussels Sprouts"
+    },
+    {
+      "type": "paragraph",
+      "text": "Crispy-edged, salty-sweet, and the kind of “vegetable side” that disappears first. Enough punch and richness that it eats like bar food in the best way."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/14925b39-ba9c-40fb-b743-811657d82b8e/DSCF3689.jpg?table=block&id=319c3484-e8de-8020-b4aa-c220e259d162&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1783512000000&signature=yjiL2yoGy55ZRoqQFt61lK39m_tHgZ6oJJmpQEmRaW8",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Zesty Italian Beef Tartare"
+    },
+    {
+      "type": "paragraph",
+      "text": "Bright, lemony, and clean-tasting. Not heavy or bluntly beefy. More “fresh and snackable”"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/7c0e5d13-737a-45e9-b888-da78f88c2549/DSCF3686.jpg?table=block&id=319c3484-e8de-80a9-978c-d1aff85d3cbd&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1783512000000&signature=IyS4p0i2hLypsTTh5y2XTICfEcx-hPdhNs4OFwEk_PU",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang-1.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Bomba Schnitzel"
+    },
+    {
+      "type": "paragraph",
+      "text": "Golden, crunchy, and aggressively satisfying. The bomba brings heat and acidity, which keeps it from feeling too heavy."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/7e93b398-91b6-4896-b2c0-0b78fd194ca4/DSCF3676.jpg?table=block&id=319c3484-e8de-809a-98f9-f62c4fa571c4&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1783512000000&signature=bcAf5oik4lbL2rC2aXPli-GcSMMcIe0GgQqjspM19Y8",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang-2.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Honey Garlic Spare Ribs"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sticky, glossy, and built for sharing. Sweet up front, savory on the finish, and messy in the way that feels appropriate for a daytime feast."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/d8b5d580-b715-42f5-9021-6003b28d15f6/DSCF3694.jpg?table=block&id=319c3484-e8de-8075-8b56-e0f066e4b683&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1783512000000&signature=V00AjPD7rfZHjvrqj_I9_MVd_lDRptV8Nqzi_3Jiv7I",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang-3.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Homemade Donuts"
+    },
+    {
+      "type": "paragraph",
+      "text": "Warm, fluffy, and dangerously easy to keep eating “just one more.” Exactly the kind of sweet, shareable finish that fits a brunch-lunch hang."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/ec22f098-9838-4a53-9301-d3b576ee555c/DSCF3700.jpg?table=block&id=319c3484-e8de-806c-a40c-ed2948b8d7df&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1783512000000&signature=dDzh1-MNKRW868sI0RuRNeY_OKuCmP77jhDN1gaY2As",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/mckiernan-brunch-review-lachine-canal-s-big-lively-daytime-hang-4.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "**If you’re sharing:** 2–3 plates total is the sweet spot for two people."
+    },
+    {
+      "type": "paragraph",
+      "text": "**What I’d do differently next time:** Keep it tighter at brunch. The room tempts you into ordering like you’re settling in for a long meal."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Coffee + Brunch Drinks"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is not the moment for a complicated strategy. It’s a coffee place first."
+    },
+    {
+      "type": "paragraph",
+      "text": "**What to get:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Americano or drip coffee**",
+        "**Espresso-based drink** if you want a little “dessert energy” without ordering dessert",
+        "**One brunch cocktail** if you’re making a slow day of it"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Service and Pacing"
+    },
+    {
+      "type": "paragraph",
+      "text": "Service is friendly and unpretentious. Pacing felt smooth, which is exactly what you want at brunch: steady plates, zero stress."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Real Cost"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Per Person:** $30–55 (coffee + a couple plates, depending on how hard you go)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lighter Option:** $20–35 (coffee + one main)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Worth It?** Yes. You’re paying for the room, the canal-side location, and solid, comforting cooking."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Save Money:** Skip cocktails, share plates, do coffee + one main each"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Before/After Dating Spots Nearby (Dating Concept)"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is the easiest place to turn brunch into a full daytime date."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Before (pick one):**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Atwater Market (coffee, snacks, quick browse)",
+        "Lachine Canal walk or bike (show up hungry)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**After (pick one):**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Lachine Canal walk (the classic post-brunch reset)",
+        "Picnic moment by the water (grab something small and keep it simple)"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Booking & Timing"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best Time:** Weekend brunch, or a late lunch that turns into a canal walk"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Reserve:** Recommended on weekends"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Walk-Ins:** Possible, but it fills up fast on sunny days"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Daytime Date Fit"
+    },
+    {
+      "type": "paragraph",
+      "text": "**First Date:** 4/5 — Brunch makes conversation easy and low-pressure."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Catch-up with friends:** 5/5 — Big room, good pacing, everyone leaves happy."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Impressing out-of-towners:** 4/5 — Very “Montreal” in the best way."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Overall: 8/10 (for brunch)**"
+    },
+    {
+      "type": "paragraph",
+      "text": "McKiernan is a strong daytime pick: coffee first, a couple shareable plates, and then a walk along the canal. Go hungry, but do not get carried away ordering like it’s a feast."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Go Here If:** You want bright, lively brunch-lunch energy and comfort food that lands."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Skip If:** You want something tiny, quiet, and whisper-level."
+    },
+    {
+      "type": "callout",
+      "icon": "✓",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Quick Reference:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Where:** Sud-Ouest, by the Lachine Canal",
+        "**Best Time:** Weekend brunch",
+        "**Order:** Coffee + bread + one seasonal veg + one hearty main",
+        "**Budget:** $30–55 per person",
+        "**Rating:** 8/10"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Details"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Address:** 5524 Rue Saint-Patrick, Montréal, QC H4E 1A8 (Suite 200)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Phone:** (514) 759-6677"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Hours:** Mon–Fri 11:00am–10:30pm; Sat–Sun 10:00am–10:30pm (brunch until 3:00pm)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Website:** [https://www.mckiernanmtl.com/](https://www.mckiernanmtl.com/)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Transit/Parking:** Best by bike or rideshare; street parking varies"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Dietary:** Ask about current menu; there are usually vegetarian-friendly small plates"
+    }
+  ],
+  "faqs": []
+}
