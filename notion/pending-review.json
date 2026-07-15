@@ -1,0 +1,512 @@
+{
+  "source": "notion",
+  "fetchedAt": "2026-07-15T04:07:35.490Z",
+  "notionPageId": "651befd8-ea33-4928-ab73-7e53f48406d1",
+  "title": "Moccione Restaurant Review: Villeray’s Cozy Italian Date-Night Gem",
+  "mode": "update",
+  "existingSlug": "moccione-montreal",
+  "recipeNum": 55,
+  "lastEditedTime": "2026-06-30T01:06:21.014Z",
+  "heroImage": {
+    "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem.jpg",
+    "caption": null
+  },
+  "images": [
+    {
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem.jpg",
+      "caption": "",
+      "isHero": true
+    },
+    {
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-1.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-2.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-3.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-4.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-5.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-6.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-7.jpg",
+      "caption": "",
+      "isHero": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Moccione is the kind of place that makes you feel like you discovered Montreal’s best-kept neighborhood secret, even though everyone already knows about it. It’s warm, a little buzzy, and deeply comforting in the way only great Italian cooking can be: sharp, seasonal flavors, handmade pasta, and a room that feels alive without turning your date into a lip-reading contest."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Moccione"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Location:** Villeray, Montreal"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Price Range:** $$$-$$$$ (medium-to-high end; special-occasion energy)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cuisine:** Seasonal Italian"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Dress Code:** Casual to Smart Casual"
+    },
+    {
+      "type": "callout",
+      "icon": "📖",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Quick Verdict:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Best For: Date nights, anniversaries, “I want to impress but still feel relaxed” dinners",
+        "Conversation Friendly: 4/5 (lively, not chaotic)",
+        "Ambiance: Warm, airy, neighborhood-cool",
+        "Reservation: Strongly recommended",
+        "**Date Night Score: 9/10**"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Vibe"
+    },
+    {
+      "type": "paragraph",
+      "text": "Moccione nails the hard balance: it feels special, but never stiff. The room has an open, welcoming energy, and you’ll often catch a glimpse of the kitchen in motion. It’s a place where you can dress up a bit if you want, but you will not feel out of place in nice jeans and a good jacket."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lighting:** Warm, flattering, softly dimmed"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Noise Level:** Medium (a happy hum)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best Seats:** A two-top along the wall for maximum “locked in” conversation, or the bar if you like watching cocktails and the kitchen flow"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What to Order (Date-Night Game Plan)"
+    },
+    {
+      "type": "paragraph",
+      "text": "If you want a date that feels effortless, order in layers. You want the table to keep evolving while you talk."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/9ecc5c4e-4e66-4900-ad1b-fb013d9d32f3/IMG_4762.jpg?table=block&id=ee83e697-b45c-4c91-8929-3bed72a746bc&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1784116800000&signature=LRokHrN6p3vGTrlegX_NwITNpqFBOhal4E8A2sOqJ0o",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "What I Ordered (and what it’s like)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Scallop crudo (must order):** scallops with an icy apple + grapefruit granita. **Mouthfeel:** silky scallop, crunchy-cold granita, clean finish."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/0c0bd564-49ff-4530-b351-364ad2327969/IMG_7301.jpg?table=block&id=d7596796-18ce-4dbb-a146-4c5c386f960b&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1784116800000&signature=VE0uIZI9wGZj6wkxNqPJRASOHNKUySn9S6svQJ7yd10",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-1.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Stracciatella di bufala:** creamy buffalo stracciatella with braised cabbage, roasted cipollini onions, hazelnuts, and a hit of olive oil. **Mouthfeel:** lush and soft, with sweet onion and nutty crunch."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/c74889fe-5207-4be6-92e4-d40a03ce3a6f/IMG_7298.jpg?table=block&id=be7d611c-c6cf-486a-b37b-88f2aa8546ae&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1784116800000&signature=rjpbc4U19fbIp9kHjYsN7-b2LEklOPMnIIP_IfAaltI",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-2.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Caramelle:** candy-shaped stuffed pasta with ricotta, artichoke, and rabbit, finished with tomato-sage sauce. **Mouthfeel:** tender pasta, creamy filling, bright tomato sauce."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/b600b083-e97a-4122-9075-386700757ca6/IMG_7304.jpg?table=block&id=97a9d58a-7dac-4350-a660-93047040e1c7&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1784116800000&signature=nL6PZj6F6gleLEPzgu0owJORzc4u4JODbcYPzjMuzF8",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-3.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Beef:** beef with topinambour (Jerusalem artichoke), trompette mushrooms, and sea-asparagus salsa verde. **Mouthfeel:** tender, earthy, and herb-forward. *Mine was a bit under-seasoned, so next time I’d probably choose another protein instead.*"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/0e06d88c-5f4f-415b-826b-69b14f2ebe57/IMG_7307.jpg?table=block&id=d7f81be6-bef0-4d86-911f-4d14bf6fc189&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1784116800000&signature=ikXoR4Bo3k_srxxW_JTeYmKrc5YTs1qtmE0R8HDcG_o",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-4.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Cappelletti:** delicate stuffed pasta with beef, plus saffron, bergamot, and Parmigiano. **Mouthfeel:** pillowy pasta, rich filling, perfumed citrus-saffron finish."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/2218f041-1337-4a7a-976c-23ab5786b96e/IMG_7303.jpg?table=block&id=0a747f10-1f36-4763-8727-836998056546&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1784116800000&signature=cyKurdw8cwQbZckA-a2G5leB2sitd_9HzUQKmEZflcM",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-5.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Baba tiramisu:** a baba-style dessert with tiramisu vibes. Boozy, creamy, and coffee-cocoa forward. **Mouthfeel:** airy sponge soaked in syrup, silky cream on top."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/e7d6931c-3018-4b84-9a1e-2a034fd3188e/IMG_7308.jpg?table=block&id=87560487-e091-49e9-bb93-e4bd6746c936&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1784116800000&signature=fh_3j0F3RaPBJZxujyjA0qdExhvP8-ZcpiG5uZ1RwsU",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-6.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Sorbet:** a clean, refreshing palate reset after the richer pastas and beef. **Mouthfeel:** icy, bright, and super cleansing."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.so/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/1f786bec-23c6-4abd-8d52-29c210fc0a7d/IMG_7309.jpg?table=block&id=93bb5bb6-e5fb-4718-ba6a-23f1c0db0c44&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1784116800000&signature=R3gKQYDaM9DaJvXW_yRqsSBgUk35VGR9w_TerlFUG48",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/moccione-restaurant-review-villeray-s-cozy-italian-date-night-gem-7.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "How to Order It (So the Night Builds)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**1) Start with a crudo or tartare**"
+    },
+    {
+      "type": "paragraph",
+      "text": "Seasonal raw preparations are often a highlight here. Think bright citrus, crisp radish, fennel, and that clean, confident salinity that wakes up your appetite."
+    },
+    {
+      "type": "paragraph",
+      "text": "**2) Do not skip an arancini moment**"
+    },
+    {
+      "type": "paragraph",
+      "text": "The “crispy outside, molten inside” move is basically designed for sharing. It’s comforting, tactile, and it sets the tone."
+    },
+    {
+      "type": "paragraph",
+      "text": "**3) Split one pasta + one main**"
+    },
+    {
+      "type": "paragraph",
+      "text": "Moccione’s house-made pasta is a must. Go for something with a little bitterness (rapini) or funk (pecorino) if it’s on the menu, then pair it with a main that leans roasted or grilled. This is the best way to taste broadly without over-ordering."
+    },
+    {
+      "type": "paragraph",
+      "text": "**4) Save room for dessert (seriously)**"
+    },
+    {
+      "type": "paragraph",
+      "text": "Dessert is a closer here. If cannoli or gelato shows up, that’s an easy yes."
+    },
+    {
+      "type": "callout",
+      "icon": "✅",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Easy order for two (if you want to look like you know what you’re doing):**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "1 crudo/tartare",
+        "1 arancini or fried bite",
+        "1 pasta",
+        "1 main",
+        "1 dessert + 2 digestifs or cocktails"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Drinks"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cocktails tend to be dialed-in and not overly sweet, which is exactly what you want with Italian food. If you are doing wine, ask for something with acidity and grip. That keeps the meal feeling bright, even when the food gets rich."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Date tip:** Start with a cocktail, switch to wine for the pasta, and finish with an amaro. It turns dinner into a mini-arc."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Real Cost (So You Can Plan)"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a **medium-to-high end** night out, especially once you add wine."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Per Person:** $120–200+ (CAD, depending on wine/cocktails and how many courses you order)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Worth it?** Yes, when you want that “we made a plan and dressed up a bit” feeling, with food that backs it up."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Save money (without downgrading the night):** Do one cocktail each, then switch to a bottle or a couple of sommelier-picked glasses instead of multiple rounds."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Before/After Dating Spots Nearby (Dating Concept)"
+    },
+    {
+      "type": "paragraph",
+      "text": "These are easy add-ons that make the meal feel like a real date plan."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Before dinner (pick one):**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Marché Jean-Talon (browse, snacks, flowers)",
+        "Parc Jarry (short walk to show up hungry)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**After dinner (pick one):**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Little Italy walk (wander toward Saint-Laurent)",
+        "Coffee or gelato nearby (keep it simple and light)"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Booking & Timing"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Reservations:** Recommended, especially Thu–Sat."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best time for dates:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Early dinner (5:30–6:30pm):** calmer, more intimate",
+        "**Later dinner (8pm+):** louder, more energy, more “night out”"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**If you can:** make it a slow evening. This place rewards ordering, sharing, and lingering."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date Type Fit"
+    },
+    {
+      "type": "paragraph",
+      "text": "**First Date:** 4/5"
+    },
+    {
+      "type": "paragraph",
+      "text": "Great if you already know there’s chemistry. It’s a little too “special” for a truly low-stakes first meet."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Anniversary:** 5/5"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cozy, celebratory, and built for a long dinner."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Impressing someone who likes food:** 5/5"
+    },
+    {
+      "type": "paragraph",
+      "text": "The cooking feels intentional and seasonal without getting weird about it."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "text": "Moccione is one of Montreal’s most reliable “special date night” restaurants when you want warmth, energy, and food that tastes like care. Order in courses, share everything, and leave space for dessert. You’ll walk out full, a little buzzed, and feeling like the night was genuinely an occasion."
+    },
+    {
+      "type": "callout",
+      "icon": "📍",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Details**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Address:** 7495 Rue Saint-Denis, Montréal, QC H2R 2E5",
+        "**Neighborhood:** Villeray",
+        "**Website:** [https://moccione.com/](https://moccione.com/)",
+        "**Tip:** If your date is sensitive to noise, book early."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Reviews & Product Placement (Amazon Affiliate)"
+    },
+    {
+      "type": "paragraph",
+      "text": "- Product: "
+    },
+    {
+      "type": "paragraph",
+      "text": "- Amazon link: "
+    },
+    {
+      "type": "paragraph",
+      "text": "- Why I like it: "
+    },
+    {
+      "type": "paragraph",
+      "text": "- Where it shows up (posts): "
+    },
+    {
+      "type": "paragraph",
+      "text": "- Notes: "
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Things I Use (Internal Reference)"
+    },
+    {
+      "type": "paragraph",
+      "text": "- "
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Notes / Research (Internal)"
+    },
+    {
+      "type": "paragraph",
+      "text": "- "
+    }
+  ],
+  "faqs": []
+}
