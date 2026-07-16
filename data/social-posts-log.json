@@ -850,7 +850,9 @@
           "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-oysters.Br2YRr0H_2dob3I.webp",
           "altText": "Hot oysters with cider sabayon served on a bed of sea salt at Hoogan et Beaufort Montreal, the shells glistening under warm restaurant lighting",
           "scheduledFor": "2026-07-13T18:23:55.251Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156855930143",
+          "postedAt": "2026-07-16T21:23:08.711Z"
         },
         {
           "imageKey": "img_1nm2rsn",
@@ -1003,7 +1005,9 @@
           "imageSrc": "https://datemydish.com/_astro/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-8.o7yli5Ri_1O3Yh4.webp",
           "altText": "Close-up of a bowl of spicy miso ramen with scallions, nori sheets, and a drizzle of vivid garlic-togarashi oil pooling on top of the broth",
           "scheduledFor": "2026-07-06T18:34:41.176Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156855930151",
+          "postedAt": "2026-07-16T21:23:43.079Z"
         },
         {
           "imageKey": "img_1xrjsps",
@@ -1012,7 +1016,9 @@
           "imageSrc": "https://datemydish.com/_astro/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-9.BmYfRH1-_WVgFa.webp",
           "altText": "Two bowls of bold spicy miso ramen from above, steam rising, garnished with scallions, nori, and a pool of garlic-togarashi oil on each",
           "scheduledFor": "2026-07-13T18:34:41.176Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156855930155",
+          "postedAt": "2026-07-16T21:23:54.116Z"
         },
         {
           "imageKey": "img_1eh9vh8",
