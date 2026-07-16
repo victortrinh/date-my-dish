@@ -682,8 +682,8 @@
       "pins": [
         {
           "variant": 1,
-          "title": "Pâte à Choux (Foolproof Choux Pastry for Cream Puffs and Gougères)",
-          "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
+          "title": "P\u00e2te \u00e0 Choux (Foolproof Choux Pastry for Cream Puffs and Goug\u00e8res)",
+          "description": "Foolproof p\u00e2te \u00e0 choux recipe for cream puffs and goug\u00e8res. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
           "status": "posted",
           "id": "1050746156852453537",
           "postedAt": "2026-03-31T05:32:20.557Z"
@@ -691,14 +691,14 @@
         {
           "variant": 2,
           "title": "45-Minute French Dessert",
-          "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
+          "description": "Foolproof p\u00e2te \u00e0 choux recipe for cream puffs and goug\u00e8res. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
           "scheduledFor": "2026-04-05T05:32:19.653Z",
           "status": "pending"
         },
         {
           "variant": 3,
-          "title": "Pâte à Choux (Foolproof Choux Pastry for Cream Puffs and Gougères) | Perfect for Date Night",
-          "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
+          "title": "P\u00e2te \u00e0 Choux (Foolproof Choux Pastry for Cream Puffs and Goug\u00e8res) | Perfect for Date Night",
+          "description": "Foolproof p\u00e2te \u00e0 choux recipe for cream puffs and goug\u00e8res. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
           "scheduledFor": "2026-04-12T05:32:19.653Z",
           "status": "pending"
         }
@@ -946,38 +946,38 @@
         },
         {
           "imageKey": "img_sxgqrj",
-          "title": "McKiernan: Canal Lachine Brunch Review | Photo 2",
+          "title": "McKiernan: Canal Lachine Brunch Review | Photo 3",
           "description": "Zesty Italian beef tartare with endive leaves, fresh basil, shaved parmesan, and olive oil at McKiernan",
-          "imageSrc": "https://datemydish.com/_astro/mckiernan-beef-tartare.qOPy2qhD_Z1vOoIg.webp",
+          "imageSrc": "https://datemydish.com/_astro/mckiernan-beef-tartare-brunch.CvCdVkeC_1tDdQc.webp",
           "altText": "Zesty Italian beef tartare with endive leaves, fresh basil, shaved parmesan, and olive oil at McKiernan",
-          "scheduledFor": "2026-07-06T18:24:06.352Z",
+          "scheduledFor": "2026-07-28T21:45:43.324Z",
           "status": "pending"
         },
         {
-          "imageKey": "img_1ffp1n8",
-          "title": "McKiernan: Canal Lachine Brunch Review | Photo 3",
-          "description": "Bomba schnitzel with golden crispy breading topped with spicy bomba relish and fresh herbs at McKiernan",
-          "imageSrc": "https://datemydish.com/_astro/mckiernan-bomba-schnitzel.Dxp7hQFZ_1lpWIV.webp",
-          "altText": "Bomba schnitzel with golden crispy breading topped with spicy bomba relish and fresh herbs at McKiernan",
-          "scheduledFor": "2026-07-13T18:24:06.352Z",
+          "imageKey": "img_xoacxj",
+          "title": "McKiernan: Canal Lachine Brunch Review | Photo 4",
+          "description": "Golden bomba schnitzel with crunchy breading, spicy bomba sauce and fresh herbs on a white plate at McKiernan Montreal",
+          "imageSrc": "https://datemydish.com/_astro/mckiernan-bomba-schnitzel-brunch.D9rOi1RC_njNyV.webp",
+          "altText": "Golden bomba schnitzel with crunchy breading, spicy bomba sauce and fresh herbs on a white plate at McKiernan Montreal",
+          "scheduledFor": "2026-08-04T21:45:43.324Z",
           "status": "pending"
         },
         {
           "imageKey": "img_187uw2y",
-          "title": "McKiernan: Canal Lachine Brunch Review | Photo 4",
+          "title": "McKiernan: Canal Lachine Brunch Review | Photo 5",
           "description": "Honey garlic spare ribs glazed with sticky sauce, topped with sesame seeds and green onions at McKiernan",
-          "imageSrc": "https://datemydish.com/_astro/mckiernan-spare-ribs.v8G_iyv6_Z17zWby.webp",
+          "imageSrc": "https://datemydish.com/_astro/mckiernan-spare-ribs-brunch.AHreRLO6_ZFPAx1.webp",
           "altText": "Honey garlic spare ribs glazed with sticky sauce, topped with sesame seeds and green onions at McKiernan",
-          "scheduledFor": "2026-07-20T18:24:06.352Z",
+          "scheduledFor": "2026-08-11T21:45:43.324Z",
           "status": "pending"
         },
         {
           "imageKey": "img_1g7fy6n",
-          "title": "McKiernan: Canal Lachine Brunch Review | Photo 5",
+          "title": "McKiernan: Canal Lachine Brunch Review | Photo 6",
           "description": "Homemade sugar-dusted and chocolate-glazed donuts served warm at McKiernan",
-          "imageSrc": "https://datemydish.com/_astro/mckiernan-donuts.CgeQuKSA_Z7SE0g.webp",
+          "imageSrc": "https://datemydish.com/_astro/mckiernan-donuts-brunch.Du54EKGB_1oWuzn.webp",
           "altText": "Homemade sugar-dusted and chocolate-glazed donuts served warm at McKiernan",
-          "scheduledFor": "2026-07-27T18:24:06.352Z",
+          "scheduledFor": "2026-08-18T21:45:43.324Z",
           "status": "pending"
         }
       ]
