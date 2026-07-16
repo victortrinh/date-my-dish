@@ -178,6 +178,15 @@ async function main() {
     return;
   }
 
+  // Pins that already carry their own imageSrc (every review/article pin,
+  // and every recipe pin created after the multi-photo feature shipped) post
+  // straight to the Pinterest API with no extra network call. Legacy pins
+  // (old 3-variant hero fallback, pre-dating imageSrc) require a live fetch
+  // of the page to re-resolve the hero image, which currently 403s from CI.
+  // Process ready-to-post pins first so a backlog of failing legacy pins
+  // never starves newer content of the daily budget.
+  duePins.sort((a, b) => (a.pin.imageSrc ? 0 : 1) - (b.pin.imageSrc ? 0 : 1));
+
   console.log(`Found ${duePins.length} pin(s) due for posting (max ${MAX_PINS_PER_RUN} per run)`);
 
   for (const { slug, type, pin } of duePins.slice(0, MAX_PINS_PER_RUN)) {
