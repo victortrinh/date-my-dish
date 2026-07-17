@@ -682,8 +682,8 @@
       "pins": [
         {
           "variant": 1,
-          "title": "P\u00e2te \u00e0 Choux (Foolproof Choux Pastry for Cream Puffs and Goug\u00e8res)",
-          "description": "Foolproof p\u00e2te \u00e0 choux recipe for cream puffs and goug\u00e8res. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
+          "title": "Pâte à Choux (Foolproof Choux Pastry for Cream Puffs and Gougères)",
+          "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
           "status": "posted",
           "id": "1050746156852453537",
           "postedAt": "2026-03-31T05:32:20.557Z"
@@ -691,14 +691,14 @@
         {
           "variant": 2,
           "title": "45-Minute French Dessert",
-          "description": "Foolproof p\u00e2te \u00e0 choux recipe for cream puffs and goug\u00e8res. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
+          "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
           "scheduledFor": "2026-04-05T05:32:19.653Z",
           "status": "pending"
         },
         {
           "variant": 3,
-          "title": "P\u00e2te \u00e0 Choux (Foolproof Choux Pastry for Cream Puffs and Goug\u00e8res) | Perfect for Date Night",
-          "description": "Foolproof p\u00e2te \u00e0 choux recipe for cream puffs and goug\u00e8res. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
+          "title": "Pâte à Choux (Foolproof Choux Pastry for Cream Puffs and Gougères) | Perfect for Date Night",
+          "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
           "scheduledFor": "2026-04-12T05:32:19.653Z",
           "status": "pending"
         }
@@ -1091,7 +1091,9 @@
           "imageSrc": "https://datemydish.com/_astro/clarified-butter-and-ghee.BsIc-4vb.webp",
           "altText": "Watercolor illustration of three glass jars of golden clarified butter and ghee beside a saucepan, warm light catching the translucent amber fat",
           "scheduledFor": "2026-07-06T18:44:42.071Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156855945116",
+          "postedAt": "2026-07-17T11:12:17.598Z"
         },
         {
           "variant": 3,
@@ -1101,7 +1103,9 @@
           "imageSrc": "https://datemydish.com/_astro/clarified-butter-and-ghee.BsIc-4vb.webp",
           "altText": "Watercolor illustration of three glass jars of golden clarified butter and ghee beside a saucepan, warm light catching the translucent amber fat",
           "scheduledFor": "2026-07-13T18:44:42.071Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156855945116",
+          "postedAt": "2026-07-17T11:12:27.974Z"
         }
       ]
     }
