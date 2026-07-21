@@ -35,7 +35,9 @@
           "imageSrc": "https://datemydish.com/_astro/beef-ragu-pappardelle-combined.19YtF-9k_2jG2ni.webp",
           "altText": "Pappardelle fully coated in rich beef ragu, a cloud of freshly grated Parmesan melting into the glossy sauce",
           "scheduledFor": "2026-07-20T18:34:31.149Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856066666",
+          "postedAt": "2026-07-21T11:40:05.952Z"
         },
         {
           "imageKey": "img_87gzv4",
@@ -122,7 +124,9 @@
           "imageSrc": "https://datemydish.com/_astro/brussels-sprouts-salad-plated.XH0NpVPo_1TTlWB.webp",
           "altText": "Dramatic mound of dressed kale and shaved sprouts crowned with shatteringly crisp fried Brussels sprout leaves",
           "scheduledFor": "2026-07-20T18:34:52.194Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856066672",
+          "postedAt": "2026-07-21T11:40:16.745Z"
         },
         {
           "imageKey": "img_nurfui",
@@ -200,7 +204,9 @@
           "imageSrc": "https://datemydish.com/_astro/cacio-e-pepe-plated.0wrHUCI5_rWfa9.webp",
           "altText": "Perfectly plated cacio e pepe, spaghetti twirled into a nest with a generous crown of cracked black pepper and snowy Pecorino",
           "scheduledFor": "2026-07-20T18:35:02.235Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856066678",
+          "postedAt": "2026-07-21T11:40:27.470Z"
         },
         {
           "imageKey": "img_15u7em3",
@@ -532,7 +538,9 @@
           "imageSrc": "https://datemydish.com/_astro/3-day-aged-miso-duck-breast-step-1.DRKGbMJM_Z1oFLFf.webp",
           "altText": "Scored duck breasts coated in a thin layer of white miso cure on a wire rack, ready for the fridge",
           "scheduledFor": "2026-07-20T18:34:21.123Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856066682",
+          "postedAt": "2026-07-21T11:40:38.177Z"
         },
         {
           "imageKey": "img_4igpxj",
@@ -861,7 +869,9 @@
           "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-crab-dashi.CcbnF_8Y_1UBCKR.webp",
           "altText": "Crab with dashi broth and tomatillo at Hoogan et Beaufort Montreal, delicate seafood arranged in a shallow bowl with precise, minimalist plating",
           "scheduledFor": "2026-07-20T18:23:55.251Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856066688",
+          "postedAt": "2026-07-21T11:40:48.956Z"
         },
         {
           "imageKey": "img_1s9e4e",
