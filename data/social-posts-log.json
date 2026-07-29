@@ -969,7 +969,9 @@
           "imageSrc": "https://datemydish.com/_astro/mckiernan-beef-tartare-brunch.CvCdVkeC_1tDdQc.webp",
           "altText": "Zesty Italian beef tartare with endive leaves, fresh basil, shaved parmesan, and olive oil at McKiernan",
           "scheduledFor": "2026-07-28T21:45:43.324Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856309434",
+          "postedAt": "2026-07-29T11:52:15.336Z"
         },
         {
           "imageKey": "img_xoacxj",
@@ -1056,7 +1058,9 @@
           "imageSrc": "https://datemydish.com/_astro/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-3.uTwXlTEK_zkvOk.webp",
           "altText": "Instructions 3: Remove from heat and stir in shichimi togarashi. Transfer to a jar and let sit at room temperature for a few hours or ov",
           "scheduledFor": "2026-07-27T18:34:41.176Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856309444",
+          "postedAt": "2026-07-29T11:52:27.851Z"
         },
         {
           "imageKey": "img_1g5ieqt",
