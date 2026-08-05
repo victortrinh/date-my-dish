@@ -988,7 +988,9 @@
           "imageSrc": "https://datemydish.com/_astro/mckiernan-bomba-schnitzel-brunch.D9rOi1RC_njNyV.webp",
           "altText": "Golden bomba schnitzel with crunchy breading, spicy bomba sauce and fresh herbs on a white plate at McKiernan Montreal",
           "scheduledFor": "2026-08-04T21:45:43.324Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856526095",
+          "postedAt": "2026-08-05T11:49:36.000Z"
         },
         {
           "imageKey": "img_187uw2y",
@@ -1077,7 +1079,9 @@
           "imageSrc": "https://datemydish.com/_astro/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-4.DI88q77U_Z28nTj3.webp",
           "altText": "Instructions 1: In a large pot, heat toasted sesame oil over high heat. Add ground pork and black pepper and cook, breaking up the meat,",
           "scheduledFor": "2026-08-03T18:34:41.177Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856526106",
+          "postedAt": "2026-08-05T11:49:46.769Z"
         },
         {
           "imageKey": "img_axiirm",
