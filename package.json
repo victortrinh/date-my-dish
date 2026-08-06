@@ -36,10 +36,15 @@
     "notion-utils": "^7.8.2",
     "pagefind": "^1.3.0",
     "sharp": "^0.35.3",
-    "typescript": "^5.9.3",
+    "typescript": "^7.0.0",
     "wrangler": "^4.68.0"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-arm64-gnu": "^4.60.1"
+  },
+  "overrides": {
+    "@astrojs/check": {
+      "typescript": "$typescript"
+    }
   }
 }
