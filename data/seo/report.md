@@ -1,4 +1,4 @@
-# SEO Ranking Report — 2026-08-03
+# SEO Ranking Report — 2026-08-10
 
 ## Data Sources
 
@@ -6,31 +6,29 @@
 |--------|--------|
 | Google Search Console | OK |
 | Serper.dev SERP | OK |
-| Date Range | 2026-07-24 to 2026-07-31 |
+| Date Range | 2026-07-31 to 2026-08-07 |
 | Keywords Tracked | 60 |
 
 ## Top Movers (Improved)
 
 | Page | Keyword | Position | Change |
 |------|---------|----------|--------|
-| /en/recipes/crispy-vegan-calamari/ | yes cornstarch | 18.0 → 4.0 | +14.0 |
-| /en/articles/anova-vs-joule-sous-vide-comparison/ | direct competition | 7.0 → 2.0 | +5.0 |
-| /en/reviews/moccione-montreal/ | can i wear khaki shorts? | 8.0 → 5.0 | +3.0 |
-| /fr/articles/technique-du-veloutage/ | veloutage | 11.0 → 8.0 | +3.0 |
-| /en/reviews/mckiernan-montreal/ | bomba schnitzel vs jager schnitzel | 3.5 → 1.0 | +2.5 |
-| /fr/recettes/posset-brulee-au-citron/ | lemon posset brûlée | 4.0 → 2.0 | +2.0 |
-| /en/recipes/lemon-posset-brulee/ | lemon creme brulee recipe | 5.0 → 3.0 | +2.0 |
-| /en/recipes/3-day-aged-miso-duck-breast/ | miso duck | 5.5 → 4.5 | +1.0 |
-| /en/reviews/oncle-lee-kao-montreal/ | is it delicious | 2.0 → 1.0 | +1.0 |
-| /en/recipes/bold-spicy-miso-ramen/ | matcha ramen recipe | 2.0 → 1.0 | +1.0 |
+| /fr/recettes/ramen-miso-epice/ | epice ramen | 7.0 → 2.0 | +5.0 |
+| /en/reviews/othym-montreal/ | o tyme | 5.5 → 3.0 | +2.5 |
+| /en/recipes/3-day-aged-miso-duck-breast/ | japanese duck breast | 4.5 → 2.0 | +2.5 |
+| /en/recipes/lemon-posset-brulee/ | no bake | 3.0 → 1.0 | +2.0 |
+| /en/reviews/moccione-montreal/ | mucca montreal | 5.0 → 3.0 | +2.0 |
+| /fr/critiques/othym-montreal/ | othym michelin | 8.3 → 7.0 | +1.3 |
+| /en/recipes/quinoa-crusted-salmon/ | how long to dry it | 2.0 → 1.0 | +1.0 |
+| /fr/recettes/calamars-vegetaliens-croustillants/ | calamar vegan | 10.3 → 10.1 | +0.2 |
 
 ## Declining Pages
 
 | Page | Keyword | Position | Change |
 |------|---------|----------|--------|
-| /fr/articles/quel-materiau-planche-a-decouper/ | katori cutting board | 7.0 → 11.0 | -4.0 |
-| /en/reviews/othym-montreal/ | othym michelin | 2.0 → 5.5 | -3.5 |
-| /fr/critiques/othym-montreal/ | othym michelin | 6.3 → 8.3 | -2.0 |
+| /fr/articles/quel-materiau-planche-a-decouper/ | planche à découper quelle matière | 11.0 → 60.0 | -49.0 |
+| /en/recipes/crispy-vegan-calamari/ | vegan calamari | 4.0 → 31.3 | -27.3 |
+| /fr/recettes/posset-brulee-au-citron/ | lemon posset brûlée | 2.0 → 8.0 | -6.0 |
 
 ## Multi-Week Trends
 
@@ -38,21 +36,19 @@ Position trends based on Search Console data across multiple weekly snapshots.
 
 | Page | Keyword | Current | Avg (4wk) | Direction | Velocity | Weeks |
 |------|---------|---------|-----------|-----------|----------|-------|
-| /fr/articles/quel-materiau-planche-a-decouper/ | katori cutting board | 11 | 17.3 | 📊 volatile | +5.7/wk | 1w ↑ |
-| /fr/critiques/moccione-montreal/ | moccione reservation | 10 | 7.5 | 📉 declining | +4.2/wk | 1w ↑ |
-| /en/recipes/crispy-vegan-calamari/ | yes cornstarch | 4 | 10.3 | 📊 volatile | +3.6/wk | 1w ↑ |
-| /en/reviews/moccione-montreal/ | can i wear khaki shorts? | 5 | 6.1 | 📊 volatile | +3.1/wk | 1w ↑ |
-| /en/recipes/quinoa-crusted-salmon/ | quinoa recipes for salmon | 2 | 3.5 | 📊 volatile | +1/wk | 1w ↑ |
-| /en/reviews/mckiernan-montreal/ | bomba schnitzel vs jager schnitzel | 1 | 1.6 | 📊 volatile | +0.9/wk | 1w ↑ |
-| /en/recipes/bold-spicy-miso-ramen/ | matcha ramen recipe | 1 | 1.8 | 📊 volatile | +0.8/wk | 1w ↑ |
-| /en/articles/anova-vs-joule-sous-vide-comparison/ | direct competition | 2 | 3.1 | 📊 volatile | +0.5/wk | 1w ↑ |
-| /en/recipes/lemon-posset-brulee/ | lemon creme brulee recipe | 3 | 2.8 | 📊 volatile | +0.5/wk | 1w ↑ |
-| /fr/critiques/othym-montreal/ | othym michelin | 8.3 | 8.7 | 📊 volatile | +0.4/wk | 1w ↑ |
-| /en/reviews/othym-montreal/ | othym michelin | 5.5 | 6.2 | 📊 volatile | -0.3/wk | 1w ↑ |
-| /en/recipes/3-day-aged-miso-duck-breast/ | miso duck | 4.5 | 3.6 | 📊 volatile | +0.2/wk | 1w ↑ |
-| /fr/recettes/posset-brulee-au-citron/ | lemon posset brûlée | 2 | 4.3 | 📈 improving | -0.2/wk | 3w ↑ |
-| /fr/recettes/calamars-vegetaliens-croustillants/ | calamar vegan | 10.3 | 8.5 | 📉 declining | +0.2/wk | 4w ↓ |
-| /fr/recettes/magret-canard-miso-3-jours/ | magret de canard à la japonaise | 1 | 3.8 | 📊 volatile | 0/wk | — |
+| /fr/articles/quel-materiau-planche-a-decouper/ | planche à découper quelle matière | 60 | 25.3 | 📊 volatile | -8/wk | 1w ↑ |
+| /fr/critiques/moccione-montreal/ | avis sur moccione | 10 | 8.8 | 📊 volatile | +3.8/wk | — |
+| /en/reviews/moccione-montreal/ | mucca montreal | 3 | 4.5 | 📊 volatile | +3/wk | 2w ↑ |
+| /en/recipes/lemon-posset-brulee/ | no bake | 1 | 2.5 | 📊 volatile | +1.6/wk | 2w ↑ |
+| /en/recipes/quinoa-crusted-salmon/ | how long to dry it | 1 | 2 | 📊 volatile | +1/wk | 2w ↑ |
+| /en/reviews/mckiernan-montreal/ | bomba schnitzel vs jager schnitzel | 1 | 1.6 | 📊 volatile | +0.8/wk | — |
+| /en/recipes/bold-spicy-miso-ramen/ | spicy creamy miso ramen | 1 | 1.5 | 📊 volatile | +0.7/wk | — |
+| /fr/critiques/othym-montreal/ | othym michelin | 7 | 7.9 | 📊 volatile | +0.6/wk | 1w ↑ |
+| /en/recipes/3-day-aged-miso-duck-breast/ | japanese duck breast | 2 | 3.3 | 📊 volatile | +0.5/wk | 2w ↑ |
+| /en/recipes/crispy-vegan-calamari/ | vegan calamari | 31.3 | 16.8 | 📊 volatile | +0.5/wk | 1w ↑ |
+| /fr/recettes/calamars-vegetaliens-croustillants/ | calamar vegan | 10.1 | 9.3 | 📊 volatile | +0.4/wk | 1w ↑ |
+| /en/reviews/othym-montreal/ | o tyme | 3 | 4.4 | 📊 volatile | +0.2/wk | 1w ↑ |
+| /en/articles/anova-vs-joule-sous-vide-comparison/ | yes | 3 | 3.6 | 📊 volatile | +0.2/wk | 1w ↑ |
 
 ## SERP Position Trends (Live Snapshot)
 
@@ -60,10 +56,10 @@ Position changes in live Google SERPs across weekly snapshots.
 
 | Keyword | Current | First Seen | Total Change | Data Points |
 |---------|---------|------------|-------------|-------------|
-| 3 day miso cured duck | #3 | #10 | +7 | 7 |
-| 3-day miso duck breast crisp skin | #1 | #4 | +3 | 8 |
+| 3 day miso cured duck | #3 | #10 | +7 | 8 |
+| 3-day miso duck breast crisp skin | #3 | #4 | +1 | 9 |
 | spicy gochujang-kimchi seafood bucatini | #2 | #1 | -1 | 12 |
-| gochujang lamb meatballs with kabocha | #2 | #2 | 0 | 5 |
+| gochujang lamb meatballs with kabocha | #2 | #2 | 0 | 6 |
 
 ## Content Gap Opportunities
 
@@ -71,48 +67,48 @@ Queries where the site appears in search results but has no dedicated content pa
 
 | Query | Impressions | Position | Receiving Page | Suggested Type |
 |-------|-------------|----------|----------------|----------------|
-| oncle lee kao | 169 | 9.6 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
-| mckiernan rôtisserie reviews | 115 | 9.6 | /en/reviews/mckiernan-montreal/ | needs review |
-| oncle lee kăo menu | 47 | 7.8 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
-| oncle lee kăo | 46 | 9 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
-| avis sur othym | 38 | 11.1 | /fr/critiques/othym-montreal/ | needs review |
-| oncle lee kăo reviews | 25 | 4.4 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
-| oncle lee kăo montreal | 17 | 10 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
-| quinoa crusted salmon | 16 | 18.9 | /en/recipes/quinoa-crusted-salmon/ | needs review |
-| anova vs breville joule, which sous vide is better? | 11 | 7.9 | /en/articles/anova-vs-joule-sous-vide-comparison/ | needs review |
-| hasegawa cutting board review | 11 | 8.3 | /en/articles/best-cutting-board-material/ | needs review |
-| oncle lee kăo photos | 9 | 9.2 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
-| menu de oncle lee kăo | 8 | 11.5 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
-| mckiernan rôtisserie menu | 8 | 3.1 | /en/reviews/mckiernan-montreal/ | needs review |
-| avis sur moccione | 8 | 10.1 | /fr/critiques/moccione-montreal/ | needs review |
-| menu de oncle lee kăo | 7 | 10.3 | /fr/critiques/oncle-lee-kao-montreal/ | needs review |
+| avis sur othym | 84 | 11 | /fr/critiques/othym-montreal/ | needs review |
+| mckiernan rôtisserie reviews | 83 | 9.7 | /en/reviews/mckiernan-montreal/ | needs review |
+| oncle lee kăo | 67 | 9 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
+| oncle lee kăo menu | 44 | 7.2 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
+| oncle lee kao | 39 | 9 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
+| oncle lee kăo reviews | 23 | 4.2 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
+| anova vs breville joule, which sous vide is better? | 13 | 7.8 | /en/articles/anova-vs-joule-sous-vide-comparison/ | needs review |
+| o thym menu | 12 | 8.1 | /en/reviews/othym-montreal/ | needs review |
+| oncle lee kăo montreal | 12 | 9.3 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
+| menu de oncle lee kăo | 12 | 11.2 | /fr/critiques/oncle-lee-kao-montreal/ | needs review |
+| oncle lee michelin | 11 | 7.6 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
+| oncle lee reviews | 9 | 6.8 | /en/reviews/oncle-lee-kao-montreal/ | needs review |
+| quinoa crusted salmon | 8 | 22.9 | /en/recipes/quinoa-crusted-salmon/ | needs review |
+| hasegawa cutting board review | 7 | 7.7 | /en/articles/best-cutting-board-material/ | needs review |
+| hoogan et beaufort dress code | 6 | 6.2 | /en/reviews/hoogan-et-beaufort-montreal/ | needs review |
 
 ## Per-Page Summary
 
 | Page | Top Keyword | Avg Position | Clicks | Impressions | CTR |
 |------|-------------|-------------|--------|-------------|-----|
-| /en/reviews/oncle-lee-kao-montreal/ | is it delicious | 1 | 2 | 374 | 0.0% |
-| /en/recipes/3-day-aged-miso-duck-breast/ | miso duck | 4.5 | 1 | 9 | 0.0% |
-| /en/reviews/othym-montreal/ | othym michelin | 5.5 | 1 | 74 | 0.0% |
-| /fr/critiques/othym-montreal/ | othym michelin | 8.3 | 1 | 49 | 0.0% |
-| /fr/recettes/posset-brulee-au-citron/ | lemon posset brûlée | 2 | 1 | 3 | 0.0% |
-| /en/articles/anova-vs-joule-sous-vide-comparison/ | direct competition | 2 | 0 | 21 | 0.0% |
-| /en/articles/best-cutting-board-material/ | is tibo cutting board legit | 1 | 0 | 44 | 0.0% |
-| /en/recipes/bold-spicy-miso-ramen/ | matcha ramen recipe | 1 | 0 | 2 | 0.0% |
-| /en/recipes/crispy-vegan-calamari/ | yes cornstarch | 4 | 0 | 23 | 0.0% |
-| /en/recipes/lemon-posset-brulee/ | lemon creme brulee recipe | 3 | 0 | 17 | 0.0% |
-| /en/recipes/quinoa-crusted-salmon/ | quinoa recipes for salmon | 2 | 0 | 30 | 0.0% |
-| /en/reviews/mckiernan-montreal/ | bomba schnitzel vs jager schnitzel | 1 | 0 | 196 | 0.0% |
-| /en/reviews/moccione-montreal/ | can i wear khaki shorts? | 5 | 0 | 17 | 0.0% |
-| /fr/articles/quel-materiau-planche-a-decouper/ | katori cutting board | 11 | 0 | 4 | 0.0% |
-| /fr/articles/steak-bien-cuit-rendez-vous/ | différence saignant à point bien cuit | 40 | 0 | 1 | 0.0% |
-| /fr/articles/technique-du-veloutage/ | veloutage | 8 | 0 | 2 | 0.0% |
-| /fr/critiques/moccione-montreal/ | moccione reservation | 10 | 0 | 12 | 0.0% |
-| /fr/critiques/oncle-lee-kao-montreal/ | avis sur oncle lee kăo | 9 | 0 | 16 | 0.0% |
-| /fr/recettes/calamars-vegetaliens-croustillants/ | calamar vegan | 10.3 | 0 | 10 | 0.0% |
-| /fr/recettes/magret-canard-miso-3-jours/ | magret de canard à la japonaise | 1 | 0 | 3 | 0.0% |
-| /fr/recettes/ramen-miso-epice/ | soupe miso | 7 | 0 | 1 | 0.0% |
-| /fr/recettes/saumon-en-croute-de-quinoa/ | cuisine nikkei recette | 1 | 0 | 2 | 0.0% |
+| /en/recipes/bold-spicy-miso-ramen/ | spicy creamy miso ramen | 1 | 1 | 5 | 100.0% |
+| /en/reviews/hoogan-et-beaufort-montreal/ | hoogan et beaufort dress code | 6.2 | 1 | 8 | 16.7% |
+| /en/reviews/mckiernan-montreal/ | bomba schnitzel vs jager schnitzel | 1 | 1 | 158 | 0.0% |
+| /en/reviews/othym-montreal/ | o tyme | 3 | 1 | 224 | 0.0% |
+| /en/articles/anova-vs-joule-sous-vide-comparison/ | yes | 3 | 0 | 20 | 0.0% |
+| /en/articles/best-cutting-board-material/ | crofton chopping board | 1 | 0 | 46 | 0.0% |
+| /en/recipes/3-day-aged-miso-duck-breast/ | japanese duck breast | 2 | 0 | 7 | 0.0% |
+| /en/recipes/crispy-vegan-calamari/ | vegan calamari | 31.3 | 0 | 16 | 0.0% |
+| /en/recipes/lemon-posset-brulee/ | no bake | 1 | 0 | 17 | 0.0% |
+| /en/recipes/quinoa-crusted-salmon/ | how long to dry it | 1 | 0 | 26 | 0.0% |
+| /en/reviews/moccione-montreal/ | mucca montreal | 3 | 0 | 15 | 0.0% |
+| /en/reviews/oncle-lee-kao-montreal/ | oncle lee menu | 3 | 0 | 238 | 0.0% |
+| /fr/articles/quel-materiau-planche-a-decouper/ | planche à découper quelle matière | 60 | 0 | 2 | 0.0% |
+| /fr/critiques/hoogan-et-beaufort-montreal/ | hoogan et beaufort menu | 4 | 0 | 1 | 0.0% |
+| /fr/critiques/moccione-montreal/ | avis sur moccione | 10 | 0 | 6 | 0.0% |
+| /fr/critiques/oncle-lee-kao-montreal/ | grill chinois | 9 | 0 | 29 | 0.0% |
+| /fr/critiques/othym-montreal/ | othym michelin | 7 | 0 | 86 | 0.0% |
+| /fr/recettes/calamars-vegetaliens-croustillants/ | calamar vegan | 10.1 | 0 | 15 | 0.0% |
+| /fr/recettes/etiquette/francais/ | tag recete | 9 | 0 | 1 | 0.0% |
+| /fr/recettes/posset-brulee-au-citron/ | lemon posset brûlée | 8 | 0 | 1 | 0.0% |
+| /fr/recettes/ramen-miso-epice/ | epice ramen | 2 | 0 | 2 | 0.0% |
+| /fr/recettes/saumon-en-croute-de-quinoa/ | flocons de quinoa | 1 | 0 | 3 | 0.0% |
 
 ## Striking Distance (Position 4-20, ≥10 Impressions)
 
@@ -120,19 +116,21 @@ These keywords are close to page 1 — small optimizations could yield significa
 
 | Page | Keyword | Position | Impressions | CTR |
 |------|---------|----------|-------------|-----|
-| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kăo reviews | 4.4 | 25 | 0.0% |
-| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kăo menu | 7.8 | 47 | 2.1% |
-| /en/articles/anova-vs-joule-sous-vide-comparison/ | anova vs breville joule, which sous vide is better? | 7.9 | 11 | 0.0% |
-| /en/articles/best-cutting-board-material/ | hasegawa cutting board review | 8.3 | 11 | 0.0% |
-| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kăo | 9 | 46 | 0.0% |
-| /en/reviews/mckiernan-montreal/ | bomba schnitzel | 9.1 | 48 | 0.0% |
-| /en/reviews/othym-montreal/ | o-thym reviews | 9.2 | 29 | 3.4% |
-| /en/reviews/othym-montreal/ | othym | 9.3 | 24 | 0.0% |
-| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kao | 9.6 | 169 | 0.6% |
-| /en/reviews/mckiernan-montreal/ | mckiernan rôtisserie reviews | 9.6 | 115 | 0.0% |
-| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kăo montreal | 10 | 17 | 0.0% |
-| /fr/critiques/othym-montreal/ | avis sur othym | 11.1 | 38 | 0.0% |
-| /en/recipes/quinoa-crusted-salmon/ | quinoa crusted salmon | 18.9 | 16 | 0.0% |
+| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kăo reviews | 4.2 | 23 | 0.0% |
+| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kăo menu | 7.2 | 44 | 0.0% |
+| /en/reviews/oncle-lee-kao-montreal/ | oncle lee michelin | 7.6 | 11 | 0.0% |
+| /en/reviews/othym-montreal/ | othym | 7.7 | 113 | 0.0% |
+| /en/articles/anova-vs-joule-sous-vide-comparison/ | anova vs breville joule, which sous vide is better? | 7.8 | 13 | 0.0% |
+| /en/reviews/othym-montreal/ | o thym menu | 8.1 | 12 | 0.0% |
+| /en/recipes/quinoa-crusted-salmon/ | salmon nikkei | 8.8 | 11 | 0.0% |
+| /en/reviews/othym-montreal/ | othym montreal | 9 | 13 | 0.0% |
+| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kao | 9 | 39 | 0.0% |
+| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kăo | 9 | 67 | 0.0% |
+| /en/reviews/mckiernan-montreal/ | bomba schnitzel | 9.1 | 59 | 0.0% |
+| /en/reviews/othym-montreal/ | o-thym reviews | 9.2 | 33 | 0.0% |
+| /en/reviews/oncle-lee-kao-montreal/ | oncle lee kăo montreal | 9.3 | 12 | 0.0% |
+| /en/reviews/mckiernan-montreal/ | mckiernan rôtisserie reviews | 9.7 | 83 | 1.2% |
+| /fr/recettes/calamars-vegetaliens-croustillants/ | calamar vegan | 10.1 | 14 | 0.0% |
 
 ## Competitor Snapshot
 
@@ -140,24 +138,24 @@ Top domains appearing across your tracked keywords:
 
 | Domain | Keywords Ranking For |
 |--------|---------------------|
-| seriouseats.com | 15 |
-| youtube.com | 15 |
-| instagram.com | 14 |
-| reddit.com | 14 |
-| facebook.com | 12 |
-| recipetineats.com | 6 |
-| loveandlemons.com | 6 |
-| food52.com | 5 |
+| seriouseats.com | 18 |
+| facebook.com | 15 |
+| reddit.com | 11 |
+| instagram.com | 8 |
+| loveandlemons.com | 7 |
+| youtube.com | 7 |
+| food52.com | 6 |
+| recipetineats.com | 5 |
 | justonecookbook.com | 5 |
-| tiffycooks.com | 5 |
+| cooking.nytimes.com | 5 |
 
 ## Our SERP Positions
 
 | Keyword | Position | Featured |
 |---------|----------|----------|
-| 3-day miso duck breast crisp skin | 1 | No |
 | spicy gochujang-kimchi seafood bucatini | 2 | No |
 | gochujang lamb meatballs with kabocha | 2 | No |
+| 3-day miso duck breast crisp skin | 3 | No |
 | 3 day miso cured duck | 3 | No |
 
 ---
