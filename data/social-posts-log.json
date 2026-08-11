@@ -68,7 +68,9 @@
           "imageSrc": "https://datemydish.com/_astro/beef-ragu-pappardelle-simmering.C0ODoIJG_2w8iFO.webp",
           "altText": "Instructions 3: Add crushed tomatoes, tomato paste, red wine, water, thyme, and bay leaf. Return seared beef to pot. Bring to a gentle s",
           "scheduledFor": "2026-08-10T18:34:31.149Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856708032",
+          "postedAt": "2026-08-11T10:39:40.140Z"
         },
         {
           "imageKey": "img_h13f8w",
@@ -161,7 +163,9 @@
           "imageSrc": "https://datemydish.com/_astro/brussels-sprouts-salad-step-3.Bg5Wvt2G_ZWN65m.webp",
           "altText": "Instructions 2: Fry the outer Brussels sprout leaves in batches until evenly brown and crispy.",
           "scheduledFor": "2026-08-10T18:34:52.194Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856708037",
+          "postedAt": "2026-08-11T10:39:50.887Z"
         },
         {
           "imageKey": "img_1swa8do",
@@ -245,7 +249,9 @@
           "imageSrc": "https://datemydish.com/_astro/cacio-e-pepe-tossing-pasta.ChwIoY_h_Z14Lzb7.webp",
           "altText": "Instructions 6: Transfer drained pasta directly to the pepper sauce using tongs, adding more pasta water as needed.",
           "scheduledFor": "2026-08-10T18:35:02.235Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856708040",
+          "postedAt": "2026-08-11T10:40:01.602Z"
         },
         {
           "imageKey": "img_ps492p",
@@ -583,7 +589,9 @@
           "imageSrc": "https://datemydish.com/_astro/3-day-aged-miso-duck-breast-step-4.QsWjp5ey_Zx2psK.webp",
           "altText": "Finished plate of sliced miso duck breast fanned out with julienned green onions and flaky Maldon salt scattered on top",
           "scheduledFor": "2026-08-10T18:34:21.123Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856708043",
+          "postedAt": "2026-08-11T10:40:12.337Z"
         }
       ]
     },
