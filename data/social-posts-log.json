@@ -1007,7 +1007,9 @@
           "imageSrc": "https://datemydish.com/_astro/mckiernan-spare-ribs-brunch.AHreRLO6_ZFPAx1.webp",
           "altText": "Honey garlic spare ribs glazed with sticky sauce, topped with sesame seeds and green onions at McKiernan",
           "scheduledFor": "2026-08-11T21:45:43.324Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856736321",
+          "postedAt": "2026-08-12T10:49:19.052Z"
         },
         {
           "imageKey": "img_1g7fy6n",
@@ -1098,7 +1100,9 @@
           "imageSrc": "https://datemydish.com/_astro/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-5.CiADzma7_Xobl3.webp",
           "altText": "Instructions 2: Add 1/4 cup of the spicy miso paste and cook, stirring, 1 minute until fragrant.",
           "scheduledFor": "2026-08-10T18:34:41.177Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856736325",
+          "postedAt": "2026-08-12T10:49:30.229Z"
         },
         {
           "imageKey": "img_wspr4u",
