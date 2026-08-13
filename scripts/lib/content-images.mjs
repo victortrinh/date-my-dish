@@ -8,6 +8,10 @@
 //   - Dedupe images that appear more than once on a page (e.g. a review's
 //     hero photo is rendered once as the banner and again inline in the
 //     prose body; a recipe step photo is sometimes also reused inline)
+//   - Resolve a pin's image back to its original source file under
+//     src/assets/images/ so posting can upload bytes directly instead of
+//     depending on a content-hashed dist URL staying alive until the pin's
+//     scheduled post date
 //
 // Dedup strategy: images are keyed primarily by normalized alt text (stable
 // across different Astro-generated image sizes/formats of the same source
@@ -16,6 +20,10 @@
 // deliberately conservative (prefers merging over creating a near-duplicate
 // pin) since posting the same photo twice is the exact problem this module
 // exists to avoid.
+
+import { readFileSync, readdirSync, existsSync } from "fs";
+import { join, dirname, basename, extname } from "path";
+import matter from "gray-matter";
 
 export const SITE_URL = "https://datemydish.com";
 
@@ -208,4 +216,108 @@ export function imageKeyFor(image) {
     hash = (hash * 31 + basis.charCodeAt(i)) >>> 0;
   }
   return `img_${hash.toString(36)}`;
+}
+
+// ---------------------------------------------------------------------------
+// Local source asset resolution
+//
+// Pins store the deployed, content-hashed image URL at scheduling time
+// (e.g. /_astro/hoogan-et-beaufort-asparagus.tGXbg52Y_1Rmb8v.webp) but may
+// not post until days or weeks later, by which point a re-optimized image
+// can have a different hash and the stored URL 404s. Astro's hashed output
+// filenames always preserve the original source basename, so that basename
+// is a stable, hash-independent way to find the real file under
+// src/assets/images/ and post its bytes directly instead of trusting a URL
+// to stay alive.
+// ---------------------------------------------------------------------------
+const ASSETS_ROOT = "src/assets/images";
+let assetIndexCache = null;
+
+function buildAssetIndex() {
+  const index = new Map();
+  function walk(dir) {
+    for (const entry of readdirSync(dir, { withFileTypes: true })) {
+      const full = join(dir, entry.name);
+      if (entry.isDirectory()) {
+        walk(full);
+      } else {
+        const base = basename(entry.name, extname(entry.name));
+        if (!index.has(base)) index.set(base, full);
+      }
+    }
+  }
+  if (existsSync(ASSETS_ROOT)) walk(ASSETS_ROOT);
+  return index;
+}
+
+function assetIndex() {
+  if (!assetIndexCache) assetIndexCache = buildAssetIndex();
+  return assetIndexCache;
+}
+
+// Extract the source basename from a deployed asset URL, e.g.
+// ".../hoogan-et-beaufort-asparagus.tGXbg52Y_1Rmb8v.webp" -> "hoogan-et-beaufort-asparagus"
+function basenameFromDeployedUrl(imageSrc) {
+  const file = basename(new URL(imageSrc).pathname);
+  return file.split(".")[0];
+}
+
+function heroImagePathFromFrontmatter(type, slug) {
+  const filePath = join(contentDir(type, "en"), `${slug}.mdx`);
+  if (!existsSync(filePath)) return null;
+  const raw = readFileSync(filePath, "utf-8");
+  const { data } = matter(raw);
+  if (!data.heroImage) return null;
+  // heroImage is a relative import path from the mdx file's own directory,
+  // e.g. "../../../assets/images/recipes/slug.jpg"
+  return join(dirname(filePath), data.heroImage);
+}
+
+// Resolve a pin back to its source file under src/assets/images/.
+// Resolution order: an explicit imageFile (new pins carry this), then the
+// basename of a stored deployed URL looked up in the asset index, then
+// (for legacy pins with neither) the content's own heroImage frontmatter.
+export function resolveLocalAsset({ type, slug, imageSrc, imageFile }) {
+  if (imageFile) {
+    if (!existsSync(imageFile)) {
+      throw new Error(`Local asset ${imageFile} for ${slug} no longer exists`);
+    }
+    return imageFile;
+  }
+
+  if (imageSrc) {
+    const base = basenameFromDeployedUrl(imageSrc);
+    const found = assetIndex().get(base);
+    if (found) return found;
+    throw new Error(`No local asset found for ${slug} matching basename "${base}"`);
+  }
+
+  const heroPath = heroImagePathFromFrontmatter(type, slug);
+  if (heroPath && existsSync(heroPath)) return heroPath;
+
+  throw new Error(`Cannot resolve a local image for ${slug}: no imageFile, imageSrc, or heroImage`);
+}
+
+// Pinterest's image_base64 media source only accepts image/jpeg, image/png,
+// or image/gif. Pass jpg/png through as-is; convert everything else (webp,
+// the format most new assets are saved in) to JPEG with sharp.
+const PASSTHROUGH_CONTENT_TYPES = {
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".png": "image/png",
+  ".gif": "image/gif",
+};
+
+export async function readImageAsBase64(filePath) {
+  const ext = extname(filePath).toLowerCase();
+  const passthroughType = PASSTHROUGH_CONTENT_TYPES[ext];
+
+  if (passthroughType) {
+    const bytes = readFileSync(filePath);
+    return { contentType: passthroughType, data: bytes.toString("base64") };
+  }
+
+  const { default: sharp } = await import("sharp");
+  const bytes = await sharp(filePath).jpeg().toBuffer();
+  return { contentType: "image/jpeg", data: bytes.toString("base64") };
 }
