@@ -13,6 +13,8 @@ const BLOCKED_DOMAINS = [
   "cloudflareinsights.com",
   "pinimg.com",
   "pinterest.com",
+  "googletagmanager.com",
+  "analytics.ahrefs.com",
 ];
 
 for (const { path, name } of pages) {
