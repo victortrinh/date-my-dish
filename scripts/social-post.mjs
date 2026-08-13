@@ -31,6 +31,7 @@ import {
   fetchLiveHtml,
   discoverImagesFromHtml,
   imageKeyFor,
+  resolveLocalAsset,
 } from "./lib/content-images.mjs";
 
 const LOG_FILE = "data/social-posts-log.json";
@@ -385,6 +386,18 @@ function scheduleOffsetDays(index) {
   return STAGGER_FIRST_GAP_DAYS + (index - 1) * STAGGER_STEP_DAYS;
 }
 
+// Best-effort: record the source asset path alongside imageSrc so
+// pinterest-rotate.mjs can post this pin's bytes directly later without
+// depending on the deployed URL's content hash staying stable until the
+// pin's scheduled date. Never blocks posting if the lookup fails.
+function tryResolveImageFile(type, slug, imageSrc) {
+  try {
+    return resolveLocalAsset({ type, slug, imageSrc });
+  } catch {
+    return undefined;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Process a single piece of content (recipe, article, or review)
 // ---------------------------------------------------------------------------
@@ -465,6 +478,7 @@ async function processContent(filePath, type, log, options = {}) {
             title: v.title,
             description: v.description,
             imageSrc: hero?.src,
+            imageFile: hero?.src ? tryResolveImageFile(type, slug, hero.src) : undefined,
             altText: hero?.alt || enData.heroImageAlt,
             scheduledFor:
               i === 0 ? undefined : new Date(Date.now() + scheduleOffsetDays(i) * 86400000).toISOString(),
@@ -481,6 +495,7 @@ async function processContent(filePath, type, log, options = {}) {
           title: caption.title,
           description: caption.description,
           imageSrc: img.src,
+          imageFile: tryResolveImageFile(type, slug, img.src),
           altText: buildInstructionAlt(img, enData),
           isHero: img.isHero || undefined,
           scheduledFor:
