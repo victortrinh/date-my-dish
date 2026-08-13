@@ -1,14 +1,15 @@
 {
-  "main": "dist/_worker.js/index.js",
+  "main": "@astrojs/cloudflare/entrypoints/server",
   "name": "date-my-dish",
   "compatibility_date": "2025-09-27",
   "compatibility_flags": [
     "global_fetch_strictly_public",
-    "nodejs_compat"
+    "nodejs_compat",
+    "disable_nodejs_process_v2"
   ],
   "assets": {
     "binding": "ASSETS",
-    "directory": "dist"
+    "directory": "dist/client"
   },
   "observability": {
     "enabled": true

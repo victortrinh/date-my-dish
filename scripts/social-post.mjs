@@ -126,7 +126,7 @@ async function discoverContentImages(type, slug, heroAlt) {
     console.warn(`Live fetch failed (${err.message}), trying local build...`);
   }
 
-  const localPath = join("dist", "en", CONTENT_TYPES[type].urlSegment, slug, "index.html");
+  const localPath = join("dist", "client", "en", CONTENT_TYPES[type].urlSegment, slug, "index.html");
   if (existsSync(localPath)) {
     const html = readFileSync(localPath, "utf-8");
     return { url, images: discoverImagesFromHtml(html, { heroAlt }) };

@@ -16,7 +16,7 @@
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
 import { join, relative } from "node:path";
 
-const DIST = "dist";
+const DIST = "dist/client";
 const REDIRECTS_FILE = "public/_redirects";
 const MIN_DESC = 120;
 const MAX_DESC = 160;

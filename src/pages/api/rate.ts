@@ -1,4 +1,5 @@
 import type { APIRoute } from "astro";
+import { env } from "cloudflare:workers";
 
 interface RatingData {
   total: number;
@@ -7,7 +8,7 @@ interface RatingData {
 
 export const prerender = false;
 
-export const GET: APIRoute = async ({ request, locals }) => {
+export const GET: APIRoute = async ({ request }) => {
   const url = new URL(request.url);
   const slug = url.searchParams.get("slug");
 
@@ -18,8 +19,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
     });
   }
 
-  const env = (locals as any).runtime?.env;
-  const kv = env?.RATINGS;
+  const kv = (env as any)?.RATINGS;
 
   if (!kv) {
     return new Response(JSON.stringify({ averageRating: 0, ratingCount: 0 }), {
@@ -46,7 +46,7 @@ export const GET: APIRoute = async ({ request, locals }) => {
   );
 };
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   const origin = request.headers.get("origin") || "";
   if (!origin.includes("datemydish.com") && !origin.includes("localhost")) {
     return new Response(JSON.stringify({ error: "Forbidden" }), {
@@ -81,8 +81,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
   }
 
-  const env = (locals as any).runtime?.env;
-  const kv = env?.RATINGS;
+  const kv = (env as any)?.RATINGS;
 
   if (!kv) {
     return new Response(JSON.stringify({ error: "Ratings unavailable" }), {

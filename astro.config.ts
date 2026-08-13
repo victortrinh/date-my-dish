@@ -8,7 +8,7 @@ import path from "node:path";
 
 import cloudflare from "@astrojs/cloudflare";
 
-const distDir = path.join(path.dirname(fileURLToPath(import.meta.url)), "dist");
+const distDir = path.join(path.dirname(fileURLToPath(import.meta.url)), "dist", "client");
 
 // Astro's sitemap integration does not read noindex meta tags, so we read the
 // built HTML for each page and drop any that render robots noindex (e.g. thin
