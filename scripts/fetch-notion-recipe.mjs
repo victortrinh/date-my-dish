@@ -13,9 +13,9 @@
 // Usage:
 //   node scripts/fetch-notion-recipe.mjs
 
-import { NotionAPI } from "notion-client";
 import { writeFileSync } from "fs";
 import {
+  createNotionApi,
   withRetry,
   writeGitHubOutput,
   readPublishedJson,
@@ -40,7 +40,7 @@ const PENDING_FILE = "notion/pending-recipe.json";
 async function main() {
   console.log("=== Fetch Notion Recipe ===\n");
 
-  const api = new NotionAPI();
+  const api = createNotionApi();
 
   // Step 1: Fetch the database page to discover collection + view IDs
   console.log("Step 1: Fetching database page...");

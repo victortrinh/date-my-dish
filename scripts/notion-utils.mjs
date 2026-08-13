@@ -10,6 +10,7 @@ import {
   appendFileSync,
 } from "fs";
 import { join } from "path";
+import { NotionAPI } from "notion-client";
 
 // ---------------------------------------------------------------------------
 // Shared constants
@@ -18,6 +19,31 @@ export const MAX_RETRIES = 3;
 export const RETRY_BASE_MS = 1000;
 export const PUBLISHED_JSON = "notion/published.json";
 export const MAX_BLOCK_DEPTH = 3;
+
+// ---------------------------------------------------------------------------
+// Authenticated notion-client instance
+//
+// notion-client hits Notion's private, unofficial www.notion.so/api/v3/*
+// endpoints. Notion started 403ing unauthenticated requests from datacenter
+// IPs (GitHub Actions runners) in Aug 2026, even for public pages. Passing a
+// logged-in session's token_v2 cookie + active user id authenticates the
+// request as that user, which restores access from CI.
+//
+// NOTION_TOKEN_V2 and NOTION_ACTIVE_USER come from a browser session
+// (DevTools -> Application -> Cookies on notion.so) belonging to a member of
+// the workspace that owns the content database. Both expire and must be
+// refreshed manually when this starts 403ing again.
+// ---------------------------------------------------------------------------
+export function createNotionApi() {
+  const authToken = process.env.NOTION_TOKEN_V2;
+  const activeUser = process.env.NOTION_ACTIVE_USER;
+  if (!authToken || !activeUser) {
+    throw new Error(
+      "NOTION_TOKEN_V2 and NOTION_ACTIVE_USER must both be set. See docs/solutions/ for how to extract these from a logged-in Notion session."
+    );
+  }
+  return new NotionAPI({ authToken, activeUser });
+}
 
 // ---------------------------------------------------------------------------
 // General helpers

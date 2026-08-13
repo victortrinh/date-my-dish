@@ -13,9 +13,9 @@
 // Usage:
 //   node scripts/fetch-notion-article.mjs
 
-import { NotionAPI } from "notion-client";
 import { writeFileSync } from "fs";
 import {
+  createNotionApi,
   withRetry,
   writeGitHubOutput,
   readPublishedJson,
@@ -94,7 +94,7 @@ function extractAffiliateProducts(blocks) {
 async function main() {
   console.log("=== Fetch Notion Article ===\n");
 
-  const api = new NotionAPI();
+  const api = createNotionApi();
 
   // Step 1: Fetch the database page to discover collection + view IDs
   console.log("Step 1: Fetching database page...");

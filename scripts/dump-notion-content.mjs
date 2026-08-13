@@ -2,7 +2,7 @@
 // Usage: node scripts/dump-notion-content.mjs <recipe-number>
 // Fetches and prints the Notion page content for a given recipe/article/review number.
 
-import { NotionAPI } from "notion-client";
+import { createNotionApi } from "./notion-utils.mjs";
 
 const DATABASE_PAGE_ID = "9ce95183503543d68450194d1010824b";
 
@@ -55,7 +55,7 @@ async function main() {
     process.exit(1);
   }
 
-  const api = new NotionAPI();
+  const api = createNotionApi();
 
   // Fetch database
   const recordMap = await api.getPage(DATABASE_PAGE_ID, {

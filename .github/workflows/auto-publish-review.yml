@@ -29,7 +29,8 @@ jobs:
       - name: Fetch from Notion
         run: node scripts/fetch-notion-review.mjs
         env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_TOKEN_V2: ${{ secrets.NOTION_TOKEN_V2 }}
+          NOTION_ACTIVE_USER: ${{ secrets.NOTION_ACTIVE_USER }}
 
       - name: Create PR with pending file
         if: success()

@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -46,7 +46,6 @@ export default defineConfig({
         },
       },
     }),
-    tailwind(),
   ],
 
   i18n: {
@@ -60,4 +59,8 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: "compile",
   }),
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
