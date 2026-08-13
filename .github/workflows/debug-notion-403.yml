@@ -1,0 +1,17 @@
+name: Debug Notion 403 (temporary)
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: node scripts/debug-notion-403.mjs
+        env:
+          NOTION_TOKEN_V2: ${{ secrets.NOTION_TOKEN_V2 }}
+          NOTION_ACTIVE_USER: ${{ secrets.NOTION_ACTIVE_USER }}
