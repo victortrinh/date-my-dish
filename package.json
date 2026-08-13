@@ -10,7 +10,7 @@
     "check": "astro check",
     "validate:source": "node scripts/validate-descriptions.mjs && node scripts/validate-source.mjs",
     "validate:build": "node scripts/validate-build.mjs",
-    "postbuild": "node scripts/generate-recipe-index.mjs && npx pagefind --site dist && node scripts/validate-build.mjs",
+    "postbuild": "node scripts/generate-recipe-index.mjs && npx pagefind --site dist/client && node scripts/validate-build.mjs",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types",
     "test": "npx playwright test",

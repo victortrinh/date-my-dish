@@ -244,8 +244,8 @@ const ratingData = (ratingsData as Record<string, { averageRating: number; ratin
         />
       </div>
 
+      {/* Sidebar (desktop only) */}
       {data.dateNightTips && (
-        <!-- Sidebar (desktop only) -->
         <aside class="recipe-sidebar hidden lg:col-span-4 lg:block">
           <DateNightTips locale={locale} tips={data.dateNightTips} compact={true} />
         </aside>

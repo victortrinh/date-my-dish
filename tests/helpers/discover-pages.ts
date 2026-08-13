@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync } from "fs";
 import { join, relative } from "path";
 
-const DIST_DIR = join(process.cwd(), "dist");
+const DIST_DIR = join(process.cwd(), "dist", "client");
 const PAGES_JSON = join(process.cwd(), ".playwright-pages.json");
 
 // Routes to exclude from testing

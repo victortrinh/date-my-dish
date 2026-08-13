@@ -13,7 +13,7 @@ import matter from "gray-matter";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const recipesDir = join(__dirname, "..", "src", "content", "recipes");
-const outputPath = join(__dirname, "..", "dist", "recipe-index.json");
+const outputPath = join(__dirname, "..", "dist", "client", "recipe-index.json");
 
 const recipes = [];
 
