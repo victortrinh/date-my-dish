@@ -540,14 +540,18 @@
           "title": "3-Hour Japanese-French Dinner",
           "description": "3-day aged miso duck breast with shatter-crisp skin: a miso cure, slow render, sous vide, and a blistering final sear. The most impressive date night dinner you can make at home. Full recipe with step photos.",
           "scheduledFor": "2026-04-05T05:31:25.367Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856795571",
+          "postedAt": "2026-08-14T10:45:23.179Z"
         },
         {
           "variant": 3,
           "title": "3-Day Aged Miso Duck Breast (Shatter-Crisp Skin) | Perfect for Date Night",
           "description": "3-day aged miso duck breast with shatter-crisp skin: a miso cure, slow render, sous vide, and a blistering final sear. The most impressive date night dinner you can make at home. Full recipe with step photos.",
           "scheduledFor": "2026-04-12T05:31:25.367Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856795571",
+          "postedAt": "2026-08-14T10:45:33.564Z"
         },
         {
           "imageKey": "img_rc9hiu",
@@ -613,14 +617,18 @@
           "title": "60-Minute Fusion Dessert",
           "description": "Chocolate tofu pudding recipe with candied cacao nibs and banana: silky, rich, and make-ahead friendly. The secret ingredient is silken tofu blended with dates and milk chocolate. Perfect impressive dessert for date night at home.",
           "scheduledFor": "2026-04-05T05:31:36.327Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856795582",
+          "postedAt": "2026-08-14T10:45:44.162Z"
         },
         {
           "variant": 3,
           "title": "Chocolate Tofu Pudding with Candied Cacao Nibs and Banana | Perfect for Date Night",
           "description": "Chocolate tofu pudding recipe with candied cacao nibs and banana: silky, rich, and make-ahead friendly. The secret ingredient is silken tofu blended with dates and milk chocolate. Perfect impressive dessert for date night at home.",
           "scheduledFor": "2026-04-12T05:31:36.327Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856795582",
+          "postedAt": "2026-08-14T10:45:54.514Z"
         }
       ]
     }
@@ -641,7 +649,9 @@
           "title": "65-Minute Korean-Japanese Dinner",
           "description": "Lamb meatballs with gochujang glaze and kabocha puree recipe: spicy-sweet glazed lamb over silky miso squash puree with caramelized peanut crunch. A stunning date night dinner for two that looks restaurant-level.",
           "scheduledFor": "2026-04-05T05:31:47.184Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856795600",
+          "postedAt": "2026-08-14T10:46:05.098Z"
         },
         {
           "variant": 3,
