@@ -658,7 +658,9 @@
           "title": "Lamb Meatballs with Gochujang Glaze + Kabocha Puree (Peanut Crunch) | Perfect for Date Night",
           "description": "Lamb meatballs with gochujang glaze and kabocha puree recipe: spicy-sweet glazed lamb over silky miso squash puree with caramelized peanut crunch. A stunning date night dinner for two that looks restaurant-level.",
           "scheduledFor": "2026-04-12T05:31:47.184Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856824447",
+          "postedAt": "2026-08-15T10:10:07.507Z"
         }
       ]
     }
@@ -679,14 +681,18 @@
           "title": "20-Minute Japanese-Italian Dinner",
           "description": "Miso udon carbonara recipe (silky, no-cream): thick chewy udon in a glossy egg yolk and cheese sauce with white miso and crispy bacon. Ready in 20 minutes. The best date night noodle bowl for two.",
           "scheduledFor": "2026-04-05T05:31:58.072Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856824451",
+          "postedAt": "2026-08-15T10:10:18.151Z"
         },
         {
           "variant": 3,
           "title": "Miso Udon Carbonara (Silky, No-Cream) | Perfect for Date Night",
           "description": "Miso udon carbonara recipe (silky, no-cream): thick chewy udon in a glossy egg yolk and cheese sauce with white miso and crispy bacon. Ready in 20 minutes. The best date night noodle bowl for two.",
           "scheduledFor": "2026-04-12T05:31:58.072Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856824451",
+          "postedAt": "2026-08-15T10:10:28.557Z"
         }
       ]
     }
@@ -707,14 +713,18 @@
           "title": "15-Minute Thai Appetizer",
           "description": "Northern Thai beef tartare: thinly sliced AAA striploin tossed with laab powder, garlic oil, fish sauce, lime, and a pile of fresh herbs. Served in lettuce cups. 15 minutes, no cooking. The appetizer that starts every good date night.",
           "scheduledFor": "2026-04-05T05:32:08.919Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856824456",
+          "postedAt": "2026-08-15T10:10:39.274Z"
         },
         {
           "variant": 3,
           "title": "Northern Thai Beef Tartare Recipe | Perfect for Date Night",
           "description": "Northern Thai beef tartare: thinly sliced AAA striploin tossed with laab powder, garlic oil, fish sauce, lime, and a pile of fresh herbs. Served in lettuce cups. 15 minutes, no cooking. The appetizer that starts every good date night.",
           "scheduledFor": "2026-04-12T05:32:08.919Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856824456",
+          "postedAt": "2026-08-15T10:10:49.702Z"
         }
       ]
     }
