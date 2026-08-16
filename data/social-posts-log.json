@@ -745,14 +745,18 @@
           "title": "45-Minute French Dessert",
           "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
           "scheduledFor": "2026-04-05T05:32:19.653Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856854174",
+          "postedAt": "2026-08-16T10:10:49.469Z"
         },
         {
           "variant": 3,
           "title": "Pâte à Choux (Foolproof Choux Pastry for Cream Puffs and Gougères) | Perfect for Date Night",
           "description": "Foolproof pâte à choux recipe for cream puffs and gougères. Light, crisp, hollow pastry shells from just 7 ingredients. Step-by-step guide with photos for perfect choux every time.",
           "scheduledFor": "2026-04-12T05:32:19.653Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856854174",
+          "postedAt": "2026-08-16T10:10:59.799Z"
         }
       ]
     }
@@ -773,14 +777,18 @@
           "title": "4-Hour Italian Dinner",
           "description": "Pork osso buco with creamy polenta: braised pork shanks in white wine until fall-apart tender, spooned over polenta, topped with lemon-parsley gremolata. 4 hours, mostly hands-off. The slow dinner that turns any night into an occasion.",
           "scheduledFor": "2026-04-05T05:32:30.594Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856854179",
+          "postedAt": "2026-08-16T10:11:10.473Z"
         },
         {
           "variant": 3,
           "title": "Pork Osso Buco with Creamy Polenta | Perfect for Date Night",
           "description": "Pork osso buco with creamy polenta: braised pork shanks in white wine until fall-apart tender, spooned over polenta, topped with lemon-parsley gremolata. 4 hours, mostly hands-off. The slow dinner that turns any night into an occasion.",
           "scheduledFor": "2026-04-12T05:32:30.594Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856854179",
+          "postedAt": "2026-08-16T10:11:20.938Z"
         }
       ]
     }
@@ -924,7 +932,9 @@
           "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-asparagus.tGXbg52Y_1Rmb8v.webp",
           "altText": "Green asparagus and snap peas with pistachio and vibrant microgreens plated elegantly at Hoogan et Beaufort Montreal",
           "scheduledFor": "2026-07-27T18:23:55.251Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856854185",
+          "postedAt": "2026-08-16T10:11:31.598Z"
         },
         {
           "imageKey": "img_ok8aap",
