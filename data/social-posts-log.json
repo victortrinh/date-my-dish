@@ -943,7 +943,9 @@
           "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-spaghetti.DiY5cU2V_1L8Jgy.webp",
           "altText": "Spaghetti with ramps and Louis d'Or cheese at Hoogan et Beaufort Montreal, silky noodles coiled elegantly in a light creamy sauce",
           "scheduledFor": "2026-08-03T18:23:55.251Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856885569",
+          "postedAt": "2026-08-17T10:19:08.726Z"
         },
         {
           "imageKey": "img_1sotxda",
@@ -952,7 +954,9 @@
           "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-focaccia.DsZ9OxeE_1AfqvA.webp",
           "altText": "Grilled focaccia with whipped butter at Hoogan et Beaufort Montreal, sliced bread on a wooden board with a small ramekin of pale whipped butter",
           "scheduledFor": "2026-08-10T18:23:55.251Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856885571",
+          "postedAt": "2026-08-17T10:19:19.363Z"
         },
         {
           "imageKey": "img_3bc372",
