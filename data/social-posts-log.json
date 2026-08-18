@@ -79,7 +79,9 @@
           "imageSrc": "https://datemydish.com/_astro/beef-ragu-pappardelle-step-6.j4WJ4Vn1_Z29h59G.webp",
           "altText": "Instructions 5: Bring a large pot of salted water to a boil. Cook pappardelle according to package instructions, reducing cooking time b",
           "scheduledFor": "2026-08-17T18:34:31.149Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856915971",
+          "postedAt": "2026-08-18T10:15:21.028Z"
         },
         {
           "imageKey": "img_1i1pjs8",
@@ -174,7 +176,9 @@
           "imageSrc": "https://datemydish.com/_astro/brussels-sprouts-salad-step-4.B1N35F5H_Z1uLXau.webp",
           "altText": "Instructions 4: Remove from oil, drain on paper towels, and immediately season with salt.",
           "scheduledFor": "2026-08-17T18:34:52.194Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856915975",
+          "postedAt": "2026-08-18T10:15:31.966Z"
         }
       ]
     },
@@ -260,7 +264,9 @@
           "imageSrc": "https://datemydish.com/_astro/cacio-e-pepe-cheese-sauce.6t2n8iQh_ZvecWY.webp",
           "altText": "Instructions 8: Remove from heat, cool for approximately 3 minutes, then gradually stir in both cheeses with small amounts of pasta wate",
           "scheduledFor": "2026-08-17T18:35:02.235Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856915992",
+          "postedAt": "2026-08-18T10:15:42.625Z"
         }
       ]
     },
@@ -965,7 +971,9 @@
           "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-beef.CtaRhwPT_ZeRVjJ.webp",
           "altText": "Beef with maitake mushrooms and black cardamom at Hoogan et Beaufort Montreal, a beautifully plated main course with rich dark jus and precise garnish",
           "scheduledFor": "2026-08-17T18:23:55.251Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856915995",
+          "postedAt": "2026-08-18T10:15:53.328Z"
         },
         {
           "imageKey": "img_1k2bsdd",
@@ -1145,7 +1153,9 @@
           "imageSrc": "https://datemydish.com/_astro/bold-spicy-miso-ramen-recipe-restaurant-style-at-home-step-6.DpybpjGN_Z2q6JQe.webp",
           "altText": "Instructions 3: Add dried shiitake mushrooms, stock, soy milk, and MSG if using. Bring to a simmer.",
           "scheduledFor": "2026-08-17T18:34:41.177Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856915997",
+          "postedAt": "2026-08-18T10:16:03.961Z"
         }
       ]
     }
