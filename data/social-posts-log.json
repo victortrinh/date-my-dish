@@ -1060,7 +1060,9 @@
           "imageSrc": "https://datemydish.com/_astro/mckiernan-donuts-brunch.Du54EKGB_1oWuzn.webp",
           "altText": "Homemade sugar-dusted and chocolate-glazed donuts served warm at McKiernan",
           "scheduledFor": "2026-08-18T21:45:43.324Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156856944123",
+          "postedAt": "2026-08-19T10:15:24.659Z"
         }
       ]
     }
