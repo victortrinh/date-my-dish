@@ -90,7 +90,9 @@
           "imageSrc": "https://datemydish.com/_astro/beef-ragu-pappardelle-tossing.B8VI3xNr_2d3JX2.webp",
           "altText": "Instructions 6: Heat ragu in a large pan. Transfer cooked pasta directly to sauce with about 3/4 cup pasta water using tongs. Toss until",
           "scheduledFor": "2026-08-24T18:34:31.149Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156857130234",
+          "postedAt": "2026-08-25T10:19:11.722Z"
         }
       ]
     },
@@ -982,7 +984,9 @@
           "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-rhubarb.Dm5NEeWB_ZEQFif.webp",
           "altText": "Rhubarb dessert with cherry blossom and shiso at Hoogan et Beaufort Montreal, a delicate, colorful plate with jewel-toned fruit and pale floral elements",
           "scheduledFor": "2026-08-24T18:54:52.650Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156857130238",
+          "postedAt": "2026-08-25T10:19:22.324Z"
         },
         {
           "imageKey": "img_19hnx83",
