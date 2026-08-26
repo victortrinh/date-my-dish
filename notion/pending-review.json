@@ -1,0 +1,555 @@
+{
+  "source": "notion",
+  "fetchedAt": "2026-08-26T02:25:40.544Z",
+  "notionPageId": "218ce4d2-eb60-4075-9129-4fb3625684a2",
+  "title": "Giwa (Verdun) Review: Pretty Plates, Subtle Korean Twists, and a Waterfront Walk After",
+  "mode": "publish",
+  "existingSlug": null,
+  "recipeNum": 83,
+  "lastEditedTime": "2026-08-21T04:37:28.728Z",
+  "heroImage": {
+    "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after.jpg",
+    "caption": null
+  },
+  "images": [
+    {
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after.jpg",
+      "caption": "",
+      "isHero": true
+    },
+    {
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-1.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-2.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-3.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-4.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-5.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-6.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-7.jpg",
+      "caption": "",
+      "isHero": false
+    },
+    {
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-8.jpg",
+      "caption": "",
+      "isHero": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "paragraph",
+      "text": "Giwa is the kind of place you pick when you want Korean food that feels a little more polished than your usual go-to, but still relaxed. The plates show up looking sharp, the technique is there, and the menu plays with classics in a way that feels modern without getting weird about it."
+    },
+    {
+      "type": "paragraph",
+      "text": "One honest note: the flavors lean a bit toned down (more refined than loud). If you’re chasing maximum heat, funk, or punch, you might wish it went harder. But if you want a pretty, easy night where the food still feels thoughtful, it’s a really solid date move."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.com/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/1f154088-12cc-4250-b437-ab148c81c0ce/DSCF6517.jpg?table=block&id=3c3c3484-e8de-801c-b55d-c7de423ab80b&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1787738400000&signature=9NJQn1MqPx3v4SdCKF8Y352Zue_kbLDb5GQpeo1FzQI",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after.jpg"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Giwa"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Location:** Montreal"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Price Range:** $$-$$$ (mid-range; “nice night out” without full fine-dining pressure)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cuisine:** Korean classics with a modern twist"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Dress Code:** Casual to Smart Casual"
+    },
+    {
+      "type": "callout",
+      "icon": "📖",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Quick Verdict:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Best For: Low-stress date nights, pretty plates, “let’s try something different” energy",
+        "Conversation Friendly: 4/5 (casual, comfortable)",
+        "Ambiance: Casual Korean restaurant vibe (terrasse is the move in summer)",
+        "Reservation: Recommended (especially for terrasse nights)"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Vibe"
+    },
+    {
+      "type": "paragraph",
+      "text": "Inside, it feels like a classic casual Korean restaurant: welcoming, straightforward, and not pretending to be fine dining. That’s exactly why it works for dates. You can focus on your person, not on “doing the restaurant correctly.”"
+    },
+    {
+      "type": "paragraph",
+      "text": "We didn’t get a full look at the interior because we sat on the **terrasse**, and if the weather’s good, I’d recommend doing the same. It instantly turns dinner into a proper Montréal night."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lighting:** Natural / outdoor-friendly (terrasse), otherwise casual"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Noise Level:** Low-to-medium (more “neighborhood dinner” than “party room”)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best Seats:** Terrasse for date-night ease; inside if you want the full atmosphere"
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "What to Order (Date-Night Game Plan)"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is a “share a few things” spot. Order in layers so the table keeps changing while you talk."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Easy order for two:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "2 appetizers (they’re the easiest to share)",
+        "1 dish from the main menu",
+        "1 dish from the seasonal menu",
+        "1 sot bap (even if you’re not usually a sot bap person, it’s their specialty)",
+        "Dessert: either 1 dessert + ice cream, or 2 plated desserts if you’re in a sweet mood"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "I didn’t order the sot bap myself, and in hindsight, I probably should have. Giwa actually won a bibimbap competition in Montreal during the Korean Festival 2026, judged by Edward Lee (yes, that Edward Lee from Culinary Wars). That’s a pretty strong hint that this is the thing to try."
+    },
+    {
+      "type": "callout",
+      "icon": "✅",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**How to order (so it feels like a date, not a rush):**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Start with something light + bright",
+        "Follow with one comforting classic",
+        "Add one “twist” dish that shows the chef’s point of view"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "What to order if you like…"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Classics (comfort + familiarity):** pick one or two staples you already know, then see how Giwa refines them.",
+        "**Twists (chef energy):** choose at least one seasonal/local-leaning dish.",
+        "**Pretty plating:** say yes to anything that looks like it’s meant to be photographed."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "What I Ordered (and what it’s like)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Gimbap:** seaweed roll with fish of the moment, cucumber, avocado, and a gochujang vinaigrette. **Flavor:** fresh, lightly sweet, gently spicy, and super clean. Great first bite and easy to share."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.com/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/0d8e55d2-c5a1-4715-9a04-2aa6b7cf338a/DSCF6525.jpg?table=block&id=3c3c3484-e8de-80f3-8a23-fef3284fc6cf&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1787738400000&signature=CorPaj7oG6C8ntsT2neEMF9UUJ0SoqVKBoWaNXzwgLk",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-1.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Yukhwe:** beef tartare with pear, sesame, soy sauce, egg yolk, and nasturtium. **Flavor:** sweet-salty, silky, and rich, with juicy pear cutting through and sesame/soy giving it that savory depth."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.com/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/d94c9267-7e7e-40b1-8cf1-1baebf4d18c5/DSCF6540.jpg?table=block&id=3c3c3484-e8de-8075-bff6-e725d5bcea98&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1787738400000&signature=hVtMrIgaIq-rzwYgNOoojHEapkyHCkHHQwEu5v_psgU",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-2.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Haemul Jang:** soy-marinated seafood (crab, shrimp, octopus, salmon) with seaweed and egg yolk. **Flavor:** briny-sweet seafood + soy umami, with the egg yolk making it feel glossy and rich. (One downside: the seaweed crisp element didn’t feel as fresh/crispy as it should have.)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Would I reorder it?** Probably not. It’s tempting and worth trying once, but for the price (seafood isn’t cheap), the flavor felt a bit uniform and toned down. It leaned heavily soy-forward, and I wanted more contrast and punch."
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.com/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/36e61326-9da4-4c3c-8996-69695d3125e1/DSCF6565.jpg?table=block&id=3c3c3484-e8de-8074-8ede-fea9c3cff27d&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1787738400000&signature=FBt4YfyC6TjjSfriChoJJsoSeAjmc-XM9kEnQQ9z-R8",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-3.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Baechu (seasonal):** charred napa cabbage glazed with doenjang, served over perilla cream with cucumber and fresh herbs. **Flavor:** smoky-sweet cabbage, savory doenjang funk, and a cooling, herbal finish from the perilla + cucumber."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.com/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/f267eb72-3611-4e64-9e30-4fb6448a5487/DSCF6546.jpg?table=block&id=3c3c3484-e8de-8086-804a-eb2a64c31ab3&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1787738400000&signature=QaCPsZUl3siBl2a0tMXhEGZRSMyWdU6ZYPVZrP99NWk",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-4.jpg"
+    },
+    {
+      "type": "paragraph",
+      "text": "Dessert"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Doenjang crème brûlée:** **Flavor:** sweet + salty, with that fermented doenjang edge that’s a little unfamiliar. Cleanly done, but not my vibe. I wouldn’t reorder this one."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.com/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/eda9d579-cd8e-4f4d-8291-ccf04f0db758/DSCF6570.jpg?table=block&id=3c3c3484-e8de-8075-9f0f-df552629d3b4&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1787738400000&signature=JwNM9zRzFsgu95-pFfOiUnY8FadjNLSK5ExCEyU5Mss",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-5.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Basque corn cheesecake** with torched corn + corn ice cream. **Flavor:** creamy, toasty, sweet-corn dessert energy. (Note: the popcorn topping tasted a bit stale.)"
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.com/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/e73732ec-ac0d-4198-8c17-ac41b2a7176f/DSCF6579.jpg?table=block&id=3c3c3484-e8de-8083-8528-ffb62ee3e387&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1787738400000&signature=T9MqQA2rSaFV_sq_sUr9ys_1cUX2_QliQd5TpRz3feI",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-6.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Hodumaru (my pick):** rich gochujang chocolate mousse + chili-spiked chantilly, candied walnuts, and maple ice cream. **Flavor:** chocolate-forward with a warm chili tingle, crunchy-nutty top, and sweet maple creaminess to round it out."
+      ]
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.com/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/8b4d3319-6b2d-43ae-9f1c-8ed385f1959c/DSCF6567.jpg?table=block&id=3c3c3484-e8de-8012-84c8-fb75cf6868fe&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1787738400000&signature=MIoMzo74Yw1GABj9cDoSmwqt_Jb7hG3HGP7q_N4tXF0",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-7.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Makgeolli sorbet:** a clean, lightly boozy, gently tangy palate reset to finish."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Food & Plating"
+    },
+    {
+      "type": "paragraph",
+      "text": "This is where Giwa really shines."
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Plating is genuinely pretty**: clean, modern, and photo-friendly.",
+        "The menu hits **Korean classics with a twist**, and the technique shows.",
+        "The only “but”: the overall flavor intensity can feel **a bit toned down**. It’s polished, not aggressive.",
+        "A couple of elements felt **prepped too far ahead**: the seaweed crisp didn’t have that fresh snap, and the popcorn on the dessert tasted a bit stale."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "A nice detail I really liked: they lean into a **seasonal menu** and call out **local products**, so it doesn’t feel like the same old greatest hits."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Service"
+    },
+    {
+      "type": "paragraph",
+      "text": "Service is casual and easy: friendly, low-pressure, and aligned with the vibe. It felt like the kind of place where you can take your time without feeling rushed."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Drinks"
+    },
+    {
+      "type": "paragraph",
+      "text": "The drink list has interesting choices, but it didn’t blow me away."
+    },
+    {
+      "type": "paragraph",
+      "text": "We had:"
+    },
+    {
+      "type": "image",
+      "url": "https://file.notion.com/f/f/b6fc3484-e8de-81e3-b238-00031f3692d5/409cc556-a7fe-49db-9e5d-f9c47efb021f/DSCF6528.jpg?table=block&id=3c3c3484-e8de-8098-9e00-daf6e25fe1ca&spaceId=b6fc3484-e8de-81e3-b238-00031f3692d5&expirationTimestamp=1787738400000&signature=wQxtD2GY6KlHhY3LAJbrcJFb7rOEsqKZmLeSrVTlAPA",
+      "caption": null,
+      "localPath": "src/assets/images/reviews/giwa-verdun-review-pretty-plates-subtle-korean-twists-and-a-waterfront-walk-after-8.jpg"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Somaek:** fresh soju + Origine lager. **Flavor:** crisp, clean, and light.",
+        "**Omija:** gin, five-flavor berry syrup, lemon. **Flavor:** bright and fruity-tart, very easy to drink."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "If you’re doing date night properly, start with one drink to settle in while you decide what to share."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Date tip:** One drink each at the start, then switch to water or tea. It keeps the night light and the conversation flowing."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "The Real Cost (So You Can Plan)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Per Person:** ~$90 (CAD, based on our meal)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Worth it?** Yes if you care about technique and plating, and you want Korean flavors that feel approachable."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Save money:** Skip the second round of drinks and add one more dish to share instead. More fun, more food memories."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Before/After Dating Spots Nearby (Dating Concept)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Make it a plan with one simple add-on. These are real, easy Verdun moves."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Before dinner (pick one):**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Walk **Promenade Wellington** for 10-15 minutes (window-shop, people-watch, show up hungry)",
+        "Golden-hour stroll along the **Verdun waterfront** (Fleuve Saint-Laurent), especially around **Parc Arthur-Therrien**",
+        "If you’re coming from downtown, make it a mini “destination” by meeting in Verdun and walking Wellington together"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**After dinner (pick one):**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "A gentle **Promenade Wellington** walk (best “keep talking” move)",
+        "Walk down to the **Verdun waterfront** again and sit for a few minutes (quiet, romantic, no pressure)",
+        "If you want a “second location” that still feels easy: grab a nightcap somewhere on/near Wellington, then call it"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Real date-night mini-plan:** meet in Verdun → waterfront walk at Parc Arthur-Therrien → Giwa terrasse → post-dinner stroll on Wellington."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Booking & Timing"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Reservations:** Not necessary. Easy to walk in."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Best time for dates:**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Early dinner:** calmer, more intimate",
+        "**Later dinner:** more energy, more “night out” momentum"
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Date Type Fit"
+    },
+    {
+      "type": "paragraph",
+      "text": "**First Date:** 4/5\nRelaxed vibe, not too expensive-feeling, easy to talk."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Anniversary:** 3/5\nMore “cute and casual” than “big occasion,” unless you’re specifically craving Korean."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Impressing someone who likes food:** 3/5\nThe plating and technique do a lot of the work, even if the flavors play it a little safe."
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Bottom Line"
+    },
+    {
+      "type": "paragraph",
+      "text": "Giwa is a solid Montréal date-night pick when you want Korean food with **clean technique**, **pretty plating**, and a menu that nods to tradition while staying seasonal and local."
+    },
+    {
+      "type": "paragraph",
+      "text": "Just go in knowing it’s more “polished and approachable” than “big bold flavor bomb.” If you’re expecting the typical Korean flavor profile (louder spice, deeper fermentation, bigger punch), I wouldn’t necessarily recommend it. It’s lighter, subtler, and a bit too toned down for my taste. That said, it’s clean cooking, and the night still feels easy and nice."
+    },
+    {
+      "type": "callout",
+      "icon": "📍",
+      "text": ""
+    },
+    {
+      "type": "paragraph",
+      "text": "**Details**"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "**Address:** 3780 Rue Wellington, Verdun, Montréal, QC H4G 1V2",
+        "**Neighborhood:** Verdun (Promenade Wellington)",
+        "**Website:** [https://restaurantgiwa.ca/](https://restaurantgiwa.ca/)",
+        "**Tip:** Terrasse seating is the best date-night move when the weather’s good."
+      ]
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Notes (Internal)"
+    },
+    {
+      "type": "list",
+      "style": "unordered",
+      "items": [
+        "Add later: specific dishes ordered + any standout dessert (pastry chef angle)"
+      ]
+    }
+  ],
+  "faqs": []
+}
