@@ -1006,7 +1006,9 @@
           "imageSrc": "https://datemydish.com/_astro/hoogan-et-beaufort-bar.9srQ3fog_Z1tPMHw.webp",
           "altText": "Elegant cocktails at Hoogan et Beaufort Montreal, two glasses with citrus garnish on a marble bar, softly lit in the warm restaurant atmosphere",
           "scheduledFor": "2026-09-07T18:54:52.651Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156857567565",
+          "postedAt": "2026-09-08T13:57:16.253Z"
         }
       ]
     }
