@@ -2,6 +2,16 @@
 
 Bilingual recipe blog (EN/FR) built with Astro 5, deployed on Cloudflare Pages.
 
+## Agent skills
+
+### Issue tracker
+
+Issues and specs are tracked in this repository's GitHub Issues. See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+This is a single-context repository. See `docs/agents/domain.md`.
+
 ## Tech Stack
 - **Framework**: Astro 5.x + TypeScript (strict) + MDX
 - **Styling**: Tailwind CSS 3.4+ (class-based dark mode)
