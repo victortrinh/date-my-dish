@@ -402,6 +402,10 @@ function tryResolveImageFile(type, slug, imageSrc) {
 // Process a single piece of content (recipe, article, or review)
 // ---------------------------------------------------------------------------
 async function processContent(filePath, type, log, options = {}) {
+  if (type !== "review") {
+    console.log(`Skipping Retired Legacy Content: ${filePath}`);
+    return;
+  }
   const enData = parseContent(filePath);
   const slug = enData.slug;
   const shouldPostInstagram = type === "recipe" && (options.platform === "both" || options.platform === "instagram");
@@ -557,7 +561,7 @@ async function runBackfill() {
   const log = readLog();
   const platform = PLATFORM;
   const limit = parseInt(RECIPES_PER_RUN, 10);
-  const types = CONTENT_TYPE === "all" ? ["recipe", "article", "review"] : [CONTENT_TYPE];
+  const types = CONTENT_TYPE === "all" ? ["review"] : [CONTENT_TYPE].filter((type) => type === "review");
 
   let allFiles = [];
   for (const type of types) {

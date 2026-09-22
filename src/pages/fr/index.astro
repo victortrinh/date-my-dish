@@ -1,43 +1,20 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import RecipeCard from "@components/RecipeCard.astro";
 import ReviewCard from "@components/ReviewCard.astro";
 import { Picture } from "astro:assets";
-import { t, getRecipeLocalizedPath, getArticleLocalizedPath } from "@i18n/utils";
-import { difficultyBadge } from "@utils/recipe";
+import { t } from "@i18n/utils";
 import { SITE_URL } from "@utils/constants";
-import { formatDuration } from "@utils/format";
 import { getCollection } from "astro:content";
 import type { ImageMetadata } from "astro";
 import heroImage from "@assets/images/homepage-hero.jpg";
 
 const locale = "fr";
 
-const allRecipes = await getCollection("recipes");
-const recipes = allRecipes
-  .filter((r) => r.data.lang === "fr")
-  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
-
-
-
-const allArticles = await getCollection("articles");
-const articles = allArticles
-  .filter((a) => a.data.lang === "fr")
-  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
-
-const recentRecipes = recipes.slice(0, 3);
-const recentArticles = articles.slice(0, 3);
-
 const allReviews = await getCollection("reviews");
 const recentReviews = allReviews
   .filter((r) => r.data.lang === "fr")
   .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime())
   .slice(0, 3);
-
-const FAVORITE_SLUGS = ["calamars-vegetaliens-croustillants", "posset-brulee-au-citron", "saumon-en-croute-de-quinoa"];
-const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
-  recipes.find((r) => r.id.replace(/^fr\//, "") === slug)
-).filter((r): r is NonNullable<typeof r> => r != null);
 
 ---
 
@@ -87,14 +64,7 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
         <p class="mx-auto max-w-xl font-body text-lg leading-relaxed text-warm-500 dark:text-warm-400 sm:text-xl md:mx-0 md:text-2xl">
           {t(locale, "home.heroDescription")}
         </p>
-        <div>
-          <a
-            href={`/${locale}/recettes/`}
-            class="btn btn-primary rounded-full px-8 py-4 text-base shadow-lg shadow-brand-wine/20 hover:shadow-xl sm:px-10 sm:text-lg"
-          >
-            {t(locale, "home.exploreRecipes")}
-          </a>
-        </div>
+
       </div>
       <!-- Image -->
       <div class="relative order-1 md:order-2">
@@ -157,230 +127,5 @@ const favoriteRecipes = FAVORITE_SLUGS.map((slug) =>
     </section>
   )}
 
-  <!-- Fresh from the Kitchen -->
-  {recentRecipes.length >= 3 && (
-    <section class="bg-warm-50 px-4 py-section dark:bg-warm-950" aria-labelledby="fresh-kitchen">
-      <div class="mx-auto max-w-content">
-        <h2 id="fresh-kitchen" class="mb-8 font-heading text-3xl font-normal text-warm-800 dark:text-warm-100">
-          {t(locale, "home.freshFromKitchen")}
-        </h2>
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Featured large card */}
-          <a
-            href={getRecipeLocalizedPath(locale, recentRecipes[0].id.replace(/^fr\//, ""))}
-            class="group flex flex-col overflow-hidden rounded-xl sm:flex-row lg:col-span-7"
-          >
-            <div class="aspect-[16/10] overflow-hidden sm:aspect-auto sm:w-1/2">
-              <Picture
-                src={recentRecipes[0].data.heroImage as ImageMetadata}
-                alt={recentRecipes[0].data.heroImageAlt}
-                widths={[400, 600, 800]}
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 35vw"
-                formats={["avif", "webp"]} fallbackFormat="webp"
-                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div class="flex flex-1 flex-col justify-center bg-warm-100 p-6 dark:bg-warm-800 sm:p-8">
-              <div class="mb-3 flex items-center gap-2">
-                <span class={difficultyBadge[recentRecipes[0].data.difficulty]}>
-                  {t(locale, `recipe.${recentRecipes[0].data.difficulty}` as any)}
-                </span>
-                <span class="flex items-center gap-1 text-sm text-warm-500 dark:text-warm-400">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                  {formatDuration(recentRecipes[0].data.totalTime, locale)}
-                </span>
-              </div>
-              <h3 class="mb-2 font-heading text-2xl font-normal text-warm-800 dark:text-warm-100">
-                {recentRecipes[0].data.title}
-              </h3>
-              <p class="mb-4 text-warm-600 dark:text-warm-300">
-                {recentRecipes[0].data.description}
-              </p>
-              <span class="font-ui text-sm font-bold uppercase tracking-wide text-brand-wine dark:text-brand-wine-dark">
-                {t(locale, "home.readMore")} &rarr;
-              </span>
-            </div>
-          </a>
-
-          {/* Right column: 2 stacked cards */}
-          <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
-            {recentRecipes.slice(1).map((card) => {
-              const slug = card.id.replace(/^fr\//, "");
-              return (
-                <a
-                  href={getRecipeLocalizedPath(locale, slug)}
-                  class="group overflow-hidden rounded-xl bg-white dark:bg-warm-900"
-                >
-                  <div class="aspect-[16/10] overflow-hidden">
-                    <Picture
-                      src={card.data.heroImage as ImageMetadata}
-                      alt={card.data.heroImageAlt}
-                      widths={[400, 600]}
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 30vw"
-                      formats={["avif", "webp"]} fallbackFormat="webp"
-                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="p-4">
-                    <div class="mb-2 flex items-center gap-2">
-                      <span class={difficultyBadge[card.data.difficulty]}>
-                        {t(locale, `recipe.${card.data.difficulty}` as any)}
-                      </span>
-                      <span class="flex items-center gap-1 text-sm text-warm-500 dark:text-warm-400">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        {formatDuration(card.data.totalTime, locale)}
-                      </span>
-                    </div>
-                    <h3 class="font-heading text-lg font-normal text-warm-800 dark:text-warm-100">
-                      {card.data.title}
-                    </h3>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Our Favorites -->
-  {favoriteRecipes.length >= 3 && (
-    <section class="bg-white px-4 py-section dark:bg-warm-950" aria-labelledby="our-favorites">
-      <div class="mx-auto max-w-content">
-        <div class="mb-10 text-center">
-          <h2 id="our-favorites" class="font-heading text-heading-1 font-normal text-warm-900 dark:text-warm-100">
-            {t(locale, "home.ourFavorites")}
-          </h2>
-          <div class="mx-auto mt-3 h-1 w-12 rounded-full bg-brand-rose"></div>
-        </div>
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {favoriteRecipes.map((card) => {
-            const slug = card.id.replace(/^fr\//, "");
-            return (
-              <RecipeCard
-                title={card.data.title}
-                description={card.data.description}
-                slug={slug}
-                locale={locale}
-                heroImage={card.data.heroImage as ImageMetadata}
-                heroImageAlt={card.data.heroImageAlt}
-                prepTime={card.data.prepTime}
-                totalTime={card.data.totalTime}
-                difficulty={card.data.difficulty}
-                headingLevel="h3"
-              />
-            );
-          })}
-        </div>
-        <div class="mt-10 text-center">
-          <a href="/fr/recettes/" class="btn btn-outline-brand">
-            {t(locale, "home.viewAllRecipes")}
-          </a>
-        </div>
-      </div>
-    </section>
-  )}
-
-  <!-- Culinary Narratives -->
-  {recentArticles.length >= 3 && (
-    <section class="bg-warm-50 px-4 py-section dark:bg-warm-950" aria-labelledby="culinary-narratives">
-      <div class="mx-auto max-w-content">
-        {/* Header */}
-        <div class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p class="font-heading text-lg italic text-brand-wine dark:text-brand-wine-dark">
-              {t(locale, "home.theJournal")}
-            </p>
-            <h2 id="culinary-narratives" class="font-heading text-heading-1 font-normal text-warm-900 dark:text-warm-100">
-              {t(locale, "home.culinaryNarratives")}
-            </h2>
-          </div>
-          <a
-            href={`/${locale}/articles/`}
-            class="font-ui text-sm font-bold uppercase tracking-widest text-warm-800 underline decoration-brand-wine decoration-2 underline-offset-8 hover:text-brand-wine dark:text-warm-200 dark:decoration-brand-wine-dark dark:hover:text-brand-wine-dark"
-          >
-            {t(locale, "home.viewAllArticles")}
-          </a>
-        </div>
-
-        {/* Content grid */}
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* Featured large article (left) */}
-          <a
-            href={getArticleLocalizedPath(locale, recentArticles[0].id.replace(/^fr\//, ""))}
-            class="group lg:col-span-7"
-          >
-            <div class="relative overflow-hidden rounded-xl border border-warm-200 dark:border-warm-700">
-              <Picture
-                src={recentArticles[0].data.heroImage as ImageMetadata}
-                alt={recentArticles[0].data.heroImageAlt}
-                widths={[400, 600, 800]}
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                formats={["avif", "webp"]} fallbackFormat="webp"
-                class="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-            <div class="mt-5">
-              <span class="font-ui text-xs font-bold uppercase tracking-wider text-brand-wine dark:text-brand-wine-dark">
-                {t(locale, `tags.${recentArticles[0].data.articleCategory}` as any)}
-                {recentArticles[0].data.readingTime && (
-                  <span class="font-normal text-warm-400"> · {recentArticles[0].data.readingTime} {t(locale, "article.readTime")}</span>
-                )}
-              </span>
-              <h3 class="mt-2 font-heading text-2xl font-normal text-warm-800 dark:text-warm-100 sm:text-3xl">
-                {recentArticles[0].data.title}
-              </h3>
-              <p class="mt-2 text-warm-500 dark:text-warm-400">
-                {recentArticles[0].data.description}
-              </p>
-              <span class="mt-4 inline-block font-ui text-sm font-bold uppercase tracking-widest text-warm-800 dark:text-warm-200">
-                {t(locale, "home.readArticle")} &rarr;
-              </span>
-            </div>
-          </a>
-
-          {/* Right column: 2 stacked horizontal cards */}
-          <div class="flex flex-col gap-8 lg:col-span-5 lg:justify-center">
-            {recentArticles.slice(1).map((article) => {
-              const slug = article.id.replace(/^fr\//, "");
-              return (
-                <a
-                  href={getArticleLocalizedPath(locale, slug)}
-                  class="group flex flex-col gap-4 sm:flex-row"
-                >
-                  <div class="shrink-0 overflow-hidden rounded-xl border border-warm-200 dark:border-warm-700 sm:w-48">
-                    <Picture
-                      src={article.data.heroImage as ImageMetadata}
-                      alt={article.data.heroImageAlt}
-                      widths={[200, 400]}
-                      sizes="(max-width: 640px) 100vw, 192px"
-                      formats={["avif", "webp"]} fallbackFormat="webp"
-                      class="aspect-[4/3] h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="flex flex-col justify-center">
-                    <span class="font-ui text-xs font-bold uppercase tracking-wider text-brand-wine dark:text-brand-wine-dark">
-                      {t(locale, `tags.${article.data.articleCategory}` as any)}
-                    </span>
-                    <h3 class="mt-1 font-heading text-lg font-normal text-warm-800 dark:text-warm-100">
-                      {article.data.title}
-                    </h3>
-                    <p class="mt-1 text-sm text-warm-500 dark:text-warm-400">
-                      {article.data.description}
-                    </p>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-    </section>
-  )}
 
 </BaseLayout>

@@ -1,3 +1,6 @@
+// Retired Legacy Content is no longer publishable (#498).
+console.error("Disabled: legacy recipes and general articles are retired.");
+process.exit(1);
 // scripts/fetch-notion-recipe.mjs
 // Fetches the next recipe to publish from a public Notion database using
 // notion-client (unofficial API, no auth needed for public pages).

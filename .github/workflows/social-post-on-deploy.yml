@@ -4,8 +4,6 @@ on:
   push:
     branches: [main]
     paths:
-      - "src/content/recipes/en/**/*.mdx"
-      - "src/content/articles/en/**/*.mdx"
       - "src/content/reviews/en/**/*.mdx"
 
 concurrency:
@@ -40,14 +38,12 @@ jobs:
       - name: Detect new content
         id: detect
         run: |
-          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 -- 'src/content/recipes/en/*.mdx' 'src/content/articles/en/*.mdx' 'src/content/reviews/en/*.mdx' || true)
+          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 -- 'src/content/reviews/en/*.mdx' || true)
 
           UNPOSTED=$(node -e "
             const fs = require('fs');
             const log = JSON.parse(fs.readFileSync('data/social-posts-log.json'));
             const dirs = [
-              'src/content/recipes/en',
-              'src/content/articles/en',
               'src/content/reviews/en',
             ];
             const missing = [];

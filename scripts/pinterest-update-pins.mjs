@@ -1,3 +1,6 @@
+// Retired Legacy Content is no longer publishable (#498).
+console.error("Disabled: legacy recipes and general articles are retired.");
+process.exit(1);
 // scripts/pinterest-update-pins.mjs
 // Updates existing Pinterest pins via PATCH API v5.
 // Can update link, title, description, and alt_text on already-posted pins.

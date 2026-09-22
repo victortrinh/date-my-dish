@@ -14,15 +14,10 @@ const base = args.find(a => a.startsWith('--base='))?.split('=')[1] || 'origin/m
 
 // Map a content file path to its Lighthouse audit URL
 function fileToUrl(filePath) {
-  const match = filePath.match(/src\/content\/(recipes|articles)\/(en|fr)\/(.+)\.mdx$/);
+  const match = filePath.match(/src\/content\/(reviews)\/(en|fr)\/(.+)\.mdx$/);
   if (!match) return null;
   const [, type, locale, slug] = match;
-  if (type === 'recipes') {
-    return locale === 'en'
-      ? `${BASE}/en/recipes/${slug}/`
-      : `${BASE}/fr/recettes/${slug}/`;
-  }
-  return `${BASE}/${locale}/articles/${slug}/`;
+  return locale === 'en' ? `${BASE}/en/reviews/${slug}/` : `${BASE}/fr/critiques/${slug}/`;
 }
 
 // Extract translationSlug from MDX frontmatter via regex
@@ -40,7 +35,7 @@ function getTranslationSlug(filePath) {
 
 // Build the translation pair's file path
 function getTranslationPath(filePath, translationSlug) {
-  const match = filePath.match(/src\/content\/(recipes|articles)\/(en|fr)\//);
+  const match = filePath.match(/src\/content\/(reviews)\/(en|fr)\//);
   if (!match) return null;
   const [, type, locale] = match;
   const otherLocale = locale === 'en' ? 'fr' : 'en';
@@ -57,7 +52,7 @@ function generateChangedUrls() {
 
   const contentFiles = diff
     .split('\n')
-    .filter(f => /^src\/content\/(recipes|articles)\/(en|fr)\/.+\.mdx$/.test(f));
+    .filter(f => /^src\/content\/(reviews)\/(en|fr)\/.+\.mdx$/.test(f));
 
   if (contentFiles.length === 0) return [];
 
@@ -92,10 +87,6 @@ function generateAllUrls() {
   const staticUrls = [
     `${BASE}/en/`,
     `${BASE}/fr/`,
-    `${BASE}/en/recipes/`,
-    `${BASE}/fr/recettes/`,
-    `${BASE}/en/articles/`,
-    `${BASE}/fr/articles/`,
     `${BASE}/en/about/`,
     `${BASE}/fr/a-propos/`,
     `${BASE}/en/contact/`,
@@ -103,10 +94,8 @@ function generateAllUrls() {
   ];
 
   const contentDirs = [
-    { dir: 'src/content/recipes/en', prefix: '/en/recipes/' },
-    { dir: 'src/content/recipes/fr', prefix: '/fr/recettes/' },
-    { dir: 'src/content/articles/en', prefix: '/en/articles/' },
-    { dir: 'src/content/articles/fr', prefix: '/fr/articles/' },
+    { dir: 'src/content/reviews/en', prefix: '/en/reviews/' },
+    { dir: 'src/content/reviews/fr', prefix: '/fr/critiques/' },
   ];
 
   const contentUrls = contentDirs.flatMap(({ dir, prefix }) => {

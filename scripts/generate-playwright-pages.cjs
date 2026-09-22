@@ -15,7 +15,7 @@ const base = args.find(a => a.startsWith('--base='))?.split('=')[1] || 'origin/m
 
 // --- Tier patterns ---
 
-const CONTENT_PATTERN = /^src\/content\/(recipes|articles)\/(en|fr)\/.+\.mdx$/;
+const CONTENT_PATTERN = /^src\/content\/(reviews)\/(en|fr)\/.+\.mdx$/;
 const SHARED_PATTERNS = [
   /^src\/components\//,
   /^src\/layouts\//,
@@ -35,16 +35,8 @@ const INFRA_PATTERNS = [
 const SAMPLE_PAGES = [
   '/en/',
   '/fr/',
-  '/en/recipes/',
-  '/fr/recettes/',
-  '/en/articles/',
-  '/fr/articles/',
-  '/en/recipes/cacio-e-pepe/',
-  '/fr/recettes/cacio-e-pepe/',
-  '/en/articles/cooking-oils-guide/',
-  '/fr/articles/guide-huiles-de-cuisson/',
-  '/en/recipes/cuisine/italian/',
-  '/fr/recettes/cuisine/italien/',
+  '/en/reviews/',
+  '/fr/critiques/',
   '/en/about/',
   '/fr/a-propos/',
 ];
@@ -52,19 +44,15 @@ const SAMPLE_PAGES = [
 // --- Listing and homepage pages to add when content changes ---
 
 const HOMEPAGE = ['/en/', '/fr/'];
-const RECIPE_LISTINGS = ['/en/recipes/', '/fr/recettes/'];
-const ARTICLE_LISTINGS = ['/en/articles/', '/fr/articles/'];
+const REVIEW_LISTINGS = ['/en/reviews/', '/fr/critiques/'];
 
 // --- Helpers (mirrored from generate-lighthouse-urls.cjs) ---
 
 function contentFileToRoute(filePath) {
-  const match = filePath.match(/src\/content\/(recipes|articles)\/(en|fr)\/(.+)\.mdx$/);
+  const match = filePath.match(/src\/content\/(reviews)\/(en|fr)\/(.+)\.mdx$/);
   if (!match) return null;
   const [, type, locale, slug] = match;
-  if (type === 'recipes') {
-    return locale === 'en' ? `/en/recipes/${slug}/` : `/fr/recettes/${slug}/`;
-  }
-  return `/${locale}/articles/${slug}/`;
+  return locale === 'en' ? `/en/reviews/${slug}/` : `/fr/critiques/${slug}/`;
 }
 
 function getTranslationSlug(filePath) {
@@ -80,7 +68,7 @@ function getTranslationSlug(filePath) {
 }
 
 function getTranslationFilePath(filePath, translationSlug) {
-  const match = filePath.match(/src\/content\/(recipes|articles)\/(en|fr)\//);
+  const match = filePath.match(/src\/content\/(reviews)\/(en|fr)\//);
   if (!match) return null;
   const [, type, locale] = match;
   const otherLocale = locale === 'en' ? 'fr' : 'en';
@@ -105,7 +93,7 @@ function detectScope(changedFiles) {
     const contentMatch = file.match(CONTENT_PATTERN);
     if (contentMatch) {
       hasContent = true;
-      contentTypes.add(contentMatch[1]); // 'recipes' or 'articles'
+      contentTypes.add(contentMatch[1]); // 'reviews'
     }
   }
 
@@ -145,11 +133,8 @@ function generateChangedPages(changedFiles, contentTypes) {
   HOMEPAGE.forEach(r => routes.add(r));
 
   // Add listing pages for affected content types
-  if (contentTypes.has('recipes')) {
-    RECIPE_LISTINGS.forEach(r => routes.add(r));
-  }
-  if (contentTypes.has('articles')) {
-    ARTICLE_LISTINGS.forEach(r => routes.add(r));
+  if (contentTypes.has('reviews')) {
+    REVIEW_LISTINGS.forEach(r => routes.add(r));
   }
 
   return [...routes].sort();
