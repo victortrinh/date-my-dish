@@ -85,10 +85,17 @@ const common = {
   payment: z.enum(["paid", "hosted", "other"]),
 };
 const verdict = z.enum(["favourite", "conditional", "pass"]);
+const optionalRestaurantModules = {
+  // These are deliberately optional: reporting, rather than a template quota,
+  // determines whether they appear on a public page.
+  meetChef: object({ name: text, role: text, reporting: text }).optional(),
+  nearbyPlans: z.array(object({ name: text, detail: text, mapUrl: z.string().url().optional() })).optional(),
+  contributorRecipe: contributorRecipe.optional(),
+};
 
 // Strict objects at every level reject old scores as well as undeclared fields.
 export const dateSpotSchema = z.discriminatedUnion("spotType", [
-  object({ ...common, spotType: z.literal("restaurant"), reviewVerdict: verdict, locales: pair(restaurantCopy) }),
+  object({ ...common, spotType: z.literal("restaurant"), reviewVerdict: verdict, locales: pair(restaurantCopy.extend(optionalRestaurantModules)) }),
   object({ ...common, spotType: z.literal("bar"), reviewVerdict: verdict, locales: pair(barCopy) }),
   object({ ...common, spotType: z.literal("activity"), locales: pair(planningCopy) }),
   object({ ...common, spotType: z.literal("chef-led-experience"), host: object({ name: text, role: z.enum(["chef", "bartender"]) }), locales: pair(planningCopy) }),
@@ -117,6 +124,13 @@ export const dateSpotSchema = z.discriminatedUnion("spotType", [
     for (const module of ["whatToEat", "meetTheBartender", "nearbyDateSpots", "contributorRecipe"]) {
       if ((en[module] === undefined) !== (fr[module] === undefined)) {
         issue(["locales"], `${module} must be present in both halves of a Bar Date Spot Locale Pair`);
+      }
+    }
+  }
+  if (spot.spotType === "restaurant") {
+    for (const module of ["meetChef", "nearbyPlans", "contributorRecipe"]) {
+      if ((en[module] === undefined) !== (fr[module] === undefined)) {
+        issue(["locales"], `${module} must be present in both halves of a Restaurant Date Spot Locale Pair`);
       }
     }
   }
