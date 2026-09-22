@@ -3,10 +3,22 @@ import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
 
 import { dateSpotSchema } from "./content-contracts/date-spot.mjs";
+import { contributorRecipeSchema } from "./content-contracts/contributor-recipe.mjs";
+import { extendedProfileSchema } from "./content-contracts/extended-profile.mjs";
 
 const dateSpots = defineCollection({
   loader: file("src/content/date-spots.json"),
   schema: dateSpotSchema,
+});
+
+const contributorRecipes = defineCollection({
+  loader: file("src/content/contributor-recipes.json"),
+  schema: contributorRecipeSchema,
+});
+
+const extendedProfiles = defineCollection({
+  loader: file("src/content/extended-profiles.json"),
+  schema: extendedProfileSchema,
 });
 
 const IngredientGroupSchema = z.object({
@@ -203,4 +215,4 @@ const reviews = defineCollection({
     }),
 });
 
-export const collections = { recipes, articles, reviews, dateSpots };
+export const collections = { recipes, articles, reviews, dateSpots, contributorRecipes, extendedProfiles };
