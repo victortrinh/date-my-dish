@@ -1,0 +1,85 @@
+---
+import type { z } from "astro/zod";
+import { dateSpotSchema } from "@content-contracts/date-spot.mjs";
+
+type DateSpot = z.infer<typeof dateSpotSchema>;
+type BarDateSpot = Extract<DateSpot, { spotType: "bar" }>;
+
+interface Props {
+  spot: BarDateSpot;
+  locale: "en" | "fr-CA";
+}
+
+const { spot, locale } = Astro.props;
+const copy = spot.locales[locale];
+const isFrench = locale === "fr-CA";
+const labels = isFrench
+  ? {
+      verdict: { favourite: "Un favori", conditional: "Selon la soirée", pass: "Pas notre premier choix" },
+      goodFor: "Bon pour", room: "La salle", drink: "Quoi boire", food: "Quoi manger",
+      cost: "Le vrai coût", note: "Note du reporter", bartender: "Rencontrer le barman",
+      nearby: "À proximité", recipe: "Recette du contributeur", essentials: "À savoir",
+      address: "Adresse", booking: "Réservation", access: "Accès", duration: "Durée", timing: "Moment",
+      payment: "Divulgation", freshness: "Fraîcheur du reportage", visited: "Visité", published: "Publié", checked: "Vérifié", updates: "Mises à jour",
+    }
+  : {
+      verdict: { favourite: "A Favourite", conditional: "Depends on the Night", pass: "Not Our First Pick" },
+      goodFor: "Good for", room: "The room", drink: "What to drink", food: "What to eat",
+      cost: "The real cost", note: "Reporter’s Note", bartender: "Meet the bartender",
+      nearby: "Nearby Date Spots", recipe: "Contributor recipe", essentials: "Plan your visit",
+      address: "Address", booking: "Booking", access: "Access", duration: "Duration", timing: "Timing",
+      payment: "Disclosure", freshness: "Reporting freshness", visited: "Visited", published: "Published", checked: "Last checked", updates: "Material updates",
+    };
+
+const occasion = (value: string) => value.replaceAll("-", " ");
+---
+
+<article class="mx-auto max-w-content px-4 py-10" data-pagefind-body data-pagefind-filter={`lang:${locale === "fr-CA" ? "fr" : "en"}`}>
+  <header class="mx-auto max-w-prose border-b border-warm-200 pb-8 dark:border-warm-700">
+    <p class="font-ui text-caption font-semibold uppercase tracking-wider text-brand-wine">{spot.name} · {spot.neighbourhood}</p>
+    <h1 class="mt-3 font-heading text-4xl italic text-warm-900 dark:text-warm-100 sm:text-display">{copy.title}</h1>
+    <p class="mt-4 font-body text-body-lg text-warm-600 dark:text-warm-400">{copy.opening}</p>
+    <p class="mt-5 font-ui text-body-sm text-warm-500 dark:text-warm-400">{spot.reporterByline}</p>
+  </header>
+
+  <div class="mx-auto mt-10 grid max-w-content gap-12 lg:grid-cols-[minmax(0,2fr)_minmax(16rem,1fr)]">
+    <div class="space-y-10">
+      <section aria-labelledby="verdict">
+        <p id="verdict" class="font-ui text-caption font-semibold uppercase tracking-wider text-brand-wine">{labels.verdict[spot.reviewVerdict]}</p>
+        <p class="mt-2 font-heading text-2xl text-warm-900 dark:text-warm-100">{copy.verdictReason}</p>
+      </section>
+
+      <section aria-labelledby="good-for">
+        <h2 id="good-for" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{labels.goodFor}</h2>
+        <ul class="mt-4 space-y-3">
+          {copy.goodFor.map((signal) => <li class="border-l-2 border-brand-wine pl-4"><strong class="font-ui capitalize">{occasion(signal.occasion)}:</strong> {signal.reason}</li>)}
+        </ul>
+      </section>
+
+      <section aria-labelledby="room"><h2 id="room" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{labels.room}</h2><p class="mt-3">{copy.room}</p></section>
+      <section aria-labelledby="drinks"><h2 id="drinks" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{labels.drink}</h2><p class="mt-3">{copy.whatToDrink}</p></section>
+      {copy.whatToEat && <section aria-labelledby="food"><h2 id="food" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{labels.food}</h2><p class="mt-3">{copy.whatToEat}</p></section>}
+      <section aria-labelledby="cost"><h2 id="cost" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{labels.cost}</h2><p class="mt-3">{copy.realCost}</p></section>
+      <section aria-labelledby="note"><h2 id="note" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{labels.note}</h2><blockquote class="mt-3 border-l-2 border-brand-wine pl-4 italic">{copy.reportersNote.text}<footer class="mt-2 not-italic">— {copy.reportersNote.byline}</footer></blockquote></section>
+      {copy.meetTheBartender && <section aria-labelledby="bartender"><h2 id="bartender" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{labels.bartender}</h2><p class="mt-3"><strong>{copy.meetTheBartender.name}</strong> · {copy.meetTheBartender.note}</p></section>}
+      {copy.nearbyDateSpots && <section aria-labelledby="nearby"><h2 id="nearby" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{labels.nearby}</h2><ul class="mt-3 space-y-2">{copy.nearbyDateSpots.map((nearby) => <li><a class="underline" href={`/${isFrench ? "fr/lieux" : "en/date-spots"}/${nearby.id}/`}>{nearby.label}</a><span> — {nearby.note}</span></li>)}</ul></section>}
+      {copy.contributorRecipe && <section aria-labelledby="recipe"><h2 id="recipe" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{labels.recipe}</h2><p class="mt-3"><a class="underline" href={`/${isFrench ? "fr/recettes" : "en/recipes"}/${copy.contributorRecipe.slug}/`}>{copy.contributorRecipe.title}</a> · {copy.contributorRecipe.contributor}</p><p class="mt-2 text-body-sm">{copy.contributorRecipe.source}</p>{copy.contributorRecipe.testingNotes && <p class="mt-2 text-body-sm">{copy.contributorRecipe.testingNotes}</p>}</section>}
+    </div>
+
+    <aside class="h-fit border border-warm-200 p-5 dark:border-warm-700">
+      <h2 class="font-heading text-xl text-warm-900 dark:text-warm-100">{labels.essentials}</h2>
+      <dl class="mt-4 space-y-4 text-body-sm">
+        <div><dt class="font-ui font-semibold">{labels.address}</dt><dd>{copy.essentials.address}</dd></div>
+        <div><dt class="font-ui font-semibold">{labels.booking}</dt><dd>{copy.essentials.booking}</dd></div>
+        <div><dt class="font-ui font-semibold">{labels.access}</dt><dd>{copy.essentials.access}</dd></div>
+        <div><dt class="font-ui font-semibold">{labels.duration}</dt><dd>{copy.essentials.duration}</dd></div>
+        <div><dt class="font-ui font-semibold">{labels.timing}</dt><dd>{copy.essentials.timing}</dd></div>
+        <div><dt class="font-ui font-semibold">{labels.cost}</dt><dd>{copy.essentials.cost}</dd></div>
+        <div><dt class="font-ui font-semibold">{labels.payment}</dt><dd>{copy.paymentDisclosure}</dd></div>
+      </dl>
+      <h3 class="mt-8 font-heading text-lg text-warm-900 dark:text-warm-100">{labels.freshness}</h3>
+      <dl class="mt-3 space-y-2 text-body-sm"><div><dt class="inline font-ui font-semibold">{labels.visited}: </dt><dd class="inline">{spot.freshness.visited}</dd></div><div><dt class="inline font-ui font-semibold">{labels.published}: </dt><dd class="inline">{spot.freshness.published}</dd></div><div><dt class="inline font-ui font-semibold">{labels.checked}: </dt><dd class="inline">{spot.freshness.lastChecked}</dd></div></dl>
+      {copy.materialUpdates.length > 0 && <><h3 class="mt-5 font-heading text-lg text-warm-900 dark:text-warm-100">{labels.updates}</h3><ul class="mt-2 space-y-2 text-body-sm">{copy.materialUpdates.map((update) => <li><time datetime={update.date}>{update.date}</time>: {update.note}</li>)}</ul></>}
+    </aside>
+  </div>
+</article>
