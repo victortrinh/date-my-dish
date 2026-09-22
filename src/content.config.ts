@@ -1,6 +1,13 @@
 import { defineCollection } from "astro:content";
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
+
+import { dateSpotSchema } from "./content-contracts/date-spot.mjs";
+
+const dateSpots = defineCollection({
+  loader: file("src/content/date-spots.json"),
+  schema: dateSpotSchema,
+});
 
 const IngredientGroupSchema = z.object({
   group: z.string().optional(),
@@ -196,4 +203,4 @@ const reviews = defineCollection({
     }),
 });
 
-export const collections = { recipes, articles, reviews };
+export const collections = { recipes, articles, reviews, dateSpots };

@@ -4,17 +4,18 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/validate-descriptions.mjs && node scripts/validate-source.mjs && node scripts/fetch-ratings.mjs",
+    "prebuild": "node scripts/validate-date-spots.mjs && node scripts/validate-descriptions.mjs && node scripts/validate-source.mjs && node scripts/fetch-ratings.mjs",
     "build": "astro build",
     "preview": "npm run build && wrangler dev",
     "check": "astro check",
-    "validate:source": "node scripts/validate-descriptions.mjs && node scripts/validate-source.mjs",
+    "validate:source": "node scripts/validate-date-spots.mjs && node scripts/validate-descriptions.mjs && node scripts/validate-source.mjs",
     "validate:build": "node scripts/validate-build.mjs && node scripts/validate-retired-content.mjs",
     "postbuild": "node scripts/generate-recipe-index.mjs && npx pagefind --site dist/client && node scripts/validate-build.mjs && node scripts/validate-retired-content.mjs",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types",
     "test": "npx playwright test",
-    "test:update-snapshots": "npx playwright test --update-snapshots"
+    "test:update-snapshots": "npx playwright test --update-snapshots",
+    "test:contracts": "node --test tests/contracts/*.test.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.0.0",
@@ -29,7 +30,7 @@
     "@astrojs/check": "^0.9.9",
     "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.58.2",
-    "googleapis": "^180.0.0",
+    "googleapis": "^181.0.0",
     "gray-matter": "^4.0.3",
     "notion-client": "^8.0.0",
     "notion-types": "^8.0.0",
