@@ -187,7 +187,8 @@ async function main() {
 
   const duePins = [];
   for (const [slug, entry] of Object.entries(log)) {
-    const type = entry.type || "recipe"; // pre-existing entries predate the `type` field
+    const type = entry.type || "recipe"; // pre-existing entries are legacy recipes
+    if (type !== "review") continue;
     const pins = entry.pinterest?.pins;
     if (!pins) continue;
 

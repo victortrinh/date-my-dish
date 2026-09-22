@@ -44,7 +44,8 @@ const ArticleCategorySchema = z.enum([
 ]);
 
 const recipes = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "./src/content/recipes" }),
+  // Retired Legacy Content stays in Git but must never enter public collections.
+  loader: async () => [],
   schema: ({ image }) => {
     const HowToStepSchema = z.object({
       text: z.string(),
@@ -96,7 +97,8 @@ const recipes = defineCollection({
 });
 
 const articles = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "./src/content/articles" }),
+  // Retired Legacy Content stays in Git but must never enter public collections.
+  loader: async () => [],
   schema: ({ image }) =>
     z.object({
       title: z.string(),

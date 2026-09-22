@@ -9,7 +9,6 @@ interface Props {
 const { locale } = Astro.props;
 const year = new Date().getFullYear();
 
-const recipesPath = locale === "fr" ? "/recettes/" : "/recipes/";
 const aboutPath = locale === "fr" ? "/a-propos/" : "/about/";
 const privacyPath = locale === "fr" ? "/politique-de-confidentialite/" : "/privacy-policy/";
 const termsPath = locale === "fr" ? "/conditions-dutilisation/" : "/terms-of-service/";
@@ -49,12 +48,6 @@ const termsPath = locale === "fr" ? "/conditions-dutilisation/" : "/terms-of-ser
         <nav class="flex flex-col gap-3" aria-label={t(locale, "footer.nav")}>
           <a href={getLocalizedPath(locale, "/")} class="font-body text-warm-300 no-underline transition-colors hover:text-white">
             {t(locale, "nav.home")}
-          </a>
-          <a href={getLocalizedPath(locale, recipesPath)} class="font-body text-warm-300 no-underline transition-colors hover:text-white">
-            {t(locale, "nav.recipes")}
-          </a>
-          <a href={getLocalizedPath(locale, "/articles/")} class="font-body text-warm-300 no-underline transition-colors hover:text-white">
-            {t(locale, "nav.articles")}
           </a>
           <a href={getLocalizedPath(locale, aboutPath)} class="font-body text-warm-300 no-underline transition-colors hover:text-white">
             {t(locale, "nav.about")}
