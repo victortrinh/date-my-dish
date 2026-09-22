@@ -3,20 +3,31 @@ import { getCollection } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import BarDateSpot from "@components/date-spots/BarDateSpot.astro";
 import BarDateSpotSchema from "@components/date-spots/BarDateSpotSchema.astro";
+import ActivityDateSpotTemplate from "@components/ActivityDateSpotTemplate.astro";
+import { getReviewLocalizedPath } from "@i18n/utils";
 
 export async function getStaticPaths() {
   const spots = await getCollection("dateSpots");
   return spots
-    .filter((entry) => entry.data.spotType === "bar")
+    .filter((entry) => ["bar", "activity", "chef-led-experience"].includes(entry.data.spotType))
     .map((entry) => ({ params: { slug: entry.data.locales["fr-CA"].slug }, props: { spot: entry.data } }));
 }
 
 const { spot } = Astro.props;
 const copy = spot.locales["fr-CA"];
 const path = `/fr/lieux/${copy.slug}/`;
+const spots = await getCollection("dateSpots");
+const pairings = (copy.pairItWith ?? []).map((slug) => {
+  const target = spots.find((candidate) => candidate.data.locales["fr-CA"].slug === slug);
+  if (!target || (target.data.spotType !== "restaurant" && target.data.spotType !== "bar")) {
+    throw new Error(`Invalid Activity Date Spot pairing: ${slug}`);
+  }
+  return { name: target.data.name, href: getReviewLocalizedPath("fr", slug) };
+});
 ---
 
-<BaseLayout title={copy.metaTitle} description={copy.metaDescription} canonical={path} translationSlug={spot.locales.en.slug} ogType="article" contentType="date-spot">
+{spot.spotType === "bar" && <BaseLayout title={copy.metaTitle} description={copy.metaDescription} canonical={path} translationSlug={spot.locales.en.slug} ogType="article" contentType="date-spot">
   <BarDateSpotSchema slot="head" spot={spot} locale="fr-CA" path={path} />
   <BarDateSpot spot={spot} locale="fr-CA" />
-</BaseLayout>
+</BaseLayout>}
+{(spot.spotType === "activity" || spot.spotType === "chef-led-experience") && <ActivityDateSpotTemplate spot={spot} copy={copy} locale="fr" translationSlug={spot.locales.en.slug} pairings={pairings} />}

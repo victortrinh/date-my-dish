@@ -93,6 +93,29 @@ test("requires human authorship and documentary photographs", () => {
   const synthetic = fixture(); synthetic.image.provenance = "synthetic"; rejects(synthetic);
 });
 
+test("planning pairings resolve only to independently reported venue Date Spots", () => {
+  const activity = fixture("activity");
+  activity.locales.en.pairItWith = ["restaurant-test-only"];
+  activity.locales["fr-CA"].pairItWith = ["restaurant-test-only"];
+  const restaurant = fixture("restaurant");
+  restaurant.id = "restaurant-test-only";
+  restaurant.locales.en.slug = "restaurant-test-only";
+  restaurant.locales["fr-CA"].slug = "restaurant-test-only";
+  assert.equal(dateSpotsSchema.safeParse([activity, restaurant]).success, true);
+
+  const missing = fixture("activity");
+  missing.locales.en.pairItWith = ["missing-venue"];
+  assert.equal(dateSpotsSchema.safeParse([missing]).success, false);
+
+  const activityTarget = fixture("activity");
+  activityTarget.id = "another-activity";
+  activityTarget.locales.en.slug = "another-activity";
+  activityTarget.locales["fr-CA"].slug = "another-activity";
+  const invalidTarget = fixture("activity");
+  invalidTarget.locales.en.pairItWith = ["another-activity"];
+  assert.equal(dateSpotsSchema.safeParse([invalidTarget, activityTarget]).success, false);
+});
+
 test("build validator accepts complete records and exits nonzero for incomplete pairs or missing images", async () => {
   const { mkdtempSync, mkdirSync, writeFileSync, rmSync } = await import("node:fs");
   const { tmpdir } = await import("node:os");

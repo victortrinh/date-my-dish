@@ -1,0 +1,51 @@
+---
+import type { Locale } from "@i18n/utils";
+import { getDateSpotLocalizedPath } from "@i18n/utils";
+import { SITE_URL } from "@utils/constants";
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  locale: Locale;
+  name: string;
+  city: string;
+  neighbourhood: string;
+  image: string;
+  imageAlt: string;
+  mapUrl: string;
+  published: string;
+  lastChecked: string;
+  host?: { name: string; role: "chef" | "bartender" };
+}
+
+const { title, description, slug, locale, name, city, neighbourhood, image, imageAlt, mapUrl, published, lastChecked, host } = Astro.props;
+const canonical = `${SITE_URL}${getDateSpotLocalizedPath(locale, slug)}`;
+const imageUrl = image.startsWith("http") ? image : `${SITE_URL}${image}`;
+
+// This deliberately describes only facts visible on the planning page. In
+// particular, Activity and Chef-led Experience Date Spots never emit Review or
+// Rating markup.
+const articleJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: title,
+  description,
+  image: { "@type": "ImageObject", url: imageUrl, caption: imageAlt },
+  datePublished: published,
+  dateModified: lastChecked,
+  author: { "@type": "Person", name: "Victor Vu" },
+  publisher: { "@type": "Organization", name: "Date My Dish", url: SITE_URL },
+  mainEntityOfPage: canonical,
+  about: {
+    "@type": "Place",
+    name,
+    address: { "@type": "PostalAddress", addressLocality: city, addressRegion: "QC", addressCountry: "CA" },
+    containedInPlace: { "@type": "Place", name: neighbourhood },
+    hasMap: mapUrl,
+  },
+  ...(host ? { contributor: { "@type": "Person", name: host.name, jobTitle: host.role } } : {}),
+};
+---
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(articleJsonLd)} />
