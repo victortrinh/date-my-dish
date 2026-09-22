@@ -5,7 +5,7 @@ interface Props {
   locale: Locale;
   /** For content pages: the slug of the translation pair */
   translationSlug?: string;
-  contentType?: "recipe" | "article" | "review";
+  contentType?: "recipe" | "article" | "review" | "date-spot";
 }
 
 const { locale, translationSlug, contentType } = Astro.props;
@@ -16,7 +16,7 @@ let toggleUrl: string;
 if (translationSlug && contentType) {
   if (contentType === "recipe") {
     toggleUrl = getRecipeLocalizedPath(targetLocale, translationSlug);
-  } else if (contentType === "review") {
+  } else if (contentType === "review" || contentType === "date-spot") {
     toggleUrl = getReviewLocalizedPath(targetLocale, translationSlug);
   } else {
     toggleUrl = getArticleLocalizedPath(targetLocale, translationSlug);

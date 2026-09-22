@@ -1,0 +1,33 @@
+---
+import { SITE_URL } from "@utils/constants";
+import { getReviewLocalizedPath, type Locale } from "@i18n/utils";
+
+interface Props { spot: any; locale: Locale; }
+const { spot, locale } = Astro.props;
+const copy = spot.locales[locale === "fr" ? "fr-CA" : "en"];
+const url = `${SITE_URL}${getReviewLocalizedPath(locale, copy.slug)}`;
+const image = spot.image.src.startsWith("http") ? spot.image.src : `${SITE_URL}${spot.image.src}`;
+const graph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Restaurant", "@id": `${url}#restaurant`, name: spot.name, image,
+      servesCuisine: copy.cuisine,
+      address: { "@type": "PostalAddress", streetAddress: copy.essentials.address, addressLocality: spot.city },
+      hasMap: spot.mapUrl,
+    },
+    {
+      "@type": "Article", "@id": `${url}#article`, headline: copy.title,
+      description: copy.metaDescription, image,
+      inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
+      datePublished: spot.freshness.published, dateModified: spot.freshness.lastChecked,
+      mainEntity: { "@id": `${url}#restaurant` },
+      author: { "@type": "Person", name: spot.reporterByline, url: `${SITE_URL}/${locale}/${locale === "fr" ? "a-propos" : "about"}/` },
+      publisher: { "@type": "Organization", name: "Date My Dish", url: SITE_URL },
+      url,
+    },
+  ],
+};
+---
+<!-- A qualitative verdict is editorial copy, not a schema Rating. -->
+<script type="application/ld+json" is:inline set:html={JSON.stringify(graph)} />

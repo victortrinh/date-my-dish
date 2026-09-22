@@ -48,6 +48,22 @@ test("venue variants enforce the Core Review Floor in both languages", () => {
     const spot = fixture(type); spot.locales[locale].goodFor[0].reason = "  "; rejects(spot);
   }
 });
+test("restaurant optional modules stay optional but validate reported structure when present", () => {
+  const minimal = fixture();
+  assert.equal(dateSpotSchema.safeParse(minimal).success, true);
+  for (const locale of ["en", "fr-CA"]) {
+    const complete = fixture();
+    Object.assign(complete.locales[locale], {
+      meetTheChef: { name: token, role: token, text: token },
+      nearbyPlans: { title: token, text: token },
+      contributorRecipe: { title: token, contributorName: token, source: token, text: token },
+    });
+    assert.equal(dateSpotSchema.safeParse(complete).success, true);
+    const incomplete = fixture();
+    incomplete.locales[locale].contributorRecipe = { title: token, text: token };
+    rejects(incomplete);
+  }
+});
 test("scores cannot be silently stripped at any structured level", () => {
   for (const field of ["dateScore", "stars", "rating", "reviewRating", "dateTypeFit", "score"]) {
     for (const path of [[], ["locales", "en"], ["locales", "en", "goodFor", 0]]) {

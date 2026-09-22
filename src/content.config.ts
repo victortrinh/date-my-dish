@@ -5,7 +5,9 @@ import { z } from "astro/zod";
 import { dateSpotSchema } from "./content-contracts/date-spot.mjs";
 
 const dateSpots = defineCollection({
-  loader: file("src/content/date-spots.json"),
+  // Acceptance builds may opt into mechanical fixtures. Production always
+  // consumes the human-authored source collection.
+  loader: file(process.env.DATE_SPOT_SOURCE || "src/content/date-spots.json"),
   schema: dateSpotSchema,
 });
 
@@ -162,7 +164,9 @@ const DateTypeFitSchema = z.object({
 });
 
 const reviews = defineCollection({
-  loader: glob({ pattern: "**/*.mdx", base: "./src/content/reviews" }),
+  // Legacy scored reviews stay in Git but require a fresh visit and a complete
+  // Date Spot Locale Pair before they can return to a public route.
+  loader: async () => [],
   schema: ({ image }) =>
     z.object({
       title: z.string(),

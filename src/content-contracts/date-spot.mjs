@@ -41,6 +41,9 @@ const venueCopy = {
   realCost: text,
   reportersNote: object({ byline: z.literal("Victor Vu"), text }),
   beforeYouGo: text,
+  meetTheChef: object({ name: text, role: text, text }).optional(),
+  nearbyPlans: object({ title: text, text }).optional(),
+  contributorRecipe: object({ title: text, contributorName: text, source: text, text }).optional(),
 };
 const restaurantCopy = object({ ...venueCopy, cuisine: text, whatToOrder: text });
 const barCopy = object({ ...venueCopy, whatToEat: text.optional() });
@@ -65,7 +68,10 @@ const common = {
   authorship: object({ reporting: z.literal("human"), translation: z.literal("human") }),
   freshness: object({ visited: date, published: date, lastChecked: date }),
   image: object({
-    src: z.string().regex(/^\/images\/date-spots\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/),
+    src: z.union([
+      z.string().regex(/^\/images\/date-spots\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/),
+      z.literal("/images/og-default.jpg"),
+    ]),
     width: z.number().int().positive(),
     height: z.number().int().positive(),
     provenance: z.literal("dmd-held-photograph"),
@@ -84,6 +90,11 @@ export const dateSpotSchema = z.discriminatedUnion("spotType", [
 ]).superRefine((spot, ctx) => {
   const issue = (path, message) => ctx.addIssue({ code: "custom", path, message });
   const { visited, published, lastChecked } = spot.freshness;
+  // Reuse a real static image in browser tests without weakening the
+  // documentary-image rule for publishable records.
+  if (spot.image.src === "/images/og-default.jpg" && spot.id !== "test-only-restaurant") {
+    issue(["image", "src"], "The generic image is reserved for the non-public acceptance fixture");
+  }
   if (visited > published) issue(["freshness", "visited"], "Visit must precede publication");
   if (lastChecked < visited) issue(["freshness", "lastChecked"], "Last check must follow the visit");
   const en = spot.locales.en;
