@@ -131,4 +131,19 @@ export const dateSpotsSchema = z.array(dateSpotSchema).superRefine((spots, ctx) 
       seen.add(value);
     });
   }
+
+  for (const [spotIndex, spot] of spots.entries()) {
+    if (spot.spotType !== "activity" && spot.spotType !== "chef-led-experience") continue;
+    for (const locale of ["en", "fr-CA"]) {
+      const pairings = spot.locales[locale].pairItWith ?? [];
+      for (const [pairingIndex, pairingSlug] of pairings.entries()) {
+        const target = spots.find((candidate) => candidate.locales[locale].slug === pairingSlug);
+        if (!target) {
+          ctx.addIssue({ code: "custom", path: [spotIndex, "locales", locale, "pairItWith", pairingIndex], message: `Pairing target not found: ${pairingSlug}` });
+        } else if (target.spotType !== "restaurant" && target.spotType !== "bar") {
+          ctx.addIssue({ code: "custom", path: [spotIndex, "locales", locale, "pairItWith", pairingIndex], message: "Pairings must target a Restaurant or Bar Date Spot" });
+        }
+      }
+    }
+  }
 });
