@@ -43,7 +43,18 @@ const venueCopy = {
   beforeYouGo: text,
 };
 const restaurantCopy = object({ ...venueCopy, cuisine: text, whatToOrder: text });
-const barCopy = object({ ...venueCopy, whatToEat: text.optional() });
+const reportedPerson = object({ name: text, role: z.literal("bartender"), note: text });
+const linkedSpot = object({ id: slug, label: text, note: text });
+const contributorRecipe = object({ title: text, slug, contributor: text, source: text, testingNotes: text.optional() });
+const barCopy = object({
+  ...venueCopy,
+  // Food, bartender reporting, and companions are intentionally absent unless
+  // the reporting earns them. These fields are editorial modules, not defaults.
+  whatToEat: text.optional(),
+  meetTheBartender: reportedPerson.optional(),
+  nearbyDateSpots: z.array(linkedSpot).min(1).optional(),
+  contributorRecipe: contributorRecipe.optional(),
+});
 const planningCopy = object({
   ...commonCopy,
   goodFor: signals,
@@ -101,6 +112,13 @@ export const dateSpotSchema = z.discriminatedUnion("spotType", [
   const assessments = (copy) => copy.goodFor.map((s) => `${s.occasion}:${s.assessment}`).sort();
   if (JSON.stringify(assessments(en)) !== JSON.stringify(assessments(fr))) {
     issue(["locales"], "Good-for assessments must agree across the Locale Pair");
+  }
+  if (spot.spotType === "bar") {
+    for (const module of ["whatToEat", "meetTheBartender", "nearbyDateSpots", "contributorRecipe"]) {
+      if ((en[module] === undefined) !== (fr[module] === undefined)) {
+        issue(["locales"], `${module} must be present in both halves of a Bar Date Spot Locale Pair`);
+      }
+    }
   }
 });
 

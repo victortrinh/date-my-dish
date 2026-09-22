@@ -1,0 +1,25 @@
+---
+import type { z } from "astro/zod";
+import { dateSpotSchema } from "@content-contracts/date-spot.mjs";
+import { SITE_URL } from "@utils/constants";
+
+type DateSpot = z.infer<typeof dateSpotSchema>;
+type BarDateSpot = Extract<DateSpot, { spotType: "bar" }>;
+interface Props { spot: BarDateSpot; locale: "en" | "fr-CA"; path: string; }
+const { spot, locale, path } = Astro.props;
+const copy = spot.locales[locale];
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  name: spot.name,
+  description: copy.metaDescription,
+  url: new URL(path, SITE_URL).toString(),
+  image: new URL(spot.image.src, SITE_URL).toString(),
+  address: { "@type": "PostalAddress", streetAddress: copy.essentials.address, addressLocality: spot.city },
+  author: { "@type": "Person", name: spot.reporterByline },
+  datePublished: spot.freshness.published,
+  dateModified: spot.freshness.lastChecked,
+  inLanguage: locale,
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

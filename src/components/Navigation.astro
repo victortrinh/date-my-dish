@@ -6,7 +6,7 @@ import DarkModeToggle from "./DarkModeToggle.astro";
 interface Props {
   locale: Locale;
   translationSlug?: string;
-  contentType?: "recipe" | "article" | "review";
+  contentType?: "recipe" | "article" | "review" | "date-spot";
 }
 
 const { locale, translationSlug, contentType } = Astro.props;

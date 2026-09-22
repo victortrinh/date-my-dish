@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import BarDateSpot from "@components/date-spots/BarDateSpot.astro";
+import BarDateSpotSchema from "@components/date-spots/BarDateSpotSchema.astro";
+
+export async function getStaticPaths() {
+  const spots = await getCollection("dateSpots");
+  return spots
+    .filter((entry) => entry.data.spotType === "bar")
+    .map((entry) => ({ params: { slug: entry.data.locales.en.slug }, props: { spot: entry.data } }));
+}
+
+const { spot } = Astro.props;
+const copy = spot.locales.en;
+const path = `/en/date-spots/${copy.slug}/`;
+---
+
+<BaseLayout title={copy.metaTitle} description={copy.metaDescription} canonical={path} translationSlug={spot.locales["fr-CA"].slug} ogType="article" contentType="date-spot">
+  <BarDateSpotSchema slot="head" spot={spot} locale="en" path={path} />
+  <BarDateSpot spot={spot} locale="en" />
+</BaseLayout>

@@ -48,6 +48,19 @@ test("venue variants enforce the Core Review Floor in both languages", () => {
     const spot = fixture(type); spot.locales[locale].goodFor[0].reason = "  "; rejects(spot);
   }
 });
+test("bar-only editorial modules are optional, attributed, and unavailable to other variants", () => {
+  const bar = fixture("bar");
+  bar.locales.en.meetTheBartender = { name: token, role: "bartender", note: token };
+  bar.locales.en.nearbyDateSpots = [{ id: "nearby-spot", label: token, note: token }];
+  bar.locales.en.contributorRecipe = { title: token, slug: "supplied-drink", contributor: token, source: token };
+  bar.locales["fr-CA"].meetTheBartender = structuredClone(bar.locales.en.meetTheBartender);
+  bar.locales["fr-CA"].nearbyDateSpots = structuredClone(bar.locales.en.nearbyDateSpots);
+  bar.locales["fr-CA"].contributorRecipe = structuredClone(bar.locales.en.contributorRecipe);
+  assert.equal(dateSpotSchema.safeParse(bar).success, true);
+  const missingSource = structuredClone(bar); delete missingSource.locales.en.contributorRecipe.source; rejects(missingSource);
+  const partialModule = fixture("bar"); partialModule.locales.en.whatToEat = token; rejects(partialModule);
+  const restaurant = fixture(); restaurant.locales.en.meetTheBartender = bar.locales.en.meetTheBartender; rejects(restaurant);
+});
 test("scores cannot be silently stripped at any structured level", () => {
   for (const field of ["dateScore", "stars", "rating", "reviewRating", "dateTypeFit", "score"]) {
     for (const path of [[], ["locales", "en"], ["locales", "en", "goodFor", 0]]) {
