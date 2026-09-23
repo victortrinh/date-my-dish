@@ -1,33 +1,17 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import BarDateSpot from "@components/date-spots/BarDateSpot.astro";
-import BarDateSpotSchema from "@components/date-spots/BarDateSpotSchema.astro";
 import ActivityDateSpotTemplate from "@components/ActivityDateSpotTemplate.astro";
-import { getReviewLocalizedPath } from "@i18n/utils";
+import { isPlanningSpot } from "@utils/date-spots";
 
+// Activities and Chef-led Experiences. Restaurant and Bar reviews live under
+// /fr/critiques/{neighbourhood}/{slug}/.
 export async function getStaticPaths() {
   const spots = await getCollection("dateSpots");
-  return spots
-    .filter((entry) => ["bar", "activity", "chef-led-experience"].includes(entry.data.spotType))
-    .map((entry) => ({ params: { slug: entry.data.locales["fr-CA"].slug }, props: { spot: entry.data } }));
+  return spots.map(({ data }) => data).filter(isPlanningSpot).map((spot) => ({
+    params: { slug: spot.locales["fr-CA"].slug }, props: { spot },
+  }));
 }
 
 const { spot } = Astro.props;
-const path = `/fr/lieux/${spot.locales["fr-CA"].slug}/`;
-const spots = await getCollection("dateSpots");
-const planningCopy = spot.spotType === "activity" || spot.spotType === "chef-led-experience" ? spot.locales["fr-CA"] : null;
-const pairings = (planningCopy?.pairItWith ?? []).map((slug) => {
-  const target = spots.find((candidate) => candidate.data.locales["fr-CA"].slug === slug);
-  if (!target || (target.data.spotType !== "restaurant" && target.data.spotType !== "bar")) {
-    throw new Error(`Invalid Activity Date Spot pairing: ${slug}`);
-  }
-  return { name: target.data.name, href: getReviewLocalizedPath("fr", slug) };
-});
 ---
-
-{spot.spotType === "bar" && <BaseLayout title={spot.locales["fr-CA"].metaTitle} description={spot.locales["fr-CA"].metaDescription} canonical={path} translationSlug={spot.locales.en.slug} ogType="article" contentType="date-spot">
-  <BarDateSpotSchema slot="head" spot={spot} locale="fr-CA" path={path} />
-  <BarDateSpot spot={spot} locale="fr-CA" />
-</BaseLayout>}
-{(spot.spotType === "activity" || spot.spotType === "chef-led-experience") && <ActivityDateSpotTemplate spot={spot} copy={spot.locales["fr-CA"]} locale="fr" translationSlug={spot.locales.en.slug} pairings={pairings} />}
+<ActivityDateSpotTemplate spot={spot} locale="fr" />

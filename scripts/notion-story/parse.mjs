@@ -44,3 +44,19 @@ function parseJsonBlock(block, label, problems) {
     return null;
   }
 }
+
+// Additional Date Spot photos are image blocks captioned "photo:<key>",
+// optionally followed by "| credit: <name>". The copy references them by key.
+const PHOTO_CAPTION = /^photo:\s*([a-z0-9]+(?:-[a-z0-9]+)*)\s*(?:\|\s*credit:\s*(.+))?$/i;
+
+/**
+ * @param {Array<{type: string, url?: string, caption?: string}>} blocks
+ * @returns {{ url: string, key: string, credit?: string }[]}
+ */
+export function photoBlocks(blocks) {
+  return blocks
+    .filter((block) => block.type === "image")
+    .map((block) => ({ block, match: String(block.caption ?? "").trim().match(PHOTO_CAPTION) }))
+    .filter(({ match }) => match)
+    .map(({ block, match }) => ({ url: block.url, key: match[1].toLowerCase(), credit: match[2]?.trim() }));
+}

@@ -1,0 +1,176 @@
+[
+  {
+    "id": "test-only-profile",
+    "postType": "extended-profile",
+    "subject": {
+      "name": "[TEST ONLY] Cook",
+      "role": "chef",
+      "venue": "Test Venue",
+      "neighbourhood": "Test Quarter"
+    },
+    "companionDateSpot": "test-only-restaurant",
+    "interviewer": "Victor",
+    "originalInterview": {
+      "conductedOn": "2026-01-01",
+      "source": "[TEST ONLY]",
+      "quoteVerification": "facts-and-quotes-only"
+    },
+    "authorship": {
+      "reporting": "human",
+      "translation": "human"
+    },
+    "published": "2026-01-02",
+    "image": {
+      "src": "/images/og-default.jpg",
+      "width": 1200,
+      "height": 630,
+      "provenance": "dmd-held-photograph"
+    },
+    "locales": {
+      "en": {
+        "title": "[TEST ONLY] In the kitchen with [TEST ONLY] Cook",
+        "slug": "test-only-profile",
+        "metaTitle": "[TEST ONLY] Cook, chef at Test Venue: Interview",
+        "metaDescription": "[TEST ONLY] mechanical fixture for checking a contributor page route, its visible modules, metadata and schema output.............",
+        "standfirst": "[TEST ONLY] standfirst",
+        "shortScene": "[TEST ONLY] short scene",
+        "theVenue": [
+          {
+            "question": "[TEST ONLY] venue question 1",
+            "answer": "[TEST ONLY] venue answer 1"
+          },
+          {
+            "question": "[TEST ONLY] venue question 2",
+            "answer": "[TEST ONLY] venue answer 2"
+          }
+        ],
+        "pullQuote": "[TEST ONLY] pull quote",
+        "dinnerAndDate": [
+          {
+            "key": "first-thing-cooked",
+            "question": "[TEST ONLY] first-thing-cooked?",
+            "answer": "[TEST ONLY] first-thing-cooked answer"
+          },
+          {
+            "key": "last-day-off",
+            "question": "[TEST ONLY] last-day-off?",
+            "answer": "[TEST ONLY] last-day-off answer"
+          },
+          {
+            "key": "cook-for-or-together",
+            "question": "[TEST ONLY] cook-for-or-together?",
+            "answer": "[TEST ONLY] cook-for-or-together answer"
+          },
+          {
+            "key": "judging-a-restaurant",
+            "question": "[TEST ONLY] judging-a-restaurant?",
+            "answer": "[TEST ONLY] judging-a-restaurant answer"
+          },
+          {
+            "key": "overrated-romantic-ingredient",
+            "question": "[TEST ONLY] overrated-romantic-ingredient?",
+            "answer": "[TEST ONLY] overrated-romantic-ingredient answer"
+          },
+          {
+            "key": "date-dinner-length",
+            "question": "[TEST ONLY] date-dinner-length?",
+            "answer": "[TEST ONLY] date-dinner-length answer"
+          },
+          {
+            "key": "morning-after",
+            "question": "[TEST ONLY] morning-after?",
+            "answer": "[TEST ONLY] morning-after answer"
+          },
+          {
+            "key": "table-six",
+            "question": "[TEST ONLY] table-six?",
+            "answer": "[TEST ONLY] table-six answer"
+          }
+        ],
+        "shortVersion": {
+          "cuisine": "[TEST ONLY] cuisine",
+          "from": "[TEST ONLY] hometown",
+          "inKitchensSince": 2005
+        },
+        "sourceNotes": "[TEST ONLY]",
+        "factNotes": "[TEST ONLY]",
+        "imageAlt": "[TEST ONLY] portrait",
+        "imageCredit": "[TEST ONLY]",
+        "atHome": "[TEST ONLY] at home answer",
+        "contributorRecipe": "test-only-recipe"
+      },
+      "fr-CA": {
+        "title": "[TEST ONLY] In the kitchen with [TEST ONLY] Cook",
+        "slug": "test-only-profile-fr",
+        "metaTitle": "[TEST ONLY] Cook, chef at Test Venue: Interview",
+        "metaDescription": "[TEST ONLY] mechanical fixture for checking a contributor page route, its visible modules, metadata and schema output.............",
+        "standfirst": "[TEST ONLY] standfirst",
+        "shortScene": "[TEST ONLY] short scene",
+        "theVenue": [
+          {
+            "question": "[TEST ONLY] venue question 1",
+            "answer": "[TEST ONLY] venue answer 1"
+          },
+          {
+            "question": "[TEST ONLY] venue question 2",
+            "answer": "[TEST ONLY] venue answer 2"
+          }
+        ],
+        "pullQuote": "[TEST ONLY] pull quote",
+        "dinnerAndDate": [
+          {
+            "key": "first-thing-cooked",
+            "question": "[TEST ONLY] first-thing-cooked?",
+            "answer": "[TEST ONLY] first-thing-cooked answer"
+          },
+          {
+            "key": "last-day-off",
+            "question": "[TEST ONLY] last-day-off?",
+            "answer": "[TEST ONLY] last-day-off answer"
+          },
+          {
+            "key": "cook-for-or-together",
+            "question": "[TEST ONLY] cook-for-or-together?",
+            "answer": "[TEST ONLY] cook-for-or-together answer"
+          },
+          {
+            "key": "judging-a-restaurant",
+            "question": "[TEST ONLY] judging-a-restaurant?",
+            "answer": "[TEST ONLY] judging-a-restaurant answer"
+          },
+          {
+            "key": "overrated-romantic-ingredient",
+            "question": "[TEST ONLY] overrated-romantic-ingredient?",
+            "answer": "[TEST ONLY] overrated-romantic-ingredient answer"
+          },
+          {
+            "key": "date-dinner-length",
+            "question": "[TEST ONLY] date-dinner-length?",
+            "answer": "[TEST ONLY] date-dinner-length answer"
+          },
+          {
+            "key": "morning-after",
+            "question": "[TEST ONLY] morning-after?",
+            "answer": "[TEST ONLY] morning-after answer"
+          },
+          {
+            "key": "table-six",
+            "question": "[TEST ONLY] table-six?",
+            "answer": "[TEST ONLY] table-six answer"
+          }
+        ],
+        "shortVersion": {
+          "cuisine": "[TEST ONLY] cuisine",
+          "from": "[TEST ONLY] hometown",
+          "inKitchensSince": 2005
+        },
+        "sourceNotes": "[TEST ONLY]",
+        "factNotes": "[TEST ONLY]",
+        "imageAlt": "[TEST ONLY] portrait",
+        "imageCredit": "[TEST ONLY]",
+        "atHome": "[TEST ONLY] at home answer",
+        "contributorRecipe": "test-only-recipe"
+      }
+    }
+  }
+]

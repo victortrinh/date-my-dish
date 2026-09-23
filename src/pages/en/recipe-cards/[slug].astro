@@ -1,0 +1,14 @@
+---
+import { getCollection } from "astro:content";
+import RecipeCard from "@components/profiles/RecipeCard.astro";
+
+// Contributor Recipes: supplied by a named chef or bartender. The legacy
+// /en/recipes/ routes stay retired.
+export async function getStaticPaths() {
+  const recipes = await getCollection("contributorRecipes");
+  return recipes.map(({ data }) => ({ params: { slug: data.locales["en"].slug }, props: { recipe: data } }));
+}
+
+const { recipe } = Astro.props;
+---
+<RecipeCard recipe={recipe} locale="en" />

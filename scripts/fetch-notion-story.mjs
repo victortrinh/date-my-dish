@@ -31,7 +31,7 @@ import {
   traverseBlocks,
 } from "./notion-utils.mjs";
 import { requiredProperties } from "./notion-story/fields.mjs";
-import { parseLocalePair } from "./notion-story/parse.mjs";
+import { parseLocalePair, photoBlocks } from "./notion-story/parse.mjs";
 import { storyToRecord, normalizePostType, normalizeSpotType, MappingError } from "./notion-story/map.mjs";
 import { publishGate } from "./notion-story/gate.mjs";
 
@@ -164,11 +164,18 @@ async function fetchFromNotion() {
   const postTypeRaw = getProp(selected.block)("Post Type");
   const spotTypeRaw = getProp(selected.block)("Spot Type");
 
-  const imageBlock = rawBlocks.find((b) => b.type === "image" && b.url);
+  // The Editorial Image is the first image block that isn't a keyed photo.
+  const extraPhotos = photoBlocks(rawBlocks);
+  const imageBlock = rawBlocks.find((b) => b.type === "image" && b.url && !extraPhotos.some((photo) => photo.url === b.url));
   let imageBuffer = null;
   if (imageBlock) {
     const res = await fetch(imageBlock.url);
     if (res.ok) imageBuffer = Buffer.from(await res.arrayBuffer());
+  }
+  const photoBuffers = [];
+  for (const photo of extraPhotos) {
+    const res = await fetch(photo.url);
+    photoBuffers.push({ ...photo, buffer: res.ok ? Buffer.from(await res.arrayBuffer()) : null });
   }
 
   return {
@@ -181,6 +188,7 @@ async function fetchFromNotion() {
     getProp: getProp(selected.block),
     blocks,
     imageBuffer,
+    photoBuffers,
   };
 }
 
@@ -197,6 +205,7 @@ function loadFixture(path) {
     getProp,
     blocks: fixture.blocks,
     imageBuffer: null,
+    photoBuffers: photoBlocks(fixture.blocks).map((photo) => ({ ...photo, buffer: null })),
   };
 }
 
@@ -250,9 +259,32 @@ async function main() {
     return;
   }
 
+  const photos = {};
+  for (const photo of story.photoBuffers) {
+    if (postType !== "date-spot") {
+      problems.push(`Keyed photo "${photo.key}" is only supported on Date Spot Stories.`);
+      continue;
+    }
+    const outPath = `${IMAGE_DIRS[postType]}/${story.getProp("ID")}-${photo.key}.webp`;
+    const src = `/${outPath.replace(/^public\//, "")}`;
+    if (fixtureArgIndex !== -1) {
+      photos[photo.key] = { src, width: 1200, height: 800 };
+    } else if (!photo.buffer) {
+      problems.push(`Could not download photo "${photo.key}".`);
+    } else {
+      photos[photo.key] = { src, ...(await resizeImage(photo.buffer, outPath, 1200)) };
+    }
+    if (photo.credit && photos[photo.key]) photos[photo.key].credit = photo.credit;
+  }
+  if (problems.length > 0) {
+    writeReport(problems, story);
+    process.exitCode = 1;
+    return;
+  }
+
   let record;
   try {
-    record = storyToRecord(story.getProp, postType, locales, image);
+    record = storyToRecord(story.getProp, postType, locales, image, photos);
   } catch (err) {
     if (err instanceof MappingError) {
       writeReport([err.message], story);
@@ -262,7 +294,12 @@ async function main() {
     throw err;
   }
 
-  const result = publishGate(record, existingCollection, story.getProp, story.schemaPropertyNames);
+  const related = {
+    spots: readCollection(COLLECTION_FILES["date-spot"]),
+    recipes: readCollection(COLLECTION_FILES["contributor-recipe"]),
+    profiles: readCollection(COLLECTION_FILES["extended-profile"]),
+  };
+  const result = publishGate(record, existingCollection, story.getProp, story.schemaPropertyNames, related);
   if (!result.ok) {
     writeReport(result.problems, story);
     process.exitCode = 1;

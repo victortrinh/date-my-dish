@@ -25,17 +25,24 @@ export const SHARED_PROPERTIES = [
 // Properties required in addition to SHARED_PROPERTIES, by Post Type. Date
 // Spot rows also key off "Spot Type" to pick the right sub-list below.
 export const POST_TYPE_PROPERTIES = {
-  "date-spot": ["Spot Type", "Name", "City", "Neighbourhood", "Visited", "Published", "Last checked", "Payment", "Map URL"],
+  "date-spot": ["Spot Type", "Name", "City", "Neighbourhood", "Visited", "Published", "Last checked", "Payment", "Map URL", "Verdict", "Price range"],
   "contributor-recipe": ["Contributor name", "Contributor role", "Venue or context", "Supplied source", "Received on", "Published"],
   "extended-profile": ["Subject name", "Subject role", "Subject venue", "Subject neighbourhood", "Companion Date Spot", "Interview date", "Interview source", "Published"],
 };
 
 // Date Spot rows additionally require these properties by Spot Type.
 export const SPOT_TYPE_PROPERTIES = {
-  restaurant: ["Verdict"],
-  bar: ["Verdict"],
-  activity: [],
-  "chef-led-experience": ["Host name", "Host role"],
+  restaurant: [],
+  bar: [],
+  activity: ["Category"],
+  "chef-led-experience": ["Category", "Host name", "Host role"],
+};
+
+// Properties read when filled in and skipped when blank. A Bar takes a
+// Category only when it should appear in "Make a night of it" picks.
+export const OPTIONAL_PROPERTIES = {
+  "date-spot": ["Instagram", "Booking URL", "Google reviews"],
+  bar: ["Category"],
 };
 
 export function requiredProperties(postType, spotType) {

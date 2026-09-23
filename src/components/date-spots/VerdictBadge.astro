@@ -1,0 +1,18 @@
+---
+import { verdictLabel, type Verdict } from "@utils/date-spots";
+import type { Locale } from "@i18n/utils";
+
+// Each state has its own fill so a list reads at a glance.
+interface Props { verdict: Verdict; locale: Locale; qualifier?: string; }
+const { verdict, locale, qualifier } = Astro.props;
+---
+<span
+  data-verdict={verdict}
+  class:list={[
+    "inline-block max-w-full px-3 py-1.5 font-ui text-caption font-bold uppercase tracking-wider",
+    !qualifier && "whitespace-nowrap",
+    verdict === "favourite" && "bg-brand-wine text-white dark:bg-brand-rose dark:text-warm-950",
+    verdict === "conditional" && "border-[1.5px] border-brand-wine text-brand-wine-text dark:border-brand-rose dark:text-brand-rose",
+    verdict === "pass" && "border-[1.5px] border-warm-400 text-warm-600 dark:text-warm-300",
+  ]}
+>{verdictLabel(verdict, locale)}{qualifier && <span class="normal-case tracking-normal">, {qualifier}</span>}</span>

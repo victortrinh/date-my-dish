@@ -14,7 +14,10 @@ in `src/content-contracts/`.
    order: **English**, then **Canadian French**. Each code block's content
    is a single JSON object matching the "Locale copy shape" for that
    template, written by hand in DMD's editorial voice.
-3. Add the Editorial Image as the first image block on the page.
+3. Add the Editorial Image as the first image block on the page. A Date
+   Spot's other photos (room, chef portrait, dishes) are further image
+   blocks captioned `photo:<key>`, optionally `photo:<key> | credit: <name>`;
+   the copy references them by key.
 4. Check "Human reporting", "Human translation", and "DMD-held photograph"
    only once they are true. The publish gate rejects a Story where any of
    these is unchecked.

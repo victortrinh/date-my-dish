@@ -1,10 +1,11 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { requiredProperties, SHARED_PROPERTIES, POST_TYPE_PROPERTIES, SPOT_TYPE_PROPERTIES, POST_TYPES, SPOT_TYPES } from "../../scripts/notion-story/fields.mjs";
-import { parseLocalePair } from "../../scripts/notion-story/parse.mjs";
-import { storyToRecord, normalizePostType, normalizeSpotType, MappingError } from "../../scripts/notion-story/map.mjs";
-import { publishGate, checkForbiddenProperties, checkAttestations, checkDatedUpdate } from "../../scripts/notion-story/gate.mjs";
+import { requiredProperties, SHARED_PROPERTIES, POST_TYPE_PROPERTIES, SPOT_TYPE_PROPERTIES, OPTIONAL_PROPERTIES, POST_TYPES, SPOT_TYPES } from "../../scripts/notion-story/fields.mjs";
+import { parseLocalePair, photoBlocks } from "../../scripts/notion-story/parse.mjs";
+import { storyToRecord, normalizePostType, normalizeSpotType, parseGoogleReviews, MappingError } from "../../scripts/notion-story/map.mjs";
+import { publishGate, checkForbiddenProperties, checkAttestations, checkDatedUpdate, checkGoogleReviewsAppendOnly } from "../../scripts/notion-story/gate.mjs";
+import { dateSpotFixture } from "./date-spot-fixtures.mjs";
 import { dueForRecheck } from "../../scripts/notion-story/maintenance.mjs";
 
 // Mechanical test values, never loaded into a public collection or published.
@@ -15,24 +16,16 @@ function codeBlock(text) {
   return { type: "code", text };
 }
 
+// The Locale Pair copy of a valid Restaurant Date Spot.
 function restaurantEnCopy() {
-  return {
-    title: token, slug: "test-only-restaurant", metaTitle: token, metaDescription: token,
-    opening: token, verdictReason: token,
-    goodFor: [{ occasion: "first-date", assessment: "ideal", reason: token }],
-    room: token, whatToDrink: token, cuisine: token, whatToOrder: token, realCost: token,
-    reportersNote: { byline: "Victor Vu", text: token }, beforeYouGo: token,
-    essentials: { address: token, booking: token, access: token, duration: token, cost: token, timing: token },
-    paymentDisclosure: token, sourceNotes: token, factNotes: token, imageAlt: token, imageCredit: token,
-    materialUpdates: [],
-  };
+  return dateSpotFixture("restaurant", "test-only-restaurant").locales.en;
 }
 
 function restaurantProps(overrides = {}) {
   return {
-    "Spot Type": "Restaurant", Name: token, City: token, Neighbourhood: token,
+    "Spot Type": "Restaurant", Name: "Test Venue", City: "Test City", Neighbourhood: "Test Quarter",
     Visited: "2026-01-01", Published: "2026-01-02", "Last checked": "2026-01-03",
-    Payment: "Paid", "Map URL": "https://example.com", Verdict: "A Favourite",
+    Payment: "Paid", "Map URL": "https://example.com", Verdict: "A Favourite", "Price range": "$$$",
     ID: "test-only-restaurant",
     ...overrides,
   };
@@ -48,7 +41,9 @@ test("requiredProperties lists shared, Post Type, and Spot Type properties", () 
   assert.ok(restaurant.includes("Spot Type"));
   assert.ok(restaurant.includes("Verdict"));
   const activity = requiredProperties("date-spot", "activity");
-  assert.ok(!activity.includes("Verdict"));
+  assert.ok(activity.includes("Verdict"));
+  assert.ok(activity.includes("Category"));
+  assert.ok(!requiredProperties("date-spot", "bar").includes("Category"));
   const chefLed = requiredProperties("date-spot", "chef-led-experience");
   assert.ok(chefLed.includes("Host name"));
 });
@@ -88,8 +83,46 @@ test("storyToRecord maps a Restaurant Story onto the Date Spot contract shape", 
   const record = storyToRecord(getPropFrom(props), "date-spot", { en, "fr-CA": fr }, image);
   assert.equal(record.spotType, "restaurant");
   assert.equal(record.reviewVerdict, "favourite");
-  assert.equal(record.reporterByline, "Victor Vu");
+  assert.equal(record.reporterByline, "Victor");
+  assert.equal(record.priceRange, "$$$");
   assert.equal(record.image.provenance, "dmd-held-photograph");
+  assert.equal("category" in record, false);
+  assert.equal("googleReviews" in record, false);
+});
+
+test("storyToRecord maps the optional venue facts and keyed photos", () => {
+  const props = restaurantProps({ Instagram: "@venue.handle", "Booking URL": "https://example.com/book", "Google reviews": "4.6 | 312 | 2026-01-02\n4.5 · 340 · 2026-01-03" });
+  const record = storyToRecord(getPropFrom(props), "date-spot", { en: restaurantEnCopy(), "fr-CA": restaurantEnCopy() }, image, { room: { src: "/images/date-spots/test-only-restaurant-room.webp", width: 900, height: 600, credit: "Jane Doe" } });
+  assert.equal(record.instagram, "venue.handle");
+  assert.equal(record.bookingUrl, "https://example.com/book");
+  assert.deepEqual(record.googleReviews, [{ average: 4.6, count: 312, asOf: "2026-01-02" }, { average: 4.5, count: 340, asOf: "2026-01-03" }]);
+  assert.equal(record.photos.room.provenance, "dmd-held-photograph");
+  assert.equal(record.photos.room.credit, "Jane Doe");
+  assert.throws(() => parseGoogleReviews("4.6 stars"), MappingError);
+});
+
+test("storyToRecord maps Category for planning spots and optionally for Bars", () => {
+  const activityProps = restaurantProps({ "Spot Type": "Activity", Category: "Nature and Scenic" });
+  const activity = storyToRecord(getPropFrom(activityProps), "date-spot", { en: {}, "fr-CA": {} }, image);
+  assert.equal(activity.category, "nature-scenic");
+  assert.equal(activity.reviewVerdict, "favourite");
+  assert.throws(() => storyToRecord(getPropFrom({ ...activityProps, Category: "Sports" }), "date-spot", { en: {}, "fr-CA": {} }, image), MappingError);
+  const bar = storyToRecord(getPropFrom(restaurantProps({ "Spot Type": "Bar" })), "date-spot", { en: {}, "fr-CA": {} }, image);
+  assert.equal("category" in bar, false);
+  const categorisedBar = storyToRecord(getPropFrom(restaurantProps({ "Spot Type": "Bar", Category: "Social and Romantic" })), "date-spot", { en: {}, "fr-CA": {} }, image);
+  assert.equal(categorisedBar.category, "social-romantic");
+});
+
+test("photoBlocks reads keyed photos and credits from image captions", () => {
+  const blocks = [
+    { type: "image", url: "https://example.com/hero", caption: "" },
+    { type: "image", url: "https://example.com/room", caption: "photo:room" },
+    { type: "image", url: "https://example.com/chef", caption: "Photo: chef-portrait | credit: Jane Doe" },
+  ];
+  assert.deepEqual(photoBlocks(blocks), [
+    { url: "https://example.com/room", key: "room", credit: undefined },
+    { url: "https://example.com/chef", key: "chef-portrait", credit: "Jane Doe" },
+  ]);
 });
 
 test("storyToRecord rejects an unrecognized Verdict", () => {
@@ -150,6 +183,24 @@ test("publishGate rejects an incomplete Core Review Floor via the underlying sch
   const record = storyToRecord(getPropFrom(props), "date-spot", { en: copy, "fr-CA": restaurantEnCopy() }, image);
   const result = publishGate(record, [], getPropFrom(props), Object.keys(props));
   assert.equal(result.ok, false);
+});
+
+test("Google review snapshots are append-only across republishes", () => {
+  const previous = { googleReviews: [{ average: 4.6, count: 312, asOf: "2026-01-02" }] };
+  assert.deepEqual(checkGoogleReviewsAppendOnly({ googleReviews: [...previous.googleReviews, { average: 4.5, count: 340, asOf: "2026-02-01" }] }, previous), []);
+  assert.equal(checkGoogleReviewsAppendOnly({ googleReviews: [{ average: 4.7, count: 312, asOf: "2026-01-02" }] }, previous).length, 1);
+  assert.equal(checkGoogleReviewsAppendOnly({}, previous).length, 1);
+  assert.deepEqual(checkGoogleReviewsAppendOnly({ googleReviews: previous.googleReviews }, null), []);
+});
+
+test("publishGate checks links into the other published collections when given them", () => {
+  const props = { ...restaurantProps(), Status: "Ready to Publish", "Story #": "1", "Post Type": "Date Spot", "Human reporting": "true", "Human translation": "true", "DMD-held photograph": "true" };
+  const withRecipe = (copy) => ({ ...copy, atHome: { recipeId: "missing-recipe", intro: token } });
+  const record = storyToRecord(getPropFrom(props), "date-spot", { en: withRecipe(restaurantEnCopy()), "fr-CA": withRecipe(restaurantEnCopy()) }, image);
+  assert.equal(publishGate(record, [], getPropFrom(props), Object.keys(props)).ok, true);
+  const result = publishGate(record, [], getPropFrom(props), Object.keys(props), { recipes: [], profiles: [] });
+  assert.equal(result.ok, false);
+  assert.ok(result.problems.some((p) => /missing-recipe/.test(p)));
 });
 
 test("checkDatedUpdate requires a new dated update in both locales when the recommendation changes", () => {
@@ -225,7 +276,7 @@ test("every Post Type/Spot Type-specific property in fields.mjs appears in its N
   };
   for (const spotType of SPOT_TYPES) {
     const template = readFileSync(new URL(`../../notion/templates/${templateFiles[spotType]}`, import.meta.url), "utf-8");
-    for (const prop of [...POST_TYPE_PROPERTIES["date-spot"], ...SPOT_TYPE_PROPERTIES[spotType]]) {
+    for (const prop of [...POST_TYPE_PROPERTIES["date-spot"], ...SPOT_TYPE_PROPERTIES[spotType], ...OPTIONAL_PROPERTIES["date-spot"], ...(OPTIONAL_PROPERTIES[spotType] ?? [])]) {
       assert.ok(template.includes(prop), `${templateFiles[spotType]} is missing "${prop}"`);
     }
   }

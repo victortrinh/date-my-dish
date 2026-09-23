@@ -1,0 +1,29 @@
+---
+import { getCollection } from "astro:content";
+import DateSpotListing from "@components/DateSpotListing.astro";
+import { t, tf } from "@i18n/utils";
+import { DATE_SPOT_CATEGORIES, categoryPath, spotCategory } from "@utils/date-spots";
+
+// One page per Date Spot category that has content.
+export async function getStaticPaths() {
+  const spots = await getCollection("dateSpots");
+  return DATE_SPOT_CATEGORIES
+    .filter((category) => spots.some(({ data }) => spotCategory(data) === category))
+    .map((category) => ({
+      params: { category: categoryPath(category, "fr").split("/").at(-2) },
+      props: { category, spots: spots.filter(({ data }) => spotCategory(data) === category) },
+    }));
+}
+
+const { category, spots } = Astro.props;
+const label = t("fr", `dateSpot.category.${category}`);
+const title = tf("fr", "dateSpot.categoryTitle", { category: label });
+---
+<DateSpotListing
+  spots={spots}
+  locale="fr"
+  title={title}
+  description={tf("fr", "dateSpot.categoryDescription", { category: label.toLowerCase() })}
+  breadcrumbs={[{ label: t("fr", "nav.dateSpots"), href: "/fr/lieux/" }, { label }]}
+  alternatePath={categoryPath(category, "en")}
+/>

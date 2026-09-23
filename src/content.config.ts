@@ -14,12 +14,12 @@ const dateSpots = defineCollection({
 });
 
 const contributorRecipes = defineCollection({
-  loader: file("src/content/contributor-recipes.json"),
+  loader: file(process.env.CONTRIBUTOR_RECIPE_SOURCE || "src/content/contributor-recipes.json"),
   schema: contributorRecipeSchema,
 });
 
 const extendedProfiles = defineCollection({
-  loader: file("src/content/extended-profiles.json"),
+  loader: file(process.env.EXTENDED_PROFILE_SOURCE || "src/content/extended-profiles.json"),
   schema: extendedProfileSchema,
 });
 

@@ -1,12 +1,13 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { contributorRecipeSchema, contributorRecipesSchema } from "../../src/content-contracts/contributor-recipe.mjs";
-import { extendedProfileSchema, extendedProfilesSchema } from "../../src/content-contracts/extended-profile.mjs";
+import { extendedProfileSchema, extendedProfilesSchema, DINNER_AND_DATE_QUESTIONS } from "../../src/content-contracts/extended-profile.mjs";
 
 // Mechanical test values, never loaded into a public collection or published.
 const token = "[TEST ONLY]";
+const description = `${token} mechanical fixture for checking a contributor page route, its visible modules, metadata and schema output.`.padEnd(130, ".");
 const recipeCopy = () => ({
-  title: token, slug: "test-recipe", metaTitle: token, metaDescription: token,
+  title: token, slug: "test-recipe", metaTitle: token, metaDescription: description,
   originalContext: token, sourceNotes: token, factNotes: token, imageAlt: token, imageCredit: token,
   serves: token, activeTime: "PT20M", totalTime: "PT45M", difficulty: "medium", equipment: [token], dietaryNotes: [token],
   ingredientGroups: [{ items: [token] }], methodGroups: [{ steps: [token] }], contributorNotes: [token],
@@ -20,13 +21,15 @@ const contributorRecipe = () => ({
   locales: { en: recipeCopy(), "fr-CA": recipeCopy() },
 });
 const profileCopy = () => ({
-  title: token, slug: "test-profile", metaTitle: token, metaDescription: token,
-  shortScene: token, venueReporting: token, dinnerAndDate: [{ question: token, answer: token }], shortVersion: token,
+  title: token, slug: "test-profile", metaTitle: token, metaDescription: description,
+  standfirst: token, shortScene: token, theVenue: [{ question: token, answer: token }], pullQuote: token,
+  dinnerAndDate: DINNER_AND_DATE_QUESTIONS.map((key) => ({ key, question: token, answer: token })),
+  shortVersion: { cuisine: token, from: token, inKitchensSince: 2005 },
   sourceNotes: token, factNotes: token, imageAlt: token, imageCredit: token,
 });
 const extendedProfile = () => ({
   id: "test-profile", postType: "extended-profile",
-  subject: { name: token, role: "bartender", venue: token, neighbourhood: token }, companionDateSpot: "test-date-spot",
+  subject: { name: token, role: "bartender", venue: token, neighbourhood: token }, companionDateSpot: "test-date-spot", interviewer: "Victor",
   originalInterview: { conductedOn: "2026-01-01", source: token, quoteVerification: "facts-and-quotes-only" },
   authorship: { reporting: "human", translation: "human" }, published: "2026-01-02",
   image: { src: "/images/profiles/test-profile.webp", width: 1200, height: 800, provenance: "dmd-held-photograph" },
@@ -69,6 +72,19 @@ test("Extended Profiles are bilingual companion reporting, never a replacement f
   const partial = extendedProfile(); delete partial.locales["fr-CA"]; rejects(extendedProfileSchema, partial);
   const noInterview = extendedProfile(); noInterview.originalInterview.source = " "; rejects(extendedProfileSchema, noInterview);
   const lateInterview = extendedProfile(); lateInterview.originalInterview.conductedOn = "2026-01-03"; rejects(extendedProfileSchema, lateInterview);
+});
+
+test("Dinner and a date asks the same eight questions of every chef, in order", () => {
+  const seven = extendedProfile(); seven.locales.en.dinnerAndDate.pop(); rejects(extendedProfileSchema, seven);
+  const reordered = extendedProfile(); reordered.locales["fr-CA"].dinnerAndDate.reverse(); rejects(extendedProfileSchema, reordered);
+  const invented = extendedProfile(); invented.locales.en.dinnerAndDate[0].key = "favourite-colour"; rejects(extendedProfileSchema, invented);
+});
+
+test("Round one, the pull quote and the short version agree across the Locale Pair", () => {
+  const extraQuestion = extendedProfile(); extraQuestion.locales.en.theVenue.push({ question: token, answer: token }); rejects(extendedProfileSchema, extraQuestion);
+  const noQuote = extendedProfile(); delete noQuote.locales["fr-CA"].pullQuote; rejects(extendedProfileSchema, noQuote);
+  const year = extendedProfile(); year.locales["fr-CA"].shortVersion.inKitchensSince = 2006; rejects(extendedProfileSchema, year);
+  const byline = extendedProfile(); byline.interviewer = "Someone"; rejects(extendedProfileSchema, byline);
 });
 
 test("Extended Profile recipe links are optional but require parallel at-home reporting", () => {
