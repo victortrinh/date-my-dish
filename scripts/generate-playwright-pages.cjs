@@ -9,13 +9,14 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { allDetailRoutes, listingRoutes } = require('./lib/date-spot-routes.cjs');
 
 const args = process.argv.slice(2);
 const base = args.find(a => a.startsWith('--base='))?.split('=')[1] || 'origin/main';
 
 // --- Tier patterns ---
 
-const CONTENT_PATTERN = /^src\/content\/(reviews)\/(en|fr)\/.+\.mdx$/;
+const CONTENT_PATTERN = /^src\/content\/date-spots\.json$/;
 const SHARED_PATTERNS = [
   /^src\/components\//,
   /^src\/layouts\//,
@@ -41,39 +42,9 @@ const SAMPLE_PAGES = [
   '/fr/a-propos/',
 ];
 
-// --- Listing and homepage pages to add when content changes ---
+// --- Homepage pages to add when content changes ---
 
 const HOMEPAGE = ['/en/', '/fr/'];
-const REVIEW_LISTINGS = ['/en/reviews/', '/fr/critiques/'];
-
-// --- Helpers (mirrored from generate-lighthouse-urls.cjs) ---
-
-function contentFileToRoute(filePath) {
-  const match = filePath.match(/src\/content\/(reviews)\/(en|fr)\/(.+)\.mdx$/);
-  if (!match) return null;
-  const [, type, locale, slug] = match;
-  return locale === 'en' ? `/en/reviews/${slug}/` : `/fr/critiques/${slug}/`;
-}
-
-function getTranslationSlug(filePath) {
-  try {
-    const content = fs.readFileSync(filePath, 'utf8');
-    const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
-    if (!fmMatch) return null;
-    const slugMatch = fmMatch[1].match(/^translationSlug:\s*["']?([^"'\n]+)["']?/m);
-    return slugMatch ? slugMatch[1].trim() : null;
-  } catch {
-    return null;
-  }
-}
-
-function getTranslationFilePath(filePath, translationSlug) {
-  const match = filePath.match(/src\/content\/(reviews)\/(en|fr)\//);
-  if (!match) return null;
-  const [, type, locale] = match;
-  const otherLocale = locale === 'en' ? 'fr' : 'en';
-  return `src/content/${type}/${otherLocale}/${translationSlug}.mdx`;
-}
 
 // --- Tier detection ---
 
@@ -90,10 +61,9 @@ function detectScope(changedFiles) {
     if (SHARED_PATTERNS.some(p => p.test(file))) {
       hasShared = true;
     }
-    const contentMatch = file.match(CONTENT_PATTERN);
-    if (contentMatch) {
+    if (CONTENT_PATTERN.test(file)) {
       hasContent = true;
-      contentTypes.add(contentMatch[1]); // 'reviews'
+      contentTypes.add('date-spots');
     }
   }
 
@@ -109,33 +79,18 @@ function detectScope(changedFiles) {
 function generateChangedPages(changedFiles, contentTypes) {
   const routes = new Set();
 
-  // Add affected content pages + translation pairs
-  const contentFiles = changedFiles.filter(f => CONTENT_PATTERN.test(f));
-  for (const file of contentFiles) {
-    const route = contentFileToRoute(file);
-    if (route) routes.add(route);
-
-    const absPath = path.join(__dirname, '..', file);
-    const translationSlug = getTranslationSlug(absPath);
-    if (translationSlug) {
-      const pairPath = getTranslationFilePath(file, translationSlug);
-      if (pairPath) {
-        const pairAbsPath = path.join(__dirname, '..', pairPath);
-        if (fs.existsSync(pairAbsPath)) {
-          const pairRoute = contentFileToRoute(pairPath);
-          if (pairRoute) routes.add(pairRoute);
-        }
-      }
-    }
+  // date-spots.json is a single atomic file: any change could add, edit, or
+  // drop any spot, so (unlike the retired per-file MDX diffing) we cannot
+  // isolate which record changed from the git diff alone. Include every
+  // current Date Spot detail page plus the listings -- the collection stays
+  // small, so this is cheap.
+  if (contentTypes.has('date-spots')) {
+    allDetailRoutes().forEach(r => routes.add(r));
+    listingRoutes().forEach(r => routes.add(r));
   }
 
   // Add homepage (merges recent posts from both collections)
   HOMEPAGE.forEach(r => routes.add(r));
-
-  // Add listing pages for affected content types
-  if (contentTypes.has('reviews')) {
-    REVIEW_LISTINGS.forEach(r => routes.add(r));
-  }
 
   return [...routes].sort();
 }

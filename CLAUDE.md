@@ -365,14 +365,10 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 
 ## CI/CD & Automation Pipelines
 
-### Content Publishing (hybrid: GH Actions + Claude Code Scheduled Tasks)
-- `auto-publish-recipe.yml` -- Thursdays 1AM UTC: fetches from Notion, writes `notion/pending-recipe.json`
-- `auto-publish-article.yml` -- Mondays 1AM UTC: same pattern for articles
-- `auto-publish-review.yml` -- Wednesdays 1AM UTC: same pattern for reviews
-- **`daily-content-publish` scheduled task** -- Daily 3AM UTC: picks up pending files, generates EN+FR MDX + images, creates PR (runs on Claude Max, no API key needed)
-- `post-merge-kv-seed.yml` -- Seeds Cloudflare KV ratings when recipe PRs merge
-- `social-post-on-deploy.yml` -- Auto-posts new recipes to Instagram/Pinterest on deploy (reads captions from `socialCaption` frontmatter)
-- `token-refresh.yml` -- 1st + 25th of month: refreshes OAuth tokens (Pinterest 30d, Instagram 60d)
+### Content Publishing (Notion Story pipeline, #504)
+- `publish-notion-story.yml` -- Wednesdays 1AM UTC + manual: runs `scripts/fetch-notion-story.mjs`, which selects the next "Ready to Publish" Notion Story (Date Spot, Contributor Recipe, or Extended Profile), maps its database properties and hand-authored Locale Pair JSON onto the matching `src/content-contracts/` schema, and runs it through the publish gate (bilingual parity, Core Review Floor, human-authorship attestations, no leftover numeric score, dated updates on a changed recommendation). On success it opens a draft PR with the updated collection JSON; merging that PR is the act of publishing. On failure it opens a `notion-story`-labelled issue and changes nothing. See `docs/editorial-publishing-system.md` ("Publishing a Notion Story").
+- `venue-maintenance.yml` -- Monthly + manual: `scripts/venue-maintenance-reminders.mjs` flags Date Spots due a fact recheck (six months since `Last checked`, or seasonal) and opens/updates a tracking issue. Report-only; never edits content.
+- No automation drafts, translates, scores, publishes, or silently changes reader-facing content (ADR-0005). `social-post-on-deploy.yml` and `token-refresh.yml` predate the pivot and are revisited under #505.
 
 ### SEO & Quality Gates
 - `weekly-seo-ranking.yml` -- Mondays 8AM: GSC + SERP data -> `data/seo/`
@@ -388,8 +384,9 @@ import imgName from "../../../assets/images/recipes/{slug}-{descriptor}.webp";
 - These run on local `npm run build`, the PR check, and the Cloudflare deploy build on push-to-main, so SEO regressions cannot ship. When adding a check, add a matching CLAUDE.md lesson.
 
 ### Key Files (do not delete)
-- `notion/published.json`, `notion/pending-*.json`, `data/seo/`, `data/lighthouse/`, `data/social-posts-log.json` -- automation state
-- `scripts/fetch-notion-recipe.mjs` / `scripts/fetch-notion-article.mjs` / `scripts/fetch-notion-review.mjs` -- Notion fetch scripts
+- `notion/published.json`, `notion/story-report.md` (regenerated per run), `data/seo/`, `data/lighthouse/`, `data/social-posts-log.json` -- automation state
+- `scripts/fetch-notion-story.mjs`, `scripts/notion-story/` (`fields.mjs`, `parse.mjs`, `map.mjs`, `gate.mjs`, `maintenance.mjs`), `scripts/venue-maintenance-reminders.mjs` -- Notion Story publishing pipeline
+- `notion/templates/` -- per-Post-Type/Spot-Type Notion Story templates (database properties + Locale Pair JSON shape); kept in sync with `scripts/notion-story/fields.mjs` by `tests/contracts/notion-story.test.mjs`
 - `scripts/seo/` -- SEO ranking and reporting scripts
 
 ### Testing
@@ -427,7 +424,7 @@ Key gotchas from `docs/solutions/` -- read the full docs for detailed context.
 24. Titles must be max 46 chars (site appends " | Date My Dish" for 60 total in Google). Descriptions must be 120-160 chars. Validate with `node scripts/validate-descriptions.mjs`
 25. Sitemap filter in `astro.config.ts` must exclude all noindex pages (search, bookmarks, 404) -- Astro sitemap does NOT read noindex meta tags
 26. Never manually append `/` after calling path utility functions -- they already include trailing slashes
-27. **SEO audits and `weekly-seo-maintenance` must never create new content.** No new files under `src/content/recipes/{en,fr}/` or `src/content/articles/{en,fr}/` may be created in response to keyword gaps, ranking opportunities, or roundup/pillar-page suggestions surfaced by an audit. All new recipes and articles enter through the Notion pipeline only (`auto-publish-*.yml` -> `daily-content-publish` scheduled task -> `notion/published.json`). Audits may report content gaps; they may not author the fill. Allowed audit edits are limited to existing files: frontmatter, prose, alt text, internal links, image paths, translation parity, and `public/_redirects` only for fixing broken internal links. This rule was added after a "SEO fixes" commit (Apr 13, 2026) created `date-night-recipes-guide` outside the Notion pipeline.
+27. **SEO audits and `weekly-seo-maintenance` must never create new content.** No new files under `src/content/recipes/{en,fr}/` or `src/content/articles/{en,fr}/` may be created in response to keyword gaps, ranking opportunities, or roundup/pillar-page suggestions surfaced by an audit (those collections are Retired Legacy Content and load no entries -- see lesson below). All new Date Spots, Contributor Recipes, and Extended Profiles enter through the Notion Story pipeline only (`publish-notion-story.yml` -> `scripts/fetch-notion-story.mjs` -> the publish gate -> a draft PR -> `notion/published.json`). Audits may report content gaps; they may not author the fill. Allowed audit edits are limited to existing files: frontmatter, prose, alt text, internal links, image paths, translation parity, and `public/_redirects` only for fixing broken internal links. This rule was added after a "SEO fixes" commit (Apr 13, 2026) created `date-night-recipes-guide` outside the Notion pipeline.
 28. **Every `<Picture>` must set `fallbackFormat="webp"`.** Astro's default `<img>` fallback for webp/avif sources is PNG, which balloons photos to 1-3 MB. The avif/webp `<source>` variants stay small but Ahrefs flags the giant PNG fallback. Enforced by `validate-source`.
 29. **Content-page hreflang/alternate URLs must end in a trailing slash.** `SEOHead.astro` builds the content alternate as `${SITE_URL}/${locale}/${prefix}/${slug}/`; dropping the slash makes every recipe/article/review hreflang 301-redirect (lesson #21 for the link-builder version). Enforced by `validate-build`.
 30. **Taxonomy slug maps must cover every value in content, and EN/FR recipe pairs must use identical canonical tags.** Cuisine/tag pages translate canonical keys to localized slugs via `cuisineSlugMap`/`tagSlugMap` + `cuisines.*`/`tags.*` translations. A `recipeCuisine`/tag value with no map entry renders a raw key (`cuisines.thai`) and produces a 404/redirecting hreflang. Recipes store canonical (English) tags; the slug map localizes the URL. Enforced by `validate-source` (tags) + `validate-build` (rendered keys + hreflang).

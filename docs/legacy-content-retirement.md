@@ -13,12 +13,18 @@ sections, review cross-promotions, RSS, Pagefind, sitemap, llms.txt, and the old
 bookmark index no longer expose them.
 
 Recipe/article Notion-fetch workflows, recipe rating seeding, legacy social
-backfill, and legacy Pinterest-update workflows are removed. Direct legacy
-fetch/update entry points fail before doing external work. Social posting and
+backfill, and legacy Pinterest-update workflows are removed. Social posting and
 queued Pinterest rotation skip recipes/articles, including log entries without a
 type (historically recipes). No external pins are deleted or edited by this change.
-Review migration and the broader human-authored editorial workflow belong to the
-other tickets under #496.
+
+`scripts/fetch-notion-recipe.mjs` and `scripts/fetch-notion-article.mjs` (the
+disabled legacy fetch entry points referenced by earlier drafts of this
+document) are removed entirely as of #504, along with the review-only
+`scripts/fetch-notion-review.mjs` and its `auto-publish-review.yml` workflow.
+Publishing now goes through the Post Type-aware `scripts/fetch-notion-story.mjs`
+and `publish-notion-story.yml`; see `docs/editorial-publishing-system.md`
+("Publishing a Notion Story"). Pinterest cleanup and Claude schedule review
+belong to #505.
 
 `npm run build` checks generated files for retired routes and URLs.
 `tests/smoke/retired-content.spec.ts` checks every retained legacy source URL,

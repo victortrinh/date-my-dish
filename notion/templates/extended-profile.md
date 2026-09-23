@@ -1,24 +1,41 @@
 # Extended Profile — Notion Story template
 
-Use only when original interview reporting earns a standalone companion to a Restaurant or Bar Date Spot. The ordinary Meet the chef or Meet the bartender material remains in that Date Spot.
+See `README.md` in this folder for the general publishing flow. Use only
+when original interview reporting earns a standalone companion to a
+Restaurant or Bar Date Spot. The ordinary "Meet the chef"/"Meet the
+bartender" material stays inside that Date Spot.
 
-## Required record fields
+## Database properties
 
-- Post Type: `extended-profile`
-- Subject: full name, `chef` or `bartender`, venue, and neighbourhood
-- Companion Date Spot
-- Original interview: date conducted, source/context, and quote-verification status (`facts-and-quotes-only`)
-- Human reporting and human translation attestations
-- Publication date
-- Complete English and Canadian French title, slug, meta title, and meta description
-- Source notes, fact-verification notes, image alt text, and image credit in each locale
-- A genuine DMD-held photograph with dimensions and provenance
+Shared properties (see README) plus:
 
-## Required profile modules in each locale
+- `Subject name`, `Subject role` (`Chef` or `Bartender`), `Subject venue`, `Subject neighbourhood`
+- `Companion Date Spot` (its `id`)
+- `Interview date` (must be on or before `Published`), `Interview source`
+- `Published`
 
-1. Identification and a short reported scene.
-2. `The venue`: original reporting about the subject's work, training, venue, menu, or rhythm.
-3. `Dinner and a date`: at least one comparable interview question and accurately transcribed answer.
-4. `The short version`: workplace, neighbourhood, background, and the related Date Spot.
+## Locale copy shape (one JSON code block per locale)
 
-`What they make at home` and a Contributor Recipe link are optional, but appear together when a contributor recipe was supplied. The subject may check facts, quotations, and their recipe; they do not approve DMD's editorial assessment. Publish both locales together.
+Required keys, matching `src/content-contracts/extended-profile.mjs`:
+
+```json
+{
+  "title": "{Name}, {Role} at {Venue}: Interview",
+  "slug": "name-slug",
+  "metaTitle": "...",
+  "metaDescription": "120-160 characters",
+  "shortScene": "A short reported scene identifying the subject.",
+  "venueReporting": "Original reporting about their work, training, venue, menu, or rhythm.",
+  "dinnerAndDate": [{ "question": "...", "answer": "..." }],
+  "shortVersion": "Workplace, neighbourhood, background, related review.",
+  "sourceNotes": "...",
+  "factNotes": "...",
+  "imageAlt": "...",
+  "imageCredit": "..."
+}
+```
+
+`dinnerAndDate` needs at least one accurately transcribed question and
+answer. Optional: `atHome` and `contributorRecipe` (a Contributor Recipe
+`slug`) -- these two must appear together, and both must agree between
+locales.

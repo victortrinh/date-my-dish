@@ -1,0 +1,26 @@
+name: Venue Maintenance Reminders
+
+on:
+  schedule:
+    - cron: '0 5 1 * *'  # 1st of the month, 5AM UTC
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  reminders:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Report and file reminders
+        run: node scripts/venue-maintenance-reminders.mjs
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}

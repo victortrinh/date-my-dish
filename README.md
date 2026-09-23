@@ -174,13 +174,12 @@ Reviews include restaurant-specific frontmatter (address, cuisine, priceRange, d
 <summary><strong>Click to expand</strong></summary>
 
 ### Content Publishing
-| Workflow                    | Schedule           | Description                                   |
-| --------------------------- | ------------------ | --------------------------------------------- |
-| `auto-publish-recipe.yml`   | Thursdays 3AM UTC  | Notion to Claude-generated EN+FR MDX + images |
-| `auto-publish-article.yml`  | Mondays 3AM UTC    | Same pipeline for articles                    |
-| `auto-publish-review.yml`   | Wednesdays 3AM UTC | Same pipeline for reviews                     |
-| `social-post-on-deploy.yml` | On deploy          | Auto-posts new content to Instagram/Pinterest |
-| `token-refresh.yml`         | 1st + 25th monthly | Refreshes OAuth tokens (Pinterest, Instagram) |
+| Workflow                     | Schedule            | Description                                                     |
+| ----------------------------- | ------------------- | ---------------------------------------------------------------- |
+| `publish-notion-story.yml`   | Wednesdays 1AM UTC  | Human-authored Notion Story -> publish gate -> draft PR (#504)  |
+| `venue-maintenance.yml`      | Monthly             | Flags Date Spots due a fact recheck; opens a reminder issue      |
+| `social-post-on-deploy.yml`  | On deploy           | Auto-posts new content to Instagram/Pinterest                    |
+| `token-refresh.yml`          | 1st + 25th monthly  | Refreshes OAuth tokens (Pinterest, Instagram)                    |
 
 ### Quality Gates
 | Workflow                  | Trigger         | Description                                  |
