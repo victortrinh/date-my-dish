@@ -10,6 +10,11 @@ permissions:
 
 jobs:
   auto-merge:
+    # Only Renovate's own dependency-update PRs, and only once they're no
+    # longer a draft: enabling auto-merge on a draft PR fails outright
+    # ("Pull request is a draft"), and this workflow has no business
+    # touching a human-authored PR at all.
+    if: github.event.pull_request.draft == false && github.event.pull_request.user.login == 'renovate[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Enable auto-merge (squash)
