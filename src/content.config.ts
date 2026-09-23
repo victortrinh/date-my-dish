@@ -7,7 +7,9 @@ import { contributorRecipeSchema } from "./content-contracts/contributor-recipe.
 import { extendedProfileSchema } from "./content-contracts/extended-profile.mjs";
 
 const dateSpots = defineCollection({
-  loader: file("src/content/date-spots.json"),
+  // Acceptance builds may opt into mechanical fixtures. Production always
+  // consumes the human-authored source collection.
+  loader: file(process.env.DATE_SPOT_SOURCE || "src/content/date-spots.json"),
   schema: dateSpotSchema,
 });
 

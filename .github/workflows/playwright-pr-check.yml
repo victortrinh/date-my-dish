@@ -98,6 +98,8 @@ jobs:
       # Build site (validate-source via prebuild, Pagefind + validate-build via postbuild)
       - run: npm run build
         if: steps.scope.outputs.test_scope != 'none'
+        env:
+          DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
 
       - name: Run Playwright tests
         if: steps.scope.outputs.test_scope != 'none'
@@ -105,6 +107,7 @@ jobs:
         env:
           CI: "true"
           PLAYWRIGHT_SCOPE: pr
+          DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
 
       # Upload HTML report on failure
       - name: Upload Playwright report

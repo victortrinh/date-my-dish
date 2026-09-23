@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
 
-const spots = JSON.parse(readFileSync("src/content/date-spots.json", "utf8"));
+const spots = JSON.parse(readFileSync(process.env.DATE_SPOT_SOURCE || "src/content/date-spots.json", "utf8"));
 const hasVenues = spots.some((spot: { spotType: string }) => ["restaurant", "bar"].includes(spot.spotType));
 
 for (const locale of ["en", "fr"]) {

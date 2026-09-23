@@ -2,15 +2,27 @@
 import type { CollectionEntry } from "astro:content";
 import type { Locale } from "@i18n/utils";
 import { dateSpotPath } from "@utils/date-spots";
-interface Props { spot: CollectionEntry<"dateSpots">; locale: Locale; }
-const { spot, locale } = Astro.props;
+
+interface Props {
+  spot: CollectionEntry<"dateSpots">;
+  locale: Locale;
+  loading?: "eager" | "lazy";
+}
+
+const { spot, locale, loading = "lazy" } = Astro.props;
 const copy = spot.data.locales[locale === "fr" ? "fr-CA" : "en"];
+const verdicts = locale === "fr"
+  ? { favourite: "Un coup de cœur", conditional: "Selon la soirée", pass: "Pas notre premier choix" }
+  : { favourite: "A Favourite", conditional: "Depends on the Night", pass: "Not Our First Pick" };
 ---
-<a class="overflow-hidden rounded-xl bg-white no-underline dark:bg-warm-900" href={dateSpotPath(spot.data, locale)}>
-  <img src={spot.data.image.src} width={spot.data.image.width} height={spot.data.image.height} alt={copy.imageAlt} class="aspect-[16/14] w-full object-cover" loading="lazy" />
-  <div class="p-5">
-    <p class="text-sm text-brand-wine-text dark:text-brand-wine-dark">{spot.data.neighbourhood}, {spot.data.city}</p>
-    <h2 class="font-heading text-xl text-warm-800 dark:text-warm-100">{copy.title}</h2>
-    <p class="mt-2 text-sm text-warm-600 dark:text-warm-400">{copy.opening}</p>
-  </div>
-</a>
+<article class="overflow-hidden rounded-2xl border border-warm-200 bg-white shadow-sm dark:border-warm-700 dark:bg-warm-900">
+  <a href={dateSpotPath(spot.data, locale)} class="block no-underline">
+    <img src={spot.data.image.src} alt={copy.imageAlt} width={spot.data.image.width} height={spot.data.image.height} loading={loading} class="aspect-[4/3] w-full object-cover" />
+    <div class="p-6">
+      {"reviewVerdict" in spot.data && <p class="mb-2 font-ui text-caption font-bold uppercase tracking-wider text-brand-wine-text dark:text-brand-rose">{verdicts[spot.data.reviewVerdict]}</p>}
+      <h2 class="mb-2 text-heading-3 text-warm-900 dark:text-warm-100">{copy.title}</h2>
+      <p class="mb-3 font-ui text-body-sm text-warm-500 dark:text-warm-400">{spot.data.neighbourhood}, {spot.data.city}{"cuisine" in copy && ` · ${copy.cuisine}`}</p>
+      <p class="text-warm-700 dark:text-warm-300">{"verdictReason" in copy ? copy.verdictReason : copy.opening}</p>
+    </div>
+  </a>
+</article>
