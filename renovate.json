@@ -57,6 +57,13 @@
       "automerge": true,
       "minimumReleaseAge": "0 days",
       "labels": ["dependencies", "security"]
+    },
+    {
+      "description": "TypeScript: pinned below 7 until @astrojs/check's peerDependencies list a TS 7 range (see CLAUDE.md lesson on astro check)",
+      "matchPackageNames": ["typescript"],
+      "allowedVersions": "<7",
+      "automerge": false,
+      "labels": ["dependencies", "typescript-pinned"]
     }
   ],
   "vulnerabilityAlerts": {

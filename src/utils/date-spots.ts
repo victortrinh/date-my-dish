@@ -3,6 +3,13 @@ import { getDateSpotLocalizedPath, getReviewLocalizedPath, type Locale } from "@
 
 type DateSpot = CollectionEntry<"dateSpots">["data"];
 
+export type RestaurantDateSpot = Extract<DateSpot, { spotType: "restaurant" }>;
+export type RestaurantDateSpotEntry = CollectionEntry<"dateSpots"> & { data: RestaurantDateSpot };
+
+export function isRestaurantDateSpot(spot: CollectionEntry<"dateSpots">): spot is RestaurantDateSpotEntry {
+  return spot.data.spotType === "restaurant";
+}
+
 export function isVenueReview(spot: DateSpot): boolean {
   return spot.spotType === "restaurant" || spot.spotType === "bar";
 }

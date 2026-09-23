@@ -8,7 +8,8 @@
       "@i18n/*": ["src/i18n/*"],
       "@assets/*": ["src/assets/*"],
       "@content/*": ["src/content/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@content-contracts/*": ["src/content-contracts/*"]
     }
   }
 }

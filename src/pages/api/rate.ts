@@ -19,7 +19,7 @@ export const GET: APIRoute = async ({ request }) => {
     });
   }
 
-  const kv = (env as any)?.RATINGS;
+  const kv = env.RATINGS;
 
   if (!kv) {
     return new Response(JSON.stringify({ averageRating: 0, ratingCount: 0 }), {
@@ -81,7 +81,7 @@ export const POST: APIRoute = async ({ request }) => {
     });
   }
 
-  const kv = (env as any)?.RATINGS;
+  const kv = env.RATINGS;
 
   if (!kv) {
     return new Response(JSON.stringify({ error: "Ratings unavailable" }), {
