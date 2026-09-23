@@ -1,0 +1,48 @@
+---
+import { SITE_URL } from "@utils/constants";
+import type { Locale } from "@i18n/utils";
+import { copyLocale, reviewPath, type VenueReview } from "@utils/date-spots";
+
+// Mirrors only visible facts. The page is an Article about the venue; the
+// chef or bartender is a Person employed there. No Review/Rating markup: the
+// verdict is qualitative, and the venue's Google rating is theirs, not ours.
+// No FAQPage either; Google no longer shows FAQ rich results.
+interface Props { spot: VenueReview; locale: Locale; lead?: { name: string; role: string } }
+const { spot, locale, lead } = Astro.props;
+const copy = spot.locales[copyLocale(locale)];
+const pageUrl = `${SITE_URL}${reviewPath(spot, locale)}`;
+const imageUrl = `${SITE_URL}${spot.image.src}`;
+const venueId = `${pageUrl}#venue`;
+const personId = `${pageUrl}#${spot.spotType === "bar" ? "bartender" : "chef"}`;
+const jsonLd = { "@context": "https://schema.org", "@graph": [
+  {
+    "@type": spot.spotType === "bar" ? "BarOrPub" : "Restaurant",
+    "@id": venueId,
+    name: spot.name,
+    address: { "@type": "PostalAddress", streetAddress: copy.essentials.address, addressLocality: spot.city, addressCountry: "CA" },
+    ...("cuisine" in copy ? { servesCuisine: copy.cuisine } : {}),
+    ...(spot.priceRange !== "free" ? { priceRange: spot.priceRange } : {}),
+    hasMap: spot.mapUrl,
+    image: imageUrl,
+    ...(spot.instagram ? { sameAs: [`https://www.instagram.com/${spot.instagram}/`] } : {}),
+    ...(lead ? { employee: { "@id": personId } } : {}),
+  },
+  ...(lead ? [{ "@type": "Person", "@id": personId, name: lead.name, jobTitle: lead.role, worksFor: { "@id": venueId } }] : []),
+  {
+    "@type": "Article",
+    "@id": `${pageUrl}#article`,
+    headline: copy.title,
+    description: copy.metaDescription,
+    image: [imageUrl],
+    datePublished: spot.freshness.published,
+    dateModified: spot.freshness.lastChecked,
+    inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
+    mainEntityOfPage: pageUrl,
+    about: { "@id": venueId },
+    ...(lead ? { mentions: { "@id": personId } } : {}),
+    author: { "@type": "Person", name: spot.reporterByline, url: `${SITE_URL}/${locale}/${locale === "fr" ? "a-propos" : "about"}/` },
+    publisher: { "@type": "Organization", name: "Date My Dish", url: SITE_URL },
+  },
+] };
+---
+<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />

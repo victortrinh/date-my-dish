@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { readFileSync } from "node:fs";
+import { neighbourhoodSlug } from "../../src/content-contracts/date-spot.mjs";
 
 const spots = JSON.parse(readFileSync(process.env.DATE_SPOT_SOURCE || "src/content/date-spots.json", "utf8"));
 const hasVenues = spots.some((spot: { spotType: string }) => ["restaurant", "bar"].includes(spot.spotType));
@@ -27,11 +28,11 @@ for (const locale of ["en", "fr"]) {
       if (!entries.length) await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);
       for (const spot of entries) {
         const copy = spot.locales[locale === "fr" ? "fr-CA" : "en"];
-        const prefix = spot.spotType === "restaurant" ? reviews : index;
-        const href = `${prefix}${copy.slug}/`;
+        const review = ["restaurant", "bar"].includes(spot.spotType);
+        const href = review ? `${reviews}${neighbourhoodSlug(spot.neighbourhood)}/${copy.slug}/` : `${index}${copy.slug}/`;
         await expect(page.locator(`main a[href="${href}"]`)).toHaveCount(1);
         expect((await request.get(href)).ok()).toBeTruthy();
-        await expect(page.locator(`main a[href="${href}"]`)).toContainText(spot.city);
+        await expect(page.locator(`main a[href="${href}"]`)).toContainText(spot.neighbourhood);
       }
     }
   });

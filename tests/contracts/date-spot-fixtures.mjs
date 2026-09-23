@@ -1,7 +1,9 @@
 // Mechanical test records, not reporting or translations. They are never
 // loaded as content: unit tests build them in memory, and the browser
-// acceptance fixture (tests/fixtures/date-spots.json) is generated from them
-// with `node tests/contracts/date-spot-fixtures.mjs > tests/fixtures/date-spots.json`.
+// acceptance fixtures (tests/fixtures/*.json) are regenerated from them with
+// `node tests/contracts/date-spot-fixtures.mjs`.
+import { writeFileSync } from "node:fs";
+import { DINNER_AND_DATE_QUESTIONS } from "../../src/content-contracts/extended-profile.mjs";
 
 export const token = "[TEST ONLY]";
 // Enough mechanical words to clear the review word floor without meaning anything.
@@ -81,8 +83,7 @@ const sharedFields = (id, spotType, name) => ({
 });
 
 /** A valid Date Spot of the given Spot Type. */
-export function dateSpotFixture(spotType = "restaurant", id = "test-only") {
-  const name = "Test Venue";
+export function dateSpotFixture(spotType = "restaurant", id = "test-only", name = "Test Venue") {
   const venue = spotType === "restaurant" || spotType === "bar";
   const copy = venue ? venueCopy(spotType, id, name, "Test Quarter") : planningCopy(id, name, "Test Quarter");
   const fr = structuredClone(copy);
@@ -97,9 +98,9 @@ export function dateSpotFixture(spotType = "restaurant", id = "test-only") {
 
 /** A small, fully linked collection for the browser acceptance build. */
 export function acceptanceCollection() {
-  const restaurant = dateSpotFixture("restaurant", "test-only-restaurant");
-  const activity = dateSpotFixture("activity", "test-only-activity");
-  const bar = dateSpotFixture("bar", "test-only-bar");
+  const restaurant = dateSpotFixture("restaurant", "test-only-restaurant", "Test Venue");
+  const activity = dateSpotFixture("activity", "test-only-activity", "Test Park");
+  const bar = dateSpotFixture("bar", "test-only-bar", "Test Bar");
   bar.category = "social-romantic";
   for (const spot of [restaurant, activity, bar]) spot.image.src = "/images/og-default.jpg";
   Object.assign(restaurant, {
@@ -113,7 +114,8 @@ export function acceptanceCollection() {
     const copy = restaurant.locales[locale];
     copy.opening = `${token} Chef ${token} Cook opening`;
     copy.roomPhoto = { photo: "room", alt: `${token} room photo` };
-    copy.meetChef = { name: `${token} Cook`, role: `${token} chef`, background: filler("chef background", 90), quote: `${token} chef quote`, approach: filler("chef approach", 100) };
+    copy.meetChef = { name: `${token} Cook`, role: `${token} chef`, background: filler("chef background", 90), quote: `${token} chef quote`, approach: filler("chef approach", 100), profileId: "test-only-profile" };
+    copy.atHome = { recipeId: "test-only-recipe", intro: `${token} at home intro` };
     copy.whatToOrder.waitersChoice = { recommendation: `${token} waiter recommendation`, outcome: `${token} they were right` };
     copy.whatToOrder.setMenu = { name: `${token} tasting`, courses: 5, pricePerPerson: "$95", note: `${token} set menu note`, advice: "take-it" };
     copy.makeANight = [
@@ -129,6 +131,52 @@ export function acceptanceCollection() {
   return [restaurant, activity, bar];
 }
 
+const description = `${token} mechanical fixture for checking a contributor page route, its visible modules, metadata and schema output.`.padEnd(130, ".");
+
+/** A valid Contributor Recipe. */
+export function contributorRecipeFixture(id = "test-only-recipe") {
+  const copy = (slug) => ({
+    title: `${token} recipe`, slug, metaTitle: `${token} recipe`, metaDescription: description,
+    originalContext: `${token} original context`, sourceNotes: token, factNotes: token, imageAlt: `${token} recipe photo`, imageCredit: token,
+    serves: "2", activeTime: "PT20M", totalTime: "PT45M", difficulty: "medium", equipment: [`${token} pan`], dietaryNotes: [`${token} diet`],
+    ingredientGroups: [{ items: [`${token} ingredient`] }], methodGroups: [{ steps: [`${token} step`] }], contributorNotes: [`${token} contributor note`],
+  });
+  return {
+    id, postType: "contributor-recipe", recipeOrigin: "contributor-supplied",
+    contributor: { name: `${token} Cook`, role: "chef", venueOrContext: "Test Venue" },
+    suppliedSource: { description: token, receivedOn: "2026-01-01" },
+    authorship: { recipe: "human-supplied", translation: "human" }, published: "2026-01-02",
+    image: { src: "/images/og-default.jpg", width: 1200, height: 630, provenance: "dmd-held-photograph" },
+    locales: { en: copy(id), "fr-CA": copy(`${id}-fr`) },
+  };
+}
+
+/** A valid Extended Profile, companion to the acceptance restaurant. */
+export function extendedProfileFixture(id = "test-only-profile") {
+  const copy = (slug) => ({
+    title: `${token} In the kitchen with ${token} Cook`, slug, metaTitle: `${token} Cook, chef at Test Venue: Interview`, metaDescription: description,
+    standfirst: `${token} standfirst`, shortScene: `${token} short scene`,
+    theVenue: [{ question: `${token} venue question 1`, answer: `${token} venue answer 1` }, { question: `${token} venue question 2`, answer: `${token} venue answer 2` }],
+    pullQuote: `${token} pull quote`,
+    dinnerAndDate: DINNER_AND_DATE_QUESTIONS.map((key) => ({ key, question: `${token} ${key}?`, answer: `${token} ${key} answer` })),
+    shortVersion: { cuisine: `${token} cuisine`, from: `${token} hometown`, inKitchensSince: 2005 },
+    sourceNotes: token, factNotes: token, imageAlt: `${token} portrait`, imageCredit: token,
+    atHome: `${token} at home answer`, contributorRecipe: "test-only-recipe",
+  });
+  return {
+    id, postType: "extended-profile",
+    subject: { name: `${token} Cook`, role: "chef", venue: "Test Venue", neighbourhood: "Test Quarter" },
+    companionDateSpot: "test-only-restaurant", interviewer: "Victor",
+    originalInterview: { conductedOn: "2026-01-01", source: token, quoteVerification: "facts-and-quotes-only" },
+    authorship: { reporting: "human", translation: "human" }, published: "2026-01-02",
+    image: { src: "/images/og-default.jpg", width: 1200, height: 630, provenance: "dmd-held-photograph" },
+    locales: { en: copy(id), "fr-CA": copy(`${id}-fr`) },
+  };
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
-  process.stdout.write(`${JSON.stringify(acceptanceCollection(), null, 2)}\n`);
+  const write = (file, value) => writeFileSync(new URL(`../fixtures/${file}`, import.meta.url), `${JSON.stringify(value, null, 2)}\n`);
+  write("date-spots.json", acceptanceCollection());
+  write("contributor-recipes.json", [contributorRecipeFixture()]);
+  write("extended-profiles.json", [extendedProfileFixture()]);
 }

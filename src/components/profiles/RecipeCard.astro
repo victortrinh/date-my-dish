@@ -1,0 +1,87 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import { t, tf, type Locale } from "@i18n/utils";
+import { copyLocale, dateSpotPath, profilePath, recipeCardPath } from "@utils/date-spots";
+import { SITE_URL } from "@utils/constants";
+
+// A contributor's own recipe, published as supplied. DMD's testing note sits
+// apart from their method and never rewrites it.
+interface Props { recipe: CollectionEntry<"contributorRecipes">["data"]; locale: Locale; }
+const { recipe, locale } = Astro.props;
+const copy = recipe.locales[copyLocale(locale)];
+const other: Locale = locale === "fr" ? "en" : "fr";
+const { contributor } = recipe;
+const spots = await getCollection("dateSpots");
+const profiles = await getCollection("extendedProfiles");
+const profile = profiles.find(({ data }) => data.locales.en.contributorRecipe === recipe.id)?.data;
+const pairings = (copy.pairItWith ?? []).flatMap((id) => spots.find(({ data }) => data.id === id)?.data ?? []);
+const duration = (iso: string) => {
+  const match = iso.match(/^P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?$/);
+  const [, days, hours, minutes] = match ?? [];
+  return [days && `${days} d`, hours && `${hours} h`, minutes && `${minutes} min`].filter(Boolean).join(" ");
+};
+const path = recipeCardPath(copy.slug, locale);
+const h2 = "font-heading text-heading-2 text-warm-900 dark:text-warm-100";
+const kicker = "font-ui text-caption font-bold uppercase tracking-wider text-brand-wine-text dark:text-brand-rose";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Recipe",
+  name: copy.title,
+  description: copy.metaDescription,
+  image: [`${SITE_URL}${recipe.image.src}`],
+  author: { "@type": "Person", name: contributor.name },
+  datePublished: recipe.published,
+  inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
+  recipeYield: copy.serves,
+  prepTime: copy.activeTime,
+  totalTime: copy.totalTime,
+  recipeIngredient: copy.ingredientGroups.flatMap((group) => group.items),
+  recipeInstructions: copy.methodGroups.flatMap((group) => group.steps.map((text) => ({ "@type": "HowToStep", text }))),
+  mainEntityOfPage: `${SITE_URL}${path}`,
+};
+---
+<BaseLayout title={copy.metaTitle} description={copy.metaDescription} canonical={path} alternatePath={recipeCardPath(recipe.locales[copyLocale(other)].slug, other)} ogImage={recipe.image.src} ogType="article" publishDate={new Date(`${recipe.published}T12:00:00`)}>
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+  <article class="mx-auto max-w-prose px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
+    <Breadcrumbs locale={locale} items={[...(profile ? [{ label: contributor.name, href: profilePath(profile.locales[copyLocale(locale)].slug, locale) }] : []), { label: copy.title }]} />
+    <header class="mt-6">
+      <p class={kicker}>{tf(locale, "recipeCard.fromContributor", { name: contributor.name })} · {contributor.venueOrContext}</p>
+      <h1 class="mt-3 font-heading text-4xl italic text-warm-900 dark:text-warm-100 sm:text-display">{copy.title}</h1>
+      <p class="mt-5 font-body text-body-lg text-warm-700 dark:text-warm-300">{copy.originalContext}</p>
+      <figure class="mt-8">
+        <img src={recipe.image.src} width={recipe.image.width} height={recipe.image.height} alt={copy.imageAlt} class="max-h-[460px] w-full rounded-2xl object-cover" loading="eager" fetchpriority="high" />
+        <figcaption class="mt-2 font-ui text-caption text-warm-500 dark:text-warm-400">{copy.imageCredit}</figcaption>
+      </figure>
+    </header>
+    <dl class="mt-8 grid grid-cols-2 gap-4 border-y border-warm-200 py-5 font-ui text-body-sm dark:border-warm-700 sm:grid-cols-4">
+      <div><dt class="text-warm-500 dark:text-warm-400">{t(locale, "recipeCard.serves")}</dt><dd class="text-warm-900 dark:text-warm-100">{copy.serves}</dd></div>
+      <div><dt class="text-warm-500 dark:text-warm-400">{t(locale, "recipeCard.active")}</dt><dd class="text-warm-900 dark:text-warm-100">{duration(copy.activeTime)}</dd></div>
+      <div><dt class="text-warm-500 dark:text-warm-400">{t(locale, "recipeCard.total")}</dt><dd class="text-warm-900 dark:text-warm-100">{duration(copy.totalTime)}</dd></div>
+      <div><dt class="text-warm-500 dark:text-warm-400">{t(locale, "recipeCard.difficulty")}</dt><dd class="text-warm-900 dark:text-warm-100">{t(locale, `recipeCard.difficultyLevel.${copy.difficulty}`)}</dd></div>
+      <div class="col-span-2"><dt class="text-warm-500 dark:text-warm-400">{t(locale, "recipeCard.equipment")}</dt><dd class="text-warm-900 dark:text-warm-100">{copy.equipment.join(", ")}</dd></div>
+      <div class="col-span-2"><dt class="text-warm-500 dark:text-warm-400">{t(locale, "recipeCard.dietary")}</dt><dd class="text-warm-900 dark:text-warm-100">{copy.dietaryNotes.join(", ")}</dd></div>
+    </dl>
+    <section class="mt-10" aria-labelledby="ingredients-title">
+      <h2 id="ingredients-title" class={h2}>{t(locale, "recipeCard.ingredients")}</h2>
+      {copy.ingredientGroups.map((group) => <div class="mt-4">{group.group && <h3 class="font-ui font-semibold text-warm-900 dark:text-warm-100">{group.group}</h3>}<ul class="mt-2 list-disc space-y-1 pl-5 font-body text-warm-700 dark:text-warm-300">{group.items.map((item) => <li>{item}</li>)}</ul></div>)}
+    </section>
+    <section class="mt-10" aria-labelledby="method-title">
+      <h2 id="method-title" class={h2}>{t(locale, "recipeCard.method")}</h2>
+      {copy.methodGroups.map((group) => <div class="mt-4">{group.group && <h3 class="font-ui font-semibold text-warm-900 dark:text-warm-100">{group.group}</h3>}<ol class="mt-2 list-decimal space-y-3 pl-5 font-body text-warm-700 dark:text-warm-300">{group.steps.map((step) => <li>{step}</li>)}</ol></div>)}
+    </section>
+    <section class="mt-10" aria-labelledby="notes-title">
+      <h2 id="notes-title" class={h2}>{tf(locale, "recipeCard.notesFrom", { name: contributor.name })}</h2>
+      <ul class="mt-3 list-disc space-y-2 pl-5 font-body text-warm-700 dark:text-warm-300">{copy.contributorNotes.map((note) => <li>{note}</li>)}</ul>
+    </section>
+    {pairings.length > 0 && <section class="mt-10" aria-labelledby="pair-title">
+      <h2 id="pair-title" class={h2}>{t(locale, "recipeCard.pairItWith")}</h2>
+      <ul class="mt-3 space-y-2 font-ui">{pairings.map((spot) => <li><a href={dateSpotPath(spot, locale)} class="text-brand-wine-text underline dark:text-brand-rose">{spot.name}</a></li>)}</ul>
+    </section>}
+    <footer class="mt-10 border-t border-warm-200 pt-5 font-ui text-body-sm text-warm-600 dark:border-warm-700 dark:text-warm-400">
+      <p>{tf(locale, "recipeCard.sourceNote", { name: contributor.name })}</p>
+      {copy.dmdTestingNote && <p class="mt-2"><strong>{t(locale, "recipeCard.tested")}:</strong> {copy.dmdTestingNote}</p>}
+    </footer>
+  </article>
+</BaseLayout>

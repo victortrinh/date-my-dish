@@ -101,6 +101,8 @@ jobs:
         if: steps.scope.outputs.test_scope != 'none'
         env:
           DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
+          CONTRIBUTOR_RECIPE_SOURCE: tests/fixtures/contributor-recipes.json
+          EXTENDED_PROFILE_SOURCE: tests/fixtures/extended-profiles.json
 
       - name: Run Playwright tests
         if: steps.scope.outputs.test_scope != 'none'
@@ -109,6 +111,8 @@ jobs:
           CI: "true"
           PLAYWRIGHT_SCOPE: pr
           DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
+          CONTRIBUTOR_RECIPE_SOURCE: tests/fixtures/contributor-recipes.json
+          EXTENDED_PROFILE_SOURCE: tests/fixtures/extended-profiles.json
 
       # Upload HTML report on failure
       - name: Upload Playwright report

@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import DateSpotListing from "@components/DateSpotListing.astro";
+import { t, tf } from "@i18n/utils";
+import { neighbourhoodPath, neighbourhoodSlug } from "@utils/date-spots";
+
+// The neighbourhood guide: every Date Spot in one neighbourhood, reviews
+// first, then one group per category. Reviews link here as "the whole
+// evening, planned".
+export async function getStaticPaths() {
+  const spots = await getCollection("dateSpots");
+  const neighbourhoods = [...new Set(spots.map(({ data }) => data.neighbourhood))];
+  return neighbourhoods.map((neighbourhood) => ({
+    params: { neighbourhood: neighbourhoodSlug(neighbourhood) },
+    props: { neighbourhood, spots: spots.filter(({ data }) => data.neighbourhood === neighbourhood) },
+  }));
+}
+
+const { neighbourhood, spots } = Astro.props;
+const city = spots[0].data.city;
+const full = tf("fr", "dateSpot.neighbourhoodDescription", { neighbourhood, city });
+// Keep the meta description inside 160 characters for long neighbourhood names.
+const description = full.length <= 160 ? full : full.replace(`, ${city}`, "");
+---
+<DateSpotListing
+  spots={spots}
+  locale="fr"
+  title={tf("fr", "dateSpot.neighbourhoodTitle", { neighbourhood })}
+  description={description}
+  breadcrumbs={[{ label: t("fr", "nav.dateSpots"), href: "/fr/lieux/" }, { label: neighbourhood }]}
+  groupByCategory
+  alternatePath={neighbourhoodPath(neighbourhood, "en")}
+/>

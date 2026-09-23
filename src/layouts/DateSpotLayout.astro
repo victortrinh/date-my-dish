@@ -8,12 +8,12 @@ interface Props {
   locale: Locale;
   canonical: string;
   ogImage: string;
-  translationSlug: string;
+  alternatePath: string;
   published: string;
   lastChecked: string;
 }
 
-const { title, description, locale, canonical, ogImage, translationSlug, published, lastChecked } = Astro.props;
+const { title, description, canonical, ogImage, alternatePath, published, lastChecked } = Astro.props;
 ---
 
 <BaseLayout
@@ -21,11 +21,10 @@ const { title, description, locale, canonical, ogImage, translationSlug, publish
   description={description}
   canonical={canonical}
   ogImage={ogImage}
-  translationSlug={translationSlug}
+  alternatePath={alternatePath}
   ogType="article"
   publishDate={new Date(`${published}T00:00:00Z`)}
   updatedDate={new Date(`${lastChecked}T00:00:00Z`)}
-  contentType="date-spot"
 >
   <slot name="head" slot="head" />
   <slot />

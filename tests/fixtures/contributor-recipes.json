@@ -1,0 +1,105 @@
+[
+  {
+    "id": "test-only-recipe",
+    "postType": "contributor-recipe",
+    "recipeOrigin": "contributor-supplied",
+    "contributor": {
+      "name": "[TEST ONLY] Cook",
+      "role": "chef",
+      "venueOrContext": "Test Venue"
+    },
+    "suppliedSource": {
+      "description": "[TEST ONLY]",
+      "receivedOn": "2026-01-01"
+    },
+    "authorship": {
+      "recipe": "human-supplied",
+      "translation": "human"
+    },
+    "published": "2026-01-02",
+    "image": {
+      "src": "/images/og-default.jpg",
+      "width": 1200,
+      "height": 630,
+      "provenance": "dmd-held-photograph"
+    },
+    "locales": {
+      "en": {
+        "title": "[TEST ONLY] recipe",
+        "slug": "test-only-recipe",
+        "metaTitle": "[TEST ONLY] recipe",
+        "metaDescription": "[TEST ONLY] mechanical fixture for checking a contributor page route, its visible modules, metadata and schema output.............",
+        "originalContext": "[TEST ONLY] original context",
+        "sourceNotes": "[TEST ONLY]",
+        "factNotes": "[TEST ONLY]",
+        "imageAlt": "[TEST ONLY] recipe photo",
+        "imageCredit": "[TEST ONLY]",
+        "serves": "2",
+        "activeTime": "PT20M",
+        "totalTime": "PT45M",
+        "difficulty": "medium",
+        "equipment": [
+          "[TEST ONLY] pan"
+        ],
+        "dietaryNotes": [
+          "[TEST ONLY] diet"
+        ],
+        "ingredientGroups": [
+          {
+            "items": [
+              "[TEST ONLY] ingredient"
+            ]
+          }
+        ],
+        "methodGroups": [
+          {
+            "steps": [
+              "[TEST ONLY] step"
+            ]
+          }
+        ],
+        "contributorNotes": [
+          "[TEST ONLY] contributor note"
+        ]
+      },
+      "fr-CA": {
+        "title": "[TEST ONLY] recipe",
+        "slug": "test-only-recipe-fr",
+        "metaTitle": "[TEST ONLY] recipe",
+        "metaDescription": "[TEST ONLY] mechanical fixture for checking a contributor page route, its visible modules, metadata and schema output.............",
+        "originalContext": "[TEST ONLY] original context",
+        "sourceNotes": "[TEST ONLY]",
+        "factNotes": "[TEST ONLY]",
+        "imageAlt": "[TEST ONLY] recipe photo",
+        "imageCredit": "[TEST ONLY]",
+        "serves": "2",
+        "activeTime": "PT20M",
+        "totalTime": "PT45M",
+        "difficulty": "medium",
+        "equipment": [
+          "[TEST ONLY] pan"
+        ],
+        "dietaryNotes": [
+          "[TEST ONLY] diet"
+        ],
+        "ingredientGroups": [
+          {
+            "items": [
+              "[TEST ONLY] ingredient"
+            ]
+          }
+        ],
+        "methodGroups": [
+          {
+            "steps": [
+              "[TEST ONLY] step"
+            ]
+          }
+        ],
+        "contributorNotes": [
+          "[TEST ONLY] contributor note"
+        ]
+      }
+    }
+  }
+]

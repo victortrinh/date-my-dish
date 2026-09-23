@@ -1,0 +1,12 @@
+---
+import { getCollection } from "astro:content";
+import ChefProfile from "@components/profiles/ChefProfile.astro";
+
+export async function getStaticPaths() {
+  const profiles = await getCollection("extendedProfiles");
+  return profiles.map(({ data }) => ({ params: { slug: data.locales["fr-CA"].slug }, props: { profile: data } }));
+}
+
+const { profile } = Astro.props;
+---
+<ChefProfile profile={profile} locale="fr" />

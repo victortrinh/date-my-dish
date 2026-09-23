@@ -11,9 +11,9 @@ const object = (shape) => z.object(shape).strict();
 
 // The five fixed Date Spot categories. "Make a night of it" carries at most
 // one pick per category, and category/neighbourhood listings key off these.
-export const DATE_SPOT_CATEGORIES = ["activities-sports", "arts-culture", "games-entertainment", "nature-scenic", "social-romantic"];
-export const OCCASIONS = ["first-date", "anniversary", "casual-midweek", "impressing-a-cook", "double-date", "solo-at-the-bar"];
-export const VERDICTS = ["favourite", "conditional", "pass"];
+export const DATE_SPOT_CATEGORIES = /** @type {const} */ (["activities-sports", "arts-culture", "games-entertainment", "nature-scenic", "social-romantic"]);
+export const OCCASIONS = /** @type {const} */ (["first-date", "anniversary", "casual-midweek", "impressing-a-cook", "double-date", "solo-at-the-bar"]);
+export const VERDICTS = /** @type {const} */ (["favourite", "conditional", "pass"]);
 export const REVIEW_WORD_FLOOR = 1000;
 // Path segments used by listing routes under /date-spots/ and /lieux/.
 export const RESERVED_SLUGS = ["category", "categorie", "neighbourhood", "quartier"];

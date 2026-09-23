@@ -3,71 +3,753 @@
     "id": "test-only-restaurant",
     "postType": "date-spot",
     "spotType": "restaurant",
-    "name": "[TEST ONLY]",
-    "city": "[TEST ONLY]",
-    "neighbourhood": "[TEST ONLY]",
-    "reporterByline": "Victor Vu",
-    "authorship": { "reporting": "human", "translation": "human" },
-    "freshness": { "visited": "2026-01-01", "published": "2026-01-02", "lastChecked": "2026-01-03" },
-    "image": { "src": "/images/og-default.jpg", "width": 1200, "height": 630, "provenance": "dmd-held-photograph" },
-    "mapUrl": "https://example.com/test-only",
+    "name": "Test Venue",
+    "city": "Test City",
+    "neighbourhood": "Test Quarter",
+    "reporterByline": "Victor",
+    "authorship": {
+      "reporting": "human",
+      "translation": "human"
+    },
+    "freshness": {
+      "visited": "2026-01-01",
+      "published": "2026-01-02",
+      "lastChecked": "2026-01-03"
+    },
+    "image": {
+      "src": "/images/og-default.jpg",
+      "width": 1200,
+      "height": 800,
+      "provenance": "dmd-held-photograph"
+    },
+    "mapUrl": "https://example.com",
     "payment": "paid",
-    "reviewVerdict": "conditional",
+    "priceRange": "$$$",
+    "reviewVerdict": "favourite",
     "locales": {
       "en": {
-        "title": "[TEST ONLY] Restaurant Date Spot",
+        "title": "[TEST ONLY] Test Venue",
         "slug": "test-only-restaurant",
-        "metaTitle": "[TEST ONLY] Restaurant Date Spot | Date My Dish",
-        "metaDescription": "[TEST ONLY] Mechanical restaurant fixture for checking the complete bilingual Date Spot route, visible modules, metadata, and schema output.",
+        "metaTitle": "Test Venue, Test Quarter: Review & Date Night Guide",
+        "metaDescription": "[TEST ONLY] mechanical fixture describing a Date Spot for checking the bilingual route, its visible modules, metadata and schema output here............",
+        "opening": "[TEST ONLY] Chef [TEST ONLY] Cook opening",
+        "sourceNotes": "[TEST ONLY] source notes",
+        "factNotes": "[TEST ONLY] fact notes",
+        "imageAlt": "[TEST ONLY] image description",
+        "imageCredit": "[TEST ONLY] image credit",
+        "essentials": {
+          "address": "[TEST ONLY] address",
+          "booking": "[TEST ONLY] booking",
+          "access": "[TEST ONLY] access",
+          "duration": "[TEST ONLY] duration",
+          "cost": "[TEST ONLY] test-only-restaurant cost",
+          "timing": "[TEST ONLY] timing"
+        },
+        "paymentDisclosure": "[TEST ONLY] payment disclosure",
+        "materialUpdates": [
+          {
+            "date": "2026-01-03",
+            "note": "[TEST ONLY] update"
+          }
+        ],
+        "verdictHeadline": "[TEST ONLY] verdict headline",
+        "verdictReason": "[TEST ONLY] verdict reason test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+        "goodFor": [
+          {
+            "occasion": "anniversary",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] anniversary reason"
+          },
+          {
+            "occasion": "impressing-a-cook",
+            "assessment": "caveat",
+            "reason": "[TEST ONLY] impressing-a-cook reason"
+          },
+          {
+            "occasion": "first-date",
+            "assessment": "not-for",
+            "reason": "[TEST ONLY] first-date reason"
+          },
+          {
+            "occasion": "casual-midweek",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] casual-midweek reason"
+          }
+        ],
+        "room": "[TEST ONLY] room test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+        "drinks": {
+          "intro": "[TEST ONLY] drinks test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "[TEST ONLY] cocktail",
+              "note": "[TEST ONLY] first drink"
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "[TEST ONLY] wine",
+              "note": "[TEST ONLY] pairing"
+            },
+            {
+              "moment": "not-drinking",
+              "name": "[TEST ONLY] zero proof",
+              "note": "[TEST ONLY] no alcohol"
+            }
+          ],
+          "list": "[TEST ONLY] list test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+        },
+        "realCost": {
+          "intro": "[TEST ONLY] real cost",
+          "lines": [
+            {
+              "item": "[TEST ONLY] food",
+              "amount": "$100"
+            },
+            {
+              "item": "[TEST ONLY] tax and tip",
+              "amount": "$30"
+            }
+          ],
+          "total": {
+            "label": "[TEST ONLY] two people, all in",
+            "amount": "$130"
+          },
+          "howToSpendLess": "[TEST ONLY] spend less"
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 2,
+          "detail": "[TEST ONLY] note detail test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "caveat": "[TEST ONLY] note caveat test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+        },
+        "beforeYouBook": [
+          {
+            "question": "[TEST ONLY] how far ahead?",
+            "answer": "[TEST ONLY] answer test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+          },
+          {
+            "question": "[TEST ONLY] parking?",
+            "answer": "[TEST ONLY] answer test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+          }
+        ],
+        "cuisine": "[TEST ONLY] cuisine",
+        "whatToOrder": {
+          "dishes": [
+            {
+              "name": "[TEST ONLY] dish 1",
+              "tag": "order-this",
+              "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+            },
+            {
+              "name": "[TEST ONLY] dish 2",
+              "tag": "worth-it",
+              "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+            },
+            {
+              "name": "[TEST ONLY] dish 3",
+              "tag": "worth-it",
+              "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+            },
+            {
+              "name": "[TEST ONLY] dish 4",
+              "tag": "skip",
+              "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+            }
+          ],
+          "waitersChoice": {
+            "recommendation": "[TEST ONLY] waiter recommendation",
+            "outcome": "[TEST ONLY] they were right"
+          },
+          "setMenu": {
+            "name": "[TEST ONLY] tasting",
+            "courses": 5,
+            "pricePerPerson": "$95",
+            "note": "[TEST ONLY] set menu note",
+            "advice": "take-it"
+          }
+        },
+        "roomPhoto": {
+          "photo": "room",
+          "alt": "[TEST ONLY] room photo"
+        },
+        "meetChef": {
+          "name": "[TEST ONLY] Cook",
+          "role": "[TEST ONLY] chef",
+          "background": "[TEST ONLY] chef background test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "quote": "[TEST ONLY] chef quote",
+          "approach": "[TEST ONLY] chef approach test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "profileId": "test-only-profile"
+        },
+        "atHome": {
+          "recipeId": "test-only-recipe",
+          "intro": "[TEST ONLY] at home intro"
+        },
+        "makeANight": [
+          {
+            "spotId": "test-only-activity",
+            "timing": "before",
+            "walkMinutes": 9,
+            "blurb": "[TEST ONLY] activity blurb"
+          },
+          {
+            "spotId": "test-only-bar",
+            "timing": "after",
+            "walkMinutes": 4,
+            "blurb": "[TEST ONLY] bar blurb"
+          }
+        ]
+      },
+      "fr-CA": {
+        "title": "[TEST ONLY] Test Venue",
+        "slug": "test-only-restaurant-fr",
+        "metaTitle": "Test Venue, Test Quarter: Review & Date Night Guide",
+        "metaDescription": "[TEST ONLY] mechanical fixture describing a Date Spot for checking the bilingual route, its visible modules, metadata and schema output here............",
+        "opening": "[TEST ONLY] Chef [TEST ONLY] Cook opening",
+        "sourceNotes": "[TEST ONLY] source notes",
+        "factNotes": "[TEST ONLY] fact notes",
+        "imageAlt": "[TEST ONLY] image description",
+        "imageCredit": "[TEST ONLY] image credit",
+        "essentials": {
+          "address": "[TEST ONLY] address",
+          "booking": "[TEST ONLY] booking",
+          "access": "[TEST ONLY] access",
+          "duration": "[TEST ONLY] duration",
+          "cost": "[TEST ONLY] test-only-restaurant cost",
+          "timing": "[TEST ONLY] timing"
+        },
+        "paymentDisclosure": "[TEST ONLY] payment disclosure",
+        "materialUpdates": [
+          {
+            "date": "2026-01-03",
+            "note": "[TEST ONLY] update"
+          }
+        ],
+        "verdictHeadline": "[TEST ONLY] verdict headline",
+        "verdictReason": "[TEST ONLY] verdict reason test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+        "goodFor": [
+          {
+            "occasion": "anniversary",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] anniversary reason"
+          },
+          {
+            "occasion": "impressing-a-cook",
+            "assessment": "caveat",
+            "reason": "[TEST ONLY] impressing-a-cook reason"
+          },
+          {
+            "occasion": "first-date",
+            "assessment": "not-for",
+            "reason": "[TEST ONLY] first-date reason"
+          },
+          {
+            "occasion": "casual-midweek",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] casual-midweek reason"
+          }
+        ],
+        "room": "[TEST ONLY] room test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+        "drinks": {
+          "intro": "[TEST ONLY] drinks test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "[TEST ONLY] cocktail",
+              "note": "[TEST ONLY] first drink"
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "[TEST ONLY] wine",
+              "note": "[TEST ONLY] pairing"
+            },
+            {
+              "moment": "not-drinking",
+              "name": "[TEST ONLY] zero proof",
+              "note": "[TEST ONLY] no alcohol"
+            }
+          ],
+          "list": "[TEST ONLY] list test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+        },
+        "realCost": {
+          "intro": "[TEST ONLY] real cost",
+          "lines": [
+            {
+              "item": "[TEST ONLY] food",
+              "amount": "$100"
+            },
+            {
+              "item": "[TEST ONLY] tax and tip",
+              "amount": "$30"
+            }
+          ],
+          "total": {
+            "label": "[TEST ONLY] two people, all in",
+            "amount": "$130"
+          },
+          "howToSpendLess": "[TEST ONLY] spend less"
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 2,
+          "detail": "[TEST ONLY] note detail test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "caveat": "[TEST ONLY] note caveat test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+        },
+        "beforeYouBook": [
+          {
+            "question": "[TEST ONLY] how far ahead?",
+            "answer": "[TEST ONLY] answer test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+          },
+          {
+            "question": "[TEST ONLY] parking?",
+            "answer": "[TEST ONLY] answer test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+          }
+        ],
+        "cuisine": "[TEST ONLY] cuisine",
+        "whatToOrder": {
+          "dishes": [
+            {
+              "name": "[TEST ONLY] dish 1",
+              "tag": "order-this",
+              "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+            },
+            {
+              "name": "[TEST ONLY] dish 2",
+              "tag": "worth-it",
+              "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+            },
+            {
+              "name": "[TEST ONLY] dish 3",
+              "tag": "worth-it",
+              "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+            },
+            {
+              "name": "[TEST ONLY] dish 4",
+              "tag": "skip",
+              "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+            }
+          ],
+          "waitersChoice": {
+            "recommendation": "[TEST ONLY] waiter recommendation",
+            "outcome": "[TEST ONLY] they were right"
+          },
+          "setMenu": {
+            "name": "[TEST ONLY] tasting",
+            "courses": 5,
+            "pricePerPerson": "$95",
+            "note": "[TEST ONLY] set menu note",
+            "advice": "take-it"
+          }
+        },
+        "roomPhoto": {
+          "photo": "room",
+          "alt": "[TEST ONLY] room photo"
+        },
+        "meetChef": {
+          "name": "[TEST ONLY] Cook",
+          "role": "[TEST ONLY] chef",
+          "background": "[TEST ONLY] chef background test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "quote": "[TEST ONLY] chef quote",
+          "approach": "[TEST ONLY] chef approach test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "profileId": "test-only-profile"
+        },
+        "atHome": {
+          "recipeId": "test-only-recipe",
+          "intro": "[TEST ONLY] at home intro"
+        },
+        "makeANight": [
+          {
+            "spotId": "test-only-activity",
+            "timing": "before",
+            "walkMinutes": 9,
+            "blurb": "[TEST ONLY] activity blurb"
+          },
+          {
+            "spotId": "test-only-bar",
+            "timing": "after",
+            "walkMinutes": 4,
+            "blurb": "[TEST ONLY] bar blurb"
+          }
+        ]
+      }
+    },
+    "instagram": "test_only",
+    "bookingUrl": "https://example.com/book",
+    "googleReviews": [
+      {
+        "average": 4.6,
+        "count": 312,
+        "asOf": "2026-01-02"
+      }
+    ],
+    "photos": {
+      "room": {
+        "src": "/images/og-default.jpg",
+        "width": 1200,
+        "height": 630,
+        "provenance": "dmd-held-photograph"
+      }
+    }
+  },
+  {
+    "id": "test-only-activity",
+    "postType": "date-spot",
+    "spotType": "activity",
+    "name": "Test Park",
+    "city": "Test City",
+    "neighbourhood": "Test Quarter",
+    "reporterByline": "Victor",
+    "authorship": {
+      "reporting": "human",
+      "translation": "human"
+    },
+    "freshness": {
+      "visited": "2026-01-01",
+      "published": "2026-01-02",
+      "lastChecked": "2026-01-03"
+    },
+    "image": {
+      "src": "/images/og-default.jpg",
+      "width": 1200,
+      "height": 800,
+      "provenance": "dmd-held-photograph"
+    },
+    "mapUrl": "https://example.com",
+    "payment": "paid",
+    "priceRange": "free",
+    "reviewVerdict": "conditional",
+    "category": "nature-scenic",
+    "locales": {
+      "en": {
+        "title": "[TEST ONLY] Test Park",
+        "slug": "test-only-activity",
+        "metaTitle": "Test Park, Test Quarter: Date Spot Guide",
+        "metaDescription": "[TEST ONLY] mechanical fixture describing a Date Spot for checking the bilingual route, its visible modules, metadata and schema output here............",
         "opening": "[TEST ONLY] opening",
         "sourceNotes": "[TEST ONLY] source notes",
         "factNotes": "[TEST ONLY] fact notes",
         "imageAlt": "[TEST ONLY] image description",
         "imageCredit": "[TEST ONLY] image credit",
-        "imageCaption": "[TEST ONLY] image caption",
-        "essentials": { "address": "[TEST ONLY] address", "booking": "[TEST ONLY] booking", "access": "[TEST ONLY] access", "duration": "[TEST ONLY] duration", "cost": "[TEST ONLY] cost", "timing": "[TEST ONLY] timing" },
+        "essentials": {
+          "address": "[TEST ONLY] address",
+          "booking": "[TEST ONLY] booking",
+          "access": "[TEST ONLY] access",
+          "duration": "[TEST ONLY] duration",
+          "cost": "[TEST ONLY] test-only-activity cost",
+          "timing": "[TEST ONLY] timing",
+          "transit": "[TEST ONLY] metro"
+        },
         "paymentDisclosure": "[TEST ONLY] payment disclosure",
-        "materialUpdates": [{ "date": "2026-01-03", "note": "[TEST ONLY] update" }],
-        "verdictReason": "[TEST ONLY] verdict reason",
-        "goodFor": [{ "occasion": "first-date", "assessment": "caveat", "reason": "[TEST ONLY] signal reason" }],
-        "room": "[TEST ONLY] room",
-        "whatToDrink": "[TEST ONLY] drinks",
-        "realCost": "[TEST ONLY] real cost",
-        "reportersNote": { "byline": "Victor Vu", "text": "[TEST ONLY] reporter note" },
-        "beforeYouGo": "[TEST ONLY] booking facts",
-        "cuisine": "[TEST ONLY] cuisine",
-        "whatToOrder": "[TEST ONLY] ordering guidance",
-        "meetChef": { "name": "[TEST ONLY] chef", "role": "[TEST ONLY] role", "reporting": "[TEST ONLY] chef reporting" },
-        "nearbyPlans": [{ "name": "[TEST ONLY] plan", "detail": "[TEST ONLY] nearby reporting", "mapUrl": "https://example.com/test-only-plan" }],
-        "contributorRecipe": { "title": "[TEST ONLY] recipe", "slug": "test-only-recipe", "contributor": "[TEST ONLY] contributor", "source": "[TEST ONLY] source", "testingNotes": "[TEST ONLY] recipe context" }
+        "materialUpdates": [],
+        "whenItWorks": [
+          {
+            "situation": "[TEST ONLY] after dinner",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] works reason"
+          },
+          {
+            "situation": "[TEST ONLY] winter",
+            "assessment": "not-for",
+            "reason": "[TEST ONLY] winter reason"
+          }
+        ],
+        "whatItIs": "[TEST ONLY] what it is",
+        "howToDoItWell": [
+          {
+            "label": "[TEST ONLY] timing",
+            "text": "[TEST ONLY] go before sunset"
+          }
+        ],
+        "pairItWith": [
+          {
+            "spotId": "test-only-restaurant",
+            "walkMinutes": 12
+          }
+        ],
+        "verdictQualifier": "[TEST ONLY] in season",
+        "season": "[TEST ONLY] May to October"
       },
       "fr-CA": {
-        "title": "[TEST ONLY] Restaurant Date Spot FR",
-        "slug": "test-only-restaurant-fr",
-        "metaTitle": "[TEST ONLY] Restaurant Date Spot FR | Date My Dish",
-        "metaDescription": "[TEST ONLY] Fixture mécanique pour vérifier la route bilingue complète du Date Spot, ses modules visibles, ses métadonnées et son schéma.",
-        "opening": "[TEST ONLY] ouverture",
-        "sourceNotes": "[TEST ONLY] notes de source",
-        "factNotes": "[TEST ONLY] notes factuelles",
-        "imageAlt": "[TEST ONLY] description image",
-        "imageCredit": "[TEST ONLY] crédit image",
-        "imageCaption": "[TEST ONLY] légende image",
-        "essentials": { "address": "[TEST ONLY] adresse", "booking": "[TEST ONLY] réservation", "access": "[TEST ONLY] accès", "duration": "[TEST ONLY] durée", "cost": "[TEST ONLY] coût", "timing": "[TEST ONLY] moment" },
-        "paymentDisclosure": "[TEST ONLY] divulgation",
-        "materialUpdates": [{ "date": "2026-01-03", "note": "[TEST ONLY] mise à jour" }],
-        "verdictReason": "[TEST ONLY] raison du verdict",
-        "goodFor": [{ "occasion": "first-date", "assessment": "caveat", "reason": "[TEST ONLY] raison du signal" }],
-        "room": "[TEST ONLY] salle",
-        "whatToDrink": "[TEST ONLY] boissons",
-        "realCost": "[TEST ONLY] coût réel",
-        "reportersNote": { "byline": "Victor Vu", "text": "[TEST ONLY] note du journaliste" },
-        "beforeYouGo": "[TEST ONLY] faits de réservation",
-        "cuisine": "[TEST ONLY] cuisine",
-        "whatToOrder": "[TEST ONLY] commandes",
-        "meetChef": { "name": "[TEST ONLY] chef", "role": "[TEST ONLY] rôle", "reporting": "[TEST ONLY] reportage chef" },
-        "nearbyPlans": [{ "name": "[TEST ONLY] plan", "detail": "[TEST ONLY] reportage à proximité", "mapUrl": "https://example.com/test-only-plan" }],
-        "contributorRecipe": { "title": "[TEST ONLY] recette", "slug": "test-only-recipe", "contributor": "[TEST ONLY] collaborateur", "source": "[TEST ONLY] source", "testingNotes": "[TEST ONLY] contexte recette" }
+        "title": "[TEST ONLY] Test Park",
+        "slug": "test-only-activity-fr",
+        "metaTitle": "Test Park, Test Quarter: Date Spot Guide",
+        "metaDescription": "[TEST ONLY] mechanical fixture describing a Date Spot for checking the bilingual route, its visible modules, metadata and schema output here............",
+        "opening": "[TEST ONLY] opening",
+        "sourceNotes": "[TEST ONLY] source notes",
+        "factNotes": "[TEST ONLY] fact notes",
+        "imageAlt": "[TEST ONLY] image description",
+        "imageCredit": "[TEST ONLY] image credit",
+        "essentials": {
+          "address": "[TEST ONLY] address",
+          "booking": "[TEST ONLY] booking",
+          "access": "[TEST ONLY] access",
+          "duration": "[TEST ONLY] duration",
+          "cost": "[TEST ONLY] test-only-activity cost",
+          "timing": "[TEST ONLY] timing",
+          "transit": "[TEST ONLY] metro"
+        },
+        "paymentDisclosure": "[TEST ONLY] payment disclosure",
+        "materialUpdates": [],
+        "whenItWorks": [
+          {
+            "situation": "[TEST ONLY] after dinner",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] works reason"
+          },
+          {
+            "situation": "[TEST ONLY] winter",
+            "assessment": "not-for",
+            "reason": "[TEST ONLY] winter reason"
+          }
+        ],
+        "whatItIs": "[TEST ONLY] what it is",
+        "howToDoItWell": [
+          {
+            "label": "[TEST ONLY] timing",
+            "text": "[TEST ONLY] go before sunset"
+          }
+        ],
+        "pairItWith": [
+          {
+            "spotId": "test-only-restaurant",
+            "walkMinutes": 12
+          }
+        ],
+        "verdictQualifier": "[TEST ONLY] in season",
+        "season": "[TEST ONLY] May to October"
       }
     }
+  },
+  {
+    "id": "test-only-bar",
+    "postType": "date-spot",
+    "spotType": "bar",
+    "name": "Test Bar",
+    "city": "Test City",
+    "neighbourhood": "Test Quarter",
+    "reporterByline": "Victor",
+    "authorship": {
+      "reporting": "human",
+      "translation": "human"
+    },
+    "freshness": {
+      "visited": "2026-01-01",
+      "published": "2026-01-02",
+      "lastChecked": "2026-01-03"
+    },
+    "image": {
+      "src": "/images/og-default.jpg",
+      "width": 1200,
+      "height": 800,
+      "provenance": "dmd-held-photograph"
+    },
+    "mapUrl": "https://example.com",
+    "payment": "paid",
+    "priceRange": "$$$",
+    "reviewVerdict": "conditional",
+    "locales": {
+      "en": {
+        "title": "[TEST ONLY] Test Bar",
+        "slug": "test-only-bar",
+        "metaTitle": "Test Bar, Test Quarter: Review & Date Night Guide",
+        "metaDescription": "[TEST ONLY] mechanical fixture describing a Date Spot for checking the bilingual route, its visible modules, metadata and schema output here............",
+        "opening": "[TEST ONLY] opening",
+        "sourceNotes": "[TEST ONLY] source notes",
+        "factNotes": "[TEST ONLY] fact notes",
+        "imageAlt": "[TEST ONLY] image description",
+        "imageCredit": "[TEST ONLY] image credit",
+        "essentials": {
+          "address": "[TEST ONLY] address",
+          "booking": "[TEST ONLY] booking",
+          "access": "[TEST ONLY] access",
+          "duration": "[TEST ONLY] duration",
+          "cost": "[TEST ONLY] test-only-bar cost",
+          "timing": "[TEST ONLY] timing"
+        },
+        "paymentDisclosure": "[TEST ONLY] payment disclosure",
+        "materialUpdates": [],
+        "verdictHeadline": "[TEST ONLY] verdict headline",
+        "verdictReason": "[TEST ONLY] verdict reason test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+        "goodFor": [
+          {
+            "occasion": "anniversary",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] anniversary reason"
+          },
+          {
+            "occasion": "impressing-a-cook",
+            "assessment": "caveat",
+            "reason": "[TEST ONLY] impressing-a-cook reason"
+          },
+          {
+            "occasion": "first-date",
+            "assessment": "not-for",
+            "reason": "[TEST ONLY] first-date reason"
+          },
+          {
+            "occasion": "casual-midweek",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] casual-midweek reason"
+          }
+        ],
+        "room": "[TEST ONLY] room test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+        "drinks": {
+          "intro": "[TEST ONLY] drinks test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "[TEST ONLY] cocktail",
+              "note": "[TEST ONLY] first drink"
+            },
+            {
+              "moment": "second-round",
+              "name": "[TEST ONLY] second",
+              "note": "[TEST ONLY] second round"
+            },
+            {
+              "moment": "not-drinking",
+              "name": "[TEST ONLY] zero proof",
+              "note": "[TEST ONLY] no alcohol"
+            }
+          ],
+          "list": "[TEST ONLY] list test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+        },
+        "realCost": {
+          "intro": "[TEST ONLY] real cost",
+          "lines": [
+            {
+              "item": "[TEST ONLY] food",
+              "amount": "$100"
+            },
+            {
+              "item": "[TEST ONLY] tax and tip",
+              "amount": "$30"
+            }
+          ],
+          "total": {
+            "label": "[TEST ONLY] two people, all in",
+            "amount": "$130"
+          },
+          "howToSpendLess": "[TEST ONLY] spend less"
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 2,
+          "detail": "[TEST ONLY] note detail test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "caveat": "[TEST ONLY] note caveat test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+        },
+        "beforeYouBook": [
+          {
+            "question": "[TEST ONLY] how far ahead?",
+            "answer": "[TEST ONLY] answer test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+          },
+          {
+            "question": "[TEST ONLY] parking?",
+            "answer": "[TEST ONLY] answer test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+          }
+        ]
+      },
+      "fr-CA": {
+        "title": "[TEST ONLY] Test Bar",
+        "slug": "test-only-bar-fr",
+        "metaTitle": "Test Bar, Test Quarter: Review & Date Night Guide",
+        "metaDescription": "[TEST ONLY] mechanical fixture describing a Date Spot for checking the bilingual route, its visible modules, metadata and schema output here............",
+        "opening": "[TEST ONLY] opening",
+        "sourceNotes": "[TEST ONLY] source notes",
+        "factNotes": "[TEST ONLY] fact notes",
+        "imageAlt": "[TEST ONLY] image description",
+        "imageCredit": "[TEST ONLY] image credit",
+        "essentials": {
+          "address": "[TEST ONLY] address",
+          "booking": "[TEST ONLY] booking",
+          "access": "[TEST ONLY] access",
+          "duration": "[TEST ONLY] duration",
+          "cost": "[TEST ONLY] test-only-bar cost",
+          "timing": "[TEST ONLY] timing"
+        },
+        "paymentDisclosure": "[TEST ONLY] payment disclosure",
+        "materialUpdates": [],
+        "verdictHeadline": "[TEST ONLY] verdict headline",
+        "verdictReason": "[TEST ONLY] verdict reason test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+        "goodFor": [
+          {
+            "occasion": "anniversary",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] anniversary reason"
+          },
+          {
+            "occasion": "impressing-a-cook",
+            "assessment": "caveat",
+            "reason": "[TEST ONLY] impressing-a-cook reason"
+          },
+          {
+            "occasion": "first-date",
+            "assessment": "not-for",
+            "reason": "[TEST ONLY] first-date reason"
+          },
+          {
+            "occasion": "casual-midweek",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] casual-midweek reason"
+          }
+        ],
+        "room": "[TEST ONLY] room test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+        "drinks": {
+          "intro": "[TEST ONLY] drinks test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "[TEST ONLY] cocktail",
+              "note": "[TEST ONLY] first drink"
+            },
+            {
+              "moment": "second-round",
+              "name": "[TEST ONLY] second",
+              "note": "[TEST ONLY] second round"
+            },
+            {
+              "moment": "not-drinking",
+              "name": "[TEST ONLY] zero proof",
+              "note": "[TEST ONLY] no alcohol"
+            }
+          ],
+          "list": "[TEST ONLY] list test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+        },
+        "realCost": {
+          "intro": "[TEST ONLY] real cost",
+          "lines": [
+            {
+              "item": "[TEST ONLY] food",
+              "amount": "$100"
+            },
+            {
+              "item": "[TEST ONLY] tax and tip",
+              "amount": "$30"
+            }
+          ],
+          "total": {
+            "label": "[TEST ONLY] two people, all in",
+            "amount": "$130"
+          },
+          "howToSpendLess": "[TEST ONLY] spend less"
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 2,
+          "detail": "[TEST ONLY] note detail test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
+          "caveat": "[TEST ONLY] note caveat test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+        },
+        "beforeYouBook": [
+          {
+            "question": "[TEST ONLY] how far ahead?",
+            "answer": "[TEST ONLY] answer test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+          },
+          {
+            "question": "[TEST ONLY] parking?",
+            "answer": "[TEST ONLY] answer test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
+          }
+        ]
+      }
+    },
+    "category": "social-romantic"
   }
 ]

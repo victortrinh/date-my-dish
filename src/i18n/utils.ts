@@ -28,6 +28,11 @@ export function t(locale: Locale, key: TranslationKey): string {
   return typeof value === "string" ? value : key;
 }
 
+/** `t()` with `{name}` placeholders filled in. */
+export function tf(locale: Locale, key: TranslationKey, vars: Record<string, string | number>): string {
+  return t(locale, key).replace(/\{(\w+)\}/g, (match, name: string) => (name in vars ? String(vars[name]) : match));
+}
+
 export function getLocaleFromUrl(url: URL): Locale {
   const [, locale] = url.pathname.split("/");
   if (locale === "fr") return "fr";

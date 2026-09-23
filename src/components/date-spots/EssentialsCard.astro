@@ -1,0 +1,75 @@
+---
+import VerdictBadge from "./VerdictBadge.astro";
+import { t, tf, type Locale } from "@i18n/utils";
+import { copyLocale, isVenueReview, priceLabel, spotCategory } from "@utils/date-spots";
+import type { CollectionEntry } from "astro:content";
+
+// The one fact card per page. "Our take" repeats the page verdict word for
+// word, so a reader who goes straight to the sidebar still gets the answer.
+// The Google rating is the venue's number, dated, and labelled as theirs.
+interface Props { spot: CollectionEntry<"dateSpots">["data"]; locale: Locale; id?: string; class?: string; }
+// Rendered twice on review pages (after the verdict on phones, in the sidebar
+// on desktop), so the heading id is configurable.
+const { spot, locale, id = "essentials-title", class: className } = Astro.props;
+const copy = spot.locales[copyLocale(locale)];
+const { essentials } = copy;
+const category = spotCategory(spot);
+const formatDate = (value: string) => new Intl.DateTimeFormat(locale === "fr" ? "fr-CA" : "en-CA", { year: "numeric", month: "long", day: "numeric" }).format(new Date(`${value}T12:00:00`));
+const formatAverage = (value: number) => new Intl.NumberFormat(locale === "fr" ? "fr-CA" : "en-CA", { minimumFractionDigits: 1 }).format(value);
+const qualifier = "verdictQualifier" in copy ? copy.verdictQualifier : undefined;
+const season = "season" in copy ? copy.season : undefined;
+
+const rows: [string, string | undefined][] = isVenueReview(spot)
+  ? [
+      [t(locale, "dateSpot.cuisine"), "cuisine" in copy ? copy.cuisine : undefined],
+      [t(locale, "dateSpot.neighbourhood"), spot.neighbourhood],
+      [t(locale, "dateSpot.perPersonLabel"), essentials.cost],
+      [t(locale, "dateSpot.canYouTalk"), essentials.canYouTalk],
+      [t(locale, "dateSpot.booking"), essentials.booking],
+      [t(locale, "dateSpot.allow"), essentials.duration],
+      [t(locale, "dateSpot.timing_label"), essentials.timing],
+      [t(locale, "dateSpot.address"), essentials.address],
+      [t(locale, "dateSpot.access"), essentials.access],
+    ]
+  : [
+      [t(locale, "dateSpot.category_label"), category && t(locale, `dateSpot.category.${category}`)],
+      [t(locale, "dateSpot.cost"), `${essentials.cost} (${priceLabel(spot.priceRange, locale)})`],
+      [t(locale, "dateSpot.allow"), essentials.duration],
+      [t(locale, "dateSpot.season"), season],
+      [t(locale, "dateSpot.booking"), essentials.booking],
+      [t(locale, "dateSpot.timing_label"), essentials.timing],
+      [t(locale, "dateSpot.transit"), essentials.transit],
+      [t(locale, "dateSpot.stepFree"), essentials.stepFree],
+      [t(locale, "dateSpot.address"), essentials.address],
+      [t(locale, "dateSpot.access"), essentials.access],
+    ];
+const snapshots = spot.googleReviews ?? [];
+---
+<section aria-labelledby={id} data-pagefind-ignore={id !== "essentials-title" || undefined} class:list={[className, "border border-warm-200 bg-white p-6 dark:border-warm-700 dark:bg-warm-900"]}>
+  <h2 id={id} class="font-heading text-2xl text-warm-900 dark:text-warm-100">{t(locale, "dateSpot.essentials")}</h2>
+  <div class="mt-4 border-b border-warm-200 pb-4 dark:border-warm-700">
+    <p class="mb-2 font-ui text-caption font-bold uppercase tracking-wider text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.ourTake")}</p>
+    <VerdictBadge verdict={spot.reviewVerdict} locale={locale} qualifier={qualifier} />
+  </div>
+  <dl class="mt-2 divide-y divide-warm-200 font-ui text-body-sm dark:divide-warm-700">
+    {rows.filter(([, value]) => value).map(([label, value]) => (
+      <div class="flex justify-between gap-4 py-2.5"><dt class="shrink-0 text-warm-500 dark:text-warm-400">{label}</dt><dd class="text-right text-warm-800 dark:text-warm-200">{value}</dd></div>
+    ))}
+    {spot.instagram && <div class="flex justify-between gap-4 py-2.5"><dt class="text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.instagram")}</dt><dd><a href={`https://www.instagram.com/${spot.instagram}/`} rel="external noopener" class="text-brand-wine-text underline dark:text-brand-rose">@{spot.instagram}</a></dd></div>}
+    {snapshots.length > 0 && <div class="py-2.5">
+      <dt class="text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.googleReviews")}</dt>
+      {snapshots.map((snapshot, index) => (
+        <dd class="mt-1 text-warm-800 dark:text-warm-200">
+          {tf(locale, "dateSpot.googleCount", { average: formatAverage(snapshot.average), count: snapshot.count })}
+          <span class="block text-caption text-warm-500 dark:text-warm-400">{index === snapshots.length - 1 ? tf(locale, "dateSpot.googleAsOf", { date: formatDate(snapshot.asOf) }) : formatDate(snapshot.asOf)}</span>
+        </dd>
+      ))}
+      <dd class="mt-1 text-caption italic text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.googleTheirs")}</dd>
+    </div>}
+    <div class="py-2.5"><dt class="text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.disclosure")}</dt><dd class="mt-1 text-warm-800 dark:text-warm-200">{copy.paymentDisclosure}</dd></div>
+  </dl>
+  <div class="mt-4 flex gap-3 font-ui text-body-sm font-semibold">
+    {spot.bookingUrl && <a href={spot.bookingUrl} rel="external noopener" class="flex-1 bg-brand-wine px-4 py-2.5 text-center text-white no-underline hover:opacity-90 dark:bg-brand-rose dark:text-warm-950">{t(locale, "dateSpot.book")}</a>}
+    <a href={spot.mapUrl} rel="external noopener" class="flex-1 border border-brand-wine px-4 py-2.5 text-center text-brand-wine-text no-underline dark:border-brand-rose dark:text-brand-rose">{t(locale, "dateSpot.map")}</a>
+  </div>
+</section>

@@ -2,7 +2,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { dateSpotSchema, dateSpotsSchema, countReaderWords, neighbourhoodSlug, REVIEW_WORD_FLOOR } from "../../src/content-contracts/date-spot.mjs";
 import { checkCrossReferences, editorialWarnings } from "../../src/content-contracts/cross-references.mjs";
-import { dateSpotFixture as fixture, acceptanceCollection, token } from "./date-spot-fixtures.mjs";
+import { contributorRecipesSchema } from "../../src/content-contracts/contributor-recipe.mjs";
+import { extendedProfilesSchema } from "../../src/content-contracts/extended-profile.mjs";
+import { dateSpotFixture as fixture, acceptanceCollection, contributorRecipeFixture, extendedProfileFixture, token } from "./date-spot-fixtures.mjs";
 
 const accepts = (spot) => {
   const result = dateSpotSchema.safeParse(spot);
@@ -148,9 +150,14 @@ test("requires human authorship and documentary photographs", () => {
   const synthetic = fixture(); synthetic.image.provenance = "synthetic"; rejects(synthetic);
 });
 
-test("the acceptance collection is valid and fully linked", () => {
-  const result = dateSpotsSchema.safeParse(acceptanceCollection());
-  assert.equal(result.success, true, result.success ? "" : JSON.stringify(result.error.issues, null, 2));
+test("the acceptance collections are valid and fully linked", () => {
+  const spots = dateSpotsSchema.safeParse(acceptanceCollection());
+  assert.equal(spots.success, true, spots.success ? "" : JSON.stringify(spots.error.issues, null, 2));
+  const recipes = contributorRecipesSchema.parse([contributorRecipeFixture()]);
+  const profiles = extendedProfilesSchema.parse([extendedProfileFixture()]);
+  assert.deepEqual(checkCrossReferences({ spots: spots.data, recipes, profiles }), []);
+  const publicRecipe = contributorRecipeFixture("real-recipe");
+  assert.equal(contributorRecipesSchema.safeParse([publicRecipe]).success, false);
 });
 
 test("Make a night of it picks resolve to categorised spots, one per category, in the same city", () => {

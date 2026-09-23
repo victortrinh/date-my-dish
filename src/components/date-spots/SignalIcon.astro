@@ -1,0 +1,11 @@
+---
+// Solid means go, half means read the reason first, outlined grey means we
+// would send you elsewhere. The label always sits next to it; this is decoration.
+interface Props { assessment: "ideal" | "caveat" | "not-for"; }
+const { assessment } = Astro.props;
+---
+<svg width="20" height="20" viewBox="0 0 20 20" class="mt-0.5 shrink-0" aria-hidden="true">
+  {assessment === "ideal" && <circle cx="10" cy="10" r="8" class="fill-brand-wine dark:fill-brand-rose" />}
+  {assessment === "caveat" && <><circle cx="10" cy="10" r="8" fill="none" stroke-width="2.5" class="stroke-brand-wine dark:stroke-brand-rose" /><path d="M10 2 A8 8 0 0 1 10 18 Z" class="fill-brand-wine dark:fill-brand-rose" /></>}
+  {assessment === "not-for" && <circle cx="10" cy="10" r="8" fill="none" stroke-width="2.5" class="stroke-warm-400" />}
+</svg>

@@ -3,12 +3,13 @@ import { z } from "astro/zod";
 const text = z.string().trim().min(1);
 const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
+/** @template {z.ZodRawShape} T @param {T} shape */
 const object = (shape) => z.object(shape).strict();
 
 // Round two asks every chef or bartender the same eight questions, in this
 // order, so answers stay comparable across profiles. The question wording
 // is written per locale in the Story; these keys pin which question it is.
-export const DINNER_AND_DATE_QUESTIONS = [
+export const DINNER_AND_DATE_QUESTIONS = /** @type {const} */ ([
   "first-thing-cooked",
   "last-day-off",
   "cook-for-or-together",
@@ -17,7 +18,7 @@ export const DINNER_AND_DATE_QUESTIONS = [
   "date-dinner-length",
   "morning-after",
   "table-six",
-];
+]);
 
 const qa = object({ question: text, answer: text });
 const profileCopy = object({
@@ -55,13 +56,17 @@ export const extendedProfileSchema = object({
   authorship: object({ reporting: z.literal("human"), translation: z.literal("human") }),
   published: date,
   image: object({
-    src: z.string().regex(/^\/images\/profiles\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/),
+    src: z.union([z.string().regex(/^\/images\/profiles\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/), z.literal("/images/og-default.jpg")]),
     width: z.number().int().positive(),
     height: z.number().int().positive(),
     provenance: z.literal("dmd-held-photograph"),
   }),
   locales: object({ en: profileCopy, "fr-CA": profileCopy }),
 }).superRefine((profile, ctx) => {
+  // The generic image is reserved for the non-public acceptance fixtures.
+  if (profile.image.src === "/images/og-default.jpg" && !profile.id.startsWith("test-only-")) {
+    ctx.addIssue({ code: "custom", path: ["image", "src"], message: "The generic image is reserved for the non-public acceptance fixture" });
+  }
   if (profile.originalInterview.conductedOn > profile.published) {
     ctx.addIssue({ code: "custom", path: ["originalInterview", "conductedOn"], message: "Interview must be conducted before publication" });
   }

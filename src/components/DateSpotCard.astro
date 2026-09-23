@@ -1,7 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { Locale } from "@i18n/utils";
-import { dateSpotPath } from "@utils/date-spots";
+import VerdictBadge from "./date-spots/VerdictBadge.astro";
+import { copyLocale, dateSpotPath, priceLabel } from "@utils/date-spots";
 
 interface Props {
   spot: CollectionEntry<"dateSpots">;
@@ -10,19 +11,22 @@ interface Props {
 }
 
 const { spot, locale, loading = "lazy" } = Astro.props;
-const copy = spot.data.locales[locale === "fr" ? "fr-CA" : "en"];
-const verdicts = locale === "fr"
-  ? { favourite: "Un coup de cœur", conditional: "Selon la soirée", pass: "Pas notre premier choix" }
-  : { favourite: "A Favourite", conditional: "Depends on the Night", pass: "Not Our First Pick" };
+const copy = spot.data.locales[copyLocale(locale)];
+const verdict = spot.data.reviewVerdict;
 ---
-<article class="overflow-hidden rounded-2xl border border-warm-200 bg-white shadow-sm dark:border-warm-700 dark:bg-warm-900">
+<article data-verdict={verdict} class:list={[
+  "overflow-hidden border border-l-[5px] border-warm-200 bg-white dark:border-warm-700 dark:bg-warm-900",
+  verdict === "favourite" && "border-l-brand-wine dark:border-l-brand-rose",
+  verdict === "conditional" && "border-l-brand-rose",
+  verdict === "pass" && "border-l-warm-400",
+]}>
   <a href={dateSpotPath(spot.data, locale)} class="block no-underline">
     <img src={spot.data.image.src} alt={copy.imageAlt} width={spot.data.image.width} height={spot.data.image.height} loading={loading} class="aspect-[4/3] w-full object-cover" />
     <div class="p-6">
-      {"reviewVerdict" in spot.data && <p class="mb-2 font-ui text-caption font-bold uppercase tracking-wider text-brand-wine-text dark:text-brand-rose">{verdicts[spot.data.reviewVerdict]}</p>}
-      <h2 class="mb-2 text-heading-3 text-warm-900 dark:text-warm-100">{copy.title}</h2>
-      <p class="mb-3 font-ui text-body-sm text-warm-500 dark:text-warm-400">{spot.data.neighbourhood}, {spot.data.city}{"cuisine" in copy && ` · ${copy.cuisine}`}</p>
-      <p class="text-warm-700 dark:text-warm-300">{"verdictReason" in copy ? copy.verdictReason : copy.opening}</p>
+      <h2 class="mb-1 text-heading-3 text-warm-900 dark:text-warm-100">{spot.data.name}</h2>
+      <p class="mb-3 font-ui text-body-sm text-warm-500 dark:text-warm-400">{[spot.data.neighbourhood, "cuisine" in copy ? copy.cuisine : undefined, priceLabel(spot.data.priceRange, locale)].filter(Boolean).join(" · ")}</p>
+      <VerdictBadge verdict={verdict} locale={locale} qualifier={"verdictQualifier" in copy ? copy.verdictQualifier : undefined} />
+      <p class="mt-3 text-warm-700 dark:text-warm-300">{"verdictHeadline" in copy ? copy.verdictHeadline : copy.opening}</p>
     </div>
   </a>
 </article>

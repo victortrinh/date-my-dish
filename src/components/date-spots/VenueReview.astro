@@ -1,0 +1,304 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import NewsletterSignup from "@components/NewsletterSignup.astro";
+import VenueReviewSchema from "./VenueReviewSchema.astro";
+import EssentialsCard from "./EssentialsCard.astro";
+import Paragraphs from "./Paragraphs.astro";
+import SignalIcon from "./SignalIcon.astro";
+import SpotPhoto from "./SpotPhoto.astro";
+import VerdictBadge from "./VerdictBadge.astro";
+import { t, tf, type Locale } from "@i18n/utils";
+import {
+  copyLocale, dateSpotPath, neighbourhoodPath, priceLabel, profilePath, recipeCardPath, reviewPath,
+  sameCategoryNearby, spotCategory, isVenueReview, type VenueReview,
+} from "@utils/date-spots";
+
+// One template for both review Spot Types. Sections run in the order of the
+// review design: the answer first, then the room, the people, the drinks,
+// the food, the money, my note, the rest of the evening, and planning.
+interface Props { spot: VenueReview; locale: Locale; }
+const { spot, locale } = Astro.props;
+const copy = spot.locales[copyLocale(locale)];
+const other: Locale = locale === "fr" ? "en" : "fr";
+const isBar = spot.spotType === "bar";
+const lead = "meetChef" in copy ? copy.meetChef : "meetTheBartender" in copy ? copy.meetTheBartender : undefined;
+const whatToOrder = "whatToOrder" in copy ? copy.whatToOrder : undefined;
+const whatToEat = "whatToEat" in copy ? copy.whatToEat : undefined;
+const dishes = whatToOrder?.dishes ?? whatToEat?.dishes ?? [];
+const name = spot.name;
+const neighbourhood = spot.neighbourhood;
+
+const spots = await getCollection("dateSpots");
+const recipes = await getCollection("contributorRecipes");
+const profiles = await getCollection("extendedProfiles");
+const recipe = copy.atHome && recipes.find(({ data }) => data.id === copy.atHome?.recipeId)?.data;
+const recipeCopy = recipe ? recipe.locales[copyLocale(locale)] : undefined;
+const profile = lead?.profileId ? profiles.find(({ data }) => data.id === lead.profileId)?.data : undefined;
+const nightPicks = (copy.makeANight ?? []).flatMap((pick) => {
+  const target = spots.find(({ data }) => data.id === pick.spotId)?.data;
+  const category = target && spotCategory(target);
+  if (!target || !category) return [];
+  const nearby = sameCategoryNearby(spots, target).filter(({ data }) => data.neighbourhood === neighbourhood && data.id !== spot.id);
+  const targetCopy = target.locales[copyLocale(locale)];
+  const season = "season" in targetCopy ? targetCopy.season : undefined;
+  return [{ pick, target, category, nearby: nearby.length, season }];
+});
+const nearbyReviews = spots
+  .map(({ data }) => data)
+  .filter((data) => data.id !== spot.id && data.city === spot.city && data.neighbourhood === neighbourhood && isVenueReview(data))
+  .slice(0, 2);
+
+const monthYear = (value: string) => new Intl.DateTimeFormat(locale === "fr" ? "fr-CA" : "en-CA", { year: "numeric", month: "long" }).format(new Date(`${value}T12:00:00`));
+const fullDate = (value: string) => new Intl.DateTimeFormat(locale === "fr" ? "fr-CA" : "en-CA", { year: "numeric", month: "long", day: "numeric" }).format(new Date(`${value}T12:00:00`));
+const path = reviewPath(spot, locale);
+const h2 = "scroll-mt-20 font-heading text-heading-2 text-warm-900 dark:text-warm-100";
+const body = "font-body text-body-lg text-warm-700 dark:text-warm-300";
+const kicker = "font-ui text-caption font-bold uppercase tracking-wider text-brand-wine-text dark:text-brand-rose";
+const jump = [
+  ["verdict", t(locale, "dateSpot.jump.verdict")],
+  ["good-for", t(locale, "dateSpot.jump.goodFor")],
+  ["room", t(locale, "dateSpot.jump.room")],
+  ...(lead ? [["meet", t(locale, isBar ? "dateSpot.jump.meetBartender" : "dateSpot.jump.meet")]] : []),
+  ["drinks", t(locale, "dateSpot.jump.drinks")],
+  ...(dishes.length ? [["order", t(locale, isBar ? "dateSpot.jump.eat" : "dateSpot.jump.order")]] : []),
+  ["cost", t(locale, "dateSpot.jump.cost")],
+  ["note", t(locale, "dateSpot.jump.note")],
+  ...(nightPicks.length ? [["night", t(locale, "dateSpot.jump.night")]] : []),
+  ...(recipe ? [["at-home", t(locale, isBar ? "dateSpot.jump.atHomeBartender" : "dateSpot.jump.atHome")]] : []),
+  ["before-you-book", isBar ? t(locale, "dateSpot.h.beforeYouGo") : t(locale, "dateSpot.jump.faq")],
+];
+---
+<BaseLayout
+  title={copy.metaTitle}
+  description={copy.metaDescription}
+  canonical={path}
+  alternatePath={reviewPath(spot, other)}
+  ogImage={spot.image.src}
+  ogType="article"
+  publishDate={new Date(`${spot.freshness.published}T12:00:00`)}
+  updatedDate={new Date(`${spot.freshness.lastChecked}T12:00:00`)}
+>
+  <VenueReviewSchema slot="head" spot={spot} locale={locale} lead={lead} />
+  <article class="mx-auto max-w-content px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`} data-spot-type={spot.spotType}>
+    <Breadcrumbs locale={locale} items={[
+      { label: t(locale, "nav.venueReviews"), href: locale === "fr" ? "/fr/critiques/" : "/en/reviews/" },
+      { label: neighbourhood, href: neighbourhoodPath(neighbourhood, locale) },
+      { label: name },
+    ]} />
+
+    <div class="mt-6 grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1fr)_20rem]">
+      <div class="min-w-0 space-y-14">
+        <header>
+          <p class={kicker}>{t(locale, "dateSpot.review")} · {t(locale, `dateSpot.spotType.${spot.spotType}`)}{"cuisine" in copy && ` · ${copy.cuisine}`}</p>
+          <h1 class="mt-3 font-heading text-4xl italic text-warm-900 dark:text-warm-100 sm:text-display">{name}<span class="text-warm-500 dark:text-warm-400">, {neighbourhood}</span></h1>
+          <p class="mt-5 max-w-prose font-body text-body-lg text-warm-700 dark:text-warm-300">
+            {lead && copy.opening.includes(lead.name)
+              ? <>{copy.opening.slice(0, copy.opening.indexOf(lead.name))}<a href="#meet" class="text-brand-wine-text underline dark:text-brand-rose">{lead.name}</a>{copy.opening.slice(copy.opening.indexOf(lead.name) + lead.name.length)}</>
+              : copy.opening}
+          </p>
+          <p class="mt-4 font-ui text-body-sm text-warm-500 dark:text-warm-400">
+            {t(locale, "dateSpot.by")} {spot.reporterByline} · {tf(locale, "dateSpot.published", { date: fullDate(spot.freshness.published) })} · {tf(locale, "dateSpot.checked", { date: monthYear(spot.freshness.lastChecked) })}
+          </p>
+          <figure class="mt-8">
+            <img src={spot.image.src} width={spot.image.width} height={spot.image.height} alt={copy.imageAlt} class="max-h-[460px] w-full rounded-2xl object-cover" loading="eager" fetchpriority="high" />
+            <figcaption class="mt-2 font-ui text-caption text-warm-500 dark:text-warm-400">{copy.imageCaption ?? copy.imageCredit}</figcaption>
+          </figure>
+        </header>
+
+        <section id="verdict" aria-labelledby="verdict-title" class:list={["scroll-mt-20 border-l-4 p-6", spot.reviewVerdict === "pass" ? "border-warm-400 bg-warm-100 dark:bg-warm-900" : "border-brand-wine bg-warm-50 dark:border-brand-rose dark:bg-warm-900"]}>
+          <h2 id="verdict-title" class="mb-3 font-ui text-body-sm font-semibold text-warm-600 dark:text-warm-400">{tf(locale, "dateSpot.h.verdict", { name })}</h2>
+          <VerdictBadge verdict={spot.reviewVerdict} locale={locale} />
+          <p class="mt-4 font-heading text-heading-3 text-warm-900 dark:text-warm-100">{copy.verdictHeadline}</p>
+          <div class={`mt-3 space-y-4 ${body}`}><Paragraphs text={copy.verdictReason} /></div>
+        </section>
+
+        <EssentialsCard spot={spot} locale={locale} id="essentials-title-mobile" class="lg:hidden" />
+
+        <section id="good-for" aria-labelledby="good-for-title">
+          <h2 id="good-for-title" class={h2}>{t(locale, "dateSpot.h.goodFor")}</h2>
+          <ul class="mt-5 divide-y divide-warm-200 border-y border-warm-200 dark:divide-warm-700 dark:border-warm-700">
+            {copy.goodFor.map((signal) => (
+              <li class="flex gap-4 py-4">
+                <SignalIcon assessment={signal.assessment} />
+                <div class="min-w-0 flex-1 sm:flex sm:gap-4">
+                <div class="font-ui sm:w-44 sm:shrink-0">
+                  <p class="font-semibold text-warm-900 dark:text-warm-100">{t(locale, `dateSpot.occasion.${signal.occasion}`)}</p>
+                  <p class="text-body-sm font-semibold text-brand-wine-text dark:text-brand-rose">{t(locale, `dateSpot.assessment.${signal.assessment}`)}</p>
+                </div>
+                <p class="mt-1 font-body text-warm-700 dark:text-warm-300 sm:mt-0">{signal.reason}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="room" aria-labelledby="room-title" class="scroll-mt-20">
+          <h2 id="room-title" class={h2}>{t(locale, "dateSpot.h.room")}</h2>
+          {copy.roomPhoto && <SpotPhoto photos={spot.photos} reference={copy.roomPhoto} locale={locale} class="mt-5" />}
+          <div class={`mt-5 space-y-4 ${body}`}><Paragraphs text={copy.room} /></div>
+        </section>
+
+        {lead && <section id="meet" aria-labelledby="meet-title" class="scroll-mt-20">
+          <h2 id="meet-title" class={h2}>{t(locale, isBar ? "dateSpot.h.meetBartender" : "dateSpot.h.meetChef")}</h2>
+          <div class="mt-5 grid gap-6 sm:grid-cols-[12rem_minmax(0,1fr)]">
+            {lead.portrait && <SpotPhoto photos={spot.photos} reference={lead.portrait} locale={locale} />}
+            <div class:list={["space-y-4", !lead.portrait && "sm:col-span-2"]}>
+              <p class="font-ui font-semibold text-warm-900 dark:text-warm-100">{lead.name} · <span class="font-normal text-warm-600 dark:text-warm-400">{lead.role}</span></p>
+              <div class={`space-y-4 ${body}`}><Paragraphs text={lead.background} /></div>
+            </div>
+          </div>
+          {lead.quote && <blockquote class="my-6 border-l-4 border-brand-rose pl-5 font-heading text-heading-3 italic text-warm-900 dark:text-warm-100">“{lead.quote}”</blockquote>}
+          <div class={`space-y-4 ${body}`}><Paragraphs text={lead.approach} /></div>
+          <div class="mt-4 flex flex-col gap-2 font-ui text-body-sm font-semibold">
+            {recipe && <a href={recipeCardPath(recipeCopy!.slug, locale)} class="text-brand-wine-text underline dark:text-brand-rose">{tf(locale, "dateSpot.chefRecipeCard", { name: lead.name })}</a>}
+            {profile && <a href={profilePath(profile.locales[copyLocale(locale)].slug, locale)} class="text-brand-wine-text underline dark:text-brand-rose">{tf(locale, "dateSpot.readProfile", { name: lead.name })}</a>}
+          </div>
+        </section>}
+
+        <section id="drinks" aria-labelledby="drinks-title" class="scroll-mt-20">
+          <h2 id="drinks-title" class={h2}>{tf(locale, "dateSpot.h.drinks", { name })}</h2>
+          <div class={`mt-4 space-y-4 ${body}`}><Paragraphs text={copy.drinks.intro} /></div>
+          <div class="mt-6 grid gap-4 sm:grid-cols-3">
+            {copy.drinks.picks.map((pick) => (
+              <div class="border border-warm-200 p-4 dark:border-warm-700">
+                <p class={kicker}>{t(locale, `dateSpot.drinkMoment.${pick.moment}`)}</p>
+                <h3 class="mt-2 font-heading text-lg text-warm-900 dark:text-warm-100">{pick.name}</h3>
+                <p class="mt-1 font-body text-body-sm text-warm-700 dark:text-warm-300">{pick.note}</p>
+              </div>
+            ))}
+          </div>
+          <div class={`mt-6 space-y-4 ${body}`}><Paragraphs text={copy.drinks.list} /></div>
+        </section>
+
+        {dishes.length > 0 && <section id="order" aria-labelledby="order-title" class="scroll-mt-20">
+          <h2 id="order-title" class={h2}>{tf(locale, isBar ? "dateSpot.h.eat" : "dateSpot.h.order", { name })}</h2>
+          {whatToEat?.intro && <div class={`mt-4 space-y-4 ${body}`}><Paragraphs text={whatToEat.intro} /></div>}
+          {(whatToOrder?.waitersChoice || whatToOrder?.setMenu) && <div class="mt-5 space-y-4 bg-warm-50 p-6 dark:bg-warm-900">
+            {whatToOrder.waitersChoice && <div>
+              <h3 class="font-heading text-heading-3 text-warm-900 dark:text-warm-100">{t(locale, "dateSpot.waitersChoice")}</h3>
+              <p class={`mt-2 ${body}`}>{whatToOrder.waitersChoice.recommendation}</p>
+              <p class={`mt-2 ${body}`}>{whatToOrder.waitersChoice.outcome}</p>
+            </div>}
+            {whatToOrder.setMenu && <div class="border-t border-warm-200 pt-4 dark:border-warm-700">
+              <p class={kicker}>{t(locale, "dateSpot.setMenu")}</p>
+              <p class="mt-2 font-ui font-semibold text-warm-900 dark:text-warm-100">{whatToOrder.setMenu.name} · {tf(locale, "dateSpot.courses", { count: whatToOrder.setMenu.courses })} · {whatToOrder.setMenu.pricePerPerson} {t(locale, "dateSpot.perPerson")}</p>
+              <p class={`mt-2 ${body}`}>{whatToOrder.setMenu.note}</p>
+              <p class="mt-3"><span class="bg-brand-wine px-3 py-1.5 font-ui text-caption font-bold uppercase tracking-wider text-white dark:bg-brand-rose dark:text-warm-950">{t(locale, `dateSpot.setMenuAdvice.${whatToOrder.setMenu.advice}`)}</span></p>
+            </div>}
+          </div>}
+          {whatToOrder?.strategy && <div class={`mt-5 space-y-4 ${body}`}><Paragraphs text={whatToOrder.strategy} /></div>}
+          <div class="mt-6 space-y-5">
+            {dishes.map((dish) => (
+              <div class="grid gap-4 border border-warm-200 p-4 dark:border-warm-700 sm:grid-cols-[10rem_minmax(0,1fr)]">
+                {dish.photo ? <SpotPhoto photos={spot.photos} reference={dish.photo} locale={locale} /> : null}
+                <div class:list={[!dish.photo && "sm:col-span-2"]}>
+                  <div class="flex flex-wrap items-center gap-3">
+                    <h3 class="font-heading text-heading-3 text-warm-900 dark:text-warm-100">{dish.name}</h3>
+                    <span data-dish-tag={dish.tag} class:list={[
+                      "px-2.5 py-1 font-ui text-caption font-bold uppercase tracking-wider",
+                      dish.tag === "order-this" && "bg-brand-wine text-white dark:bg-brand-rose dark:text-warm-950",
+                      dish.tag === "worth-it" && "border-[1.5px] border-brand-wine text-brand-wine-text dark:border-brand-rose dark:text-brand-rose",
+                      dish.tag === "skip" && "border-[1.5px] border-warm-400 text-warm-600 dark:text-warm-300",
+                    ]}>{t(locale, `dateSpot.dishTag.${dish.tag}`)}</span>
+                  </div>
+                  <p class="mt-2 font-body text-warm-700 dark:text-warm-300">{dish.note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>}
+
+        <section id="cost" aria-labelledby="cost-title" class="scroll-mt-20">
+          <h2 id="cost-title" class={h2}>{tf(locale, isBar ? "dateSpot.h.costBar" : "dateSpot.h.costRestaurant", { name })}</h2>
+          <div class={`mt-4 space-y-4 ${body}`}><Paragraphs text={copy.realCost.intro} /></div>
+          <dl class="mt-5 divide-y divide-warm-200 border-y border-warm-200 font-ui dark:divide-warm-700 dark:border-warm-700">
+            {copy.realCost.lines.map((line) => <div class="flex justify-between gap-4 py-3"><dt class="text-warm-700 dark:text-warm-300">{line.item}</dt><dd class="text-warm-900 dark:text-warm-100">{line.amount}</dd></div>)}
+            <div class="flex justify-between gap-4 py-3 font-semibold"><dt class="text-warm-900 dark:text-warm-100">{copy.realCost.total.label}</dt><dd class="text-warm-900 dark:text-warm-100">{copy.realCost.total.amount}</dd></div>
+          </dl>
+          {copy.realCost.howToSpendLess && <div class={`mt-5 space-y-4 ${body}`}><Paragraphs text={copy.realCost.howToSpendLess} /></div>}
+        </section>
+
+        <section id="note" aria-labelledby="note-title" class="scroll-mt-20 border-l-4 border-brand-wine pl-6 dark:border-brand-rose">
+          <h2 id="note-title" class={h2}>{tf(locale, "dateSpot.h.note", { name })}</h2>
+          <p class="mt-2 font-ui text-body-sm text-warm-500 dark:text-warm-400">
+            {copy.reportersNote.byline} · {copy.reportersNote.visits === 1 ? t(locale, "dateSpot.noteVisit") : tf(locale, "dateSpot.noteVisits", { count: copy.reportersNote.visits })}, {monthYear(spot.freshness.visited)} · {t(locale, `dateSpot.payment.${spot.payment}`)}
+          </p>
+          <p class="mt-4 font-caveat text-2xl normal-case text-brand-wine-text dark:text-brand-rose">{t(locale, "dateSpot.noteKicker")}</p>
+          <div class={`mt-3 space-y-4 italic ${body}`}><Paragraphs text={copy.reportersNote.detail} /><Paragraphs text={copy.reportersNote.caveat} /></div>
+          {copy.materialUpdates.map((update) => (
+            <div class="mt-5 border-t border-warm-200 pt-4 dark:border-warm-700">
+              <p class={kicker}>{t(locale, "dateSpot.update")} · <time datetime={update.date}>{monthYear(update.date)}</time></p>
+              <p class={`mt-2 ${body}`}>{update.note}</p>
+            </div>
+          ))}
+          <p class="mt-5 font-caveat text-3xl normal-case text-warm-900 dark:text-warm-100">{copy.reportersNote.byline}</p>
+          <p class="mt-2 font-ui text-body-sm text-warm-600 dark:text-warm-400">{t(locale, "dateSpot.correction")} <a href={`/${locale}/contact/`} class="text-brand-wine-text underline dark:text-brand-rose">{t(locale, "dateSpot.correctionLink")}</a></p>
+        </section>
+
+        {nightPicks.length > 0 && <section id="night" aria-labelledby="night-title" class="scroll-mt-20">
+          <p class={kicker}>{t(locale, isBar ? "dateSpot.nightKickerBar" : "dateSpot.nightKicker")}</p>
+          <h2 id="night-title" class={`mt-2 ${h2}`}>{tf(locale, isBar ? "dateSpot.h.nightBar" : "dateSpot.h.nightRestaurant", { neighbourhood })}</h2>
+          <p class={`mt-3 ${body}`}>{t(locale, "dateSpot.nightIntro")}</p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+            {nightPicks.map(({ pick, target, category, nearby, season }) => (
+              <div class="flex flex-col border border-warm-200 p-5 dark:border-warm-700">
+                <p class={kicker}>{t(locale, `dateSpot.category.${category}`)}</p>
+                <h3 class="mt-2 font-heading text-heading-3"><a href={dateSpotPath(target, locale)} class="text-warm-900 no-underline hover:underline dark:text-warm-100">{target.name}</a></h3>
+                <p class="mt-1 font-ui text-body-sm text-warm-500 dark:text-warm-400">{[t(locale, `dateSpot.timing.${pick.timing}`), tf(locale, "dateSpot.walk", { minutes: pick.walkMinutes }), priceLabel(target.priceRange, locale), season].filter(Boolean).join(" · ")}</p>
+                <p class="mt-3 flex-1 font-body text-warm-700 dark:text-warm-300">{pick.blurb}</p>
+                {nearby > 0 && <a href={`${neighbourhoodPath(neighbourhood, locale)}#${category}`} class="mt-3 font-ui text-body-sm font-semibold text-brand-wine-text underline dark:text-brand-rose">{tf(locale, "dateSpot.moreNearby", { count: nearby })}</a>}
+              </div>
+            ))}
+          </div>
+          <div class="mt-6 flex flex-col gap-3 bg-warm-50 p-6 dark:bg-warm-900 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="font-heading text-lg text-warm-900 dark:text-warm-100">{t(locale, "dateSpot.wholeEvening")}</p>
+              <p class="font-ui text-body-sm text-warm-600 dark:text-warm-400">{tf(locale, "dateSpot.wholeEveningText", { neighbourhood })}</p>
+            </div>
+            <a href={neighbourhoodPath(neighbourhood, locale)} class="font-ui text-body-sm font-semibold text-brand-wine-text underline dark:text-brand-rose">{tf(locale, "dateSpot.openGuide", { neighbourhood })}</a>
+          </div>
+        </section>}
+
+        {recipe && recipeCopy && copy.atHome && <section id="at-home" aria-labelledby="at-home-title" class="scroll-mt-20 grid gap-6 bg-warm-50 p-6 dark:bg-warm-900 sm:grid-cols-[14rem_minmax(0,1fr)]">
+          <img src={recipe.image.src} width={recipe.image.width} height={recipe.image.height} alt={recipeCopy.imageAlt} loading="lazy" class="h-auto w-full rounded-xl object-cover" />
+          <div>
+            <p class={kicker}>{tf(locale, "dateSpot.fromKitchen", { name: recipe.contributor.name })}</p>
+            <h2 id="at-home-title" class={`mt-2 ${h2}`}>{t(locale, isBar ? "dateSpot.h.atHomeBartender" : "dateSpot.h.atHomeChef")}</h2>
+            <div class={`mt-3 space-y-4 ${body}`}><Paragraphs text={copy.atHome.intro} /></div>
+            <a href={recipeCardPath(recipeCopy.slug, locale)} class="mt-4 inline-block font-ui font-semibold text-brand-wine-text underline dark:text-brand-rose">{tf(locale, "dateSpot.getRecipeCard", { name: recipe.contributor.name })}</a>
+          </div>
+        </section>}
+
+        <section id="before-you-book" aria-labelledby="faq-title" class="scroll-mt-20">
+          <h2 id="faq-title" class={h2}>{t(locale, isBar ? "dateSpot.h.beforeYouGo" : "dateSpot.h.beforeYouBook")}</h2>
+          <div class="mt-5 divide-y divide-warm-200 border-y border-warm-200 dark:divide-warm-700 dark:border-warm-700">
+            {copy.beforeYouBook.map((item) => (
+              <div class="py-4">
+                <h3 class="font-ui font-semibold text-warm-900 dark:text-warm-100">{item.question}</h3>
+                <div class="mt-2 space-y-3 font-body text-warm-700 dark:text-warm-300"><Paragraphs text={item.answer} /></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <aside class="min-w-0 space-y-8 lg:sticky lg:top-24 lg:self-start">
+        <EssentialsCard spot={spot} locale={locale} class="hidden lg:block" />
+        <nav aria-labelledby="jump-title" class="hidden lg:block">
+          <p id="jump-title" class="font-ui text-caption font-bold uppercase tracking-wider text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.jump.title")}</p>
+          <ol class="mt-3 space-y-1.5 font-ui text-body-sm">{jump.map(([id, label]) => <li><a href={`#${id}`} class="text-warm-700 no-underline hover:text-brand-wine-text dark:text-warm-300 dark:hover:text-brand-rose">{label}</a></li>)}</ol>
+        </nav>
+        <div>
+          <p class="font-ui text-caption font-bold uppercase tracking-wider text-warm-500 dark:text-warm-400">{tf(locale, "dateSpot.moreIn", { neighbourhood })}</p>
+          <ul class="mt-3 space-y-2 font-ui text-body-sm">
+            {nearbyReviews.map((review) => <li class="flex items-center justify-between gap-3"><a href={dateSpotPath(review, locale)} class="text-warm-800 dark:text-warm-200">{review.name}</a><VerdictBadge verdict={review.reviewVerdict} locale={locale} /></li>)}
+            <li><a href={neighbourhoodPath(neighbourhood, locale)} class="font-semibold text-brand-wine-text underline dark:text-brand-rose">{tf(locale, "dateSpot.eveningIn", { neighbourhood })}</a></li>
+          </ul>
+        </div>
+        <NewsletterSignup locale={locale} compact />
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

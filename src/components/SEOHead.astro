@@ -16,6 +16,8 @@ interface Props {
   /** For content pages: the translation slug to build hreflang for the paired content */
   translationSlug?: string;
   contentType?: "recipe" | "article" | "review" | "date-spot";
+  /** The paired page's path in the other locale; overrides translationSlug/contentType. */
+  alternatePath?: string;
 }
 
 const {
@@ -31,6 +33,7 @@ const {
   updatedDate,
   translationSlug,
   contentType,
+  alternatePath,
 } = Astro.props;
 
 const fullCanonical = canonical.startsWith("http") ? canonical : `${SITE_URL}${canonical}`;
@@ -43,7 +46,9 @@ const fullOgImage = resolvedOgImage.startsWith("http")
 const targetLocale = locale === "en" ? "fr" : "en";
 let alternateUrl: string;
 
-if (translationSlug && contentType) {
+if (alternatePath) {
+  alternateUrl = `${SITE_URL}${alternatePath}`;
+} else if (translationSlug && contentType) {
   let prefix: string;
   if (contentType === "recipe") {
     prefix = targetLocale === "fr" ? "recettes" : "recipes";

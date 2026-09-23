@@ -3,6 +3,7 @@ import { z } from "astro/zod";
 const text = z.string().trim().min(1);
 const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const duration = z.string().regex(/^P(?:\d+D)?T?(?:\d+H)?(?:\d+M)?$/, "Expected an ISO 8601 duration");
+/** @template {z.ZodRawShape} T @param {T} shape */
 const object = (shape) => z.object(shape).strict();
 
 const ingredientGroup = object({ group: text.optional(), items: z.array(text).min(1) });
@@ -40,7 +41,7 @@ export const contributorRecipeSchema = object({
   authorship: object({ recipe: z.literal("human-supplied"), translation: z.literal("human") }),
   published: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   image: object({
-    src: z.string().regex(/^\/images\/contributor-recipes\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/),
+    src: z.union([z.string().regex(/^\/images\/contributor-recipes\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/), z.literal("/images/og-default.jpg")]),
     width: z.number().int().positive(),
     height: z.number().int().positive(),
     provenance: z.literal("dmd-held-photograph"),
@@ -48,6 +49,10 @@ export const contributorRecipeSchema = object({
   locales: object({ en: recipeCopy, "fr-CA": recipeCopy }),
 }).superRefine((recipe, ctx) => {
   const issue = (path, message) => ctx.addIssue({ code: "custom", path, message });
+  // The generic image is reserved for the non-public acceptance fixtures.
+  if (recipe.image.src === "/images/og-default.jpg" && !recipe.id.startsWith("test-only-")) {
+    issue(["image", "src"], "The generic image is reserved for the non-public acceptance fixture");
+  }
   if (recipe.suppliedSource.receivedOn > recipe.published) {
     issue(["suppliedSource", "receivedOn"], "Recipe must be supplied before publication");
   }

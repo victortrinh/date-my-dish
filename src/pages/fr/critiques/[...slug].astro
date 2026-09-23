@@ -1,15 +1,17 @@
 ---
 import { getCollection } from "astro:content";
-import RestaurantDateSpot from "@components/RestaurantDateSpot.astro";
-import { isRestaurantDateSpot } from "@utils/date-spots";
+import VenueReview from "@components/date-spots/VenueReview.astro";
+import { isVenueReview, neighbourhoodSlug } from "@utils/date-spots";
 
+// Restaurant and Bar reviews live under their neighbourhood, so the folder
+// itself becomes the neighbourhood cluster: /fr/critiques/villeray/moccione/.
 export async function getStaticPaths() {
   const spots = await getCollection("dateSpots");
-  return spots.filter(isRestaurantDateSpot).map((spot) => ({
-    params: { slug: spot.data.locales["fr-CA"].slug }, props: { spot },
+  return spots.map(({ data }) => data).filter(isVenueReview).map((spot) => ({
+    params: { slug: `${neighbourhoodSlug(spot.neighbourhood)}/${spot.locales["fr-CA"].slug}` }, props: { spot },
   }));
 }
 
 const { spot } = Astro.props;
 ---
-<RestaurantDateSpot spot={spot} locale="fr" />
+<VenueReview spot={spot} locale="fr" />

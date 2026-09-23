@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const destinations = dateSpotDestinations(await getCollection("dateSpots"), locale);
+const destinations = dateSpotDestinations(await getCollection("dateSpots"), locale, await getCollection("extendedProfiles"));
 const year = new Date().getFullYear();
 
 const aboutPath = locale === "fr" ? "/a-propos/" : "/about/";
