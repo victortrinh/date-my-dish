@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Breadcrumbs from "@components/Breadcrumbs.astro";
+import DateSpotCard from "./DateSpotCard.astro";
+import { t, type Locale } from "@i18n/utils";
+interface Props { spots: CollectionEntry<"dateSpots">[]; locale: Locale; title: string; }
+const { spots, locale, title } = Astro.props;
+const ordered = [...spots].sort((a, b) => b.data.freshness.published.localeCompare(a.data.freshness.published));
+---
+<BaseLayout title={`${title} | Date My Dish`} description={t(locale, "seo.homeDescription")} noindex={spots.length === 0}>
+  <section data-pagefind-ignore={spots.length === 0 || undefined} class="mx-auto max-w-content px-4 py-section">
+    <Breadcrumbs locale={locale} items={[{ label: title }]} />
+    <h1 class="my-8 font-heading text-4xl text-warm-900 dark:text-warm-100">{title}</h1>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{ordered.map((spot) => <DateSpotCard spot={spot} locale={locale} />)}</div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { Locale } from "@i18n/utils";
+import { dateSpotPath } from "@utils/date-spots";
+interface Props { spot: CollectionEntry<"dateSpots">; locale: Locale; }
+const { spot, locale } = Astro.props;
+const copy = spot.data.locales[locale === "fr" ? "fr-CA" : "en"];
+---
+<a class="overflow-hidden rounded-xl bg-white no-underline dark:bg-warm-900" href={dateSpotPath(spot.data, locale)}>
+  <img src={spot.data.image.src} width={spot.data.image.width} height={spot.data.image.height} alt={copy.imageAlt} class="aspect-[16/14] w-full object-cover" loading="lazy" />
+  <div class="p-5">
+    <p class="text-sm text-brand-wine-text dark:text-brand-wine-dark">{spot.data.neighbourhood}, {spot.data.city}</p>
+    <h2 class="font-heading text-xl text-warm-800 dark:text-warm-100">{copy.title}</h2>
+    <p class="mt-2 text-sm text-warm-600 dark:text-warm-400">{copy.opening}</p>
+  </div>
+</a>

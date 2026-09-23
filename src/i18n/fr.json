@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Date My Dish",
-    "tagline": "Recettes romantiques pour des soirées inoubliables"
+    "tagline": "Où sortir, quoi boire, quoi cuisiner pour quelqu’un."
   },
   "nav": {
     "home": "Accueil",
@@ -217,11 +217,11 @@
     "topicFeedbackDesc": "Partagez vos expériences avec les recettes ou suggérez de nouveaux plats."
   },
   "search": {
-    "title": "Rechercher des recettes",
-    "placeholder": "Rechercher une recette...",
+    "title": "Rechercher sur Date My Dish",
+    "placeholder": "Rechercher sur Date My Dish...",
     "noResults": "Aucun résultat trouvé.",
     "overlayTitle": "Rechercher sur Date My Dish",
-    "overlayPlaceholder": "Rechercher des recettes...",
+    "overlayPlaceholder": "Rechercher sur Date My Dish...",
     "close": "Fermer la recherche",
     "tip": "Astuce : Appuyez sur {key} pour rechercher"
   },
@@ -237,8 +237,8 @@
   },
   "seo": {
     "titleTemplate": "%s | Date My Dish",
-    "homeTitle": "Date My Dish - Recettes romantiques, soirées inoubliables",
-    "homeDescription": "Découvrez des recettes simples et délicieuses, préparées avec amour. Des classiques réconfortants aux plats créatifs, trouvez votre prochain coup de cœur.",
+    "homeTitle": "Date My Dish | Montréal Date Spots",
+    "homeDescription": "Date My Dish : les Date Spots à Montréal, restaurants, bars, activités et expériences avec des chefs. Reportages de Victor Vu en français et en anglais.",
     "recipesTitle": "Toutes les recettes | Date My Dish",
     "recipesDescription": "Parcourez la collection de recettes Date My Dish, des soupers de semaine rapides aux plats spectaculaires pour soirée en amoureux, testés avec soin.",
     "articlesTitle": "Articles et guides de cuisine | Date My Dish",
@@ -323,10 +323,10 @@
     "alreadyRated": "Vous avez déjà noté cette recette"
   },
   "newsletter": {
-    "title": "Restez Intimes",
-    "footerTitle": "Restez Intimes",
-    "compactTitle": "Recevez nos recettes par courriel",
-    "description": "Recevez nos recettes pour créer l'ambiance chaque semaine.",
+    "title": "Date My Dish",
+    "footerTitle": "Date My Dish",
+    "compactTitle": "Date My Dish",
+    "description": "Date Spots",
     "emailPlaceholder": "Votre adresse courriel",
     "subscribe": "S'abonner",
     "success": "Vous êtes abonné! Vérifiez votre courriel pour confirmer.",

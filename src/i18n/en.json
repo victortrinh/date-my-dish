@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Date My Dish",
-    "tagline": "Romantic recipes for unforgettable date nights"
+    "tagline": "Where to go, what to drink, what to make for someone."
   },
   "nav": {
     "home": "Home",
@@ -217,11 +217,11 @@
     "topicFeedbackDesc": "Share your recipe experiences or suggest new dishes you'd like to see."
   },
   "search": {
-    "title": "Search Recipes",
-    "placeholder": "Search for a recipe...",
+    "title": "Search Date My Dish",
+    "placeholder": "Search Date My Dish...",
     "noResults": "No results found.",
     "overlayTitle": "Search Date My Dish",
-    "overlayPlaceholder": "Search recipes...",
+    "overlayPlaceholder": "Search Date My Dish...",
     "close": "Close search",
     "tip": "Tip: Press {key} to search from anywhere"
   },
@@ -237,8 +237,8 @@
   },
   "seo": {
     "titleTemplate": "%s | Date My Dish",
-    "homeTitle": "Date My Dish - Romantic Recipes for Unforgettable Date Nights",
-    "homeDescription": "Discover simple, delicious recipes crafted with love. From comforting classics to creative dishes, find your next favorite meal.",
+    "homeTitle": "Date My Dish | Montréal Date Spots",
+    "homeDescription": "Date My Dish is a Montréal-first guide to Date Spots: restaurants, bars, activities and chef-led experiences, with reporting credited to Victor Vu.",
     "recipesTitle": "All Recipes | Date My Dish",
     "recipesDescription": "Browse the full Date My Dish recipe collection, from quick weeknight dinners to date night showstoppers, each tested with honest timings and bold flavors.",
     "articlesTitle": "Cooking Articles & Guides | Date My Dish",
@@ -323,10 +323,10 @@
     "alreadyRated": "You've already rated this recipe"
   },
   "newsletter": {
-    "title": "Stay Intimate",
-    "footerTitle": "Stay Intimate",
-    "compactTitle": "Get Recipes in Your Inbox",
-    "description": "Get the latest mood-setting recipes delivered weekly.",
+    "title": "Date My Dish",
+    "footerTitle": "Date My Dish",
+    "compactTitle": "Date My Dish",
+    "description": "Date Spots",
     "emailPlaceholder": "Your email address",
     "subscribe": "Subscribe",
     "success": "You're subscribed! Check your email to confirm.",

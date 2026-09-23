@@ -1,5 +1,7 @@
 ---
 import { t, getLocalizedPath, type Locale } from "@i18n/utils";
+import { getCollection } from "astro:content";
+import { dateSpotDestinations } from "@utils/date-spots";
 import LanguageToggle from "./LanguageToggle.astro";
 import DarkModeToggle from "./DarkModeToggle.astro";
 
@@ -15,7 +17,7 @@ const currentPath = Astro.url.pathname;
 
 const navLinks = [
   { label: t(locale, "nav.home"), path: "/" },
-  { label: t(locale, "nav.reviews"), path: locale === "fr" ? "/critiques/" : "/reviews/" },
+  ...dateSpotDestinations(await getCollection("dateSpots"), locale),
   { label: t(locale, "nav.about"), path: locale === "fr" ? "/a-propos/" : "/about/" },
   { label: t(locale, "nav.contact"), path: "/contact/" },
 ];
