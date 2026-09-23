@@ -37,9 +37,9 @@
         "beforeYouGo": "[TEST ONLY] booking facts",
         "cuisine": "[TEST ONLY] cuisine",
         "whatToOrder": "[TEST ONLY] ordering guidance",
-        "meetTheChef": { "name": "[TEST ONLY] chef", "role": "[TEST ONLY] role", "text": "[TEST ONLY] chef reporting" },
-        "nearbyPlans": { "title": "[TEST ONLY] plan", "text": "[TEST ONLY] nearby reporting" },
-        "contributorRecipe": { "title": "[TEST ONLY] recipe", "contributorName": "[TEST ONLY] contributor", "source": "[TEST ONLY] source", "text": "[TEST ONLY] recipe context" }
+        "meetChef": { "name": "[TEST ONLY] chef", "role": "[TEST ONLY] role", "reporting": "[TEST ONLY] chef reporting" },
+        "nearbyPlans": [{ "name": "[TEST ONLY] plan", "detail": "[TEST ONLY] nearby reporting", "mapUrl": "https://example.com/test-only-plan" }],
+        "contributorRecipe": { "title": "[TEST ONLY] recipe", "slug": "test-only-recipe", "contributor": "[TEST ONLY] contributor", "source": "[TEST ONLY] source", "testingNotes": "[TEST ONLY] recipe context" }
       },
       "fr-CA": {
         "title": "[TEST ONLY] Restaurant Date Spot FR",
@@ -64,9 +64,9 @@
         "beforeYouGo": "[TEST ONLY] faits de réservation",
         "cuisine": "[TEST ONLY] cuisine",
         "whatToOrder": "[TEST ONLY] commandes",
-        "meetTheChef": { "name": "[TEST ONLY] chef", "role": "[TEST ONLY] rôle", "text": "[TEST ONLY] reportage chef" },
-        "nearbyPlans": { "title": "[TEST ONLY] plan", "text": "[TEST ONLY] reportage à proximité" },
-        "contributorRecipe": { "title": "[TEST ONLY] recette", "contributorName": "[TEST ONLY] collaborateur", "source": "[TEST ONLY] source", "text": "[TEST ONLY] contexte recette" }
+        "meetChef": { "name": "[TEST ONLY] chef", "role": "[TEST ONLY] rôle", "reporting": "[TEST ONLY] reportage chef" },
+        "nearbyPlans": [{ "name": "[TEST ONLY] plan", "detail": "[TEST ONLY] reportage à proximité", "mapUrl": "https://example.com/test-only-plan" }],
+        "contributorRecipe": { "title": "[TEST ONLY] recette", "slug": "test-only-recipe", "contributor": "[TEST ONLY] collaborateur", "source": "[TEST ONLY] source", "testingNotes": "[TEST ONLY] contexte recette" }
       }
     }
   }
