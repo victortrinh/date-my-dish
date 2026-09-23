@@ -61,6 +61,20 @@ test("bar-only editorial modules are optional, attributed, and unavailable to ot
   const partialModule = fixture("bar"); partialModule.locales.en.whatToEat = token; rejects(partialModule);
   const restaurant = fixture(); restaurant.locales.en.meetTheBartender = bar.locales.en.meetTheBartender; rejects(restaurant);
 });
+test("restaurant-only reporting modules are optional, complete, and locale-paired", () => {
+  const spot = fixture();
+  for (const locale of ["en", "fr-CA"]) Object.assign(spot.locales[locale], {
+    meetChef: { name: token, role: token, reporting: token },
+    nearbyPlans: [{ name: token, detail: token, mapUrl: "https://example.com/nearby" }],
+    contributorRecipe: { title: token, slug: "supplied-dish", contributor: token, source: token },
+  });
+  assert.equal(dateSpotSchema.safeParse(spot).success, true);
+  delete spot.locales.en.contributorRecipe.source;
+  rejects(spot);
+  const bar = fixture("bar");
+  bar.locales.en.meetChef = { name: token, role: token, reporting: token };
+  rejects(bar);
+});
 test("scores cannot be silently stripped at any structured level", () => {
   for (const field of ["dateScore", "stars", "rating", "reviewRating", "dateTypeFit", "score"]) {
     for (const path of [[], ["locales", "en"], ["locales", "en", "goodFor", 0]]) {

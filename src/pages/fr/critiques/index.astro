@@ -1,83 +1,12 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import ReviewCard from "@components/ReviewCard.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import { t, getReviewLocalizedPath } from "@i18n/utils";
 import { getCollection } from "astro:content";
-import type { ImageMetadata } from "astro";
-import { SITE_URL } from "@utils/constants";
+import { getReviewLocalizedPath } from "@i18n/utils";
 
-const locale = "fr";
-
-const allReviews = await getCollection("reviews");
-const reviews = allReviews
-  .filter((r) => r.data.lang === "fr")
-  .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+const restaurants = (await getCollection("dateSpots")).filter((spot) => spot.data.spotType === "restaurant");
 ---
-
-<BaseLayout
-  title={t(locale, "seo.reviewsTitle")}
-  description={t(locale, "seo.reviewsDescription")}
->
-  <Fragment slot="head">
-    <script type="application/ld+json" is:inline set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      name: t(locale, "listing.allReviews"),
-      numberOfItems: reviews.length,
-      itemListElement: reviews.map((review, i) => {
-        const slug = review.id.replace(/^fr\//, "");
-        return {
-          "@type": "ListItem",
-          position: i + 1,
-          url: `${SITE_URL}${getReviewLocalizedPath(locale, slug)}`,
-          name: review.data.title,
-        };
-      }),
-    })} />
-  </Fragment>
-
-  <div class="mx-auto max-w-content px-4 py-section-sm">
-    <Breadcrumbs
-      locale={locale}
-      items={[{ label: t(locale, "breadcrumbs.reviews") }]}
-    />
-
-    <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-normal text-warm-900 sm:text-4xl dark:text-warm-100">
-        {t(locale, "listing.allReviews")}
-      </h1>
-      <div class="mb-4 h-1 w-12 rounded-full bg-brand-rose"></div>
-      <p class="text-body-sm text-warm-500 dark:text-warm-400">
-        {reviews.length} {reviews.length === 1 ? "critique" : "critiques"}
-      </p>
-    </div>
-
-    <!-- Review Grid -->
-    {reviews.length > 0 ? (
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate-stagger>
-        {reviews.map((review, i) => {
-          const slug = review.id.replace(/^fr\//, "");
-          return (
-            <ReviewCard
-              title={review.data.title}
-              description={review.data.description}
-              slug={slug}
-              locale={locale}
-              heroImage={review.data.heroImage as ImageMetadata}
-              heroImageAlt={review.data.heroImageAlt}
-              restaurantName={review.data.restaurantName}
-              neighborhood={review.data.neighborhood}
-              cuisine={review.data.cuisine}
-              priceRange={review.data.priceRange}
-              dateScore={review.data.dateScore}
-              loading={i === 0 ? "eager" : "lazy"}
-            />
-          );
-        })}
-      </div>
-    ) : (
-      <p class="text-warm-500 dark:text-warm-400">{t(locale, "listing.noReviewsFound")}</p>
-    )}
-  </div>
+<BaseLayout title="Restaurants Date Spot | Date My Dish" description="Des Restaurant Date Spots rapportés par des humains, avec un verdict clair, des conseils de commande, le vrai coût et les détails de réservation.">
+  <div class="mx-auto max-w-content px-4 py-section-sm"><Breadcrumbs locale="fr" items={[{ label: "Critiques" }]} /><h1 class="font-heading text-4xl text-warm-900 dark:text-warm-100">Restaurants Date Spot</h1>
+  {restaurants.length > 0 ? <div class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{restaurants.map((spot) => { const copy = spot.data.locales["fr-CA"]; return <a class="overflow-hidden rounded-xl bg-white no-underline dark:bg-warm-900" href={getReviewLocalizedPath("fr", copy.slug)}><img src={spot.data.image.src} width={spot.data.image.width} height={spot.data.image.height} alt={copy.imageAlt} class="aspect-[16/14] w-full object-cover" /><div class="p-5"><p class="text-sm text-brand-wine">{spot.data.neighbourhood}</p><h2 class="font-heading text-xl text-warm-800 dark:text-warm-100">{spot.data.name}</h2><p class="mt-2 text-sm text-warm-500">{copy.opening}</p></div></a>; })}</div> : <p class="mt-6 text-warm-500 dark:text-warm-400">Aucun Restaurant Date Spot n’est encore publié.</p>}</div>
 </BaseLayout>
