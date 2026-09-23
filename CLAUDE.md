@@ -45,7 +45,7 @@ This is a single-context repository. See `docs/agents/domain.md`.
 - Named slot: `<slot name="head" />` for injecting schema components into `<head>`
 
 ### Path Aliases (tsconfig.json)
-`@components/*`, `@layouts/*`, `@i18n/*`, `@assets/*`, `@content/*`, `@utils/*`
+`@components/*`, `@layouts/*`, `@i18n/*`, `@assets/*`, `@content/*`, `@utils/*`, `@content-contracts/*`
 
 ### Client-Side JavaScript
 - Vanilla JS only -- no React/Vue/Svelte
@@ -433,5 +433,6 @@ Key gotchas from `docs/solutions/` -- read the full docs for detailed context.
 30. **Taxonomy slug maps must cover every value in content, and EN/FR recipe pairs must use identical canonical tags.** Cuisine/tag pages translate canonical keys to localized slugs via `cuisineSlugMap`/`tagSlugMap` + `cuisines.*`/`tags.*` translations. A `recipeCuisine`/tag value with no map entry renders a raw key (`cuisines.thai`) and produces a 404/redirecting hreflang. Recipes store canonical (English) tags; the slug map localizes the URL. Enforced by `validate-source` (tags) + `validate-build` (rendered keys + hreflang).
 31. **Never link to a `_redirects` source, the bare apex, or a removed feature.** Internal `<a href>`s must point at final 200 URLs. Linking to `/bookmarks/`, `https://datemydish.com` (apex redirects to `/en/`), or any `_redirects` `from` path creates a "links to redirect" issue on every page that includes it. Enforced by `validate-build`.
 32. **Notion fetch requests need a browser `User-Agent` header, not authentication.** `notion-client` sends no `User-Agent` by default when hitting Notion's private `www.notion.so/api/v3/*` endpoints; Cloudflare's edge WAF 403s that request regardless of IP or Notion auth. Confirmed via response headers (`server: cloudflare`, HTML challenge body) that adding a real browser UA string is what fixes it. `createNotionApi()` in `scripts/notion-utils.mjs` sets this via `ofetchOptions.headers`. No `NOTION_TOKEN` or session cookie is needed. Don't reach for auth or IP-migration fixes here again -- check the response headers first.
+33. **`typescript` must stay below v7 (`~6.0.3`), pinned in `package.json` and via `renovate.json`'s `allowedVersions: "<7"` rule.** `@astrojs/check` (the engine behind `npm run check`) declares `peerDependencies.typescript: "^5.0.0 || ^6.0.0"`; TypeScript 7 doesn't expose the programmatic API `astro check` needs, so `npm run check` fails to even start with a TS7 install. Don't reintroduce an `overrides` block that forces `@astrojs/check` onto a newer TypeScript to silence a peer-dep warning -- that's what caused the original breakage. Lift the pin only once a released `@astrojs/check` lists a TS 7 range in its own peer dependencies. `npm run check` also runs in CI (`playwright-pr-check.yml`'s `content-contracts` job) so a regression here fails the PR instead of going unnoticed.
 
 For detailed context on any lesson, see `docs/solutions/`.

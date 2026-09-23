@@ -1,11 +1,11 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import RestaurantDateSpotSchema from "@components/RestaurantDateSpotSchema.astro";
 import { getReviewLocalizedPath, type Locale } from "@i18n/utils";
+import type { RestaurantDateSpotEntry } from "@utils/date-spots";
 
-interface Props { spot: CollectionEntry<"dateSpots">; locale: Locale; }
+interface Props { spot: RestaurantDateSpotEntry; locale: Locale; }
 const { spot, locale } = Astro.props;
 const copy = spot.data.locales[locale === "fr" ? "fr-CA" : "en"];
 const fr = locale === "fr";

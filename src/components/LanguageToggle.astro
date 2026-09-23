@@ -16,7 +16,7 @@ let toggleUrl: string;
 if (translationSlug && contentType) {
   if (contentType === "recipe") {
     toggleUrl = getRecipeLocalizedPath(targetLocale, translationSlug);
-  } else if (contentType === "review" || contentType === "date-spot") {
+  } else if (contentType === "review") {
     toggleUrl = getReviewLocalizedPath(targetLocale, translationSlug);
   } else if (contentType === "date-spot") {
     toggleUrl = getDateSpotLocalizedPath(targetLocale, translationSlug);

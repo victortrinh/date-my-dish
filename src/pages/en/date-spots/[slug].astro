@@ -14,10 +14,10 @@ export async function getStaticPaths() {
 }
 
 const { spot } = Astro.props;
-const copy = spot.locales.en;
-const path = `/en/date-spots/${copy.slug}/`;
+const path = `/en/date-spots/${spot.locales.en.slug}/`;
 const spots = await getCollection("dateSpots");
-const pairings = (copy.pairItWith ?? []).map((slug) => {
+const planningCopy = spot.spotType === "activity" || spot.spotType === "chef-led-experience" ? spot.locales.en : null;
+const pairings = (planningCopy?.pairItWith ?? []).map((slug) => {
   const target = spots.find((candidate) => candidate.data.locales.en.slug === slug);
   if (!target || (target.data.spotType !== "restaurant" && target.data.spotType !== "bar")) {
     throw new Error(`Invalid Activity Date Spot pairing: ${slug}`);
@@ -26,8 +26,8 @@ const pairings = (copy.pairItWith ?? []).map((slug) => {
 });
 ---
 
-{spot.spotType === "bar" && <BaseLayout title={copy.metaTitle} description={copy.metaDescription} canonical={path} translationSlug={spot.locales["fr-CA"].slug} ogType="article" contentType="date-spot">
+{spot.spotType === "bar" && <BaseLayout title={spot.locales.en.metaTitle} description={spot.locales.en.metaDescription} canonical={path} translationSlug={spot.locales["fr-CA"].slug} ogType="article" contentType="date-spot">
   <BarDateSpotSchema slot="head" spot={spot} locale="en" path={path} />
   <BarDateSpot spot={spot} locale="en" />
 </BaseLayout>}
-{(spot.spotType === "activity" || spot.spotType === "chef-led-experience") && <ActivityDateSpotTemplate spot={spot} copy={copy} locale="en" translationSlug={spot.locales["fr-CA"].slug} pairings={pairings} />}
+{(spot.spotType === "activity" || spot.spotType === "chef-led-experience") && <ActivityDateSpotTemplate spot={spot} copy={spot.locales.en} locale="en" translationSlug={spot.locales["fr-CA"].slug} pairings={pairings} />}
