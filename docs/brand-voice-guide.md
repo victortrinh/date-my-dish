@@ -1,6 +1,12 @@
 # Date My Dish: Brand Voice Guide
 
-## Voice Definition
+> **Retired (2026-09-23):** DMD pivoted from self-authored recipes to human-reported Date Spots (see `CONTEXT.md` and ADRs 0001-0005). The sections below describe the legacy recipe-blog voice and are kept for historical MDX prose already published under it; new Date Spot, Venue Review, and Contributor Recipe copy follows the current Editorial Voice instead.
+
+## Current Editorial Voice
+
+DMD writes practical reporting in the publication's editorial "we": confident, plain-language, and grounded in what was actually visited, ordered, or tested. First-person observation is reserved for a signed Reporter's Note credited to Victor Vu. There is no founder-personality voice, no home-cook framing, and no numerical score language; a Review Verdict states a reasoned judgment (`favourite`, `conditional`, `pass`) with a specific reason, never a rating.
+
+## Voice Definition (legacy recipe content)
 
 **"Confident home cook impressing a date. Flirty, romantic, never pretentious."**
 

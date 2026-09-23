@@ -44,7 +44,22 @@ for (const locale of ["en", "fr"]) {
     }
     await page.goto(`/${locale}/${locale === "fr" ? "a-propos" : "about"}/`);
     await expect(page.locator("main")).toContainText("Victor Vu");
+    await expect(page.locator("main")).toContainText(locale === "fr"
+      ? "Date My Dish est un guide montréalais des Date Spots"
+      : "Date My Dish is a Montréal-first guide to Date Spots");
     const schema = await page.locator('script[type="application/ld+json"]').allTextContents();
     expect(schema.join(" ")).not.toMatch(/Home Cook|Recipe Creator|victor-about/);
+  });
+
+  test(`${locale} retired founder portrait images are not served`, async ({ request }) => {
+    for (const image of ["victor-about.webp", "victor-contact.webp", "victor-vu.webp"]) {
+      expect((await request.get(`/images/${image}`)).ok()).toBeFalsy();
+    }
+  });
+
+  test(`${locale} 404 page carries no legacy recipe framing`, async ({ page }) => {
+    const response = await page.goto(`/${locale}/this-page-does-not-exist/`);
+    expect(response?.status()).toBe(404);
+    await expect(page.locator("main, body")).not.toContainText(/recipe|recette|kitchen|cuisine/i);
   });
 }
