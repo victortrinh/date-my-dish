@@ -4,11 +4,13 @@
 // schemas (the same ones astro:content and validate-*.mjs enforce), plus
 // the checks a Zod schema can't express: sign-off attestations, no
 // leftover numeric-rating property on the Notion row, and the dated-update
-// rule for republishing an already-published Date Spot.
+// rule for republishing an already-published Date Spot, the append-only
+// Google rating snapshots, and references into the other collections.
 
 import { dateSpotsSchema } from "../../src/content-contracts/date-spot.mjs";
 import { contributorRecipesSchema } from "../../src/content-contracts/contributor-recipe.mjs";
 import { extendedProfilesSchema } from "../../src/content-contracts/extended-profile.mjs";
+import { checkCrossReferences } from "../../src/content-contracts/cross-references.mjs";
 
 const COLLECTION_SCHEMAS = {
   "date-spot": dateSpotsSchema,
@@ -47,7 +49,7 @@ function coreRecommendationSignature(record) {
   if (record.postType !== "date-spot") return null;
   return JSON.stringify({
     verdict: record.reviewVerdict ?? null,
-    goodFor: record.locales?.en?.goodFor ?? null,
+    goodFor: record.locales?.en?.goodFor ?? record.locales?.en?.whenItWorks ?? null,
     essentials: record.locales?.en?.essentials ?? null,
   });
 }
@@ -81,13 +83,30 @@ export function checkDatedUpdate(record, previousRecord) {
 }
 
 /**
+ * The venue's Google rating is a dated snapshot. A republish may add a new
+ * line but never edits or drops one that was already printed.
+ *
+ * @param {object} record the newly mapped record
+ * @param {object|null} previousRecord the record currently in the collection, if any
+ * @returns {string[]} problems
+ */
+export function checkGoogleReviewsAppendOnly(record, previousRecord) {
+  const previous = previousRecord?.googleReviews ?? [];
+  const next = record.googleReviews ?? [];
+  const kept = previous.every((snapshot, index) => JSON.stringify(snapshot) === JSON.stringify(next[index]));
+  return kept ? [] : ["The Google reviews property changed or dropped an earlier snapshot. Keep every earlier line as it was and add the new snapshot on a new line."];
+}
+
+/**
  * @param {object} record the mapped, unvalidated record
  * @param {object[]} existingCollection the current contents of the collection JSON file
  * @param {(name: string) => string} getProp
  * @param {string[]} schemaPropertyNames every property name on the Notion database
+ * @param {{ spots?: object[], recipes?: object[], profiles?: object[] }} [related] the published
+ *   collections, so links into them can be checked; omitted in unit tests of a single collection
  * @returns {{ ok: true, collection: object[] } | { ok: false, problems: string[] }}
  */
-export function publishGate(record, existingCollection, getProp, schemaPropertyNames) {
+export function publishGate(record, existingCollection, getProp, schemaPropertyNames, related) {
   const problems = [
     ...checkForbiddenProperties(schemaPropertyNames),
     ...checkAttestations(getProp),
@@ -95,6 +114,7 @@ export function publishGate(record, existingCollection, getProp, schemaPropertyN
 
   const previousRecord = existingCollection.find((entry) => entry.id === record.id) ?? null;
   problems.push(...checkDatedUpdate(record, previousRecord));
+  problems.push(...checkGoogleReviewsAppendOnly(record, previousRecord));
 
   if (problems.length > 0) return { ok: false, problems };
 
@@ -109,6 +129,12 @@ export function publishGate(record, existingCollection, getProp, schemaPropertyN
       ok: false,
       problems: result.error.issues.map((issue) => `${issue.path.join(".") || "(root)"}: ${issue.message}`),
     };
+  }
+
+  if (related) {
+    const key = { "date-spot": "spots", "contributor-recipe": "recipes", "extended-profile": "profiles" }[record.postType];
+    const referenceProblems = checkCrossReferences({ spots: [], recipes: [], profiles: [], ...related, [key]: result.data });
+    if (referenceProblems.length > 0) return { ok: false, problems: referenceProblems };
   }
 
   return { ok: true, collection: result.data, mode: previousRecord ? "update" : "publish" };

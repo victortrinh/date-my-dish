@@ -11,7 +11,7 @@ const recipeCopy = object({
   title: text,
   slug,
   metaTitle: text.max(60),
-  metaDescription: text.max(160),
+  metaDescription: text.min(120).max(160),
   originalContext: text,
   sourceNotes: text,
   factNotes: text,

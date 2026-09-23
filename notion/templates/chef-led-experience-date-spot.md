@@ -1,4 +1,4 @@
-# Chef-led Experience Date Spot — Notion Story template
+# Chef-led Experience Date Spot: Notion Story template
 
 See `README.md` in this folder for the general publishing flow, and
 `activity-date-spot.md` for the shared planning-format copy shape. A
@@ -10,18 +10,20 @@ named host.
 Shared properties (see README) plus:
 
 - `Spot Type`: `Chef-led Experience`
+- `Category`: one of the five Date Spot categories (see `activity-date-spot.md`)
 - `Name`, `City`, `Neighbourhood`
 - `Visited`, `Published`, `Last checked`
 - `Payment`: `Paid`, `Hosted`, or `Other`
 - `Map URL`
+- `Verdict`: `A Favourite`, `Depends on the Night`, or `Not Our First Pick`
+- `Price range`: `Free`, `$`, `$$`, `$$$`, or `$$$$`
 - `Host name`
 - `Host role`: `Chef` or `Bartender`
 
-(The same locale-neutral properties as `activity-date-spot.md`, since a
-Chef-led Experience is an Activity that also names its host.)
+Optional: `Instagram`, `Booking URL`, `Google reviews`.
 
 ## Locale copy shape
 
-Identical to `activity-date-spot.md`'s planning copy shape (`whatItIs`,
-`howToDoItWell`, `goodFor`, `essentials`, and so on). The host is a
+Identical to `activity-date-spot.md`'s planning copy shape (`whenItWorks`,
+`whatItIs`, `howToDoItWell`, `essentials`, and so on). The host is a
 database-level property, not part of the locale copy.

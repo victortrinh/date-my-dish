@@ -28,6 +28,14 @@ const VERDICT_LOOKUP = {
 };
 
 const PAYMENT_LOOKUP = { paid: "paid", hosted: "hosted", other: "other" };
+const PRICE_RANGE_LOOKUP = { free: "free", $: "$", $$: "$$", $$$: "$$$", $$$$: "$$$$" };
+const CATEGORY_LOOKUP = {
+  "activities and sports": "activities-sports",
+  "arts and culture": "arts-culture",
+  "games and entertainment": "games-entertainment",
+  "nature and scenic": "nature-scenic",
+  "social and romantic": "social-romantic",
+};
 const ROLE_LOOKUP = { chef: "chef", bartender: "bartender" };
 
 function normalize(value, lookup, label) {
@@ -48,14 +56,32 @@ export function normalizeSpotType(value) {
   return normalize(value, SPOT_TYPE_LOOKUP, "Spot Type");
 }
 
+const blank = (value) => String(value ?? "").trim() === "";
+
+/**
+ * The "Google reviews" property holds one snapshot per line, oldest first:
+ * "4.6 | 312 | 2026-09-18" (average, review count, date recorded). New
+ * snapshots are added as new lines; old lines are never edited.
+ * @param {string} value
+ */
+export function parseGoogleReviews(value) {
+  return String(value).trim().split(/\n+/).map((line) => {
+    const match = line.trim().match(/^(\d(?:\.\d)?)\s*[|·]\s*(\d+)\s*[|·]\s*(\d{4}-\d{2}-\d{2})$/);
+    if (!match) throw new MappingError(`Unrecognized Google reviews line: "${line.trim()}". Use "4.6 | 312 | 2026-09-18".`);
+    return { average: Number(match[1]), count: Number(match[2]), asOf: match[3] };
+  });
+}
+
 /**
  * @param {(name: string) => string} getProp reads a shared database property by name
  * @param {string} postType one of "date-spot" | "contributor-recipe" | "extended-profile"
  * @param {{en: object, "fr-CA": object}} locales parsed Locale Pair copy
  * @param {{src: string, width: number, height: number}} image already-processed Editorial Image
+ * @param {Record<string, {src: string, width: number, height: number, credit?: string}>} [photos]
+ *   already-processed additional Date Spot photos, keyed as the copy references them
  * @returns {object} an unvalidated record shaped for the matching content contract
  */
-export function storyToRecord(getProp, postType, locales, image) {
+export function storyToRecord(getProp, postType, locales, image, photos = {}) {
   const id = getProp("ID").trim();
   const image_ = { ...image, provenance: "dmd-held-photograph" };
 
@@ -68,7 +94,7 @@ export function storyToRecord(getProp, postType, locales, image) {
       name: getProp("Name"),
       city: getProp("City"),
       neighbourhood: getProp("Neighbourhood"),
-      reporterByline: "Victor Vu",
+      reporterByline: "Victor",
       authorship: { reporting: "human", translation: "human" },
       freshness: {
         visited: getProp("Visited"),
@@ -78,11 +104,19 @@ export function storyToRecord(getProp, postType, locales, image) {
       image: image_,
       mapUrl: getProp("Map URL"),
       payment: normalize(getProp("Payment"), PAYMENT_LOOKUP, "Payment"),
+      priceRange: normalize(getProp("Price range"), PRICE_RANGE_LOOKUP, "Price range"),
+      reviewVerdict: normalize(getProp("Verdict"), VERDICT_LOOKUP, "Verdict"),
       locales,
     };
-    if (spotType === "restaurant" || spotType === "bar") {
-      record.reviewVerdict = normalize(getProp("Verdict"), VERDICT_LOOKUP, "Verdict");
+    if (Object.keys(photos).length > 0) {
+      record.photos = Object.fromEntries(Object.entries(photos).map(([key, photo]) => [key, { ...photo, provenance: "dmd-held-photograph" }]));
     }
+    if (spotType !== "restaurant" && !(spotType === "bar" && blank(getProp("Category")))) {
+      record.category = normalize(getProp("Category"), CATEGORY_LOOKUP, "Category");
+    }
+    if (!blank(getProp("Instagram"))) record.instagram = getProp("Instagram").trim().replace(/^@/, "");
+    if (!blank(getProp("Booking URL"))) record.bookingUrl = getProp("Booking URL").trim();
+    if (!blank(getProp("Google reviews"))) record.googleReviews = parseGoogleReviews(getProp("Google reviews"));
     if (spotType === "chef-led-experience") {
       record.host = {
         name: getProp("Host name"),
@@ -124,6 +158,7 @@ export function storyToRecord(getProp, postType, locales, image) {
         neighbourhood: getProp("Subject neighbourhood"),
       },
       companionDateSpot: getProp("Companion Date Spot"),
+      interviewer: "Victor",
       originalInterview: {
         conductedOn: getProp("Interview date"),
         source: getProp("Interview source"),
