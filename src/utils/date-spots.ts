@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import { getDateSpotLocalizedPath, getReviewLocalizedPath, type Locale } from "@i18n/utils";
+import { getDateSpotLocalizedPath, getReviewLocalizedPath, t, type Locale } from "@i18n/utils";
 
 type DateSpot = CollectionEntry<"dateSpots">["data"];
 
@@ -23,9 +23,9 @@ export function dateSpotPath(spot: DateSpot, locale: Locale): string {
 
 export function dateSpotDestinations(spots: CollectionEntry<"dateSpots">[], locale: Locale) {
   return [
-    ...(spots.length ? [{ label: "Date Spots", path: locale === "fr" ? "/lieux/" : "/date-spots/" }] : []),
+    ...(spots.length ? [{ label: t(locale, "nav.dateSpots"), path: locale === "fr" ? "/lieux/" : "/date-spots/" }] : []),
     ...(spots.some(({ data }) => isVenueReview(data))
-      ? [{ label: locale === "fr" ? "Restaurants et bars" : "Restaurants & Bars", path: locale === "fr" ? "/critiques/" : "/reviews/" }]
+      ? [{ label: t(locale, "nav.venueReviews"), path: locale === "fr" ? "/critiques/" : "/reviews/" }]
       : []),
   ];
 }

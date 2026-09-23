@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { t } from "@i18n/utils";
 ---
 
 <BaseLayout
@@ -10,33 +11,24 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   <div class="mx-auto flex max-w-narrow flex-col items-center px-4 py-section text-center">
     <img src="/favicon.svg" class="mb-6 h-24 w-24" alt="" width="96" height="96" />
     <h1 class="mb-4 font-heading text-heading-1 font-normal text-warm-900 sm:text-4xl dark:text-warm-100">
-      Page Not Found
+      {t("en", "notFound.title")}
     </h1>
     <p class="mb-8 text-body-lg text-warm-600 dark:text-warm-400">
-      This recipe seems to have gone missing from our kitchen. Let's get you back on track.
+      {t("en", "notFound.body")}
     </p>
     <div class="flex flex-wrap justify-center gap-4">
       <a
         href="/en/"
         class="rounded-lg bg-brand-wine px-6 py-3 font-ui text-body-sm font-semibold text-white no-underline shadow-sm transition-colors hover:bg-brand-wine dark:text-white dark:hover:text-white"
       >
-        Home (English)
+        {t("en", "notFound.home")} (English)
       </a>
       <a
         href="/fr/"
         lang="fr"
         class="rounded-lg border border-brand-wine px-6 py-3 font-ui text-body-sm font-semibold text-brand-wine-text no-underline transition-colors hover:bg-warm-50 dark:hover:bg-warm-800/50"
       >
-        Accueil (Français)
-      </a>
-    </div>
-    <div class="mt-8 flex flex-wrap justify-center gap-4 text-body-sm">
-      <a href="/en/" class="text-brand-wine-text hover:text-brand-rose">
-        Browse Recipes
-      </a>
-      <span class="text-warm-300 dark:text-warm-500">|</span>
-      <a href="/fr/" lang="fr" class="text-brand-wine-text hover:text-brand-rose">
-        Accueil
+        {t("fr", "notFound.home")} (Français)
       </a>
     </div>
   </div>

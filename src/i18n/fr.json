@@ -5,14 +5,13 @@
   },
   "nav": {
     "home": "Accueil",
-    "recipes": "Recettes",
     "about": "À propos",
     "contact": "Contact",
-    "articles": "Articles",
-    "reviews": "Critiques",
     "search": "Recherche",
     "toggleMenu": "Basculer le menu",
-    "breadcrumb": "Fil d'Ariane"
+    "breadcrumb": "Fil d'Ariane",
+    "dateSpots": "Date Spots",
+    "venueReviews": "Restaurants et bars"
   },
   "recipe": {
     "jumpToRecipe": "Aller à la recette",
@@ -131,23 +130,6 @@
     "wok": "Wok",
     "zucchini": "Courgette"
   },
-  "home": {
-    "heroHeadline": "Cuisiner, c'est le nouveau",
-    "heroHeadlineAccent": "préliminaire",
-    "heroDescription": "Des recettes pour créer l'ambiance, alimenter la conversation et nourrir l'âme.",
-    "exploreRecipes": "Explorer les recettes",
-    "viewAllRecipes": "Voir toutes les recettes",
-    "freshFromKitchen": "Succombez à ces tentations",
-    "ourFavorites": "Nos coups de cœur",
-    "readMore": "Lire la suite",
-    "culinaryNarratives": "Histoires culinaires",
-    "theJournal": "Le journal du dimanche",
-    "viewAllArticles": "Voir tous les articles",
-    "readArticle": "Lire l'article",
-    "viewAllReviews": "Voir toutes les critiques",
-    "latestReviews": "Où emmener votre date",
-    "readReview": "Lire la critique"
-  },
   "article": {
     "readTime": "min de lecture",
     "relatedRecipes": "Recettes associées",
@@ -178,43 +160,13 @@
     "noReviewsFound": "Aucune critique trouvée."
   },
   "about": {
-    "title": "À propos de Victor",
     "pageTitle": "À propos",
-    "subtitle": "La philosophie",
-    "whyHeading": "Pourquoi « Date My Dish »?",
-    "howHeading": "Comment je développe mes recettes",
-    "whatHeading": "Ce que vous trouverez ici",
-    "montrealHeading": "Une histoire culinaire montréalaise",
-    "testing": "3x tests minimum",
-    "timings": "100% temps honnêtes",
-    "card1Title": "Collections romantiques",
-    "card1Desc": "Des collections de recettes de l'entrée au dessert, testées en cuisine maison.",
-    "card2Title": "Techniques culinaires",
-    "card2Desc": "Des articles sur la science alimentaire pour aiguiser vos talents.",
-    "card3Title": "Conseils planification",
-    "card3Desc": "Planification de soirées, accords vins et conseils d'ambiance pour la soirée parfaite.",
-    "card4Title": "Inspiration saisonnière",
-    "card4Desc": "Cuisines italienne, asiatique, méditerranéenne et fusion pour varier les plaisirs.",
-    "card5Title": "Instructions honnêtes",
-    "card5Desc": "Étape par étape avec des temps honnêtes issus de vrais tests en cuisine.",
-    "card6Title": "Recettes bilingues",
-    "card6Desc": "Chaque recette disponible en français et en anglais."
+    "market": "Montréal · Date Spots",
+    "intro": "Date My Dish est un guide montréalais des Date Spots : restaurants, bars, activités et expériences avec des chefs qui valent une soirée. On y va, on paie notre part sauf indication contraire, et on vous dit franchement si l'endroit convient au rendez-vous que vous avez en tête."
   },
   "contact": {
     "title": "Contact",
-    "pageTitle": "Nous joindre",
-    "heroQuote": "Cuisiner, c'est rendre l'amour visible.",
-    "howToConnect": "Comment me joindre",
-    "howToConnectDesc": "La meilleure façon de me contacter est par message privé sur Instagram. Je réponds habituellement dans les 24 à 48 heures!",
-    "whatToReachOut": "À quel sujet me contacter",
-    "topicRecipesTitle": "Questions sur les recettes",
-    "topicRecipesDesc": "Substitutions d'ingrédients, techniques, modifications ou dépannage.",
-    "topicDateNightTitle": "Planification de soirées",
-    "topicDateNightDesc": "Suggestions de menus, accords vins, conseils d'ambiance.",
-    "topicCollabTitle": "Collaboration & médias",
-    "topicCollabDesc": "Partenariats, presse, entrevues et reportages.",
-    "topicFeedbackTitle": "Commentaires & suggestions",
-    "topicFeedbackDesc": "Partagez vos expériences avec les recettes ou suggérez de nouveaux plats."
+    "pageTitle": "Nous joindre"
   },
   "search": {
     "title": "Rechercher sur Date My Dish",
@@ -227,24 +179,15 @@
   },
   "footer": {
     "copyright": "Tous droits réservés.",
-    "madeWith": "Fait avec amour à Montréal",
     "navigation": "Navigation",
-    "legal": "Légal",
     "legalNav": "Navigation légale",
     "nav": "Navigation du pied de page",
     "instagramLabel": "Suivez-nous sur Instagram",
     "pinterestLabel": "Suivez-nous sur Pinterest"
   },
   "seo": {
-    "titleTemplate": "%s | Date My Dish",
     "homeTitle": "Date My Dish | Montréal Date Spots",
-    "homeDescription": "Date My Dish : les Date Spots à Montréal, restaurants, bars, activités et expériences avec des chefs. Reportages de Victor Vu en français et en anglais.",
-    "recipesTitle": "Toutes les recettes | Date My Dish",
-    "recipesDescription": "Parcourez la collection de recettes Date My Dish, des soupers de semaine rapides aux plats spectaculaires pour soirée en amoureux, testés avec soin.",
-    "articlesTitle": "Articles et guides de cuisine | Date My Dish",
-    "articlesDescription": "Guides de cuisine experts, vulgarisation de la science alimentaire et astuces de Date My Dish pour aiguiser votre technique et sublimer vos soupers en amoureux.",
-    "reviewsTitle": "Critiques de restaurants | Date My Dish",
-    "reviewsDescription": "Critiques honnêtes de restaurants pour vos soirées en amoureux à Montréal. On évalue l'ambiance, la bouffe et si ça vaut la peine de se mettre chic."
+    "homeDescription": "Date My Dish : les Date Spots à Montréal, restaurants, bars, activités et expériences avec des chefs. Reportages de Victor Vu en français et en anglais."
   },
   "breadcrumbs": {
     "home": "Accueil",
@@ -294,11 +237,8 @@
     "title": "Table des matières"
   },
   "author": {
-    "bioShort": "Victor est un cuisinier montréalais avec une décennie d'expérience en recettes pour soirées en amoureux. Chaque plat est testé au moins trois fois avant publication.",
     "by": "Par",
-    "recipeAuthor": "Auteur de recettes",
-    "aboutLink": "À propos de l'auteur",
-    "photoAlt": "Victor, créateur de Date My Dish"
+    "aboutLink": "À propos de l'auteur"
   },
   "privacy": {
     "title": "Politique de confidentialité",
@@ -343,5 +283,10 @@
     "disclosure": "En tant que partenaire Amazon, je touche une commission sur les achats admissibles. Les liens de produits sur cette page sont des liens affiliés.",
     "viewOnAmazon": "Voir sur Amazon",
     "recommendedProducts": "Produits recommandés"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "body": "Ce Date Spot semble avoir déménagé ou n'a jamais existé. Revenons sur la bonne voie.",
+    "home": "Accueil"
   }
 }
