@@ -1,12 +1,7 @@
 ---
-import BaseLayout from "@layouts/BaseLayout.astro";
-import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { getCollection } from "astro:content";
-import { getReviewLocalizedPath } from "@i18n/utils";
-
-const restaurants = (await getCollection("dateSpots")).filter((spot) => spot.data.spotType === "restaurant");
+import DateSpotListing from "@components/DateSpotListing.astro";
+import { isVenueReview } from "@utils/date-spots";
+const spots = (await getCollection("dateSpots")).filter(({ data }) => isVenueReview(data));
 ---
-<BaseLayout title="Restaurant Date Spots | Date My Dish" description="Human-reported restaurant Date Spots for planning a date, with a clear verdict, occasion-specific fit, ordering guidance, real cost, and booking facts.">
-  <div class="mx-auto max-w-content px-4 py-section-sm"><Breadcrumbs locale="en" items={[{ label: "Reviews" }]} /><h1 class="font-heading text-4xl text-warm-900 dark:text-warm-100">Restaurant Date Spots</h1>
-  {restaurants.length > 0 ? <div class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{restaurants.map((spot) => { const copy = spot.data.locales.en; return <a class="overflow-hidden rounded-xl bg-white no-underline dark:bg-warm-900" href={getReviewLocalizedPath("en", copy.slug)}><img src={spot.data.image.src} width={spot.data.image.width} height={spot.data.image.height} alt={copy.imageAlt} class="aspect-[16/14] w-full object-cover" /><div class="p-5"><p class="text-sm text-brand-wine">{spot.data.neighbourhood}</p><h2 class="font-heading text-xl text-warm-800 dark:text-warm-100">{spot.data.name}</h2><p class="mt-2 text-sm text-warm-500">{copy.opening}</p></div></a>; })}</div> : <p class="mt-6 text-warm-500 dark:text-warm-400">No restaurant Date Spots are published yet.</p>}</div>
-</BaseLayout>
+<DateSpotListing spots={spots} locale="en" title="Restaurants & Bars" />

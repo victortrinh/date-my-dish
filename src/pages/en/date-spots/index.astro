@@ -1,0 +1,6 @@
+---
+import { getCollection } from "astro:content";
+import DateSpotListing from "@components/DateSpotListing.astro";
+const spots = await getCollection("dateSpots");
+---
+<DateSpotListing spots={spots} locale="en" title="Date Spots" />
