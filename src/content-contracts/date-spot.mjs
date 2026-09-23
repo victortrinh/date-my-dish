@@ -46,7 +46,18 @@ const venueCopy = {
   contributorRecipe: object({ title: text, contributorName: text, source: text, text }).optional(),
 };
 const restaurantCopy = object({ ...venueCopy, cuisine: text, whatToOrder: text });
-const barCopy = object({ ...venueCopy, whatToEat: text.optional() });
+const reportedPerson = object({ name: text, role: z.literal("bartender"), note: text });
+const linkedSpot = object({ id: slug, label: text, note: text });
+const contributorRecipe = object({ title: text, slug, contributor: text, source: text, testingNotes: text.optional() });
+const barCopy = object({
+  ...venueCopy,
+  // Food, bartender reporting, and companions are intentionally absent unless
+  // the reporting earns them. These fields are editorial modules, not defaults.
+  whatToEat: text.optional(),
+  meetTheBartender: reportedPerson.optional(),
+  nearbyDateSpots: z.array(linkedSpot).min(1).optional(),
+  contributorRecipe: contributorRecipe.optional(),
+});
 const planningCopy = object({
   ...commonCopy,
   goodFor: signals,
@@ -80,10 +91,17 @@ const common = {
   payment: z.enum(["paid", "hosted", "other"]),
 };
 const verdict = z.enum(["favourite", "conditional", "pass"]);
+const optionalRestaurantModules = {
+  // These are deliberately optional: reporting, rather than a template quota,
+  // determines whether they appear on a public page.
+  meetChef: object({ name: text, role: text, reporting: text }).optional(),
+  nearbyPlans: z.array(object({ name: text, detail: text, mapUrl: z.string().url().optional() })).optional(),
+  contributorRecipe: contributorRecipe.optional(),
+};
 
 // Strict objects at every level reject old scores as well as undeclared fields.
 export const dateSpotSchema = z.discriminatedUnion("spotType", [
-  object({ ...common, spotType: z.literal("restaurant"), reviewVerdict: verdict, locales: pair(restaurantCopy) }),
+  object({ ...common, spotType: z.literal("restaurant"), reviewVerdict: verdict, locales: pair(restaurantCopy.extend(optionalRestaurantModules)) }),
   object({ ...common, spotType: z.literal("bar"), reviewVerdict: verdict, locales: pair(barCopy) }),
   object({ ...common, spotType: z.literal("activity"), locales: pair(planningCopy) }),
   object({ ...common, spotType: z.literal("chef-led-experience"), host: object({ name: text, role: z.enum(["chef", "bartender"]) }), locales: pair(planningCopy) }),
@@ -113,6 +131,20 @@ export const dateSpotSchema = z.discriminatedUnion("spotType", [
   if (JSON.stringify(assessments(en)) !== JSON.stringify(assessments(fr))) {
     issue(["locales"], "Good-for assessments must agree across the Locale Pair");
   }
+  if (spot.spotType === "bar") {
+    for (const module of ["whatToEat", "meetTheBartender", "nearbyDateSpots", "contributorRecipe"]) {
+      if ((en[module] === undefined) !== (fr[module] === undefined)) {
+        issue(["locales"], `${module} must be present in both halves of a Bar Date Spot Locale Pair`);
+      }
+    }
+  }
+  if (spot.spotType === "restaurant") {
+    for (const module of ["meetChef", "nearbyPlans", "contributorRecipe"]) {
+      if ((en[module] === undefined) !== (fr[module] === undefined)) {
+        issue(["locales"], `${module} must be present in both halves of a Restaurant Date Spot Locale Pair`);
+      }
+    }
+  }
 });
 
 export const dateSpotsSchema = z.array(dateSpotSchema).superRefine((spots, ctx) => {
@@ -123,5 +155,20 @@ export const dateSpotsSchema = z.array(dateSpotSchema).superRefine((spots, ctx) 
       if (seen.has(value)) ctx.addIssue({ code: "custom", path: [index], message: `Duplicate ${field}: ${value}` });
       seen.add(value);
     });
+  }
+
+  for (const [spotIndex, spot] of spots.entries()) {
+    if (spot.spotType !== "activity" && spot.spotType !== "chef-led-experience") continue;
+    for (const locale of ["en", "fr-CA"]) {
+      const pairings = spot.locales[locale].pairItWith ?? [];
+      for (const [pairingIndex, pairingSlug] of pairings.entries()) {
+        const target = spots.find((candidate) => candidate.locales[locale].slug === pairingSlug);
+        if (!target) {
+          ctx.addIssue({ code: "custom", path: [spotIndex, "locales", locale, "pairItWith", pairingIndex], message: `Pairing target not found: ${pairingSlug}` });
+        } else if (target.spotType !== "restaurant" && target.spotType !== "bar") {
+          ctx.addIssue({ code: "custom", path: [spotIndex, "locales", locale, "pairItWith", pairingIndex], message: "Pairings must target a Restaurant or Bar Date Spot" });
+        }
+      }
+    }
   }
 });

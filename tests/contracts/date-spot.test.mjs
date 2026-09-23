@@ -48,21 +48,32 @@ test("venue variants enforce the Core Review Floor in both languages", () => {
     const spot = fixture(type); spot.locales[locale].goodFor[0].reason = "  "; rejects(spot);
   }
 });
-test("restaurant optional modules stay optional but validate reported structure when present", () => {
-  const minimal = fixture();
-  assert.equal(dateSpotSchema.safeParse(minimal).success, true);
-  for (const locale of ["en", "fr-CA"]) {
-    const complete = fixture();
-    Object.assign(complete.locales[locale], {
-      meetTheChef: { name: token, role: token, text: token },
-      nearbyPlans: { title: token, text: token },
-      contributorRecipe: { title: token, contributorName: token, source: token, text: token },
-    });
-    assert.equal(dateSpotSchema.safeParse(complete).success, true);
-    const incomplete = fixture();
-    incomplete.locales[locale].contributorRecipe = { title: token, text: token };
-    rejects(incomplete);
-  }
+test("bar-only editorial modules are optional, attributed, and unavailable to other variants", () => {
+  const bar = fixture("bar");
+  bar.locales.en.meetTheBartender = { name: token, role: "bartender", note: token };
+  bar.locales.en.nearbyDateSpots = [{ id: "nearby-spot", label: token, note: token }];
+  bar.locales.en.contributorRecipe = { title: token, slug: "supplied-drink", contributor: token, source: token };
+  bar.locales["fr-CA"].meetTheBartender = structuredClone(bar.locales.en.meetTheBartender);
+  bar.locales["fr-CA"].nearbyDateSpots = structuredClone(bar.locales.en.nearbyDateSpots);
+  bar.locales["fr-CA"].contributorRecipe = structuredClone(bar.locales.en.contributorRecipe);
+  assert.equal(dateSpotSchema.safeParse(bar).success, true);
+  const missingSource = structuredClone(bar); delete missingSource.locales.en.contributorRecipe.source; rejects(missingSource);
+  const partialModule = fixture("bar"); partialModule.locales.en.whatToEat = token; rejects(partialModule);
+  const restaurant = fixture(); restaurant.locales.en.meetTheBartender = bar.locales.en.meetTheBartender; rejects(restaurant);
+});
+test("restaurant-only reporting modules are optional, complete, and locale-paired", () => {
+  const spot = fixture();
+  for (const locale of ["en", "fr-CA"]) Object.assign(spot.locales[locale], {
+    meetChef: { name: token, role: token, reporting: token },
+    nearbyPlans: [{ name: token, detail: token, mapUrl: "https://example.com/nearby" }],
+    contributorRecipe: { title: token, slug: "supplied-dish", contributor: token, source: token },
+  });
+  assert.equal(dateSpotSchema.safeParse(spot).success, true);
+  delete spot.locales.en.contributorRecipe.source;
+  rejects(spot);
+  const bar = fixture("bar");
+  bar.locales.en.meetChef = { name: token, role: token, reporting: token };
+  rejects(bar);
 });
 test("scores cannot be silently stripped at any structured level", () => {
   for (const field of ["dateScore", "stars", "rating", "reviewRating", "dateTypeFit", "score"]) {
@@ -94,6 +105,29 @@ test("rejects invalid chronology, locale drift, duplicate occasions and identifi
 test("requires human authorship and documentary photographs", () => {
   const spot = fixture(); spot.authorship.translation = "ai"; rejects(spot);
   const synthetic = fixture(); synthetic.image.provenance = "synthetic"; rejects(synthetic);
+});
+
+test("planning pairings resolve only to independently reported venue Date Spots", () => {
+  const activity = fixture("activity");
+  activity.locales.en.pairItWith = ["restaurant-test-only"];
+  activity.locales["fr-CA"].pairItWith = ["restaurant-test-only"];
+  const restaurant = fixture("restaurant");
+  restaurant.id = "restaurant-test-only";
+  restaurant.locales.en.slug = "restaurant-test-only";
+  restaurant.locales["fr-CA"].slug = "restaurant-test-only";
+  assert.equal(dateSpotsSchema.safeParse([activity, restaurant]).success, true);
+
+  const missing = fixture("activity");
+  missing.locales.en.pairItWith = ["missing-venue"];
+  assert.equal(dateSpotsSchema.safeParse([missing]).success, false);
+
+  const activityTarget = fixture("activity");
+  activityTarget.id = "another-activity";
+  activityTarget.locales.en.slug = "another-activity";
+  activityTarget.locales["fr-CA"].slug = "another-activity";
+  const invalidTarget = fixture("activity");
+  invalidTarget.locales.en.pairItWith = ["another-activity"];
+  assert.equal(dateSpotsSchema.safeParse([invalidTarget, activityTarget]).success, false);
 });
 
 test("build validator accepts complete records and exits nonzero for incomplete pairs or missing images", async () => {

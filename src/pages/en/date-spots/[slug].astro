@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import BarDateSpot from "@components/date-spots/BarDateSpot.astro";
+import BarDateSpotSchema from "@components/date-spots/BarDateSpotSchema.astro";
+import ActivityDateSpotTemplate from "@components/ActivityDateSpotTemplate.astro";
+import { getReviewLocalizedPath } from "@i18n/utils";
+
+export async function getStaticPaths() {
+  const spots = await getCollection("dateSpots");
+  return spots
+    .filter((entry) => ["bar", "activity", "chef-led-experience"].includes(entry.data.spotType))
+    .map((entry) => ({ params: { slug: entry.data.locales.en.slug }, props: { spot: entry.data } }));
+}
+
+const { spot } = Astro.props;
+const copy = spot.locales.en;
+const path = `/en/date-spots/${copy.slug}/`;
+const spots = await getCollection("dateSpots");
+const pairings = (copy.pairItWith ?? []).map((slug) => {
+  const target = spots.find((candidate) => candidate.data.locales.en.slug === slug);
+  if (!target || (target.data.spotType !== "restaurant" && target.data.spotType !== "bar")) {
+    throw new Error(`Invalid Activity Date Spot pairing: ${slug}`);
+  }
+  return { name: target.data.name, href: getReviewLocalizedPath("en", slug) };
+});
+---
+
+{spot.spotType === "bar" && <BaseLayout title={copy.metaTitle} description={copy.metaDescription} canonical={path} translationSlug={spot.locales["fr-CA"].slug} ogType="article" contentType="date-spot">
+  <BarDateSpotSchema slot="head" spot={spot} locale="en" path={path} />
+  <BarDateSpot spot={spot} locale="en" />
+</BaseLayout>}
+{(spot.spotType === "activity" || spot.spotType === "chef-led-experience") && <ActivityDateSpotTemplate spot={spot} copy={copy} locale="en" translationSlug={spot.locales["fr-CA"].slug} pairings={pairings} />}

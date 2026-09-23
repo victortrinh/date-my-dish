@@ -1,14 +1,24 @@
 import { defineCollection } from "astro:content";
-import { file, glob } from "astro/loaders";
+import { file } from "astro/loaders";
 import { z } from "astro/zod";
 
 import { dateSpotSchema } from "./content-contracts/date-spot.mjs";
+import { contributorRecipeSchema } from "./content-contracts/contributor-recipe.mjs";
+import { extendedProfileSchema } from "./content-contracts/extended-profile.mjs";
 
 const dateSpots = defineCollection({
-  // Acceptance builds may opt into mechanical fixtures. Production always
-  // consumes the human-authored source collection.
-  loader: file(process.env.DATE_SPOT_SOURCE || "src/content/date-spots.json"),
+  loader: file("src/content/date-spots.json"),
   schema: dateSpotSchema,
+});
+
+const contributorRecipes = defineCollection({
+  loader: file("src/content/contributor-recipes.json"),
+  schema: contributorRecipeSchema,
+});
+
+const extendedProfiles = defineCollection({
+  loader: file("src/content/extended-profiles.json"),
+  schema: extendedProfileSchema,
 });
 
 const IngredientGroupSchema = z.object({
@@ -144,67 +154,6 @@ const articles = defineCollection({
     }),
 });
 
-const ReviewCategorySchema = z.enum([
-  "dinner",
-  "brunch",
-  "cocktails",
-  "casual",
-  "fine-dining",
-]);
-
-const DishHighlightSchema = z.object({
-  name: z.string(),
-  description: z.string(),
-});
-
-const DateTypeFitSchema = z.object({
-  type: z.string(),
-  score: z.number().min(1).max(5),
-  note: z.string().optional(),
-});
-
-const reviews = defineCollection({
-  // Legacy scored reviews stay in Git but require a fresh visit and a complete
-  // Date Spot Locale Pair before they can return to a public route.
-  loader: async () => [],
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      lang: z.enum(["en", "fr"]),
-      translationSlug: z.string(),
-      description: z.string().max(160),
-      author: z.string().default("Victor"),
-      publishDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
-      heroImage: image(),
-      heroImageAlt: z.string(),
-      keywords: z.array(z.string()),
-      tags: z.array(z.string()).optional(),
-      readingTime: z.number().optional(),
-      restaurantName: z.string(),
-      neighborhood: z.string(),
-      city: z.string().default("Montreal"),
-      address: z.string(),
-      website: z.string().url().optional(),
-      phone: z.string().optional(),
-      cuisine: z.string(),
-      priceRange: z.enum(["$", "$$", "$$$", "$$$$"]),
-      dateScore: z.number().min(1).max(10),
-      reviewCategory: ReviewCategorySchema,
-      bestFor: z.array(z.string()),
-      costPerPerson: z.string(),
-      reservationTip: z.string().optional(),
-      dishHighlights: z.array(DishHighlightSchema).optional(),
-      dateTypeFit: z.array(DateTypeFitSchema).optional(),
-      relatedRecipes: z.array(z.string()).optional(),
-      socialCaption: z.object({
-        instagram: z.string().optional(),
-        pinterest: z.string().optional(),
-      }).optional(),
-      faqs: z
-        .array(z.object({ question: z.string(), answer: z.string() }))
-        .min(1),
-    }),
-});
-
-export const collections = { recipes, articles, reviews, dateSpots };
+// Older scored review files remain in repository history only. New restaurant
+// reporting is published through the Date Spot collection above.
+export const collections = { recipes, articles, dateSpots, contributorRecipes, extendedProfiles };

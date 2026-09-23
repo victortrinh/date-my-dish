@@ -1,13 +1,12 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
-import DateSpotCard from "@components/DateSpotCard.astro";
 import { getCollection } from "astro:content";
-import { SITE_URL } from "@utils/constants";
-const spots = (await getCollection("dateSpots")).map(({ data }) => data).filter((spot) => spot.spotType === "restaurant").sort((a, b) => b.freshness.published.localeCompare(a.freshness.published));
-const description = "Recommandations indépendantes et humaines de restaurants montréalais avec coûts réels, conseils de réservation et idées selon le type de rendez-vous.";
+import { getReviewLocalizedPath } from "@i18n/utils";
+
+const restaurants = (await getCollection("dateSpots")).filter((spot) => spot.data.spotType === "restaurant");
 ---
-<BaseLayout title="Critiques de restaurants pour un rendez-vous | Date My Dish" description={description}>
-  <Fragment slot="head"><script type="application/ld+json" is:inline set:html={JSON.stringify({ "@context": "https://schema.org", "@type": "ItemList", name: "Critiques de restaurants", numberOfItems: spots.length, itemListElement: spots.map((spot, index) => ({ "@type": "ListItem", position: index + 1, url: `${SITE_URL}/fr/critiques/${spot.locales["fr-CA"].slug}/`, name: spot.name }))})} /></Fragment>
-  <div class="mx-auto max-w-content px-4 py-section-sm"><Breadcrumbs locale="fr" items={[{ label: "Critiques" }]} /><header class="mb-10"><h1 class="mb-3 text-heading-1 text-warm-900 dark:text-warm-100">Restaurants pour un rendez-vous</h1><p class="max-w-prose text-body-lg text-warm-600 dark:text-warm-300">Des recommandations qui expliquent où réserver, l’ambiance de la salle, quoi commander et ce que deux personnes paieront vraiment.</p></header>{spots.length > 0 ? <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-animate-stagger>{spots.map((spot, index) => <DateSpotCard spot={spot} locale="fr" loading={index === 0 ? "eager" : "lazy"} />)}</div> : <p>Aucun Restaurant Date Spot n’est publié pour le moment.</p>}</div>
+<BaseLayout title="Restaurants Date Spot | Date My Dish" description="Des Restaurant Date Spots rapportés par des humains, avec un verdict clair, des conseils de commande, le vrai coût et les détails de réservation.">
+  <div class="mx-auto max-w-content px-4 py-section-sm"><Breadcrumbs locale="fr" items={[{ label: "Critiques" }]} /><h1 class="font-heading text-4xl text-warm-900 dark:text-warm-100">Restaurants Date Spot</h1>
+  {restaurants.length > 0 ? <div class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{restaurants.map((spot) => { const copy = spot.data.locales["fr-CA"]; return <a class="overflow-hidden rounded-xl bg-white no-underline dark:bg-warm-900" href={getReviewLocalizedPath("fr", copy.slug)}><img src={spot.data.image.src} width={spot.data.image.width} height={spot.data.image.height} alt={copy.imageAlt} class="aspect-[16/14] w-full object-cover" /><div class="p-5"><p class="text-sm text-brand-wine">{spot.data.neighbourhood}</p><h2 class="font-heading text-xl text-warm-800 dark:text-warm-100">{spot.data.name}</h2><p class="mt-2 text-sm text-warm-500">{copy.opening}</p></div></a>; })}</div> : <p class="mt-6 text-warm-500 dark:text-warm-400">Aucun Restaurant Date Spot n’est encore publié.</p>}</div>
 </BaseLayout>

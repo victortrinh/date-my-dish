@@ -1,0 +1,65 @@
+---
+import DateSpotLayout from "@layouts/DateSpotLayout.astro";
+import DateSpotSchema from "./DateSpotSchema.astro";
+import { getDateSpotLocalizedPath, type Locale } from "@i18n/utils";
+import { SITE_URL } from "@utils/constants";
+
+interface Signal { occasion: string; assessment: "ideal" | "caveat" | "not-for"; reason: string; }
+interface PlanningCopy {
+  title: string; slug: string; metaTitle: string; metaDescription: string; opening: string;
+  imageAlt: string; imageCredit: string; imageCaption?: string;
+  essentials: { address: string; booking: string; access: string; duration: string; cost: string; timing: string };
+  paymentDisclosure: string; materialUpdates: { date: string; note: string }[];
+  goodFor: Signal[]; whatItIs: string; howToDoItWell: string; pairItWith?: string[]; season?: string;
+}
+interface Props {
+  spot: {
+    name: string; city: string; neighbourhood: string; spotType: "activity" | "chef-led-experience";
+    image: { src: string; width: number; height: number }; mapUrl: string; payment: "paid" | "hosted" | "other";
+    freshness: { visited: string; published: string; lastChecked: string }; host?: { name: string; role: "chef" | "bartender" };
+  };
+  copy: PlanningCopy;
+  locale: Locale;
+  translationSlug: string;
+  pairings?: { name: string; href: string }[];
+}
+
+const { spot, copy, locale, translationSlug, pairings = [] } = Astro.props;
+const labels = locale === "fr"
+  ? { type: "Type de lieu", activity: "Activité", chef: "Expérience avec chef", host: "Animé par", works: "Quand ça fonctionne", is: "Ce que c’est vraiment", well: "Comment en profiter", pair: "À combiner avec", essentials: "L’essentiel", season: "Saison", address: "Adresse", duration: "Durée", cost: "Coût", booking: "Réservation", access: "Accès", timing: "Moment idéal", map: "Voir la carte", freshness: "Fraîcheur du reportage", visited: "Visité le", published: "Publié le", checked: "Vérifié le", updates: "Mises à jour", disclosure: "Divulgation", paid: "DMD a payé sa visite.", hosted: "DMD a été reçu.", other: "Autre arrangement de visite." }
+  : { type: "Spot type", activity: "Activity", chef: "Chef-led Experience", host: "Hosted by", works: "When it works", is: "What it actually is", well: "How to do it well", pair: "Pair it with", essentials: "Essentials", season: "Season", address: "Address", duration: "Duration", cost: "Cost", booking: "Booking", access: "Transit & accessibility", timing: "Best timing", map: "View map", freshness: "Reporting freshness", visited: "Visited", published: "Published", checked: "Last checked", updates: "Updates", disclosure: "Disclosure", paid: "DMD paid for this visit.", hosted: "DMD was hosted for this visit.", other: "Another visit arrangement applies." };
+const path = getDateSpotLocalizedPath(locale, copy.slug);
+const sourceUrl = `${SITE_URL}${path}`;
+const occasionLabels: Record<string, string> = locale === "fr"
+  ? { "first-date": "Premier rendez-vous", anniversary: "Anniversaire", "casual-midweek": "Soir de semaine", "impressing-a-cook": "Impressionner un cuisinier", "double-date": "Double rendez-vous", "solo-at-the-bar": "En solo au bar" }
+  : { "first-date": "First date", anniversary: "Anniversary", "casual-midweek": "Casual midweek", "impressing-a-cook": "Impressing a cook", "double-date": "Double date", "solo-at-the-bar": "Solo at the bar" };
+const assessmentLabels: Record<Signal["assessment"], string> = locale === "fr"
+  ? { ideal: "Idéal", caveat: "Avec réserve", "not-for": "Pas le bon choix" }
+  : { ideal: "Ideal", caveat: "Works with a caveat", "not-for": "Not the right fit" };
+---
+
+<DateSpotLayout title={copy.metaTitle} description={copy.metaDescription} locale={locale} canonical={path} ogImage={spot.image.src} translationSlug={translationSlug} published={spot.freshness.published} lastChecked={spot.freshness.lastChecked}>
+  <DateSpotSchema slot="head" title={copy.title} description={copy.metaDescription} slug={copy.slug} locale={locale} name={spot.name} city={spot.city} neighbourhood={spot.neighbourhood} image={spot.image.src} imageAlt={copy.imageAlt} mapUrl={spot.mapUrl} published={spot.freshness.published} lastChecked={spot.freshness.lastChecked} host={spot.host} />
+
+  <article class="mx-auto max-w-content px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
+    <header class="mx-auto grid max-w-prose gap-8 py-6 lg:max-w-none lg:grid-cols-2 lg:py-12">
+      <div class="order-2 lg:order-1">
+        <p class="mb-3 font-ui text-sm font-semibold uppercase tracking-wider text-brand-wine">{labels.type}: {spot.spotType === "chef-led-experience" ? labels.chef : labels.activity}</p>
+        <h1 class="mb-4 font-heading text-4xl italic text-warm-900 dark:text-warm-100 sm:text-display">{copy.title}</h1>
+        <p class="font-body text-body-lg text-warm-600 dark:text-warm-400">{copy.opening}</p>
+        {spot.host && <p class="mt-5 font-ui text-body-sm text-warm-700 dark:text-warm-300"><strong>{labels.host}:</strong> {spot.host.name}, {spot.host.role}</p>}
+      </div>
+      <figure class="order-1 lg:order-2"><img src={spot.image.src} width={spot.image.width} height={spot.image.height} alt={copy.imageAlt} class="h-[420px] w-full rounded-2xl object-cover" loading="eager" fetchpriority="high" /><figcaption class="mt-2 text-sm text-warm-500 dark:text-warm-400">{copy.imageCaption ?? copy.imageCredit}</figcaption></figure>
+    </header>
+
+    <div class="mx-auto max-w-prose space-y-12">
+      <section><h2>{labels.works}</h2>{copy.season && <p><strong>{labels.season}:</strong> {copy.season}</p>}<dl class="mt-5 space-y-4">{copy.goodFor.map((signal) => <div><dt class="font-ui font-semibold text-warm-800 dark:text-warm-200">{occasionLabels[signal.occasion]} — {assessmentLabels[signal.assessment]}</dt><dd>{signal.reason}</dd></div>)}</dl></section>
+      <section><h2>{labels.is}</h2><p>{copy.whatItIs}</p></section>
+      <section><h2>{labels.well}</h2><p>{copy.howToDoItWell}</p></section>
+      {pairings.length > 0 && <section><h2>{labels.pair}</h2><ul>{pairings.map((pairing) => <li><a href={pairing.href}>{pairing.name}</a></li>)}</ul></section>}
+      <section><h2>{labels.essentials}</h2><dl class="grid gap-4 sm:grid-cols-2">{[[labels.address, copy.essentials.address], [labels.duration, copy.essentials.duration], [labels.cost, copy.essentials.cost], [labels.booking, copy.essentials.booking], [labels.access, copy.essentials.access], [labels.timing, copy.essentials.timing]].map(([label, value]) => <div><dt class="font-ui text-sm font-semibold text-warm-800 dark:text-warm-200">{label}</dt><dd>{value}</dd></div>)}</dl><a class="mt-5 inline-block" href={spot.mapUrl} rel="external">{labels.map}</a></section>
+      <section><h2>{labels.freshness}</h2><dl><div><dt>{labels.visited}</dt><dd>{spot.freshness.visited}</dd></div><div><dt>{labels.published}</dt><dd>{spot.freshness.published}</dd></div><div><dt>{labels.checked}</dt><dd>{spot.freshness.lastChecked}</dd></div></dl>{copy.materialUpdates.length > 0 && <><h3>{labels.updates}</h3><ul>{copy.materialUpdates.map((update) => <li><time datetime={update.date}>{update.date}</time>: {update.note}</li>)}</ul></>}</section>
+      <section><h2>{labels.disclosure}</h2><p>{copy.paymentDisclosure}</p><p>{labels[spot.payment]}</p></section>
+    </div>
+  </article>
+</DateSpotLayout>

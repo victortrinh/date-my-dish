@@ -77,6 +77,8 @@ export function getAlternateUrl(
     articles: { en: "articles", fr: "articles" },
     reviews: { en: "reviews", fr: "critiques" },
     critiques: { en: "reviews", fr: "critiques" },
+    "date-spots": { en: "date-spots", fr: "lieux" },
+    lieux: { en: "date-spots", fr: "lieux" },
     occasion: { en: "occasion", fr: "occasion" },
     cuisine: { en: "cuisine", fr: "cuisine" },
     tag: { en: "tag", fr: "etiquette" },
@@ -130,6 +132,14 @@ export function getReviewLocalizedPath(
   slug: string,
 ): string {
   const prefix = locale === "fr" ? "critiques" : "reviews";
+  return `/${locale}/${prefix}/${slug}/`;
+}
+
+export function getDateSpotLocalizedPath(
+  locale: Locale,
+  slug: string,
+): string {
+  const prefix = locale === "fr" ? "lieux" : "date-spots";
   return `/${locale}/${prefix}/${slug}/`;
 }
 

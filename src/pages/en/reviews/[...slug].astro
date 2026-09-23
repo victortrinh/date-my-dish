@@ -1,10 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import RestaurantDateSpot from "@components/RestaurantDateSpot.astro";
+
 export async function getStaticPaths() {
   const spots = await getCollection("dateSpots");
-  return spots.filter(({ data }) => data.spotType === "restaurant").map(({ data: spot }) => ({ params: { slug: spot.locales.en.slug }, props: { spot } }));
+  return spots.filter((spot) => spot.data.spotType === "restaurant").map((spot) => ({
+    params: { slug: spot.data.locales.en.slug }, props: { spot },
+  }));
 }
+
 const { spot } = Astro.props;
 ---
 <RestaurantDateSpot spot={spot} locale="en" />

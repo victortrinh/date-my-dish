@@ -49,6 +49,8 @@ if (translationSlug && contentType) {
     prefix = targetLocale === "fr" ? "recettes" : "recipes";
   } else if (contentType === "review" || contentType === "date-spot") {
     prefix = targetLocale === "fr" ? "critiques" : "reviews";
+  } else if (contentType === "date-spot") {
+    prefix = targetLocale === "fr" ? "lieux" : "date-spots";
   } else {
     prefix = "articles";
   }

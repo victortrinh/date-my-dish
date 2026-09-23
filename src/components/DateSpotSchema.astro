@@ -1,33 +1,51 @@
 ---
+import type { Locale } from "@i18n/utils";
+import { getDateSpotLocalizedPath } from "@i18n/utils";
 import { SITE_URL } from "@utils/constants";
-import { getReviewLocalizedPath, type Locale } from "@i18n/utils";
 
-interface Props { spot: any; locale: Locale; }
-const { spot, locale } = Astro.props;
-const copy = spot.locales[locale === "fr" ? "fr-CA" : "en"];
-const url = `${SITE_URL}${getReviewLocalizedPath(locale, copy.slug)}`;
-const image = spot.image.src.startsWith("http") ? spot.image.src : `${SITE_URL}${spot.image.src}`;
-const graph = {
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  locale: Locale;
+  name: string;
+  city: string;
+  neighbourhood: string;
+  image: string;
+  imageAlt: string;
+  mapUrl: string;
+  published: string;
+  lastChecked: string;
+  host?: { name: string; role: "chef" | "bartender" };
+}
+
+const { title, description, slug, locale, name, city, neighbourhood, image, imageAlt, mapUrl, published, lastChecked, host } = Astro.props;
+const canonical = `${SITE_URL}${getDateSpotLocalizedPath(locale, slug)}`;
+const imageUrl = image.startsWith("http") ? image : `${SITE_URL}${image}`;
+
+// This deliberately describes only facts visible on the planning page. In
+// particular, Activity and Chef-led Experience Date Spots never emit Review or
+// Rating markup.
+const articleJsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Restaurant", "@id": `${url}#restaurant`, name: spot.name, image,
-      servesCuisine: copy.cuisine,
-      address: { "@type": "PostalAddress", streetAddress: copy.essentials.address, addressLocality: spot.city },
-      hasMap: spot.mapUrl,
-    },
-    {
-      "@type": "Article", "@id": `${url}#article`, headline: copy.title,
-      description: copy.metaDescription, image,
-      inLanguage: locale === "fr" ? "fr-CA" : "en-CA",
-      datePublished: spot.freshness.published, dateModified: spot.freshness.lastChecked,
-      mainEntity: { "@id": `${url}#restaurant` },
-      author: { "@type": "Person", name: spot.reporterByline, url: `${SITE_URL}/${locale}/${locale === "fr" ? "a-propos" : "about"}/` },
-      publisher: { "@type": "Organization", name: "Date My Dish", url: SITE_URL },
-      url,
-    },
-  ],
+  "@type": "Article",
+  headline: title,
+  description,
+  image: { "@type": "ImageObject", url: imageUrl, caption: imageAlt },
+  datePublished: published,
+  dateModified: lastChecked,
+  author: { "@type": "Person", name: "Victor Vu" },
+  publisher: { "@type": "Organization", name: "Date My Dish", url: SITE_URL },
+  mainEntityOfPage: canonical,
+  about: {
+    "@type": "Place",
+    name,
+    address: { "@type": "PostalAddress", addressLocality: city, addressRegion: "QC", addressCountry: "CA" },
+    containedInPlace: { "@type": "Place", name: neighbourhood },
+    hasMap: mapUrl,
+  },
+  ...(host ? { contributor: { "@type": "Person", name: host.name, jobTitle: host.role } } : {}),
 };
 ---
-<!-- A qualitative verdict is editorial copy, not a schema Rating. -->
-<script type="application/ld+json" is:inline set:html={JSON.stringify(graph)} />
+
+<script type="application/ld+json" is:inline set:html={JSON.stringify(articleJsonLd)} />
