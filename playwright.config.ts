@@ -72,7 +72,8 @@ export default defineConfig({
   projects,
 
   webServer: {
-    command: `npx wrangler dev --port ${PORT}`,
+    // Override the maintenance switch in wrangler.jsonc so E2E exercises the real site.
+    command: `npx wrangler dev --port ${PORT} --var MAINTENANCE_MODE:false`,
     url: BASE_URL,
     reuseExistingServer: !process.env.CI,
     timeout: 60_000,
