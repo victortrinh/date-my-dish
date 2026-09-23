@@ -188,3 +188,49 @@ Activity and Chef-led Experience Date Spots are the non-restaurant, non-bar vari
 Montréal is DMD's Home Market. Travel Reviews are allowed whenever Victor Vu reports a venue elsewhere; they name their actual city and do not create an implied local-coverage promise.
 
 Dynamic information is not silently overwritten. Recheck venue facts every six months and seasonal Date Spots before the relevant season. Scheduled automation may create research or maintenance reminders but may not draft, translate, score, publish, or change reader-facing content.
+
+## Publishing a Notion Story
+
+Each supported Post Type has a Notion Story template in `notion/templates/`
+listing its database properties and its Locale Pair's exact JSON shape (one
+Notion "code" block per locale, English then Canadian French). Nothing
+about a Story is generated: every property and every field in those code
+blocks is written by Victor in Notion.
+
+**Status flow.** A Story is picked up once its `Status` is `Ready to
+Publish`. `scripts/fetch-notion-story.mjs` (run by the `Publish Notion
+Story` workflow) selects the lowest-numbered Story that is either
+unpublished or has been edited in Notion since its last sync, downloads and
+resizes its Editorial Image, maps its properties and Locale Pair onto the
+matching content contract in `src/content-contracts/`, and runs the result
+through the publish gate.
+
+**What the gate enforces**, beyond the schema itself:
+
+- The three sign-off checkboxes (`Human reporting`, `Human translation`,
+  `DMD-held photograph`) are all checked.
+- The Notion database carries no leftover numeric score or rating property.
+- **Dated updates.** Republishing an already-live Restaurant or Bar Date
+  Spot with a changed Review Verdict, Good-for Signal, or Essentials
+  requires a new Material update, dated after the previous `Last checked`,
+  in both locales. A recommendation cannot change silently.
+
+**On success**, the workflow opens a draft PR with the updated collection
+JSON, the resized image, and the updated `notion/published.json`. Merging
+that PR, after the usual PR checks and review, is the act of publishing;
+nothing else does.
+
+**On failure**, nothing on the site changes. The workflow opens or updates
+a `notion-story`-labelled issue listing exactly what to fix in Notion.
+There is no partial or silent publish.
+
+## Maintenance reminders
+
+`scripts/venue-maintenance-reminders.mjs` (run monthly by the `Venue
+Maintenance Reminders` workflow) reads `src/content/date-spots.json` and
+flags any Date Spot whose `Last checked` is over six months old, or whose
+planning copy names a `season` (flagged every run, since a season can't be
+scheduled exactly by cron). It opens or updates a single tracking issue
+with a checklist. This script only ever reports; the recheck itself,
+updating the Notion Story, and republishing through the flow above are
+Victor's.

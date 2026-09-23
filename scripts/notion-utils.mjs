@@ -155,6 +155,13 @@ export function blockToStructured(block) {
       const icon = block.format?.page_icon || "";
       return { type: "callout", icon, text };
     }
+    case "code": {
+      // Code blocks carry no bold/italic/color annotations in practice, but
+      // guard against them anyway by taking the raw decoration text only.
+      const raw = titleDec ? titleDec.map((dec) => dec[0]).join("") : "";
+      const language = props.language?.[0]?.[0] || null;
+      return { type: "code", text: raw, language };
+    }
     case "quote":
       return { type: "quote", text };
     case "divider":

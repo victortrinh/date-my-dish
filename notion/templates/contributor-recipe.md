@@ -1,26 +1,48 @@
 # Contributor Recipe — Notion Story template
 
-Use only for a recipe supplied by a named chef or bartender. This template is an editorial checklist; it does not create, translate, or revise reader-facing copy.
+See `README.md` in this folder for the general publishing flow. Use only
+for a recipe supplied by a named chef or bartender. Never a recreation,
+adaptation, inspired-by, or generic recipe.
 
-## Required record fields
+## Database properties
 
-- Post Type: `contributor-recipe`
-- Recipe origin: `contributor-supplied` (never recreated, adapted, inspired-by, or generic)
-- Contributor: full name, `chef` or `bartender`, and venue or supplied-recipe context
-- Supplied source: what was supplied, how it was received, and date received
-- Human-supplied recipe attestation and human translation attestation
-- Publication date
-- Complete English and Canadian French title, slug, meta title, and meta description
-- Source notes, fact-verification notes, image alt text, and image credit in each locale
-- A genuine DMD-held photograph with dimensions and provenance
+Shared properties (see README) plus:
 
-## Required recipe modules in each locale
+- `Contributor name`, `Contributor role` (`Chef` or `Bartender`), `Venue or context`
+- `Supplied source` (what was supplied, how it was received)
+- `Received on` (date; must be on or before `Published`)
+- `Published`
 
-1. Attribution and original at-home context.
-2. Serves, active time, total time, difficulty, equipment, and dietary notes.
-3. Ingredients.
-4. Method, reproduced from the supplied recipe without DMD substitutions or rewrites.
-5. `Notes from {Name}` containing supplied advice, substitutions, or pitfalls.
-6. Source and DMD testing note. A testing note may report DMD's own test; it must not silently alter the contributor's recipe.
+## Locale copy shape (one JSON code block per locale)
 
-`Pair it with` is optional and only links a Date Spot when reporting earned the connection. Publish both locales together. Do not create a record until the contributor has supplied the recipe and its attribution/source are documented.
+Required keys, matching `src/content-contracts/contributor-recipe.mjs`:
+
+```json
+{
+  "title": "{Dish}",
+  "slug": "dish-slug",
+  "metaTitle": "{Dish}: {Name}'s Date-Night Recipe",
+  "metaDescription": "120-160 characters",
+  "originalContext": "Attribution: contributor, role, venue, and the at-home context.",
+  "serves": "e.g. 2 servings",
+  "activeTime": "PT20M",
+  "totalTime": "PT45M",
+  "difficulty": "easy",
+  "equipment": ["..."],
+  "dietaryNotes": ["..."],
+  "ingredientGroups": [{ "group": "optional", "items": ["..."] }],
+  "methodGroups": [{ "group": "optional", "steps": ["..."] }],
+  "contributorNotes": ["Notes from {Name}: supplied advice, substitutions, mistakes to avoid."],
+  "sourceNotes": "...",
+  "factNotes": "...",
+  "imageAlt": "...",
+  "imageCredit": "..."
+}
+```
+
+`activeTime`/`totalTime` are ISO 8601 durations. `difficulty` is `easy`,
+`medium`, or `hard`. Optional: `dmdTestingNote` (DMD's own testing
+observation; must never silently alter the contributor's recipe) and
+`pairItWith` (an array of Date Spot `id`s, agreeing across locales).
+
+Reproduce the method exactly as supplied; do not substitute or rewrite it.
