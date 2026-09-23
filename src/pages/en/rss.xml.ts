@@ -33,18 +33,17 @@ export async function GET(context: APIContext) {
     };
   });
 
-  const reviews = await getCollection("reviews");
-  const enReviews = reviews
-    .filter((r) => r.data.lang === "en")
-    .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+  const reviews = (await getCollection("dateSpots"))
+    .map(({ data }) => data)
+    .filter((spot) => spot.spotType === "restaurant")
+    .sort((a, b) => b.freshness.published.localeCompare(a.freshness.published));
 
-  const reviewItems = enReviews.map((review) => {
-    const slug = review.id.replace(/^en\//, "");
+  const reviewItems = reviews.map((spot) => {
     return {
-      title: review.data.title,
-      description: review.data.description,
-      pubDate: review.data.publishDate,
-      link: `/en/reviews/${slug}/`,
+      title: spot.locales.en.title,
+      description: spot.locales.en.metaDescription,
+      pubDate: new Date(`${spot.freshness.published}T00:00:00Z`),
+      link: `/en/reviews/${spot.locales.en.slug}/`,
     };
   });
 
@@ -53,9 +52,8 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: "Date My Dish - Recipes & Cooking Guides for Date Night",
-    description:
-      "Discover recipes and cooking guides crafted with love. From comforting classics to expert kitchen tips, elevate your date night dinners.",
+    title: "Date My Dish - Montréal Date Spots",
+    description: "Human-reported restaurant recommendations for planning a date in Montréal.",
     site: context.site!,
     items: allItems,
     customData: `<language>en</language>`,

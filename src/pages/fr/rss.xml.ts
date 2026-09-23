@@ -33,18 +33,17 @@ export async function GET(context: APIContext) {
     };
   });
 
-  const reviews = await getCollection("reviews");
-  const frReviews = reviews
-    .filter((r) => r.data.lang === "fr")
-    .sort((a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime());
+  const reviews = (await getCollection("dateSpots"))
+    .map(({ data }) => data)
+    .filter((spot) => spot.spotType === "restaurant")
+    .sort((a, b) => b.freshness.published.localeCompare(a.freshness.published));
 
-  const reviewItems = frReviews.map((review) => {
-    const slug = review.id.replace(/^fr\//, "");
+  const reviewItems = reviews.map((spot) => {
     return {
-      title: review.data.title,
-      description: review.data.description,
-      pubDate: review.data.publishDate,
-      link: `/fr/critiques/${slug}/`,
+      title: spot.locales["fr-CA"].title,
+      description: spot.locales["fr-CA"].metaDescription,
+      pubDate: new Date(`${spot.freshness.published}T00:00:00Z`),
+      link: `/fr/critiques/${spot.locales["fr-CA"].slug}/`,
     };
   });
 
@@ -53,9 +52,8 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: "Date My Dish - Recettes et guides de cuisine pour soirées en amoureux",
-    description:
-      "Découvrez des recettes et guides de cuisine préparés avec amour. Des classiques réconfortants aux astuces d'experts, sublimez vos soupers en amoureux.",
+    title: "Date My Dish - Endroits pour un rendez-vous à Montréal",
+    description: "Des recommandations humaines de restaurants pour planifier un rendez-vous à Montréal.",
     site: context.site!,
     items: allItems,
     customData: `<language>fr</language>`,

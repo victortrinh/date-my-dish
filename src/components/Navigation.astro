@@ -2,6 +2,7 @@
 import { t, getLocalizedPath, type Locale } from "@i18n/utils";
 import LanguageToggle from "./LanguageToggle.astro";
 import DarkModeToggle from "./DarkModeToggle.astro";
+import { getCollection } from "astro:content";
 
 interface Props {
   locale: Locale;
@@ -12,10 +13,11 @@ interface Props {
 const { locale, translationSlug, contentType } = Astro.props;
 
 const currentPath = Astro.url.pathname;
+const hasReviews = (await getCollection("dateSpots")).some(({ data }) => data.spotType === "restaurant" || data.spotType === "bar");
 
 const navLinks = [
   { label: t(locale, "nav.home"), path: "/" },
-  { label: t(locale, "nav.reviews"), path: locale === "fr" ? "/critiques/" : "/reviews/" },
+  ...(hasReviews ? [{ label: t(locale, "nav.reviews"), path: locale === "fr" ? "/critiques/" : "/reviews/" }] : []),
   { label: t(locale, "nav.about"), path: locale === "fr" ? "/a-propos/" : "/about/" },
   { label: t(locale, "nav.contact"), path: "/contact/" },
 ];
