@@ -136,21 +136,6 @@
     "relatedRecipes": "Recettes associées",
     "relatedArticles": "Articles similaires"
   },
-  "review": {
-    "dateScore": "Score de la date",
-    "dateScoreNote": "Note pour l'ambiance d'un rendez-vous, pas la bouffe.",
-    "priceRange": "Gamme de prix",
-    "cuisine": "Cuisine",
-    "neighborhood": "Quartier",
-    "bestFor": "Idéal pour",
-    "reservation": "Réservation",
-    "costPerPerson": "Coût par personne",
-    "quickFacts": "En bref",
-    "dishHighlights": "Quoi commander",
-    "dateTypeFit": "Type de rendez-vous",
-    "visitWebsite": "Visiter le site",
-    "viewOnMap": "Voir sur la carte"
-  },
   "listing": {
     "allRecipes": "Toutes les recettes",
     "allArticles": "Tous les articles",

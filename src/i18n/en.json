@@ -136,21 +136,6 @@
     "relatedRecipes": "Related Recipes",
     "relatedArticles": "Related Articles"
   },
-  "review": {
-    "dateScore": "Date Score",
-    "dateScoreNote": "Scored on date-night vibes, not the food.",
-    "priceRange": "Price Range",
-    "cuisine": "Cuisine",
-    "neighborhood": "Neighborhood",
-    "bestFor": "Best For",
-    "reservation": "Reservation",
-    "costPerPerson": "Cost Per Person",
-    "quickFacts": "Quick Facts",
-    "dishHighlights": "What to Order",
-    "dateTypeFit": "Date Type Fit",
-    "visitWebsite": "Visit Website",
-    "viewOnMap": "View on Map"
-  },
   "listing": {
     "allRecipes": "All Recipes",
     "allArticles": "All Articles",
