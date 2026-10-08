@@ -1,39 +1,40 @@
 // scripts/lib/date-spot-routes.cjs
 // Shared route computation for src/content/date-spots.json, used by both
 // generate-playwright-pages.cjs and generate-lighthouse-urls.cjs so page
-// discovery for PR checks tracks the live Date Spot collection instead of
-// the retired review MDX files.
+// discovery for PR checks and the weekly Lighthouse audit tracks the live
+// Date Spot collection.
 //
-// Mirrors the actual getStaticPaths() in src/pages/en/reviews/[...slug].astro
-// (restaurant only) and src/pages/en/date-spots/[slug].astro (bar, activity,
-// chef-led-experience) -- not src/utils/date-spots.ts's dateSpotPath, which
-// currently disagrees with those routes for the "bar" Spot Type.
+// Paths come from src/content-contracts/date-spot-paths.mjs, the same module
+// src/utils/date-spots.ts uses, so Venue Reviews (restaurant, bar) resolve to
+// /en/reviews/{neighbourhood}/{slug}/ and /fr/critiques/{neighbourhood}/{slug}/
+// exactly as the site builds them. The .mjs is dependency-free and loaded with
+// require(esm) (Node 20.19+ / 22.12+).
 
 const fs = require('fs');
 const path = require('path');
+const { dateSpotDetailPath, isVenueReviewType } = require('../../src/content-contracts/date-spot-paths.mjs');
 
-const DATE_SPOTS_FILE = path.join(__dirname, '..', '..', 'src/content/date-spots.json');
+// Same source the build reads (src/content.config.ts): DATE_SPOT_SOURCE,
+// relative to the working directory, when set (CI fixture builds).
+const DATE_SPOTS_FILE = process.env.DATE_SPOT_SOURCE
+  ? path.resolve(process.env.DATE_SPOT_SOURCE)
+  : path.join(__dirname, '..', '..', 'src/content/date-spots.json');
 
-function loadDateSpots() {
-  if (!fs.existsSync(DATE_SPOTS_FILE)) return [];
-  return JSON.parse(fs.readFileSync(DATE_SPOTS_FILE, 'utf8'));
+function loadDateSpots(file = DATE_SPOTS_FILE) {
+  if (!fs.existsSync(file)) return [];
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
 function spotRoutes(spot) {
-  const enSlug = spot.locales.en.slug;
-  const frSlug = spot.locales['fr-CA'].slug;
-  return spot.spotType === 'restaurant'
-    ? { en: `/en/reviews/${enSlug}/`, fr: `/fr/critiques/${frSlug}/` }
-    : { en: `/en/date-spots/${enSlug}/`, fr: `/fr/lieux/${frSlug}/` };
+  return { en: dateSpotDetailPath(spot, 'en'), fr: dateSpotDetailPath(spot, 'fr') };
 }
 
 function isVenueReview(spot) {
-  return spot.spotType === 'restaurant' || spot.spotType === 'bar';
+  return isVenueReviewType(spot.spotType);
 }
 
-/** All detail-page routes for the current collection, flattened en+fr. */
-function allDetailRoutes() {
-  const spots = loadDateSpots();
+/** All detail-page routes for the collection, flattened en+fr. */
+function allDetailRoutes(spots = loadDateSpots()) {
   const routes = [];
   for (const spot of spots) {
     const { en, fr } = spotRoutes(spot);
@@ -43,8 +44,7 @@ function allDetailRoutes() {
 }
 
 /** Listing pages to include when the collection has relevant content. */
-function listingRoutes() {
-  const spots = loadDateSpots();
+function listingRoutes(spots = loadDateSpots()) {
   const routes = [];
   if (spots.length > 0) routes.push('/en/date-spots/', '/fr/lieux/');
   if (spots.some(isVenueReview)) routes.push('/en/reviews/', '/fr/critiques/');

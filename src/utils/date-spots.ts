@@ -1,5 +1,6 @@
 import type { CollectionEntry } from "astro:content";
 import { DATE_SPOT_CATEGORIES, neighbourhoodSlug } from "@content-contracts/date-spot.mjs";
+import { dateSpotDetailPath } from "@content-contracts/date-spot-paths.mjs";
 import { t, type Locale } from "@i18n/utils";
 
 type DateSpot = CollectionEntry<"dateSpots">["data"];
@@ -39,17 +40,18 @@ export function categoryFromSlug(slug: string): DateSpotCategory | undefined {
 
 const base = (locale: Locale) => (locale === "fr" ? "/fr/lieux" : "/en/date-spots");
 
+// Detail paths come from @content-contracts/date-spot-paths.mjs, shared with
+// the CI page/URL generators (scripts/lib/date-spot-routes.cjs).
 export function reviewPath(spot: VenueReview, locale: Locale): string {
-  const slug = spot.locales[copyLocale(locale)].slug;
-  return `/${locale}/${locale === "fr" ? "critiques" : "reviews"}/${neighbourhoodSlug(spot.neighbourhood)}/${slug}/`;
+  return dateSpotDetailPath(spot, locale);
 }
 
 export function planningPath(spot: PlanningSpot, locale: Locale): string {
-  return `${base(locale)}/${spot.locales[copyLocale(locale)].slug}/`;
+  return dateSpotDetailPath(spot, locale);
 }
 
 export function dateSpotPath(spot: DateSpot, locale: Locale): string {
-  return isVenueReview(spot) ? reviewPath(spot, locale) : planningPath(spot as PlanningSpot, locale);
+  return dateSpotDetailPath(spot, locale);
 }
 
 export function categoryPath(category: DateSpotCategory, locale: Locale): string {
