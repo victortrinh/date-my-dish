@@ -1,4 +1,4 @@
-name: Refresh Social Media Tokens
+name: Refresh Pinterest Tokens
 
 on:
   schedule:
@@ -21,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      # Pinterest posting (pinterest-pin-rotation.yml) needs only
+      # PINTEREST_ACCESS_TOKEN; the refresh token rotates it before expiry.
       - uses: actions/checkout@v7
         with:
           token: ${{ secrets.PAT_TOKEN }}
@@ -29,10 +31,8 @@ jobs:
         with:
           node-version: 24
 
-      - name: Refresh tokens
+      - name: Refresh Pinterest tokens
         env:
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
           PINTEREST_REFRESH_TOKEN: ${{ secrets.PINTEREST_REFRESH_TOKEN }}
           PINTEREST_CLIENT_ID: ${{ secrets.PINTEREST_CLIENT_ID }}
           PINTEREST_CLIENT_SECRET: ${{ secrets.PINTEREST_CLIENT_SECRET }}

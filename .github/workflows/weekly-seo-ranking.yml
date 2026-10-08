@@ -38,7 +38,7 @@ jobs:
 
       - run: npm ci
 
-      - name: Derive keywords from frontmatter
+      - name: Derive keywords from published collections
         run: node scripts/seo/derive-keywords.mjs
         env:
           KEYWORD_LIMIT: ${{ inputs.keyword_limit || '60' }}

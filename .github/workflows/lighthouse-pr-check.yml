@@ -28,7 +28,7 @@ jobs:
       - name: Check for content changes
         id: content
         run: |
-          CHANGED=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD -- src/content/recipes/ src/content/articles/ src/pages/)
+          CHANGED=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD -- src/content/date-spots.json src/content/contributor-recipes.json src/content/extended-profiles.json src/content/editorial/ src/pages/)
           if [ -z "$CHANGED" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
             echo "No content pages changed — skipping Lighthouse"

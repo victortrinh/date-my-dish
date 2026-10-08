@@ -181,12 +181,13 @@ Notion holds English. The importer translates EN into Quebec French (souper, dé
 
 | Job | Runs as | What it does |
 |---|---|---|
-| Importer | Claude cloud routine, Wednesdays | Publishing flow above |
-| Weekly SEO maintenance | Claude cloud routine, Sundays | Audits published posts. Edits only companion file fields (meta, alt text, internal links) and opens a PR. Prose suggestions go into an issue, because prose belongs to Notion. Never pads word counts. |
+| Importer | Claude cloud routine, Wednesdays; prompt in `routines/importer.md` | Publishing flow above |
+| Weekly SEO maintenance | Claude cloud routine, Sundays; prompt in `routines/weekly-seo-maintenance.md` | Audits published posts. Edits only companion file fields (meta, alt text, internal links) and opens a PR. Prose suggestions go into an issue, because prose belongs to Notion. Never pads word counts. |
 | `weekly-seo-ranking.yml` | GitHub Actions, Mondays | GSC and SERP data into `data/seo/`, keywords derived from published posts |
 | `weekly-seo-audit.yml` | GitHub Actions, Sundays | Full Lighthouse audit into `data/lighthouse/` |
 | `venue-maintenance.yml` | GitHub Actions, monthly | Flags reviews and Date Spots due a recheck (six months since Checked, or seasonal). Report only. |
 | `pinterest-pin-rotation.yml` | GitHub Actions, daily | Posts queued pins |
+| `token-refresh.yml` | GitHub Actions, 1st and 25th | Refreshes the Pinterest access token pin posting needs |
 | `playwright-weekly.yml` | GitHub Actions, Sundays | Full E2E suite |
 
-No scheduled job edits prose on the site.
+No scheduled job edits prose on the site. Each routine prompt is committed under `routines/`; changing the file is how the routine changes.
