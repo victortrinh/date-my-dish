@@ -1,23 +1,23 @@
 {
   "pages": {
-    "/en/recipes/quinoa-crusted-salmon/": {
+    "/en/reviews/ile-flottante-montreal/": {
       "queries": [
         {
-          "keyword": "quinoa crusted salmon",
-          "avgPosition": 7.3,
+          "keyword": "othym",
+          "avgPosition": 19,
           "clicks": 1,
-          "impressions": 4,
-          "ctr": 0.25
+          "impressions": 1,
+          "ctr": 1
         },
         {
-          "keyword": "best date night recipes to impress",
-          "avgPosition": 6,
+          "keyword": "ile flottante montreal restaurant",
+          "avgPosition": 31,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "salmon nikkei",
+          "keyword": "île flottante montreal reviews",
           "avgPosition": 12,
           "clicks": 0,
           "impressions": 1,
@@ -25,151 +25,317 @@
         }
       ],
       "totalClicks": 1,
-      "totalImpressions": 6
+      "totalImpressions": 3
     },
-    "/en/articles/anova-vs-anova-sous-vide-comparison/": {
+    "/en/reviews/othym-montreal/": {
       "queries": [
         {
-          "keyword": "anova vs joule",
-          "avgPosition": 1,
+          "keyword": "othym michelin",
+          "avgPosition": 7.3,
+          "clicks": 1,
+          "impressions": 3,
+          "ctr": 0.333
+        },
+        {
+          "keyword": "menu de othym",
+          "avgPosition": 26,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 1
-    },
-    "/en/articles/anova-vs-joule-sous-vide-comparison/": {
-      "queries": [
+        },
         {
-          "keyword": "anova vs breville joule, which sous vide is better?",
-          "avgPosition": 7.1,
+          "keyword": "o thym montreal",
+          "avgPosition": 20,
           "clicks": 0,
-          "impressions": 7,
+          "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "anova vs breville sous vide",
-          "avgPosition": 5,
+          "keyword": "o'thym restaurant montreal",
+          "avgPosition": 23,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "o-thym reviews",
+          "avgPosition": 9.9,
+          "clicks": 0,
+          "impressions": 18,
+          "ctr": 0
+        },
+        {
+          "keyword": "othym",
+          "avgPosition": 11.5,
           "clicks": 0,
           "impressions": 4,
           "ctr": 0
         },
         {
-          "keyword": "anova vs joule",
-          "avgPosition": 3.3,
+          "keyword": "othym montreal",
+          "avgPosition": 12.8,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "othyme montreal",
+          "avgPosition": 8.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "restaurant o'thym",
+          "avgPosition": 23.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "restaurant o'thym montreal",
+          "avgPosition": 25,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 1,
+      "totalImpressions": 37
+    },
+    "/en/articles/anova-vs-joule-sous-vide-comparison/": {
+      "queries": [
+        {
+          "keyword": "anova precision cooker comparison",
+          "avgPosition": 12,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "anova precision oven vs breville joule",
+          "avgPosition": 4,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "anova vs",
+          "avgPosition": 9,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "anova vs breville joule, which sous vide is better?",
+          "avgPosition": 8,
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0
+        },
+        {
+          "keyword": "anova vs breville sous vide",
+          "avgPosition": 4.6,
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0
+        },
+        {
+          "keyword": "anova vs joule",
+          "avgPosition": 6.2,
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0
+        },
+        {
+          "keyword": "best sous vide for bodybuilders",
+          "avgPosition": 1,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "how reliable are anova sous vide machines?",
+          "avgPosition": 12,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "joule sous vide review",
+          "avgPosition": 41,
+          "clicks": 0,
+          "impressions": 1,
           "ctr": 0
         },
         {
           "keyword": "joule sous vide vs anova",
-          "avgPosition": 6.5,
+          "avgPosition": 5.5,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
         },
         {
           "keyword": "joule vs anova",
-          "avgPosition": 6,
+          "avgPosition": 3,
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 3,
           "ctr": 0
         },
         {
-          "keyword": "steak and fish",
-          "avgPosition": 3,
+          "keyword": "travel friendly sous vide",
+          "avgPosition": 1,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 18
+      "totalImpressions": 29
     },
     "/en/articles/best-cutting-board-material/": {
       "queries": [
         {
-          "keyword": "alternativen",
-          "avgPosition": 9,
+          "keyword": "ja",
+          "avgPosition": 3.5,
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 2,
           "ctr": 0
         },
         {
-          "keyword": "hasegawa boards",
+          "keyword": "reviews",
           "avgPosition": 4,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "hasegawa cutting board",
-          "avgPosition": 3,
+          "keyword": "so what would you suggest",
+          "avgPosition": 5,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 4
+    },
+    "/en/recipes/3-day-aged-miso-duck-breast/": {
+      "queries": [
+        {
+          "keyword": "duck miso",
+          "avgPosition": 8.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "japanese duck breast recipe",
+          "avgPosition": 5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "miso duck",
+          "avgPosition": 7.5,
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0
+        },
+        {
+          "keyword": "miso duck breast",
+          "avgPosition": 4.7,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "miso duck",
+          "avgPosition": 8,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "miso duck breast",
+          "avgPosition": 10,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "hasegawa cutting board alternative",
-          "avgPosition": 7,
+          "keyword": "miso duck",
+          "avgPosition": 10,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "hasegawa cutting board review",
-          "avgPosition": 10.4,
+          "keyword": "miso duck",
+          "avgPosition": 8,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "miso duck breast",
+          "avgPosition": 10,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 22
+    },
+    "/en/recipes/bold-spicy-miso-ramen/": {
+      "queries": [
+        {
+          "keyword": "japanese spicy miso ramen recipe",
+          "avgPosition": 64,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "miso hot ramen",
+          "avgPosition": 68,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "spicy garlic miso ramen",
+          "avgPosition": 68,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "spicy miso",
+          "avgPosition": 75,
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0
+        },
+        {
+          "keyword": "spicy miso ramen",
+          "avgPosition": 73.6,
           "clicks": 0,
           "impressions": 5,
           "ctr": 0
         },
         {
-          "keyword": "japanese rubber cutting boards",
-          "avgPosition": 9,
+          "keyword": "spicy miso ramen bowl",
+          "avgPosition": 74,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "kama asa vs hasegawa cutting board",
-          "avgPosition": 11,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "kasuri snijplank",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "knives",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "what about something different",
-          "avgPosition": 8,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "yes",
+          "keyword": "spicy miso ramen recipe authentic",
           "avgPosition": 4,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "אילו",
-          "avgPosition": 7,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -178,93 +344,11 @@
       "totalClicks": 0,
       "totalImpressions": 16
     },
-    "/en/articles/sous-vide-date-night/": {
+    "/en/recipes/cauliflower-steak-with-romesco-sauce/": {
       "queries": [
         {
-          "keyword": "sous vide for couples",
-          "avgPosition": 2.7,
-          "clicks": 0,
-          "impressions": 79,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 79
-    },
-    "/en/recipes/3-day-aged-miso-duck-breast/": {
-      "queries": [
-        {
-          "keyword": "duck miso",
-          "avgPosition": 7,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "miso duck",
-          "avgPosition": 4.3,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        },
-        {
-          "keyword": "miso duck breast",
-          "avgPosition": 5.5,
-          "clicks": 0,
-          "impressions": 6,
-          "ctr": 0
-        },
-        {
-          "keyword": "miso duck",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "miso duck breast",
-          "avgPosition": 7.5,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
-          "keyword": "miso duck",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "miso duck breast",
-          "avgPosition": 7.5,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
-          "keyword": "miso duck",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "miso duck breast",
-          "avgPosition": 7.5,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 25
-    },
-    "/en/recipes/bold-spicy-miso-ramen/": {
-      "queries": [
-        {
-          "keyword": "spicy miso ramen",
-          "avgPosition": 58,
+          "keyword": "golden romesco",
+          "avgPosition": 6,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -276,17 +360,24 @@
     "/en/recipes/crispy-vegan-calamari/": {
       "queries": [
         {
-          "keyword": "vegan calamari recipe",
-          "avgPosition": 61,
+          "keyword": "is calamari vegan",
+          "avgPosition": 64,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "vegane calamares",
-          "avgPosition": 63.5,
+          "keyword": "mushroom calamari",
+          "avgPosition": 64,
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegan calamari recipe",
+          "avgPosition": 5,
+          "clicks": 0,
+          "impressions": 1,
           "ctr": 0
         }
       ],
@@ -297,28 +388,14 @@
       "queries": [
         {
           "keyword": "bruleed lemon",
-          "avgPosition": 47,
+          "avgPosition": 44,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "creme brulee no bake",
-          "avgPosition": 65,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "creme brulee no oven",
-          "avgPosition": 47,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "lemon brulee 3 ingredients",
-          "avgPosition": 11,
+          "keyword": "lemon brule",
+          "avgPosition": 10,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -332,130 +409,74 @@
         },
         {
           "keyword": "lemon posset brulee",
-          "avgPosition": 8.6,
+          "avgPosition": 11.1,
           "clicks": 0,
           "impressions": 7,
           "ctr": 0
         },
         {
-          "keyword": "no bake creme brulee",
-          "avgPosition": 71,
+          "keyword": "lemon posset brulee recipe",
+          "avgPosition": 9,
           "clicks": 0,
           "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "no bake brulee",
+          "avgPosition": 53,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "no bake lemon creme brulee",
+          "avgPosition": 7.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "pod juice lemon brulee",
+          "avgPosition": 24,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 16
+    },
+    "/en/recipes/quinoa-crusted-salmon/": {
+      "queries": [
+        {
+          "keyword": "quinoa crusted salmon",
+          "avgPosition": 4.9,
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0
+        },
+        {
+          "keyword": "salmon nikkei",
+          "avgPosition": 9,
+          "clicks": 0,
+          "impressions": 5,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
       "totalImpressions": 13
     },
-    "/en/recipes/vietnamese-fish-sauce-wings/": {
-      "queries": [
-        {
-          "keyword": "fish sauce chicken",
-          "avgPosition": 60,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "fish sauce chicken recipe",
-          "avgPosition": 64,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "fish sauce chicken wings",
-          "avgPosition": 64.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "fish sauce fried chicken wings",
-          "avgPosition": 25,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "fish sauce wings",
-          "avgPosition": 66,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "fish sauce wings recipe",
-          "avgPosition": 51,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "fish sauce wings vietnamese",
-          "avgPosition": 53.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "vietnamese caramel chicken wings",
-          "avgPosition": 72,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vietnamese chicken wings fish sauce",
-          "avgPosition": 62,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vietnamese fish sauce chicken wings",
-          "avgPosition": 60,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vietnamese fish sauce chicken wings recipe",
-          "avgPosition": 59,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vietnamese fish sauce wings recipe",
-          "avgPosition": 57.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "vietnamese wings recipe",
-          "avgPosition": 75,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 19
-    },
     "/en/reviews/giwa-verdun-montreal/": {
       "queries": [
         {
           "keyword": "giwa",
-          "avgPosition": 9.5,
+          "avgPosition": 9.2,
           "clicks": 0,
-          "impressions": 37,
+          "impressions": 26,
           "ctr": 0
         },
         {
-          "keyword": "giwa menu",
+          "keyword": "giwa korean",
           "avgPosition": 9,
           "clicks": 0,
           "impressions": 2,
@@ -463,910 +484,282 @@
         },
         {
           "keyword": "giwa montreal",
-          "avgPosition": 9,
+          "avgPosition": 8.4,
           "clicks": 0,
-          "impressions": 15,
+          "impressions": 5,
           "ctr": 0
         },
         {
           "keyword": "giwa restaurant",
-          "avgPosition": 10.5,
+          "avgPosition": 10.2,
           "clicks": 0,
-          "impressions": 15,
+          "impressions": 18,
           "ctr": 0
         },
         {
-          "keyword": "giwa verdun",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant coréen verdun",
-          "avgPosition": 55,
+          "keyword": "photos de restaurant giwa",
+          "avgPosition": 10,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
           "keyword": "restaurant giwa",
-          "avgPosition": 9.5,
+          "avgPosition": 7.9,
           "clicks": 0,
-          "impressions": 17,
+          "impressions": 20,
           "ctr": 0
         },
         {
           "keyword": "restaurant giwa menu",
-          "avgPosition": 10.3,
+          "avgPosition": 11,
           "clicks": 0,
-          "impressions": 11,
+          "impressions": 3,
           "ctr": 0
         },
         {
           "keyword": "restaurant giwa photos",
-          "avgPosition": 8.3,
+          "avgPosition": 8,
           "clicks": 0,
-          "impressions": 16,
+          "impressions": 6,
           "ctr": 0
         },
         {
           "keyword": "restaurant giwa reviews",
-          "avgPosition": 3.7,
+          "avgPosition": 3.3,
           "clicks": 0,
-          "impressions": 14,
-          "ctr": 0
-        },
-        {
-          "keyword": "sushi giwa",
-          "avgPosition": 58,
-          "clicks": 0,
-          "impressions": 1,
+          "impressions": 3,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 130
+      "totalImpressions": 84
     },
     "/en/reviews/hoogan-et-beaufort-montreal/": {
       "queries": [
         {
-          "keyword": "and price wise",
-          "avgPosition": 5,
+          "keyword": "hoogan",
+          "avgPosition": 8,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "hoogan & beaufort menu",
-          "avgPosition": 45.5,
+          "keyword": "hoogan et beaufort",
+          "avgPosition": 14.7,
           "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "hoogan and beaufort menu",
-          "avgPosition": 45,
-          "clicks": 0,
-          "impressions": 1,
+          "impressions": 3,
           "ctr": 0
         },
         {
           "keyword": "hoogan et beaufort dress code",
           "avgPosition": 6.6,
           "clicks": 0,
-          "impressions": 13,
+          "impressions": 7,
           "ctr": 0
         },
         {
-          "keyword": "hoogan et beaufort menu",
-          "avgPosition": 44.5,
+          "keyword": "hoogan et beaufort restaurant montreal",
+          "avgPosition": 10,
           "clicks": 0,
-          "impressions": 2,
+          "impressions": 1,
           "ctr": 0
         },
         {
           "keyword": "hoogan et beaufort reviews",
-          "avgPosition": 11.5,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 23
-    },
-    "/en/reviews/ile-flottante-montreal/": {
-      "queries": [
-        {
-          "keyword": "ile flottante montreal",
-          "avgPosition": 35.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "ile flottante montreal menu",
-          "avgPosition": 30,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "ile flottante restaurant",
-          "avgPosition": 33,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "les deux singes de montarvie montreal",
-          "avgPosition": 25.2,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant île flottante",
-          "avgPosition": 34,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "île flottante montreal",
           "avgPosition": 12,
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 7,
           "ctr": 0
         },
         {
-          "keyword": "île flottante montreal photos",
-          "avgPosition": 33,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "île flottante montreal reviews",
-          "avgPosition": 11,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "île flottante montréal",
-          "avgPosition": 30,
+          "keyword": "restaurant hoogan beaufort",
+          "avgPosition": 47,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 14
+      "totalImpressions": 20
     },
     "/en/reviews/mckiernan-montreal/": {
       "queries": [
         {
           "keyword": "bomba schnitzel",
-          "avgPosition": 10.8,
+          "avgPosition": 9.6,
           "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        },
-        {
-          "keyword": "brunch mckiernan",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
+          "impressions": 7,
           "ctr": 0
         },
         {
           "keyword": "mckiernan brunch",
-          "avgPosition": 10.1,
-          "clicks": 0,
-          "impressions": 12,
-          "ctr": 0
-        },
-        {
-          "keyword": "mckiernan brunch menu",
-          "avgPosition": 9.7,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        },
-        {
-          "keyword": "mckiernan montreal",
-          "avgPosition": 21,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "mckiernan reservation",
-          "avgPosition": 9.8,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        },
-        {
-          "keyword": "mckiernan rôtisserie menu",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "mckiernan rôtisserie reviews",
-          "avgPosition": 10.5,
-          "clicks": 0,
-          "impressions": 38,
-          "ctr": 0
-        },
-        {
-          "keyword": "mckiernans montreal",
-          "avgPosition": 4,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 67
-    },
-    "/en/reviews/moccione-montreal/": {
-      "queries": [
-        {
-          "keyword": "moccione",
-          "avgPosition": 33,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "moccione menu",
-          "avgPosition": 34,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "moccione photos",
-          "avgPosition": 48,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "moccione restaurant",
-          "avgPosition": 7,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "moccione reviews",
-          "avgPosition": 8.8,
-          "clicks": 0,
-          "impressions": 23,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant moccione reviews",
-          "avgPosition": 5.8,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 31
-    },
-    "/en/reviews/oncle-lee-kao-montreal/": {
-      "queries": [
-        {
-          "keyword": "lequel est moins cher",
-          "avgPosition": 2,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee",
-          "avgPosition": 8.1,
-          "clicks": 0,
-          "impressions": 11,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee kao",
-          "avgPosition": 10.2,
-          "clicks": 0,
-          "impressions": 76,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee kao menu",
-          "avgPosition": 11,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee kao montreal",
-          "avgPosition": 6,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee kăo",
-          "avgPosition": 9.4,
-          "clicks": 0,
-          "impressions": 45,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee kăo menu",
-          "avgPosition": 9.7,
-          "clicks": 0,
-          "impressions": 44,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee kăo montreal",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee kăo reviews",
-          "avgPosition": 3.2,
-          "clicks": 0,
-          "impressions": 18,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee menu",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee michelin",
-          "avgPosition": 8.2,
-          "clicks": 0,
-          "impressions": 6,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee montreal",
-          "avgPosition": 9.2,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee old port",
-          "avgPosition": 9.5,
-          "clicks": 0,
-          "impressions": 6,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee reviews",
-          "avgPosition": 6.4,
-          "clicks": 0,
-          "impressions": 25,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee vs oncle lee kao",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant oncle lee kao",
-          "avgPosition": 8,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant oncle lee montreal",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "signature dishes",
-          "avgPosition": 5,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "uncle lee kao montreal",
-          "avgPosition": 12,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "what is in it?",
-          "avgPosition": 3,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 250
-    },
-    "/en/reviews/othym-montreal/": {
-      "queries": [
-        {
-          "keyword": "au thym",
-          "avgPosition": 34,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "o thym",
-          "avgPosition": 15.4,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        },
-        {
-          "keyword": "o thym menu",
-          "avgPosition": 14.8,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        },
-        {
-          "keyword": "o thym montreal",
-          "avgPosition": 11,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "o thyme montreal",
-          "avgPosition": 12,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "o'thym menu",
-          "avgPosition": 21,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "o'thym restaurant montreal",
-          "avgPosition": 18,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "o-thym",
           "avgPosition": 10,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
         },
         {
-          "keyword": "o-thym menu",
-          "avgPosition": 8,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "o-thym reviews",
-          "avgPosition": 9.9,
-          "clicks": 0,
-          "impressions": 30,
-          "ctr": 0
-        },
-        {
-          "keyword": "on thyme restaurant",
-          "avgPosition": 12,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "othym",
-          "avgPosition": 9.9,
-          "clicks": 0,
-          "impressions": 32,
-          "ctr": 0
-        },
-        {
-          "keyword": "othym menu",
-          "avgPosition": 16,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        },
-        {
-          "keyword": "othym michelin",
-          "avgPosition": 8.3,
-          "clicks": 0,
-          "impressions": 6,
-          "ctr": 0
-        },
-        {
-          "keyword": "othym montreal",
-          "avgPosition": 12,
-          "clicks": 0,
-          "impressions": 13,
-          "ctr": 0
-        },
-        {
-          "keyword": "othym restaurant",
-          "avgPosition": 16,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "othyme",
-          "avgPosition": 6.5,
+          "keyword": "mckiernan reservation",
+          "avgPosition": 11,
           "clicks": 0,
           "impressions": 2,
           "ctr": 0
         },
         {
-          "keyword": "othyme montreal",
-          "avgPosition": 8,
+          "keyword": "mckiernan rôtisserie reviews",
+          "avgPosition": 9.3,
           "clicks": 0,
-          "impressions": 3,
+          "impressions": 31,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 42
+    },
+    "/en/reviews/moccione-montreal/": {
+      "queries": [
+        {
+          "keyword": "moccione montreal",
+          "avgPosition": 5,
+          "clicks": 0,
+          "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "thym restaurant",
+          "keyword": "moccione reservation",
+          "avgPosition": 19,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "moccione reviews",
+          "avgPosition": 9.2,
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0
+        },
+        {
+          "keyword": "restaurant moccione montreal",
           "avgPosition": 29,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 111
-    },
-    "/fr/articles/beurre-clarifie-et-ghee/": {
-      "queries": [
-        {
-          "keyword": "oui",
-          "avgPosition": 12,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 1
-    },
-    "/fr/articles/quel-materiau-planche-a-decouper/": {
-      "queries": [
-        {
-          "keyword": "katori planche",
-          "avgPosition": 12,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
         },
         {
-          "keyword": "meilleur materiau planche a decouper",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "meilleure matiere planche a decouper",
-          "avgPosition": 30,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "quel bois planche a decouper",
-          "avgPosition": 57,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "quel bois pour planche à découper",
-          "avgPosition": 63,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "quelle matiere planche a decouper",
-          "avgPosition": 25,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 6
-    },
-    "/fr/critiques/giwa-verdun-montreal/": {
-      "queries": [
-        {
-          "keyword": "giwa",
-          "avgPosition": 9.8,
-          "clicks": 0,
-          "impressions": 15,
-          "ctr": 0
-        },
-        {
-          "keyword": "giwa restaurant",
-          "avgPosition": 8.7,
-          "clicks": 0,
-          "impressions": 7,
-          "ctr": 0
-        },
-        {
-          "keyword": "giwa verdun",
-          "avgPosition": 8,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        },
-        {
-          "keyword": "menu de restaurant giwa",
-          "avgPosition": 11,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "photos de restaurant giwa",
-          "avgPosition": 9.5,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant coréen verdun",
-          "avgPosition": 32,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant giwa",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant giwa photos",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 37
-    },
-    "/fr/critiques/moccione-montreal/": {
-      "queries": [
-        {
-          "keyword": "avis sur moccione",
-          "avgPosition": 12,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
-          "keyword": "moccione pizza menu",
-          "avgPosition": 42,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant moccione avis",
-          "avgPosition": 17,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 6
-    },
-    "/fr/critiques/oncle-lee-kao-montreal/": {
-      "queries": [
-        {
-          "keyword": "avis sur oncle lee",
-          "avgPosition": 9.3,
-          "clicks": 0,
-          "impressions": 3,
-          "ctr": 0
-        },
-        {
-          "keyword": "avis sur oncle lee kăo",
-          "avgPosition": 7,
-          "clicks": 0,
-          "impressions": 4,
-          "ctr": 0
-        },
-        {
-          "keyword": "menu de oncle lee kăo",
-          "avgPosition": 11,
-          "clicks": 0,
-          "impressions": 8,
-          "ctr": 0
-        },
-        {
-          "keyword": "monsieur lee",
-          "avgPosition": 33,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "oncle lee menu",
+          "keyword": "what is the price point",
           "avgPosition": 3,
           "clicks": 0,
           "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 10
+    },
+    "/en/reviews/oncle-lee-kao-montreal/": {
+      "queries": [
+        {
+          "keyword": "4 people",
+          "avgPosition": 3,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kao",
+          "avgPosition": 9.4,
+          "clicks": 0,
+          "impressions": 42,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kăo",
+          "avgPosition": 9.7,
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kăo menu",
+          "avgPosition": 8.8,
+          "clicks": 0,
+          "impressions": 33,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kăo montreal",
+          "avgPosition": 10.5,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kăo reviews",
+          "avgPosition": 3.2,
+          "clicks": 0,
+          "impressions": 14,
           "ctr": 0
         },
         {
           "keyword": "oncle lee michelin",
           "avgPosition": 9,
           "clicks": 0,
-          "impressions": 1,
+          "impressions": 5,
           "ctr": 0
         },
         {
-          "keyword": "oncle lee vieux montréal",
-          "avgPosition": 10.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "restaurant oncle lee",
-          "avgPosition": 33,
+          "keyword": "oncle lee old port",
+          "avgPosition": 11,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "restaurant oncle lee rue laurier",
-          "avgPosition": 5,
+          "keyword": "oncle lee photos",
+          "avgPosition": 20,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 22
-    },
-    "/fr/recettes/calamars-vegetaliens-croustillants/": {
-      "queries": [
+        },
         {
-          "keyword": "calamar vegan",
-          "avgPosition": 11.4,
+          "keyword": "oncle lee reviews",
+          "avgPosition": 6.6,
           "clicks": 0,
           "impressions": 13,
           "ctr": 0
         },
         {
-          "keyword": "calamares veganos",
-          "avgPosition": 69,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "vegane calamares",
-          "avgPosition": 98.5,
-          "clicks": 0,
-          "impressions": 2,
-          "ctr": 0
-        },
-        {
-          "keyword": "veganes calamari",
-          "avgPosition": 94.2,
-          "clicks": 0,
-          "impressions": 5,
-          "ctr": 0
-        }
-      ],
-      "totalClicks": 0,
-      "totalImpressions": 21
-    },
-    "/fr/recettes/magret-canard-miso-3-jours/": {
-      "queries": [
-        {
-          "keyword": "cuisson magret sous vide",
-          "avgPosition": 2,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "eventail de magret de canard",
-          "avgPosition": 4.4,
-          "clicks": 0,
-          "impressions": 8,
-          "ctr": 0
-        },
-        {
-          "keyword": "magret de canard recette 3 fois par jour",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "magret de canard sous vide",
-          "avgPosition": 9,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "magret de canard trois fois par jour",
-          "avgPosition": 1,
-          "clicks": 0,
-          "impressions": 1,
-          "ctr": 0
-        },
-        {
-          "keyword": "magret sous vide",
-          "avgPosition": 2,
+          "keyword": "uncle lee kao montreal",
+          "avgPosition": 11,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 13
+      "totalImpressions": 134
     },
-    "/fr/recettes/posset-brulee-au-citron/": {
+    "/fr/articles/quel-materiau-planche-a-decouper/": {
       "queries": [
         {
-          "keyword": "bruleed posset",
-          "avgPosition": 4,
+          "keyword": "bois pour planche a decouper",
+          "avgPosition": 66,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "lemon posset brulee",
-          "avgPosition": 7,
+          "keyword": "quel bois pour planche à découper",
+          "avgPosition": 60,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "posset brulee",
-          "avgPosition": 3,
+          "keyword": "quelle est la meilleure matière pour une planche à découper",
+          "avgPosition": 50,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
@@ -1375,25 +768,202 @@
       "totalClicks": 0,
       "totalImpressions": 3
     },
-    "/fr/recettes/ramen-miso-epice/": {
+    "/fr/critiques/mckiernan-montreal/": {
       "queries": [
         {
-          "keyword": "difference miso blanc et noir",
-          "avgPosition": 6,
+          "keyword": "avis sur mckiernan",
+          "avgPosition": 8,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         },
         {
-          "keyword": "ramen miso rouge",
-          "avgPosition": 2,
+          "keyword": "mckiernan brunch",
+          "avgPosition": 8.7,
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0
+        },
+        {
+          "keyword": "mckiernan rôtisserie menu",
+          "avgPosition": 6,
           "clicks": 0,
           "impressions": 1,
           "ctr": 0
         }
       ],
       "totalClicks": 0,
-      "totalImpressions": 2
+      "totalImpressions": 5
+    },
+    "/fr/critiques/moccione-montreal/": {
+      "queries": [
+        {
+          "keyword": "moccione",
+          "avgPosition": 11,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "moccione restaurant",
+          "avgPosition": 42,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "moccionne",
+          "avgPosition": 11,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 4
+    },
+    "/fr/critiques/oncle-lee-kao-montreal/": {
+      "queries": [
+        {
+          "keyword": "avis sur oncle lee kăo",
+          "avgPosition": 8.1,
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0
+        },
+        {
+          "keyword": "menu de oncle lee kăo",
+          "avgPosition": 10.4,
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kao",
+          "avgPosition": 9.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kao menu",
+          "avgPosition": 9,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kao montreal",
+          "avgPosition": 10,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kăo menu",
+          "avgPosition": 9.5,
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kăo montreal",
+          "avgPosition": 8,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kăo reviews",
+          "avgPosition": 10.5,
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee kǎo",
+          "avgPosition": 11,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee menu",
+          "avgPosition": 19.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        },
+        {
+          "keyword": "oncle lee montreal",
+          "avgPosition": 32.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 53
+    },
+    "/fr/recettes/calamars-vegetaliens-croustillants/": {
+      "queries": [
+        {
+          "keyword": "calamar vegan",
+          "avgPosition": 11.2,
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0
+        },
+        {
+          "keyword": "vegane calamares",
+          "avgPosition": 100,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 6
+    },
+    "/fr/recettes/magret-canard-miso-3-jours/": {
+      "queries": [
+        {
+          "keyword": "eventail de magret de canard",
+          "avgPosition": 6.9,
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0
+        },
+        {
+          "keyword": "magret de canard à la japonaise",
+          "avgPosition": 25.5,
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 16
+    },
+    "/fr/recettes/posset-brulee-au-citron/": {
+      "queries": [
+        {
+          "keyword": "bruler du citron",
+          "avgPosition": 10.6,
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0
+        },
+        {
+          "keyword": "lemon posset brûlée",
+          "avgPosition": 7,
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0
+        }
+      ],
+      "totalClicks": 0,
+      "totalImpressions": 6
     },
     "/fr/recettes/saumon-en-croute-de-quinoa/": {
       "queries": [
@@ -1410,8 +980,8 @@
     }
   },
   "dateRange": {
-    "start": "2026-09-11",
-    "end": "2026-09-18"
+    "start": "2026-09-25",
+    "end": "2026-10-02"
   },
-  "rowCount": 178
+  "rowCount": 120
 }
