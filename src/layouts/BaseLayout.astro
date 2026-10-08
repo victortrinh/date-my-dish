@@ -74,12 +74,15 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2acfc6a04df0427b80b87ca6498542a3"}' is:inline></script>
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-95FS4CF63K" is:inline></script>
+    <!-- gtag.js (~180 KB) is fetched after the load event so it never competes
+         with the hero for bandwidth (performance budget: mobile 95+, LCP 2.5 s).
+         Calls made before it arrives queue in dataLayer. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-95FS4CF63K');
+      window.addEventListener('load', function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-95FS4CF63K';document.head.appendChild(s);});
     </script>
     <!-- Ahrefs Analytics -->
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="t2xKSou59Mr4fNd9hqYmEg" async is:inline></script>

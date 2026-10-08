@@ -18,7 +18,8 @@ try {
 module.exports = {
   ci: {
     collect: {
-      startServerCommand: 'npx wrangler dev --port 8788',
+      // MAINTENANCE_MODE is on in wrangler.jsonc and 503s every page; audit the real site.
+      startServerCommand: 'npx wrangler dev --port 8788 --var MAINTENANCE_MODE:false',
       startServerReadyPattern: 'Ready on',
       startServerReadyTimeout: 30000,
       url: urls,
