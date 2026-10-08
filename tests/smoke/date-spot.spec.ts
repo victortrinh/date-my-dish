@@ -92,21 +92,22 @@ test("the verdict filter narrows a listing to one state", async ({ page }) => {
 
 // The seven reviews published before the rework lived at flat
 // /{locale}/{reviews|critiques}/{slug}-montreal/ URLs. Each one 301s, in one
-// hop, to its nested URL under the venue's neighbourhood.
+// hop, to its nested URL: the neighbourhood and slug its record renders at
+// (public/_redirects; the Notion H1 and Slug decide both).
 const legacyReviews = {
-  "giwa-verdun": "verdun",
-  "hoogan-et-beaufort": "rosemont-la-petite-patrie",
-  "ile-flottante": "mile-end",
-  mckiernan: "sud-ouest",
-  moccione: "villeray",
-  "oncle-lee-kao": "old-montreal",
-  othym: "the-village",
+  "giwa-verdun": ["verdun", "giwa"],
+  "hoogan-et-beaufort": ["rosemont", "hoogan-et-beaufort"],
+  "ile-flottante": ["mile-end", "ile-flottante"],
+  mckiernan: ["ville-emard", "mckiernan"],
+  moccione: ["villeray", "moccione"],
+  "oncle-lee-kao": ["old-montreal", "oncle-lee-kao"],
+  othym: ["the-village", "othym"],
 };
 
 test("legacy flat review URLs 301 once to their nested URLs", async ({ request }) => {
   for (const prefix of ["/en/reviews", "/fr/critiques"]) {
-    for (const [slug, neighbourhood] of Object.entries(legacyReviews)) {
-      const route = `${prefix}/${slug}-montreal/`;
+    for (const [legacy, [neighbourhood, slug]] of Object.entries(legacyReviews)) {
+      const route = `${prefix}/${legacy}-montreal/`;
       const target = `${prefix}/${neighbourhood}/${slug}/`;
       const response = await request.get(route, { maxRedirects: 0 });
       expect(response.status(), route).toBe(301);
