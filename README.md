@@ -1,15 +1,15 @@
 <div align="center">
 
-### Elevate your dinner. Impress your date.
+### Where to go, what to drink, what to make for someone.
 
-A bilingual recipe blog for couples who believe great food is the secret ingredient to a memorable evening.
+A bilingual (English and Quebec French) Montréal date-night guide: restaurant and bar reviews, date spots, chef interviews and the recipes chefs make at home.
 
 **[datemydish.com](https://datemydish.com)**
 
-[![Astro](https://img.shields.io/badge/Astro-5.x-BC52EE?logo=astro&logoColor=white)](https://astro.build)
+[![Astro](https://img.shields.io/badge/Astro-7-BC52EE?logo=astro&logoColor=white)](https://astro.build)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript&logoColor=white)](https://typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-Deployed-F38020?logo=cloudflarepages&logoColor=white)](https://pages.cloudflare.com)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Cloudflare](https://img.shields.io/badge/Cloudflare-Deployed-F38020?logo=cloudflare&logoColor=white)](https://workers.cloudflare.com)
 [![Playwright](https://img.shields.io/badge/Playwright-E2E-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev)
 [![License](https://img.shields.io/badge/License-All_Rights_Reserved-red)](#license)
 
@@ -22,63 +22,63 @@ A bilingual recipe blog for couples who believe great food is the secret ingredi
   <img src="docs/readme-screenshot-dark.png" alt="Date My Dish - Dark Mode" width="49%" />
 </p>
 
+> The site is in maintenance mode (`MAINTENANCE_MODE` in `wrangler.jsonc`) while the reviews move to the new page design. The screenshots above show the previous site and will be replaced once it is back.
+
 ---
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [About](#about)
-- [Features](#features)
+- [Post types](#post-types)
+- [How content is published](#how-content-is-published)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [Commands](#commands)
-- [Content Authoring](#content-authoring)
-- [CI/CD \& Automation](#cicd--automation)
-  - [Content Publishing](#content-publishing)
-  - [Quality Gates](#quality-gates)
+- [Automation](#automation)
 - [Brand](#brand)
 - [License](#license)
 
 ## About
 
-Date My Dish is a curated collection of date-night recipes, food articles, and Montreal restaurant reviews. Wine pairings, plating tips, and music suggestions set the mood. Every piece of content is available in English and Quebec French with an "impress factor" rating so you know exactly how much wow you're bringing to the table.
+Date My Dish is a Montréal-first guide to date nights, reported by Victor. Every post is published in English and Quebec French. There are no scores: each Review and Date Spot carries a qualitative verdict (`A favourite`, `Depends on the night`, `Not our first pick`) with its reason, and reasoned Good-for rows. A venue's Google rating appears only as its own dated snapshot.
 
-**Content at a glance:** 13 recipes, 8 articles, 2 restaurant reviews (and growing weekly via automated pipelines).
+The full rules (what each post must contain, SEO, performance budgets, the publishing flow) live in [`docs/editorial-publishing-system.md`](docs/editorial-publishing-system.md). Domain terms are in [`CONTEXT.md`](CONTEXT.md).
 
-## Features
+## Post types
 
-- **Bilingual (EN/FR)** - Every piece of content exists as an EN/FR pair with Quebec French conventions
-- **Three Content Types** - Recipes, food science articles, and Montreal restaurant reviews
-- **Date Night Tips** - Wine pairing, playlist, and plating suggestions on select recipes
-- **Impress Factor** - 1-5 heart rating to match ambition to skill level
-- **Dark Mode** - System-aware with manual toggle, persisted in localStorage
-- **Full-Text Search** - Pagefind-powered overlay with keyboard navigation
-- **Print-Optimized** - Two-column print layout with ink-saving styles
-- **Rich SEO** - JSON-LD (Recipe, Article, FAQPage, BreadcrumbList), OpenGraph, hreflang, sitemap
-- **AI-Friendly** - `robots.txt` allows AI crawlers; `/llms.txt` endpoint for LLM discovery
-- **Notion Importer** - A Claude cloud routine (`routines/importer.md`) imports posts from the read-only Notion database into a draft PR; merging publishes
-- **Social Automation** - New content auto-posts to Instagram and Pinterest with AI-generated captions
-- **Accessible** - WCAG 2.2 AA: focus traps, skip-to-content, reduced-motion support, contrast-checked colors
+| Post type | English URL | French URL |
+|---|---|---|
+| Review (restaurant or bar) | `/en/reviews/{neighbourhood}/{slug}/` | `/fr/critiques/{neighbourhood}/{slug}/` |
+| Date Spot (activity or chef-led experience) | `/en/date-spots/{slug}/` | `/fr/lieux/{slug}/` |
+| Chef | `/en/chefs/{slug}/` | `/fr/chefs/{slug}/` |
+| Chef Recipe Card | `/en/recipe-cards/{slug}/` | `/fr/fiches-recettes/{slug}/` |
+
+The pages form a loop: a review's "Make a night of it" opens Date Spots, a Date Spot's "Pair it with" opens reviews, and a review links to its chef's page and recipe card. Home recipes and informative articles from the old site are retired (404).
+
+## How content is published
+
+- **Notion is the source.** Posts are written in a public, read-only Notion database. The site never writes to it and never rewrites its prose; only a short list of Allowed Edits (spelling, punctuation, em-dash removal, meta fields, alt text, internal links) applies.
+- **The Importer** is a Claude cloud routine ([`routines/importer.md`](routines/importer.md)) that runs `scripts/notion-import.mjs`. It fetches the next eligible row, optimises its photos, fits the text into the page sections, translates it into Quebec French, pre-fills the post's Companion File (`src/content/editorial/{slug}.json`: verdict, signals, neighbourhood, meta fields, alt text, links) and opens a draft PR.
+- **Checks** run in the routine and again in CI: the Verbatim Check (every sentence traces to Notion), the publish gate, the content contracts, the source and build validators and the performance budgets.
+- **Merging the PR publishes.** Nothing else does.
 
 ## Tech Stack
 
-| Layer         | Technology                                                                                                |
-| ------------- | --------------------------------------------------------------------------------------------------------- |
-| **Framework** | [Astro 5](https://astro.build) + TypeScript (strict) + MDX                                                |
-| **Styling**   | [Tailwind CSS 3.4](https://tailwindcss.com) with class-based dark mode                                    |
-| **Content**   | MDX with Zod-validated frontmatter schemas (recipes, articles, reviews)                                   |
-| **Search**    | [Pagefind](https://pagefind.app) - static, zero-JS search indexing                                        |
-| **i18n**      | Subdirectory routing (`/en/`, `/fr/`) with type-safe translations                                         |
-| **Images**    | Astro `<Picture>` with AVIF/WebP, compile-time optimization                                               |
-| **Hosting**   | [Cloudflare Pages](https://pages.cloudflare.com) via Wrangler                                             |
-| **Testing**   | [Playwright](https://playwright.dev) E2E + [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci) |
-| **AI**        | Claude API for content generation and social media captions                                               |
-| **CI/CD**     | GitHub Actions (auto-publish, SEO audits, dependency updates)                                             |
+| Layer | Technology |
+|---|---|
+| **Framework** | [Astro](https://astro.build) + TypeScript (strict) |
+| **Styling** | [Tailwind CSS](https://tailwindcss.com) with class-based dark mode |
+| **Content** | JSON collections validated by Zod contracts (`src/content-contracts/`), with Companion Files merged over them |
+| **Source** | Read-only public Notion database, fetched with `notion-client` |
+| **Search** | [Pagefind](https://pagefind.app), static search index |
+| **i18n** | Subdirectory routing (`/en/`, `/fr/`) with type-safe translations |
+| **Hosting** | [Cloudflare](https://workers.cloudflare.com) via Wrangler |
+| **Testing** | [Playwright](https://playwright.dev) E2E, [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci), Node contract tests |
 
 ## Getting Started
 
-**Prerequisites:** Node.js 18+
+**Prerequisites:** Node.js 24 (as in CI)
 
 ```bash
 git clone https://github.com/victortrinh/date-my-dish.git
@@ -94,124 +94,79 @@ npm run dev
 
 ```
 src/
-├── assets/images/
-│   ├── recipes/              # Recipe photos (hero + step images)
-│   ├── articles/             # Article hero images
-│   └── reviews/              # Review hero images
-├── components/               # 35 Astro components (cards, search, nav, SEO schemas...)
+├── components/
+│   ├── date-spots/           # Review page sections (essentials card, verdict, photos)
+│   └── profiles/             # Chef page and recipe card
 ├── content/
-│   ├── recipes/{en,fr}/      # Recipe MDX files (13 EN + 13 FR)
-│   ├── articles/{en,fr}/     # Article MDX files (8 EN + 8 FR)
-│   └── reviews/{en,fr}/      # Review MDX files (2 EN + 2 FR)
-├── i18n/                     # Translation files + utility functions
-├── layouts/                  # BaseLayout, RecipeLayout, ArticleLayout
-├── pages/
-│   ├── en/                   # English routes
-│   └── fr/                   # French routes
-├── styles/                   # Global CSS + print styles
-└── utils/                    # Helpers (social posting, formatting, SEO)
-scripts/                      # Notion fetch, SEO ranking, Lighthouse/Playwright helpers
-data/                         # SEO snapshots, social post logs
-tests/                        # Playwright E2E specs + fixtures
-.github/workflows/            # 10 automation workflows
+│   ├── date-spots.json       # Reviews and Date Spots
+│   ├── extended-profiles.json  # Chefs
+│   ├── contributor-recipes.json  # Chef Recipe Cards
+│   └── editorial/            # Companion Files, one per post
+├── content-contracts/        # Zod contracts for every collection and the Companion File
+├── i18n/                     # Translations and URL builders
+├── layouts/                  # BaseLayout, DateSpotLayout
+├── pages/{en,fr}/            # Routes
+└── worker.ts                 # Cloudflare worker (maintenance mode, redirects)
+notion/                       # published.json and the Notion source snapshots
+routines/                     # Prompts for the Claude cloud routines
+scripts/                      # Importer, validators, SEO and Pinterest scripts
+tests/                        # Contract tests, Playwright specs, fixtures
 ```
 
 </details>
 
 ## Commands
 
-| Command               | Description                                    |
-| --------------------- | ---------------------------------------------- |
-| `npm run dev`         | Start dev server                               |
-| `npm run build`       | Production build (Pagefind runs via postbuild) |
-| `npm run preview`     | Build + local Cloudflare Workers preview       |
-| `npm run check`       | TypeScript and content schema validation       |
-| `npm run deploy`      | Build + deploy to Cloudflare Pages             |
-| `npx playwright test` | Run Playwright E2E tests                       |
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build, gated by every validator |
+| `npm run check` | TypeScript and content contract validation |
+| `npm run test:contracts` | Content contract and Importer tests |
+| `npm run validate:source` | Pre-build guards |
+| `npm run validate:build` | Post-build guards against `dist/` |
+| `npm run notion:list` | List the eligible Notion rows |
+| `npm run preview` | Build and run the Cloudflare worker locally |
+| `npm run deploy` | Build and deploy |
+| `npx playwright test` | Playwright E2E tests |
 
-## Content Authoring
+## Automation
 
-<details>
-<summary><strong>Adding a recipe</strong></summary>
+| Job | Runs as | What it does |
+|---|---|---|
+| Importer | Claude cloud routine, Wednesdays | Imports the next Notion row into a draft PR |
+| Weekly SEO maintenance | Claude cloud routine, Sundays | Fixes Companion File meta, alt text and links; reports prose suggestions as an issue |
+| `playwright-pr-check.yml` | Pull requests | Content contracts, Importer check, E2E smoke tests |
+| `lighthouse-pr-check.yml` | Pull requests | Performance budgets and Lighthouse scores per post type |
+| `weekly-seo-ranking.yml` | Mondays | Search Console and SERP data into `data/seo/` |
+| `weekly-seo-audit.yml` | Sundays | Full Lighthouse audit into `data/lighthouse/` |
+| `venue-maintenance.yml` | Monthly | Flags reviews and Date Spots due a recheck |
+| `pinterest-pin-rotation.yml` | Daily | Posts queued pins |
+| `token-refresh.yml` | 1st and 25th | Refreshes the Pinterest token |
+| `playwright-weekly.yml` | Sundays | Full E2E suite |
+| `auto-merge.yml` | Renovate PRs | Merges dependency updates that pass |
 
-Each recipe is an MDX file with YAML frontmatter for ingredients, instructions, nutrition, and FAQs. The MDX body is SEO blog prose (800-1500 words).
-
-1. Create `src/content/recipes/en/your-recipe.mdx` with full frontmatter
-2. Create the French translation in `src/content/recipes/fr/` linked via `translationSlug`
-3. Add optimized images to `src/assets/images/recipes/`
-4. Both files share the same images; only alt text is translated
-
-See `src/content.config.ts` for the complete Zod schema.
-
-</details>
-
-<details>
-<summary><strong>Adding an article</strong></summary>
-
-Articles follow the same pattern with lighter frontmatter (no ingredients/instructions).
-
-1. Create `src/content/articles/en/your-article.mdx`
-2. Create the French translation in `src/content/articles/fr/` linked via `translationSlug`
-3. Add a hero image to `src/assets/images/articles/`
-4. Optionally link related recipes via `relatedRecipes` (EN slugs)
-
-</details>
-
-<details>
-<summary><strong>Adding a restaurant review</strong></summary>
-
-Reviews include restaurant-specific frontmatter (address, cuisine, priceRange, dateScore).
-
-1. Create `src/content/reviews/en/your-review.mdx`
-2. Create the French translation in `src/content/reviews/fr/` linked via `translationSlug`
-3. Add a hero image to `src/assets/images/reviews/`
-
-</details>
-
-## CI/CD & Automation
-
-<details>
-<summary><strong>Click to expand</strong></summary>
-
-### Content Publishing
-The Importer is a Claude cloud routine, not a workflow: see `routines/importer.md` and `scripts/notion-import.mjs`.
-
-| Workflow                     | Schedule            | Description                                                     |
-| ----------------------------- | ------------------- | ---------------------------------------------------------------- |
-| `venue-maintenance.yml`      | Monthly             | Flags Date Spots due a fact recheck; opens a reminder issue      |
-| `social-post-on-deploy.yml`  | On deploy           | Auto-posts new content to Instagram/Pinterest                    |
-| `token-refresh.yml`          | 1st + 25th monthly  | Refreshes the Pinterest OAuth token                              |
-
-### Quality Gates
-| Workflow                  | Trigger         | Description                                  |
-| ------------------------- | --------------- | -------------------------------------------- |
-| `playwright-pr-check.yml` | PR              | E2E smoke tests (desktop/mobile, light/dark) |
-| `lighthouse-pr-check.yml` | PR              | Performance and accessibility checks         |
-| `weekly-seo-audit.yml`    | Sundays 3AM     | Full Lighthouse CI audit                     |
-| `weekly-seo-ranking.yml`  | Mondays 8AM     | Google Search Console + SERP tracking        |
-| `seo-auto-optimize.yml`   | On ranking data | Claude optimizes underperforming content     |
-
-</details>
+No job edits prose on the site.
 
 ## Brand
 
-| Element         | Value                                                         |
-| --------------- | ------------------------------------------------------------- |
-| **Primary**     | Terracotta `#C4704B` (decorative) / `#9A5439` (text, WCAG AA) |
-| **Accent**      | Warm Gold `#D4A853` (decorative) / `#7D631C` (text, WCAG AA)  |
-| **Headings**    | Playfair Display 400-900 (italic)                             |
-| **Body**        | Source Serif 4 400-700                                        |
-| **UI**          | Inter 400-700                                                 |
-| **Handwritten** | Caveat 400/700                                                |
+| Element | Value |
+|---|---|
+| **Primary** | Terracotta `#C4704B` (decorative) / `#9A5439` (text, WCAG AA) |
+| **Accent** | Warm Gold `#D4A853` (decorative) / `#7D631C` (text, WCAG AA) |
+| **Headings** | Playfair Display 400-900 (italic) |
+| **Body** | Source Serif 4 400-700 |
+| **UI** | Inter 400-700 |
+| **Handwritten** | Caveat 400/700 |
 
 ## License
 
-All rights reserved. Recipe content, photos, and code are proprietary.
+All rights reserved. Content, photos and code are proprietary.
 
 ---
 
 <div align="center">
 
-Built with care by **[Victor](https://datemydish.com/en/about/)** in Montreal
+Built with care by **[Victor](https://datemydish.com/en/about/)** in Montréal
 
 </div>

@@ -43,7 +43,7 @@ This is a single-context repository. See `docs/agents/domain.md`.
 
 ### Layouts
 - `BaseLayout.astro` -- Root HTML shell (SEO head, nav, footer, search overlay, skip-to-content)
-- `ReviewLayout.astro`, `DateSpotLayout.astro` -- Wrappers for review and Date Spot pages
+- `DateSpotLayout.astro` -- Wrapper for Date Spot pages (`ActivityDateSpotTemplate.astro`). Reviews (`date-spots/VenueReview.astro`), chef pages and recipe cards (`profiles/`) render inside `BaseLayout` directly.
 - Named slot: `<slot name="head" />` for injecting schema components into `<head>`
 
 ### Path Aliases (tsconfig.json)
@@ -121,6 +121,23 @@ This is a single-context repository. See `docs/agents/domain.md`.
 - **Never use em-dashes (—)** in any content, copy, or UI text. Use commas, periods, colons, or semicolons.
 - Post prose comes from Notion and is never rewritten. Only the Allowed Edits in the spec apply.
 
+## Slash Commands
+
+All of them work on the four post types (Review, Date Spot, Chef, Chef Recipe Card). None writes prose or creates content: new posts and prose changes come only through the Importer (`routines/importer.md`).
+
+| Command | Purpose |
+|---------|---------|
+| `/seo-audit {slug}` | Audit one post against the spec's SEO rules and performance budgets; fixes Companion File fields only (meta title and description, alt text, internal links) |
+| `/bulk-audit` | The same across every published post, with ranking data; the hand-run version of `routines/weekly-seo-maintenance.md` |
+| `/validate-content [slug]` | Report-only integrity check: guards, Companion Files, Notion sync, images, cross-links |
+| `/optimize-image` | Audit or re-optimise a post's Notion photos with the Importer's own budgets (`scripts/notion-story/images.mjs`) |
+| `/deploy` | Pre-deploy checks, commit, push to `main` |
+
+Workflows:
+- **New or updated post**: the Importer routine opens a draft PR. Review the Companion File, the section mapping, Unplaced Text and the FR translation; merging publishes.
+- **Audit and fix**: `/bulk-audit` (or `/seo-audit {slug}`) -> Companion File fixes in a PR; prose suggestions go to Victor to make in Notion, and the Importer carries them over.
+- **Integrity**: `/validate-content` before a deploy or after a change to the contracts.
+
 ## Deploy & Infrastructure
 - **Deploy**: `npm run deploy` or push to `main` (Cloudflare auto-deploy)
 - **`_headers`**: Security headers + cache rules (`/_astro/*` 1yr immutable, `/pagefind/*` 24h, `/images/*` 7d)
@@ -137,6 +154,9 @@ Publishing, Pinterest and every scheduled job are defined in the spec (`docs/edi
 - **`scripts/validate-date-spots.mjs`** (`prebuild`) -- Merges each Companion File (`src/content/editorial/{slug}.json`) over its record, then validates the content contracts (naming any missing required field), EN/FR parity, append-only Google snapshots and update lines, and cross-collection links. Fails a review below 300 reader-facing words per locale; warns below 1,000 words, below nine internal links, and when `favourite` passes one in four.
 - **`scripts/notion-import.mjs check`** (`prebuild`, and in the PR check with `--base`) -- Every published record needs a Notion source snapshot in `notion/sources/`. Runs the Verbatim Check (each English sentence must trace to the snapshot after the Allowed Edits) and the publish gate (contracts with Companion Files merged, links, no author placeholders or em-dashes, no venue twice, photo budgets; with `--base`, append-only Google snapshots and update lines and dated updates against the base). Runs the French checks (`scripts/notion-story/french.mjs`): EN/FR parity path by path, FR routes and links, untranslated copy and Quebec usage, and for the seven pre-rework reviews the Verbatim Check against their old FR MDX. Prints Unplaced Text, FR sentences translated fresh, and number warnings.
 - **`scripts/validate-build.mjs`** (`postbuild`) -- Fails on hreflang pointing to a redirect/404 or missing a trailing slash, noindex/bare-root/redirecting URLs in the sitemap, indexable meta descriptions outside 120-160, internal links to a `_redirects` source, untranslated i18n keys in titles/meta, `dist/_astro` images over 500 KB, or any `Review`, `AggregateRating`, `Rating` or `FAQPage` JSON-LD (or `reviewRating`/`aggregateRating`/`ratingValue` keys). Also enforces the performance budgets: over 15 KB of first-party JavaScript on a post page, a hero (`fetchpriority="high"`) source over 200 KB, any `<img>` without width and height, a non-hero `<img>` on a post page without `loading="lazy"`, or a third-party `<iframe>` in the initial HTML.
+- **`scripts/validate-contributor-content.mjs`** (`prebuild`) -- Validates Chefs and Chef Recipe Cards with their Companion Files, and fails when a declared photo is missing from `public/`.
+- **`scripts/validate-descriptions.mjs`** (`prebuild`) -- Meta titles 46 characters or fewer, meta descriptions 120 to 160.
+- **`scripts/validate-retired-content.mjs`** (`postbuild`) -- Fails on any retired recipe or article route (`/en/recipes/`, `/en/articles/`, `/fr/recettes/`, `/fr/articles/`) or URL in `dist/client`. `tests/smoke/retired-content.spec.ts` asserts they answer 404. The legacy MDX under `src/content/recipes/` and `src/content/articles/` stays in Git but its collections load no entries.
 - **Lighthouse PR check** (`lighthouse-pr-check.yml`) -- Builds from the `tests/fixtures/` data and audits one page per post type (review, Date Spot, chef, recipe card) on mobile and desktop. Every assertion is an error: performance 95+, LCP 2.5 s or less, CLS 0.05 or less, plus accessibility, best practices and SEO 90+. Runs whenever content JSON, `src/components/`, `src/layouts/`, `src/pages/` or `src/styles/` change.
 - When adding a check, add a matching lesson below.
 
