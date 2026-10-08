@@ -47,10 +47,14 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <!-- Google Fonts: variable fonts via CSS2 API -->
+    <!-- Google Fonts: variable fonts via CSS2 API. The stylesheet loads as
+         media="print" and switches to "all" once fetched, so the ~480 KB of
+         font files never block first paint on mobile (performance budget:
+         mobile 95+, LCP 2.5 s). Text paints in the fallback font, then swaps. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet" /></noscript>
     <SEOHead
       title={title}
       description={description}
