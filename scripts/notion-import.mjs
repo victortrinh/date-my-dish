@@ -25,6 +25,11 @@
 //       The Verbatim Check and the publish gate over every published post.
 //       With --base, also the append-only and dated-update rules against
 //       the PR's base. --report writes notion/story-report.md on failure.
+//       The French checks run here too: EN and FR parity path by path, FR
+//       routes and links, untranslated copy and Quebec usage, and for the
+//       seven pre-rework reviews the Verbatim Check against their old FR.
+//       It prints the FR sentences that are new translations (no FR
+//       counterpart) and number warnings for the PR.
 //
 //   node scripts/notion-import.mjs fail --row <Recipe #> --report-file <path>
 //       Open or update the `notion-story` issue for a blocked row.
@@ -43,6 +48,8 @@ import { IMAGE_BUDGETS, downloadImages } from "./notion-story/images.mjs";
 import { proposeCompanion, writeCompanion } from "./notion-story/companion.mjs";
 import { publishGate } from "./notion-story/gate.mjs";
 import { unplacedText, verbatimCheck } from "./notion-story/verbatim.mjs";
+import { contentRoutes, frenchCheck } from "./notion-story/french.mjs";
+import { readLegacyReview } from "./notion-story/legacy.mjs";
 import { failureBody, failureTitle, openOrUpdateFailureIssue } from "./notion-story/report.mjs";
 import { PUBLISHED_JSON, readPublishedJson } from "./notion-utils.mjs";
 
@@ -126,6 +133,10 @@ async function next() {
     })),
     photos,
   };
+  // The seven pre-rework reviews keep their published FR: its text goes in
+  // the snapshot so the FR Verbatim Check survives the old MDX's retirement.
+  const legacy = previous?.legacy ?? readLegacyReview(row.number);
+  if (legacy) snapshot.legacy = legacy;
   writeJson(snapshotPath, snapshot);
 
   const companion = writeCompanion(proposeCompanion(snapshot, { slug, postType, publishDate: row.publishDate, heroAlt: photos.find((photo) => photo.hero)?.alt }));
@@ -153,6 +164,8 @@ async function next() {
     snapshot: snapshotPath,
     mapping: sections.filter((section) => section.heading).map((section) => ({ heading: section.heading, section: section.section })),
     unmappedHeadings: unmappedHeadings(sections),
+    // "translate" for a new post; "reuse" for a pre-rework review whose FR is fitted from its old MDX.
+    french: legacy ? { mode: "reuse", from: `src/content/reviews/fr/${legacy.name}.mdx` } : { mode: "translate" },
     photos,
     companion,
   }, null, 2));
@@ -217,12 +230,19 @@ async function check() {
   const companions = readCompanions();
   const problems = [];
   const unplaced = [];
+  const frWarnings = [];
+  const translated = [];
   /** @type {Record<string, any[]>} */
   const merged = {};
+  /** @type {Record<string, any[]>} */
+  const raw = {};
   for (const [key, path] of Object.entries(COLLECTION_PATHS)) {
-    const records = readJson(path, []);
-    merged[key] = records.map((record) => (companions.has(record.id) ? applyCompanion(record, companions.get(record.id)) : record));
-    for (const record of records) {
+    raw[key] = readJson(path, []);
+    merged[key] = raw[key].map((record) => (companions.has(record.id) ? applyCompanion(record, companions.get(record.id)) : record));
+  }
+  const routes = contentRoutes(merged);
+  for (const key of Object.keys(COLLECTION_PATHS)) {
+    for (const record of raw[key]) {
       const found = sources.get(record.id);
       if (!found) {
         problems.push(`${record.id}: no Notion source snapshot in ${SOURCES_DIR}/. Every post is imported from Notion (run the Importer).`);
@@ -236,6 +256,10 @@ async function check() {
       const mergedRecord = merged[key].find((entry) => entry.id === record.id);
       for (const sentence of unplacedText(mergedRecord?.locales?.en ?? {}, found.source)) unplaced.push(`${record.id}: ${sentence}`);
       problems.push(...(await imageProblems(record)));
+      const fr = frenchCheck(record, mergedRecord ?? record, { routes, legacy: found.source.legacy ?? readLegacyReview(found.source.notion?.number) });
+      problems.push(...fr.problems);
+      frWarnings.push(...fr.warnings);
+      translated.push(...fr.translated.map(({ path: field, sentence }) => `${record.id}: locales.fr-CA.${field}: ${sentence}`));
     }
   }
   const base = option("base");
@@ -245,6 +269,10 @@ async function check() {
   if (unplaced.length) {
     console.log(`Unplaced Text (Notion sentences the pages do not use; list them in the PR):\n${unplaced.map((line) => `  - ${line}`).join("\n")}`);
   }
+  if (translated.length) {
+    console.log(`FR sentences translated fresh, with no counterpart in the existing FR review (list them in the PR's Translation section):\n${translated.map((line) => `  - ${line}`).join("\n")}`);
+  }
+  if (frWarnings.length) console.log(`French warnings (for Needs Victor):\n${frWarnings.map((line) => `  - ${line}`).join("\n")}`);
   if (problems.length) {
     console.error(`Notion import check failed:\n${problems.map((line) => `  - ${line}`).join("\n")}`);
     // One problem per line, the format `fail --report-file` reads.
