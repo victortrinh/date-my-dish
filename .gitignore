@@ -40,8 +40,5 @@ test-results/
 playwright-report/
 .playwright-pages.json
 
-# Build-time generated data
-data/ratings.json
-
 # AI-generated images (working files)
 generated_imgs/

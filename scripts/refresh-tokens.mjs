@@ -1,5 +1,6 @@
 // scripts/refresh-tokens.mjs
-// Refreshes Instagram and Pinterest access tokens and updates GitHub Secrets.
+// Refreshes the Pinterest access token that pin posting
+// (pinterest-pin-rotation.yml) needs, and updates the GitHub Secrets.
 //
 // Usage: node scripts/refresh-tokens.mjs
 // Required env vars: see below.
@@ -7,7 +8,6 @@
 import { execSync } from "child_process";
 
 const {
-  INSTAGRAM_ACCESS_TOKEN,
   PINTEREST_REFRESH_TOKEN,
   PINTEREST_CLIENT_ID,
   PINTEREST_CLIENT_SECRET,
@@ -15,45 +15,6 @@ const {
 } = process.env;
 
 let hasError = false;
-
-// ---------------------------------------------------------------------------
-// Instagram token refresh
-// ---------------------------------------------------------------------------
-async function refreshInstagram() {
-  if (!INSTAGRAM_ACCESS_TOKEN) {
-    console.log("Skipping Instagram refresh: no INSTAGRAM_ACCESS_TOKEN");
-    return;
-  }
-
-  console.log("Refreshing Instagram long-lived token...");
-
-  const res = await fetch(
-    `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${INSTAGRAM_ACCESS_TOKEN}`
-  );
-  const data = await res.json();
-
-  if (data.error) {
-    throw new Error(
-      `Instagram refresh failed: ${data.error.message} (code: ${data.error.code})`
-    );
-  }
-
-  const newToken = data.access_token;
-  const expiresIn = data.expires_in;
-  console.log(`Instagram token refreshed. Expires in ${Math.round(expiresIn / 86400)} days.`);
-
-  // Update GitHub Secret via stdin (avoids leaking token in command args/logs)
-  try {
-    execSync("gh secret set INSTAGRAM_ACCESS_TOKEN", {
-      input: newToken,
-      stdio: ["pipe", "inherit", "pipe"],
-      env: { ...process.env, GH_TOKEN },
-    });
-    console.log("GitHub Secret INSTAGRAM_ACCESS_TOKEN updated.");
-  } catch {
-    throw new Error("Failed to update INSTAGRAM_ACCESS_TOKEN secret. Ensure PAT_TOKEN has the 'repo' scope.");
-  }
-}
 
 // ---------------------------------------------------------------------------
 // Pinterest token refresh
@@ -119,14 +80,6 @@ async function refreshPinterest() {
 // ---------------------------------------------------------------------------
 async function main() {
   try {
-    await refreshInstagram();
-  } catch (err) {
-    console.error("Instagram refresh error:", err.message);
-    hasError = true;
-    createFailureIssue("Instagram", err);
-  }
-
-  try {
     await refreshPinterest();
   } catch (err) {
     console.error("Pinterest refresh error:", err.message);
@@ -138,14 +91,14 @@ async function main() {
     process.exit(1);
   }
 
-  console.log("\nAll tokens refreshed successfully.");
+  console.log("\nPinterest tokens refreshed successfully.");
 }
 
 function createFailureIssue(platform, error) {
   // Sanitize error message to avoid leaking tokens in GitHub issues
   const safeMessage = error.message
     .replace(/pina_[A-Za-z0-9]+/g, "[REDACTED]")
-    .replace(/IGQV[A-Za-z0-9_-]+/g, "[REDACTED]");
+    .replace(/pinr_[A-Za-z0-9]+/g, "[REDACTED]");
 
   const title = `Token refresh failed: ${platform}`;
   const body = [

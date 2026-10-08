@@ -130,7 +130,7 @@ This is a single-context repository. See `docs/agents/domain.md`.
 
 ## Automation
 
-Publishing, Pinterest and every scheduled job are defined in the spec (`docs/editorial-publishing-system.md`, sections Publishing, Pinterest, Scheduled work). In short: a Claude cloud routine imports eligible Notion rows into a draft PR; merging the PR publishes; no scheduled job edits prose.
+Publishing, Pinterest and every scheduled job are defined in the spec (`docs/editorial-publishing-system.md`, sections Publishing, Pinterest, Scheduled work). In short: a Claude cloud routine imports eligible Notion rows into a draft PR; merging the PR publishes; no scheduled job edits prose. Each Claude cloud routine's prompt is committed under `routines/` (`weekly-seo-maintenance.md` states the allowed edit set); edit the file to change the routine.
 
 ### SEO and performance guards (wired into every build and PR)
 - **`scripts/validate-source.mjs`** (`prebuild`) -- Fails on a `<Picture>` missing `fallbackFormat` and on taxonomy values with no translation.
@@ -141,7 +141,8 @@ Publishing, Pinterest and every scheduled job are defined in the spec (`docs/edi
 
 ### Key files (do not delete)
 - `notion/published.json`, `data/seo/`, `data/lighthouse/`, `data/social-posts-log.json` -- automation state
-- `scripts/seo/` -- SEO ranking and reporting scripts
+- `routines/` -- prompts for the Claude cloud routines
+- `scripts/seo/` -- SEO ranking and reporting scripts (`derive-keywords.mjs` reads only the published collections)
 - `scripts/venue-maintenance-reminders.mjs` -- recheck reminders
 
 ### Testing

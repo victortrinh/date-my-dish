@@ -238,16 +238,6 @@
     "switchTo": "English",
     "current": "Français"
   },
-  "rating": {
-    "rateThis": "Notez cette recette",
-    "yourRating": "Votre note",
-    "average": "Note moyenne",
-    "count": "notes",
-    "starLabel": "étoile",
-    "starsLabel": "étoiles",
-    "submitted": "Merci pour votre note!",
-    "alreadyRated": "Vous avez déjà noté cette recette"
-  },
   "newsletter": {
     "title": "Date My Dish",
     "footerTitle": "Date My Dish",
