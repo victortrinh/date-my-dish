@@ -18,7 +18,11 @@ const locale = "en";
     <h1 class="mt-8 font-heading text-4xl text-warm-900 dark:text-warm-100">{t(locale, "about.pageTitle")} Date My Dish</h1>
     <p class="mt-6 text-2xl text-warm-700 dark:text-warm-300"><BrandDescriptor locale={locale} /></p>
     <p class="mt-6 text-warm-600 dark:text-warm-400">{t(locale, "about.market")}</p>
-    <p class="mt-8 text-warm-700 dark:text-warm-300">{t(locale, "about.intro")}</p>
-    <p class="mt-6 text-warm-700 dark:text-warm-300">{t(locale, "author.by")} Victor Vu</p>
+    <div class="mt-8 space-y-6 text-warm-700 dark:text-warm-300">
+      <p>{t(locale, "about.intro")}</p>
+      <p>{t(locale, "about.verdicts")}</p>
+      <p>{t(locale, "about.homeMarket")}</p>
+      <p>{t(locale, "about.reporter")}</p>
+    </div>
   </section>
 </BaseLayout>

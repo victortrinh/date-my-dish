@@ -148,7 +148,10 @@
   "about": {
     "pageTitle": "About",
     "market": "Montréal · Date Spots",
-    "intro": "Date My Dish is a Montréal-first guide to Date Spots: restaurants, bars, activities and chef-led experiences worth planning a night around. We visit, pay our way unless we say otherwise, and tell you plainly whether a place fits the date you have in mind."
+    "intro": "Date My Dish is a Montréal-first guide to Date Spots: restaurants, bars, activities and chef-led experiences worth planning a night around. Every post tries to answer one question: will this place suit the date you have in mind?",
+    "verdicts": "Every review and Date Spot carries a plain verdict with its reason: A favourite, Depends on the night, or Not our first pick. We say which kinds of dates a place suits and where it falls short, and we print the month we last checked the details. If we show a venue’s Google rating, it is dated and labelled as theirs. When a chef gives us a dish to make at home, it runs as a recipe card under their name.",
+    "homeMarket": "Montréal is our home market. When we review a place in another city, the post says which city.",
+    "reporter": "Victor Vu does the reporting, and his name is on every post. First person appears only in his signed note within a review; everything else is written as “we”. Each review says how the visit came about and who paid. Every post is published in English and Quebec French."
   },
   "contact": {
     "title": "Contact",
