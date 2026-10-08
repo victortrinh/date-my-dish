@@ -56,9 +56,6 @@ export const extendedProfileSchema = object({
   companionDateSpot: slug.optional(),
   interviewer: z.literal("Victor"),
   originalInterview: object({ conductedOn: date.optional(), source: text.optional(), quoteVerification: z.literal("facts-and-quotes-only").optional() }).optional(),
-  // No longer required. Still accepted because the pre-rework Notion Story
-  // mapper (scripts/notion-story/map.mjs) emits it until #539 replaces it.
-  authorship: object({ reporting: z.literal("human"), translation: z.literal("human") }).optional(),
   published: date,
   // The portrait is optional; when present it carries alt text per locale.
   image: object({

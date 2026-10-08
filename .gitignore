@@ -42,3 +42,7 @@ playwright-report/
 
 # AI-generated images (working files)
 generated_imgs/
+
+# Notion Importer scratch report (regenerated per run)
+notion/story-report.md
+.scratch/

@@ -22,6 +22,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
           node-version: 24
@@ -30,6 +32,9 @@ jobs:
       - run: npm run check
       - run: npm run test:contracts
       - run: node scripts/validate-date-spots.mjs
+      # Verbatim Check and publish gate, with the append-only and dated-update
+      # rules checked against the PR's base.
+      - run: node scripts/notion-import.mjs check --base origin/${{ github.event.pull_request.base.ref }}
 
   e2e:
     runs-on: ubuntu-latest

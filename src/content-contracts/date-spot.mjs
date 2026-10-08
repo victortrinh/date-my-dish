@@ -202,9 +202,6 @@ const common = {
   city: text.default("Montréal"),
   neighbourhood: text,
   reporterByline: z.literal("Victor"),
-  // No longer required. Still accepted because the pre-rework Notion Story
-  // mapper (scripts/notion-story/map.mjs) emits it until #539 replaces it.
-  authorship: object({ reporting: z.literal("human"), translation: z.literal("human") }).optional(),
   freshness,
   image: object({
     src: z.union([

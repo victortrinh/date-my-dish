@@ -4,18 +4,20 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "prebuild": "node scripts/validate-date-spots.mjs && node scripts/validate-contributor-content.mjs && node scripts/validate-descriptions.mjs && node scripts/validate-source.mjs",
+    "prebuild": "node scripts/validate-date-spots.mjs && node scripts/notion-import.mjs check && node scripts/validate-contributor-content.mjs && node scripts/validate-descriptions.mjs && node scripts/validate-source.mjs",
     "build": "astro build",
     "preview": "npm run build && wrangler dev",
     "check": "astro check",
-    "validate:source": "node scripts/validate-date-spots.mjs && node scripts/validate-contributor-content.mjs && node scripts/validate-descriptions.mjs && node scripts/validate-source.mjs",
+    "validate:source": "node scripts/validate-date-spots.mjs && node scripts/notion-import.mjs check && node scripts/validate-contributor-content.mjs && node scripts/validate-descriptions.mjs && node scripts/validate-source.mjs",
     "validate:build": "node scripts/validate-build.mjs && node scripts/validate-retired-content.mjs",
     "postbuild": "npx pagefind --site dist/client && node scripts/validate-build.mjs && node scripts/validate-retired-content.mjs",
     "deploy": "npm run build && wrangler deploy",
     "cf-typegen": "wrangler types",
     "test": "npx playwright test",
     "test:update-snapshots": "npx playwright test --update-snapshots",
-    "test:contracts": "node --test tests/contracts/*.test.mjs"
+    "test:contracts": "node --test tests/contracts/*.test.mjs",
+    "notion:list": "node scripts/notion-import.mjs list",
+    "notion:check": "node scripts/notion-import.mjs check"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.0.0",
