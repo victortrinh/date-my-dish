@@ -1,111 +1,50 @@
 # Optimize Image
 
-Process and optimize recipe images: hero, step, and batch processing with correct naming and sizing.
+Check, and when needed re-optimise, the photos of a published post against the image budgets in `docs/editorial-publishing-system.md` ("SEO rules", "Performance budgets").
+
+The Importer (`node scripts/notion-import.mjs next`) already downloads and optimises every Notion photo when it imports a post. Use this command to audit those files, or to redo one that misses a budget. Photos come from Notion only: never add a photo that is not on the post's Notion page, and never use an AI-generated image.
 
 ## Input
-- Image file path(s) or directory: $ARGUMENTS
+- A post slug, or one or more image paths under `public/images/`: $ARGUMENTS
+
+## Budgets
+
+| Photo | Max width | Max size | Format |
+|---|---|---|---|
+| Hero | 1200px | 200 KB | WebP (the page serves AVIF and WebP with a WebP fallback) |
+| Every other photo | 900px | 150 KB | WebP |
+
+Where photos live (the contracts check the path):
+
+| Post type | Folder |
+|---|---|
+| Review, Date Spot | `public/images/date-spots/` |
+| Chef | `public/images/profiles/` |
+| Chef Recipe Card | `public/images/contributor-recipes/` |
 
 ## Steps
 
-1. **Analyze the image(s):**
-   - Read the image file(s)
-   - Get dimensions and file size
-   - Determine image type (hero or step) based on filename or user input
+1. **List the photos.** For a slug, read the record in its collection (`src/content/date-spots.json`, `extended-profiles.json` or `contributor-recipes.json`) and collect `image` and every photo's `src`. Note which one is the hero.
 
-2. **Determine content type and rename descriptively:**
-   - Ask for the recipe or article slug if not obvious from the filename
-   - Determine if the image is for a recipe or article (ask if unclear from context)
-   - Hero image: `{slug}.jpg`
-   - Step images (recipes only): `{slug}-step-{n}.jpg` (numbered sequentially)
-   - Use lowercase, hyphens, no spaces
+2. **Measure** each file's width, height and size (`node -e "require('sharp')('<file>').metadata().then(m => console.log(m.width, m.height, m.format))"` and `ls -l`).
 
-3. **Resize for web:**
+3. **Re-optimise** any file over budget with the Importer's own function, so the result matches what the pipeline produces:
 
-   **Hero image:**
-   - Max 1200px wide, maintain aspect ratio
-   - Target file size: under 200KB for JPEG source (Astro creates AVIF/WebP)
-   - Quality: 82
    ```bash
-   node -e "require('sharp')('input.jpg').resize(1200, null, {withoutEnlargement: true}).jpeg({quality: 82}).toFile('output.jpg')"
+   node --input-type=module -e "
+   import { readFileSync, writeFileSync } from 'node:fs';
+   import { optimiseImage, IMAGE_BUDGETS } from './scripts/notion-story/images.mjs';
+   const [file, kind] = process.argv.slice(1);
+   const { data, width, height } = await optimiseImage(readFileSync(file), IMAGE_BUDGETS[kind]);
+   writeFileSync(file, data);
+   console.log(file, width, height, data.length);
+   " public/images/date-spots/<file>.webp hero
    ```
 
-   **Step images:**
-   - Max 900px wide, maintain aspect ratio
-   - Target file size: under 150KB for JPEG source
-   - Quality: 80
-   ```bash
-   node -e "require('sharp')('input.jpg').resize(900, null, {withoutEnlargement: true}).jpeg({quality: 80}).toFile('output.jpg')"
-   ```
+   Use `hero` or `other` as the budget. It never upscales; it steps the quality down, then the width, until the file fits. If the dimensions changed, update the photo's `width` and `height` in the record (they must match the file; every `<img>` sets both). That is a data fix, not a prose edit.
 
-4. **Batch processing (multiple images):**
-   When given a directory or multiple files:
-   - Identify which image is the hero (largest/best composed, or ask user)
-   - Number remaining images as step-1, step-2, etc. in logical cooking order
-   - Process all with appropriate sizing (hero vs step)
-   - Report summary table of all processed images
+4. **Check names and alt text.** Filenames are descriptive (`{slug}-{what-the-photo-shows}.webp`, as `imageFilename()` in `scripts/notion-story/images.mjs` builds them), never camera names like `IMG_4521`. Alt text describes the plate or the place, with no "Image of" prefix. Hero alt text lives in the Companion File (`locales.{en,fr-CA}.imageAlt` in `src/content/editorial/{slug}.json`); fix it there. Do not rename a file without updating every reference to it.
 
-5. **Move to correct location:**
-   - Recipe images: move to `src/assets/images/recipes/`
-   - Article images: move to `src/assets/images/articles/`
+5. **Verify**: `npm run validate:source` (the publish gate rechecks the photo budgets) and `npm run build` (`validate-build` fails a hero source over 200 KB, any `<img>` without width and height, and a below-the-fold image without `loading="lazy"`).
 
-6. **Output frontmatter paths and alt text guidance:**
-   ```yaml
-   # Recipe hero image
-   heroImage: "../../../assets/images/recipes/{slug}.jpg"
-   heroImageAlt: "Descriptive alt text here (~125 chars, include dish name)"
-
-   # Recipe step images (in instruction steps) -- uses image() imports
-   instructionGroups:
-     - steps:
-         - text: "Step description"
-           image: "../../../assets/images/recipes/{slug}-step-1.jpg"
-
-   # Article hero image
-   heroImage: "../../../assets/images/articles/{slug}.jpg"
-   heroImageAlt: "Descriptive alt text here (~125 chars)"
-   ```
-
-   **Note**: Articles only need a hero image (no step images). Recipe step images use Astro `image()` imports (relative paths), not URL strings.
-
-7. **Verify:**
-   - Check final file sizes (hero < 200KB, step < 150KB)
-   - Run `npx astro check` to verify image references
-   - Report image count (target: 5-7 total per recipe)
-
-## Image Size Targets
-
-| Image Type | Max Width | Max File Size | Quality |
-|------------|-----------|---------------|---------|
-| Hero | 1200px | 200KB | 82 |
-| Step | 900px | 150KB | 80 |
-| Pinterest | 1000x1500 | 200KB | 85 |
-
-## Image Guidelines
-- Source images should be at least 1200px wide (hero) or 900px wide (step)
-- Use descriptive filenames (chocolate-crepes.jpg, not IMG_4521.jpg)
-- Target 5-7 images per recipe (1 hero + 3-5 step images)
-- Original process photos demonstrate E-E-A-T Experience (proves you cooked it)
-
-## Alt Text Guidelines
-- Descriptive, ~125 characters max
-- Include the dish name naturally
-- Describe what's visible: colors, textures, arrangement, setting
-- No "Image of" or "Picture of" prefix
-
-**Hero image alt text** -- describe the finished dish:
-- Good: `"Stack of golden French crepes drizzled with melted dark chocolate on a white plate"`
-- Bad: `"Chocolate crepes recipe"`
-
-**Step image alt text** -- describe the cooking action/state:
-- Good: `"Beef chunks searing in a hot Dutch oven with golden brown crust forming"`
-- Bad: `"Step 3 of the recipe"`
-
-## Pinterest Images (Deferred)
-
-Pinterest-optimized images (1000x1500, 2:3 ratio) are deferred until the site has 30+ published recipes. Pinterest requires a minimum content library (30 recipes to start testing, 50+ for real momentum). The `pinterestImage` field exists in the schema for future use.
-
-When ready to enable:
-- Filename: `{recipe-slug}-pinterest.jpg`
-- Crop/resize to 2:3 ratio from center
-- Add text overlay with recipe name and brand URL
-- Process with quality 85
+6. **Report** a table: file, role (hero or other), before and after (width, size), and any alt text or dimension changes.
