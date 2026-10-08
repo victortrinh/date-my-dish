@@ -15,12 +15,12 @@
  * and enforces the performance budgets (docs/editorial-publishing-system.md,
  * "Performance budgets"); the Lighthouse PR check covers the rest:
  *
- *   7. JavaScript per post page      (first-party JS on a review, Date Spot, chef or
+ *   8. JavaScript per post page      (first-party JS on a review, Date Spot, chef or
  *                                     recipe card page must be <= JS_MAX_BYTES)
- *   8. Hero image weight             (the fetchpriority="high" hero, every source, <= HERO_MAX_BYTES)
- *   9. Image dimensions              (every <img> sets width and height, so nothing shifts)
- *  10. Lazy below-the-fold images    (on post pages every non-hero <img> is loading="lazy")
- *  11. No third-party embeds on load (no off-site <iframe> in the initial HTML; the map is a link)
+ *   9. Hero image weight             (the fetchpriority="high" hero, every source, <= HERO_MAX_BYTES)
+ *  10. Image dimensions              (every <img> sets width and height, so nothing shifts)
+ *  11. Lazy below-the-fold images    (on post pages every non-hero <img> is loading="lazy")
+ *  12. No third-party embeds on load (no off-site <iframe> in the initial HTML; the map is a link)
  *
  * Run: node scripts/validate-build.mjs   (also runs automatically via `postbuild`)
  */
@@ -228,7 +228,7 @@ for (const file of htmlFiles()) {
     if (isRedirectSource(pathname)) err(`[link-redirect] ${rel} links to a redirecting URL: ${url}`);
   }
 
-  // 7. JavaScript budget per post page
+  // 8. JavaScript budget per post page
   const post = isPostPage(rel);
   if (post) {
     const jsBytes = firstPartyJsBytes(html);
@@ -237,7 +237,7 @@ for (const file of htmlFiles()) {
     }
   }
 
-  // 8. hero image weight: the fetchpriority="high" image and its <picture> sources
+  // 9. hero image weight: the fetchpriority="high" image and its <picture> sources
   const heroImg = html.match(/<img\b[^>]*fetchpriority=["']high["'][^>]*>/i)?.[0];
   if (heroImg) {
     const picture = [...html.matchAll(/<picture\b[\s\S]*?<\/picture>/gi)].find((m) => m[0].includes(heroImg))?.[0];
@@ -251,7 +251,7 @@ for (const file of htmlFiles()) {
     }
   }
 
-  // 9. every <img> sets width and height; 10. non-hero images on post pages are lazy
+  // 10. every <img> sets width and height; 11. non-hero images on post pages are lazy
   const visibleHtml = html.replace(/<noscript>[\s\S]*?<\/noscript>/gi, "");
   for (const [img] of html.matchAll(/<img\b[^>]*>/gi)) {
     const src = (img.match(/\ssrc=["']([^"']*)["']/i) || [, "(no src)"])[1];
@@ -263,7 +263,7 @@ for (const file of htmlFiles()) {
     }
   }
 
-  // 11. no third-party iframe in the initial HTML (embeds such as maps load on click)
+  // 12. no third-party iframe in the initial HTML (embeds such as maps load on click)
   for (const [iframe] of html.matchAll(/<iframe\b[^>]*>/gi)) {
     const src = (iframe.match(/\ssrc=["']([^"']+)["']/i) || [])[1];
     if (src && (src.startsWith("//") || (/^https?:/i.test(src) && !src.startsWith(SITE)))) {
