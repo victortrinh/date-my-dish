@@ -4,9 +4,15 @@ import { t, type Locale } from "@i18n/utils";
 interface Props {
   locale: Locale;
   compact?: boolean;
+  /**
+   * Emit the binding script. It binds every `.newsletter-signup` on the page,
+   * so only the Footer instance (always last in the DOM) carries it; extra
+   * copies count against the review page JavaScript budget (validate-build).
+   */
+  includeScript?: boolean;
 }
 
-const { locale, compact = false } = Astro.props;
+const { locale, compact = false, includeScript = false } = Astro.props;
 ---
 
 <div
@@ -41,6 +47,7 @@ const { locale, compact = false } = Astro.props;
   </div>
 </div>
 
+{includeScript && (
 <script is:inline>
   document.querySelectorAll('.newsletter-signup').forEach(function(widget) {
     if (widget.dataset.bound) return;
@@ -112,3 +119,4 @@ const { locale, compact = false } = Astro.props;
     }
   });
 </script>
+)}

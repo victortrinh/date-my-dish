@@ -12,6 +12,16 @@
  *   6. Oversized image variants      (no dist/_astro image over IMG_MAX_BYTES)
  *   7. Rating markup in JSON-LD      (no Review, AggregateRating, Rating or FAQPage)
  *
+ * and enforces the performance budgets (docs/editorial-publishing-system.md,
+ * "Performance budgets"); the Lighthouse PR check covers the rest:
+ *
+ *   8. JavaScript per post page      (first-party JS on a review, Date Spot, chef or
+ *                                     recipe card page must be <= JS_MAX_BYTES)
+ *   9. Hero image weight             (the fetchpriority="high" hero, every source, <= HERO_MAX_BYTES)
+ *  10. Image dimensions              (every <img> sets width and height, so nothing shifts)
+ *  11. Lazy below-the-fold images    (on post pages every non-hero <img> is loading="lazy")
+ *  12. No third-party embeds on load (no off-site <iframe> in the initial HTML; the map is a link)
+ *
  * Run: node scripts/validate-build.mjs   (also runs automatically via `postbuild`)
  */
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
@@ -22,6 +32,19 @@ const REDIRECTS_FILE = "public/_redirects";
 const MIN_DESC = 120;
 const MAX_DESC = 160;
 const IMG_MAX_BYTES = 500_000;
+const KB = 1024;
+const JS_MAX_BYTES = 15 * KB;
+const HERO_MAX_BYTES = 200 * KB;
+// Post detail pages (one per Date Spot, Extended Profile and Contributor Recipe).
+// Listing, category and neighbourhood pages are not posts.
+const POST_PAGE = [
+  /^\/(en\/reviews|fr\/critiques)\/[^/]+\/[^/]+\/$/,
+  /^\/en\/date-spots\/(?!category\/|neighbourhood\/)[^/]+\/$/,
+  /^\/fr\/lieux\/(?!categorie\/|quartier\/)[^/]+\/$/,
+  /^\/(en|fr)\/chefs\/[^/]+\/$/,
+  /^\/(en\/recipe-cards|fr\/fiches-recettes)\/[^/]+\/$/,
+];
+const isPostPage = (rel) => POST_PAGE.some((re) => re.test(rel));
 const SITE = "https://datemydish.com";
 // Namespaces that should always resolve to a translation; a raw "<ns>.<slug>"
 // in rendered output means a missing i18n key.
@@ -112,6 +135,50 @@ function loadRedirectMatchers() {
   return matchers;
 }
 
+// ---- performance budget helpers -------------------------------------------
+
+// Built file for a same-site asset URL (/_astro/x.js, /images/hero.webp?v=1),
+// or null when the asset is off-site.
+function distAssetFor(url) {
+  if (url.startsWith("//")) return null;
+  const pathname = pathnameOf(decode(url));
+  if (!pathname) return null;
+  return join(DIST, pathname.replace(/^\/+/, ""));
+}
+
+// First-party JavaScript a page ships: inline scripts (JSON-LD excluded) plus
+// same-site <script src> files. Third-party tags (analytics, Pinterest) are
+// not on disk to weigh; the Lighthouse mobile score covers their cost.
+function firstPartyJsBytes(html) {
+  let bytes = 0;
+  for (const [, attrs, body] of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
+    const type = (attrs.match(/\stype=["']([^"']+)["']/i) || [, ""])[1].toLowerCase();
+    if (type && !/^(module|text\/javascript|application\/javascript)$/.test(type)) continue;
+    const src = (attrs.match(/\ssrc=["']([^"']+)["']/i) || [])[1];
+    if (src) {
+      const file = distAssetFor(src);
+      if (file && existsSync(file)) bytes += statSync(file).size;
+    } else {
+      bytes += Buffer.byteLength(body, "utf-8");
+    }
+  }
+  return bytes;
+}
+
+// Every URL a hero offers the browser: the <img> src plus each srcset candidate
+// of the <img> and of any <source> in its <picture>.
+function heroUrls(block) {
+  const urls = [];
+  for (const [, src] of block.matchAll(/\ssrc=["']([^"']+)["']/gi)) urls.push(src);
+  for (const [, set] of block.matchAll(/\ssrcset=["']([^"']+)["']/gi)) {
+    for (const candidate of set.split(",")) {
+      const url = candidate.trim().split(/\s+/)[0];
+      if (url) urls.push(url);
+    }
+  }
+  return urls;
+}
+
 const redirectMatchers = loadRedirectMatchers();
 const isRedirectSource = (pathname) => redirectMatchers.some((m) => m(pathname));
 
@@ -160,6 +227,49 @@ for (const file of htmlFiles()) {
     if (!pathname) continue;
     if (isRedirectSource(pathname)) err(`[link-redirect] ${rel} links to a redirecting URL: ${url}`);
   }
+
+  // 8. JavaScript budget per post page
+  const post = isPostPage(rel);
+  if (post) {
+    const jsBytes = firstPartyJsBytes(html);
+    if (jsBytes > JS_MAX_BYTES) {
+      err(`[perf-js] ${rel} ships ${(jsBytes / KB).toFixed(1)} KB of JavaScript (max ${JS_MAX_BYTES / KB} KB)`);
+    }
+  }
+
+  // 9. hero image weight: the fetchpriority="high" image and its <picture> sources
+  const heroImg = html.match(/<img\b[^>]*fetchpriority=["']high["'][^>]*>/i)?.[0];
+  if (heroImg) {
+    const picture = [...html.matchAll(/<picture\b[\s\S]*?<\/picture>/gi)].find((m) => m[0].includes(heroImg))?.[0];
+    for (const url of new Set(heroUrls(picture || heroImg))) {
+      const file = distAssetFor(url);
+      if (!file || !existsSync(file)) continue;
+      const bytes = statSync(file).size;
+      if (bytes > HERO_MAX_BYTES) {
+        err(`[perf-hero] ${rel} hero ${url} is ${(bytes / KB).toFixed(0)} KB (max ${HERO_MAX_BYTES / KB} KB)`);
+      }
+    }
+  }
+
+  // 10. every <img> sets width and height; 11. non-hero images on post pages are lazy
+  const visibleHtml = html.replace(/<noscript>[\s\S]*?<\/noscript>/gi, "");
+  for (const [img] of html.matchAll(/<img\b[^>]*>/gi)) {
+    const src = (img.match(/\ssrc=["']([^"']*)["']/i) || [, "(no src)"])[1];
+    if (!/\swidth=["']?\d/i.test(img) || !/\sheight=["']?\d/i.test(img)) {
+      err(`[perf-img-size] ${rel} <img src="${src}"> is missing width and height`);
+    }
+    if (post && img !== heroImg && visibleHtml.includes(img) && !/\sloading=["']lazy["']/i.test(img)) {
+      err(`[perf-img-lazy] ${rel} below-the-fold <img src="${src}"> is not loading="lazy"`);
+    }
+  }
+
+  // 12. no third-party iframe in the initial HTML (embeds such as maps load on click)
+  for (const [iframe] of html.matchAll(/<iframe\b[^>]*>/gi)) {
+    const src = (iframe.match(/\ssrc=["']([^"']+)["']/i) || [])[1];
+    if (src && (src.startsWith("//") || (/^https?:/i.test(src) && !src.startsWith(SITE)))) {
+      err(`[perf-embed] ${rel} loads a third-party iframe on page load: ${src}`);
+    }
+  }
 }
 
 // ---- 2. sitemap hygiene ----------------------------------------------------
@@ -197,9 +307,9 @@ if (existsSync(astroDir)) {
 // ---- report ----------------------------------------------------------------
 
 if (errors.length) {
-  console.error(`\n❌ validate-build: ${errors.length} SEO issue(s) found:\n`);
+  console.error(`\n❌ validate-build: ${errors.length} SEO/performance issue(s) found:\n`);
   for (const e of errors.sort()) console.error("  " + e);
-  console.error("\nFix these before deploying (see CLAUDE.md SEO lessons).");
+  console.error("\nFix these before deploying (see CLAUDE.md SEO lessons and the performance budgets in docs/editorial-publishing-system.md).");
   process.exit(1);
 }
-console.log("✅ validate-build: hreflang, sitemap, descriptions, links, i18n keys, and image sizes all pass.");
+console.log("✅ validate-build: hreflang, sitemap, descriptions, links, i18n keys, image sizes, and performance budgets all pass.");

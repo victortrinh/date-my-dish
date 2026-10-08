@@ -47,10 +47,14 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <!-- Google Fonts: variable fonts via CSS2 API -->
+    <!-- Google Fonts: variable fonts via CSS2 API. The stylesheet loads as
+         media="print" and switches to "all" once fetched, so the ~480 KB of
+         font files never block first paint on mobile (performance budget:
+         mobile 95+, LCP 2.5 s). Text paints in the fallback font, then swaps. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet" /></noscript>
     <SEOHead
       title={title}
       description={description}
@@ -74,12 +78,15 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2acfc6a04df0427b80b87ca6498542a3"}' is:inline></script>
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-95FS4CF63K" is:inline></script>
+    <!-- gtag.js (~180 KB) is fetched after the load event so it never competes
+         with the hero for bandwidth (performance budget: mobile 95+, LCP 2.5 s).
+         Calls made before it arrives queue in dataLayer. -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-95FS4CF63K');
+      window.addEventListener('load', function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-95FS4CF63K';document.head.appendChild(s);});
     </script>
     <!-- Ahrefs Analytics -->
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="t2xKSou59Mr4fNd9hqYmEg" async is:inline></script>
