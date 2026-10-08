@@ -138,5 +138,4 @@ If `fontSize` entries define negative `letterSpacing`, remove it when those size
 
 ## Related Documentation
 
-- [Font loading performance fix](../performance-issues/seo-performance-accessibility-audit-and-implementation.md) -- Documents the render-blocking Google Fonts fix (CSS `@import` -> `<link>` tags)
 - [Dark mode styling patterns](pagefind-dark-mode-accessibility.md) -- Dark mode CSS overrides using `:root.dark` selector

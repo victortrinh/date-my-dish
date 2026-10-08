@@ -1,232 +1,192 @@
 # Date My Dish editorial publishing system
 
+This is the single source of truth for what a DMD post looks like, where its content comes from, and how it gets published. The visual reference is the Review Page Rework design (desktop and phone review page, recommendation signals, content and SEO spec, date spot page, chef page). Where this document and the design disagree, this document wins.
+
 ## Editorial promise
 
-Date My Dish is a Montréal-first guide to Date Spots and contributor recipes. A Date Spot can be a restaurant, bar, activity, or Chef-led Experience. Its working descriptor is:
+Date My Dish is a Montréal-first guide to date nights:
 
 > Where to go, what to drink, what to make for someone.
 
-Victor Vu is the primary reporter; post bylines print "Victor". Practical copy uses DMD's editorial “we”; first-person writing belongs only in the signed My note section of a review.
+Victor Vu is the reporter; bylines print "Victor". Practical copy uses the editorial "we"; first-person writing belongs only in the signed My note section of a review. Montréal is the Home Market. A venue elsewhere is published as a Travel Review that names its actual city.
 
-Every reader-facing page is human-authored. Do not use AI to write, translate, paraphrase, invent, or illustrate published material. Permitted editorial changes are factual corrections, very small grammar or clarity fixes, and accurate SEO metadata that does not introduce claims or change the meaning of the source work.
+## Post types
 
-## Date Spot model
+| Post type | Design board | Notion source (`Post Type` value) |
+|---|---|---|
+| Review (Spot Type `restaurant` or `bar`) | Review page | `Restaurant Reviews` |
+| Date Spot (Spot Type `activity` or `chef-led`) | Date spot page | `Date Spots` |
+| Chef | Chef page | `Chef Interviews` |
+| Chef Recipe Card | Recipe card, linked from a review and a chef page | `Chef Interviews` rows that contain a recipe |
 
-**Date Spot** is the primary editorial page form. Each Date Spot has one Spot Type:
+Restaurant and Bar share one review template. A bar puts the drinks first and swaps Meet the chef for Meet the bartender, What to order for What to eat, and Before you book for Before you go.
 
-1. Restaurant
-2. Bar
-3. Activity
-4. Chef-led Experience
+The pages form a loop: a review's Make a night of it opens Date Spot pages, a Date Spot's Pair it with opens reviews, and a review's chef links to their chef page and recipe card. Navigation exposes a destination only once it has published content.
 
-Restaurant and Bar Date Spots use the full Review format. Activity and Chef-led Experience Date Spots use the planning format and carry one of five categories: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. A Bar may also take a category so it can be offered as a before-or-after pick. Contributor Recipes are separate pages (recipe cards). An Extended Chef or Bartender Profile (the chef page) is an occasional companion page, never a required publishing type.
-
-The loop the pages form: a review's "Make a night of it" opens Date Spot pages, a Date Spot's "Pair it with" opens reviews, and a review's chef links to their chef page and recipe card.
-
-Navigation exposes a destination only after it has content. “Reviews” may be a Date Spot filter or landing view for Restaurants and Bars; it is not a separate content hierarchy.
+Home recipes, informative articles and affiliate articles are not DMD post types. Their Notion rows are ignored and their old pages stay retired (404, no redirect).
 
 ### URLs
 
 | Page | English | French |
 |---|---|---|
-| Restaurant or Bar review | `/en/reviews/{neighbourhood}/{slug}/` | `/fr/critiques/{neighbourhood}/{slug}/` |
-| Activity or Chef-led Experience | `/en/date-spots/{slug}/` | `/fr/lieux/{slug}/` |
+| Review | `/en/reviews/{neighbourhood}/{slug}/` | `/fr/critiques/{neighbourhood}/{slug}/` |
+| Date Spot | `/en/date-spots/{slug}/` | `/fr/lieux/{slug}/` |
 | Category listing | `/en/date-spots/category/{category}/` | `/fr/lieux/categorie/{categorie}/` |
 | Neighbourhood guide | `/en/date-spots/neighbourhood/{neighbourhood}/` | `/fr/lieux/quartier/{neighbourhood}/` |
 | Chef page | `/en/chefs/{slug}/` | `/fr/chefs/{slug}/` |
 | Recipe card | `/en/recipe-cards/{slug}/` | `/fr/fiches-recettes/{slug}/` |
 
-The neighbourhood segment is derived from the Neighbourhood property (accents dropped, lower case, hyphenated), so the folder itself is the neighbourhood cluster. Listing pages only exist once they have content. The legacy `/en/recipes/` and `/fr/recettes/` routes stay retired.
+The neighbourhood segment is the companion file's `neighbourhood` (accents dropped, lower case, hyphenated). Every URL ends in a trailing slash.
 
-### The recommendation signal
+The seven reviews published before the rework lived at `/en/reviews/{slug}-montreal/` and `/fr/critiques/{slug}-montreal/`. Each of those 14 URLs 301-redirects, in one hop, to its new nested URL.
 
-No numbers anywhere: no DMD rating, date score, star score or synthetic ranking. Every Date Spot carries the same three-state verdict, stored as `favourite`, `conditional` or `pass` and displayed as `A favourite`, `Depends on the night` and `Not our first pick`. The stored value is the state; the words are display text, so the system can be reworded later without touching a post. The verdict is also the listing filter ("Filter by our take"). Keep `A favourite` scarce, roughly one in four; the build warns when it drifts above that.
+## The recommendation signal
 
-Good-for Signals use `Ideal`, `Works, with a caveat` and `Not the one`, always with a reason line. Diplomatic in the label, specific in the reason.
+No numbers from DMD anywhere: no rating, date score, stars or ranking.
 
-The one outside number allowed on a page is the venue's own Google rating, shown in the Essentials card as a dated snapshot ("4.6 · 312 reviews, as of 18 September 2026, not updated since") and labelled as theirs. It is never refreshed silently: a recheck adds a new snapshot line, and the publish gate rejects an edited or dropped one. It is never emitted in DMD's structured data.
+- **Verdict**: stored as `favourite`, `conditional` or `pass`; displayed as `A favourite`, `Depends on the night`, `Not our first pick`. Always paired with a one-line reason. It is also the listing filter ("Filter by our take"). Keep `favourite` scarce, about one in four; the build warns above that.
+- **Good-for and When-it-works rows**: `Ideal`, `Works, with a caveat`, `Not the one`, each with a reason line.
+- **Google rating**: the venue's own number, shown only in the essentials card as a dated snapshot ("4.6 · 312 reviews, as of 18 September 2026, not updated since") and labelled as theirs. A recheck appends a new dated line and never overwrites. It never appears in DMD's structured data.
 
-## Every Notion Story
+## What every post must have, and what is optional
 
-Every story is a structured Notion record with a type-specific template. Maintain a complete English and Canadian French Locale Pair, published together.
+Almost every section is optional. An optional section renders only when it has content. It never renders a placeholder, and nothing is ever invented to fill a slot (no made-up waiter's choice, set menu, chef section or pick).
 
-Required fields:
+### Review
 
-- Post Type
-- Spot Type, when the Post Type is Date Spot
-- English and French title, slug, meta title, and meta description
-- Reporter Byline: Victor
-- Publication date and review status
-- City and neighbourhood
-- Original-source notes and factual verification notes
-- At least one Editorial Image, with descriptive alt text, caption/credit when needed, and image dimensions
+Required:
 
-Venue Reviews and Date Spots additionally require:
+1. H1 `{Name}, {Neighbourhood}`, and the matching URL.
+2. The opening paragraph (ideally one sentence carrying the chef's name when known, the venue, the neighbourhood and the cuisine).
+3. The verdict with its reason.
+4. The essentials card: cuisine, neighbourhood, address, price per person.
+5. "Checked {month}": defaults to the publish date and feeds `dateModified`. It changes only when the venue is actually rechecked.
+6. A hero photo with descriptive alt text.
+7. Byline and visit or payment disclosure.
+8. EN and FR versions.
 
-- Visited date, published date, and last-checked date
-- Address/map, booking or access details, expected duration, and practical cost information
-- Payment disclosure: paid, hosted, or another clearly stated arrangement
-- Visible dated update notes for material later changes
+Optional, in design order: Good for (up to 6 rows), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, Instagram, the Google snapshot, Book and Map links.
 
-## Restaurant and Bar Date Spots: shared review rules
+**Make a night of it** shows 1 to 5 cards, always in this order: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. A card appears only when its Date Spot page is published. With no published picks the section is hidden.
 
-Restaurant and Bar Date Spots are sibling Venue Reviews. They share one page template and the same recommendation system; their modules follow the subject.
+### Date Spot
 
-### Required review floor
+Required: name, category (one of the five above), neighbourhood, a signal with its reason, address, practical info (hours, cost, season), a hero photo with alt text, EN and FR.
 
-Every review needs these elements:
+Optional: When it works rows, What it actually is, How to do it well, Pair it with (published reviews only), booking, transit, step-free access, map, a Chef-led Experience's named host.
 
-1. Venue name, city, neighbourhood, and an original opening sentence that carries the restaurant, the neighbourhood, the cuisine and, when reported, the chef's name (linked down to Meet the chef).
-2. The verdict up top: the three-state verdict, a one-line answer (`verdictHeadline`), and the paragraph behind it.
-3. Good-for Signals: 4 to 6 rows from the fixed occasions (first date, anniversary, casual midweek, impressing a cook, double date, solo at the bar), each with a reason.
-4. The room, The drinks (a first drink, a truthful non-alcohol pick, and the list itself), The real cost (an itemised two-person breakdown and total), My note (signed, with the number of visits), and Before you book (real questions and answers).
-5. One Essentials card: Our take, cost per person, booking, how long to allow, address, access and timing, plus the payment disclosure. Optional: "Can you talk?", Instagram handle, Book link, and the dated Google snapshot.
-6. At least 1,000 reader-facing words in each language. If a review is short, the words are missing from The room, Meet the chef or The drinks; don't pad the dish cards.
+### Chef
 
-The SEO title leads with `{Venue}, {Neighbourhood}` (pattern `{Venue}, {Neighbourhood}: Review & Date Night Guide`, 60 characters at most); the H1 is `{Venue}, {Neighbourhood}`; the meta description runs 150 to 160 characters. Every H2 is phrased the way a person would ask it ("Is Moccione worth it?", "What to order at Moccione", "How much does dinner at Moccione cost?").
+Required: name, the restaurant they are tied to (a published review, or just its name), at least one answer from the Q&A, EN and FR.
 
-Structured data: an `Article` about a `Restaurant` (or `BarOrPub`) carrying address, cuisine and price range, the chef or bartender as a `Person` employed there, and a `BreadcrumbList`. No `Review` or rating markup and no `FAQPage`.
+Optional: portrait with credit, standfirst and reported scene, round one about their restaurant, the rest of the eight fixed Dinner and a date questions, the closing question "What would you make for a date night at home?", and the short-version sidebar.
 
-Internal links are earned by the content: up to five Make a night of it picks, the neighbourhood guide, the recipe card, the chef page and two nearby reviews. The spec aims for nine; the build warns below that rather than blocking the first review in a neighbourhood.
+### Chef Recipe Card
 
-### Restaurant Date Spot
+Required: title, the chef's name and the source of the recipe, ingredients, steps, servings, EN and FR.
 
-**Ordered structure**
+Optional: photo, active and total time, equipment, notes from the chef, DMD testing notes, Pair it with.
 
-1. Opening, byline ("By Victor · Published · Checked {month}") and hero photo.
-2. The verdict (`Is {Restaurant} worth it?`).
-3. The essentials card (on phones; in the sidebar on desktop).
-4. `Good for`.
-5. `The room`: atmosphere, which tables to ask for, noise, service rhythm, dress. Optional room photo.
-6. `Meet the chef` (recommended): portrait with credit, background, one quote in their words, and what they're trying to do here, linking to their chef page and recipe card when those exist.
-7. `What to drink at {Restaurant}`: an intro, then "To start", "With the meal" and "Not drinking" picks, then the list itself (by-the-glass prices, corkage or bring-your-own-wine, markup).
-8. `What to order at {Restaurant}`: the waiter's choice and the set menu when there really is one (name, courses, price, `Take it` or `Go à la carte`), an à la carte strategy for two, then 4 to 7 dish cards, each tagged `Order this`, `Worth it` or `Skip`, with an optional photo.
-9. `How much does dinner at {Restaurant} cost?`: the breakdown, the total, and how to spend less.
-10. `My note on {Restaurant}`: signed, "after N visits, {month}", payment arrangement, the detail that stayed with you, the honest caveat, and dated Update lines. Ends with the invitation to report a correction.
-11. `What to do before or after dinner in {Neighbourhood}` (recommended): up to five picks, one per category, each a published Date Spot in the same city within a 15-minute walk, with before or after, walk time, price and season, plus a link to the neighbourhood guide.
-12. `What the chef would make for a date night` (recommended): the chef's Contributor Recipe.
-13. `Before you book`.
+## SEO rules
 
-Never invent a waiter's recommendation, a set menu, a chef section or a pick to fill a slot. Leave the module out.
+- One H1 per page. Every H2 is phrased the way a person would ask it ("Is Moccione worth it?", "What to order at Moccione", "How much does dinner at Moccione cost?"); dish names are H3s.
+- Meta title: leads with `{Name}, {Neighbourhood}` (reviews: `{Name}, {Neighbourhood}: Review & Date Night Guide`, shortened when the name is long). The rendered `<title>`, including any site suffix, stays at 60 characters or fewer. Meta description: 120 to 160 characters (aim for 150 to 160).
+- Structured data: `Article` with `datePublished` and `dateModified` (from Checked), `BreadcrumbList` matching the visible breadcrumb, `Restaurant` (or `BarOrPub`) as the article's `about` with address, `servesCuisine` and `priceRange`, and the chef as a `Person` employed there. Recipe cards add `Recipe`. Never `Review`, `AggregateRating` or `FAQPage` markup; the Before you book section stays for readers.
+- Internal links are earned by the content: Make a night of it picks, the neighbourhood guide, the recipe card, the chef page, nearby reviews. The build warns below nine; it does not block.
+- Word count: the build warns below 1,000 reader-facing words per locale and blocks below 300. Never pad to reach a number.
+- Images use real descriptive filenames, alt text that describes the plate or place, and explicit width and height.
+- Internal links never point at a redirect, a retired page or the bare apex.
 
-### Bar Date Spot
+## Performance budgets
 
-Same template and rules as the Restaurant, with these differences: `What to eat at {Bar}` replaces What to order and appears only when the food is part of the decision (1 to 7 tagged dishes); `Meet the bartender` replaces Meet the chef; the drinks need a first drink and a non-alcohol pick (second round optional); the cost heading asks about a night rather than dinner; the planning section is `Before you go`.
+These block a PR (Lighthouse PR check and `validate-build`):
 
-## Extended People Profile (chef page)
+| Budget | Limit |
+|---|---|
+| Lighthouse performance, mobile | 95 or more |
+| Largest Contentful Paint | 2.5 s or less |
+| Cumulative Layout Shift | 0.05 or less |
+| JavaScript on a review page | 15 KB or less |
+| Hero image | 200 KB or less, AVIF and WebP with WebP fallback, width and height set |
+| Below-the-fold images | `loading="lazy"` |
+| Third-party embeds | none on load; the map loads on click |
 
-The primary `Meet the chef` or `Meet the bartender` reporting lives inside its Restaurant or Bar Date Spot. Use this standalone companion page only when an interview has enough original reporting to earn one. Quotes are recorded, accurately transcribed, and only minimally edited for length or obvious errors. The subject may verify factual details, quotations, and their recipe; they do not approve DMD's editorial assessment.
+## Where content comes from
 
-**SEO title pattern**
+### Notion is read-only and taken as it is
 
-`{Name}, {Role} at {Venue}: Interview`
+All posts are fetched from the public Notion database at `https://congruous-eyebrow-e80.notion.site/9ce95183503543d68450194d1010824b`, without authentication. DMD never writes to Notion and cannot change its schema or page format. The importer adapts to whatever the authors put there: the existing properties (`Post Title`, `Post Type`, `Status`, `Borough`, `Recipe #`, `Publish Date`, and so on) and free-form page bodies with the author's own headings.
 
-**H1**
+The importer reads only rows where:
 
-`{Name}`, under the kicker "In the kitchen with" (or "Behind the bar with").
+- `Post Type` is `Restaurant Reviews`, `Date Spots` or `Chef Interviews`, and
+- `Status` is `Ready to Publish` or `Published`.
 
-**Ordered structure**
+Every other `Post Type` (`Recipes`, `Informative Posts`, `Affiliate Links`, empty) is ignored in code. Two rows that resolve to the same venue are flagged in the PR rather than published twice.
 
-1. Standfirst (role, venue, neighbourhood, the hook), byline ("Interview by Victor · {month} · Edited for length, not for politeness"), portrait, and a short reported scene.
-2. Round one, `The restaurant` (or `The bar`): as many questions about their work, training, menu and daily rhythm as the interview earns, with one pull quote.
-3. Round two, `Dinner and a date`: the same eight questions for every profile, in this order: the first thing you cooked for someone you liked; what you ate on your last day off; cook for your date or cook together; what you order to judge a restaurant; the most overrated romantic ingredient; how long a date dinner should take; what you cook the morning after; table six is on a bad date, send something over or leave them alone. Each answer card stands on its own.
-4. The last question, `What would you make for a date night at home?`, whose answer is their Contributor Recipe. It is the same question that closes their restaurant's review, so the two pages meet.
-5. Sidebar, `The short version`: venue, neighbourhood, cuisine, where they're from, where they trained, the year they started, and a link to the review.
+### Notion owns the prose; the companion file owns everything else
 
-## Contributor Recipe
+Each published post has a companion file, `src/content/editorial/{slug}.json`. It holds what Notion does not carry and what DMD controls:
 
-A recipe is published only when supplied and attributed to a named chef or bartender. It is not a recreation, adaptation, or “inspired by” version unless the contributor has explicitly supplied and approved that precise version.
+- verdict and its reason, Good-for and When-it-works signals
+- Spot Type, category, neighbourhood
+- Checked date and dated update lines
+- Google snapshot lines, Instagram handle, booking link
+- meta title and meta description per locale
+- alt text and internal links
 
-**SEO title pattern**
+The importer pre-fills the companion file on first import (verdict and reason proposed from the review's own text, neighbourhood from the address, category from the title, Checked from the publish date). Victor approves or edits it in the PR. On later imports the importer never overwrites a companion file field.
 
-`{Dish}: {Name}'s Date-Night Recipe`
+### Edit policy
 
-**H1**
+The prose on the site is the Notion text. The only changes allowed are:
 
-`{Dish}`
+- spelling, grammar and punctuation (Quebec French conventions on the FR side)
+- removing em-dashes
+- meta title and meta description, written when missing
+- alt text
+- rephrasing an H2 into the question a searcher would type, without changing its meaning
+- adding internal links on existing words
+- splitting an overlong paragraph
 
-**Ordered structure**
+Never: adding or removing sentences, changing opinions or facts, or inventing a section. A verbatim check fails the PR if any sentence on the page cannot be traced back to the Notion source after the allowed edits. Every edit is visible in the PR diff.
 
-1. Attribution: contributor, role, venue, and the original context for cooking it at home.
-2. At-a-glance facts: serves, active time, total time, difficulty, equipment, and dietary notes.
-3. `Ingredients`.
-4. `Method`.
-5. `Notes from {Name}`: supplied advice, substitutions, and mistakes to avoid.
-6. `Pair it with`: a specific DMD venue, drink, or Date Spot only when editorially earned.
-7. Source and testing note: what DMD tested, if anything, without changing the contributor's recipe.
+### Fitting free-form text into sections
 
-## Activity and Chef-led Experience Date Spots
+The importer maps the author's headings onto the design's sections with a fixed heading map (for example "The Vibe" to The room, "What to Order" to What to order, "Before and After" to Make a night of it, "The Real Cost" to The real cost). Headings the map does not know are placed by the importer agent. Text that fits no section is listed in the PR as unplaced, and Victor decides whether to drop it. Nothing is deleted silently.
 
-Activity and Chef-led Experience Date Spots are the non-restaurant, non-bar variants. A Chef-led Experience is labelled as such and names its host. Do not duplicate a Restaurant or Bar Date Spot as an Activity Date Spot; link to its review instead.
+### French
 
-**SEO title pattern**
+Notion holds English. The importer translates EN into Quebec French (souper, déjeuner, dîner; portions; tasses). The FR is marked as a translation in the PR and is never published without Victor's approval. A missing FR meta description is written from the FR prose, not translated from the EN meta. The seven reviews published before the rework reuse their existing FR text, reorganised into the new sections.
 
-`{Place}, {Neighbourhood}: Date Spot Guide`
+## Publishing
 
-**H1**
+1. **Importer** (Claude cloud routine on Victor's claude.ai account, Wednesdays): fetches the next eligible Notion row, downloads and optimises its images, fits the text into sections, applies the allowed edits, translates to FR, writes or updates the collection JSON and the companion file, and opens a draft PR listing every edit, the section mapping, unplaced text and the translation.
+2. **Deterministic checks**, run by the routine and again by CI on the PR: Notion fetch, image optimisation, verbatim check, publish gate (required fields, EN and FR parity, append-only Google snapshots and update lines, links resolve), source and build validators, performance budgets.
+3. **Merge** is the act of publishing. Nothing else publishes.
+4. **Updates**: when a published Notion row is edited (detected by its last-edited time), the importer opens an update PR that keeps the companion file intact. A changed verdict or signal needs a new dated update line.
+5. **Failure**: nothing on the site changes. The importer opens or updates a `notion-story` issue saying what blocked it.
 
-`{Place}`
+`notion/published.json` records which Notion rows are live and when they were last synced.
 
-**Ordered structure**
+## Pinterest
 
-1. Category kicker, opening (what it is, where it is, the specific date context), byline with visited, published and checked dates, and the hero photo.
-2. `When it works`: rows that name their own situation ("After dinner, summer", "November to April"), each `Ideal`, `Works, with a caveat` or `Not the one`, with a reason.
-3. `What it actually is`: two short paragraphs, the experience at the hour you'd go and then the history or small story, with the same honesty rule as the reviews.
-4. `How to do it well`: labelled tips (Timing, Entrance, Bring, and so on).
-5. `Pair it with`: published Restaurants or Bars in the same city, with the walk in minutes and each one's verdict.
-6. Sidebar: the Essentials card with Our take (the verdict, optionally qualified: "A favourite, in season"), category, cost, how long to allow, season, booking, transit, step-free access and map; the five categories; and more spots in the same category.
+- Pins use real photos only, with a title overlay rendered by script. No AI-generated images.
+- Pin copy is assembled from the meta title, meta description and verdict line. No new prose.
+- Pins link to the nested review URLs, English only.
+- Publishing a post queues its pins; `pinterest-pin-rotation.yml` posts the queue daily.
+- Pins created before the rework stay up; the 301 redirects keep them working.
 
-## Geography and maintenance
+## Scheduled work
 
-Montréal is DMD's Home Market. Travel Reviews are allowed whenever Victor Vu reports a venue elsewhere; they name their actual city and do not create an implied local-coverage promise.
+| Job | Runs as | What it does |
+|---|---|---|
+| Importer | Claude cloud routine, Wednesdays | Publishing flow above |
+| Weekly SEO maintenance | Claude cloud routine, Sundays | Audits published posts. Edits only companion file fields (meta, alt text, internal links) and opens a PR. Prose suggestions go into an issue, because prose belongs to Notion. Never pads word counts. |
+| `weekly-seo-ranking.yml` | GitHub Actions, Mondays | GSC and SERP data into `data/seo/`, keywords derived from published posts |
+| `weekly-seo-audit.yml` | GitHub Actions, Sundays | Full Lighthouse audit into `data/lighthouse/` |
+| `venue-maintenance.yml` | GitHub Actions, monthly | Flags reviews and Date Spots due a recheck (six months since Checked, or seasonal). Report only. |
+| `pinterest-pin-rotation.yml` | GitHub Actions, daily | Posts queued pins |
+| `playwright-weekly.yml` | GitHub Actions, Sundays | Full E2E suite |
 
-Dynamic information is not silently overwritten. Recheck venue facts every six months and seasonal Date Spots before the relevant season. Scheduled automation may create research or maintenance reminders but may not draft, translate, score, publish, or change reader-facing content.
-
-## Publishing a Notion Story
-
-Each supported Post Type has a Notion Story template in `notion/templates/`
-listing its database properties and its Locale Pair's exact JSON shape (one
-Notion "code" block per locale, English then Canadian French). Nothing
-about a Story is generated: every property and every field in those code
-blocks is written by Victor in Notion.
-
-**Status flow.** A Story is picked up once its `Status` is `Ready to
-Publish`. `scripts/fetch-notion-story.mjs` (run by the `Publish Notion
-Story` workflow) selects the lowest-numbered Story that is either
-unpublished or has been edited in Notion since its last sync, downloads and
-resizes its Editorial Image, maps its properties and Locale Pair onto the
-matching content contract in `src/content-contracts/`, and runs the result
-through the publish gate.
-
-**What the gate enforces**, beyond the schema itself:
-
-- The three sign-off checkboxes (`Human reporting`, `Human translation`,
-  `DMD-held photograph`) are all checked.
-- The Notion database carries no leftover numeric score or rating property.
-- Google review snapshots are append-only: earlier lines are kept exactly.
-- Links into the other collections resolve: a review's recipe card and chef
-  page, a profile's companion review, a recipe's pairings.
-- **Dated updates.** Republishing an already-live Date Spot with a changed
-  verdict, Good-for Signal or When-it-works row, or Essentials
-  requires a new Material update, dated after the previous `Last checked`,
-  in both locales. A recommendation cannot change silently.
-
-**On success**, the workflow opens a draft PR with the updated collection
-JSON, the resized image, and the updated `notion/published.json`. Merging
-that PR, after the usual PR checks and review, is the act of publishing;
-nothing else does.
-
-**On failure**, nothing on the site changes. The workflow opens or updates
-a `notion-story`-labelled issue listing exactly what to fix in Notion.
-There is no partial or silent publish.
-
-## Maintenance reminders
-
-`scripts/venue-maintenance-reminders.mjs` (run monthly by the `Venue
-Maintenance Reminders` workflow) reads `src/content/date-spots.json` and
-flags any Date Spot whose `Last checked` is over six months old, or whose
-planning copy names a `season` (flagged every run, since a season can't be
-scheduled exactly by cron). It opens or updates a single tracking issue
-with a checklist. This script only ever reports; the recheck itself,
-updating the Notion Story, and republishing through the flow above are
-Victor's.
+No scheduled job edits prose on the site.
