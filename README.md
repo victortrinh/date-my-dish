@@ -57,7 +57,7 @@ Date My Dish is a curated collection of date-night recipes, food articles, and M
 - **Print-Optimized** - Two-column print layout with ink-saving styles
 - **Rich SEO** - JSON-LD (Recipe, Article, FAQPage, BreadcrumbList), OpenGraph, hreflang, sitemap
 - **AI-Friendly** - `robots.txt` allows AI crawlers; `/llms.txt` endpoint for LLM discovery
-- **Auto-Publishing** - Notion to MDX pipelines auto-generate recipes, articles, and reviews via GitHub Actions
+- **Notion Importer** - A Claude cloud routine (`routines/importer.md`) imports posts from the read-only Notion database into a draft PR; merging publishes
 - **Social Automation** - New content auto-posts to Instagram and Pinterest with AI-generated captions
 - **Accessible** - WCAG 2.2 AA: focus traps, skip-to-content, reduced-motion support, contrast-checked colors
 
@@ -174,9 +174,10 @@ Reviews include restaurant-specific frontmatter (address, cuisine, priceRange, d
 <summary><strong>Click to expand</strong></summary>
 
 ### Content Publishing
+The Importer is a Claude cloud routine, not a workflow: see `routines/importer.md` and `scripts/notion-import.mjs`.
+
 | Workflow                     | Schedule            | Description                                                     |
 | ----------------------------- | ------------------- | ---------------------------------------------------------------- |
-| `publish-notion-story.yml`   | Wednesdays 1AM UTC  | Human-authored Notion Story -> publish gate -> draft PR (#504)  |
 | `venue-maintenance.yml`      | Monthly             | Flags Date Spots due a fact recheck; opens a reminder issue      |
 | `social-post-on-deploy.yml`  | On deploy           | Auto-posts new content to Instagram/Pinterest                    |
 | `token-refresh.yml`          | 1st + 25th monthly  | Refreshes the Pinterest OAuth token                              |

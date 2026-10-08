@@ -1,57 +1,65 @@
 // scripts/notion-story/fields.mjs
 //
-// Declarative description of the Notion Story database properties for each
-// Post Type / Spot Type. This single table drives:
-//   - which shared (locale-neutral) properties `map.mjs` reads off the row
-//   - the "missing field" report a failed Story produces
-//   - the contract test that keeps notion/templates/*.md in sync
-//
-// Locale-specific copy is never read from individual Notion properties. It
-// is supplied as two Notion "code" blocks (English, then Canadian French)
-// on the Story page, each a JSON object shaped exactly like the matching
-// content-contract's locale copy. See notion/templates/*.md.
+// The Notion Source as it is. DMD never writes to Notion and cannot change
+// its schema, so this file names the properties and values the authors
+// already use and nothing else. See docs/editorial-publishing-system.md
+// ("Where content comes from").
 
-// Properties every Post Type shares.
-export const SHARED_PROPERTIES = [
-  "Status",
-  "Story #",
-  "Post Type",
-  "ID",
-  "Human reporting",
-  "Human translation",
-  "DMD-held photograph",
-];
+export const DATABASE_PAGE_ID = "9ce95183503543d68450194d1010824b";
 
-// Properties required in addition to SHARED_PROPERTIES, by Post Type. Date
-// Spot rows also key off "Spot Type" to pick the right sub-list below.
-export const POST_TYPE_PROPERTIES = {
-  "date-spot": ["Spot Type", "Name", "City", "Neighbourhood", "Visited", "Published", "Last checked", "Payment", "Map URL", "Verdict", "Price range"],
-  "contributor-recipe": ["Contributor name", "Contributor role", "Venue or context", "Supplied source", "Received on", "Published"],
-  "extended-profile": ["Subject name", "Subject role", "Subject venue", "Subject neighbourhood", "Companion Date Spot", "Interview date", "Interview source", "Published"],
+// Existing database properties the importer reads.
+export const PROPERTIES = {
+  title: "Post Title",
+  postType: "Post Type",
+  status: "Status",
+  borough: "Borough",
+  number: "Recipe #",
+  publishDate: "Publish Date",
 };
 
-// Date Spot rows additionally require these properties by Spot Type.
-export const SPOT_TYPE_PROPERTIES = {
-  restaurant: [],
-  bar: [],
-  activity: ["Category"],
-  "chef-led-experience": ["Category", "Host name", "Host role"],
+// Post Type -> the DMD post type and the collection it publishes into.
+// Every other Post Type (Recipes, Informative Posts, Affiliate Links, empty)
+// is Retired Legacy Content and ignored here.
+export const ELIGIBLE_POST_TYPES = {
+  "Restaurant Reviews": { postType: "review", collection: "src/content/date-spots.json" },
+  "Date Spots": { postType: "date-spot", collection: "src/content/date-spots.json" },
+  "Chef Interviews": { postType: "chef", collection: "src/content/extended-profiles.json" },
 };
 
-// Properties read when filled in and skipped when blank. A Bar takes a
-// Category only when it should appear in "Make a night of it" picks.
-export const OPTIONAL_PROPERTIES = {
-  "date-spot": ["Instagram", "Booking URL", "Google reviews"],
-  bar: ["Category"],
-};
+export const ELIGIBLE_STATUSES = ["Ready to Publish", "Published"];
 
-export function requiredProperties(postType, spotType) {
-  const props = [...SHARED_PROPERTIES, ...(POST_TYPE_PROPERTIES[postType] ?? [])];
-  if (postType === "date-spot" && spotType) {
-    props.push(...(SPOT_TYPE_PROPERTIES[spotType] ?? []));
-  }
-  return props;
+/**
+ * @param {{ postType: string, status: string }} row
+ * @returns {boolean}
+ */
+export function isEligible(row) {
+  return Object.hasOwn(ELIGIBLE_POST_TYPES, row.postType) && ELIGIBLE_STATUSES.includes(row.status);
 }
 
-export const POST_TYPES = Object.keys(POST_TYPE_PROPERTIES);
-export const SPOT_TYPES = Object.keys(SPOT_TYPE_PROPERTIES);
+/** "Côte-des-Neiges" -> "cote-des-neiges"; "Cabaret l'Enfer" -> "cabaret-lenfer". */
+export function slugify(value) {
+  return String(value)
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/**
+ * The venue a row is about, from its title alone, so duplicates can be
+ * flagged before any page is fetched:
+ *   "Giwa Review: Modern Korean Cooking in Verdun"   -> "giwa"
+ *   "Ratafia, Little Italy: Dessert Wine Bar Review" -> "ratafia"
+ *   "TOHU, Saint-Michel: Arts and Culture Date Idea" -> "tohu"
+ * @param {string} title
+ */
+export function venueKey(title) {
+  const head = String(title).split(":")[0];
+  const name = head
+    .replace(/\s+\(.*?\)/g, "")
+    .replace(/\s+(?:(?:restaurant|brunch|bar)\s+)?review\b.*$/i, "")
+    .split(",")[0];
+  return slugify(name);
+}

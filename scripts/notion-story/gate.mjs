@@ -1,49 +1,28 @@
 // scripts/notion-story/gate.mjs
 //
-// Runs a mapped Notion Story record through the real content-contract
-// schemas (the same ones astro:content and validate-*.mjs enforce), plus
-// the checks a Zod schema can't express: sign-off attestations, no
-// leftover numeric-rating property on the Notion row, and the dated-update
-// rule for republishing an already-published Date Spot, the append-only
-// Google rating snapshots, and references into the other collections.
+// The publish gate for imported posts. It runs every collection, with its
+// Companion Files merged in, through the real content contracts (required
+// fields, EN and FR parity), resolves links across collections, and adds the
+// checks a schema can't express: Google snapshots and update lines are
+// append-only, a changed recommendation carries a new dated update line, no
+// author placeholder or em-dash reaches the page, and no venue is published
+// twice. The same gate runs in the Importer routine and in CI.
 
 import { dateSpotsSchema } from "../../src/content-contracts/date-spot.mjs";
 import { contributorRecipesSchema } from "../../src/content-contracts/contributor-recipe.mjs";
 import { extendedProfilesSchema } from "../../src/content-contracts/extended-profile.mjs";
 import { checkCrossReferences } from "../../src/content-contracts/cross-references.mjs";
+import { slugify } from "./fields.mjs";
 
-const COLLECTION_SCHEMAS = {
-  "date-spot": dateSpotsSchema,
-  "contributor-recipe": contributorRecipesSchema,
-  "extended-profile": extendedProfilesSchema,
-};
-
-const REQUIRED_ATTESTATIONS = ["Human reporting", "Human translation", "DMD-held photograph"];
-
-// Any Notion property carrying this kind of name is a pre-pivot numeric
-// score/rating leaking into a Story. "Verdict" is the one qualitative
-// property this pattern must not flag.
-const FORBIDDEN_PROPERTY_PATTERN = /\b(score|rating|stars?)\b/i;
+export const COLLECTIONS = /** @type {const} */ ({
+  spots: { label: "Date Spots and Reviews", schema: dateSpotsSchema },
+  recipes: { label: "Chef Recipe Cards", schema: contributorRecipesSchema },
+  profiles: { label: "Chef pages", schema: extendedProfilesSchema },
+});
 
 /**
- * @param {string[]} schemaPropertyNames every property name defined on the Notion database
- * @returns {string[]} problems, empty when clean
+ * @typedef {{ spots: Record<string, any>[], recipes: Record<string, any>[], profiles: Record<string, any>[] }} Collections
  */
-export function checkForbiddenProperties(schemaPropertyNames) {
-  return schemaPropertyNames
-    .filter((name) => FORBIDDEN_PROPERTY_PATTERN.test(name))
-    .map((name) => `The Notion database still has a "${name}" property. Remove any numeric score or rating field.`);
-}
-
-/**
- * @param {(name: string) => string} getProp
- * @returns {string[]} problems, empty when every attestation is checked
- */
-export function checkAttestations(getProp) {
-  return REQUIRED_ATTESTATIONS.filter((name) => String(getProp(name)).trim().toLowerCase() !== "true" && getProp(name) !== true).map(
-    (name) => `"${name}" is not checked. A Story cannot publish until Victor attests to it.`
-  );
-}
 
 // Key order differs between a raw record and its parsed form, so compare
 // with sorted keys.
@@ -52,98 +31,142 @@ const stable = (value) => Array.isArray(value)
   : value && typeof value === "object"
     ? Object.fromEntries(Object.keys(value).sort().map((key) => [key, stable(value[key])]))
     : value;
+const same = (a, b) => JSON.stringify(stable(a)) === JSON.stringify(stable(b));
 
-function coreRecommendationSignature(record) {
-  if (record.postType !== "date-spot") return null;
-  return JSON.stringify(stable({
+function recommendation(record) {
+  return {
     verdict: record.reviewVerdict ?? null,
-    goodFor: record.locales?.en?.goodFor ?? record.locales?.en?.whenItWorks ?? null,
-    essentials: record.locales?.en?.essentials ?? null,
-  }));
+    goodFor: record.locales?.en?.goodFor ?? null,
+    whenItWorks: record.locales?.en?.whenItWorks ?? null,
+  };
 }
 
 /**
- * The dated-update rule: an already-published Date Spot cannot silently
- * change its recommendation. If the verdict, Good-for Signals, or
- * Essentials changed since the previous publish, both locales need a new
- * Material update dated after the previous Last checked date.
- *
- * @param {object} record the newly mapped record
- * @param {object|null} previousRecord the record currently in the collection, if any
- * @returns {string[]} problems, empty when the update is either unchanged or properly dated
+ * A published post cannot silently change its recommendation: a changed
+ * verdict or signal needs a new dated update line in both locales, dated
+ * after the previous Checked date.
+ * @param {Record<string, any>} record merged record as it will publish
+ * @param {Record<string, any> | null | undefined} previous merged record as it is live now
+ * @returns {string[]}
  */
-export function checkDatedUpdate(record, previousRecord) {
-  if (!previousRecord || record.postType !== "date-spot") return [];
-  if (coreRecommendationSignature(record) === coreRecommendationSignature(previousRecord)) return [];
+export function checkDatedUpdate(record, previous) {
+  if (!previous || record.postType !== "date-spot") return [];
+  if (same(recommendation(record), recommendation(previous))) return [];
+  const previousChecked = previous.freshness?.lastChecked ?? previous.freshness?.published;
+  return ["en", "fr-CA"]
+    .filter((locale) => !(record.locales?.[locale]?.materialUpdates ?? []).some((update) => update.date > previousChecked))
+    .map((locale) => `${record.id}: the verdict or a signal changed but ${locale} has no update line dated after ${previousChecked} (the previous Checked date). Add one saying what changed.`);
+}
 
-  const previousLastChecked = previousRecord.freshness.lastChecked ?? previousRecord.freshness.published;
+/**
+ * Google snapshots are dated and append-only: a recheck adds a line and
+ * never edits or drops one already printed.
+ * @param {Record<string, any>} record
+ * @param {Record<string, any> | null | undefined} previous
+ */
+export function checkGoogleReviewsAppendOnly(record, previous) {
+  const before = previous?.googleReviews ?? [];
+  const after = record.googleReviews ?? [];
+  const kept = before.every((snapshot, index) => same(snapshot, after[index]));
+  return kept ? [] : [`${record.id}: a Google snapshot was edited or dropped. Keep every earlier line as it was and append the new one.`];
+}
+
+/**
+ * Update lines are append-only too.
+ * @param {Record<string, any>} record
+ * @param {Record<string, any> | null | undefined} previous
+ */
+export function checkUpdateLinesAppendOnly(record, previous) {
   const problems = [];
   for (const locale of ["en", "fr-CA"]) {
-    const updates = record.locales[locale].materialUpdates ?? [];
-    const hasNewDatedUpdate = updates.some((update) => update.date > previousLastChecked);
-    if (!hasNewDatedUpdate) {
-      problems.push(
-        `The recommendation changed but ${locale} has no Material update dated after ${previousLastChecked} (the previous Last checked date). Add one explaining what changed.`
-      );
+    const before = previous?.locales?.[locale]?.materialUpdates ?? [];
+    const after = record.locales?.[locale]?.materialUpdates ?? [];
+    if (!before.every((line, index) => same(line, after[index]))) {
+      problems.push(`${record.id}: an update line in ${locale} was edited or dropped. Update lines are only ever appended.`);
     }
   }
   return problems;
 }
 
+// "[DATE]", "[X] visits", "[ANSWER NEEDED.]", "[SPOT NEEDED]": author
+// placeholders for missing reporting. An empty slot is left out; it never
+// ships as a placeholder.
+const PLACEHOLDER = /\[(?:[A-Z0-9][A-Z0-9 .,:;'’/&-]*|[^\]]*\b(?:NEEDED|TBD|TODO|CONFIRM)\b[^\]]*)\](?!\()/;
+
 /**
- * The venue's Google rating is a dated snapshot. A republish may add a new
- * line but never edits or drops one that was already printed.
- *
- * @param {object} record the newly mapped record
- * @param {object|null} previousRecord the record currently in the collection, if any
- * @returns {string[]} problems
+ * @param {unknown} value
+ * @param {string} path
+ * @returns {{ path: string, text: string }[]}
  */
-export function checkGoogleReviewsAppendOnly(record, previousRecord) {
-  const previous = previousRecord?.googleReviews ?? [];
-  const next = record.googleReviews ?? [];
-  const kept = previous.every((snapshot, index) => JSON.stringify(snapshot) === JSON.stringify(next[index]));
-  return kept ? [] : ["The Google reviews property changed or dropped an earlier snapshot. Keep every earlier line as it was and add the new snapshot on a new line."];
+function strings(value, path) {
+  if (typeof value === "string") return [{ path, text: value }];
+  if (Array.isArray(value)) return value.flatMap((item, index) => strings(item, `${path}[${index}]`));
+  if (value && typeof value === "object") return Object.entries(value).flatMap(([key, item]) => strings(item, `${path}.${key}`));
+  return [];
 }
 
 /**
- * @param {object} record the mapped, unvalidated record
- * @param {object[]} existingCollection the current contents of the collection JSON file
- * @param {(name: string) => string} getProp
- * @param {string[]} schemaPropertyNames every property name on the Notion database
- * @param {{ spots?: object[], recipes?: object[], profiles?: object[] }} [related] the published
- *   collections, so links into them can be checked; omitted in unit tests of a single collection
- * @returns {{ ok: true, collection: object[] } | { ok: false, problems: string[] }}
+ * No author placeholder, internal note marker or em-dash reaches the page.
+ * @param {Record<string, any>} record
  */
-export function publishGate(record, existingCollection, getProp, schemaPropertyNames, related) {
-  const problems = [
-    ...checkForbiddenProperties(schemaPropertyNames),
-    ...checkAttestations(getProp),
-  ];
-
-  const previousRecord = existingCollection.find((entry) => entry.id === record.id) ?? null;
-  problems.push(...checkDatedUpdate(record, previousRecord));
-  problems.push(...checkGoogleReviewsAppendOnly(record, previousRecord));
-
-  if (problems.length > 0) return { ok: false, problems };
-
-  const collection = previousRecord
-    ? existingCollection.map((entry) => (entry.id === record.id ? record : entry))
-    : [...existingCollection, record];
-
-  const schema = COLLECTION_SCHEMAS[record.postType];
-  const result = schema.safeParse(collection);
-  if (!result.success) {
-    return {
-      ok: false,
-      problems: result.error.issues.map((issue) => `${issue.path.join(".") || "(root)"}: ${issue.message}`),
-    };
+export function checkLeftovers(record) {
+  const problems = [];
+  for (const { path, text } of strings(record, record.id)) {
+    if (PLACEHOLDER.test(text)) problems.push(`${path}: author placeholder left in: "${text.match(PLACEHOLDER)?.[0]}"`);
+    if (text.includes("\u2014")) problems.push(`${path}: em-dash left in (replace it with a comma, colon or period)`);
+    if (/^INTERNAL\b/.test(text)) problems.push(`${path}: an INTERNAL note was copied into the page`);
   }
+  return problems;
+}
 
-  if (related) {
-    const key = { "date-spot": "spots", "contributor-recipe": "recipes", "extended-profile": "profiles" }[record.postType];
-    const referenceProblems = checkCrossReferences({ spots: [], recipes: [], profiles: [], ...related, [key]: result.data });
-    if (referenceProblems.length > 0) return { ok: false, problems: referenceProblems };
+/**
+ * Two records about the same venue (same name and city) are one venue
+ * published twice.
+ * @param {Record<string, any>[]} spots
+ */
+export function checkDuplicateVenues(spots) {
+  const seen = new Map();
+  const problems = [];
+  for (const spot of spots) {
+    const key = `${slugify(spot.name ?? "")}|${slugify(spot.city ?? "Montréal")}`;
+    if (seen.has(key)) problems.push(`${spot.id}: same venue as ${seen.get(key)} (${spot.name}). Flag the duplicate Notion rows instead of publishing twice.`);
+    else seen.set(key, spot.id);
   }
+  return problems;
+}
 
-  return { ok: true, collection: result.data, mode: previousRecord ? "update" : "publish" };
+/**
+ * @param {Collections} collections merged collections as they will publish (Companion Files applied)
+ * @param {Partial<Collections>} [previous] merged collections as they are live now (the PR's base)
+ * @returns {{ ok: boolean, problems: string[], parsed: Collections | null }}
+ */
+export function publishGate(collections, previous = {}) {
+  const problems = [];
+  /** @type {Record<string, any[]>} */
+  const parsed = {};
+  for (const [key, { label, schema }] of Object.entries(COLLECTIONS)) {
+    const records = collections[key] ?? [];
+    const result = schema.safeParse(records);
+    if (!result.success) {
+      for (const issue of result.error.issues) {
+        const [index, ...field] = issue.path;
+        const id = typeof index === "number" ? records[index]?.id ?? `#${index}` : "(collection)";
+        problems.push(`${label}: ${id}: ${field.join(".") || "(record)"}: ${issue.message}`);
+      }
+      continue;
+    }
+    parsed[key] = result.data;
+    const before = new Map((previous[key] ?? []).map((record) => [record.id, record]));
+    for (const record of records) {
+      problems.push(...checkLeftovers(record));
+      const old = before.get(record.id);
+      problems.push(...checkGoogleReviewsAppendOnly(record, old), ...checkUpdateLinesAppendOnly(record, old));
+    }
+    for (const record of result.data) problems.push(...checkDatedUpdate(record, before.get(record.id)));
+  }
+  problems.push(...checkDuplicateVenues(collections.spots ?? []));
+  if (problems.length === 0) {
+    problems.push(...checkCrossReferences(/** @type {Collections} */ (parsed)));
+  }
+  return { ok: problems.length === 0, problems, parsed: problems.length === 0 ? /** @type {Collections} */ (parsed) : null };
 }

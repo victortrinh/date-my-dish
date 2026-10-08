@@ -65,10 +65,11 @@ test("a review missing any required field is rejected, naming the field", () => 
   }
 });
 
-test("human-authorship attestations are no longer required", () => {
+test("the retired human-authorship attestation fields are rejected", () => {
   const spot = minimalReviewFixture();
   assert.equal("authorship" in spot, false);
   accepts(spot);
+  rejects({ ...spot, authorship: { reporting: "human", translation: "human" } });
 });
 
 test("Checked defaults to the publish date and never precedes it", () => {

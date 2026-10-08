@@ -40,9 +40,6 @@ export const contributorRecipeSchema = object({
   recipeOrigin: z.literal("contributor-supplied"),
   contributor: object({ name: text, role: z.enum(["chef", "bartender"]).default("chef"), venueOrContext: text.optional() }),
   suppliedSource: object({ description: text, receivedOn: date.optional() }),
-  // No longer required. Still accepted because the pre-rework Notion Story
-  // mapper (scripts/notion-story/map.mjs) emits it until #539 replaces it.
-  authorship: object({ recipe: z.literal("human-supplied"), translation: z.literal("human") }).optional(),
   published: date,
   image: object({
     src: z.union([z.string().regex(/^\/images\/contributor-recipes\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/), z.literal("/images/og-default.jpg")]),
