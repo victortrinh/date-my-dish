@@ -3,9 +3,15 @@ import { t, type Locale } from "@i18n/utils";
 
 interface Props {
   locale: Locale;
+  /**
+   * Emit the binding script. The script binds every `.theme-toggle` on the
+   * page, so only the last instance in the DOM needs it; extra copies count
+   * against the review page JavaScript budget (validate-build).
+   */
+  includeScript?: boolean;
 }
 
-const { locale } = Astro.props;
+const { locale, includeScript = true } = Astro.props;
 ---
 
 <button
@@ -25,6 +31,7 @@ const { locale } = Astro.props;
   </svg>
 </button>
 
+{includeScript && (
 <script is:inline>
   document.querySelectorAll('.theme-toggle').forEach(function(btn) {
     if (btn.dataset.bound) return;
@@ -43,3 +50,4 @@ const { locale } = Astro.props;
     });
   });
 </script>
+)}

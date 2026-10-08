@@ -19,22 +19,42 @@ env:
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
+    # Performance budgets (docs/editorial-publishing-system.md): the site is
+    # built from the mechanical acceptance fixtures so every post type has a
+    # page to audit, and one URL per post type is checked on mobile and desktop.
+    env:
+      DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
+      CONTRIBUTOR_RECIPE_SOURCE: tests/fixtures/contributor-recipes.json
+      EXTENDED_PROFILE_SOURCE: tests/fixtures/extended-profiles.json
     steps:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Check for content changes
+      - name: Check for rendering or content changes
         id: content
         run: |
-          CHANGED=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD -- src/content/date-spots.json src/content/contributor-recipes.json src/content/extended-profiles.json src/content/editorial/ src/pages/)
+          CHANGED=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD -- \
+            src/content/date-spots.json \
+            src/content/editorial/ \
+            src/content/extended-profiles.json \
+            src/content/contributor-recipes.json \
+            src/components/ \
+            src/layouts/ \
+            src/pages/ \
+            src/styles/ \
+            tests/fixtures/ \
+            .lighthouserc.cjs \
+            .lighthouserc-mobile.cjs \
+            scripts/generate-lighthouse-urls.cjs \
+            .github/workflows/lighthouse-pr-check.yml)
           if [ -z "$CHANGED" ]; then
             echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "No content pages changed — skipping Lighthouse"
+            echo "No rendering or content changes, skipping Lighthouse"
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "Content changes detected:"
+            echo "Changes detected:"
             echo "$CHANGED"
           fi
 
@@ -63,10 +83,10 @@ jobs:
       - run: npm run build
         if: steps.content.outputs.skip == 'false'
 
-      - name: Generate changed page URLs
+      - name: Generate one URL per post type
         if: steps.content.outputs.skip == 'false'
         id: urls
-        run: node scripts/generate-lighthouse-urls.cjs --mode=changed --base=origin/${{ github.event.pull_request.base.ref }}
+        run: node scripts/generate-lighthouse-urls.cjs --mode=post-types
 
       - name: Run Lighthouse CI (Desktop)
         if: steps.content.outputs.skip == 'false' && steps.urls.outputs.url_count > 0
