@@ -128,7 +128,5 @@ new window.PagefindUI({
 
 ## Related Documentation
 
-- `docs/solutions/performance-issues/seo-performance-accessibility-audit-and-implementation.md` -- Pagefind locale filtering (Solution #6), accessibility compliance
-- `docs/plans/2026-02-24-feat-full-site-redesign-pinchofyum-gordonramsay-plan.md` -- SearchOverlay architecture, dark mode integration strategy
 - `tailwind.config.mjs` -- Dark mode class-based strategy, brand color tokens
 - `src/styles/global.css` -- Global dark mode base styles

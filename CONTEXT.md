@@ -1,101 +1,97 @@
 # Date My Dish Editorial Context
 
-Date My Dish is a Montreal date-night guide. Its reporting connects places to go, the people who make them, and practical ways to plan the evening.
+Date My Dish is a Montreal date-night guide. Its reporting connects places to go, the people who make them, and practical ways to plan the evening. The full rules live in `docs/editorial-publishing-system.md`.
 
 ## Editorial content
 
-**Review Verdict**:
-A qualitative editorial recommendation stored as `favourite`, `conditional`, or `pass`; its reader-facing wording must include a specific reason.
+**Review**:
+A post assessing a Restaurant or Bar, built from the review page design. Restaurant and Bar share one template and one recommendation system.
+_Avoid_: Scorecard, separate restaurant and bar content types
+
+**Date Spot**:
+A post recommending an activity or a Chef-led Experience for a date, built from the date spot page design and carrying one of five categories.
+_Avoid_: Date idea, generic listing
+
+**Spot Type**:
+`restaurant`, `bar`, `activity` or `chef-led`. Restaurant and bar make a Review; activity and chef-led make a Date Spot.
+_Avoid_: Post Type (that is the Notion property)
+
+**Chef-led Experience**:
+A Date Spot whose activity is delivered by a named chef or bartender, such as a cooking class, tasting or supper club.
+_Avoid_: Restaurant event
+
+**Chef**:
+A post built from the chef page design: a Q&A with the chef behind a reviewed venue.
+_Avoid_: Extended Profile, founder profile
+
+**Chef Recipe Card**:
+An at-home recipe supplied by a named chef, linked from their review and chef page.
+_Avoid_: House recipe, inspired-by recipe, home recipe
+
+**Verdict**:
+The qualitative recommendation on every Review and Date Spot, stored as `favourite`, `conditional` or `pass`, always with a reason.
 _Avoid_: Date score, rating, stars
 
 **Good-for Signal**:
-A reasoned assessment of how well a reviewed venue suits one fixed date occasion, expressed as `ideal`, `caveat`, or `not-for`.
+A reasoned row saying how well a Review suits one date occasion: `Ideal`, `Works, with a caveat` or `Not the one`. Date Spots use the same states as When-it-works rows.
 _Avoid_: Date type fit, compatibility score
 
-**Contributor Recipe**:
-An at-home recipe supplied and attributed to a named chef or bartender, with its source and any DMD testing notes made clear.
-_Avoid_: House recipe, inspired-by recipe, generic recipe
+**Google Snapshot**:
+The venue's own Google rating and review count, printed with the date it was recorded, labelled as theirs, appended and never overwritten, and never put in DMD's structured data.
+_Avoid_: Live rating, our rating
+
+**Optional Section**:
+Any page section outside a post type's required minimum. It renders only when it has content and is never filled with invented material.
+_Avoid_: Placeholder, filler section
+
+**Make a Night of It**:
+The review section offering up to five published Date Spots nearby, one per category, in a fixed category order.
+_Avoid_: Related posts box
 
 **Reporter Byline**:
-The factual credit identifying the person responsible for DMD's reporting, written as Victor Vu and distinct from a founder-led or personality-driven brand.
+The factual credit for DMD's reporting: Victor Vu, printed as "Victor".
 _Avoid_: Home-cook creator, anonymous critic
 
-**Venue Review**:
-A full editorial assessment of a Restaurant or Bar Date Spot, sharing one recommendation system while using venue-appropriate reporting modules.
-_Avoid_: Separate top-level content type, scorecard
-
-**Date Spot**:
-A reported recommendation for a date, encompassing restaurants, bars, activities, and Chef-led Experiences. Its Spot Type determines its page modules and planning details.
-_Avoid_: Activity-only category, generic listing, date idea
-
-**Chef-led Experience**:
-A Date Spot whose activity is delivered by a named chef or bartender, such as a cooking class, tasting, supper club, or workshop.
-_Avoid_: Date spot when the named host matters, restaurant event
-
-## Scope and integrity
+**Editorial Voice**:
+DMD's publication-level "we" for practical copy; first person appears only in the signed My note.
+_Avoid_: Founder voice
 
 **Home Market**:
-Montréal is DMD's primary reporting market; occasional coverage elsewhere is explicitly identified as an exception rather than treated as equivalent local coverage.
-_Avoid_: Canada-wide guide, location-agnostic coverage
+Montréal. A venue elsewhere is a Travel Review that names its actual city.
+_Avoid_: Canada-wide guide
+
+## Content sources
+
+**Notion Source**:
+The public, read-only Notion database every post is fetched from. DMD never writes to it and takes its properties and free-form page bodies as they are.
+_Avoid_: CMS we control, Notion Story template
+
+**Companion File**:
+`src/content/editorial/{slug}.json`: the fields Notion does not carry and DMD controls (verdict, signals, neighbourhood, Checked date, Google Snapshot, Instagram, meta fields, alt text, internal links). Pre-filled by the Importer, approved by Victor, never overwritten by a later import.
+_Avoid_: Overlay, frontmatter
+
+**Importer**:
+The Claude cloud routine that turns an eligible Notion row into a draft PR: sections fitted, allowed edits applied, FR translated, Companion File pre-filled.
+_Avoid_: Auto-publisher (merging the PR is what publishes)
+
+**Allowed Edit**:
+One of the only changes the site may make to Notion prose: spelling, grammar, punctuation, em-dash removal, meta fields, alt text, an H2 rephrased as a question without changing its meaning, internal links on existing words, splitting a long paragraph.
+_Avoid_: Rewrite, polish, padding
+
+**Verbatim Check**:
+The PR check that fails when a sentence on a page cannot be traced to its Notion source after Allowed Edits.
+
+**Unplaced Text**:
+Notion text the Importer could not fit into any section, listed in the PR for Victor to keep or drop.
 
 **Locale Pair**:
-The English and Canadian French versions of the same core DMD page, published together and treated as equally complete editorial work.
-_Avoid_: Partial translation, primary-language page
+The English and Quebec French versions of a post, published together. FR is translated by the Importer and approved by Victor.
+_Avoid_: Partial translation, EN-only page
 
-**Independent Review**:
-A Venue Review based on DMD's own visit and editorial judgment, with payment or hosted-visit status disclosed and no venue approval of the verdict.
-_Avoid_: Sponsored review, approved review
-
-**Editorial Module**:
-A named, reusable section of a DMD content template whose applicability is determined by the story being reported.
-_Avoid_: Boilerplate, filler section
-
-**Notion Story**:
-The structured editorial record in Notion from which a DMD page and its locale pair are published.
-_Avoid_: CMS entry, post draft
-
-## Publishing system
-
-**Core Review Floor**:
-The minimum reporting required for every Venue Review: venue and neighbourhood, a reasoned Review Verdict, Good-for Signals, essential planning facts, and a signed Reporter Byline with disclosure.
-_Avoid_: Optional review, score-only review
-
-**Post Type**:
-One of DMD's publishable page forms: a Date Spot, Contributor Recipe, or rare Extended Profile. Restaurant and Bar Reviews are full-depth Date Spot variants, not top-level Post Types.
-_Avoid_: Article, generic post
-
-**Spot Type**:
-The kind of Date Spot being reported: Restaurant, Bar, Activity, or Chef-led Experience. It selects the appropriate template modules without changing the Date Spot's place in the content model.
-_Avoid_: Post Type, category page
-
-**Editorial Voice**:
-DMD's publication-level voice, written as “we” for practical reporting; first-person observation appears only in a signed Reporter’s Note.
-_Avoid_: Founder voice, anonymous voice
-
-**Staged Navigation**:
-Navigation that exposes a Post Type only after DMD has published content in it.
-_Avoid_: Empty category, coming-soon section
-
-**Freshness Record**:
-The visible record of when DMD visited, published, and last checked a Venue Review or Date Spot, with material changes added as dated updates.
-_Avoid_: Silently refreshed page, undated current information
+**Checked Date**:
+The month the venue facts were last verified. Defaults to the publish date, printed as "Checked {month}", and feeds `dateModified`.
+_Avoid_: Silently refreshed page
 
 **Retired Legacy Content**:
-A self-authored recipe or general article removed from the public DMD product because it does not meet the contributor-led editorial model; it has no replacement unless a specific successor exists.
-_Avoid_: Archived content, generic redirect target
-
-**Brand Descriptor**:
-The provisional line “Where to go, what to drink, what to make for someone,” which describes DMD's current editorial scope without making recipes its primary identity.
-_Avoid_: Cooking is the new foreplay, permanent slogan
-
-**Travel Review**:
-A Venue Review outside Montréal, published because Victor Vu reported it during travel and labelled with its actual city; it does not imply continuing geographic coverage there.
-_Avoid_: Expansion market, Montréal review
-
-**Editorial Image**:
-A real photograph held by DMD for a reported venue, person, dish, or Date Spot, optimized for delivery and accurately described in its metadata.
-_Avoid_: AI documentary image, decorative stock image
-
-**Human-authored Content**:
-All reader-facing DMD reporting, interviews, recipes, captions, translations, and recommendations written or supplied by a person. Editorial changes are limited to factual corrections, small clarity or grammar fixes, and accurate search metadata that does not add claims or alter meaning.
-_Avoid_: AI-generated draft, synthetic translation, automated opinion
+Home recipes, informative articles and affiliate articles. Their pages are gone (404, no redirect) and their Notion rows are ignored.
+_Avoid_: Archived content, redirect target

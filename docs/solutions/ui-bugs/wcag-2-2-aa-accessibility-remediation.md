@@ -220,5 +220,4 @@ Added to `src/styles/global.css`:
 ## Cross-References
 
 - [Pagefind Dark Mode Accessibility](../ui-bugs/pagefind-dark-mode-accessibility.md) — Related dark mode contrast fixes for search modal
-- [SEO Performance Accessibility Audit](../performance-issues/seo-performance-accessibility-audit-and-implementation.md) — Earlier audit that identified initial accessibility gaps
 - [Typography System Font Swap Gotchas](../ui-bugs/typography-system-font-swap-gotchas.md) — Font rendering that affects text sizing and contrast perception

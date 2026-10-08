@@ -1,84 +1,33 @@
 # Date My Dish: Product Marketing Context
 
-## Site Overview
+## Site overview
 
-- **Type**: Bilingual recipe blog (EN/FR)
+- **Type**: Bilingual (EN / Quebec French) Montréal date-night guide
 - **URL**: https://datemydish.com
-- **Framework**: Astro 5 (static site) deployed on Cloudflare Pages
-- **Primary business goal for SEO**: Organic traffic from people searching for date-night recipes, romantic dinner ideas, and impressive home-cooked meals
+- **Stack**: Astro 5, static, on Cloudflare
+- **Descriptor**: Where to go, what to drink, what to make for someone.
 
-## Brand Positioning
+## What we publish
 
-"Confident home cook impressing a date. Witty without trying too hard."
+- **Reviews** of restaurants and bars, with a qualitative verdict (`A favourite`, `Depends on the night`, `Not our first pick`), Good-for signals, what to order, the real cost, and a signed note. No numeric scores.
+- **Date Spots**: activities and Chef-led Experiences in five categories (Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic), linked from reviews' "Make a night of it".
+- **Chef pages** (a fixed Q&A) and **Chef Recipe Cards** (a recipe the chef cooks at home for a date).
 
-Date My Dish is a romantic recipe blog that helps home cooks create unforgettable date nights. The differentiator is the date-night angle: every recipe is designed to impress a partner, not just feed a family. The voice is cheeky and confident, like a friend who cooks beautifully and tells great stories while doing it.
+Full rules: `docs/editorial-publishing-system.md`. Terms: `CONTEXT.md`.
 
-## Target Audience
+## Audience
 
-- Home cooks (beginner to intermediate) planning date nights or special evenings
-- Couples looking for romantic cooking inspiration
-- People who want to impress someone with a home-cooked meal
-- Bilingual audience: English speakers + Quebec French speakers (Montreal-based)
+Couples and daters in Montréal planning a night out: where to eat or drink, what to order, what it costs, and what to do before or after.
 
-## Content Pillars
+## Goals
 
-1. **Date Night Recipes**: The core offering. Appetizers through desserts designed to impress.
-2. **Cooking Techniques**: Articles teaching skills that boost kitchen confidence (wok hei, velveting, sous vide).
-3. **Food Science**: Myth-busting and explaining the "why" behind cooking (MSG, washing chicken).
-4. **Date Night Planning**: Wine pairings, atmosphere tips, plating guidance.
+- Organic search for venue and neighbourhood queries ("Moccione Villeray", "date night Villeray", "what to order at Moccione", "how much does dinner at Moccione cost").
+- Citation by AI answer engines for Montréal date-night questions.
+- Pinterest traffic from real venue photos.
 
-## Current Content Inventory (as of March 2026)
+## Copy rules
 
-- **12 recipes** (EN + FR): Italian, Mediterranean, Korean-Italian, Vietnamese, British, Spanish, Nikkei, Southeast Asian cuisines
-- **6 articles** (EN + FR): Cooking techniques and food science
-- **36 total indexable pages** (18 EN + 18 FR)
-- Publishing pace: 1-2 new recipes per week via Notion auto-publish pipeline
-
-## SEO State
-
-- **Domain age**: Young (< 1 year)
-- **Organic traffic**: ~90 human visits/month (early stage)
-- **Bot traffic**: ~3.3k/month (strong crawler engagement)
-- **Rankings**: 1 keyword at position #3 (long-tail exact match: "quinoa-crusted salmon with spicy orange miso sauce")
-- **Technical SEO**: Excellent foundation (82ms page load, green Core Web Vitals, comprehensive structured data)
-- **Structured data**: Recipe + FAQPage JSON-LD on every recipe, BlogPosting + FAQPage on articles, BreadcrumbList on all pages, WebSite + Organization on homepage, ItemList on listing pages
-- **AI accessibility**: robots.txt allows GPTBot, ClaudeBot, PerplexityBot; `/llms.txt` endpoint serves AI-readable content index
-
-## Competitive Landscape
-
-Top competitors for tracked keywords:
-- YouTube (16 appearances), RecipeTinEats (12), SeriousEats (10), AllRecipes, BonAppetit, NYT Cooking
-- No direct competitor occupies the "date night recipe" niche specifically
-
-## Conversion Goals
-
-- **Primary**: Organic search traffic growth to 50k sessions/month
-- **Secondary**: AI citation (getting recipes cited by ChatGPT, Perplexity, Google AI Overviews)
-- **Tertiary**: Social traffic via Pinterest and Instagram automation
-
-## Voice Guidelines (Summary)
-
-- **Recipe prose**: Cheeky and confident. "This pasta doesn't need a reservation. It needs a candle."
-- **Meta descriptions**: Personality-infused, max 160 chars with CTAs
-- **FAQ answers**: Witty but helpful, self-contained (40-60 words)
-- **Cooking instructions**: Clear and authoritative (no personality)
-- **Never use em-dashes** in any content
-- **Quebec French** for FR content (souper, dejeuner, diner conventions)
-- Full guide: `docs/brand-voice-guide.md`
-
-## Key Long-Tail Keyword Themes
-
-- "date night [cuisine] recipe" (e.g., "date night Italian pasta recipe")
-- "impressive [dish type] for date night" (e.g., "impressive dessert for date night")
-- "romantic dinner for two [dish]" (e.g., "romantic dinner for two salmon")
-- "easy [cuisine] recipe to impress" (e.g., "easy Italian recipe to impress")
-- "[specific dish] recipe" (e.g., "cacio e pepe recipe", "pork osso buco recipe")
-
-## Technical Notes for SEO Skills
-
-- Content lives in MDX files: `src/content/recipes/{en,fr}/` and `src/content/articles/{en,fr}/`
-- Frontmatter is Zod-validated via `src/content.config.ts`
-- JSON-LD generated by `src/components/RecipeSchema.astro` and `ArticleSchema.astro`
-- i18n routing: `/en/` and `/fr/` prefixes with localized slugs
-- Sitemap auto-generated, excludes search pages
-- Google Search Console data tracked weekly in `data/seo/`
+- Post prose comes from the read-only Notion source and is never rewritten. Only the Allowed Edits in `CONTEXT.md` apply.
+- Meta titles lead with `{Name}, {Neighbourhood}`; meta descriptions run 120 to 160 characters.
+- Never use em-dashes.
+- FR uses Quebec French conventions (souper, déjeuner, dîner).
