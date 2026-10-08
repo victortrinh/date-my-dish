@@ -73,6 +73,14 @@ export default {
       const { pathname } = new URL(request.url);
       if (!PASSTHROUGH_PATHS.has(pathname)) return maintenanceResponse();
     }
+    // With `run_worker_first`, public/_redirects is only reached through the
+    // ASSETS binding, which follows redirects by default and would serve the
+    // target's body at the old URL with a 200. Ask for the redirect itself so
+    // old URLs answer with their 301.
+    if (request.method === "GET" || request.method === "HEAD") {
+      const asset = await env.ASSETS.fetch(new Request(request.url, { method: request.method, redirect: "manual" }));
+      if (asset.status >= 300 && asset.status < 400 && asset.headers.has("Location")) return asset;
+    }
     return handle(request, env, ctx);
   },
 } satisfies ExportedHandler<Env>;
