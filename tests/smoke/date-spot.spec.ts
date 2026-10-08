@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-import { readdirSync } from "node:fs";
 
 // Routes rendered from the mechanical acceptance fixtures in tests/fixtures/.
 const restaurant = { en: "/en/reviews/test-quarter/test-only-restaurant/", fr: "/fr/critiques/test-quarter/test-only-restaurant-fr/" };
@@ -59,13 +58,30 @@ test("the verdict filter narrows a listing to one state", async ({ page }) => {
   await expect(page.locator("article[data-verdict]:visible")).toHaveCount(3);
 });
 
-test("legacy numeric reviews stay withheld from public routes", async ({ request }) => {
-  for (const locale of ["en", "fr"]) {
-    const prefix = locale === "en" ? "reviews" : "critiques";
-    for (const file of readdirSync(`src/content/reviews/${locale}`)) {
-      const response = await request.get(`/${locale}/${prefix}/${file.replace(/\.mdx$/, "")}/`, { maxRedirects: 0 });
-      expect(response.status()).toBe(404);
-      expect(response.headers().location).toBeUndefined();
+// The seven reviews published before the rework lived at flat
+// /{locale}/{reviews|critiques}/{slug}-montreal/ URLs. Each one 301s, in one
+// hop, to its nested URL under the venue's neighbourhood.
+const legacyReviews = {
+  "giwa-verdun": "verdun",
+  "hoogan-et-beaufort": "rosemont-la-petite-patrie",
+  "ile-flottante": "mile-end",
+  mckiernan: "sud-ouest",
+  moccione: "villeray",
+  "oncle-lee-kao": "old-montreal",
+  othym: "the-village",
+};
+
+test("legacy flat review URLs 301 once to their nested URLs", async ({ request }) => {
+  for (const prefix of ["/en/reviews", "/fr/critiques"]) {
+    for (const [slug, neighbourhood] of Object.entries(legacyReviews)) {
+      const route = `${prefix}/${slug}-montreal/`;
+      const target = `${prefix}/${neighbourhood}/${slug}/`;
+      const response = await request.get(route, { maxRedirects: 0 });
+      expect(response.status(), route).toBe(301);
+      expect(new URL(response.headers().location ?? "", "http://localhost").pathname, route).toBe(target);
+      // One hop: the target never redirects again.
+      const next = await request.get(target, { maxRedirects: 0 });
+      expect(next.headers().location, target).toBeUndefined();
     }
   }
 });
