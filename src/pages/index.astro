@@ -1,4 +1,8 @@
 ---
-// Root redirect: detect browser language and redirect to /en/ or /fr/
+// Root redirect: detect browser language and redirect to /en/ or /fr/.
+// Rendered on demand: the Accept-Language header only exists at request time
+// (a prerendered page always meta-refreshes to /en/). It is also the route
+// that keeps the Worker (src/worker.ts) in the build.
+export const prerender = false;
 return Astro.redirect(`/${(Astro.request.headers.get("accept-language") || "").toLowerCase().startsWith("fr") ? "fr" : "en"}/`, 302);
 ---
