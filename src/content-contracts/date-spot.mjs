@@ -250,9 +250,9 @@ export function countReaderWords(value) {
 
 // Values that must agree across the Locale Pair; any other string is just
 // words and only its presence must match.
-const STRUCTURAL_KEYS = new Set(["occasion", "assessment", "moment", "tag", "advice", "spotId", "timing", "recipeId", "profileId", "photo", "date", "byline"]);
+export const STRUCTURAL_KEYS = new Set(["occasion", "assessment", "moment", "tag", "advice", "spotId", "timing", "recipeId", "profileId", "photo", "date", "byline"]);
 // Per-locale fields whose presence may differ between languages.
-const LOCALE_ONLY_KEYS = new Set(["slug", "title", "metaTitle", "metaDescription", "sourceNotes", "factNotes", "imageCredit"]);
+export const LOCALE_ONLY_KEYS = new Set(["slug", "title", "metaTitle", "metaDescription", "sourceNotes", "factNotes", "imageCredit"]);
 function shape(value, key) {
   if (Array.isArray(value)) {
     const items = value.map((item) => shape(item));

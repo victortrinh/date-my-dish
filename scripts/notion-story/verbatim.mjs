@@ -66,7 +66,9 @@ export function allowedEdits(length) {
 
 // Words that flip an opinion or a fact when added, dropped or swapped. A
 // grammar fix never touches them, so editing one costs more than any budget.
-const LOCKED = new Set(["not", "no", "never", "nothing", "none", "nobody", "without", "skip", "dont", "doesnt", "didnt", "isnt", "wasnt", "arent", "cant", "couldnt", "wont", "wouldnt", "only", "best", "worst"]);
+const LOCKED = new Set(["not", "no", "never", "nothing", "none", "nobody", "without", "skip", "dont", "doesnt", "didnt", "isnt", "wasnt", "arent", "cant", "couldnt", "wont", "wouldnt", "only", "best", "worst",
+  // French, for the FR copy of the seven pre-rework reviews (traced against their old FR text).
+  "pas", "jamais", "rien", "aucun", "aucune", "sans", "seulement", "meilleur", "meilleure", "meilleurs", "pire", "ne", "nest"]);
 const UNAFFORDABLE = 1000;
 const locked = (word) => LOCKED.has(word) || /\d/.test(word);
 const editCost = (word) => (locked(word) ? UNAFFORDABLE : 1);

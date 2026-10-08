@@ -159,6 +159,8 @@ The importer maps the author's headings onto the design's sections with a fixed 
 
 Notion holds English. The importer translates EN into Quebec French (souper, déjeuner, dîner; portions; tasses). The FR is marked as a translation in the PR and is never published without Victor's approval. A missing FR meta description is written from the FR prose, not translated from the EN meta. The seven reviews published before the rework reuse their existing FR text, reorganised into the new sections.
 
+The FR is translated section by section from the section-fitted EN, so both keep the same structure. The deterministic checks hold it to that: the same sections, signals, dish tags, links and dates as the EN; FR internal links on FR routes (`/fr/critiques/...`, `/fr/lieux/...`); and, for the seven older reviews, the Verbatim Check run against their existing FR, where only text that is new in Notion since the old review may be freshly translated (and is listed in the PR).
+
 ## Publishing
 
 1. **Importer** (Claude cloud routine on Victor's claude.ai account, Wednesdays): fetches the next eligible Notion row, downloads and optimises its images, fits the text into sections, applies the allowed edits, translates to FR, writes or updates the collection JSON and the companion file, and opens a draft PR listing every edit, the section mapping, unplaced text and the translation.

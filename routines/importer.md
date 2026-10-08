@@ -45,14 +45,49 @@ The deterministic steps are scripts. Run them; do not reimplement them, and do n
    - `lastChecked`: the publish date, unless the author's "Checked" says the venue was verified later.
    - meta title and description when the author gave none: title leads with `{Name}, {Neighbourhood}` and stays at 46 characters or fewer; description 120 to 160 characters.
    A field already in the file is kept as it is, even if you disagree; say so in the PR instead.
-9. Translate into Quebec French under `locales.fr-CA`: souper, déjeuner, dîner; portions; cuillère à thé, cuillère à soupe, tasses. Same sections, signals, tags, links and dates as the English. Write the FR meta description from the FR prose; never translate the EN meta. The seven reviews published before the rework reuse their existing FR text from `src/content/reviews/fr/`, reorganised into the new sections. Put the FR Companion File fields in the proposal under `locales.fr-CA`.
+9. Write the French under `locales.fr-CA`. See "French" below for how. `next` printed `french.mode`: `translate` for a new post, `reuse` for one of the seven reviews published before the rework.
 10. Run the checks. All must pass before you open the PR:
-    - `node scripts/notion-import.mjs check --base origin/main --report` (Verbatim Check, publish gate: required fields, EN and FR parity, links resolve, append-only Google snapshots and update lines, dated updates, no placeholders, no em-dashes, no venue twice, photo budgets). It also prints the Unplaced Text for the PR.
+    - `node scripts/notion-import.mjs check --base origin/main --report` (Verbatim Check, French checks, publish gate: required fields, EN and FR parity, links resolve, append-only Google snapshots and update lines, dated updates, no placeholders, no em-dashes, no venue twice, photo budgets). It also prints the Unplaced Text for the PR.
     - `npm run check`
     - `npm run test:contracts`
     - `npm run build`
-    A sentence the Verbatim Check rejects is put back to the Notion wording, never argued with. If a check cannot pass without changing Notion, go to "On failure".
+    A sentence the Verbatim Check rejects is put back to the Notion wording, never argued with. An FR sentence it rejects on a `reuse` post is put back to the old FR wording. If a check cannot pass without changing Notion, go to "On failure".
 11. Commit everything the steps wrote and open a **draft** PR against `main` with the body below.
+
+## French
+
+Notion holds English only. The French is yours to write, and Victor approves it in the PR; nothing merges without him.
+
+### Translate (`french.mode: "translate"`)
+
+- Translate the section-fitted English, after the Allowed Edits, section by section and field by field. Every field in `locales.en` has its counterpart in `locales.fr-CA` at the same path; no field is in one and not the other. Translate the text; do not summarise it, add to it or soften it. An opinion stays as strong as the author wrote it.
+- Keep everything that is not words exactly as the English has it: which Optional Sections are present, list lengths and order, signal states (`occasion`, `assessment`), drink `moment`s, dish `tag`s, `advice`, `spotId`/`recipeId`/`profileId`/`photo` keys, update-line `date`s, `visits`, `walkMinutes`, `courses`.
+- Quebec French, the way a Montrealer talks about going out: souper (dinner), déjeuner (breakfast), dîner (lunch), brunch; portions; tasses, cuillère à thé, cuillère à soupe; fin de semaine, never week-end; never petit-déjeuner or cuillère à café. Tutoiement, as in the existing FR reviews. Prices as Quebec writes them (`25 $`), times as `18 h` or `17 h 30`.
+- Names stay as they are: the venue, people, dishes on the menu, cocktail names, street names. Addresses stay exactly as the author wrote them.
+- Links: every link in the EN gets the same link in the FR, on the French words that carry the same meaning, pointing at the French page: `/fr/critiques/{neighbourhood}/{fr slug}/` for a review, `/fr/lieux/{fr slug}/` for a Date Spot, `/fr/lieux/categorie/{fr category}/`, `/fr/lieux/quartier/{neighbourhood}/`, `/fr/chefs/{fr slug}/`, `/fr/fiches-recettes/{fr slug}/`, `/fr/a-propos/`. Use the target's own `locales.fr-CA.slug`, end every path with `/`, and never link to `/fr/recettes/` or `/fr/articles/` (Retired Legacy Content). External links stay identical.
+- Slug: `locales.fr-CA.slug` is the post's French slug (lowercase, hyphens, no accents), short like the English one.
+- Meta: write the FR meta title and description from the FR prose you just wrote, the way the EN ones were written from the EN: title leads with `{Name}, {Neighbourhood}` and stays at 46 characters or fewer; description 120 to 160 characters. Never translate the EN meta description. Write the FR hero alt text from the photo, in French. These go in the Companion File proposal under `locales.fr-CA`, with the FR `verdictReason` (translated from the EN one) and the FR signal reasons.
+- Never use an em-dash. A French dash is a comma, a colon or a period here too.
+
+### Reuse (`french.mode: "reuse"`)
+
+The seven reviews published before the rework (McKiernan, Moccione, Hoogan et Beaufort, Othym, Oncle Lee Kăo, Giwa, Île Flottante) already have French that Victor approved, in the file `next` named (`src/content/reviews/fr/{name}.mdx`). Do not translate them again.
+
+- Fit that FR into the same sections as the EN, the same way you fitted the Notion text: for each EN field, take the old FR sentences that say the same thing and put them in the FR field at the same path. Copy them as written; only the Allowed Edits apply (spelling, grammar, punctuation, em-dash removal, paragraph splits, links on words already there).
+- Where the Notion EN has text the old review never had, translate just that text, following "Translate" above. The check lists these sentences; copy the list into the PR's Translation section.
+- Leave out what the new design has no place for, as on the EN side: the old score ("9 sur 10"), FAQ items that are not in the Notion text, social captions.
+- Signals, tags, links, dates and meta follow the same rules as "Translate".
+
+### What the check enforces
+
+`node scripts/notion-import.mjs check` runs on the FR too and fails on:
+
+- parity: a field, section or list item in one locale and not the other, or a signal state, dish tag, link target, date or count that differs (it names the path);
+- FR links that are not final `/fr/` URLs with a trailing slash, that do not resolve, or that do not point at the French page of what the EN field links to;
+- FR text left in English, the EN meta description reused, or France-French usage (petit-déjeuner, cuillère à café, week-end);
+- on a `reuse` post, an FR sentence that does not trace to the old FR review, unless the EN at the same path has Notion text the old review never had.
+
+It also prints, without failing, prose fields whose numbers differ between EN and FR ("6 pm" is "18 h"). Check each one and list any you kept under "Needs Victor".
 
 ## On failure
 
@@ -73,7 +108,15 @@ Merging this PR publishes the post. Nothing is live until then.
 
 ## Translation
 
-The French is a machine translation into Quebec French by the Importer, not reviewed by a person. Victor: read every FR field before merging. {For the seven pre-rework reviews: the FR reuses the existing published text, reorganised; list any sentence that had no FR counterpart.}
+{translate:} The French is a translation into Quebec French by the Importer, from the section-fitted English, not reviewed by a person. Victor: read every FR field before merging. The FR meta title and description were written from the FR prose.
+
+{reuse:} The French reuses the published text of `src/content/reviews/fr/{name}.mdx`, fitted into the new sections; it passed the Verbatim Check against that file. Sentences translated fresh because the Notion text is new since the old review (from the check's output):
+
+- {path}: {sentence}
+
+{or: None.} Left out of the old FR: {the score, FAQ items, anything else}.
+
+Number differences the check flagged: {path: what and why it is right, or None.}
 
 ## Section mapping
 
@@ -113,7 +156,7 @@ Notion text that fits no section, for Victor to keep or drop. Nothing here is on
 
 ## Needs Victor
 
-- [ ] Review the FR translation.
+- [ ] Review the FR (every field; a translation is never published without your approval).
 - [ ] Approve or edit the Companion File.
 - [ ] {Every author placeholder left out of the page, every open item from the author's checklist or INTERNAL notes, a changed verdict needing an update line, and anything the agent was unsure of.}
 
