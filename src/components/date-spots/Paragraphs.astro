@@ -1,7 +1,8 @@
 ---
-// Copy fields separate paragraphs with a blank line.
-interface Props { text: string; class?: string; }
-const { text, class: className } = Astro.props;
+// Copy fields separate paragraphs with a blank line. An absent field
+// renders nothing.
+interface Props { text?: string; class?: string; }
+const { text = "", class: className } = Astro.props;
 const paragraphs = text.split(/\n\s*\n/).map((paragraph) => paragraph.trim()).filter(Boolean);
 ---
 {paragraphs.map((paragraph) => <p class={className}>{paragraph}</p>)}

@@ -1,25 +1,30 @@
 import { defineCollection } from "astro:content";
-import { file } from "astro/loaders";
 import { z } from "astro/zod";
 
 import { dateSpotSchema } from "./content-contracts/date-spot.mjs";
 import { contributorRecipeSchema } from "./content-contracts/contributor-recipe.mjs";
 import { extendedProfileSchema } from "./content-contracts/extended-profile.mjs";
+import { loadCollection } from "./content-contracts/load.mjs";
+
+// Each collection is the Notion-derived JSON with its Companion Files
+// (src/content/editorial/{slug}.json) merged over it; Companion File fields
+// win. Acceptance builds may opt into mechanical fixtures. Production always
+// consumes the source collections.
+const editorialDir = process.env.EDITORIAL_SOURCE || "src/content/editorial";
+const merged = (path: string) => () => loadCollection(path, editorialDir).map((record) => ({ ...record, id: String(record.id) }));
 
 const dateSpots = defineCollection({
-  // Acceptance builds may opt into mechanical fixtures. Production always
-  // consumes the human-authored source collection.
-  loader: file(process.env.DATE_SPOT_SOURCE || "src/content/date-spots.json"),
+  loader: merged(process.env.DATE_SPOT_SOURCE || "src/content/date-spots.json"),
   schema: dateSpotSchema,
 });
 
 const contributorRecipes = defineCollection({
-  loader: file(process.env.CONTRIBUTOR_RECIPE_SOURCE || "src/content/contributor-recipes.json"),
+  loader: merged(process.env.CONTRIBUTOR_RECIPE_SOURCE || "src/content/contributor-recipes.json"),
   schema: contributorRecipeSchema,
 });
 
 const extendedProfiles = defineCollection({
-  loader: file(process.env.EXTENDED_PROFILE_SOURCE || "src/content/extended-profiles.json"),
+  loader: merged(process.env.EXTENDED_PROFILE_SOURCE || "src/content/extended-profiles.json"),
   schema: extendedProfileSchema,
 });
 

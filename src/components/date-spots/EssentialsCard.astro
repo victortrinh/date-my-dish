@@ -33,7 +33,7 @@ const rows: [string, string | undefined][] = isVenueReview(spot)
     ]
   : [
       [t(locale, "dateSpot.category_label"), category && t(locale, `dateSpot.category.${category}`)],
-      [t(locale, "dateSpot.cost"), `${essentials.cost} (${priceLabel(spot.priceRange, locale)})`],
+      [t(locale, "dateSpot.cost"), spot.priceRange ? `${essentials.cost} (${priceLabel(spot.priceRange, locale)})` : essentials.cost],
       [t(locale, "dateSpot.allow"), essentials.duration],
       [t(locale, "dateSpot.season"), season],
       [t(locale, "dateSpot.booking"), essentials.booking],
@@ -66,10 +66,10 @@ const snapshots = spot.googleReviews ?? [];
       ))}
       <dd class="mt-1 text-caption italic text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.googleTheirs")}</dd>
     </div>}
-    <div class="py-2.5"><dt class="text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.disclosure")}</dt><dd class="mt-1 text-warm-800 dark:text-warm-200">{copy.paymentDisclosure}</dd></div>
+    {copy.paymentDisclosure && <div class="py-2.5"><dt class="text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.disclosure")}</dt><dd class="mt-1 text-warm-800 dark:text-warm-200">{copy.paymentDisclosure}</dd></div>}
   </dl>
-  <div class="mt-4 flex gap-3 font-ui text-body-sm font-semibold">
+  {(spot.bookingUrl || spot.mapUrl) && <div class="mt-4 flex gap-3 font-ui text-body-sm font-semibold">
     {spot.bookingUrl && <a href={spot.bookingUrl} rel="external noopener" class="flex-1 bg-brand-wine px-4 py-2.5 text-center text-white no-underline hover:opacity-90 dark:bg-brand-rose dark:text-warm-950">{t(locale, "dateSpot.book")}</a>}
-    <a href={spot.mapUrl} rel="external noopener" class="flex-1 border border-brand-wine px-4 py-2.5 text-center text-brand-wine-text no-underline dark:border-brand-rose dark:text-brand-rose">{t(locale, "dateSpot.map")}</a>
-  </div>
+    {spot.mapUrl && <a href={spot.mapUrl} rel="external noopener" class="flex-1 border border-brand-wine px-4 py-2.5 text-center text-brand-wine-text no-underline dark:border-brand-rose dark:text-brand-rose">{t(locale, "dateSpot.map")}</a>}
+  </div>}
 </section>

@@ -1,0 +1,34 @@
+{
+  "id": "test-only-restaurant",
+  "reviewVerdict": "favourite",
+  "lastChecked": "2026-01-04",
+  "googleReviews": [
+    {
+      "average": 4.6,
+      "count": 312,
+      "asOf": "2026-01-02"
+    }
+  ],
+  "instagram": "test_only",
+  "bookingUrl": "https://example.com/book",
+  "locales": {
+    "en": {
+      "metaTitle": "Test Venue, Test Quarter: Companion EN Title",
+      "materialUpdates": [
+        {
+          "date": "2026-01-04",
+          "note": "[TEST ONLY] update"
+        }
+      ]
+    },
+    "fr-CA": {
+      "metaTitle": "Test Venue, Test Quarter: Companion FR Title",
+      "materialUpdates": [
+        {
+          "date": "2026-01-04",
+          "note": "[TEST ONLY] update"
+        }
+      ]
+    }
+  }
+}

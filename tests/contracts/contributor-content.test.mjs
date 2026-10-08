@@ -16,7 +16,7 @@ const contributorRecipe = () => ({
   id: "test-recipe", postType: "contributor-recipe", recipeOrigin: "contributor-supplied",
   contributor: { name: token, role: "chef", venueOrContext: token },
   suppliedSource: { description: token, receivedOn: "2026-01-01" },
-  authorship: { recipe: "human-supplied", translation: "human" }, published: "2026-01-02",
+  published: "2026-01-02",
   image: { src: "/images/contributor-recipes/test-recipe.webp", width: 1200, height: 800, provenance: "dmd-held-photograph" },
   locales: { en: recipeCopy(), "fr-CA": recipeCopy() },
 });
@@ -30,17 +30,20 @@ const profileCopy = () => ({
 const extendedProfile = () => ({
   id: "test-profile", postType: "extended-profile",
   subject: { name: token, role: "bartender", venue: token, neighbourhood: token }, companionDateSpot: "test-date-spot", interviewer: "Victor",
-  originalInterview: { conductedOn: "2026-01-01", source: token, quoteVerification: "facts-and-quotes-only" },
-  authorship: { reporting: "human", translation: "human" }, published: "2026-01-02",
+  originalInterview: { conductedOn: "2026-01-01", source: token },
+  published: "2026-01-02",
   image: { src: "/images/profiles/test-profile.webp", width: 1200, height: 800, provenance: "dmd-held-photograph" },
   locales: { en: profileCopy(), "fr-CA": profileCopy() },
 });
 const rejects = (schema, value) => assert.equal(schema.safeParse(value).success, false);
 
-test("Contributor Recipes require human-supplied, named and sourced bilingual recipes", () => {
+test("Chef Recipe Cards require a title, the chef and source, ingredients, steps, servings, EN and FR", () => {
   assert.equal(contributorRecipeSchema.safeParse(contributorRecipe()).success, true);
-  for (const key of ["contributor", "suppliedSource", "authorship", "published", "image", "locales"]) {
+  for (const key of ["contributor", "suppliedSource", "published", "locales"]) {
     const recipe = contributorRecipe(); delete recipe[key]; rejects(contributorRecipeSchema, recipe);
+  }
+  for (const key of ["title", "serves", "ingredientGroups", "methodGroups"]) {
+    const recipe = contributorRecipe(); delete recipe.locales.en[key]; rejects(contributorRecipeSchema, recipe);
   }
   for (const field of ["recipeOrigin", "adaptation", "inspiredBy", "dateScore"]) {
     const recipe = contributorRecipe();
@@ -49,8 +52,18 @@ test("Contributor Recipes require human-supplied, named and sourced bilingual re
     rejects(contributorRecipeSchema, recipe);
   }
   const unnamed = contributorRecipe(); unnamed.contributor.name = " "; rejects(contributorRecipeSchema, unnamed);
+  const unsourced = contributorRecipe(); delete unsourced.suppliedSource.description; rejects(contributorRecipeSchema, unsourced);
   const partial = contributorRecipe(); delete partial.locales["fr-CA"]; rejects(contributorRecipeSchema, partial);
-  const unsupplied = contributorRecipe(); unsupplied.authorship.recipe = "ai"; rejects(contributorRecipeSchema, unsupplied);
+});
+
+test("Chef Recipe Card photo, times, equipment, notes and testing notes are optional", () => {
+  const recipe = contributorRecipe(); delete recipe.image;
+  for (const locale of ["en", "fr-CA"]) {
+    for (const key of ["originalContext", "sourceNotes", "factNotes", "imageAlt", "imageCredit", "activeTime", "totalTime", "difficulty", "equipment", "dietaryNotes", "contributorNotes"]) delete recipe.locales[locale][key];
+  }
+  delete recipe.suppliedSource.receivedOn; delete recipe.contributor.venueOrContext;
+  assert.equal(contributorRecipeSchema.safeParse(recipe).success, true);
+  const photoWithoutAlt = contributorRecipe(); delete photoWithoutAlt.locales.en.imageAlt; rejects(contributorRecipeSchema, photoWithoutAlt);
 });
 
 test("Contributor Recipes keep DMD testing notes separate from contributor instructions", () => {
@@ -63,20 +76,39 @@ test("Contributor Recipes keep DMD testing notes separate from contributor instr
   rejects(contributorRecipeSchema, sourceAfterPublication);
 });
 
-test("Extended Profiles are bilingual companion reporting, never a replacement for a Date Spot module", () => {
+test("Chef pages require the chef, their restaurant, one answer, EN and FR", () => {
   assert.equal(extendedProfileSchema.safeParse(extendedProfile()).success, true);
-  for (const key of ["subject", "companionDateSpot", "originalInterview", "authorship", "published", "image", "locales"]) {
+  for (const key of ["subject", "published", "locales"]) {
     const profile = extendedProfile(); delete profile[key]; rejects(extendedProfileSchema, profile);
   }
-  const generated = extendedProfile(); generated.authorship.reporting = "ai"; rejects(extendedProfileSchema, generated);
+  for (const key of ["name", "venue"]) {
+    const profile = extendedProfile(); delete profile.subject[key]; rejects(extendedProfileSchema, profile);
+  }
   const partial = extendedProfile(); delete partial.locales["fr-CA"]; rejects(extendedProfileSchema, partial);
-  const noInterview = extendedProfile(); noInterview.originalInterview.source = " "; rejects(extendedProfileSchema, noInterview);
+  const silent = extendedProfile();
+  for (const locale of ["en", "fr-CA"]) { delete silent.locales[locale].theVenue; delete silent.locales[locale].dinnerAndDate; delete silent.locales[locale].pullQuote; }
+  rejects(extendedProfileSchema, silent);
   const lateInterview = extendedProfile(); lateInterview.originalInterview.conductedOn = "2026-01-03"; rejects(extendedProfileSchema, lateInterview);
 });
 
-test("Dinner and a date asks the same eight questions of every chef, in order", () => {
-  const seven = extendedProfile(); seven.locales.en.dinnerAndDate.pop(); rejects(extendedProfileSchema, seven);
-  const reordered = extendedProfile(); reordered.locales["fr-CA"].dinnerAndDate.reverse(); rejects(extendedProfileSchema, reordered);
+test("a chef page with only one answer and no portrait is valid", () => {
+  const profile = extendedProfile();
+  delete profile.image; delete profile.companionDateSpot; delete profile.originalInterview; delete profile.subject.neighbourhood;
+  for (const locale of ["en", "fr-CA"]) {
+    const copy = profile.locales[locale];
+    for (const key of ["title", "standfirst", "shortScene", "theVenue", "pullQuote", "shortVersion", "sourceNotes", "factNotes", "imageAlt", "imageCredit"]) delete copy[key];
+    copy.dinnerAndDate = copy.dinnerAndDate.slice(0, 1);
+  }
+  assert.equal(extendedProfileSchema.safeParse(profile).success, true, JSON.stringify(extendedProfileSchema.safeParse(profile).error?.issues));
+  const portraitWithoutAlt = extendedProfile(); delete portraitWithoutAlt.locales.en.imageAlt; rejects(extendedProfileSchema, portraitWithoutAlt);
+});
+
+test("Dinner and a date asks from the same eight questions, once each, in order", () => {
+  const seven = extendedProfile(); for (const locale of ["en", "fr-CA"]) seven.locales[locale].dinnerAndDate.pop();
+  assert.equal(extendedProfileSchema.safeParse(seven).success, true);
+  const drift = extendedProfile(); drift.locales.en.dinnerAndDate.pop(); rejects(extendedProfileSchema, drift);
+  const reordered = extendedProfile(); for (const locale of ["en", "fr-CA"]) reordered.locales[locale].dinnerAndDate.reverse(); rejects(extendedProfileSchema, reordered);
+  const repeated = extendedProfile(); for (const locale of ["en", "fr-CA"]) repeated.locales[locale].dinnerAndDate[1] = repeated.locales[locale].dinnerAndDate[0]; rejects(extendedProfileSchema, repeated);
   const invented = extendedProfile(); invented.locales.en.dinnerAndDate[0].key = "favourite-colour"; rejects(extendedProfileSchema, invented);
 });
 
@@ -87,14 +119,18 @@ test("Round one, the pull quote and the short version agree across the Locale Pa
   const byline = extendedProfile(); byline.interviewer = "Someone"; rejects(extendedProfileSchema, byline);
 });
 
-test("Extended Profile recipe links are optional but require parallel at-home reporting", () => {
+test("Chef page recipe links sit under the at-home answer, which may stand alone", () => {
   const profile = extendedProfile();
   for (const locale of ["en", "fr-CA"]) {
     profile.locales[locale].atHome = token;
     profile.locales[locale].contributorRecipe = "test-recipe";
   }
   assert.equal(extendedProfileSchema.safeParse(profile).success, true);
-  const dangling = extendedProfile(); dangling.locales.en.contributorRecipe = "test-recipe";
+  const answerOnly = extendedProfile();
+  for (const locale of ["en", "fr-CA"]) answerOnly.locales[locale].atHome = token;
+  assert.equal(extendedProfileSchema.safeParse(answerOnly).success, true);
+  const dangling = extendedProfile();
+  for (const locale of ["en", "fr-CA"]) dangling.locales[locale].contributorRecipe = "test-recipe";
   rejects(extendedProfileSchema, dangling);
   const mismatch = extendedProfile();
   for (const locale of ["en", "fr-CA"]) mismatch.locales[locale].atHome = token;

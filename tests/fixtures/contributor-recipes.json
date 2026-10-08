@@ -12,10 +12,6 @@
       "description": "[TEST ONLY]",
       "receivedOn": "2026-01-01"
     },
-    "authorship": {
-      "recipe": "human-supplied",
-      "translation": "human"
-    },
     "published": "2026-01-02",
     "image": {
       "src": "/images/og-default.jpg",

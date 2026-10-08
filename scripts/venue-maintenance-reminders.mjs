@@ -8,8 +8,8 @@
 // Usage:
 //   node scripts/venue-maintenance-reminders.mjs [--dry-run]
 
-import { readFileSync } from "fs";
 import { dueForRecheck } from "./notion-story/maintenance.mjs";
+import { loadCollection } from "../src/content-contracts/load.mjs";
 
 const ISSUE_TITLE = "Venue maintenance reminders";
 const ISSUE_LABEL = "venue-maintenance";
@@ -70,7 +70,8 @@ async function upsertIssue(body) {
 
 async function main() {
   const dryRun = process.argv.includes("--dry-run");
-  const spots = JSON.parse(readFileSync("src/content/date-spots.json", "utf-8"));
+  // The Checked date lives in the Companion File, so read the merged records.
+  const spots = loadCollection("src/content/date-spots.json");
   const today = new Date().toISOString().slice(0, 10);
   const due = dueForRecheck(spots, today);
   const body = buildBody(due, today);

@@ -10,6 +10,7 @@
  *   4. Internal links -> redirect    (no <a href> may point at a _redirects source)
  *   5. Untranslated i18n key leak    (no "tags.x"/"cuisines.x"/... in <title>/<meta>)
  *   6. Oversized image variants      (no dist/_astro image over IMG_MAX_BYTES)
+ *   7. Rating markup in JSON-LD      (no Review, AggregateRating, Rating or FAQPage)
  *
  * Run: node scripts/validate-build.mjs   (also runs automatically via `postbuild`)
  */
@@ -25,6 +26,23 @@ const SITE = "https://datemydish.com";
 // Namespaces that should always resolve to a translation; a raw "<ns>.<slug>"
 // in rendered output means a missing i18n key.
 const I18N_LEAK = /\b(tags|cuisines|occasion|categories|category)\.[a-z][a-z0-9-]+/;
+
+// DMD publishes no numbers of its own and no FAQ rich results: the verdict
+// is qualitative and the Google rating is the venue's (docs/editorial-publishing-system.md).
+const FORBIDDEN_LD_TYPES = new Set(["Review", "AggregateRating", "Rating", "FAQPage", "CriticReview", "UserReview", "EmployerAggregateRating"]);
+const FORBIDDEN_LD_KEYS = new Set(["review", "reviews", "reviewRating", "aggregateRating", "ratingValue", "bestRating", "worstRating"]);
+
+function forbiddenMarkup(node, found = []) {
+  if (Array.isArray(node)) node.forEach((item) => forbiddenMarkup(item, found));
+  else if (node && typeof node === "object") {
+    for (const type of [node["@type"]].flat()) if (FORBIDDEN_LD_TYPES.has(type)) found.push(`@type ${type}`);
+    for (const [key, value] of Object.entries(node)) {
+      if (FORBIDDEN_LD_KEYS.has(key)) found.push(key);
+      forbiddenMarkup(value, found);
+    }
+  }
+  return found;
+}
 
 const errors = [];
 const err = (msg) => errors.push(msg);
@@ -125,6 +143,14 @@ for (const file of htmlFiles()) {
     if (!pathname) continue;
     if (!pathname.endsWith("/")) err(`[hreflang] ${rel} hreflang target lacks trailing slash: ${url}`);
     else if (!existsSync(distFileFor(pathname))) err(`[hreflang] ${rel} hreflang target is broken/redirecting: ${url}`);
+  }
+
+  // 7. no rating, review or FAQ structured data
+  for (const block of html.match(/<script type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g) || []) {
+    const json = block.replace(/^<script[^>]*>/, "").replace(/<\/script>$/, "");
+    let data;
+    try { data = JSON.parse(json); } catch { err(`[json-ld] ${rel} has JSON-LD that does not parse`); continue; }
+    for (const hit of new Set(forbiddenMarkup(data))) err(`[json-ld] ${rel} emits ${hit}; DMD structured data carries no rating, review or FAQ markup`);
   }
 
   // 4. internal links -> redirect source

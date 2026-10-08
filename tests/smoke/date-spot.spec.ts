@@ -14,7 +14,14 @@ for (const [locale, route] of Object.entries(restaurant)) {
       : ["Test Venue, ça vaut le coup?", "L’essentiel", "Bon pour", "La salle", "Rencontrez le chef", "Quoi boire chez Test Venue", "Quoi commander chez Test Venue", "Combien coûte un souper chez Test Venue?", "Ma note sur Test Venue", "Quoi faire avant ou après le souper dans Test Quarter", "Ce que le chef cuisinerait pour un tête-à-tête", "Avant de réserver", "L’essentiel"];
     expect(headings.map((heading) => heading.trim())).toEqual(expected);
     await expect(page.locator("[data-dish-tag]")).toHaveCount(4);
+    // The verdict, Checked date, update line, venue facts and meta title come
+    // from the Companion File, which wins over the Notion-derived record.
     await expect(page.locator("#verdict [data-verdict]")).toHaveAttribute("data-verdict", "favourite");
+    await expect(page).toHaveTitle(new RegExp(`Companion ${locale.toUpperCase()} Title`));
+    await expect(page.locator("#note time")).toHaveAttribute("datetime", "2026-01-04");
+    // Make a night of it: published picks only, in the fixed category order.
+    await expect(page.locator("[data-night-pick]")).toHaveCount(2);
+    expect(await page.locator("[data-night-pick]").evaluateAll((cards) => cards.map((card) => card.getAttribute("data-category")))).toEqual(["nature-scenic", "social-romantic"]);
     // The venue's Google number is shown dated and labelled as theirs.
     await expect(page.locator("aside")).toContainText(locale === "en" ? "Their rating on Google, not ours." : "Leur note sur Google, pas la nôtre.");
     for (const href of await page.locator("article a[href^='/']").evaluateAll((links) => links.map((link) => link.getAttribute("href")))) {
@@ -24,6 +31,31 @@ for (const [locale, route] of Object.entries(restaurant)) {
     for (const type of ["Restaurant", "Article", "Person", "BreadcrumbList"]) expect(schema).toContain(`"@type":"${type}"`);
     expect(schema).not.toMatch(/reviewRating|ratingValue|aggregateRating|bestRating|worstRating|FAQPage/);
     expect(await page.locator("html").textContent()).not.toMatch(/\b\d+(?:\.\d+)?\s*\/\s*10\b/);
+  });
+}
+
+const minimal = { en: "/en/reviews/test-quarter/test-only-minimal/", fr: "/fr/critiques/test-quarter/test-only-minimal-fr/" };
+
+for (const [locale, route] of Object.entries(minimal)) {
+  test(`${route} renders a review with only the required fields and no empty sections`, async ({ page }) => {
+    expect((await page.goto(route))?.status()).toBe(200);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText("Test Minimal, Test Quarter");
+    const headings = (await page.locator("article h2").allTextContents()).map((heading) => heading.trim());
+    expect(headings).toEqual(locale === "en"
+      ? ["Is Test Minimal worth it?", "The essentials", "The essentials"]
+      : ["Test Minimal, ça vaut le coup?", "L’essentiel", "L’essentiel"]);
+    for (const id of ["good-for", "room", "meet", "drinks", "order", "cost", "note", "night", "at-home", "before-you-book"]) {
+      await expect(page.locator(`#${id}`)).toHaveCount(0);
+    }
+    // Every heading on the page sits over content.
+    const empty = await page.locator("article section").evaluateAll((sections) => sections
+      .filter((section) => (section.textContent ?? "").replace((section.querySelector("h2")?.textContent ?? ""), "").trim() === "")
+      .map((section) => section.id || section.getAttribute("aria-labelledby")));
+    expect(empty).toEqual([]);
+    await expect(page.locator("figcaption")).toHaveCount(0);
+    const schema = (await page.locator('script[type="application/ld+json"]').allTextContents()).join("\n");
+    expect(schema).toContain('"dateModified":"2026-01-02"');
+    expect(schema).not.toMatch(/reviewRating|ratingValue|aggregateRating|"Review"|FAQPage/);
   });
 }
 
@@ -55,7 +87,7 @@ test("the verdict filter narrows a listing to one state", async ({ page }) => {
   await expect(page.locator("article[data-verdict]:visible")).toHaveCount(2);
   await expect(page.locator('article[data-verdict="favourite"]')).toBeHidden();
   await page.getByRole("button", { name: "All" }).click();
-  await expect(page.locator("article[data-verdict]:visible")).toHaveCount(3);
+  await expect(page.locator("article[data-verdict]:visible")).toHaveCount(4);
 });
 
 // The seven reviews published before the rework lived at flat
