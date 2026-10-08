@@ -148,7 +148,10 @@
   "about": {
     "pageTitle": "À propos",
     "market": "Montréal · Date Spots",
-    "intro": "Date My Dish est un guide montréalais des Date Spots : restaurants, bars, activités et expériences avec des chefs qui valent une soirée. On y va, on paie notre part sauf indication contraire, et on vous dit franchement si l'endroit convient au rendez-vous que vous avez en tête."
+    "intro": "Date My Dish est un guide montréalais des Date Spots : restaurants, bars, activités et expériences avec des chefs qui valent une soirée. Chaque publication cherche à répondre à une seule question : est-ce que cet endroit convient au rendez-vous que vous avez en tête?",
+    "verdicts": "Chaque critique et chaque Date Spot porte un verdict clair, avec sa raison : Un coup de cœur, Ça dépend de la soirée ou Pas notre premier choix. On indique pour quels genres de rendez-vous l’endroit fonctionne et où il déçoit, et on affiche le mois de notre dernière vérification. Quand on montre la note Google d’un établissement, elle est datée et présentée comme la sienne. Quand un chef nous confie un plat à faire à la maison, il paraît sous forme de fiche recette, à son nom.",
+    "homeMarket": "Montréal, c’est notre port d’attache. Quand on critique un endroit dans une autre ville, la publication nomme cette ville.",
+    "reporter": "Victor Vu signe les reportages, et son nom figure sur chaque publication. Le « je » n’apparaît que dans sa note signée, à l’intérieur d’une critique; tout le reste est écrit au « on ». Chaque critique précise comment la visite s’est faite et qui a payé. Tout est publié en français et en anglais."
   },
   "contact": {
     "title": "Contact",
