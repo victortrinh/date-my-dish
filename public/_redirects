@@ -8,17 +8,17 @@
 /en/bookmarks/                                     /en/                                         301
 
 # Reviews published before the rework moved under their neighbourhood (#542).
-/en/reviews/giwa-verdun-montreal/                  /en/reviews/verdun/giwa-verdun/                               301
-/en/reviews/hoogan-et-beaufort-montreal/           /en/reviews/rosemont-la-petite-patrie/hoogan-et-beaufort/     301
+/en/reviews/giwa-verdun-montreal/                  /en/reviews/verdun/giwa/                                      301
+/en/reviews/hoogan-et-beaufort-montreal/           /en/reviews/rosemont/hoogan-et-beaufort/                       301
 /en/reviews/ile-flottante-montreal/                /en/reviews/mile-end/ile-flottante/                           301
-/en/reviews/mckiernan-montreal/                    /en/reviews/sud-ouest/mckiernan/                              301
+/en/reviews/mckiernan-montreal/                    /en/reviews/ville-emard/mckiernan/                            301
 /en/reviews/moccione-montreal/                     /en/reviews/villeray/moccione/                                301
 /en/reviews/oncle-lee-kao-montreal/                /en/reviews/old-montreal/oncle-lee-kao/                       301
 /en/reviews/othym-montreal/                        /en/reviews/the-village/othym/                                301
-/fr/critiques/giwa-verdun-montreal/                /fr/critiques/verdun/giwa-verdun/                             301
-/fr/critiques/hoogan-et-beaufort-montreal/         /fr/critiques/rosemont-la-petite-patrie/hoogan-et-beaufort/   301
+/fr/critiques/giwa-verdun-montreal/                /fr/critiques/verdun/giwa/                                    301
+/fr/critiques/hoogan-et-beaufort-montreal/         /fr/critiques/rosemont/hoogan-et-beaufort/                     301
 /fr/critiques/ile-flottante-montreal/              /fr/critiques/mile-end/ile-flottante/                         301
-/fr/critiques/mckiernan-montreal/                  /fr/critiques/sud-ouest/mckiernan/                            301
+/fr/critiques/mckiernan-montreal/                  /fr/critiques/ville-emard/mckiernan/                          301
 /fr/critiques/moccione-montreal/                   /fr/critiques/villeray/moccione/                              301
 /fr/critiques/oncle-lee-kao-montreal/              /fr/critiques/old-montreal/oncle-lee-kao/                     301
 /fr/critiques/othym-montreal/                      /fr/critiques/the-village/othym/                              301

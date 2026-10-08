@@ -1,0 +1,76 @@
+{
+  "id": "moccione",
+  "spotType": "restaurant",
+  "reviewVerdict": "favourite",
+  "neighbourhood": "Villeray",
+  "instagram": "moccione.restaurant",
+  "locales": {
+    "en": {
+      "metaTitle": "Moccione, Villeray: Review & Date Night Guide",
+      "metaDescription": "Luca Cianciulli's modern Italian in Villeray, with handmade pasta and a room built for lingering. What to order, what it costs, and why it suits a date.",
+      "verdictReason": "The pasta is the reason to come and the room is the reason to stay.",
+      "goodFor": [
+        {
+          "occasion": "anniversary",
+          "assessment": "ideal",
+          "reason": "Cozy, celebratory, and built for a long dinner. Exactly the room it was made for."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "ideal",
+          "reason": "The caramelle alone will do it. Anyone who cooks will spend the meal trying to reverse-engineer the filling."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "ideal",
+          "reason": "Ordering in layers works better with four, and the room carries the noise."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "caveat",
+          "reason": "Lovely, but it's a little too special for a low-stakes first meet, and you're in for a real bill before you know if you like each other."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "not-for",
+          "reason": "Nothing here is quick or cheap."
+        }
+      ],
+      "imageAlt": "Warm, intimate dining room at Moccione in Villeray, Montreal, with candlelit tables and a cozy Italian restaurant atmosphere perfect for a date night"
+    },
+    "fr-CA": {
+      "verdictReason": "Les pâtes sont la raison de venir, et la salle est la raison de rester.",
+      "goodFor": [
+        {
+          "occasion": "anniversary",
+          "assessment": "ideal",
+          "reason": "Chaleureux, festif et fait pour un long souper. C'est exactement la salle pour ça."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "ideal",
+          "reason": "Les caramelle suffisent. Quiconque cuisine va passer le repas à essayer de deviner la farce."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "ideal",
+          "reason": "Commander en couches marche mieux à quatre, et la salle absorbe le bruit."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "caveat",
+          "reason": "Charmant, mais un peu trop spécial pour une première rencontre sans enjeu, et la facture est réelle avant même de savoir si vous vous plaisez."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "not-for",
+          "reason": "Rien ici n'est rapide ni bon marché."
+        }
+      ],
+      "metaTitle": "Moccione, Villeray : critique et souper à deux",
+      "metaDescription": "Les pâtes faites maison de Luca Cianciulli à Villeray, dans une salle faite pour s'attarder. Quoi commander, combien ça coûte et pourquoi ça marche à deux.",
+      "imageAlt": "Salle à manger chaleureuse et intime du restaurant Moccione à Villeray, Montréal, avec des tables à la bougie et une atmosphère cosy parfaite pour un souper en amoureux"
+    }
+  },
+  "lastChecked": "2026-09-24"
+}

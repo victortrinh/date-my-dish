@@ -1,0 +1,76 @@
+{
+  "id": "hoogan-et-beaufort",
+  "spotType": "restaurant",
+  "reviewVerdict": "conditional",
+  "neighbourhood": "Rosemont",
+  "instagram": "hooganetbeaufort",
+  "locales": {
+    "en": {
+      "metaTitle": "Hoogan et Beaufort, Rosemont: Review & Guide",
+      "metaDescription": "Marc-André Jetté's wood-fired Québécois cooking in Rosemont, one Michelin star since 2026. The tasting menu, the cost, and whether it suits a date night.",
+      "verdictReason": "Go for a celebration. Don't go for a first date.",
+      "goodFor": [
+        {
+          "occasion": "anniversary",
+          "assessment": "ideal",
+          "reason": "The tasting menu fills the evening, and the room is festive without turning into a party."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "ideal",
+          "reason": "Live fire, an open hearth, and a sommelier who won the Michelin Sommelier Award for Québec in 2026."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "caveat",
+          "reason": "The lively room suits four people. The tasting menu is whole-table, so everyone has to agree."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "not-for",
+          "reason": "$135 a head before drinks."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "not-for",
+          "reason": "It can feel like you're making a statement, and for me the statement isn't quite worth it here."
+        }
+      ],
+      "imageAlt": "Warm, intimate dining room at Hoogan et Beaufort Montreal with pendant lights and live-fire kitchen visible in the background"
+    },
+    "fr-CA": {
+      "verdictReason": "Vas-y pour une célébration. Pas pour un premier rendez-vous.",
+      "goodFor": [
+        {
+          "occasion": "anniversary",
+          "assessment": "ideal",
+          "reason": "Le menu dégustation remplit la soirée, et la salle est festive sans tourner au party."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "ideal",
+          "reason": "Le feu vif, un foyer ouvert, et un sommelier qui a remporté le Prix du sommelier Michelin pour le Québec en 2026."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "caveat",
+          "reason": "La salle animée convient à quatre. Le menu dégustation se prend pour toute la table, donc tout le monde doit être d'accord."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "not-for",
+          "reason": "135 $ par personne avant les boissons."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "not-for",
+          "reason": "Ça peut avoir l'air d'une déclaration, et pour moi la déclaration n'en vaut pas tout à fait la peine ici."
+        }
+      ],
+      "metaTitle": "Hoogan et Beaufort, Rosemont : critique",
+      "metaDescription": "La cuisine au feu de bois de Marc-André Jetté à Rosemont, une étoile Michelin depuis 2026. Le menu dégustation, le prix, et si ça vaut le souper à deux.",
+      "imageAlt": "Salle à manger intime du Hoogan et Beaufort Montréal avec éclairage chaleureux et cuisine au feu de bois visible en fond de salle"
+    }
+  },
+  "lastChecked": "2026-09-24"
+}

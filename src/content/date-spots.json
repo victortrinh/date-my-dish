@@ -1,1 +1,1791 @@
-[]
+[
+  {
+    "id": "cabaret-lenfer",
+    "postType": "date-spot",
+    "spotType": "restaurant",
+    "name": "Cabaret l'Enfer",
+    "city": "Montréal",
+    "neighbourhood": "the Plateau",
+    "reporterByline": "Victor",
+    "freshness": {
+      "published": "2026-10-08"
+    },
+    "image": {
+      "src": "/images/date-spots/cabaret-lenfer-cook-plating-at-pass-seen-from.webp",
+      "width": 720,
+      "height": 1080,
+      "provenance": "dmd-held-photograph"
+    },
+    "photos": {
+      "dining-room": {
+        "src": "/images/date-spots/cabaret-lenfer-dining-room-banquette-wood-tables-white.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      }
+    },
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cabaret+l'Enfer+4094+Rue+Saint-Denis+Montreal+QC+H2W+2M5",
+    "payment": "paid",
+    "priceRange": "$$$$",
+    "reviewVerdict": "pass",
+    "locales": {
+      "en": {
+        "slug": "cabaret-lenfer",
+        "opening": "Chef Massimo Piedimonte cooks a modern Quebecois tasting menu on Saint-Denis, in a black-walled 33-seat room in the Plateau that plays rock loud enough to drown out the dish descriptions.",
+        "cuisine": "Modern Quebecois tasting menu",
+        "paymentDisclosure": "Paid for it",
+        "verdictHeadline": "Careful cooking, hard room, and a bill that asks a lot",
+        "verdictReason": "For the same money in Montreal I'd book somewhere else.",
+        "essentials": {
+          "address": "4094 rue Saint-Denis, Montreal, QC H2W 2M5",
+          "cost": "$250 with one cocktail, tax and tip",
+          "canYouTalk": "Not easily. The music is loud.",
+          "booking": "Easy for two",
+          "duration": "3 hours"
+        },
+        "room": "Black walls, waxed concrete, white-painted brick with two dark canvases on it, a long banquette, warm wood tables and tan leather chairs. Candlelight pools on a black counter that bounces all of it back at you. The menu arrives inside an envelope closed with a wax seal, which is a fun way to start a night.\n\nThe music is the thing to know before you book. Rock and skate punk, turned up, and clearly turned up on purpose. It's loud enough that I couldn't hear the dish descriptions, which at this price is a real part of the experience going missing. If that sounds like a good dinner you'll have a good time. If you were picturing candlelight and easy conversation, pick somewhere else.\n\nNo dress code worth worrying about. Smart casual covers it.",
+        "roomPhoto": {
+          "photo": "dining-room",
+          "alt": "The dining room: banquette, wood tables, white brick, two dark canvases"
+        },
+        "meetChef": {
+          "name": "Massimo Piedimonte",
+          "background": "Massimo Piedimonte came up through Le Mousso, Maison Boulud and Noma before opening his own room. He competed on Top Chef: Destination Canada in 2025 and finished fifth.",
+          "approach": "The name is an homage rather than a description. It borrows from the Cabaret de l'Enfer, the hell-themed room in Montmartre that ran from 1892 until around 1950, and the seven courses are loosely framed around the seven deadly sins. What you can actually taste is the fermentation program. There's a shelf of jars in view from the counter, labelled and dated by hand, one of them a rose starter from July marked to be racked on 22 September. That shelf is the clearest statement of intent in the room, and it's the part of the cooking I'd come back for."
+        },
+        "drinks": {
+          "intro": "Order the first drink before you open the menu.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "A negroni",
+              "note": "It wasn't presented or suggested; I had to ask for it. Bitter, low sugar, and good. I couldn't tell whether it was a regular option or part of a rotating cocktail selection because nobody explained the list."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "The pairing, at about $120",
+              "note": "The person I was with took it, so I saw how it went. Bottles presented, wine poured, not much said about any of it. No producer, no region, no reason why a given glass sat beside a given course. At that price the explanation is a good chunk of what you're buying."
+            },
+            {
+              "moment": "not-drinking",
+              "name": "No alternatives were presented",
+              "note": "Nobody mentioned mocktails or other non-alcoholic options, so I can't tell you what was available."
+            }
+          ],
+          "list": "I wasn't given a proper presentation of the cocktails, so I can't tell you how broad the list is or whether it rotates."
+        },
+        "whatToOrder": {
+          "setMenu": {
+            "name": "Seasonal tasting menu",
+            "courses": 7,
+            "pricePerPerson": "About $165",
+            "note": "The dining room serves one seasonal tasting menu: seven courses plus bread and snacks for the whole table, around $165 a head at last check. The terrace runs à la carte in summer; the dining room doesn't."
+          },
+          "strategy": "I could not hear the dish descriptions. I caught three names and lost the rest. What follows is what I can name and what I can see in my photos.\n\nCappellacci, nordic shrimp, lacto koji\n\nFolded green pasta parcels in a shallow bowl, raw nordic shrimp laid over the top, a pale foam over that. The lacto koji is the fun part and this kitchen is good at that sort of thing.\n\nOra King salmon, \"divorciado\"\n\nA block of salmon split down the middle by two sauces, bright green on one side, deep red-orange on the other, one small shellfish alongside. The name winks at huevos divorciados, two sauces that never meet. Best-looking plate of the night.\n\n\"Amy Winehouse,\" rhubarb, citron basilic\n\nA white disc in a wide bowl with a portrait stencilled onto it in dark powder. The rhubarb and citron basilic were part of the same dessert. They do these music tributes, and there's a Leonard Cohen one too.\n\nOne pattern worth flagging. A golden disc alone in a bowl. A white disc with a stencil. Barigoule vegetables under a cougar stencil. Round, flat, centred, decorated on top. Three of the seven came out as a version of the same idea. Any one of them looks great; three in a row and I started to clock it. Plenty of people won't notice, but it took a bit of the surprise out of the sequence."
+        },
+        "realCost": {
+          "intro": "I paid $250 all in for the set menu, one cocktail, tax and tip. The person I was with took the wine pairing, which wasn't part of my total.",
+          "lines": [
+            {
+              "item": "Set menu",
+              "amount": "About $165 at last check"
+            },
+            {
+              "item": "One cocktail",
+              "amount": "Included in my total"
+            },
+            {
+              "item": "Tax and tip",
+              "amount": "Included in my total"
+            },
+            {
+              "item": "Wine pairing",
+              "amount": "About $120 extra; the person I was with took it"
+            }
+          ],
+          "total": {
+            "label": "What I actually paid",
+            "amount": "$250"
+          },
+          "howToSpendLess": "The portions were noticeably smaller than at other tasting menus I've tried, and all of us left hungry. A good tasting menu should send you out comfortably full. This one didn't. Line up somewhere to eat after."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "detail": "The hour at the counter was the best part of the night. Watching four people build plates a tweezer-load at a time held my attention. I'd sit there again. I'm less sure I'd pay $165 for the menu.",
+          "caveat": "The honest caveat is the service. Our server was new and it showed: he couldn't tell us much about the cocktail or where the wine came from, and on the pairing the bottles arrived, got poured, and that was that. Everyone starts somewhere and that sorts itself out in a few months, so I'd believe anyone who tells me their night was sharper. But on the night I paid, it was the difference between a good meal and a good evening."
+        },
+        "beforeYouBook": [
+          {
+            "question": "How far ahead do I need to book?",
+            "answer": "Not far. A table for two was easy to get. It's OpenTable only, 33 seats, with a three-hour table limit, so a bigger group is a different problem."
+          }
+        ]
+      },
+      "fr-CA": {
+        "slug": "cabaret-lenfer",
+        "opening": "Le chef Massimo Piedimonte propose un menu dégustation québécois moderne sur Saint-Denis, dans une salle de 33 places aux murs noirs, sur le Plateau, où le rock joue assez fort pour enterrer la description des plats.",
+        "cuisine": "Menu dégustation québécois moderne",
+        "paymentDisclosure": "Payé de ma poche",
+        "verdictHeadline": "Une cuisine soignée, une salle difficile, et une facture qui demande beaucoup",
+        "verdictReason": "Pour le même prix à Montréal, je réserverais ailleurs.",
+        "essentials": {
+          "address": "4094 rue Saint-Denis, Montréal, QC H2W 2M5",
+          "cost": "250 $ avec un cocktail, taxes et pourboire",
+          "canYouTalk": "Pas facilement. La musique est forte.",
+          "booking": "Facile pour deux",
+          "duration": "3 h"
+        },
+        "room": "Murs noirs, béton ciré, brique peinte en blanc avec deux toiles sombres, une longue banquette, des tables en bois chaleureux et des chaises en cuir fauve. La lueur des chandelles se pose sur un comptoir noir qui te renvoie tout ça. Le menu arrive dans une enveloppe scellée à la cire, une façon amusante de commencer une soirée.\n\nLa musique, c'est la chose à savoir avant de réserver. Du rock et du skate punk, montés fort, et clairement montés fort exprès. C'est assez fort pour que je n'entende pas la description des plats, ce qui, à ce prix, est une vraie partie de l'expérience qui disparaît. Si ça te semble un bon souper, tu vas passer une belle soirée. Si tu imaginais des chandelles et une conversation facile, choisis un autre endroit.\n\nPas de code vestimentaire dont il faut s'inquiéter. Smart casual, ça fait l'affaire.",
+        "roomPhoto": {
+          "photo": "dining-room",
+          "alt": "La salle à manger : banquette, tables en bois, brique blanche, deux toiles sombres"
+        },
+        "meetChef": {
+          "name": "Massimo Piedimonte",
+          "background": "Massimo Piedimonte est passé par Le Mousso, Maison Boulud et Noma avant d'ouvrir sa propre salle. Il a participé à Top Chef : Destination Canada en 2025 et a terminé cinquième.",
+          "approach": "Le nom est un hommage plutôt qu'une description. Il emprunte au Cabaret de l'Enfer, la salle sur le thème de l'enfer à Montmartre qui a fonctionné de 1892 jusque vers 1950, et les sept services sont vaguement construits autour des sept péchés capitaux. Ce que tu goûtes vraiment, c'est le programme de fermentation. Il y a une tablette de bocaux visible du comptoir, étiquetés et datés à la main, dont un levain de rose de juillet à soutirer le 22 septembre. Cette tablette est l'énoncé d'intention le plus clair de la salle, et c'est la partie de la cuisine pour laquelle je reviendrais."
+        },
+        "drinks": {
+          "intro": "Commande le premier verre avant d'ouvrir le menu.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "Un negroni",
+              "note": "On ne me l'a ni présenté ni suggéré; j'ai dû le demander. Amer, peu sucré, et bon. Je n'ai pas pu savoir si c'était une option régulière ou une sélection de cocktails qui change, parce que personne n'a expliqué la carte."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "L'accord, à environ 120 $",
+              "note": "La personne avec qui j'étais l'a pris, alors j'ai vu comment ça s'est passé. Bouteilles présentées, vin versé, pas grand-chose de dit sur aucune. Pas de producteur, pas de région, aucune raison pour laquelle tel verre accompagnait tel service. À ce prix, l'explication est une bonne partie de ce que tu achètes."
+            },
+            {
+              "moment": "not-drinking",
+              "name": "Aucune option n'a été présentée",
+              "note": "Personne n'a mentionné de mocktails ou d'autres options sans alcool, alors je ne peux pas te dire ce qui était offert."
+            }
+          ],
+          "list": "On ne m'a pas vraiment présenté les cocktails, alors je ne peux pas te dire si la carte est large ni si elle change."
+        },
+        "whatToOrder": {
+          "setMenu": {
+            "name": "Menu dégustation saisonnier",
+            "courses": 7,
+            "pricePerPerson": "Environ 165 $",
+            "note": "La salle à manger sert un seul menu dégustation saisonnier : sept services plus du pain et des bouchées pour toute la table, environ 165 $ par personne au dernier relevé. La terrasse fonctionne à la carte l'été; la salle à manger, non."
+          },
+          "strategy": "Je n'entendais pas la description des plats. J'ai attrapé trois noms et perdu le reste. Ce qui suit, c'est ce que je peux nommer et ce que je vois sur mes photos.\n\nCappellacci, crevettes nordiques, lacto koji\n\nDes petits chaussons de pâte verte dans un bol peu profond, des crevettes nordiques crues posées dessus, et une mousse pâle par-dessus. Le lacto koji, c'est la partie amusante, et cette cuisine est bonne dans ce genre de chose.\n\nSaumon Ora King, « divorciado »\n\nUn bloc de saumon séparé au centre par deux sauces, vert vif d'un côté, rouge-orangé profond de l'autre, avec un petit fruit de mer à côté. Le nom fait un clin d'oeil aux huevos divorciados, deux sauces qui ne se rencontrent jamais. La plus belle assiette de la soirée.\n\n« Amy Winehouse », rhubarbe, citron basilic\n\nUn disque blanc dans un bol large avec un portrait tracé au pochoir en poudre foncée. La rhubarbe et le citron basilic faisaient partie du même dessert. Ils font ces hommages musicaux, et il y en a un à Leonard Cohen aussi.\n\nUn motif à signaler. Un disque doré seul dans un bol. Un disque blanc avec un pochoir. Des légumes barigoule sous un pochoir de couguar. Rond, plat, centré, décoré sur le dessus. Trois des sept services sont arrivés comme une version de la même idée. Chacun pris seul est superbe; trois de suite, et j'ai commencé à le remarquer. Bien des gens ne le verront pas, mais ça a enlevé un peu de surprise à la séquence."
+        },
+        "realCost": {
+          "intro": "J'ai payé 250 $ tout compris pour le menu, un cocktail, les taxes et le pourboire. La personne avec qui j'étais a pris l'accord mets et vins, qui n'était pas dans mon total.",
+          "lines": [
+            {
+              "item": "Menu dégustation",
+              "amount": "Environ 165 $ au dernier relevé"
+            },
+            {
+              "item": "Un cocktail",
+              "amount": "Inclus dans mon total"
+            },
+            {
+              "item": "Taxes et pourboire",
+              "amount": "Inclus dans mon total"
+            },
+            {
+              "item": "Accord mets et vins",
+              "amount": "Environ 120 $ de plus; la personne avec qui j'étais l'a pris"
+            }
+          ],
+          "total": {
+            "label": "Ce que j'ai vraiment payé",
+            "amount": "250 $"
+          },
+          "howToSpendLess": "Les portions étaient nettement plus petites que dans d'autres menus dégustation que j'ai essayés, et on est tous repartis avec faim. Un bon menu dégustation devrait te laisser repartir confortablement rassasié. Celui-ci, non. Prévois un endroit où manger après."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "detail": "L'heure au comptoir a été le meilleur moment de la soirée. Regarder quatre personnes monter des assiettes une pince à la fois a retenu mon attention. Je m'y assoirais encore. Je suis moins sûr que je paierais 165 $ pour le menu.",
+          "caveat": "La nuance honnête, c'est le service. Notre serveur était nouveau et ça paraissait : il ne pouvait pas nous dire grand-chose sur le cocktail ni sur la provenance du vin, et pour l'accord, les bouteilles arrivaient, étaient versées, et c'était tout. Tout le monde commence quelque part et ça se règle en quelques mois, alors je croirais n'importe qui qui me dit que sa soirée était plus rodée. Mais le soir où j'ai payé, c'était la différence entre un bon repas et une bonne soirée."
+        },
+        "beforeYouBook": [
+          {
+            "question": "Combien de temps d'avance faut-il réserver?",
+            "answer": "Pas longtemps. Une table pour deux était facile à avoir. C'est OpenTable seulement, 33 places, avec une limite de trois heures par table, alors un plus grand groupe, c'est une autre histoire."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "giwa",
+    "postType": "date-spot",
+    "spotType": "restaurant",
+    "name": "Giwa",
+    "city": "Montréal",
+    "neighbourhood": "Verdun",
+    "reporterByline": "Victor",
+    "freshness": {
+      "published": "2026-08-26"
+    },
+    "image": {
+      "src": "/images/date-spots/giwa-korean-plates.webp",
+      "width": 720,
+      "height": 1080,
+      "provenance": "dmd-held-photograph"
+    },
+    "payment": "paid",
+    "priceRange": "$$",
+    "reviewVerdict": "conditional",
+    "locales": {
+      "en": {
+        "slug": "giwa",
+        "opening": "A modern Korean kitchen on Promenade Wellington in Verdun, serving carefully plated classics with a fermentation-led twist.",
+        "cuisine": "Modern Korean",
+        "paymentDisclosure": "Paid",
+        "verdictHeadline": "Pretty plates and clean technique, but the flavours play it safe",
+        "verdictReason": "If you want a relaxed dinner with careful plating, it works.",
+        "essentials": {
+          "address": "3780 rue Wellington, Verdun, QC H4G 1V2",
+          "cost": "~$90",
+          "canYouTalk": "Yes, easily",
+          "booking": "Walk in",
+          "duration": "1.5 to 2 hours"
+        },
+        "room": "Inside it feels like a casual Korean restaurant: welcoming, straightforward and not trying to be fine dining. The room is easy for conversation.\n\nWe sat on the terrasse and didn't get a full look at the interior. If the weather is good, do the same. Lighting outside is whatever the evening gives you; inside it's casual and warm. Noise sits low to medium, more neighbourhood dinner than party room.",
+        "drinks": {
+          "intro": "The list has interesting choices without being the reason to come.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "The somaek",
+              "note": "Fresh soju and Origine lager. Crisp, clean and light."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "The omija",
+              "note": "Gin, five-flavour berry syrup, lemon. Bright, fruity-tart, very easy to drink."
+            }
+          ],
+          "list": "One drink each at the start, then water or tea, is enough. Nothing on the list stood out to me, so I would spend the extra money on food."
+        },
+        "whatToOrder": {
+          "strategy": "Order in layers. For two: two appetisers, one dish from the main menu, one from the seasonal menu, one sot bap, then dessert.",
+          "dishes": [
+            {
+              "name": "Sot bap",
+              "tag": "order-this",
+              "note": "I didn't order it and I should have. It's their specialty and it won the Korean Festival bibimbap competition in 2026, judged by Edward Lee. That's a strong enough hint."
+            },
+            {
+              "name": "Gimbap",
+              "tag": "order-this",
+              "note": "Seaweed roll with the fish of the moment, cucumber, avocado and a gochujang vinaigrette. Fresh, lightly sweet, gently spicy, very clean. A good first bite and easy to share."
+            },
+            {
+              "name": "Yukhwe",
+              "tag": "order-this",
+              "note": "Beef tartare with pear, sesame, soy and egg yolk, finished with nasturtium. Sweet-salty and silky, with juicy pear cutting through and real savoury depth."
+            },
+            {
+              "name": "Hodumaru",
+              "tag": "order-this",
+              "note": "Rich gochujang chocolate mousse with chilli-spiked chantilly, candied walnuts and maple ice cream. Chocolate forward with a warm chilli tingle. Best dessert of the three."
+            },
+            {
+              "name": "Baechu",
+              "tag": "worth-it",
+              "note": "Charred napa cabbage glazed with doenjang over perilla cream, with cucumber and herbs. Smoky-sweet, savoury funk, cooling herbal finish."
+            },
+            {
+              "name": "Basque corn cheesecake",
+              "tag": "worth-it",
+              "note": "Torched corn and corn ice cream, creamy and toasty. The popcorn topping tasted stale."
+            },
+            {
+              "name": "Haemul jang",
+              "tag": "skip",
+              "note": "Soy-marinated crab, shrimp, octopus and salmon with seaweed and egg yolk. Briny-sweet and glossy, but the seaweed crisp wasn't crisp and for the price the flavour stayed uniform and soy-heavy. Tempting, worth trying once, but I wouldn't reorder."
+            }
+          ]
+        },
+        "realCost": {
+          "intro": "About $90 per person, based on our meal.",
+          "lines": [
+            {
+              "item": "Dishes",
+              "amount": "$10 to $20 each"
+            },
+            {
+              "item": "Drinks",
+              "amount": "one round each"
+            }
+          ],
+          "total": {
+            "label": "Per person, as we did it",
+            "amount": "~$90"
+          },
+          "howToSpendLess": "Skip the second round and add another dish to share instead. The total should be similar."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "The cooking is clean and the plates are pretty, but the flavour intensity is dialled back. A couple of elements tasted prepped too far ahead, the seaweed crisp and the popcorn. If you're expecting the louder Korean profile, this isn't it."
+        },
+        "beforeYouBook": [
+          {
+            "question": "How far ahead do I need to book?",
+            "answer": "Not necessary. Walk-ins are easy. Worth calling for a terrasse table on a good evening."
+          }
+        ]
+      },
+      "fr-CA": {
+        "slug": "giwa",
+        "opening": "Une cuisine coréenne moderne sur la Promenade Wellington à Verdun, qui sert des classiques soigneusement présentés avec une touche de fermentation.",
+        "cuisine": "Coréen, moderne",
+        "paymentDisclosure": "Payé",
+        "verdictHeadline": "De belles assiettes et une technique propre, mais des saveurs qui jouent la prudence",
+        "verdictReason": "Si tu veux un souper détendu avec des assiettes soignées, ça marche.",
+        "essentials": {
+          "address": "3780 Rue Wellington, Verdun, QC H4G 1V2",
+          "cost": "~90 $",
+          "canYouTalk": "Oui, facilement",
+          "booking": "Sans réservation",
+          "duration": "1 h 30 à 2 h"
+        },
+        "room": "À l'intérieur, ça ressemble à un restaurant coréen casual classique : accueillant, simple, et qui ne prétend pas être de la gastronomie. La salle se prête bien à la conversation.\n\nOn s'est installés sur la terrasse et on n'a pas vraiment vu l'intérieur. Si la météo le permet, fais la même chose. L'éclairage dehors, c'est ce que la soirée te donne; à l'intérieur, c'est casual et chaleureux. Le niveau de bruit reste bas à moyen, plus souper de quartier que party room.",
+        "drinks": {
+          "intro": "La carte a des choix intéressants sans être la raison de venir.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "Le Somaek",
+              "note": "Soju frais et bière Origine. Vif, propre et léger."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "L'Omija",
+              "note": "Gin, sirop aux baies aux cinq saveurs, citron. Lumineux, fruité-acidulé, et très facile à boire."
+            }
+          ],
+          "list": "Un verre chacun pour commencer, puis de l'eau ou du thé, c'est assez. Rien sur la carte ne m'a marqué, alors je mettrais l'argent de plus dans la bouffe."
+        },
+        "whatToOrder": {
+          "strategy": "Commander en vagues. Pour deux : deux entrées, un plat principal, un plat saisonnier, un sot bap, et un dessert.",
+          "dishes": [
+            {
+              "name": "Sot bap",
+              "tag": "order-this",
+              "note": "Je ne l'ai pas commandé et j'aurais dû. C'est leur spécialité et il a remporté le concours de bibimbap du Festival coréen en 2026, jugé par Edward Lee. C'est un indice assez clair."
+            },
+            {
+              "name": "Gimbap",
+              "tag": "order-this",
+              "note": "Rouleau de mer avec poisson du moment, concombre, avocat et vinaigrette gochujang. Frais, légèrement sucré, doucement épicé, très net. Une bonne première bouchée, facile à partager."
+            },
+            {
+              "name": "Yukhwe",
+              "tag": "order-this",
+              "note": "Tartare de bœuf avec poire, sésame, soya et jaune d'oeuf, fini à la capucine. Doux-salé et soyeux, avec la poire juteuse qui tranche et une vraie profondeur savoureuse."
+            },
+            {
+              "name": "Hodumaru",
+              "tag": "order-this",
+              "note": "Mousse au chocolat gochujang, chantilly au piment, noix caramélisées et crème glacée à l'érable. Chocolat en avant avec une chaleur de piment. Le meilleur des trois desserts."
+            },
+            {
+              "name": "Baechu",
+              "tag": "worth-it",
+              "note": "Chou napa grillé glacé au doenjang, servi sur crème de perilla avec concombre et herbes fraîches. Fumé-sucré, funk savoureux, finale herbacée rafraîchissante."
+            },
+            {
+              "name": "Cheesecake basque au maïs",
+              "tag": "worth-it",
+              "note": "Maïs brûlé et crème glacée au maïs, crémeux et grillé. Le topping de popcorn goûtait rassis."
+            },
+            {
+              "name": "Haemul Jang",
+              "tag": "skip",
+              "note": "Crabe, crevettes, pieuvre et saumon marinés au soya, avec algue et jaune d'oeuf. Saumâtre-sucré et lustré, mais la croustille d'algue n'était pas croustillante et, pour le prix, la saveur restait uniforme et dominée par le soya. Tentant, à essayer une fois, mais je ne le recommanderais pas."
+            }
+          ]
+        },
+        "realCost": {
+          "intro": "Environ 90 $ par personne selon notre souper.",
+          "lines": [
+            {
+              "item": "Plats",
+              "amount": "10-20 $ chacun"
+            },
+            {
+              "item": "Boissons",
+              "amount": "une tournée chacun"
+            }
+          ],
+          "total": {
+            "label": "Par personne, comme on l'a fait",
+            "amount": "~90 $"
+          },
+          "howToSpendLess": "Saute la deuxième tournée et ajoute plutôt un plat à partager. Le total devrait être semblable."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "La cuisine est propre et les assiettes sont jolies, mais l'intensité des saveurs est baissée. Quelques éléments goûtaient préparés trop d'avance, la croustille d'algue et le popcorn. Si tu t'attends au profil coréen plus intense, ce n'est pas ça."
+        },
+        "beforeYouBook": [
+          {
+            "question": "Combien de temps d'avance faut-il réserver?",
+            "answer": "Pas nécessaire. Sans réservation, c'est facile. Ça vaut la peine d'appeler pour une table en terrasse par une belle soirée."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "hoogan-et-beaufort",
+    "postType": "date-spot",
+    "spotType": "restaurant",
+    "name": "Hoogan et Beaufort",
+    "city": "Montréal",
+    "neighbourhood": "Rosemont",
+    "reporterByline": "Victor",
+    "freshness": {
+      "published": "2026-06-18"
+    },
+    "image": {
+      "src": "/images/date-spots/hoogan-et-beaufort-dining-room-open-hearth.webp",
+      "width": 1080,
+      "height": 720,
+      "provenance": "dmd-held-photograph"
+    },
+    "payment": "paid",
+    "priceRange": "$$$$",
+    "reviewVerdict": "conditional",
+    "locales": {
+      "en": {
+        "slug": "hoogan-et-beaufort",
+        "opening": "Chef Marc-André Jetté cooks wood-fired Québécois in the old Angus Shops in Rosemont, in a converted industrial room that won its first Michelin star in 2026.",
+        "cuisine": "Modern Québécois, wood-fired",
+        "paymentDisclosure": "Paid",
+        "verdictHeadline": "A room built for an occasion, and a tasting menu that stayed in the very good lane",
+        "verdictReason": "Go for a celebration. Don't go for a first date.",
+        "essentials": {
+          "address": "4095 rue Molson, Montreal, QC H1Y 3L1",
+          "cost": "$110 to $180+",
+          "canYouTalk": "Mostly. Loud at peak.",
+          "booking": "Plan ahead",
+          "duration": "2.5 hours"
+        },
+        "room": "A converted industrial space that feels large without being impersonal. The lighting is warm, the room has a steady hum, and the open hearth stays in view.\n\nThe restaurant closed for a full renovation in May 2025 and reopened on 1 November 2025, rebuilt around the open hearth with a cellar of roughly five thousand bottles added. I ate in the new room. Anyone who went before the closure will find it changed.\n\nNoise runs medium to loud at peak. A two-top along the wall is easier for conversation; a table where you can feel the room without sitting in the middle of it is the compromise.",
+        "meetChef": {
+          "name": "Marc-André Jetté",
+          "role": "Chef and owner",
+          "background": "Marc-André Jetté is chef and owner. The restaurant was awarded one Michelin star in the 2026 Guide Québec, revealed on 6 May 2026, having been listed as Recommended in the inaugural 2025 edition. It is one of five one-star rooms in Montreal, alongside Jérôme Ferrer Europea, Mastard, Sabayon and Sushi Nishinokaze. Sommelier Hugo Duchesne won the Michelin Sommelier Award for Québec in the same year.",
+          "approach": "What you can taste is a kitchen sourcing tightly and locally. The microgreens come from Tulsi Farm, and it shows: even the herbs arrive vibrant. The fire is more identity than flavour, though. On my menu everything read clean, fresh and ingredient-driven rather than char-forward, with the wood sitting in the background rather than on the palate."
+        },
+        "drinks": {
+          "intro": "The wine programme is run by an award-winning sommelier. Ask for a recommendation if you are unsure.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "A cocktail",
+              "note": "Especially if you want the night to feel like an event."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "Crisp whites or light reds with acidity",
+              "note": "Whites cut through the richer, charred plates; light reds stay refreshing even with smoke. Pairings run $85 or $150."
+            }
+          ],
+          "list": "To finish, something bitter. An amaro, if you're doing dessert."
+        },
+        "whatToOrder": {
+          "waitersChoice": {
+            "recommendation": "Our waitress suggested the hot oysters with cider sabayon to open and called them the undoubted signature.",
+            "outcome": "Worth taking. I'd stop short of signature-level unforgettable, but it's a strong start and the texture on the poached oysters is excellent. About $30 for six, as an add-on."
+          },
+          "strategy": "Take the tasting menu. It's the clearest window into what the kitchen is doing and the easiest way to see the full arc. Note it is whole table only.",
+          "dishes": [
+            {
+              "name": "Hot oysters, cider sabayon",
+              "tag": "order-this",
+              "note": "Perfect texture on the poached oysters and a genuinely good way to open the meal. The add-on worth making."
+            },
+            {
+              "name": "Crab, dashi broth, tomatillo",
+              "tag": "order-this",
+              "note": "Freshness and umami straight away. Sweet crab against a savoury, sea-leaning dashi, with tomatillo bringing green acidity that keeps the bowl sharp and modern. Clean, polished presentation. Best plate of the night."
+            },
+            {
+              "name": "Green asparagus, snap peas, pistachio",
+              "tag": "worth-it",
+              "note": "You can taste that the vegetables are local, right down to the microgreens. Asparagus and snap peas keep it crisp and green, pistachio adds buttery richness and crunch. A proper reset course before the pasta."
+            },
+            {
+              "name": "Rhubarb, cherry blossom, shiso",
+              "tag": "worth-it",
+              "note": "Light, bright and refreshing as a closer. Tart rhubarb, a gentle floral note, a subtle herbal lift. Finishes clean without being too sweet."
+            },
+            {
+              "name": "Spaghetti, ramps, Louis d'Or",
+              "tag": "worth-it",
+              "note": "Visually refined and very well made. Ramps for a gentle garlicky hit, Louis d'Or for nutty depth, sauce clinging properly. It tastes like an excellent pasta dish rather than a surprising one."
+            },
+            {
+              "name": "Beef, maitake, black cardamom",
+              "tag": "worth-it",
+              "note": "A good piece of beef with an earthy, smoky backdrop. Nothing jumped out. Well-executed rather than a standout."
+            },
+            {
+              "name": "Grilled focaccia, whipped butter",
+              "tag": "skip",
+              "note": "Listed as focaccia but it ate like simple grilled bread: no airy bubbles, none of that chewy olive-oil richness. It's described as fire-baked and I didn't get much extra flavour from that, and the whipped butter was subtle too. Since it's called out on the menu, I expected it to stand out."
+            }
+          ]
+        },
+        "realCost": {
+          "lines": [
+            {
+              "item": "Tasting menu, per person",
+              "amount": "$135 now. I paid $125."
+            },
+            {
+              "item": "Hot oysters add-on",
+              "amount": "~$30 for six"
+            },
+            {
+              "item": "Wine pairing",
+              "amount": "$85 or $150"
+            }
+          ],
+          "total": {
+            "label": "Per person, all in",
+            "amount": "$110 to $180+"
+          },
+          "howToSpendLess": "One cocktail each, then a bottle or a couple of glasses rather than multiple rounds keeps the total lower."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "The honest caveat: they lean hard into the live-fire story and on my menu I didn't taste much smoke or char. Everything was clean and well executed, just not fire-forward. The oyster opener is good without being unforgettable, and the bread didn't do what a bread called out on the menu should. It's a very good restaurant that didn't deliver the big wow effect a new star sets you up to expect."
+        },
+        "beforeYouBook": [
+          {
+            "question": "When is it open?",
+            "answer": "Tuesday: 11:30 a.m.–1:30 p.m. and 5:30–10 p.m.\n\nWednesday to Friday: 11:30 a.m.–1:30 p.m. and 5:30–10:30 p.m.\n\nSaturday: 5:30–10:30 p.m.\n\nSunday and Monday: 5:30–10 p.m."
+          },
+          {
+            "question": "How far ahead do I need to book?",
+            "answer": "Recommended, especially Thursday to Saturday. Prime slots go."
+          }
+        ]
+      },
+      "fr-CA": {
+        "slug": "hoogan-et-beaufort",
+        "opening": "Le chef Marc-André Jetté fait une cuisine québécoise au feu de bois dans les anciens Ateliers Angus, à Rosemont, dans une salle industrielle convertie qui a obtenu sa première étoile Michelin en 2026.",
+        "cuisine": "Québécois moderne, feu de bois",
+        "paymentDisclosure": "Payé",
+        "verdictHeadline": "Une salle faite pour les occasions, et un menu dégustation resté dans la catégorie très bien",
+        "verdictReason": "Vas-y pour une célébration. Pas pour un premier rendez-vous.",
+        "essentials": {
+          "address": "4095 Rue Molson, Montréal, QC H1Y 3L1",
+          "cost": "110-180 $+",
+          "canYouTalk": "Plutôt. Moyen à élevé aux heures de pointe.",
+          "booking": "Planifie d'avance",
+          "duration": "2 h 30"
+        },
+        "room": "Un espace industriel converti qui paraît grand sans être impersonnel. L'éclairage est chaud, la salle a un bourdonnement régulier, et le foyer ouvert reste en vue.\n\nLe restaurant a fermé pour une rénovation complète en mai 2025 et a rouvert le 1er novembre 2025, reconstruit autour du foyer ouvert, avec une cave d'environ cinq mille bouteilles en plus. J'ai mangé dans la nouvelle salle. Ceux qui y sont allés avant la fermeture la trouveront changée.\n\nLe bruit est moyen à élevé aux heures de pointe. Une table à deux le long du mur facilite la conversation; une table où tu sens la salle sans être assis en plein milieu, c'est le compromis.",
+        "meetChef": {
+          "name": "Marc-André Jetté",
+          "role": "Chef et propriétaire",
+          "background": "Marc-André Jetté est chef et propriétaire. Le restaurant a reçu une étoile Michelin dans le Guide Québec 2026, dévoilé le 6 mai 2026, après avoir été Recommandé dans la toute première édition de 2025. C'est une des cinq tables une étoile à Montréal, avec Jérôme Ferrer Europea, Mastard, Sabayon et Sushi Nishinokaze. Le sommelier Hugo Duchesne a remporté le Prix du sommelier Michelin pour le Québec la même année.",
+          "approach": "Ce que tu goûtes, c'est une cuisine qui s'approvisionne serré et local. Les micropousses viennent de la ferme Tulsi, et ça se voit : même les herbes arrivent éclatantes. Le feu tient plus de l'identité que de la saveur, par contre. Dans mon menu, tout goûtait net, frais et axé sur l'ingrédient plutôt que sur le grillé, avec le bois en arrière-plan plutôt qu'en bouche."
+        },
+        "drinks": {
+          "intro": "Le programme des vins est mené par un sommelier primé. Demande une recommandation si tu hésites.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "Un cocktail",
+              "note": "Surtout si tu veux que la soirée ait l'air d'un événement."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "Des blancs frais ou des rouges légers avec de l'acidité",
+              "note": "Les blancs tranchent dans les assiettes plus riches et grillées; les rouges légers restent rafraîchissants même avec la fumée. Les accords sont à 85 $ ou 150 $."
+            }
+          ],
+          "list": "Pour finir, quelque chose d'amer. Un amaro, si tu prends le dessert."
+        },
+        "whatToOrder": {
+          "waitersChoice": {
+            "recommendation": "Notre serveuse a suggéré les huîtres chaudes au sabayon au cidre pour ouvrir et les a appelées la signature incontestée.",
+            "outcome": "Ça vaut la peine. Je n'irais pas jusqu'à dire inoubliable comme une signature, mais c'est un départ solide et la texture des huîtres pochées est excellente. Environ 30 $ pour six, en extra."
+          },
+          "strategy": "Prends le menu dégustation. C'est la fenêtre la plus claire sur ce que fait la cuisine et la façon la plus simple de voir l'arc complet. Note qu'il se prend pour toute la table seulement.",
+          "dishes": [
+            {
+              "name": "Huîtres chaudes, sabayon au cidre",
+              "tag": "order-this",
+              "note": "Texture parfaite sur les huîtres pochées et une vraie bonne façon d'ouvrir le repas. L'extra qui vaut la peine."
+            },
+            {
+              "name": "Crabe, bouillon dashi, tomatillo",
+              "tag": "order-this",
+              "note": "Fraîcheur et umami tout de suite. Crabe sucré contre un dashi savoureux penché vers la mer, avec le tomatillo qui apporte cette acidité verte qui garde le bol vif et moderne. Présentation nette et soignée. La meilleure assiette de la soirée."
+            },
+            {
+              "name": "Asperges vertes, pois mange-tout, pistache",
+              "tag": "worth-it",
+              "note": "Tu goûtes que les légumes sont locaux, jusqu'aux micropousses. Les asperges et les pois mange-tout gardent ça croquant et vert, la pistache ajoute une richesse beurrée et du croquant. Un vrai service de remise à zéro avant les pâtes."
+            },
+            {
+              "name": "Rhubarbe, fleur de cerisier, shiso",
+              "tag": "worth-it",
+              "note": "Léger, vif et rafraîchissant comme finale. Rhubarbe acidulée, une douce note florale, un subtil relèvement herbacé. Ça finit net sans être trop sucré."
+            },
+            {
+              "name": "Spaghetti, aulx des bois, Louis d'Or",
+              "tag": "worth-it",
+              "note": "Visuellement raffiné et très bien fait. Les aulx des bois pour un petit goût d'ail délicat, le Louis d'Or pour la profondeur de noisette, une sauce qui accroche comme il faut. Ça goûte comme un excellent plat de pâtes plutôt qu'un plat surprenant."
+            },
+            {
+              "name": "Bœuf, maitake, cardamome noire",
+              "tag": "worth-it",
+              "note": "Une bonne pièce de bœuf sur un fond terreux et fumé. Rien n'a ressorti. Bien exécuté plutôt que remarquable."
+            },
+            {
+              "name": "Focaccia grillée, beurre fouetté",
+              "tag": "skip",
+              "note": "Annoncée comme une focaccia, mais elle se mangeait comme un simple pain grillé : pas de bulles aériennes, rien de cette richesse mâchue à l'huile d'olive. Elle est décrite comme cuite au feu et je n'en ai pas tiré beaucoup plus de saveur, et le beurre fouetté était subtil aussi. Comme elle est mise en valeur sur le menu, je m'attendais à ce qu'elle se démarque."
+            }
+          ]
+        },
+        "realCost": {
+          "lines": [
+            {
+              "item": "Menu dégustation, par personne",
+              "amount": "135 $ maintenant. J'ai payé 125 $."
+            },
+            {
+              "item": "Extra huîtres chaudes",
+              "amount": "~30 $ pour six"
+            },
+            {
+              "item": "Accord mets et vins",
+              "amount": "85 $ ou 150 $"
+            }
+          ],
+          "total": {
+            "label": "Par personne, tout compris",
+            "amount": "110-180 $+"
+          },
+          "howToSpendLess": "Un cocktail chacun, puis une bouteille ou quelques verres plutôt que plusieurs tournées, ça garde le total plus bas."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "La nuance honnête : ils misent fort sur l'histoire du feu vif, et dans mon menu je n'ai pas goûté beaucoup de fumée ni de grillé. Tout était net et bien exécuté, juste pas axé sur le feu. L'entrée d'huîtres est bonne sans être inoubliable, et le pain n'a pas fait ce qu'un pain mis en valeur sur le menu devrait faire. C'est un très bon restaurant qui n'a pas livré le gros effet wow qu'une nouvelle étoile te pousse à attendre."
+        },
+        "beforeYouBook": [
+          {
+            "question": "Quand est-ce ouvert?",
+            "answer": "Mardi : 11 h 30 à 13 h 30 et 17 h 30 à 22 h\n\nMercredi au vendredi : 11 h 30 à 13 h 30 et 17 h 30 à 22 h 30\n\nSamedi : 17 h 30 à 22 h 30\n\nDimanche et lundi : 17 h 30 à 22 h"
+          },
+          {
+            "question": "Combien de temps d'avance faut-il réserver?",
+            "answer": "Recommandé, surtout du jeudi au samedi. Les meilleures plages partent."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ile-flottante",
+    "postType": "date-spot",
+    "spotType": "restaurant",
+    "name": "Île Flottante",
+    "city": "Montréal",
+    "neighbourhood": "Mile End",
+    "reporterByline": "Victor",
+    "freshness": {
+      "published": "2026-09-04"
+    },
+    "image": {
+      "src": "/images/date-spots/ile-flottante-seasonal-plate.webp",
+      "width": 720,
+      "height": 1080,
+      "provenance": "dmd-held-photograph"
+    },
+    "payment": "paid",
+    "priceRange": "$$$$",
+    "reviewVerdict": "conditional",
+    "locales": {
+      "en": {
+        "slug": "ile-flottante",
+        "opening": "Chef Sean Murray Smith cooks a seasonal, vegetable-forward tasting menu on Saint-Viateur in a calm Mile End dining room.",
+        "cuisine": "Seasonal tasting menu",
+        "paymentDisclosure": "Paid",
+        "verdictHeadline": "Technically excellent, without one dish I kept thinking about",
+        "verdictReason": "Go for the calm room and precise cooking.",
+        "essentials": {
+          "address": "174-176 rue Saint-Viateur Ouest, Montreal, QC H2T 2L3",
+          "cost": "$130 to $170",
+          "canYouTalk": "Yes, easily",
+          "booking": "Book ahead",
+          "duration": "2.5 hours"
+        },
+        "room": "Intimate without being stiff. People come to eat and take their time. Lighting is flattering and the pacing is calm.\n\nIt works well for a quiet date. The trade-off is time, so budget the full evening.",
+        "meetChef": {
+          "name": "Sean Murray Smith",
+          "role": "Chef and co-owner",
+          "background": "Sean Murray Smith is chef and co-owner with Nada Abou Younes. The two of them ran Les Deux Singes de Montarvie in this space from 2011, built a real following, and by late 2016 decided it was time to change. When the unit next door came free they expanded, renovated and rebuilt the concept, name included.",
+          "approach": "The name is personal. Île flottante is Smith's favourite dessert, and it doubles as a nod to Montreal as an island. There's an Expo 67 thread in it too: his father worked there, and the name gestures at Île Sainte-Hélène. It's a restaurant identity rather than a menu description."
+        },
+        "drinks": {
+          "intro": "Treat drinks here as support for the meal rather than the main event.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "One cocktail",
+              "note": "After that, keep the drinks simple."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "Ask",
+              "note": "Say whether you prefer bright, bitter, boozy or fruity drinks and ask for a recommendation."
+            }
+          ]
+        },
+        "whatToOrder": {
+          "setMenu": {
+            "name": "Chef-driven tasting menu",
+            "courses": 7,
+            "pricePerPerson": "$130",
+            "note": "The restaurant serves one chef-driven tasting menu, $130 per person as of September 2026, and the kitchen decides the sequence."
+          },
+          "strategy": "Tell them allergies and real dislikes when you book. It steers you away from a hard no and makes the whole flow feel more tailored.\n\nOn the food overall. Ingredients fresh and handled properly, technique controlled and confident, execution clean and consistent. Some combinations felt a little mismatched, and I never got that this-is-the-chef's-profile moment.\n\nOn dessert. The weakest part of my visit, which surprised me, because dessert is usually where a kitchen lands the final punch. They were good rather than a statement. One was corn-focused and the corn never actually showed up in a way that popped. The idea was stronger than the payoff, and because dessert is the last thing you remember the night ended flatter than I wanted."
+        },
+        "realCost": {
+          "lines": [
+            {
+              "item": "Tasting menu, per person",
+              "amount": "$130"
+            },
+            {
+              "item": "One cocktail, tax and tip",
+              "amount": "~$40"
+            }
+          ],
+          "total": {
+            "label": "Per person, as I paid it",
+            "amount": "~$170"
+          }
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "The honest caveat: the technique and execution are excellent and the service is smooth, but for the price I expected at least one dish I'd describe as memorable. I had a really nice night. I didn't leave obsessed. At this level I'm looking for the plate that creates a memory, and the meal stayed in the very good lane."
+        },
+        "beforeYouBook": [
+          {
+            "question": "How far ahead do I need to book?",
+            "answer": "Book ahead. A lot of tables were already named when we sat down, and if you have allergies it's the easiest way to sort them in advance."
+          },
+          {
+            "question": "Can they handle dietary restrictions?",
+            "answer": "Yes, if you tell them when you book. Fixed menu, so give them notice."
+          }
+        ]
+      },
+      "fr-CA": {
+        "slug": "ile-flottante",
+        "opening": "Le chef Sean Murray Smith propose un menu dégustation saisonnier axé sur les légumes, sur Saint-Viateur, dans une salle calme du Mile End.",
+        "cuisine": "Menu dégustation saisonnier",
+        "paymentDisclosure": "Payé",
+        "verdictHeadline": "Techniquement excellent, sans un plat qui me reste en tête",
+        "verdictReason": "Vas-y pour la salle calme et la cuisine précise.",
+        "essentials": {
+          "address": "174-176 Rue Saint-Viateur Ouest, Montréal, QC H2T 2L3",
+          "cost": "130-170 $",
+          "canYouTalk": "Oui, facilement",
+          "booking": "Réserve à l'avance",
+          "duration": "2 h 30"
+        },
+        "room": "Intime sans être raide. Les gens viennent pour manger et prendre leur temps. L'éclairage est flatteur et le rythme est calme.\n\nÇa marche bien pour un rendez-vous tranquille. Le compromis, c'est le temps, alors prévois toute la soirée.",
+        "meetChef": {
+          "name": "Sean Murray Smith",
+          "role": "Chef et copropriétaire",
+          "background": "Sean Murray Smith est chef et copropriétaire avec Nada Abou Younes. Les deux ont tenu Les Deux Singes de Montarvie dans cet espace dès 2011, se sont bâti une vraie clientèle, et vers la fin 2016 ont décidé qu'il était temps de changer. Quand le local voisin s'est libéré, ils ont agrandi, rénové et repensé le concept, nom compris.",
+          "approach": "Le nom est personnel. L'île flottante est le dessert préféré de Smith, et c'est aussi un clin d'oeil à Montréal comme île. Il y a un fil Expo 67 aussi : son père y travaillait, et le nom fait référence à l'île Sainte-Hélène. C'est une identité de restaurant plutôt qu'une description de menu."
+        },
+        "drinks": {
+          "intro": "Traite les boissons ici comme un support au repas plutôt que l'attraction principale.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "Un cocktail",
+              "note": "Ensuite, garde les boissons simples."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "Demande",
+              "note": "Dis si tu préfères les boissons vives, amères, fortes ou fruitées et demande une recommandation."
+            }
+          ]
+        },
+        "whatToOrder": {
+          "setMenu": {
+            "name": "Menu dégustation au choix du chef",
+            "courses": 7,
+            "pricePerPerson": "130 $",
+            "note": "Le restaurant sert un seul menu dégustation au choix du chef, 130 $ par personne en septembre 2026, et la cuisine décide de la séquence."
+          },
+          "strategy": "Dis-leur tes allergies et tes vraies aversions au moment de réserver. Ça aide la cuisine à t'éviter un vrai non, et ça donne l'impression que le tout est plus adapté à vous deux.\n\nSur la cuisine en général. Ingrédients frais et bien traités, technique contrôlée et confiante, exécution nette et constante. Certaines combinaisons m'ont semblé un peu décalées, et je n'ai jamais eu ce moment de « voilà le profil du chef ».\n\nSur le dessert. La partie la plus faible de ma visite, ce qui m'a surpris, parce que le dessert, c'est généralement là qu'une cuisine place son coup de poing final. Ils étaient bons plutôt qu'un énoncé. Un dessert était centré sur le maïs, et le maïs ne s'est jamais vraiment imposé. L'idée était plus forte que le résultat, et parce que le dessert, c'est la dernière chose dont tu te souviens, la soirée s'est terminée plus à plat que j'aurais voulu."
+        },
+        "realCost": {
+          "lines": [
+            {
+              "item": "Menu dégustation, par personne",
+              "amount": "130 $"
+            },
+            {
+              "item": "Un cocktail, taxes et pourboire",
+              "amount": "~40 $"
+            }
+          ],
+          "total": {
+            "label": "Par personne, comme je l'ai payé",
+            "amount": "~170 $"
+          }
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "La nuance honnête : la technique et l'exécution sont excellentes et le service est fluide, mais pour le prix, je m'attendais à au moins un plat que je qualifierais de mémorable. J'ai passé une très belle soirée. Je ne suis pas ressorti obsédé. À ce niveau, je cherche l'assiette qui crée un souvenir, et le repas est resté dans la catégorie très bien."
+        },
+        "beforeYouBook": [
+          {
+            "question": "Combien de temps d'avance faut-il réserver?",
+            "answer": "Réserve à l'avance. Beaucoup de tables étaient déjà réservées à un nom quand on s'est assis, et si tu as des allergies, c'est la façon la plus simple de les régler d'avance."
+          },
+          {
+            "question": "Est-ce qu'ils peuvent gérer les restrictions alimentaires?",
+            "answer": "Oui, si tu leur dis en réservant. Menu fixe, alors donne-leur un préavis."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "mckiernan",
+    "postType": "date-spot",
+    "spotType": "restaurant",
+    "name": "McKiernan",
+    "city": "Montréal",
+    "neighbourhood": "Ville-Émard",
+    "reporterByline": "Victor",
+    "freshness": {
+      "published": "2026-03-23"
+    },
+    "image": {
+      "src": "/images/date-spots/mckiernan-devilled-brussels-sprouts.webp",
+      "width": 720,
+      "height": 1080,
+      "provenance": "dmd-held-photograph"
+    },
+    "payment": "paid",
+    "priceRange": "$$",
+    "reviewVerdict": "favourite",
+    "locales": {
+      "en": {
+        "slug": "mckiernan",
+        "opening": "A rotisserie and market-driven kitchen by the Lachine Canal in Ville-Émard, from the team behind Joe Beef, Liverpool House and Vin Papillon.",
+        "cuisine": "Rotisserie and comfort food",
+        "paymentDisclosure": "Paid",
+        "verdictHeadline": "Coffee, two shareable plates, then walk it off along the canal",
+        "verdictReason": "A lively brunch and lunch in a large industrial room with plenty of daylight.",
+        "essentials": {
+          "address": "5524 rue Saint-Patrick, suite 200, Montreal, QC H4E 1A8",
+          "cost": "$30 to $55",
+          "canYouTalk": "Yes, in the daytime",
+          "booking": "Weekends yes",
+          "duration": "1.5 hours"
+        },
+        "room": "Industrial-feeling space right by the canal, and it leans into that: high ceilings, a lot of light, and a come-as-you-are room that still feels like a destination. Bright and warm rather than dim. Lively in the daytime without being overwhelming.\n\nAnywhere works, but the edges of the room feel calmer if you want to linger.",
+        "drinks": {
+          "intro": "Coffee is the main drink here. Keep it simple.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "An americano or drip",
+              "note": "The default, and the right one."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "An espresso drink",
+              "note": "Dessert energy without ordering dessert."
+            }
+          ],
+          "list": "If you're making a day of it, one brunch cocktail. One. The room will happily sell you three."
+        },
+        "whatToOrder": {
+          "strategy": "Two to three plates total is the sweet spot for two people.",
+          "dishes": [
+            {
+              "name": "Devilled brussels sprouts",
+              "tag": "order-this",
+              "note": "Crispy-edged, salty-sweet, and the vegetable side that disappears first. Enough punch and richness that it eats like bar food in the best way."
+            },
+            {
+              "name": "Bomba schnitzel",
+              "tag": "order-this",
+              "note": "Golden, crunchy and aggressively satisfying. The bomba brings heat and acidity, which stops it feeling heavy."
+            },
+            {
+              "name": "Homemade donuts",
+              "tag": "order-this",
+              "note": "Warm, fluffy and easy to share at the end of brunch."
+            },
+            {
+              "name": "Zesty Italian beef tartare",
+              "tag": "worth-it",
+              "note": "Bright, lemony and clean-tasting rather than heavy or bluntly beefy. More fresh and snackable than rich."
+            },
+            {
+              "name": "Honey garlic spare ribs",
+              "tag": "worth-it",
+              "note": "Sticky, glossy and built for sharing. Sweet at first, then savoury."
+            }
+          ]
+        },
+        "realCost": {
+          "intro": "You're paying for the room, the canal-side location and solid comfort cooking.",
+          "lines": [
+            {
+              "item": "Coffee and one main",
+              "amount": "$20 to $35"
+            },
+            {
+              "item": "Coffee and a couple of plates",
+              "amount": "$30 to $55"
+            }
+          ],
+          "total": {
+            "label": "Per person",
+            "amount": "$30 to $55"
+          },
+          "howToSpendLess": "Skip the cocktails, share plates, coffee and one main each."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "caveat": "Keep it tighter at brunch than the room wants you to. It tempts you into ordering like you're settling in for a long meal, and then you've spent $60 on what was meant to be coffee and a plate."
+        },
+        "beforeYouBook": [
+          {
+            "question": "How far ahead do I need to book?",
+            "answer": "Recommended at weekends. Walk-ins are possible but it fills fast on sunny days."
+          },
+          {
+            "question": "Can they handle dietary restrictions?",
+            "answer": "There are usually vegetarian-friendly small plates. Ask about the current menu."
+          },
+          {
+            "question": "Is there parking, or should we take the metro?",
+            "answer": "Best by bike or rideshare. Street parking varies."
+          }
+        ]
+      },
+      "fr-CA": {
+        "slug": "mckiernan",
+        "opening": "Une cuisine de rôtisserie et de marché au bord du Canal Lachine, à Ville-Émard, par l'équipe derrière Joe Beef, Liverpool House et Vin Papillon.",
+        "cuisine": "Rôtisserie et comfort food",
+        "paymentDisclosure": "Payé",
+        "verdictHeadline": "Café, deux assiettes à partager, puis une marche le long du canal",
+        "verdictReason": "Un brunch-lunch animé dans une grande salle industrielle baignée de lumière.",
+        "essentials": {
+          "address": "5524 Rue Saint-Patrick, suite 200, Montréal, QC H4E 1A8",
+          "cost": "30-55 $",
+          "canYouTalk": "Oui, le jour",
+          "booking": "Oui la fin de semaine",
+          "duration": "1 h 30"
+        },
+        "room": "Un espace aux allures industrielles juste à côté du canal, qui l'assume : hauts plafonds, beaucoup de lumière, et une salle où tu arrives comme tu es mais qui a quand même l'air d'une destination. Lumineux et chaleureux plutôt que tamisé. Animé le jour sans être étourdissant.\n\nToutes les places fonctionnent, mais les bords de la salle sont plus calmes si tu veux t'attarder.",
+        "drinks": {
+          "intro": "Le café est la boisson principale ici. Garde ça simple.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "Un americano ou un filtre",
+              "note": "Le choix par défaut, et le bon."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "Une boisson à l'espresso",
+              "note": "L'énergie du dessert sans commander de dessert."
+            }
+          ],
+          "list": "Si tu en fais une journée, un cocktail brunch. Un. La salle va volontiers t'en vendre trois."
+        },
+        "whatToOrder": {
+          "strategy": "Deux à trois assiettes au total, c'est le sweet spot pour deux personnes.",
+          "dishes": [
+            {
+              "name": "Choux de Bruxelles à la diable",
+              "tag": "order-this",
+              "note": "Croustillants sur les bords, salés-sucrés, et l'accompagnement de légumes qui disparaît en premier. Assez de punch et de richesse pour que ça se mange comme de la bouffe de bar, dans le meilleur sens."
+            },
+            {
+              "name": "Schnitzel bomba",
+              "tag": "order-this",
+              "note": "Doré, croquant et agressivement satisfaisant. La bomba apporte du piquant et de l'acidité, ce qui l'empêche d'être lourd."
+            },
+            {
+              "name": "Beignes maison",
+              "tag": "order-this",
+              "note": "Chauds, moelleux et faciles à partager à la fin du brunch."
+            },
+            {
+              "name": "Tartare de bœuf à l'italienne",
+              "tag": "worth-it",
+              "note": "Vif, citronné et net plutôt que lourd ou franchement bovin. Plus frais et grignotable que riche."
+            },
+            {
+              "name": "Côtes levées miel et ail",
+              "tag": "worth-it",
+              "note": "Collantes, lustrées et faites pour partager. Sucrées au début, puis savoureuses."
+            }
+          ]
+        },
+        "realCost": {
+          "intro": "Tu paies pour la salle, l'emplacement au bord du canal et une cuisine réconfortante solide.",
+          "lines": [
+            {
+              "item": "Un café et un plat",
+              "amount": "20-35 $"
+            },
+            {
+              "item": "Un café et quelques assiettes",
+              "amount": "30-55 $"
+            }
+          ],
+          "total": {
+            "label": "Par personne",
+            "amount": "30-55 $"
+          },
+          "howToSpendLess": "Saute les cocktails, partage les assiettes, un café et un plat chacun."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "caveat": "Reste plus serré au brunch que la salle le voudrait. Elle te donne envie de commander comme si tu t'installais pour un long repas, et là tu as dépensé 60 $ pour ce qui devait être un café et une assiette."
+        },
+        "beforeYouBook": [
+          {
+            "question": "Combien de temps d'avance faut-il réserver?",
+            "answer": "Recommandé les fins de semaine. Les walk-ins sont possibles, mais ça se remplit vite les jours de soleil."
+          },
+          {
+            "question": "Est-ce qu'ils peuvent gérer les restrictions alimentaires?",
+            "answer": "Il y a généralement des petites assiettes végétariennes. Demande le menu du moment."
+          },
+          {
+            "question": "Y a-t-il du stationnement, ou vaut-il mieux prendre le métro?",
+            "answer": "Mieux en vélo ou en covoiturage. Le stationnement dans la rue varie."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "moccione",
+    "postType": "date-spot",
+    "spotType": "restaurant",
+    "name": "Moccione",
+    "city": "Montréal",
+    "neighbourhood": "Villeray",
+    "reporterByline": "Victor",
+    "freshness": {
+      "published": "2026-03-23"
+    },
+    "image": {
+      "src": "/images/date-spots/moccione-dining-room.webp",
+      "width": 810,
+      "height": 1080,
+      "provenance": "dmd-held-photograph"
+    },
+    "payment": "paid",
+    "priceRange": "$$$",
+    "reviewVerdict": "favourite",
+    "locales": {
+      "en": {
+        "slug": "moccione",
+        "opening": "Chef Luca Cianciulli cooks modern Italian with handmade pasta on Saint-Denis, and has built one of the few rooms in Villeray where a long dinner still feels like an occasion.",
+        "cuisine": "Modern Italian",
+        "paymentDisclosure": "Paid",
+        "verdictHeadline": "Worth the money when the night is the point",
+        "verdictReason": "The pasta is the reason to come and the room is the reason to stay.",
+        "essentials": {
+          "address": "7495 rue Saint-Denis, Montreal, QC H2R 2E5",
+          "cost": "$120 to $200",
+          "canYouTalk": "Yes, easily",
+          "booking": "Plan ahead",
+          "duration": "2 to 2.5 hours"
+        },
+        "room": "Moccione feels special without being stiff. The room is open and welcoming, with a view of the kitchen. You can dress up, but good jeans and a jacket also fit.\n\nThe tables along the wall are the ones to ask for. Two-tops, spaced, and they put you side by side with the room instead of staring into someone else's dinner. Lighting is warm and dim in a flattering way. The noise is a happy hum rather than a roar, and service is attentive early then backs off, which is the right instinct for a table of two.",
+        "meetChef": {
+          "name": "Luca Cianciulli",
+          "role": "Chef and co-owner",
+          "background": "Luca Cianciulli is chef and co-owner, with his partner Maxime Landry running front of house. The room sits in the Michelin Guide Québec 2026 as a Selected restaurant, which is a listing rather than a star, and the couple have since opened Moccione Pizza, a separate takeaway a few streets over at 380 rue Villeray.",
+          "approach": "What you can taste is a kitchen that treats pasta as the centre of the menu rather than a course on the way to a main. The caramelle are shaped like wrapped sweets and filled with ricotta, artichoke and rabbit; the cappelletti come perfumed with saffron and bergamot. Both are doing something more particular than the room's price bracket demands."
+        },
+        "drinks": {
+          "intro": "Order the first drink before you open the menu.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "A cocktail",
+              "note": "Dialled in and not overly sweet, which is what you want ahead of Italian food."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "Wine with acidity and grip",
+              "note": "Ask for it by those words. It keeps the meal bright even when the pasta gets rich."
+            }
+          ],
+          "list": "To finish, an amaro. It makes sense after the richer pasta and dessert."
+        },
+        "whatToOrder": {
+          "strategy": "Order in layers so the table keeps changing while you talk. For two: one crudo or tartare, one fried bite, one pasta, one main, one dessert, two digestifs.",
+          "dishes": [
+            {
+              "name": "Scallop crudo",
+              "tag": "order-this",
+              "note": "Scallops with an icy apple and grapefruit granita. Silky scallop, crunchy cold granita, clean finish. The one to start with."
+            },
+            {
+              "name": "Caramelle",
+              "tag": "order-this",
+              "note": "Candy-shaped stuffed pasta with ricotta, artichoke and rabbit, finished with tomato-sage sauce. Tender pasta, creamy filling, bright sauce. If you order one thing, this."
+            },
+            {
+              "name": "Cappelletti",
+              "tag": "order-this",
+              "note": "Delicate stuffed pasta with beef, saffron, bergamot and Parmigiano. Pillowy, rich, with a perfumed citrus finish."
+            },
+            {
+              "name": "Stracciatella di bufala",
+              "tag": "worth-it",
+              "note": "Creamy buffalo stracciatella with braised cabbage, roasted cipollini, hazelnuts and olive oil. Lush and soft, sweet onion, nutty crunch."
+            },
+            {
+              "name": "Baba tiramisu",
+              "tag": "worth-it",
+              "note": "Airy sponge soaked in syrup under silky cream. Boozy, coffee and cocoa forward. Dessert is a closer here."
+            },
+            {
+              "name": "Sorbet",
+              "tag": "worth-it",
+              "note": "A clean palate reset after the richer pastas. Does its job, no more."
+            },
+            {
+              "name": "Beef",
+              "tag": "skip",
+              "note": "Beef with topinambour, trompette mushrooms and sea-asparagus salsa verde. Tender and earthy, but mine came under-seasoned. I'd pick another protein next time."
+            }
+          ]
+        },
+        "realCost": {
+          "intro": "Budget $120 to $200 per person with wine and tip.",
+          "lines": [
+            {
+              "item": "Food only, per person",
+              "amount": "$60 to $80"
+            },
+            {
+              "item": "Cocktails, wine, digestifs",
+              "amount": "the rest of it"
+            }
+          ],
+          "total": {
+            "label": "Per person, all in",
+            "amount": "$120 to $200"
+          },
+          "howToSpendLess": "One cocktail each, then a bottle or a couple of sommelier picks instead of multiple rounds. That keeps the total down without changing the meal."
+        },
+        "beforeYouBook": [
+          {
+            "question": "How far ahead do I need to book?",
+            "answer": "Strongly recommended, especially Thursday to Saturday."
+          }
+        ]
+      },
+      "fr-CA": {
+        "slug": "moccione",
+        "opening": "Le chef Luca Cianciulli fait de l'italien moderne avec des pâtes faites maison sur Saint-Denis, et il a bâti une des rares salles de Villeray où un long souper a encore l'air d'une occasion.",
+        "cuisine": "Italien moderne",
+        "paymentDisclosure": "Payé",
+        "verdictHeadline": "Ça vaut la dépense quand la soirée est le but",
+        "verdictReason": "Les pâtes sont la raison de venir, et la salle est la raison de rester.",
+        "essentials": {
+          "address": "7495 Rue Saint-Denis, Montréal, QC H2R 2E5",
+          "cost": "120-200 $",
+          "canYouTalk": "Oui, facilement",
+          "booking": "Planifie d'avance",
+          "duration": "2 h à 2 h 30"
+        },
+        "room": "Moccione a l'air spécial sans être guindé. La salle est ouverte et accueillante, avec une vue sur la cuisine. Tu peux t'habiller chic, mais de beaux jeans et un veston font aussi l'affaire.\n\nLes tables le long du mur sont celles à demander. Des tables à deux, espacées, qui te placent côte à côte avec la salle au lieu de fixer le souper de quelqu'un d'autre. L'éclairage est chaud et tamisé, de façon flatteuse. Le bruit est un bourdonnement joyeux plutôt qu'un vacarme, et le service est attentif au début puis se fait discret, ce qui est le bon réflexe pour une table de deux.",
+        "meetChef": {
+          "name": "Luca Cianciulli",
+          "role": "Chef et copropriétaire",
+          "background": "Luca Cianciulli est chef et copropriétaire, et son partenaire Maxime Landry s'occupe de la salle. Le restaurant figure au Guide Michelin Québec 2026 comme restaurant Sélectionné, ce qui est une mention et non une étoile, et le couple a depuis ouvert Moccione Pizza, un comptoir pour emporter distinct à quelques rues, au 380 rue Villeray.",
+          "approach": "Ce que tu goûtes, c'est une cuisine qui traite les pâtes comme le centre du menu plutôt qu'un service en route vers le plat principal. Les caramelle ont la forme de bonbons emballés et sont farcies de ricotta, d'artichaut et de lapin; les cappelletti arrivent parfumés au safran et à la bergamote. Les deux font quelque chose de plus particulier que ce que la gamme de prix de la salle exige."
+        },
+        "drinks": {
+          "intro": "Commande le premier verre avant d'ouvrir le menu.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "Un cocktail",
+              "note": "Précis et pas trop sucré, exactement ce que tu veux avant de la cuisine italienne."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "Un vin avec de l'acidité et de la mâche",
+              "note": "Demande-le avec ces mots-là. Ça garde le repas vif même quand les pâtes deviennent riches."
+            }
+          ],
+          "list": "Pour finir, un amaro. Ça a du sens après les pâtes plus riches et le dessert."
+        },
+        "whatToOrder": {
+          "strategy": "Commande en couches pour que la table change pendant que vous jasez. Pour deux : un crudo ou un tartare, une bouchée frite, une pâte, un plat principal, un dessert, deux digestifs.",
+          "dishes": [
+            {
+              "name": "Crudo de pétoncles",
+              "tag": "order-this",
+              "note": "Pétoncles soyeux avec une granita glacée pomme et pamplemousse. Pétoncle soyeux, granita froide et croquante, finale nette. Celui par lequel commencer."
+            },
+            {
+              "name": "Caramelle",
+              "tag": "order-this",
+              "note": "Pâtes farcies en forme de bonbon avec ricotta, artichaut et lapin, finies dans une sauce tomate-sauge. Pâte tendre, farce crémeuse, tomate lumineuse. Si tu commandes une seule chose, c'est celle-là."
+            },
+            {
+              "name": "Cappelletti",
+              "tag": "order-this",
+              "note": "Pâtes farcies délicates au bœuf, safran, bergamote et Parmigiano. Moelleuses, riches, avec une finale parfumée citron-safran."
+            },
+            {
+              "name": "Stracciatella di bufala",
+              "tag": "worth-it",
+              "note": "Stracciatella de bufflonne crémeuse avec chou braisé, cipollini rôtis, noisettes et huile d'olive. Fondante et douce, oignon sucré, croquant de noisette."
+            },
+            {
+              "name": "Baba tiramisu",
+              "tag": "worth-it",
+              "note": "Une génoise aérienne imbibée de sirop sous une crème soyeuse. Imbibé d'alcool, dominé par le café et le cacao. Ici, le dessert est un vrai final."
+            },
+            {
+              "name": "Sorbet",
+              "tag": "worth-it",
+              "note": "Un reset de palais après les pâtes et le bœuf plus riches. Ça fait son travail, sans plus."
+            },
+            {
+              "name": "Bœuf",
+              "tag": "skip",
+              "note": "Bœuf avec topinambour, champignons trompette et salsa verde aux asperges de mer. Tendre et terreux, mais le mien manquait d'assaisonnement. Je choisirais une autre protéine la prochaine fois."
+            }
+          ]
+        },
+        "realCost": {
+          "intro": "Prévois 120-200 $ par personne avec le vin et le pourboire.",
+          "lines": [
+            {
+              "item": "Nourriture seulement, par personne",
+              "amount": "60-80 $"
+            },
+            {
+              "item": "Cocktails, vin, digestifs",
+              "amount": "le reste"
+            }
+          ],
+          "total": {
+            "label": "Par personne, tout compris",
+            "amount": "120-200 $"
+          },
+          "howToSpendLess": "Un cocktail chacun, puis une bouteille ou quelques choix du sommelier plutôt que plusieurs tournées. Ça garde le total plus bas sans changer le repas."
+        },
+        "beforeYouBook": [
+          {
+            "question": "Combien de temps d'avance faut-il réserver?",
+            "answer": "Fortement recommandé, surtout du jeudi au samedi."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "oncle-lee-kao",
+    "postType": "date-spot",
+    "spotType": "restaurant",
+    "name": "Oncle Lee Kăo",
+    "city": "Montréal",
+    "neighbourhood": "Old Montreal",
+    "reporterByline": "Victor",
+    "freshness": {
+      "published": "2026-07-02"
+    },
+    "image": {
+      "src": "/images/date-spots/oncle-lee-kao-dining-room.webp",
+      "width": 720,
+      "height": 1080,
+      "provenance": "dmd-held-photograph"
+    },
+    "payment": "paid",
+    "priceRange": "$$$",
+    "reviewVerdict": "conditional",
+    "locales": {
+      "en": {
+        "slug": "oncle-lee-kao",
+        "opening": "Chef Andersen Lee cooks a modern Chinese grill on rue McGill in Old Montreal, in a high-ceilinged room built for ordering wide and sharing everything.",
+        "cuisine": "Modern Chinese grill",
+        "paymentDisclosure": "Paid",
+        "verdictHeadline": "A beautiful room, solid grill cooking, and prices that add up quickly",
+        "verdictReason": "Bring three friends rather than one.",
+        "essentials": {
+          "address": "112 rue McGill, Montreal, QC H2Y 2E5",
+          "cost": "$60 to $120+",
+          "canYouTalk": "Mostly. Buzzy but not chaotic.",
+          "booking": "Easy",
+          "duration": "2 hours"
+        },
+        "room": "The restaurant opened in the former Ikanos and Garde-Côte space in late January 2025. Around eighty seats sit under high ceilings. The room uses wood, burnt-orange leather, Chinese artwork and a few red lanterns without feeling overdecorated. There's a private room at the back for roughly twelve to thirty-six, which makes it a strong group option.\n\nLighting is warm and flattering. Noise sits medium, buzzy and social. A two-top along the edge keeps you locked in; a bigger table is better if you're sharing properly.",
+        "meetChef": {
+          "name": "Andersen Lee",
+          "role": "Chef",
+          "background": "Oncle Lee Kăo is the newest project from the team behind Bouillon Bilk, led by chef Andersen Lee alongside chef Émile Collette, with front-of-house manager Marie-Alexandra Dahouet and restaurateurs Mélanie Blanchette and François Nadon, who are also behind Bouillon Bilk, Cadet and Place Carmin. Lee runs the kitchen; he is not the owner.",
+          "approach": "If the original Oncle Lee on Laurier became a neighbourhood staple for comfort-forward Chinese flavours, Kăo is the different-lane version. More relaxed, more contemporary, and built around kăo, the Mandarin word for grill, with a menu that leans into smoky char, crisp textures and plates that encourage ordering wide.\n\nLee was named Rising Star Chef of the Year at the Chinese Restaurant Awards in 2025, and the restaurant carries a Bib Gourmand in the Michelin Guide."
+        },
+        "drinks": {
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "The Pandan Express",
+              "note": "I loved it. You can taste the pandan properly: clean, aromatic, not perfumey, and the baijiu reads crisp rather than harsh. It tastes specific to this restaurant instead of being a sweet drink with a fancy name."
+            }
+          ]
+        },
+        "whatToOrder": {
+          "strategy": "Order in waves so the table keeps evolving. For two, four dishes is plenty: one cold starter, one vegetable plate, one beef or fish plate, one rice or noodle dish, dessert if you have room.",
+          "dishes": [
+            {
+              "name": "Five-spice duck platter",
+              "tag": "order-this",
+              "note": "The signature, and it makes sense the moment it lands. A big portion of sous vide duck with five-spice warmth and a rich texture, served platter-style so you build your own wraps. Comes with duck rillettes, a pile of cilantro, pickled carrot and daikon, chilli crisp, peanuts, cucumber, a liver mousse and a hoisin-style sauce."
+            },
+            {
+              "name": "Sweet and sour eggplant",
+              "tag": "order-this",
+              "note": "Peanuts and bacon. The plate that makes the table feel alive. Glossy and tender, sweet-and-sour without being ketchup-sweet, peanuts for crunch and bacon for a smoky, salty anchor. It also resets your palate and keeps the meal from feeling heavy."
+            },
+            {
+              "name": "Steamed oysters, black bean",
+              "tag": "order-this",
+              "note": "Clean, briny oysters with a savoury black bean hit that reads salty-sweet and fermented. Keeps the oyster tasting like an oyster while adding enough depth that it doesn't vanish in one bite."
+            },
+            {
+              "name": "Garlic fried rice",
+              "tag": "order-this",
+              "note": "The closer that makes everything feel complete, and the bridge plate if one of you wants to keep drinking and talking."
+            },
+            {
+              "name": "Beef tataki",
+              "tag": "worth-it",
+              "note": "Nordic shrimp and cucumber. Familiar in the best way, like hotpot flavours translated into a clean modern plate: slick chilli oil, warm spices, a little mala tingle, but still light."
+            },
+            {
+              "name": "Yuzu tartelette, green tea and fruit",
+              "tag": "worth-it",
+              "note": "Offered by the restaurant, and the perfect soft ending. Yuzu gives a bright citrus snap after a savoury meal."
+            }
+          ]
+        },
+        "realCost": {
+          "lines": [
+            {
+              "item": "Three to four dishes for two",
+              "amount": "the bulk of it"
+            },
+            {
+              "item": "One drink each",
+              "amount": "~$18 to $22 each"
+            },
+            {
+              "item": "Dessert",
+              "amount": "optional"
+            }
+          ],
+          "total": {
+            "label": "Per person",
+            "amount": "$60 to $120+"
+          },
+          "howToSpendLess": "This can be a controlled night or a we-kept-ordering night. Three or four dishes for two plus one drink each plus dessert is the shape that keeps it reasonable."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "The honest caveat: it wouldn't be my first choice if you already eat at Chinese restaurants often. A lot of the flavour profiles sit close to what you can get elsewhere, with better technique and a higher price. It also doesn't hit the comfort spot of late-night Chinese food, and it leans oily and heavy, which matters on a date. Where it shines is a group. If you're not familiar with Chinese food, it's a fair, approachable option in a beautiful room."
+        },
+        "beforeYouBook": [
+          {
+            "question": "How far ahead do I need to book?",
+            "answer": "Nice to have, but don't stress it. There were plenty of slots when I booked."
+          }
+        ]
+      },
+      "fr-CA": {
+        "slug": "oncle-lee-kao",
+        "opening": "Le chef Andersen Lee fait un grill chinois moderne sur la rue McGill, dans le Vieux-Montréal, dans une salle à hauts plafonds faite pour commander large et tout partager.",
+        "cuisine": "Grill chinois moderne",
+        "paymentDisclosure": "Payé",
+        "verdictHeadline": "Une belle salle, une cuisine de grill solide, et des prix qui montent vite",
+        "verdictReason": "Amène trois amis plutôt qu'un seul.",
+        "essentials": {
+          "address": "112 Rue McGill, Montréal, QC H2Y 2E5",
+          "cost": "60-120 $+",
+          "canYouTalk": "Plutôt. Animé sans être chaotique.",
+          "booking": "Facile",
+          "duration": "2 h"
+        },
+        "room": "Le restaurant a ouvert dans l'ancien local d'Ikanos et de Garde-Côte à la fin janvier 2025. Environ quatre-vingts places sous de hauts plafonds. La salle mise sur le bois, le cuir orange brûlé, des oeuvres d'art chinoises et quelques lanternes rouges sans paraître surchargée. Il y a une salle privée à l'arrière pour environ douze à trente-six personnes, ce qui en fait une bonne option de groupe.\n\nL'éclairage est chaud et flatteur. Le niveau sonore est moyen : animé et social. Une table à deux sur le bord te garde dans ta bulle; une plus grande table est mieux si vous partagez pour vrai.",
+        "meetChef": {
+          "name": "Andersen Lee",
+          "role": "Chef",
+          "background": "Oncle Lee Kăo est le plus récent projet de l'équipe derrière Bouillon Bilk, mené par le chef Andersen Lee aux côtés du chef Émile Collette, avec la directrice de salle Marie-Alexandra Dahouet et les restaurateurs Mélanie Blanchette et François Nadon, aussi derrière Bouillon Bilk, Cadet et Place Carmin. Lee dirige la cuisine; il n'est pas le propriétaire.",
+          "approach": "Si l'Oncle Lee original sur Laurier est devenu une valeur sûre du quartier pour ses saveurs chinoises réconfortantes, Kăo, c'est la version dans une autre lane. Plus décontractée, plus contemporaine, et construite autour du \"kăo\" (le mot mandarin pour grill), avec un menu qui mise sur le char fumé, les textures croustillantes, et les assiettes à partager qui t'encouragent à commander large.\n\nLee a été nommé Rising Star Chef of the Year aux Chinese Restaurant Awards en 2025, et le restaurant détient un Bib Gourmand au Guide Michelin."
+        },
+        "drinks": {
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "Le Pandan Express",
+              "note": "Je l'ai adoré. Tu goûtes vraiment le pandan : propre, aromatique, pas parfumé, et le baijiu est franc plutôt qu'âpre. Ça goûte propre à ce restaurant au lieu d'être une boisson sucrée avec un nom chic."
+            }
+          ]
+        },
+        "whatToOrder": {
+          "strategy": "Commande en vagues pour que la table continue d'évoluer. Pour deux, quatre assiettes suffisent : une entrée froide, une assiette de légumes, une assiette de bœuf ou de poisson, un plat de riz ou de nouilles, et le dessert s'il te reste de la place.",
+          "dishes": [
+            {
+              "name": "Plateau de canard aux 5 épices",
+              "tag": "order-this",
+              "note": "La signature, et ça fait sens dès que ça arrive sur la table. Une grosse portion de canard sous vide avec la chaleur du cinq épices et une texture riche, servie en plateau pour que tu construises tes propres rouleaux. Ça vient avec des rillettes de canard, plein de coriandre, carotte et daikon marinés, huile de chili croustillante, arachides, concombre, une mousse de foie et une sauce de style hoisin."
+            },
+            {
+              "name": "Aubergine aigre-douce",
+              "tag": "order-this",
+              "note": "Arachides et bacon. Le plat qui fait vivre la table. Luisante et fondante, aigre-douce sans être sucrée comme du ketchup, les arachides pour le croquant et le bacon pour une ancre fumée et salée. Elle remet aussi ton palais à zéro et empêche le repas de paraître lourd."
+            },
+            {
+              "name": "Huîtres vapeur, haricot noir",
+              "tag": "order-this",
+              "note": "Des huîtres propres et iodées avec un fond de haricots noirs savoureux qui est à la fois salé-sucré et fermenté. L'huître garde son goût d'huître, avec assez de profondeur pour ne pas disparaître en une bouchée."
+            },
+            {
+              "name": "Riz frit à l'ail",
+              "tag": "order-this",
+              "note": "Le plat de clôture qui rend tout complet, et l'assiette pont si l'un de vous veut continuer à boire et à jaser."
+            },
+            {
+              "name": "Tataki de boeuf",
+              "tag": "worth-it",
+              "note": "Crevettes nordiques et concombre. Familier dans le meilleur sens, comme des saveurs de fondue chinoise traduites en assiette moderne et épurée : huile de chili lustrée, épices chaudes, un petit picotement mala, mais ça reste léger."
+            },
+            {
+              "name": "Tartelette au yuzu, thé vert et fruits",
+              "tag": "worth-it",
+              "note": "Offerte par le restaurant, et la parfaite conclusion douce. Le yuzu donne un snap d'agrumes vif après un repas salé."
+            }
+          ]
+        },
+        "realCost": {
+          "lines": [
+            {
+              "item": "Trois à quatre assiettes pour deux",
+              "amount": "l'essentiel"
+            },
+            {
+              "item": "Un verre chacun",
+              "amount": "~18-22 $ chacun"
+            },
+            {
+              "item": "Dessert",
+              "amount": "facultatif"
+            }
+          ],
+          "total": {
+            "label": "Par personne",
+            "amount": "60-120 $+"
+          },
+          "howToSpendLess": "Ça peut être une soirée contrôlée ou une soirée on-a-continué-à-commander. Trois ou quatre assiettes pour deux, un verre chacun et le dessert, c'est la formule qui garde ça raisonnable."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "La nuance honnête : ce ne serait pas mon premier choix si tu manges déjà souvent dans des restaurants chinois. Beaucoup de profils de saveurs sont proches de ce que tu trouves ailleurs, avec une meilleure technique et un prix plus élevé. Ça ne comble pas non plus le craving de bouffe chinoise de fin de soirée, et ça penche gras et lourd, ce qui compte en date. Là où ça brille, c'est en groupe. Si tu ne connais pas bien la cuisine chinoise, c'est une option honnête et accessible dans une belle salle."
+        },
+        "beforeYouBook": [
+          {
+            "question": "Combien de temps d'avance faut-il réserver?",
+            "answer": "C'est bien de le faire, mais pas de stress. Il y avait plein de plages quand j'ai réservé."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "othym",
+    "postType": "date-spot",
+    "spotType": "restaurant",
+    "name": "Othym",
+    "city": "Montréal",
+    "neighbourhood": "the Village",
+    "reporterByline": "Victor",
+    "freshness": {
+      "published": "2026-06-25"
+    },
+    "image": {
+      "src": "/images/date-spots/othym-seasonal-plates.webp",
+      "width": 720,
+      "height": 1080,
+      "provenance": "dmd-held-photograph"
+    },
+    "payment": "paid",
+    "priceRange": "$$$",
+    "reviewVerdict": "conditional",
+    "locales": {
+      "en": {
+        "slug": "othym",
+        "opening": "Chef Noé Lainesse cooks seasonal Québec produce on rue Atateken in the Village, in a bring-your-own-wine room run with front-of-house partner Kevin Duguay.",
+        "cuisine": "Québec seasonal, BYOW",
+        "paymentDisclosure": "Paid",
+        "verdictHeadline": "Serious ingredient cooking and a BYOW bill, with portions that will not fill everyone",
+        "verdictReason": "Ingredient-driven, rustic and thoughtful, with a lot of the flavour built in-house through ferments.",
+        "essentials": {
+          "address": "1257 rue Atateken, Montreal, QC H2L 3K9",
+          "cost": "~$80 food only",
+          "canYouTalk": "Yes, easily",
+          "booking": "Recommended Fri and Sat",
+          "duration": "2 hours"
+        },
+        "room": "Warm and straightforward. A neighbourhood dining room where the focus stays on what's on the plate. It feels more like a great local restaurant than a special-occasion destination, which is exactly why it works.\n\nLighting is warm and relaxed, noise sits low to medium. A cosy two-top if you want a calm date; a bigger table if you're doing BYOW with friends. The room is now around seventy seats, larger and brighter than the old address.",
+        "meetChef": {
+          "name": "Noé Lainesse",
+          "role": "Chef and co-owner",
+          "background": "Noé Lainesse is chef and co-owner, with Kevin Duguay running the dining room. The two of them bought out founder Nadine Tessier in 2023, after the restaurant had spent twenty years trading as O'Thym, and they have since moved it to rue Atateken.\n\nThe kitchen works on a strictly local supply chain with real respect for Québec producers, and the credentials back it up: a Michelin Guide recommendation, Restaurateur Aliments du Québec au menu in 2022, and membership of Fourchette Bleue and Table Ronde. None of it is worn heavily.",
+          "approach": "What you taste is the in-house work. They make their own garum, a fermented savoury sauce in the fish-sauce family, and cheong, a Korean-style fruit syrup made by macerating fruit with sugar, plus their own spice blends. That is where the depth in the sauces comes from, and it's the reason the plates taste like theirs rather than like a seasonal menu anyone could write."
+        },
+        "drinks": {
+          "intro": "The whole drinks section here is one decision: which bottle you bring.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "Bring one bottle with acidity",
+              "note": "Chenin Blanc, Riesling, Gamay or Pinot Noir can work across vegetables, fish and richer mains."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "One bottle is usually enough",
+              "note": "At a normal dinner pace. Start with a white and add a light red only if a richer main appears on the board."
+            }
+          ],
+          "list": "A local option: bring a Québec wine, cider or bière de saison.\n\nPractical: serve reds slightly cooler than you think, and tell the staff what you brought so they can point you at the dishes that match. Expérience Bière is a short walk away for Québec wines and beers."
+        },
+        "whatToOrder": {
+          "waitersChoice": {
+            "recommendation": "Ask what they're most excited about today.",
+            "outcome": "Menus like this are built around what's best right now, and letting the kitchen steer is the right move. If a server points out a must-have plate, that's usually the add-on worth taking."
+          },
+          "strategy": "The menu changes, so treat it as a seasonal snapshot rather than arriving with a fixed order.\n\nOne note on ordering style. I normally like ordering a spread and sharing. It wasn't satisfying here because the portions are tight. One plate per person per service worked better.",
+          "dishes": [
+            {
+              "name": "Têtes de violon",
+              "tag": "order-this",
+              "note": "Fiddleheads treated as a real seasonal feature, with that bright green snap and a pleasant edge of bitterness, rounded out with duck egg, crab bisque and smoked breadcrumbs. Tastes like Québec spring, with the bisque adding depth and the chapelure fumée adding crunch."
+            },
+            {
+              "name": "Langue de bœuf",
+              "tag": "order-this",
+              "note": "Beef tongue cooked properly tender, brightened with tomato, Japanese knotweed and a sauce vierge finish. Rich and silky, with acidity and herbal olive-oil freshness keeping it energetic rather than heavy."
+            },
+            {
+              "name": "Mozzarella de bufflonne",
+              "tag": "worth-it",
+              "note": "Cold and creamy with aubergine, kohlrabi and tarragon. Rich and milky without being heavy. Not flashy: more of a quality check, and a well-balanced one signals a kitchen that understands restraint."
+            },
+            {
+              "name": "Maitake à Simon",
+              "tag": "worth-it",
+              "note": "Caramelised at the edges, juicy in the centre, with wild rice, carrot and sunflower. Earthy and substantial even though the portion isn't large."
+            },
+            {
+              "name": "Tartelette de crevettes nordiques",
+              "tag": "worth-it",
+              "note": "Crisp shell against sweet, briny shrimp, with kiwi nordiques, fennel and agastache keeping it bright and lifted."
+            },
+            {
+              "name": "Baba",
+              "tag": "worth-it",
+              "note": "A soaked cake with black beets bringing a deep, almost molasses sweetness, closer to black garlic than to sugar. Keeps the dessert interesting."
+            },
+            {
+              "name": "Pain bio seigle et tournesol",
+              "tag": "worth-it",
+              "note": "Nutty, earthy rye and sunflower bread that stands up to the fermented and garum-led seasoning rather than getting lost in it."
+            }
+          ]
+        },
+        "realCost": {
+          "intro": "BYOW keeps the drinks cost separate from the restaurant bill.",
+          "lines": [
+            {
+              "item": "Food for two, full meal",
+              "amount": "~$160 before tax"
+            },
+            {
+              "item": "Wine",
+              "amount": "whatever you paid for the bottle"
+            }
+          ],
+          "total": {
+            "label": "Per person, food only",
+            "amount": "~$80"
+          },
+          "howToSpendLess": "Worth noting: even with a full order you might not leave full. That's the honest caveat on the value."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "I enjoyed the food but I wouldn't call it outstanding, and it isn't at the top of my recommendations. The biggest issue is portion size. You can also argue the plates feel expensive for the quantity, especially if you don't appreciate the time behind the garums, cheongs and ferments. For some people that will limit the experience."
+        },
+        "beforeYouBook": [
+          {
+            "question": "How far ahead do I need to book?",
+            "answer": "Easy in my experience. Still recommended Friday and Saturday, and prime slots do go."
+          }
+        ]
+      },
+      "fr-CA": {
+        "slug": "othym",
+        "opening": "Le chef Noé Lainesse cuisine les produits de saison du Québec sur la rue Atateken, dans le Village, dans une salle où tu apportes ton vin, menée avec son partenaire de salle Kevin Duguay.",
+        "cuisine": "Saisonnier québécois, apportez votre vin",
+        "paymentDisclosure": "Payé",
+        "verdictHeadline": "Une vraie cuisine d'ingrédients et une facture allégée par le vin apporté, avec des portions qui ne rassasieront pas tout le monde",
+        "verdictReason": "Axé sur l'ingrédient, rustique et réfléchi, avec une bonne partie des saveurs bâties maison grâce aux fermentations.",
+        "essentials": {
+          "address": "1257 rue Atateken, Montréal, QC H2L 3K9",
+          "cost": "~80 $ nourriture seulement",
+          "canYouTalk": "Oui, facilement",
+          "booking": "Recommandé ven et sam",
+          "duration": "2 h"
+        },
+        "room": "Chaleureux et direct. Une salle à manger de quartier où le focus reste sur ce qu'il y a dans l'assiette. Ça ressemble plus à un excellent restaurant local qu'à une destination pour grande occasion, et c'est exactement pourquoi ça fonctionne.\n\nL'éclairage est chaud et détendu, le niveau sonore est bas à moyen. Une table à deux si tu veux un souper tranquille, une plus grande si tu fais un BYOB avec des amis. La salle compte maintenant environ soixante-dix places, plus grande et plus lumineuse que l'ancienne adresse.",
+        "meetChef": {
+          "name": "Noé Lainesse",
+          "role": "Chef et copropriétaire",
+          "background": "Noé Lainesse est chef et copropriétaire, et Kevin Duguay s'occupe de la salle. Les deux ont racheté la fondatrice Nadine Tessier en 2023, après vingt ans d'activité sous le nom O'Thym, et ils ont depuis déménagé le restaurant sur la rue Atateken.\n\nLa cuisine fonctionne avec une chaîne d'approvisionnement strictement locale et un vrai respect pour les producteurs québécois, et les distinctions le confirment : une recommandation du Guide Michelin, Restaurateur Aliments du Québec au menu en 2022, et l'adhésion à Fourchette Bleue et à Table Ronde. Rien de tout ça n'est porté lourdement.",
+          "approach": "Ce que tu goûtes, c'est le travail maison. Ils font leur propre garum, une sauce fermentée savoureuse de la famille de la sauce de poisson, et du cheong, un sirop de fruits à la coréenne fait en macérant des fruits avec du sucre, en plus de leurs propres mélanges d'épices. C'est de là que vient la profondeur des sauces, et c'est pourquoi les assiettes goûtent comme les leurs plutôt que comme un menu saisonnier que n'importe qui pourrait écrire."
+        },
+        "drinks": {
+          "intro": "Toute la section boissons se résume ici à une décision : quelle bouteille tu apportes.",
+          "picks": [
+            {
+              "moment": "to-start",
+              "name": "Apporte une bouteille avec de l'acidité",
+              "note": "Un Chenin Blanc, un Riesling, un Gamay ou un Pinot Noir peuvent fonctionner avec les légumes, le poisson et les plats plus riches."
+            },
+            {
+              "moment": "with-the-meal",
+              "name": "Une bouteille suffit généralement",
+              "note": "À un rythme de souper normal. Commence avec un blanc et ajoute un rouge léger seulement si tu vois quelque chose de plus riche au tableau."
+            }
+          ],
+          "list": "Une option locale : apporte un vin, un cidre ou une bière de saison du Québec.\n\nCôté pratique : sers les rouges un peu plus frais que tu penses, et dis au personnel ce que tu as apporté pour qu'il te dirige vers les assiettes qui s'accordent. Expérience Bière est à quelques pas pour les vins et les bières du Québec."
+        },
+        "whatToOrder": {
+          "waitersChoice": {
+            "recommendation": "Demande ce qui les enthousiasme ce soir-là.",
+            "outcome": "Les menus comme celui-ci sont bâtis autour de ce qui est le meilleur en ce moment, et laisser la cuisine guider, c'est le bon move. Si un serveur te pointe une assiette incontournable, c'est généralement l'extra qui vaut la peine."
+          },
+          "strategy": "Le menu change, alors traite la visite comme un instantané saisonnier plutôt que d'arriver avec une commande fixe.\n\nUne note sur le style de commande. D'habitude, j'aime commander plein de trucs et partager. Ce n'était pas satisfaisant ici parce que les portions sont serrées. Une assiette par personne par service a mieux marché.",
+          "dishes": [
+            {
+              "name": "Têtes de violon",
+              "tag": "order-this",
+              "note": "Des têtes de violon traitées comme une vraie vedette saisonnière, avec ce croquant vert vif et une légère amertume agréable, arrondies avec oeuf de canard, bisque de crabe et chapelure fumée. Ça goûte le printemps québécois, la bisque ajoute de la profondeur et la chapelure fumée du croquant."
+            },
+            {
+              "name": "Langue de bœuf",
+              "tag": "order-this",
+              "note": "Langue de bœuf cuite bien tendre, relevée de tomate, de renouée du Japon et d'une finition sauce vierge. Riche et soyeuse, avec l'acidité et la fraîcheur herbacée de l'huile d'olive qui la gardent énergique plutôt que lourde."
+            },
+            {
+              "name": "Mozzarella de bufflonne",
+              "tag": "worth-it",
+              "note": "Froide et crémeuse avec aubergine, choux-rave et estragon. Riche et laiteuse sans être lourde. Pas de fla-fla : c'est plus un test de qualité, et un test bien équilibré signale une cuisine qui comprend la retenue."
+            },
+            {
+              "name": "Maitake à Simon",
+              "tag": "worth-it",
+              "note": "Caramélisés sur les bords, juteux au centre, avec riz sauvage, carotte et tournesol. Terreux et substantiel même si la portion n'est pas grande."
+            },
+            {
+              "name": "Tartelette de crevettes nordiques",
+              "tag": "worth-it",
+              "note": "Une croûte croustillante contre des crevettes sucrées et iodées, avec kiwis nordiques, fenouil et agastache qui gardent ça vif et léger."
+            },
+            {
+              "name": "Baba",
+              "tag": "worth-it",
+              "note": "Un gâteau imbibé avec des betteraves noires qui apportent une douceur profonde, presque comme de la mélasse, plus proche de l'ail noir que du sucre. Garde le dessert intéressant."
+            },
+            {
+              "name": "Pain bio seigle et tournesol",
+              "tag": "worth-it",
+              "note": "Un pain au seigle et au tournesol, noiseteux et terreux, qui tient tête à l'assaisonnement fermenté et au garum plutôt que de s'y perdre."
+            }
+          ]
+        },
+        "realCost": {
+          "intro": "Apporter ton vin garde le coût des boissons à part de la facture du restaurant.",
+          "lines": [
+            {
+              "item": "Nourriture pour deux, repas complet",
+              "amount": "~160 $ avant taxes"
+            },
+            {
+              "item": "Vin",
+              "amount": "ce que tu as payé pour la bouteille"
+            }
+          ],
+          "total": {
+            "label": "Par personne, nourriture seulement",
+            "amount": "~80 $"
+          },
+          "howToSpendLess": "À noter : même avec une commande complète, tu pourrais ne pas repartir rassasié. C'est la nuance honnête sur la valeur."
+        },
+        "reportersNote": {
+          "byline": "Victor",
+          "visits": 1,
+          "caveat": "J'ai aimé la bouffe, mais je ne dirais pas qu'elle est exceptionnelle, et elle n'est pas en tête de mes recommandations. Le plus gros problème, c'est la taille des portions. On peut aussi argumenter que les assiettes semblent chères pour la quantité, surtout si tu n'apprécies pas le temps derrière les garums, les cheongs et les fermentations. Pour certaines personnes, ça va limiter l'expérience."
+        },
+        "beforeYouBook": [
+          {
+            "question": "Combien de temps d'avance faut-il réserver?",
+            "answer": "Facile selon mon expérience. Quand même recommandé le vendredi et le samedi, et les meilleures plages partent."
+          }
+        ]
+      }
+    }
+  }
+]

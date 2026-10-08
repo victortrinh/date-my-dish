@@ -1,0 +1,724 @@
+{
+  "slug": "othym",
+  "records": [
+    "othym"
+  ],
+  "notion": {
+    "pageId": "a6d7eb1b-98f4-4df9-9c1c-7271bded63da",
+    "number": 81,
+    "postType": "Restaurant Reviews",
+    "status": "Published",
+    "title": "Othym Review: Seasonal Québec Cooking and BYOW Details",
+    "borough": "Ville-Marie",
+    "publishDate": null,
+    "lastEditedTime": 1790222118191
+  },
+  "metadata": {
+    "URL": "/en/reviews/village/othym/",
+    "Slug": "othym",
+    "Meta title": "Othym, the Village: BYOB Review & Date Guide",
+    "Meta desc": "Noé Lainesse's seasonal Québec cooking on rue Atateken in the Village, and you bring the wine. What to order, what it costs, and how to plan the night.",
+    "H1": "Othym, the Village",
+    "Verdict state": "conditional",
+    "Cuisine": "Québec seasonal, bring your own wine",
+    "Address": "1257 rue Atateken, Montreal, QC H2L 3K9",
+    "Price range": "$$$. About $160 for two, food only, before tax",
+    "Instagram": "@othymmtl",
+    "Website": "https://www.othym.com",
+    "Phone": "514-525-3443",
+    "Hours": "Daily from 17:30",
+    "Visited": "2026",
+    "Checked": "September 2026"
+  },
+  "sections": [
+    {
+      "heading": null,
+      "level": 0,
+      "section": null,
+      "label": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "REVIEW · THE VILLAGE"
+        }
+      ]
+    },
+    {
+      "heading": "Othym",
+      "level": 1,
+      "section": "opening",
+      "label": "H1 and opening",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Chef Noé Lainesse cooks seasonal Québec produce on rue Atateken in the Village, in a bring-your-own-wine room run with front-of-house partner Kevin Duguay."
+        },
+        {
+          "kind": "paragraph",
+          "text": "By Victor · Published [DATE] · Checked September 2026"
+        }
+      ]
+    },
+    {
+      "heading": "The verdict",
+      "level": 2,
+      "section": "verdict",
+      "label": "The verdict (verdictHeadline, verdict reason)",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "DEPENDS ON THE NIGHT"
+        },
+        {
+          "kind": "subheading",
+          "text": "Serious ingredient cooking and a BYOW bill, with portions that will not fill everyone"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Ingredient-driven, rustic and thoughtful, with a lot of the flavour built in-house through ferments. Bringing your own bottle keeps the total under control. The catch is quantity: even ordering what felt like a full meal for two, around $160 before tax, I left a bit unfilled. If you or your date has a big appetite, factor that in."
+        }
+      ]
+    },
+    {
+      "heading": "Good for",
+      "level": 2,
+      "section": "goodFor",
+      "label": "Good for",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "Occasion",
+              "",
+              "Why"
+            ],
+            [
+              "First date",
+              "Ideal",
+              "Relaxed, not intimidating, and bringing a bottle you chose makes it feel personal rather than transactional."
+            ],
+            [
+              "Anniversary",
+              "Ideal",
+              "A low-key milestone done properly. Bring a bottle that means something and let the food carry the rest."
+            ],
+            [
+              "Impressing a cook",
+              "Ideal",
+              "Garums, cheongs and house spice blends, and you can taste the work in the sauces."
+            ],
+            [
+              "Double date",
+              "Ideal",
+              "BYOW with friends is the best version of this room."
+            ],
+            [
+              "Casual midweek",
+              "Works, with a caveat",
+              "BYOW lowers the drinks cost, but dinner still takes about two hours."
+            ],
+            [
+              "Late night",
+              "Not the one",
+              "A full two-hour dinner, and bring-your-own puts a shop's closing time on your evening too, since you need the bottle in hand before you sit down."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The room",
+      "level": 2,
+      "section": "room",
+      "label": "The room",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "[PHOTO: dining room, wide]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Warm and straightforward. A neighbourhood dining room where the focus stays on what's on the plate. It feels more like a great local restaurant than a special-occasion destination, which is exactly why it works."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Lighting is warm and relaxed, noise sits low to medium. A cosy two-top if you want a calm date; a bigger table if you're doing BYOW with friends. The room is now around seventy seats, larger and brighter than the old address."
+        }
+      ]
+    },
+    {
+      "heading": "Meet the chef",
+      "level": 2,
+      "section": "meetChef",
+      "label": "Meet the chef",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "[PORTRAIT: Noé Lainesse. Photo credit needed.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Noé Lainesse is chef and co-owner, with Kevin Duguay running the dining room. The two of them bought out founder Nadine Tessier in 2023, after the restaurant had spent twenty years trading as O'Thym, and they have since moved it to rue Atateken."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The kitchen works on a strictly local supply chain with real respect for Québec producers, and the credentials back it up: a Michelin Guide recommendation, Restaurateur Aliments du Québec au menu in 2022, and membership of Fourchette Bleue and Table Ronde. None of it is worn heavily."
+        },
+        {
+          "kind": "quote",
+          "text": "[PULL QUOTE NEEDED. Recorded speech only.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "What you taste is the in-house work. They make their own garum, a fermented savoury sauce in the fish-sauce family, and cheong, a Korean-style fruit syrup made by macerating fruit with sugar, plus their own spice blends. That is where the depth in the sauces comes from, and it's the reason the plates taste like theirs rather than like a seasonal menu anyone could write."
+        },
+        {
+          "kind": "paragraph",
+          "text": "[LINK: Noé Lainesse's recipe card. Needs the interview.]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "The drinks",
+      "level": 2,
+      "section": "drinks",
+      "label": "The drinks",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The whole drinks section here is one decision: which bottle you bring."
+        },
+        {
+          "kind": "paragraph",
+          "text": "To start — bring one bottle with acidity. Chenin Blanc, Riesling, Gamay or Pinot Noir can work across vegetables, fish and richer mains."
+        },
+        {
+          "kind": "paragraph",
+          "text": "With the meal — one bottle is usually enough at a normal dinner pace. Start with a white and add a light red only if a richer main appears on the board."
+        },
+        {
+          "kind": "paragraph",
+          "text": "A local option — bring a Québec wine, cider or bière de saison."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Practical: serve reds slightly cooler than you think, and tell the staff what you brought so they can point you at the dishes that match. Expérience Bière is a short walk away for Québec wines and beers."
+        }
+      ]
+    },
+    {
+      "heading": "What to order",
+      "level": 2,
+      "section": "whatToOrder",
+      "label": "What to order",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The menu changes, so treat it as a seasonal snapshot rather than arriving with a fixed order."
+        },
+        {
+          "kind": "quote",
+          "text": "THE WAITER'S CHOICE — partly answered. Ask what they're most excited about today. Menus like this are built around what's best right now, and letting the kitchen steer is the right move. If a server points out a must-have plate, that's usually the add-on worth taking."
+        },
+        {
+          "kind": "paragraph",
+          "text": "One note on ordering style. I normally like ordering a spread and sharing. It wasn't satisfying here because the portions are tight. One plate per person per service worked better."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Têtes de violon — Order this"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Fiddleheads treated as a real seasonal feature, with that bright green snap and a pleasant edge of bitterness, rounded out with duck egg, crab bisque and smoked breadcrumbs. Tastes like Québec spring, with the bisque adding depth and the chapelure fumée adding crunch."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Langue de bœuf — Order this"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Beef tongue cooked properly tender, brightened with tomato, Japanese knotweed and a sauce vierge finish. Rich and silky, with acidity and herbal olive-oil freshness keeping it energetic rather than heavy."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Mozzarella de bufflonne — Worth it"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Cold and creamy with aubergine, kohlrabi and tarragon. Rich and milky without being heavy. Not flashy: more of a quality check, and a well-balanced one signals a kitchen that understands restraint."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Maitake à Simon — Worth it"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Caramelised at the edges, juicy in the centre, with wild rice, carrot and sunflower. Earthy and substantial even though the portion isn't large."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tartelette de crevettes nordiques — Worth it"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Crisp shell against sweet, briny shrimp, with kiwi nordiques, fennel and agastache keeping it bright and lifted."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Baba — Worth it"
+        },
+        {
+          "kind": "paragraph",
+          "text": "A soaked cake with black beets bringing a deep, almost molasses sweetness, closer to black garlic than to sugar. Keeps the dessert interesting."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Pain bio seigle et tournesol — Worth it"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nutty, earthy rye and sunflower bread that stands up to the fermented and garum-led seasoning rather than getting lost in it."
+        }
+      ]
+    },
+    {
+      "heading": "The real cost",
+      "level": 2,
+      "section": "realCost",
+      "label": "The real cost",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "BYOW keeps the drinks cost separate from the restaurant bill."
+        },
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "",
+              ""
+            ],
+            [
+              "Food for two, full meal",
+              "~$160 before tax"
+            ],
+            [
+              "Wine",
+              "whatever you paid for the bottle"
+            ],
+            [
+              "Per person, food only",
+              "~$80"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "Worth noting: even with a full order you might not leave full. That's the honest caveat on the value."
+        }
+      ]
+    },
+    {
+      "heading": "My note",
+      "level": 2,
+      "section": "reportersNote",
+      "label": "My note",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Victor · one visit, 2026 · paid"
+        },
+        {
+          "kind": "subheading",
+          "text": "The part that's just my opinion"
+        },
+        {
+          "kind": "paragraph",
+          "text": "[THE THING THAT STAYED WITH YOU.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "The honest caveat, carried from your original: I enjoyed the food but I wouldn't call it outstanding, and it isn't at the top of my recommendations. The biggest issue is portion size. You can also argue the plates feel expensive for the quantity, especially if you don't appreciate the time behind the garums, cheongs and ferments. For some people that will limit the experience."
+        },
+        {
+          "kind": "quote",
+          "text": "UPDATE · [MONTH YEAR]"
+        },
+        {
+          "kind": "quote",
+          "text": "[Add a line if anything changes.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Victor"
+        }
+      ]
+    },
+    {
+      "heading": "Make a night of it",
+      "level": 2,
+      "section": "makeANight",
+      "label": "Make a night of it",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Arts and Culture — Musée des beaux-arts"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before · [X] min · Free under 26"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Wednesday to 9pm is the date version."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Games and Entertainment — Cinémathèque québécoise"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before · 10 min walk · $14"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Archive cinema in the Quartier Latin. Arrive early; latecomers are not admitted."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nature and Scenic — Parc La Fontaine"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before or after · [X] min · Free"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Named in the original draft both ways, and the right walk for this room."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Activities and Sports — Bota Bota"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before · [X] min · $$$"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The spa boat, for a longer day."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Social and Romantic — [SPOT NEEDED]"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sainte-Catherine is named in the original for a last drink, and Expérience Bière is the BYOW stop. Either could carry a page."
+        },
+        {
+          "kind": "paragraph",
+          "text": "[TILE: Open the Village guide]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "What the chef cooks at home",
+      "level": 2,
+      "section": "atHome",
+      "label": "What the chef would make for a date night",
+      "blocks": [
+        {
+          "kind": "quote",
+          "text": "SLOT EMPTY. Needs the closing question put to Lainesse."
+        }
+      ]
+    },
+    {
+      "heading": "Before you book",
+      "level": 2,
+      "section": "beforeYouBook",
+      "label": "Before you book",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "How far ahead do I need to book?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Easy in my experience. Still recommended Friday and Saturday, and prime slots do go."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Can they handle dietary restrictions?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "[ANSWER NEEDED.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Is there parking, or should we take the metro?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "[ANSWER NEEDED. Beaudry is closest.]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "The essentials card",
+      "level": 2,
+      "section": "essentials",
+      "label": "The essentials card",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "",
+              ""
+            ],
+            [
+              "Our take",
+              "Depends on the night"
+            ],
+            [
+              "Cuisine",
+              "Québec seasonal, BYOW"
+            ],
+            [
+              "Neighbourhood",
+              "The Village"
+            ],
+            [
+              "Per person",
+              "~$80 food only"
+            ],
+            [
+              "Can you talk?",
+              "Yes, easily"
+            ],
+            [
+              "Booking",
+              "Recommended Fri and Sat"
+            ],
+            [
+              "Allow",
+              "2 hours"
+            ],
+            [
+              "Address",
+              "1257 rue Atateken"
+            ],
+            [
+              "Instagram",
+              "@othymmtl"
+            ],
+            [
+              "Google reviews",
+              "[RATING AND COUNT NEEDED, dated]"
+            ]
+          ]
+        },
+        {
+          "kind": "callout",
+          "lines": [
+            "INTERNAL. Delete before publishing.",
+            "It moved, to 1257 rue Atateken, and you visited the new room, so the description is current.",
+            "The apostrophe is gone. Othym, not O'Thym. Writing the old spelling dates the post.",
+            "Nadine Tessier is the founder, bought out in 2023. Not a current owner.",
+            "Borough is Ville-Marie, in the Village. The Main tags it Plateau, which is wrong.",
+            "Michelin recommended, no star.",
+            "Brigade names beyond Lainesse and Duguay come from Tastet only. Don't print head chef or pastry names without checking."
+          ],
+          "note": true
+        }
+      ]
+    }
+  ],
+  "photos": [],
+  "legacy": {
+    "name": "othym-montreal",
+    "en": {
+      "texts": [
+        "Othym: Montréal's BYOB Seasonal Standout",
+        "Othym review (8/10): One of Montreal's best BYOB restaurants. Seasonal Quebec cooking at fair prices, with attentive service. What to order and where to sit.",
+        "Seasonal dishes at Othym, a Michelin-recommended BYOB restaurant in Montreal's Village featuring ingredient-driven Quebec cooking",
+        "Othym",
+        "The Village (Ville-Marie)",
+        "1112 Rue Sainte-Catherine Est, Montréal, QC H2L 2G8",
+        "Seasonal, Quebec Producers",
+        "Food-first dates",
+        "Low-key celebrations",
+        "BYOB nights with friends",
+        "~$80+ CAD",
+        "Recommended for Fri-Sat. Check ahead for prime-time slots.",
+        "Mozzarella de bufflonne",
+        "Fresh buffalo mozzarella with aubergine, kohlrabi, and tarragon: rich and milky without flattening your palate, a quality-check opener that the kitchen passes easily",
+        "Têtes de violon",
+        "Fiddleheads at peak season with duck egg, crab bisque, and smoked breadcrumbs: tastes like Quebec spring distilled into one plate",
+        "Tartelette de crevettes nordiques",
+        "Crisp shell, sweet Nordic shrimp, fennel, and agastache: a small bite that stays bright and lifted from first to last",
+        "Langue de boeuf",
+        "Beef tongue cooked to silky perfection, brightened with tomato, Japanese knotweed, and a sauce vierge finish: rich without being heavy",
+        "Maitake à Simon",
+        "Hen of the Woods mushrooms with wild rice, carrot, and sunflower: earthy, umami-forward, and more satisfying than the portion suggests",
+        "Dessert baba",
+        "Baba-style soaked cake with black beets bringing a deep, molasses-like sweetness that keeps the finale interesting rather than just sweet",
+        "First Date",
+        "Relaxed, not intimidating, and the BYOB setup makes the night feel personal rather than performative",
+        "Anniversary",
+        "Great for a low-key milestone when you want a special meal without the full fine-dining ceremony; bring a bottle that means something",
+        "Impressing a Food Lover",
+        "Seasonal plates and real technique, but portion size may underwhelm guests who expect to leave full",
+        "Is Othym a good restaurant for a date night in Montreal?",
+        "It's a strong pick for a food-first date or a quiet anniversary. The BYOB setup makes the night feel personal, and the relaxed room keeps conversation easy. Just know the portions run small: come with adjusted expectations if you or your date usually leave dinner still looking for more.",
+        "What should I bring to drink at Othym?",
+        "One bottle with good acidity does the trick. Chenin Blanc, Riesling, or a light Gamay all hold up across the whole menu without fighting the vegetables, fermented sauces, or seafood. For the Montreal move, Expérience Bière is a short walk away and usually has something local worth carrying in.",
+        "How much does dinner at Othym cost for two people?",
+        "Plan for around $160 CAD before tax for a full meal, plus whatever you bring to drink and a tip. The value feels real because BYOB keeps the alcohol budget in your hands, but the portions run tight. If appetite is a factor at your table, a small snack before or a dessert stop after might be a smart move.",
+        "Othym sits in the heart of Montréal's Village, led by chef Noé Lainesse with front-of-house partner Kevin Duguay. The vibe is relaxed, but the intention is serious: healthy, responsible cooking built on a local supply chain and a real respect for Québec producers. They've earned a Michelin Guide recommendation in 2025, membership in Fourchette Bleue, and a \"Restaurateur - Aliments du Québec au menu\" designation in 2022, none of which feel arrogant. It reads more like a neighborhood restaurant that happens to have a very dialed point of view. They're also proudly BYOB, which adds a personal layer to the meal and keeps the alcohol budget entirely in your hands.",
+        "The Vibe",
+        "Othym is warm and straightforward: a neighborhood dining room where the focus stays on what's on the plate. Lighting is warm, noise sits at low to medium, and you can hold a proper conversation without leaning in. It feels more like a great local restaurant than a special-occasion destination, which is exactly why it works for a date that doesn't need to perform.",
+        "Best seats: a cozy two-top if you want a calm dinner, a larger table if you're doing BYOB with friends. Dress code is casual. The energy rewards showing up at your own pace.",
+        "What to Order",
+        "Othym is a menu-that-changes kind of place. Instead of coming in with a fixed order, treat the visit like a seasonal snapshot: ask what they're most excited about that night and let the kitchen steer from there.",
+        "One note on ordering style: I love the \"order a bunch and share\" model, but I didn't find it that satisfying here because the portions are small. If you want the meal to have a real flow and each course to actually land, go with one plate per person per service rather than splitting everything.",
+        "The move: one dish per person per service, server-guided add-on only if something genuinely sounds right, and one bottle with bright acidity for the table. That structure keeps the pacing clean and makes sure nobody leaves still looking for dessert that never arrived.",
+        "The Dishes",
+        "The kitchen does its own fermentations, and it shows in the depth of the sauces. They use garum (a fermented, umami-rich sauce descended from ancient fish sauce), cheong (a Korean-style fruit syrup for clean, bright sweetness), and their own house spice blends that make certain plates taste distinctly like theirs.",
+        "Mozzarella de bufflonne: Fresh buffalo mozzarella, served cold and creamy alongside aubergine, choux-rave (kohlrabi), and estragon. It sets the tone for the whole meal: rich and milky but not heavy, with eggplant bringing depth, kohlrabi adding crunch, and tarragon giving a clean herbal lift. Not trying to be flashy. It's more of a quality check, and this one passes.",
+        "Têtes de violon: Fiddleheads treated like a true seasonal feature, with that bright green snap and a hint of pleasant bitterness, then rounded out with duck egg, crab bisque, and smoked breadcrumbs. It tastes very \"Québec spring,\" the bisque adds real depth, and the smoked chapelure brings a savory crunch that makes the plate feel complete.",
+        "Tartelette de crevettes nordiques: A small tartlet topped with sweet Nordic shrimp, built around the contrast of a crisp shell and delicate briny-sweet seafood. Kiwis nordiques, fennel, and agastache keep it bright and aromatic, so the bite stays clean and lifted rather than getting weighed down.",
+        "Langue de boeuf: Beef tongue cooked until properly tender, then brightened with tomato, renouée du Japon (Japanese knotweed), and a sauce vierge finish. Rich and meaty with that unmistakably silky texture, but the acidity and herbal freshness from the sauce keep it energetic rather than heavy. One of the better plates of the night.",
+        "Pain bio seigle et tournesol: Organic rye and sunflower bread that leans nutty, earthy, and hearty. Especially good alongside the savory and fermented plates, because the grain and seeds hold up to deeper seasoning without getting lost.",
+        "Maitake à Simon: Hen of the Woods mushrooms cooked until the edges caramelize and the center stays juicy, paired with wild rice, carrot, and sunflower. Maitake carries a lot of natural umami, and with the chew from the rice plus the sweetness and nuttiness from the veg and seeds, the plate feels earthy and substantial even when the portion isn't huge.",
+        "Dessert baba: A baba-style soaked cake with black beets bringing a deep, almost molasses-like sweetness. That \"black\" treatment gives a darker, more complex finish similar to black garlic, which keeps the dessert interesting rather than just tasting like sugar.",
+        "The Drinks",
+        "This is where Othym can become a genuinely great date-night spot: you can bring something you actually love, keep the budget exactly where you want it, and a bottle you chose instantly makes the evening feel more personal than any sommelier pick could.",
+        "What to bring: Crisp whites with acidity (Chenin Blanc, Riesling, anything dry with a cider-like brightness) work well across vegetable-forward plates and anything fermented or tangy. Light reds with freshness (Gamay, Pinot Noir, light Cabernet Franc) are the right call if the menu swings toward mushrooms, duck, or richer mains.",
+        "For two, one bottle is usually enough at a normal dinner pace. If you want to level it up: start with a white and add a light red only if you see something richer on the board. Serve it slightly cooler than you think, especially reds. It keeps things flexible across the whole menu. And if you're not sure what you brought matches the food, tell the staff. They can usually point you toward the best-fitting dishes that night. For the local move, Expérience Bière is a short walk away and tends to have good Quebec wine and cider options.",
+        "The Real Cost",
+        "Othym tends to feel like strong value because BYOB keeps the total under control. Food for two runs around $160 CAD before tax for a full meal. Add your bottle and tip generously on the food total.",
+        "Worth knowing going in: even after what felt like a full meal order, I didn't leave completely full. It wasn't a problem for me, but if you're dining with someone who has a bigger appetite, there's a real chance they won't feel entirely satisfied. You can argue the plates feel expensive for the quantity, especially if you don't fully appreciate the craft behind the techniques (garums, cheongs, fermentations) that take significant time and prep. Know what you're signing up for, and the value proposition makes sense.",
+        "Before and After",
+        "Othym sits in an easy neighborhood to build a full night around, without over-planning.",
+        "Before dinner: a walk through Parc La Fontaine to switch off work-brain, or a slow stroll down Saint-Denis to window shop and ease into the evening. Both land you at dinner feeling like the night already started.",
+        "After dinner: Parc La Fontaine works again for a post-meal walk if the weather is right. Or one last drink on Sainte-Catherine to keep it casual and stretch the evening a little longer. Neither requires a reservation.",
+        "Is It a Date Spot?",
+        "For a first date, yes. The room is relaxed and never intimidating, and BYOB makes the night feel personal rather than performative. A 4/5.",
+        "For an anniversary, also yes, especially when you want a special meal without the full fine-dining ceremony. Bring a bottle that means something, let the food do the rest. Another 4/5.",
+        "If you're trying to impress someone who really cares about food, it's a 3/5. The seasonal plates and real technique are there, but portion size may underwhelm guests who expect to leave the table full.",
+        "Othym scores 8 out of 10 as a date-night restaurant. It's not the place for a jaw-drop moment, and it won't fill you up like a big comforting dinner. But when you want to sit across from someone with a bottle you picked, plates that reflect what's actually growing right now, and a kitchen that takes its work seriously without announcing it, Othym delivers that better than almost anywhere in the city.",
+        "For a completely different vibe but the same level of intention, [Giwa in Verdun](/en/reviews/giwa-verdun-montreal/) is worth adding to the rotation. But when you want someone else to do the work, Othym is worth the call."
+      ],
+      "headings": [
+        "The Vibe",
+        "What to Order",
+        "The Dishes",
+        "The Drinks",
+        "The Real Cost",
+        "Before and After",
+        "Is It a Date Spot?"
+      ]
+    },
+    "fr": {
+      "texts": [
+        "Othym : La Table BYOB Saisonnière de Montréal",
+        "Avis Othym (8/10) : un des meilleurs apportez votre vin à Montréal. Cuisine de saison, prix justes et service attentionné. Quoi commander et où s'asseoir.",
+        "Assiettes saisonnières au restaurant Othym dans le Village de Montréal, BYOB recommandé Michelin et cuisine du terroir québécois",
+        "Othym",
+        "Le Village (Ville-Marie)",
+        "1112 Rue Sainte-Catherine Est, Montréal, QC H2L 2G8",
+        "Saisonnier, producteurs québécois",
+        "Soupers gastronomiques décontractés",
+        "Petites célébrations",
+        "Soirées BYOB entre amis",
+        "~80$+ CAD",
+        "Recommandé du vendredi au samedi. Vérifiez à l'avance pour les plages horaires les plus prisées.",
+        "Mozzarella de bufflonne",
+        "Mozzarella fraîche de bufflonne avec aubergine, choux-rave et estragon : riche et crémeuse sans alourdir le palais, un premier service qui confirme que la cuisine comprend la retenue",
+        "Têtes de violon",
+        "Têtes de violon à leur apogée saisonnière avec oeuf de canard, bisque de crabe et chapelure fumée : le printemps québécois en une seule assiette",
+        "Tartelette de crevettes nordiques",
+        "Croûte croustillante, crevettes nordiques sucrées, fenouil et agastache : une petite bouchée qui reste vive et légère jusqu'à la fin",
+        "Langue de boeuf",
+        "Langue de boeuf cuite à la perfection soyeuse, dynamisée avec tomate, renouée du Japon et sauce vierge : riche sans être pesant",
+        "Maitake à Simon",
+        "Champignons maitake avec riz sauvage, carotte et tournesol : terreux, umami et plus rassasiant que la portion ne le laisse croire",
+        "Dessert baba",
+        "Baba imbibé avec betterave noire apportant une douceur profonde et presque mélassée qui rend la finale intéressante plutôt que simplement sucrée",
+        "Premier rendez-vous",
+        "Détendu, pas intimidant, et le BYOB donne à la soirée un côté personnel plutôt que performatif",
+        "Anniversaire",
+        "Idéal pour un moment à souligner sans la cérémonie complète de la gastronomie formelle; apporte une bouteille qui a du sens",
+        "Impressionner un amateur de bouffe",
+        "Les assiettes saisonnières et la vraie technique sont là, mais les portions peuvent décevoir ceux qui veulent partir repus",
+        "Est-ce qu'Othym est un bon restaurant pour un souper en amoureux à Montréal?",
+        "C'est un solide choix pour un souper gastronomique décontracté ou un anniversaire tranquille. Le BYOB donne à la soirée un côté personnel, et la salle détendue garde la conversation facile. Sache juste que les portions sont petites : viens avec des attentes ajustées si toi ou ta date avez habituellement besoin d'une assiette bien remplie pour être satisfaits.",
+        "Quoi apporter à boire au restaurant Othym?",
+        "Une bouteille avec de la bonne acidité fait le travail. Un Chenin Blanc, un Riesling ou un léger Gamay tiennent bien sur l'ensemble du menu sans se battre avec les légumes, les sauces fermentées ou les fruits de mer. Pour le move montréalais, Expérience Bière est à quelques pas et a généralement quelque chose de local qui vaut la peine d'être apporté.",
+        "Combien coûte un souper à Othym pour deux personnes?",
+        "Prévois environ 160$ CAD avant taxes pour un repas complet, plus ta bouteille et le pourboire. La valeur est réelle parce que le BYOB garde le budget alcool entre tes mains, mais les portions peuvent être serrées. Si l'appétit est un facteur à ta table, une petite collation avant ou un arrêt dessert après pourrait être un bon plan.",
+        "Othym est en plein coeur du Village de Montréal, mené par le chef Noé Lainesse avec le partenaire de salle Kevin Duguay. L'ambiance est détendue, mais l'intention est sérieuse : une cuisine saine, responsable, construite sur une chaîne d'approvisionnement strictement locale et un vrai respect pour les producteurs québécois. Ils ont obtenu une recommandation du Guide Michelin en 2025, une adhésion à Fourchette Bleue, et la distinction \"Restaurateur - Aliments du Québec au menu\" en 2022, sans que rien de tout ça ne semble arrogant. Ça ressemble plutôt à un restaurant de quartier qui se trouve avoir un point de vue très précis. Ils sont aussi fièrement BYOB, ce qui ajoute une couche personnelle au repas et garde le budget alcool entièrement entre tes mains.",
+        "L'ambiance",
+        "Othym est chaleureux et direct : une salle à manger de quartier où le focus reste sur ce qu'il y a dans l'assiette. L'éclairage est chaud, le niveau sonore est bas à moyen, et tu peux tenir une vraie conversation sans te pencher. Ça ressemble plus à un excellent restaurant local qu'à une destination pour grande occasion, et c'est exactement pourquoi ça fonctionne pour un souper qui n'a pas besoin de se donner en spectacle.",
+        "Meilleures places : une table à deux si tu veux un souper tranquille, une plus grande si tu fais un BYOB avec des amis. Code vestimentaire casual. L'énergie récompense ceux qui arrivent à leur propre rythme.",
+        "Quoi commander",
+        "Othym est le genre d'endroit dont le menu change selon les saisons. Plutôt que d'arriver avec une commande fixe, traite la visite comme un instantané saisonnier : demande ce qui les enthousiasme ce soir-là et laisse la cuisine guider.",
+        "Une note sur le style de commande : j'aime le modèle \"commande plein de trucs et partage\", mais je ne l'ai pas trouvé très satisfaisant ici parce que les portions sont petites. Si tu veux que le repas ait un vrai rythme et que chaque service atterrisse vraiment, va avec une assiette par personne par service plutôt que de tout partager.",
+        "Le move : une assiette par personne par service, un extra guidé par le serveur seulement si quelque chose sonne vraiment juste, et une bouteille avec de la bonne acidité pour la table. Cette structure garde le rythme propre et s'assure que personne ne repart encore à la recherche d'un dessert qui n'est jamais venu.",
+        "Les assiettes",
+        "La cuisine fait ses propres fermentations, et ça se sent dans la profondeur des sauces. Ils utilisent du garum (une sauce fermentée riche en umami, descendante de la sauce de poisson antique), du cheong (un sirop de fruit de style coréen pour une douceur propre et lumineuse), et leurs propres mélanges d'épices maison qui donnent à certaines assiettes une identité distinctement la leur.",
+        "Mozzarella de bufflonne : Mozzarella fraîche de bufflonne, servie froide et crémeuse avec aubergine, choux-rave et estragon. Elle donne le ton pour tout le repas : riche et laiteuse sans être lourde, avec l'aubergine qui apporte de la profondeur, le choux-rave qui ajoute du croquant, et l'estragon qui donne un relèvement herbacé propre. Pas de fla-fla. C'est plus un test de qualité, et celui-là est réussi.",
+        "Têtes de violon : Des têtes de violon traitées comme une vraie vedette saisonnière, avec ce croquant vert vif et une légère amertume agréable, arrondies avec oeuf de canard, bisque de crabe et chapelure fumée. Ça goûte beaucoup le \"printemps québécois\", la bisque ajoute une vraie profondeur, et la chapelure fumée apporte un croquant savoureux qui rend l'assiette complète.",
+        "Tartelette de crevettes nordiques : Une petite tartelette garnie de douces crevettes nordiques, construite autour du contraste entre une croûte croustillante et des fruits de mer délicats et légèrement iodés. Kiwis nordiques, fenouil et agastache gardent ça lumineux et aromatique, donc la bouchée reste propre et légère plutôt que de s'alourdir.",
+        "Langue de boeuf : Langue de boeuf cuite jusqu'à atteindre le moelleux parfait, puis dynamisée avec tomate, renouée du Japon et une finition sauce vierge. Riche et charnue avec cette texture soyeuse inimitable, mais l'acidité et la fraîcheur herbacée de la sauce gardent ça énergique plutôt que pesant. Une des meilleures assiettes de la soirée.",
+        "Pain bio seigle et tournesol : Du pain biologique au seigle et tournesol qui penche vers le noiseteux, le terreux et le consistant. Particulièrement bon à côté des assiettes savoureuses et fermentées, parce que le grain et les graines tiennent bien face à un assaisonnement plus profond sans se perdre.",
+        "Maitake à Simon : Des champignons maitake (poule des bois) cuits jusqu'à ce que les bords caramélisent et que le centre reste juteux, servis avec riz sauvage, carotte et tournesol. Le maitake porte naturellement beaucoup d'umami, et avec la mâche du riz plus la douceur et le côté noiseteux des légumes et graines, l'assiette se sent terreuse et substantielle même quand la portion n'est pas énorme.",
+        "Dessert baba : Un baba imbibé avec betteraves noires apportant une douceur profonde, presque comme de la mélasse. Ce traitement \"noir\" donne une douceur plus sombre et complexe similaire à l'ail noir, ce qui garde le dessert intéressant plutôt que simplement sucré.",
+        "Les boissons",
+        "C'est là qu'Othym peut devenir un spot de souper en amoureux vraiment bien : tu peux apporter quelque chose que tu aimes vraiment, garder le budget exactement où tu veux, et une bouteille que tu as choisie rend automatiquement la soirée plus personnelle que n'importe quel choix du sommelier.",
+        "Quoi apporter : Les blancs frais avec de l'acidité (Chenin Blanc, Riesling, tout ce qui est sec avec une vivacité proche du cidre) fonctionnent bien sur les assiettes axées légumes et tout ce qui est fermenté ou vif. Les rouges légers avec de la fraîcheur (Gamay, Pinot Noir, Cabernet Franc léger) sont le bon choix si le menu penche vers les champignons, le canard ou quelque chose de plus riche.",
+        "Pour deux, une bouteille suffit généralement à un rythme de souper normal. Si tu veux montée de niveau sans te compliquer : commence avec un blanc et ajoute un rouge léger seulement si tu vois quelque chose de plus riche au tableau. Sers-le un peu plus frais que tu penses, surtout pour les rouges. Ça garde le vin flexible sur l'ensemble du menu. Et si tu n'es pas sûr que ce que tu as apporté s'accorde à la bouffe, dis-le au personnel. Ils peuvent généralement te diriger vers les assiettes qui s'harmonisent le mieux ce soir-là. Pour le move local, Expérience Bière est à quelques minutes à pied et a généralement de bons vins et cidres québécois.",
+        "Le vrai coût",
+        "Othym tend à offrir une bonne valeur parce que le BYOB garde le total sous contrôle. La bouffe pour deux tourne autour de 160$ CAD avant taxes pour un repas complet. Ajoute ta bouteille et un pourboire généreux sur le total de nourriture.",
+        "À savoir avant d'y aller : même après ce qui semblait être une commande complète pour deux, je ne suis pas reparti complètement rassasié. Ce n'était pas un problème pour moi, mais si tu souperais avec quelqu'un qui a un plus grand appétit, il y a une bonne chance qu'il ou elle ne soit pas entièrement satisfaite. On peut argumenter que les assiettes semblent chères pour la quantité, surtout si tu n'apprécies pas pleinement le savoir-faire derrière les techniques (garums, cheongs, fermentations) qui demandent beaucoup de temps et de préparation. Sache dans quoi tu t'embarques, et la proposition de valeur a du sens.",
+        "Avant et après le souper",
+        "Othym est dans un quartier facile à transformer en soirée complète, sans trop planifier.",
+        "Avant le souper : une balade au Parc La Fontaine pour décrocher du mode boulot, ou une promenade tranquille sur Saint-Denis pour regarder les vitrines et se mettre dans l'ambiance. Les deux te font arriver à table en sentant que la soirée a déjà commencé.",
+        "Après le souper : le Parc La Fontaine refonctionne pour une marche digestive si la météo suit. Sinon, un dernier verre sur Sainte-Catherine pour garder ça décontracté et prolonger la soirée un peu. Aucun des deux ne demande de réservation.",
+        "C'est un spot de date?",
+        "Pour un premier rendez-vous, oui. La salle est détendue et jamais intimidante, et le BYOB donne à la soirée quelque chose de personnel plutôt que de performatif. Un 4/5.",
+        "Pour un anniversaire, aussi oui, surtout quand tu veux un repas spécial sans la cérémonie complète de la gastronomie formelle. Apporte une bouteille qui a du sens, laisse la bouffe faire le reste. Un autre 4/5.",
+        "Si tu essaies d'impressionner quelqu'un qui tient vraiment à la bouffe, c'est un 3/5. Les assiettes saisonnières et la vraie technique sont là, mais les portions peuvent décevoir ceux qui veulent repartir bien repus.",
+        "Othym récolte 8 sur 10 comme restaurant de souper en amoureux. Ce n'est pas l'endroit pour un coup de foudre gastronomique, et ça ne va pas te remplir comme un grand souper réconfortant. Mais quand tu veux t'asseoir en face de quelqu'un avec une bouteille que tu as choisie, des assiettes qui reflètent ce qui pousse vraiment en ce moment, et une cuisine qui prend son travail au sérieux sans l'annoncer, Othym livre ça mieux que presque n'importe quel endroit en ville.",
+        "Pour une vibe complètement différente mais le même niveau d'intention, [Giwa à Verdun](/fr/critiques/giwa-verdun-montreal/) mérite une place dans la rotation. Mais quand tu veux que quelqu'un d'autre fasse le travail, Othym vaut la peine de l'appel."
+      ],
+      "headings": [
+        "L'ambiance",
+        "Quoi commander",
+        "Les assiettes",
+        "Les boissons",
+        "Le vrai coût",
+        "Avant et après le souper",
+        "C'est un spot de date?"
+      ]
+    }
+  }
+}

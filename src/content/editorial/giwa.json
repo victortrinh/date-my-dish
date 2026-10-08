@@ -1,0 +1,76 @@
+{
+  "id": "giwa",
+  "spotType": "restaurant",
+  "reviewVerdict": "conditional",
+  "neighbourhood": "Verdun",
+  "instagram": "restaurant_giwa",
+  "locales": {
+    "en": {
+      "metaTitle": "Giwa, Verdun: Review & Date Night Guide",
+      "metaDescription": "Modern Korean on Promenade Wellington, pretty plates and clean technique. What to order, what it costs, and an honest note on the subtle flavours here.",
+      "verdictReason": "If you want a relaxed dinner with careful plating, it works.",
+      "goodFor": [
+        {
+          "occasion": "first-date",
+          "assessment": "ideal",
+          "reason": "Relaxed, easy to talk, and the terrasse is pleasant in good weather."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "ideal",
+          "reason": "Walk-ins are easy, the room is unfussy, and you can be out in ninety minutes."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "caveat",
+          "reason": "Sharing works well here, but portions are small enough that four people need to order wide."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "caveat",
+          "reason": "The plating and technique do the work. Someone hunting for bold Korean flavour will be underwhelmed."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "not-for",
+          "reason": "More cute and casual than big occasion, unless you're specifically craving Korean."
+        }
+      ],
+      "imageAlt": "Pretty Korean dishes at Giwa restaurant in Verdun Montreal, a casual date-night spot on Promenade Wellington serving modern Korean cuisine"
+    },
+    "fr-CA": {
+      "verdictReason": "Si tu veux un souper détendu avec des assiettes soignées, ça marche.",
+      "goodFor": [
+        {
+          "occasion": "first-date",
+          "assessment": "ideal",
+          "reason": "Détendu, facile pour jaser, et la terrasse est agréable quand il fait beau."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "ideal",
+          "reason": "Sans réservation, c'est facile, la salle est sans chichi, et tu peux repartir en quatre-vingt-dix minutes."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "caveat",
+          "reason": "Le partage marche bien ici, mais les portions sont assez petites pour qu'à quatre il faille commander large."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "caveat",
+          "reason": "La présentation et la technique font le travail. Quelqu'un qui cherche des saveurs coréennes intenses sera déçu."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "not-for",
+          "reason": "Plus mignon et casual que grande occasion, sauf si tu as vraiment envie de coréen."
+        }
+      ],
+      "metaTitle": "Giwa, Verdun : critique et souper à deux",
+      "metaDescription": "Cuisine coréenne moderne sur la Promenade Wellington, de jolies assiettes et une technique propre. Quoi commander, le prix, et la nuance sur les saveurs.",
+      "imageAlt": "Beaux plats coréens au restaurant Giwa à Verdun Montréal, une adresse décontractée sur la Promenade Wellington pour un souper en amoureux"
+    }
+  },
+  "lastChecked": "2026-09-24"
+}

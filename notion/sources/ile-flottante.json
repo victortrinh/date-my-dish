@@ -1,0 +1,671 @@
+{
+  "slug": "ile-flottante",
+  "records": [
+    "ile-flottante"
+  ],
+  "notion": {
+    "pageId": "b797e9b0-70f2-4fc0-aa36-14305e318a71",
+    "number": 84,
+    "postType": "Restaurant Reviews",
+    "status": "Published",
+    "title": "Île Flottante Review: Mile End Tasting Menu and Prices",
+    "borough": "Le Plateau-Mont-Royal",
+    "publishDate": null,
+    "lastEditedTime": 1790222157261
+  },
+  "metadata": {
+    "URL": "/en/reviews/mile-end/ile-flottante/",
+    "Slug": "ile-flottante",
+    "Meta title": "Île Flottante, Mile End: Tasting Menu Date Guide",
+    "Meta desc": "Sean Murray Smith's seasonal tasting menu in Mile End, $130 a head. An honest take on the technique, the desserts, and whether the night earns the money.",
+    "H1": "Île Flottante, Mile End",
+    "Verdict state": "conditional",
+    "Cuisine": "Modern seasonal tasting menu, vegetable-forward",
+    "Address": "174-176 rue Saint-Viateur Ouest, Montreal, QC H2T 2L3",
+    "Price range": "$$$$. Tasting menu $130, about $170 all in as I paid it",
+    "Instagram": "@restaurantileflottante",
+    "Website": "https://www.restaurantileflottante.com",
+    "Hours": "Wed to Sat 17:30 to 22:00, plus Tuesday \"Unplugged\" from 18:00",
+    "Visited": "[DATE]",
+    "Checked": "September 2026"
+  },
+  "sections": [
+    {
+      "heading": null,
+      "level": 0,
+      "section": null,
+      "label": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "REVIEW · MILE END"
+        }
+      ]
+    },
+    {
+      "heading": "Île Flottante",
+      "level": 1,
+      "section": "opening",
+      "label": "H1 and opening",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Chef Sean Murray Smith cooks a seasonal, vegetable-forward tasting menu on Saint-Viateur in a calm Mile End dining room."
+        },
+        {
+          "kind": "paragraph",
+          "text": "By Victor · Published [DATE] · Checked September 2026"
+        }
+      ]
+    },
+    {
+      "heading": "The verdict",
+      "level": 2,
+      "section": "verdict",
+      "label": "The verdict (verdictHeadline, verdict reason)",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "DEPENDS ON THE NIGHT"
+        },
+        {
+          "kind": "subheading",
+          "text": "Technically excellent, without one dish I kept thinking about"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The ingredients are fresh, the technique is controlled and the service is polished. Where it fell short for me was flavour identity relative to the price. At $130 a head I expected a more distinct style, and I left having had a nice night without one dish I kept thinking about. Go for the calm room and precise cooking."
+        }
+      ]
+    },
+    {
+      "heading": "Good for",
+      "level": 2,
+      "section": "goodFor",
+      "label": "Good for",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "Occasion",
+              "",
+              "Why"
+            ],
+            [
+              "Anniversary",
+              "Ideal",
+              "Calm, intimate and well suited to a planned evening together."
+            ],
+            [
+              "Impressing a cook",
+              "Works, with a caveat",
+              "Safe pick for technique and polish. Someone hunting a standout dish may not find one."
+            ],
+            [
+              "Double date",
+              "Works, with a caveat",
+              "The room is quiet and the pacing is slow. Four people can work, but this is built for two."
+            ],
+            [
+              "First date",
+              "Not the one",
+              "A long tasting menu is a commitment. We sat at 5:30 and left at 8:00 eating at a normal pace, and that's a lot of evening before you know."
+            ],
+            [
+              "Casual midweek",
+              "Not the one",
+              "Nothing about $130 a head is casual."
+            ],
+            [
+              "Late night",
+              "Not the one",
+              "The room closes at 22:00 and the menu runs two and a half hours, so the last useful table is early evening."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The room",
+      "level": 2,
+      "section": "room",
+      "label": "The room",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "[PHOTO: dining room, wide]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Intimate without being stiff. People come to eat and take their time. Lighting is flattering and the pacing is calm."
+        },
+        {
+          "kind": "paragraph",
+          "text": "It works well for a quiet date. The trade-off is time, so budget the full evening."
+        }
+      ]
+    },
+    {
+      "heading": "Meet the chef",
+      "level": 2,
+      "section": "meetChef",
+      "label": "Meet the chef",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "[PORTRAIT: Sean Murray Smith. Photo credit needed.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sean Murray Smith is chef and co-owner with Nada Abou Younes. The two of them ran Les Deux Singes de Montarvie in this space from 2011, built a real following, and by late 2016 decided it was time to change. When the unit next door came free they expanded, renovated and rebuilt the concept, name included."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The name is personal. Île flottante is Smith's favourite dessert, and it doubles as a nod to Montreal as an island. There's an Expo 67 thread in it too: his father worked there, and the name gestures at Île Sainte-Hélène. It's a restaurant identity rather than a menu description."
+        },
+        {
+          "kind": "quote",
+          "text": "[PULL QUOTE NEEDED. Recorded speech only. Neither owner is named on the restaurant's own website, so the names above rest on the Michelin Guide and Canada's 100 Best. Confirm the spelling with them.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "[LINK: Sean Murray Smith's recipe card. Needs the interview.]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "The drinks",
+      "level": 2,
+      "section": "drinks",
+      "label": "The drinks",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Treat drinks here as support for the meal rather than the main event."
+        },
+        {
+          "kind": "paragraph",
+          "text": "To start — one cocktail. After that, keep the drinks simple."
+        },
+        {
+          "kind": "paragraph",
+          "text": "With the meal — ask. Say whether you prefer bright, bitter, boozy or fruity drinks and ask for a recommendation."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Not drinking — [UNKNOWN]. Check the list."
+        }
+      ]
+    },
+    {
+      "heading": "What I ate",
+      "level": 2,
+      "section": "whatToOrder",
+      "label": "What to order",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The restaurant serves one chef-driven tasting menu, $130 per person as of September 2026, and the kitchen decides the sequence."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Tell them allergies and real dislikes when you book. It steers you away from a hard no and makes the whole flow feel more tailored."
+        },
+        {
+          "kind": "quote",
+          "text": "THE WAITER'S CHOICE — omitted. Fixed menu, no recommendation to repeat."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Seven courses, and I don't have their names. My photos cover the full run but I never wrote the dishes down."
+        },
+        {
+          "kind": "paragraph",
+          "text": "[COURSES 1 TO 7 — NAMES NEEDED]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "This is the weak point of the page. A tasting menu review that can't say what was served is a tasting menu review with a hole in it. Go back through the photos and name them, or email the restaurant for the menu from that date. Each one then gets its own heading and a tag, which is what earns the dish-name searches."
+        },
+        {
+          "kind": "paragraph",
+          "text": "On the food overall. Ingredients fresh and handled properly, technique controlled and confident, execution clean and consistent. Some combinations felt a little mismatched, and I never got that this-is-the-chef's-profile moment."
+        },
+        {
+          "kind": "paragraph",
+          "text": "On dessert. The weakest part of my visit, which surprised me, because dessert is usually where a kitchen lands the final punch. They were good rather than a statement. One was corn-focused and the corn never actually showed up in a way that popped. The idea was stronger than the payoff, and because dessert is the last thing you remember the night ended flatter than I wanted."
+        }
+      ]
+    },
+    {
+      "heading": "The real cost",
+      "level": 2,
+      "section": "realCost",
+      "label": "The real cost",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "",
+              ""
+            ],
+            [
+              "Tasting menu, per person",
+              "$130"
+            ],
+            [
+              "One cocktail, tax and tip",
+              "~$40"
+            ],
+            [
+              "Per person, as I paid it",
+              "~$170"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "Quote the $130 as of September 2026. The price has moved before."
+        }
+      ]
+    },
+    {
+      "heading": "My note",
+      "level": 2,
+      "section": "reportersNote",
+      "label": "My note",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Victor · one visit, [MONTH YEAR] · paid"
+        },
+        {
+          "kind": "subheading",
+          "text": "The part that's just my opinion"
+        },
+        {
+          "kind": "paragraph",
+          "text": "[THE THING THAT STAYED WITH YOU.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "The honest caveat: the technique and execution are excellent and the service is smooth, but for the price I expected at least one dish I'd describe as memorable. I had a really nice night. I didn't leave obsessed. At this level I'm looking for the plate that creates a memory, and the meal stayed in the very good lane."
+        },
+        {
+          "kind": "quote",
+          "text": "UPDATE · [MONTH YEAR]"
+        },
+        {
+          "kind": "quote",
+          "text": "[Add a line if anything changes.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Victor"
+        }
+      ]
+    },
+    {
+      "heading": "Make a night of it",
+      "level": 2,
+      "section": "makeANight",
+      "label": "Make a night of it",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Games and Entertainment — Cinéma du Parc"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before · [X] min · $9 on Tuesdays"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Repertory film in the basement of Les Galeries du Parc."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nature and Scenic — Parc Jeanne-Mance"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before · [X] min walk · Free"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The flat green apron at the foot of the mountain. Sunday means the Tam-Tams across Park Avenue."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Activities and Sports — Belvédère Kondiaronk"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before · 35 to 50 min uphill · Free"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Walk up the Olmsted path and arrive hungry. Sunset is the move."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Social and Romantic — [SPOT NEEDED]"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bar Waverly, Kem CoBa and Café Olimpico are all named in the old draft and all within a few minutes. One of them needs its own spot page."
+        },
+        {
+          "kind": "paragraph",
+          "text": "[TILE: Open the Mile End guide]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "What the chef cooks at home",
+      "level": 2,
+      "section": "atHome",
+      "label": "What the chef would make for a date night",
+      "blocks": [
+        {
+          "kind": "quote",
+          "text": "SLOT EMPTY. Needs the closing question put to Smith."
+        }
+      ]
+    },
+    {
+      "heading": "Before you book",
+      "level": 2,
+      "section": "beforeYouBook",
+      "label": "Before you book",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "How far ahead do I need to book?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Book ahead. A lot of tables were already named when we sat down, and if you have allergies it's the easiest way to sort them in advance."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Can they handle dietary restrictions?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Yes, if you tell them when you book. Fixed menu, so give them notice."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Is there parking, or should we take the metro?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "[ANSWER NEEDED.]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "The essentials card",
+      "level": 2,
+      "section": "essentials",
+      "label": "The essentials card",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "",
+              ""
+            ],
+            [
+              "Our take",
+              "Depends on the night"
+            ],
+            [
+              "Cuisine",
+              "Seasonal tasting menu"
+            ],
+            [
+              "Neighbourhood",
+              "Mile End"
+            ],
+            [
+              "Per person",
+              "$130 to $170"
+            ],
+            [
+              "Can you talk?",
+              "Yes, easily"
+            ],
+            [
+              "Booking",
+              "Book ahead"
+            ],
+            [
+              "Allow",
+              "2.5 hours"
+            ],
+            [
+              "Address",
+              "174-176 rue Saint-Viateur Ouest"
+            ],
+            [
+              "Instagram",
+              "@restaurantileflottante"
+            ],
+            [
+              "Google reviews",
+              "[RATING AND COUNT NEEDED, dated]"
+            ]
+          ]
+        },
+        {
+          "kind": "callout",
+          "lines": [
+            "INTERNAL. Delete before publishing.",
+            "Name the seven courses. Biggest gap on the page by a distance.",
+            "Michelin. Listed in the Guide Québec, no star. Your original Michelin note was accurate; you can now say which edition.",
+            "Canada's 100 Best listing is 2023-dated. Don't present it as current.",
+            "Owner names are guide-sourced, not on the restaurant's own site. Confirm spelling before print.",
+            "The $130 moves. Dated as of September 2026.",
+            "OpenTable still resolves this address under Les Deux Singes de Montarvie, the predecessor. Confusing, not an error."
+          ],
+          "note": true
+        }
+      ]
+    }
+  ],
+  "photos": [],
+  "legacy": {
+    "name": "ile-flottante-montreal",
+    "en": {
+      "texts": [
+        "Île Flottante: The Montreal Date-Night Flex",
+        "Île Flottante is a Michelin-featured tasting menu in Mile End. Calm, polished, grown-up: the right call for an anniversary, but not a first date.",
+        "Elegant plating at Île Flottante Montreal, a delicate seasonal dish resting on fine ceramic in the intimate Mile End dining room",
+        "Île Flottante",
+        "Mile End",
+        "174-176 Rue Saint-Viateur Ouest, Montréal, QC H2T 2L3",
+        "Seasonal tasting menu",
+        "Anniversaries",
+        "Grown-up dinner nights",
+        "Food-curious dates",
+        "$130-170+ CAD",
+        "Book ahead. You want to start the night confident, not stressed. Mention any allergies or hard dislikes when you reserve.",
+        "Opening Courses",
+        "Fresh, properly handled ingredients with controlled technique. Clean and precise from the first plate.",
+        "Mid-Menu Savory Courses",
+        "Vegetable-forward with occasional meat and seafood. Consistent execution throughout, though flavor identity stays understated.",
+        "Corn Dessert",
+        "Interesting concept: corn as a dessert focus. The idea was stronger than the payoff, with the corn flavor not fully breaking through.",
+        "Closing Dessert",
+        "A second dessert that closed the meal solidly but not memorably. Good without landing the final punch.",
+        "First Date",
+        "A long tasting menu can feel like a commitment before you know if the chemistry is there",
+        "Anniversary",
+        "Perfect for a 'we planned this' night. The pace and calm deliver exactly that feeling.",
+        "Impressing Someone Who Likes Food",
+        "Safe pick for technique and polish, but it didn't deliver a big standout moment on my visit",
+        "Is Île Flottante worth it for a date night in Montreal?",
+        "Yes, when you want calm, grown-up, and polished. It's best for an anniversary or a night that already has some weight to it. For a first date, the commitment of a long tasting menu can feel like too much before you know if you're clicking. Save it for when you already know you want to be there.",
+        "How long does dinner at Île Flottante take?",
+        "Plan for about two and a half hours. A tasting menu at this level is a process, not a quick bite. I sat down at 5:30 and left around 8:00 at a normal pace. If that sounds long for a first date, it is. For an anniversary, that's the whole point.",
+        "How much does dinner at Île Flottante cost for two people?",
+        "The tasting menu is $130 per person. With one cocktail each, tax, and tip, plan for around $170 per person. For two, you're looking at $300 to $350 all in. Worth it when the occasion calls for it. Keep drinks reasonable and the bill stays manageable.",
+        "Île Flottante is a date-night spot for people who want to impress without looking like they're trying to impress.",
+        "It's the kind of place where you can show up looking good, sit down, and let the tasting menu carry the night while you focus on the real goal: good conversation and a little tension in the best way. Michelin-featured, which fits. This is a restaurant with clear conviction about what it's doing.",
+        "My honest take: the technique and execution are excellent, and service is smooth. But for the price, I expected at least one dish that would sit with me a week later. I had a really nice night. I just didn't leave fully obsessed.",
+        "The Name Behind the Restaurant",
+        "Île Flottante replaced the beloved Les Deux Singes de Montarvie on Rue Saint-Viateur in Mile End. Les Deux Singes opened in 2011 and built a real following. Toward the end of 2016, owners Nada Abou Younes and chef Sean Murray Smith knew it was time to evolve. When the adjacent space became available, they expanded, renovated, and reimagined the whole concept, including the name.",
+        "The name is personal and a little symbolic: it's Sean's favorite dessert, but it also nods to Montreal as an island. There's an Expo 67 connection (Sean's father worked there), and the name quietly references Île Sainte-Hélène. It's a \"this is Montréal\" restaurant identity, not just a menu.",
+        "The Vibe",
+        "The room feels intimate without feeling stiff. It's not a \"see and be seen\" place. People are there to eat and take their time.",
+        "Lighting is flattering, pacing is calm, and the whole thing reads more like \"grown-up dinner\" than \"night out.\" For date night, that's the win. You can sit there, take your time, and let the meal unfold without having to manage anything.",
+        "Dress code is smart casual. Clean fit, good shoes, smell good. That's it.",
+        "How the Menu Works",
+        "This is a chef-driven tasting menu. You're not choosing from a long list of options. The kitchen decides the sequence for the night, and you go with it.",
+        "That can be fun if you like discovery, but it also raises the bar. When you're paying for a tasting menu, you're paying for point of view, pacing, and memorability, not just correct cooking.",
+        "Practical tip: tell them allergies and real dislikes early. It helps the kitchen steer you away from a hard no, and it makes the whole flow feel more tailored.",
+        "Here's what the evening looked like, course by course.",
+        "Course 1:",
+        "Course 2:",
+        "Course 3:",
+        "Course 4:",
+        "Course 5:",
+        "The Food: My Honest Take",
+        "From a technical standpoint, it's good. Ingredients are fresh and handled properly. Technique is controlled and confident. Execution is clean, precise, and consistent throughout.",
+        "Where it didn't fully land for me was the flavor identity relative to the price. Some combinations felt a little mismatched, and I didn't get that \"this is the chef's profile\" feeling. At this level, I'm looking for at least one dish that creates a memory. For me, the meal stayed in the \"very good\" lane, but didn't break into \"I need to bring someone here.\"",
+        "Dessert:",
+        "This was the most surprising part, because dessert is usually where a restaurant lands a final punch and closes the meal strongly. The desserts were good, but they didn't feel like a statement. One dessert was corn-focused, but the corn flavor didn't actually show up in a way that popped. The idea was stronger than the payoff. And because dessert is the last thing you remember, it left the night ending a bit flatter than I wanted.",
+        "Service and Drinks",
+        "Service was genuinely good: polished, smooth, and professional. It's the kind of service that makes the meal feel calm. Good timing, no awkward hovering, and it supports the \"take your time\" vibe perfectly.",
+        "For drinks, I'd treat the program here as something that supports the meal rather than the main attraction. The best move for a date is usually one drink at the start to settle in, then keep it simple so you stay present. If you like asking for guidance, this is a good place to do it. Just say what you normally like (bright, bitter, boozy, fruity) and let them steer you.",
+        "The Real Cost",
+        "The tasting menu is $130 per person before drinks, tax, and tip. With one cocktail, plan for around $170 per person. For two people, that's roughly $300 to $350 all in.",
+        "Worth it when the occasion calls for it. If you're going for an anniversary or a night that already has some weight, that math makes sense. If you're not sure it's that kind of night, the math might not.",
+        "Before and After",
+        "Mile End makes this easy. You can turn the whole evening into a proper date without doing anything complicated.",
+        "Before dinner: Wander Rue Saint-Viateur Ouest for 10 to 15 minutes and arrive relaxed. Do the bagel debate at St-Viateur Bagel or Fairmount Bagel (grab one, argue about which is better). Or grab a coffee at Café Olimpico for some classic Mile End energy. Bar Waverly works well for a pre-dinner drink if you want to start the night before you sit down.",
+        "After dinner: A slow Mile End walk is the best \"keep talking\" move. Ice cream at Kem CoBa is an easy dessert extension without committing to a second full sit-down. If you want one more drink, Bar Waverly for something lively, Le Kabinet or Datcha for cocktails and later-night energy, or Dieu du Ciel! if you both want a casual beer to close the night.",
+        "Is It a Date Spot?",
+        "For a first date, probably not. A long tasting menu can feel like a commitment before you know if the chemistry is there, and you're locked in for two and a half hours no matter what. If you're looking for a lower-stakes, conversation-friendly option, check out our [Othym review](/en/reviews/othym-montreal/) for a quieter BYOB spot that works better early on.",
+        "For an anniversary, it earns its keep. The tasting menu gives the night a shape: a beginning, a middle, somewhere you're clearly going together. The room is calm enough to stay in your own world for the whole meal. That pace, in that room, at that level of service, adds up to a night that feels like you planned it together, which is exactly what an anniversary should feel like.",
+        "If you're going with someone who cares about food and you both want to compare notes course by course, this works well too. There's something to discuss between every plate, and the kitchen gives you enough to react to.",
+        "But when you want someone else to do the work, Île Flottante is a strong call for the right occasion.",
+        "Île Flottante scores 7.5 out of 10 as a date-night restaurant. Don't come expecting a dish that stops the table. Come when you want calm, polished, and grown-up, and let the tasting menu carry the conversation."
+      ],
+      "headings": [
+        "The Name Behind the Restaurant",
+        "The Vibe",
+        "How the Menu Works",
+        "The Food: My Honest Take",
+        "Service and Drinks",
+        "The Real Cost",
+        "Before and After",
+        "Is It a Date Spot?"
+      ]
+    },
+    "fr": {
+      "texts": [
+        "Île Flottante : Le Flex Discret de Montréal",
+        "Île Flottante, menu dégustation du Mile End dans le Guide Michelin. Calme, soigné, adulte : parfait pour un anniversaire, pas un premier rendez-vous.",
+        "Assiette élégante à l'Île Flottante Montréal, une préparation saisonnière délicate sur belle céramique dans la salle à manger intimiste du Mile End",
+        "Île Flottante",
+        "Mile End",
+        "174-176 Rue Saint-Viateur Ouest, Montréal, QC H2T 2L3",
+        "Menu dégustation saisonnier",
+        "Anniversaires",
+        "Soupers adultes et posés",
+        "Dates gastronomiques",
+        "130-170$+ CAD",
+        "Réserve à l'avance. Tu veux commencer la soirée en confiance, pas en stress. Mentionne les allergies ou les vrais interdits au moment de réserver.",
+        "Premiers services",
+        "Ingrédients frais, bien traités, technique contrôlée. Net et précis dès la première assiette.",
+        "Services salés du milieu",
+        "À dominance végétale, avec quelques poissons et viandes. Exécution constante tout au long, mais l'identité de saveur reste discrète.",
+        "Dessert au maïs",
+        "Concept intéressant : le maïs comme pivot sucré. L'idée était plus forte que le résultat, la saveur maïs ne s'est pas vraiment imposée.",
+        "Dessert de clôture",
+        "Un deuxième dessert qui a conclu le repas honnêtement, sans marquer les esprits. Bon sans être un coup de poing final.",
+        "Premier rendez-vous",
+        "Un long menu dégustation peut sembler trop engageant avant de savoir si la chimie est là",
+        "Anniversaire",
+        "Parfait pour une soirée de type « on a planifié ça ». Le rythme et le calme livrent exactement cette impression.",
+        "Impressionner quelqu'un qui aime manger",
+        "Choix sécuritaire pour la technique et le soin, mais sans grand moment marquant lors de ma visite",
+        "Est-ce que l'Île Flottante vaut le coup pour un souper en amoureux à Montréal?",
+        "Oui, quand tu veux quelque chose de calme, soigné et adulte. C'est idéal pour un anniversaire ou une soirée qui a déjà un peu de poids. Pour un premier rendez-vous, l'engagement d'un long menu dégustation peut peser lourd avant de savoir si ça clique. Garde-le pour quand tu sais déjà que tu veux être là avec cette personne.",
+        "Combien de temps dure un souper à l'Île Flottante?",
+        "Prévois environ deux heures et demie. Un menu dégustation à ce niveau, c'est un processus, pas un repas express. Je me suis assis à 17h30 et je suis sorti vers 20h à un rythme normal. Si ça semble long pour un premier rendez-vous, c'est parce que ça l'est. Pour un anniversaire, c'est justement le but.",
+        "Combien coûte un souper à l'Île Flottante pour deux personnes?",
+        "Le menu dégustation est à 130 $ par personne. Avec un cocktail chacun, les taxes et le service, compte environ 170 $ par personne. Pour deux, tu regardes 300 à 350 $ au total. Ça vaut quand l'occasion le mérite. Reste raisonnable sur les boissons et la note reste gérable.",
+        "L'Île Flottante, c'est le genre d'endroit pour les dates où tu veux impressionner sans avoir l'air d'essayer.",
+        "C'est le type de place où tu arrives bien mis, tu t'assis, et tu laisses le menu dégustation porter la soirée pendant que tu te concentres sur la vraie raison d'être là : une bonne conversation, et juste assez de tension dans le bon sens du terme. Repris dans le Guide Michelin, ce qui colle avec l'expérience : un restaurant qui a une conviction claire sur ce qu'il fait.",
+        "Mon honnête avis : la technique et l'exécution sont excellentes, et le service est fluide. Mais pour le prix, je m'attendais à au moins un plat qui resterait avec moi une semaine plus tard. J'ai passé une très belle soirée. Je ne suis juste pas ressorti complètement obsédé.",
+        "Le Nom Derrière le Restaurant",
+        "L'Île Flottante a remplacé le regretté Les Deux Singes de Montarvie sur la rue Saint-Viateur dans le Mile End. Les Deux Singes avait ouvert en 2011 et s'était bâti une vraie clientèle fidèle. Vers la fin 2016, les propriétaires Nada Abou Younes et le chef Sean Murray Smith ont senti qu'il était temps d'évoluer. Quand l'espace adjacent s'est libéré, ils ont agrandi, rénové, et repensé le tout, incluant le nom.",
+        "Le nom est personnel et un peu symbolique : c'est le dessert préféré de Sean, mais il fait aussi écho à Montréal comme île. Il y a un lien avec l'Expo 67 (le père de Sean y travaillait), et le nom fait discrètement référence à l'île Sainte-Hélène. C'est une identité de restaurant de type « voilà ce que c'est que Montréal », pas juste un menu.",
+        "L'Ambiance",
+        "La salle est intime sans être raide. C'est pas un endroit pour être vu. Les gens sont là pour manger et prendre leur temps.",
+        "L'éclairage est flatteur, le rythme est calme, et l'ensemble ressemble plus à « souper d'adultes » qu'à « sortie de soir ». Pour un souper en amoureux, c'est le bon signe. Tu peux t'asseoir, prendre ton temps, et laisser le repas se dérouler sans rien avoir à gérer.",
+        "Le code vestimentaire est smart casual. Une belle tenue, de bonnes chaussures, sentir bon. C'est tout.",
+        "Comment Fonctionne le Menu",
+        "C'est un menu dégustation au choix du chef. Tu ne choisis pas dans une longue liste. La cuisine décide de la séquence pour la soirée, et tu suis.",
+        "Ça peut être plaisant si tu aimes la découverte, mais ça monte aussi la barre. Quand tu paies pour un menu dégustation, tu paies pour un point de vue, un rythme, et de la mémorabilité, pas juste pour une cuisine correcte.",
+        "Conseil pratique : dis-leur tes allergies et tes vraies aversions dès le départ. Ça aide la cuisine à t'éviter un vrai non, et ça donne l'impression que le tout est plus adapté à vous deux.",
+        "Voici à quoi ressemblait la soirée, service par service.",
+        "Service 1 :",
+        "Service 2 :",
+        "Service 3 :",
+        "Service 4 :",
+        "Service 5 :",
+        "La Cuisine : Mon Avis Honnête",
+        "Sur le plan technique, c'est bon. Les ingrédients sont frais et bien traités. La technique est contrôlée et confiante. L'exécution est nette, précise, et constante du début à la fin.",
+        "Là où ça n'a pas tout à fait atterri pour moi, c'est dans l'identité des saveurs par rapport au prix. Certaines combinaisons m'ont semblé un peu décalées, et je n'ai pas eu ce sentiment de « voilà le profil du chef ». À ce niveau, je cherche au moins un plat qui crée un souvenir. Pour moi, le repas est resté dans la catégorie « très bien », sans jamais basculer dans « il faut absolument que je ramène quelqu'un ici ».",
+        "Desserts :",
+        "C'est la partie qui m'a le plus surpris, parce que le dessert, c'est généralement là qu'un restaurant place son coup de poing final et clôt le repas en force. Les desserts étaient bons, mais ils n'avaient pas l'air d'un énoncé. Un dessert était centré sur le maïs, mais la saveur maïs ne s'est pas vraiment imposée. L'idée était plus forte que le résultat. Et parce que le dessert, c'est la dernière chose dont tu te souviens, ça a laissé la soirée se terminer un peu plus à plat que j'aurais voulu.",
+        "Service et Boissons",
+        "Le service était vraiment bon : soigné, fluide, professionnel. C'est le genre de service qui rend le repas calme. Bon timing, pas de rôdage gênant, et ça supporte parfaitement le vibe « prends ton temps ».",
+        "Pour les boissons, je traiterais la carte ici comme un support au repas plutôt que l'attraction principale. Le meilleur move pour un souper en amoureux, c'est généralement un verre pour commencer et se poser, puis garder ça simple pour rester présent. Si tu aimes demander conseil, c'est un bon endroit pour le faire. Dis juste ce que tu aimes normalement (vif, amer, fort, fruité) et laisse-les te guider.",
+        "Le Coût Réel",
+        "Le menu dégustation est à 130 $ par personne avant les boissons, les taxes et le service. Avec un cocktail, compte environ 170 $ par personne. Pour deux, ça représente à peu près 300 à 350 $ au total.",
+        "Ça vaut quand l'occasion le demande. Si tu y vas pour un anniversaire ou une soirée qui a déjà un peu de poids, le calcul tient. Si tu n'es pas sûr que c'est ce genre de soirée, le calcul est moins évident.",
+        "Avant et Après",
+        "Le Mile End rend ça facile. Tu peux transformer toute la soirée en vrai rendez-vous sans rien de compliqué.",
+        "Avant le souper : Flâne sur la rue Saint-Viateur Ouest pendant 10 à 15 minutes et arrive détendu. Fais le débat du bagel entre St-Viateur Bagel et Fairmount Bagel (prends-en un, discute lequel est meilleur). Ou prends un café au Café Olimpico pour une bonne dose d'énergie Mile End classique. Le Bar Waverly est parfait pour un verre avant de vous asseoir si tu veux lancer la soirée avant le repas.",
+        "Après le souper : Une promenade lente dans le Mile End, c'est le meilleur move pour continuer à parler. La crème glacée au Kem CoBa est une belle extension dessert sans avoir à s'engager dans un deuxième repas complet. Pour un dernier verre, le Bar Waverly si tu veux quelque chose d'animé, Le Kabinet ou Datcha pour des cocktails et une énergie plus tardive, ou le Dieu du Ciel! si vous préférez une bière décontractée pour clore la soirée.",
+        "Est-ce Que C'est Un Endroit Pour une Date?",
+        "Pour un premier rendez-vous, probablement pas. Un long menu dégustation peut sembler trop engageant avant de savoir si ça clique, et tu es là pour deux heures et demie peu importe comment ça se passe. Si tu cherches quelque chose de moins contraignant et propice à la conversation, jette un coup d'oeil à notre [critique d'Othym](/fr/critiques/othym-montreal/) pour un endroit BYOB plus calme qui marche mieux en début de fréquentation.",
+        "Pour un anniversaire, c'est là qu'il gagne sa place. Le menu dégustation donne une forme à la soirée : un début, un milieu, quelque chose vers quoi vous allez ensemble. La salle est assez calme pour rester dans votre bulle tout le repas. Ce rythme-là, dans cette salle-là, à ce niveau de service, ça finit par ressembler à une soirée que vous avez planifiée ensemble, ce qu'un anniversaire devrait toujours être.",
+        "Si tu y vas avec quelqu'un qui se passionne pour la bouffe et que vous voulez tous les deux comparer les notes service par service, ça marche très bien aussi. Il y a de quoi discuter entre chaque assiette, et la cuisine vous donne assez à quoi réagir.",
+        "Mais quand tu veux que quelqu'un d'autre fasse le travail, l'Île Flottante est un bon choix pour la bonne occasion.",
+        "L'Île Flottante obtient 7,5 sur 10 comme restaurant de souper en amoureux. Ne viens pas en t'attendant à un plat qui fait arrêter la table. Viens quand tu veux du calme, du soigné et de l'adulte, et laisse le menu dégustation porter la conversation."
+      ],
+      "headings": [
+        "Le Nom Derrière le Restaurant",
+        "L'Ambiance",
+        "Comment Fonctionne le Menu",
+        "La Cuisine : Mon Avis Honnête",
+        "Service et Boissons",
+        "Le Coût Réel",
+        "Avant et Après",
+        "Est-ce Que C'est Un Endroit Pour une Date?"
+      ]
+    }
+  }
+}

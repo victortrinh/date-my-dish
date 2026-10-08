@@ -1,0 +1,649 @@
+{
+  "slug": "mckiernan",
+  "records": [
+    "mckiernan"
+  ],
+  "notion": {
+    "pageId": "db13ded7-a3ca-450a-8b03-b4f198bed99f",
+    "number": 53,
+    "postType": "Restaurant Reviews",
+    "status": "Published",
+    "title": "McKiernan Brunch Review: Food, Prices, and the Canal Walk",
+    "borough": "Le Sud-Ouest",
+    "publishDate": null,
+    "lastEditedTime": 1790222110320
+  },
+  "metadata": {
+    "URL": "/en/reviews/ville-emard/mckiernan/",
+    "Slug": "mckiernan",
+    "Meta title": "McKiernan, Ville-Émard: Brunch & Date Guide",
+    "Meta desc": "Rotisserie brunch by the Lachine Canal from the Joe Beef group, now trading as McKiernan Rotisserie. What to order, what it costs, and the canal walk after.",
+    "H1": "McKiernan, Ville-Émard",
+    "Verdict state": "favourite",
+    "Cuisine": "Rotisserie, market-driven comfort food",
+    "Address": "5524 rue Saint-Patrick, suite 200, Montreal, QC H4E 1A8",
+    "Price range": "$$. $30 to $55 per person, $20 to $35 for coffee and one main",
+    "Instagram": "@mckiernanmtl",
+    "Website": "https://mckiernanmtl.com",
+    "Phone": "514-759-6677",
+    "Hours": "Mon to Wed 8:00 to 15:00. Thu and Fri 8:00 to 15:00 and 17:00 to 22:00. Brunch Sat and Sun from 10:00.",
+    "Visited": "[DATE]",
+    "Checked": "September 2026"
+  },
+  "sections": [
+    {
+      "heading": null,
+      "level": 0,
+      "section": null,
+      "label": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "REVIEW · VILLE-ÉMARD"
+        }
+      ]
+    },
+    {
+      "heading": "McKiernan",
+      "level": 1,
+      "section": "opening",
+      "label": "H1 and opening",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A rotisserie and market-driven kitchen by the Lachine Canal in Ville-Émard, from the team behind Joe Beef, Liverpool House and Vin Papillon."
+        },
+        {
+          "kind": "paragraph",
+          "text": "By Victor · Published [DATE] · Checked September 2026"
+        }
+      ]
+    },
+    {
+      "heading": "The verdict",
+      "level": 2,
+      "section": "verdict",
+      "label": "The verdict (verdictHeadline, verdict reason)",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A FAVOURITE"
+        },
+        {
+          "kind": "subheading",
+          "text": "Coffee, two shareable plates, then walk it off along the canal"
+        },
+        {
+          "kind": "paragraph",
+          "text": "A lively brunch and lunch in a large industrial room with plenty of daylight. The canal is right outside for a walk afterward. Go hungry, but don't get carried away ordering: the room tempts you into settling in for a long meal you didn't come for."
+        }
+      ]
+    },
+    {
+      "heading": "Good for",
+      "level": 2,
+      "section": "goodFor",
+      "label": "Good for",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "Occasion",
+              "",
+              "Why"
+            ],
+            [
+              "Casual midweek",
+              "Ideal",
+              "Exactly what it's built for. Coffee, a couple of plates, out the door."
+            ],
+            [
+              "Double date",
+              "Ideal",
+              "Big room, good pacing, shareable plates. Everyone leaves happy."
+            ],
+            [
+              "First date",
+              "Ideal",
+              "Brunch makes conversation easy and low pressure, and the canal gives you a natural second act."
+            ],
+            [
+              "Impressing a cook",
+              "Works, with a caveat",
+              "Very Montreal in the best way, and the group's pedigree carries weight. It's comfort food, not a technical showcase."
+            ],
+            [
+              "Anniversary",
+              "Not the one",
+              "Lively and bright rather than intimate. Save it for the morning after."
+            ],
+            [
+              "Late night",
+              "Not the one",
+              "A daytime room at heart. Dinner runs Thursday and Friday only, and the doors shut at 22:00."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The room",
+      "level": 2,
+      "section": "room",
+      "label": "The room",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "[PHOTO NEEDED: the room. There is no interior shot in the current set, and the room is half the argument for coming.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Industrial-feeling space right by the canal, and it leans into that: high ceilings, a lot of light, and a come-as-you-are room that still feels like a destination. Bright and warm rather than dim. Lively in the daytime without being overwhelming."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Anywhere works, but the edges of the room feel calmer if you want to linger."
+        }
+      ]
+    },
+    {
+      "heading": "Meet the chef",
+      "level": 2,
+      "section": "meetChef",
+      "label": "Meet the chef",
+      "blocks": [
+        {
+          "kind": "quote",
+          "text": "SLOT PENDING. No chef is publicly named at McKiernan right now. Derek Dammann was culinary director and has moved on; he and David McMillan now run Grille-Nature in Dollard-des-Ormeaux. McMillan left the Joe Beef group in 2021. Frédéric Morin is the group's remaining anchor. Do not name any of them as McKiernan's chef."
+        },
+        {
+          "kind": "paragraph",
+          "text": "What can be said: the room was created by the teams behind Joe Beef, Liverpool House and Vin Papillon, which is the most useful context a reader can have here. It now trades as McKiernan Rôtisserie, though the site and Instagram still say just McKiernan."
+        },
+        {
+          "kind": "paragraph",
+          "text": "[PULL QUOTE NEEDED. Requires a named chef.]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "The drinks",
+      "level": 2,
+      "section": "drinks",
+      "label": "The drinks",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Coffee is the main drink here. Keep it simple."
+        },
+        {
+          "kind": "paragraph",
+          "text": "To start — an americano or drip. The default, and the right one."
+        },
+        {
+          "kind": "paragraph",
+          "text": "With the meal — an espresso drink. Dessert energy without ordering dessert."
+        },
+        {
+          "kind": "paragraph",
+          "text": "If you're making a day of it — one brunch cocktail. One. The room will happily sell you three."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Not drinking — [UNKNOWN]. Check."
+        }
+      ]
+    },
+    {
+      "heading": "What to order",
+      "level": 2,
+      "section": "whatToOrder",
+      "label": "What to order",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Two to three plates total is the sweet spot for two people."
+        },
+        {
+          "kind": "quote",
+          "text": "THE WAITER'S CHOICE — omitted. No recommendation on record. Ask next time; it's the easiest slot to fill on a return visit."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Devilled brussels sprouts — Order this"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Crispy-edged, salty-sweet, and the vegetable side that disappears first. Enough punch and richness that it eats like bar food in the best way."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bomba schnitzel — Order this"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Golden, crunchy and aggressively satisfying. The bomba brings heat and acidity, which stops it feeling heavy."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Homemade donuts — Order this"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Warm, fluffy and easy to share at the end of brunch."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Zesty Italian beef tartare — Worth it"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bright, lemony and clean-tasting rather than heavy or bluntly beefy. More fresh and snackable than rich."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Honey garlic spare ribs — Worth it"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sticky, glossy and built for sharing. Sweet at first, then savoury."
+        }
+      ]
+    },
+    {
+      "heading": "The real cost",
+      "level": 2,
+      "section": "realCost",
+      "label": "The real cost",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "",
+              ""
+            ],
+            [
+              "Coffee and one main",
+              "$20 to $35"
+            ],
+            [
+              "Coffee and a couple of plates",
+              "$30 to $55"
+            ],
+            [
+              "Per person",
+              "$30 to $55"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "You're paying for the room, the canal-side location and solid comfort cooking. Skip the cocktails, share plates, coffee and one main each."
+        }
+      ]
+    },
+    {
+      "heading": "My note",
+      "level": 2,
+      "section": "reportersNote",
+      "label": "My note",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Victor · [X] visits, [MONTH YEAR] · paid"
+        },
+        {
+          "kind": "subheading",
+          "text": "The part that's just my opinion"
+        },
+        {
+          "kind": "paragraph",
+          "text": "[THE THING THAT STAYED WITH YOU.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "The honest caveat, carried over from your original: keep it tighter at brunch than the room wants you to. It tempts you into ordering like you're settling in for a long meal, and then you've spent $60 on what was meant to be coffee and a plate."
+        },
+        {
+          "kind": "quote",
+          "text": "UPDATE · [MONTH YEAR]"
+        },
+        {
+          "kind": "quote",
+          "text": "[Add a line if anything changes.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Victor"
+        }
+      ]
+    },
+    {
+      "heading": "Make a night of it",
+      "level": 2,
+      "section": "makeANight",
+      "label": "Make a night of it",
+      "blocks": [
+        {
+          "kind": "quote",
+          "text": "Four of five cards can't be filled. There are no Sud-Ouest date spot pages yet. The two venues named in the original draft are both good candidates and neither has a page."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nature and Scenic — the Lachine Canal"
+        },
+        {
+          "kind": "paragraph",
+          "text": "After · at the door · Free"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The classic post-brunch reset, and the reason to come to this address. Needs its own spot page."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Social and Romantic — Atwater Market"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before · [X] min · Free to browse"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Coffee, snacks and a quick wander. Needs its own spot page."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Activities and Sports — [SPOT NEEDED]"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Bike the canal is the obvious answer. Nothing researched."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Arts and Culture — [SPOT NEEDED]"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nothing researched in the Sud-Ouest."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Games and Entertainment — [SPOT NEEDED]"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nothing researched in the Sud-Ouest."
+        },
+        {
+          "kind": "paragraph",
+          "text": "[TILE: Open the Sud-Ouest guide, once it exists]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "What the chef cooks at home",
+      "level": 2,
+      "section": "atHome",
+      "label": "What the chef would make for a date night",
+      "blocks": [
+        {
+          "kind": "quote",
+          "text": "SLOT EMPTY. Needs a named chef."
+        }
+      ]
+    },
+    {
+      "heading": "Before you book",
+      "level": 2,
+      "section": "beforeYouBook",
+      "label": "Before you book",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "How far ahead do I need to book?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Recommended at weekends. Walk-ins are possible but it fills fast on sunny days."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Can they handle dietary restrictions?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "There are usually vegetarian-friendly small plates. Ask about the current menu."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Is there parking, or should we take the metro?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Best by bike or rideshare. Street parking varies."
+        }
+      ]
+    },
+    {
+      "heading": "The essentials card",
+      "level": 2,
+      "section": "essentials",
+      "label": "The essentials card",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "",
+              ""
+            ],
+            [
+              "Our take",
+              "A favourite"
+            ],
+            [
+              "Cuisine",
+              "Rotisserie and comfort food"
+            ],
+            [
+              "Neighbourhood",
+              "Ville-Émard, Sud-Ouest"
+            ],
+            [
+              "Per person",
+              "$30 to $55"
+            ],
+            [
+              "Can you talk?",
+              "Yes, in the daytime"
+            ],
+            [
+              "Booking",
+              "Weekends yes"
+            ],
+            [
+              "Allow",
+              "1.5 hours"
+            ],
+            [
+              "Address",
+              "5524 rue Saint-Patrick"
+            ],
+            [
+              "Instagram",
+              "@mckiernanmtl"
+            ],
+            [
+              "Google reviews",
+              "[RATING AND COUNT NEEDED, dated]"
+            ]
+          ]
+        },
+        {
+          "kind": "callout",
+          "lines": [
+            "INTERNAL. Delete before publishing.",
+            "Hours were wrong on the old page and are now the restaurant's own. Aggregators still publish all-day daily hours. Worth one phone call, since the venue and the aggregators disagree.",
+            "Three people to keep off this page: Derek Dammann, David McMillan as a current owner, and anyone else as chef. Nobody is publicly named.",
+            "The Luncheonette name is retired. Your review never used it, which is good.",
+            "No interior photo in the set. The room is the argument, so shoot one.",
+            "The Sud-Ouest has no date spot pages. That's a content gap this template makes visible, not a fault of this review."
+          ],
+          "note": true
+        }
+      ]
+    }
+  ],
+  "photos": [],
+  "legacy": {
+    "name": "mckiernan-montreal",
+    "en": {
+      "texts": [
+        "McKiernan: Canal Lachine Brunch Review",
+        "McKiernan review (8/10): The best brunch on Canal Lachine, and it is not close. Bomba schnitzel, honey garlic ribs. Book ahead or arrive early.",
+        "Crispy devilled Brussels sprouts with caramelized edges and sweet-savory glaze served at McKiernan restaurant in Montreal's Sud-Ouest neighbourhood",
+        "McKiernan",
+        "Sud-Ouest",
+        "5524 Rue Saint-Patrick, Montréal, QC H4E 1A8",
+        "Rotisserie / Quebec Comfort",
+        "Brunch dates",
+        "Casual catch-ups",
+        "Out-of-town visitors",
+        "$30-55 CAD",
+        "Recommended on weekends, fills fast on sunny days",
+        "Devilled Brussels Sprouts",
+        "Crispy-edged, salty-sweet, disappears first at the table",
+        "Bomba Schnitzel",
+        "Golden, crunchy, aggressively satisfying with bomba heat and acidity",
+        "Honey Garlic Spare Ribs",
+        "Sticky, glossy, sweet up front and savory on the finish",
+        "Homemade Donuts",
+        "Warm, fluffy, dangerously easy to keep eating",
+        "First Date",
+        "Brunch makes conversation easy and low-pressure",
+        "Friends Catch-up",
+        "Impressing Out-of-Towners",
+        "Is McKiernan good for a brunch date?",
+        "McKiernan is one of Montreal's strongest brunch date picks. The big, airy room feels special without being fussy, and sharing plates keeps things casual and fun. Go hungry, order two to three plates for two people, and follow up with a walk along the Lachine Canal.",
+        "How much does brunch at McKiernan cost?",
+        "Expect $30 to $55 per person for coffee and a couple of plates. You can keep it lighter at $20 to $35 with coffee and one main each. The value is solid considering the room, the canal-side location, and the quality of the cooking.",
+        "Do you need a reservation at McKiernan?",
+        "Reservations are smart on weekends, especially when the weather is nice and the canal-side crowd comes out. Walk-ins are possible on weekdays and slower weekend slots, but you risk waiting during peak brunch hours on Saturday and Sunday.",
+        "McKiernan is my pick when I want brunch-lunch energy in Montreal without the fuss. It sits right by the Lachine Canal in the Sud-Ouest, serves rotisserie comfort food built for sharing, and lets you eat until you're genuinely happy. Coffee first, plates for the table, and nowhere to be afterward except the canal path. If you're planning a daytime date or a lazy catch-up with friends, this is the spot.",
+        "The vibe",
+        "The space is a converted industrial room with high ceilings, big windows, and natural light that makes everything feel warm and open. It's bright without being harsh, and the noise level stays at a comfortable buzz. You can hold a conversation without leaning in, which counts for a lot on a date.",
+        "The crowd is a mix of couples, friend groups, and families who all seem to be in a very good mood. Staff are casual and genuinely friendly. Nobody's rushing you, nobody's hovering. Best seats are along the windows if you can get them, but honestly the whole room works. It's the kind of place where you show up slightly underdressed and feel completely at home.",
+        "What we ordered",
+        "McKiernan is built for sharing, and you should order that way. Two to three plates for two people is the sweet spot. We went a bit over that and rolled out the door, which, honestly, was also fine.",
+        "The devilled Brussels sprouts came out first. Crispy-edged, salty-sweet, and gone before anything else on the table. If you've ever been skeptical about Brussels sprouts, this dish will fix that permanently. They're the kind of opener that sets the tone for the whole meal.",
+        "The zesty Italian beef tartare was next. It leans Italian in its seasoning, comes with endive leaves for scooping, and has enough crunch and parmesan on top to keep every bite interesting. Light, fresh, and a nice counterpoint before the heavier dishes.",
+        "The bomba schnitzel is the headliner. Golden, crunchy breading with a kick of bomba heat and enough acidity to cut through the richness. It's aggressively satisfying in the way that only fried, well-seasoned food can be. This is the dish you'll think about on the walk home.",
+        "The honey garlic spare ribs are its perfect counterpart. Sticky, glossy, sweet up front and savory on the finish. They pair well with the schnitzel because you get that contrast between crispy breading and sticky glaze.",
+        "For dessert, the homemade donuts. Warm, fluffy, dusted with sugar, and dangerously easy to keep eating. They're the kind of thing you order \"for the table\" and then quietly eat most of yourself. No judgment here.",
+        "Sharing tip: two to three plates total for two people. What I'd do differently next time: keep it tighter. The room tempts you into ordering like you're settling in for a feast, and it's easy to over-order. I'd skip one of the mains and leave more room for the donuts.",
+        "Drinks and pacing",
+        "McKiernan is a coffee-first brunch spot. The americano is solid and well-brewed. Not specialty pour-over territory, but reliable and satisfying. If you're the kind of person who needs two cups before becoming conversational, this is a safe landing. The espresso is good too, if you prefer to keep it short.",
+        "They have a short brunch cocktail list if you're in that mood, but honestly, the food here is the star. You don't need a Bloody Mary to make it interesting. Save the drinks budget for another meal and let the cooking do the work.",
+        "Service is friendly and unpretentious. The staff reads the room well: attentive when you need something, invisible when you don't. Pacing felt smooth and steady. Plates landed at a comfortable rhythm, nobody rushed our coffee, and there was zero pressure to turn the table. It's the kind of service that makes you stay longer than you planned.",
+        "The real cost",
+        "Expect $30 to $55 per person depending on how many plates you share and whether you go for extras. You can keep it lighter at $20 to $35 with coffee and one main each, but you'd be missing the point. The sharing is where the fun lives.",
+        "For what you get, the room, the location, the quality of the cooking, the price is honest. This isn't a place that charges a premium for the neighbourhood or the aesthetic. The food earns its price tag on its own.",
+        "Is it a date spot?",
+        "First date: 4 out of 5. Brunch keeps things low-pressure and easy. The sharing format gives you something to talk about, and you can follow up with a walk along the canal. It's casual enough that nobody feels overdressed or underdressed.",
+        "Friends catch-up: 5 out of 5. This is where McKiernan really shines. The big table, the shared plates, the relaxed pacing. Perfect for a group of three or four who want to eat well and linger.",
+        "Impressing out-of-towners: 4 out of 5. The canal-side location gives it a sense of place, and the food is distinctly Montreal without being tourist-bait. It tells visitors you know where to eat.",
+        "Reserve on weekends, especially when the sun is out. Every brunch-loving Montrealer within a five-kilometre radius remembers McKiernan exists the moment it hits 15 degrees. Peak hours on Saturday and Sunday fill fast. Weekday brunch is calmer and walk-in friendly. If you can swing a Friday morning, that's the move: full menu, no wait, and the room feels almost like a weekday coffee shop before it shifts into weekend mode.",
+        "The real pro tip: eat brunch, then walk the Lachine Canal. It's five minutes from the restaurant, and it turns a good meal into a full morning. If you're on a date, that post-brunch walk is where the real conversation happens. And when you want a dinner spot with the same honest pricing and seasonal thinking, our [Othym review](/en/reviews/othym-montreal/) is worth bookmarking for a weeknight date.",
+        "McKiernan scores 8 out of 10 for brunch dates. Go here if you want honest, satisfying food in a room that feels good, with a built-in second act by the water. Skip it if you're looking for a quiet, intimate setting or polished fine dining. That's not what this place does. What it does is feed you well, keep the energy up, and send you off happy. Bring someone you want to spend a lazy morning with. Order too much. Walk it off by the canal. That's the whole playbook, and it works every time.",
+        "Hours: Monday to Friday 11:00 AM to 10:30 PM. Saturday and Sunday 10:00 AM to 10:30 PM (brunch runs until 3:00 PM). Getting there: Best by bike or rideshare. Street parking exists but varies, especially on sunny weekends. Dietary note: The menu usually includes vegetarian-friendly small plates. Ask your server about current options."
+      ],
+      "headings": [
+        "The vibe",
+        "What we ordered",
+        "Drinks and pacing",
+        "The real cost",
+        "Is it a date spot?"
+      ]
+    },
+    "fr": {
+      "texts": [
+        "McKiernan : brunch Canal Lachine",
+        "Avis McKiernan (8/10) : le meilleur brunch du Canal Lachine, et ce n'est pas proche. Schnitzel bomba, côtes levées à l'ail et au miel. Réservez ou arrivez tôt.",
+        "Choux de Bruxelles à la diable croustillants avec bords caramélisés et glaçage sucré-salé servis au restaurant McKiernan dans le Sud-Ouest de Montréal",
+        "McKiernan",
+        "Sud-Ouest",
+        "5524 Rue Saint-Patrick, Montréal, QC H4E 1A8",
+        "Rôtisserie / Comfort québécois",
+        "Brunchs en date",
+        "Retrouvailles entre amis",
+        "Visiteurs de l'extérieur",
+        "30-55$ CAD",
+        "Recommandé les fins de semaine, se remplit vite les jours de soleil",
+        "Choux de Bruxelles à la diable",
+        "Croustillants sur les bords, salés-sucrés, disparaissent en premier à table",
+        "Schnitzel bomba",
+        "Doré, croquant, agressivement satisfaisant avec le piquant de la bomba et l'acidité",
+        "Côtes levées miel et ail",
+        "Collantes, lustrées, sucrées en bouche et salées sur la finale",
+        "Beignes maison",
+        "Chauds, moelleux, dangereusement faciles à enchaîner",
+        "Premier rendez-vous",
+        "Le brunch rend la conversation facile et sans pression",
+        "Retrouvailles entre amis",
+        "Impressionner des visiteurs",
+        "Est-ce que McKiernan est bon pour un brunch en date?",
+        "McKiernan est un des meilleurs choix de brunch date à Montréal. La grande salle aérée a du cachet sans être prétentieuse, et partager des assiettes garde les choses décontractées et amusantes. Arrive le ventre vide, commande deux à trois assiettes pour deux, et enchaîne avec une marche le long du Canal Lachine.",
+        "Combien coûte un brunch au McKiernan?",
+        "Prévois entre 30$ et 55$ par personne pour un café et quelques assiettes. Tu peux rester plus léger à 20-35$ avec un café et un plat chacun. Le rapport qualité-prix est solide vu la salle, l'emplacement au bord du canal et la qualité de la cuisine.",
+        "Faut-il réserver au McKiernan?",
+        "Les réservations sont un bon move les fins de semaine, surtout quand il fait beau et que la foule du canal sort. Les walk-ins sont possibles en semaine et durant les créneaux plus tranquilles, mais tu risques d'attendre aux heures de pointe du brunch le samedi et dimanche.",
+        "McKiernan, c'est mon choix quand je veux de l'énergie brunch-lunch à Montréal sans le chichi. C'est situé juste à côté du Canal Lachine dans le Sud-Ouest, ça sert du comfort food rôtisserie fait pour partager, et ça te laisse manger jusqu'à ce que tu sois sincèrement content. Café d'abord, assiettes pour la table, et nulle part où aller après sauf le chemin du canal. Si tu planifies une date de jour ou un brunch relax entre amis, c'est la place.",
+        "L'ambiance",
+        "L'espace, c'est une salle industrielle convertie avec de hauts plafonds, de grandes fenêtres, et une lumière naturelle qui rend tout chaleureux et ouvert. C'est lumineux sans être agressant, et le niveau de bruit reste à un bourdonnement confortable. Tu peux tenir une conversation sans te pencher vers l'autre, ce qui compte pas mal en date.",
+        "La clientèle, c'est un mélange de couples, de groupes d'amis et de familles qui semblent tous être de très bonne humeur. Le personnel est décontracté et sincèrement sympathique. Personne te presse, personne te surveille. Les meilleures places sont le long des fenêtres si tu peux les avoir, mais honnêtement toute la salle fonctionne. C'est le genre de place où tu arrives un peu pas assez habillé et tu te sens complètement chez toi.",
+        "Ce qu'on a commandé",
+        "McKiernan est fait pour le partage, et tu devrais commander en conséquence. Deux à trois assiettes pour deux personnes, c'est le sweet spot. On a un peu dépassé ça et on a roulé vers la sortie, ce qui, honnêtement, était aussi correct.",
+        "Les choux de Bruxelles à la diable sont arrivés en premier. Croustillants sur les bords, salés-sucrés, et disparus avant tout le reste sur la table. Si t'as déjà été sceptique envers les choux de Bruxelles, ce plat va régler ça de façon permanente. C'est le genre d'entrée qui donne le ton pour tout le repas.",
+        "Le tartare de bœuf à l'italienne était le suivant. L'assaisonnement penche italien, il vient avec des feuilles d'endive pour scooper, et il y a assez de croquant et de parmesan sur le dessus pour garder chaque bouchée intéressante. Léger, frais, et un bon contrepoint avant les plats plus costauds.",
+        "Le schnitzel bomba, c'est la vedette. Panure dorée et croquante avec un kick de bomba et assez d'acidité pour couper à travers la richesse. C'est agressivement satisfaisant de la façon que seule la bouffe frite et bien assaisonnée peut l'être. C'est le plat auquel tu vas penser en marchant vers la maison.",
+        "Les côtes levées miel et ail sont le complément parfait. Collantes, lustrées, sucrées au début et savoureuses sur la finale. Elles se marient bien avec le schnitzel parce que t'as ce contraste entre la panure croustillante et le glaçage collant.",
+        "Pour le dessert, les beignes maison. Chauds, moelleux, saupoudrés de sucre, et dangereusement faciles à enchaîner. C'est le genre de truc que tu commandes « pour la table » et que tu finis tranquillement presque tout seul. Pas de jugement ici.",
+        "Conseil partage : deux à trois assiettes au total pour deux personnes. Ce que je ferais différemment la prochaine fois : rester plus serré. La salle donne envie de commander comme si tu t'installais pour un festin, et c'est facile de se laisser emporter. Je sauterais un des plats principaux pour garder plus de place pour les beignes.",
+        "Drinks et rythme",
+        "McKiernan est un spot brunch café-first. L'americano est solide et bien préparé. C'est pas du pour-over de spécialité, mais c'est fiable et satisfaisant. Si t'es le genre de personne qui a besoin de deux tasses avant de devenir conversationnelle, c'est un bon point d'atterrissage. L'espresso est bon aussi, si tu préfères garder ça court.",
+        "Ils ont une courte carte de cocktails brunch si t'es dans cet état d'esprit, mais honnêtement, la bouffe ici est la star. T'as pas besoin d'un Bloody Mary pour rendre ça intéressant. Garde le budget drinks pour un autre repas et laisse la cuisine faire le travail.",
+        "Le service est chaleureux et sans prétention. Le personnel lit bien la salle : attentif quand t'as besoin de quelque chose, discret quand t'en as pas besoin. Le rythme était fluide et régulier. Les assiettes arrivaient à une cadence confortable, personne nous a pressés sur le café, et il y avait zéro pression pour libérer la table. C'est le genre de service qui te fait rester plus longtemps que prévu.",
+        "Le vrai coût",
+        "Prévois entre 30$ et 55$ par personne selon le nombre d'assiettes partagées et si tu ajoutes des extras. Tu peux rester plus léger à 20-35$ avec un café et un plat chacun, mais tu passerais à côté du point. Le partage, c'est là que le fun vit.",
+        "Pour ce que tu reçois, la salle, l'emplacement, la qualité de la cuisine, le prix est honnête. C'est pas une place qui charge un premium pour le quartier ou l'esthétique. La bouffe mérite son prix toute seule.",
+        "C'est un spot de date?",
+        "Premier rendez-vous : 4 sur 5. Le brunch garde les choses low-pressure et faciles. Le format partage te donne de quoi jaser, et tu peux enchaîner avec une marche le long du canal. C'est assez décontracté pour que personne se sente trop ou pas assez habillé.",
+        "Retrouvailles entre amis : 5 sur 5. C'est là que McKiernan brille vraiment. La grande table, les assiettes partagées, le rythme relax. Parfait pour un groupe de trois ou quatre qui veulent bien manger et rester longtemps.",
+        "Impressionner des visiteurs : 4 sur 5. L'emplacement au bord du canal donne un sens du lieu, et la bouffe est distinctement montréalaise sans être du piège à touristes. Ça dit à tes visiteurs que tu sais où manger.",
+        "Réserve les fins de semaine, surtout quand le soleil est de la partie. Chaque amateur de brunch dans un rayon de cinq kilomètres se souvient que McKiernan existe dès que ça frappe 15 degrés. Les heures de pointe du samedi et dimanche se remplissent vite. Le brunch en semaine est plus calme et accueillant pour les walk-ins. Si tu peux te libérer un vendredi matin, c'est le move : menu complet, pas d'attente, et la salle a un feeling presque café de semaine avant de basculer en mode fin de semaine.",
+        "Le vrai pro tip : mange ton brunch, puis marche le Canal Lachine. C'est à cinq minutes du restaurant, et ça transforme un bon repas en une matinée complète. Si t'es en date, c'est la marche post-brunch où la vraie conversation se passe. Et quand tu veux un resto pour un souper avec les mêmes prix honnêtes et une cuisine saisonnière, notre [critique d'Othym](/fr/critiques/othym-montreal/) vaut la peine d'être bookmarkée pour une date en semaine.",
+        "McKiernan, c'est un 8 sur 10 pour les dates brunch. Va là si tu veux de la bouffe honnête et satisfaisante dans une salle qui fait du bien, avec un deuxième acte intégré au bord de l'eau. Passe ton tour si tu cherches un cadre intime et tranquille ou du fine dining poli. C'est pas ce que cette place fait. Ce qu'elle fait, c'est bien te nourrir, garder l'énergie haute, et te renvoyer content. Amène quelqu'un avec qui tu veux passer une matinée tranquille. Commande trop. Marche-la au bord du canal. C'est le playbook au complet, et ça marche à tout coup.",
+        "Horaires : lundi au vendredi 11h à 22h30. Samedi et dimanche 10h à 22h30 (le brunch se termine à 15h). Pour s'y rendre : mieux en vélo ou en covoiturage. Le stationnement dans la rue existe mais varie, surtout les fins de semaine ensoleillées. Note diététique : le menu inclut généralement des petites assiettes végétariennes. Demande à ton serveur pour les options du moment."
+      ],
+      "headings": [
+        "L'ambiance",
+        "Ce qu'on a commandé",
+        "Drinks et rythme",
+        "Le vrai coût",
+        "C'est un spot de date?"
+      ]
+    }
+  }
+}

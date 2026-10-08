@@ -101,6 +101,9 @@ export function bestMatchCost(needle, haystack) {
 export function traces(sentence, sourceWordLists) {
   const needle = words(sentence);
   if (needle.length === 0) return true;
+  // A one-word sentence has no context to tell a spelling fix from a
+  // different word ("Paid" is not "pair"), so it must match exactly.
+  if (needle.length === 1) return sourceWordLists.some((haystack) => haystack.includes(needle[0]));
   const budget = allowedEdits(needle.length);
   return sourceWordLists.some((haystack) => haystack.length >= needle.length - budget && bestMatchCost(needle, haystack) <= budget);
 }
