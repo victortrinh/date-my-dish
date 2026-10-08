@@ -134,8 +134,8 @@ Publishing, Pinterest and every scheduled job are defined in the spec (`docs/edi
 
 ### SEO and performance guards (wired into every build and PR)
 - **`scripts/validate-source.mjs`** (`prebuild`) -- Fails on a `<Picture>` missing `fallbackFormat` and on taxonomy values with no translation.
-- **`scripts/validate-date-spots.mjs`** (`prebuild`) -- Validates the content contracts, EN/FR parity, append-only Google snapshots and cross-collection links; warns below nine internal links and when `favourite` passes one in four.
-- **`scripts/validate-build.mjs`** (`postbuild`) -- Fails on hreflang pointing to a redirect/404 or missing a trailing slash, noindex/bare-root/redirecting URLs in the sitemap, indexable meta descriptions outside 120-160, internal links to a `_redirects` source, untranslated i18n keys in titles/meta, or `dist/_astro` images over 500 KB.
+- **`scripts/validate-date-spots.mjs`** (`prebuild`) -- Merges each Companion File (`src/content/editorial/{slug}.json`) over its record, then validates the content contracts (naming any missing required field), EN/FR parity, append-only Google snapshots and update lines, and cross-collection links. Fails a review below 300 reader-facing words per locale; warns below 1,000 words, below nine internal links, and when `favourite` passes one in four.
+- **`scripts/validate-build.mjs`** (`postbuild`) -- Fails on hreflang pointing to a redirect/404 or missing a trailing slash, noindex/bare-root/redirecting URLs in the sitemap, indexable meta descriptions outside 120-160, internal links to a `_redirects` source, untranslated i18n keys in titles/meta, `dist/_astro` images over 500 KB, or any `Review`, `AggregateRating`, `Rating` or `FAQPage` JSON-LD (or `reviewRating`/`aggregateRating`/`ratingValue` keys).
 - **Lighthouse PR check** -- Enforces the performance budgets in the spec.
 - When adding a check, add a matching lesson below.
 
@@ -148,7 +148,7 @@ Publishing, Pinterest and every scheduled job are defined in the spec (`docs/edi
 ### Testing
 - **Playwright E2E**: `npx playwright test` -- auto-discovers pages from `dist/`, 4 projects (desktop/mobile x light/dark)
 - **Lighthouse CI**: `.lighthouserc.cjs` (PR checks), `.lighthouserc-full.cjs` (full audit)
-- **Contract fixtures**: browser builds set `DATE_SPOT_SOURCE`, `CONTRIBUTOR_RECIPE_SOURCE` and `EXTENDED_PROFILE_SOURCE` to files in `tests/fixtures/`
+- **Contract fixtures**: browser builds set `DATE_SPOT_SOURCE`, `CONTRIBUTOR_RECIPE_SOURCE` and `EXTENDED_PROFILE_SOURCE` to files in `tests/fixtures/`, and `EDITORIAL_SOURCE` to `tests/fixtures/editorial/` (Companion Files)
 
 ## Lessons Learned
 
@@ -174,5 +174,6 @@ Detailed write-ups live in `docs/solutions/`.
 18. **Notion fetch requests need a browser `User-Agent` header, not authentication.** Cloudflare's WAF 403s `notion-client` requests without one. `createNotionApi()` in `scripts/notion-utils.mjs` sets it. No token is needed or available: the Notion database is public and read-only for DMD.
 19. **`typescript` stays below v7 (`~6.0.3`)**, pinned in `package.json` and `renovate.json` (`allowedVersions: "<7"`), because `@astrojs/check` only supports TS 5 and 6. Don't add an `overrides` block to force it. Lift the pin only once a released `@astrojs/check` lists TS 7 in its peer dependencies.
 20. **Pages are built from structured fields, never free text standing in for a section.** Optional sections render only when their field has content. When the design changes, change the spec, the contract, the renderer and the fixtures (`node tests/contracts/date-spot-fixtures.mjs`) together.
-21. **The Google rating never enters DMD's structured data**, and no `Review`, `AggregateRating` or `FAQPage` markup is emitted. DMD publishes no numbers of its own.
+21. **The Google rating never enters DMD's structured data**, and no `Review`, `AggregateRating` or `FAQPage` markup is emitted. DMD publishes no numbers of its own. Enforced by `validate-build`.
 22. **`_redirects` rules must answer with their own 301, even with `run_worker_first`.** While `run_worker_first` is on, static requests reach `public/_redirects` only through the `ASSETS` binding, which follows redirects by default and serves the target at the old URL with a 200. `src/worker.ts` asks the binding for the redirect itself (`redirect: "manual"`). The legacy flat review URLs (#542) are asserted as a single 301 in `tests/smoke/date-spot.spec.ts`, and `tests/contracts/legacy-review-redirects.test.mjs` fails if a migrated review renders anywhere other than its redirect target.
+23. **Notion owns the prose; the Companion File owns everything else.** `src/content/editorial/{slug}.json` (schema in `src/content-contracts/companion.mjs`) holds verdict and reason, signals, Spot Type, category, neighbourhood, `lastChecked` and update lines, Google snapshots, Instagram, booking link, meta fields, alt text and internal links. `loadCollection()` in `src/content-contracts/load.mjs` merges it over the record for both the Astro collections and the validators; its fields win. Required fields per post type are exactly the spec's minimum; everything else is optional and an Optional Section never renders an empty heading.

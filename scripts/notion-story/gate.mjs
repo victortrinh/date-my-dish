@@ -45,13 +45,21 @@ export function checkAttestations(getProp) {
   );
 }
 
+// Key order differs between a raw record and its parsed form, so compare
+// with sorted keys.
+const stable = (value) => Array.isArray(value)
+  ? value.map(stable)
+  : value && typeof value === "object"
+    ? Object.fromEntries(Object.keys(value).sort().map((key) => [key, stable(value[key])]))
+    : value;
+
 function coreRecommendationSignature(record) {
   if (record.postType !== "date-spot") return null;
-  return JSON.stringify({
+  return JSON.stringify(stable({
     verdict: record.reviewVerdict ?? null,
     goodFor: record.locales?.en?.goodFor ?? record.locales?.en?.whenItWorks ?? null,
     essentials: record.locales?.en?.essentials ?? null,
-  });
+  }));
 }
 
 /**
@@ -68,7 +76,7 @@ export function checkDatedUpdate(record, previousRecord) {
   if (!previousRecord || record.postType !== "date-spot") return [];
   if (coreRecommendationSignature(record) === coreRecommendationSignature(previousRecord)) return [];
 
-  const previousLastChecked = previousRecord.freshness.lastChecked;
+  const previousLastChecked = previousRecord.freshness.lastChecked ?? previousRecord.freshness.published;
   const problems = [];
   for (const locale of ["en", "fr-CA"]) {
     const updates = record.locales[locale].materialUpdates ?? [];

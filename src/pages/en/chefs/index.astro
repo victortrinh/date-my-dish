@@ -17,11 +17,11 @@ const title = t("en", "profile.indexTitle");
         const copy = profile.locales["en"];
         return (
           <a href={profilePath(copy.slug, "en")} class="block border border-warm-200 bg-white no-underline dark:border-warm-700 dark:bg-warm-900">
-            <img src={profile.image.src} width={profile.image.width} height={profile.image.height} alt={copy.imageAlt} loading="lazy" class="aspect-[4/3] w-full object-cover" />
+            {profile.image && <img src={profile.image.src} width={profile.image.width} height={profile.image.height} alt={copy.imageAlt} loading="lazy" class="aspect-[4/3] w-full object-cover" />}
             <div class="p-6">
               <h2 class="text-heading-3 text-warm-900 dark:text-warm-100">{profile.subject.name}</h2>
-              <p class="mt-1 font-ui text-body-sm text-warm-500 dark:text-warm-400">{profile.subject.venue} · {profile.subject.neighbourhood}</p>
-              <p class="mt-3 text-warm-700 dark:text-warm-300">{copy.standfirst}</p>
+              <p class="mt-1 font-ui text-body-sm text-warm-500 dark:text-warm-400">{[profile.subject.venue, profile.subject.neighbourhood].filter(Boolean).join(" · ")}</p>
+              {copy.standfirst && <p class="mt-3 text-warm-700 dark:text-warm-300">{copy.standfirst}</p>}
             </div>
           </a>
         );

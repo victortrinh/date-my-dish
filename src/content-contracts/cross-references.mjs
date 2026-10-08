@@ -3,6 +3,8 @@
 // Each collection's own schema can't see the others, so the build and the
 // Notion publish gate run this after schema validation.
 
+import { REVIEW_WORD_TARGET, countReaderWords, makeANightCards } from "./date-spot.mjs";
+
 export const REVIEW_INTERNAL_LINK_TARGET = 9;
 // "A favourite" stops meaning anything if it lands on most reviews.
 export const FAVOURITE_SHARE_TARGET = 0.25;
@@ -28,11 +30,15 @@ export function checkCrossReferences({ spots, recipes, profiles }) {
     }
   }
   for (const profile of profiles) {
+    // The restaurant may be a published review or just its name.
+    if (!profile.companionDateSpot) continue;
     const companion = spots.find((spot) => spot.id === profile.companionDateSpot);
     if (!companion) problems.push(`${profile.id}: companion Date Spot "${profile.companionDateSpot}" is not published`);
     else if (companion.spotType !== "restaurant" && companion.spotType !== "bar") {
       problems.push(`${profile.id}: the companion Date Spot must be a Restaurant or Bar review`);
     }
+  }
+  for (const profile of profiles) {
     const recipeId = profile.locales.en.contributorRecipe;
     if (recipeId && !recipeIds.has(recipeId)) problems.push(`${profile.id}: Contributor Recipe "${recipeId}" is not published`);
   }
@@ -58,9 +64,15 @@ export function editorialWarnings(spots) {
     const copy = review.locales.en;
     const lead = copy.meetChef ?? copy.meetTheBartender;
     const nearbyReviews = reviews.filter((other) => other.id !== review.id && other.city === review.city && other.neighbourhood === review.neighbourhood).length;
-    const links = (copy.makeANight?.length ?? 0) + 1 /* neighbourhood guide */ + (copy.atHome ? 1 : 0) + (lead?.profileId ? 1 : 0) + Math.min(nearbyReviews, 2);
+    const links = makeANightCards(copy.makeANight, spots).length + 1 /* neighbourhood guide */ + (copy.atHome ? 1 : 0) + (lead?.profileId ? 1 : 0) + Math.min(nearbyReviews, 2);
     if (links < REVIEW_INTERNAL_LINK_TARGET) {
       warnings.push(`${review.id}: ${links} earned internal links; the review spec aims for ${REVIEW_INTERNAL_LINK_TARGET} (five Make a night of it picks, the neighbourhood guide, the recipe card, two nearby reviews)`);
+    }
+    for (const locale of ["en", "fr-CA"]) {
+      const words = countReaderWords(review.locales[locale]);
+      if (words < REVIEW_WORD_TARGET) {
+        warnings.push(`${review.id} (${locale}): ${words} reader-facing words; the spec aims for ${REVIEW_WORD_TARGET}. Never pad to reach it.`);
+      }
     }
   }
   const favourites = spots.filter((spot) => spot.reviewVerdict === "favourite").length;

@@ -103,6 +103,7 @@ jobs:
           DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
           CONTRIBUTOR_RECIPE_SOURCE: tests/fixtures/contributor-recipes.json
           EXTENDED_PROFILE_SOURCE: tests/fixtures/extended-profiles.json
+          EDITORIAL_SOURCE: tests/fixtures/editorial
 
       - name: Run Playwright tests
         if: steps.scope.outputs.test_scope != 'none'
@@ -113,6 +114,7 @@ jobs:
           DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
           CONTRIBUTOR_RECIPE_SOURCE: tests/fixtures/contributor-recipes.json
           EXTENDED_PROFILE_SOURCE: tests/fixtures/extended-profiles.json
+          EDITORIAL_SOURCE: tests/fixtures/editorial
 
       # Upload HTML report on failure
       - name: Upload Playwright report

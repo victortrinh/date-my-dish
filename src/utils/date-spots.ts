@@ -68,11 +68,17 @@ export function recipeCardPath(slug: string, locale: Locale): string {
   return `/${locale}/${locale === "fr" ? "fiches-recettes" : "recipe-cards"}/${slug}/`;
 }
 
+/** The page's headline: "{Name}, {Neighbourhood}" for a review, the copy's title or the name for a Date Spot. */
+export function spotTitle(spot: DateSpot, locale: Locale): string {
+  if (isVenueReview(spot)) return `${spot.name}, ${spot.neighbourhood}`;
+  return spot.locales[copyLocale(locale)].title ?? spot.name;
+}
+
 export function verdictLabel(verdict: Verdict, locale: Locale): string {
   return t(locale, `dateSpot.verdict.${verdict}`);
 }
 
-export function priceLabel(price: DateSpot["priceRange"], locale: Locale): string {
+export function priceLabel(price: NonNullable<DateSpot["priceRange"]>, locale: Locale): string {
   return price === "free" ? t(locale, "dateSpot.free") : price;
 }
 

@@ -1,7 +1,7 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import type { APIContext } from "astro";
-import { dateSpotPath } from "@utils/date-spots";
+import { dateSpotPath, spotTitle } from "@utils/date-spots";
 import { t } from "@i18n/utils";
 
 export async function GET(context: APIContext) {
@@ -13,7 +13,7 @@ export async function GET(context: APIContext) {
     site: context.site!,
     items: spots.sort((a, b) => b.data.freshness.published.localeCompare(a.data.freshness.published)).map(({ data }) => {
       const copy = data.locales["fr-CA"];
-      return { title: copy.title, description: copy.metaDescription, pubDate: new Date(data.freshness.published), link: dateSpotPath(data, locale) };
+      return { title: spotTitle(data, locale), description: copy.metaDescription, pubDate: new Date(data.freshness.published), link: dateSpotPath(data, locale) };
     }),
     customData: `<language>${locale}</language>`,
   });

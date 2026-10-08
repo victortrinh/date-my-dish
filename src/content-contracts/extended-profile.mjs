@@ -1,14 +1,13 @@
 import { z } from "astro/zod";
+import { isoDate as date, metaDescription, metaTitle, slug, text } from "./date-spot.mjs";
 
-const text = z.string().trim().min(1);
-const date = z.string().regex(/^\d{4}-\d{2}-\d{2}$/);
-const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 /** @template {z.ZodRawShape} T @param {T} shape */
 const object = (shape) => z.object(shape).strict();
 
-// Round two asks every chef or bartender the same eight questions, in this
-// order, so answers stay comparable across profiles. The question wording
-// is written per locale in the Story; these keys pin which question it is.
+// Round two asks every chef or bartender from the same eight questions, in
+// this order, so answers stay comparable across chef pages. Any of them may
+// be left out; the ones asked keep their order. The wording is written per
+// locale; these keys pin which question it is.
 export const DINNER_AND_DATE_QUESTIONS = /** @type {const} */ ([
   "first-thing-cooked",
   "last-day-off",
@@ -21,27 +20,30 @@ export const DINNER_AND_DATE_QUESTIONS = /** @type {const} */ ([
 ]);
 
 const qa = object({ question: text, answer: text });
+// Required: the chef's name, the restaurant they are tied to, at least one
+// answer from the Q&A, EN and FR. Everything else is an Optional Section.
 const profileCopy = object({
-  title: text,
+  title: text.optional(),
   slug,
-  metaTitle: text.max(60),
-  metaDescription: text.min(120).max(160),
+  metaTitle,
+  metaDescription,
   // One or two sentences under the name: role, venue, and the hook.
-  standfirst: text,
-  shortScene: text,
-  theVenue: z.array(qa).min(1),
+  standfirst: text.optional(),
+  shortScene: text.optional(),
+  theVenue: z.array(qa).min(1).optional(),
   pullQuote: text.optional(),
-  dinnerAndDate: z.array(object({ key: z.enum(DINNER_AND_DATE_QUESTIONS), question: text, answer: text })).length(DINNER_AND_DATE_QUESTIONS.length),
+  dinnerAndDate: z.array(object({ key: z.enum(DINNER_AND_DATE_QUESTIONS), question: text, answer: text })).min(1).max(DINNER_AND_DATE_QUESTIONS.length).optional(),
   shortVersion: object({
-    cuisine: text,
+    cuisine: text.optional(),
     from: text.optional(),
     trainedAt: text.optional(),
     inKitchensSince: z.number().int().min(1900).max(2100).optional(),
-  }),
-  sourceNotes: text,
-  factNotes: text,
-  imageAlt: text,
-  imageCredit: text,
+  }).optional(),
+  sourceNotes: text.optional(),
+  factNotes: text.optional(),
+  imageAlt: text.optional(),
+  imageCredit: text.optional(),
+  // "What would you make for a date night at home?"
   atHome: text.optional(),
   contributorRecipe: slug.optional(),
 });
@@ -49,50 +51,63 @@ const profileCopy = object({
 export const extendedProfileSchema = object({
   id: slug,
   postType: z.literal("extended-profile"),
-  subject: object({ name: text, role: z.enum(["chef", "bartender"]), venue: text, neighbourhood: text }),
-  companionDateSpot: slug,
+  // The venue is a published review (companionDateSpot) or just its name.
+  subject: object({ name: text, role: z.enum(["chef", "bartender"]).default("chef"), venue: text, neighbourhood: text.optional() }),
+  companionDateSpot: slug.optional(),
   interviewer: z.literal("Victor"),
-  originalInterview: object({ conductedOn: date, source: text, quoteVerification: z.literal("facts-and-quotes-only") }),
-  authorship: object({ reporting: z.literal("human"), translation: z.literal("human") }),
+  originalInterview: object({ conductedOn: date.optional(), source: text.optional(), quoteVerification: z.literal("facts-and-quotes-only").optional() }).optional(),
+  // No longer required. Still accepted because the pre-rework Notion Story
+  // mapper (scripts/notion-story/map.mjs) emits it until #539 replaces it.
+  authorship: object({ reporting: z.literal("human"), translation: z.literal("human") }).optional(),
   published: date,
+  // The portrait is optional; when present it carries alt text per locale.
   image: object({
     src: z.union([z.string().regex(/^\/images\/profiles\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/), z.literal("/images/og-default.jpg")]),
     width: z.number().int().positive(),
     height: z.number().int().positive(),
     provenance: z.literal("dmd-held-photograph"),
-  }),
+  }).optional(),
   locales: object({ en: profileCopy, "fr-CA": profileCopy }),
 }).superRefine((profile, ctx) => {
+  const issue = (path, message) => ctx.addIssue({ code: "custom", path, message });
   // The generic image is reserved for the non-public acceptance fixtures.
-  if (profile.image.src === "/images/og-default.jpg" && !profile.id.startsWith("test-only-")) {
-    ctx.addIssue({ code: "custom", path: ["image", "src"], message: "The generic image is reserved for the non-public acceptance fixture" });
+  if (profile.image?.src === "/images/og-default.jpg" && !profile.id.startsWith("test-only-")) {
+    issue(["image", "src"], "The generic image is reserved for the non-public acceptance fixture");
   }
-  if (profile.originalInterview.conductedOn > profile.published) {
-    ctx.addIssue({ code: "custom", path: ["originalInterview", "conductedOn"], message: "Interview must be conducted before publication" });
+  const conductedOn = profile.originalInterview?.conductedOn;
+  if (conductedOn && conductedOn > profile.published) {
+    issue(["originalInterview", "conductedOn"], "Interview must be conducted before publication");
   }
   for (const locale of ["en", "fr-CA"]) {
-    const keys = profile.locales[locale].dinnerAndDate.map((item) => item.key);
-    if (keys.join() !== DINNER_AND_DATE_QUESTIONS.join()) {
-      ctx.addIssue({ code: "custom", path: ["locales", locale, "dinnerAndDate"], message: `Dinner and a date asks the same eight questions in order: ${DINNER_AND_DATE_QUESTIONS.join(", ")}` });
+    const copy = profile.locales[locale];
+    if (!copy.theVenue?.length && !copy.dinnerAndDate?.length && !copy.atHome) {
+      issue(["locales", locale], "A chef page needs at least one answer from the Q&A");
+    }
+    const keys = copy.dinnerAndDate?.map((item) => item.key) ?? [];
+    const inOrder = keys.every((key, index) => index === 0 || DINNER_AND_DATE_QUESTIONS.indexOf(key) > DINNER_AND_DATE_QUESTIONS.indexOf(keys[index - 1]));
+    if (!inOrder) {
+      issue(["locales", locale, "dinnerAndDate"], `Dinner and a date asks the fixed questions once each, in order: ${DINNER_AND_DATE_QUESTIONS.join(", ")}`);
+    }
+    if (profile.image && !copy.imageAlt) issue(["locales", locale, "imageAlt"], "A portrait needs alt text");
+    if (copy.contributorRecipe && !copy.atHome) {
+      issue(["locales", locale, "atHome"], "A recipe card link sits under the chef's answer to the closing question");
     }
   }
   const en = profile.locales.en;
   const fr = profile.locales["fr-CA"];
-  if (en.theVenue.length !== fr.theVenue.length || Boolean(en.pullQuote) !== Boolean(fr.pullQuote)) {
-    ctx.addIssue({ code: "custom", path: ["locales"], message: "Both locales carry the same round-one questions and pull quote" });
+  if ((en.theVenue?.length ?? 0) !== (fr.theVenue?.length ?? 0) || Boolean(en.pullQuote) !== Boolean(fr.pullQuote)) {
+    issue(["locales"], "Both locales carry the same round-one questions and pull quote");
   }
-  const shortVersionKeys = (copy) => Object.keys(copy.shortVersion).sort().join();
-  if (shortVersionKeys(en) !== shortVersionKeys(fr) || en.shortVersion.inKitchensSince !== fr.shortVersion.inKitchensSince) {
-    ctx.addIssue({ code: "custom", path: ["locales"], message: "The short version must list the same facts in both locales" });
+  const dinnerKeys = (copy) => copy.dinnerAndDate?.map((item) => item.key).join() ?? "";
+  if (dinnerKeys(en) !== dinnerKeys(fr) || Boolean(en.atHome) !== Boolean(fr.atHome) || Boolean(en.standfirst) !== Boolean(fr.standfirst) || Boolean(en.shortScene) !== Boolean(fr.shortScene)) {
+    issue(["locales"], "Both locales answer the same questions and carry the same sections");
+  }
+  const shortVersionKeys = (copy) => Object.keys(copy.shortVersion ?? {}).sort().join();
+  if (shortVersionKeys(en) !== shortVersionKeys(fr) || en.shortVersion?.inKitchensSince !== fr.shortVersion?.inKitchensSince) {
+    issue(["locales"], "The short version must list the same facts in both locales");
   }
   if (en.contributorRecipe !== fr.contributorRecipe) {
-    ctx.addIssue({ code: "custom", path: ["locales"], message: "Contributor-recipe links must agree across the Locale Pair" });
-  }
-  for (const locale of ["en", "fr-CA"]) {
-    const copy = profile.locales[locale];
-    if (Boolean(copy.contributorRecipe) !== Boolean(copy.atHome)) {
-      ctx.addIssue({ code: "custom", path: ["locales", locale], message: "At-home reporting and a Contributor Recipe link must appear together" });
-    }
+    issue(["locales"], "Contributor-recipe links must agree across the Locale Pair");
   }
 });
 

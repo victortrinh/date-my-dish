@@ -22,7 +22,8 @@ function daysBetween(fromISODate, toISODate) {
 export function dueForRecheck(spots, todayISODate) {
   const due = [];
   for (const spot of spots) {
-    const { lastChecked } = spot.freshness;
+    // "Checked" defaults to the publish date until the venue is rechecked.
+    const lastChecked = spot.freshness.lastChecked ?? spot.freshness.published;
     const overdueBySix = daysBetween(lastChecked, todayISODate) >= RECHECK_INTERVAL_DAYS;
     if (overdueBySix) {
       due.push({ id: spot.id, name: spot.name, lastChecked, reason: "Last checked over six months ago" });

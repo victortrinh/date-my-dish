@@ -13,7 +13,7 @@ interface Props {
   neighbourhood: string;
   image: string;
   imageAlt: string;
-  mapUrl: string;
+  mapUrl?: string;
   published: string;
   lastChecked: string;
   host?: { name: string; role: "chef" | "bartender" };
@@ -42,7 +42,7 @@ const articleJsonLd = {
     name,
     address: { "@type": "PostalAddress", addressLocality: city, addressRegion: "QC", addressCountry: "CA" },
     containedInPlace: { "@type": "Place", name: neighbourhood },
-    hasMap: mapUrl,
+    ...(mapUrl ? { hasMap: mapUrl } : {}),
   },
   ...(host ? { contributor: { "@type": "Person", name: host.name, jobTitle: host.role } } : {}),
 };
