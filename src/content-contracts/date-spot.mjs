@@ -1,4 +1,5 @@
 import { z } from "astro/zod";
+import { neighbourhoodSlug } from "./date-spot-paths.mjs";
 
 export const text = z.string().trim().min(1);
 export const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/).refine(
@@ -24,10 +25,7 @@ export const MAKE_A_NIGHT_MAX = 5;
 // Path segments used by listing routes under /date-spots/ and /lieux/.
 export const RESERVED_SLUGS = ["category", "categorie", "neighbourhood", "quartier"];
 
-/** Neighbourhood path segment for review URLs, e.g. "Côte-des-Neiges" -> "cote-des-neiges". */
-export function neighbourhoodSlug(neighbourhood) {
-  return neighbourhood.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-}
+export { neighbourhoodSlug };
 
 /**
  * An Optional Section is either absent or carries content: an object with

@@ -50,6 +50,9 @@ jobs:
       - name: Detect test scope
         id: scope
         run: node scripts/generate-playwright-pages.cjs --base=origin/${{ github.event.pull_request.base.ref }}
+        env:
+          # Route the page list from the same fixture the build below uses.
+          DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
 
       - name: Skip message
         if: steps.scope.outputs.test_scope == 'none'

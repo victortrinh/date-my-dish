@@ -46,6 +46,8 @@ const projects = scope === "pr" ? prProjects : allProjects;
 
 export default defineConfig({
   testDir: "./tests",
+  // tests/contracts/ are node:test suites run by `npm run test:contracts`.
+  testIgnore: "**/contracts/**",
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
