@@ -160,14 +160,14 @@ const jump = [
 
         {hasRoom && <section id="room" aria-labelledby="room-title" class="scroll-mt-20">
           <h2 id="room-title" data-reveal class={h2}>{t(locale, "dateSpot.h.room")}</h2>
-          {copy.roomPhoto && <SpotPhoto photos={spot.photos} reference={copy.roomPhoto} locale={locale} class="mt-6 max-w-measure" />}
+          {copy.roomPhoto && <SpotPhoto photos={spot.photos} reference={copy.roomPhoto} locale={locale} class="mt-6 max-w-sm" />}
           {copy.room && <div class={`mt-6 space-y-5 ${body}`}><Paragraphs text={copy.room} /></div>}
         </section>}
 
         {lead && <section id="meet" aria-labelledby="meet-title" class="scroll-mt-20">
           <h2 id="meet-title" data-reveal class={h2}>{t(locale, isBar ? "dateSpot.h.meetBartender" : "dateSpot.h.meetChef")}</h2>
           <div class="mt-6 grid gap-8 sm:grid-cols-[12rem_minmax(0,1fr)]">
-            {lead.portrait && <SpotPhoto photos={spot.photos} reference={lead.portrait} locale={locale} arch class="max-w-56" />}
+            {lead.portrait && <SpotPhoto photos={spot.photos} reference={lead.portrait} locale={locale} class="max-w-56" />}
             <div class:list={["space-y-5", !lead.portrait && "sm:col-span-2"]}>
               <p class="font-ui font-semibold text-ink">{lead.name}{lead.role && <> · <span class="font-normal text-ink-subtle">{lead.role}</span></>}</p>
               {lead.background && <div class={`space-y-5 ${body}`}><Paragraphs text={lead.background} /></div>}
@@ -220,7 +220,7 @@ const jump = [
           {dishes.length > 0 && <ul class="mt-8 divide-y divide-line border-y border-line">
             {dishes.map((dish) => (
               <li class="grid gap-5 py-6 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
-                {dish.photo ? <SpotPhoto photos={spot.photos} reference={dish.photo} locale={locale} /> : null}
+                {dish.photo ? <SpotPhoto photos={spot.photos} reference={dish.photo} locale={locale} class="max-w-56" /> : null}
                 <div class:list={[!dish.photo && "sm:col-span-2"]}>
                   <h3 class="text-heading-3 text-ink">{dish.name}</h3>
                   <span data-dish-tag={dish.tag} class:list={[
