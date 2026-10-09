@@ -141,6 +141,7 @@ tests/                        # Contract tests, Playwright specs, fixtures
 | `weekly-seo-ranking.yml` | Mondays | Search Console and SERP data into `data/seo/` |
 | `weekly-seo-audit.yml` | Sundays | Full Lighthouse audit into `data/lighthouse/` |
 | `venue-maintenance.yml` | Monthly | Flags reviews and Date Spots due a recheck |
+| `social-post-on-deploy.yml` | Publish PR merged | Queues pins for newly published posts (images in `data/pinterest/`) as a PR |
 | `pinterest-pin-rotation.yml` | Daily | Posts queued pins |
 | `token-refresh.yml` | 1st and 25th | Refreshes the Pinterest token |
 | `playwright-weekly.yml` | Sundays | Full E2E suite |

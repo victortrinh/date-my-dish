@@ -1211,5 +1211,285 @@
         }
       ]
     }
+  },
+  "cabaret-lenfer": {
+    "type": "review",
+    "spotId": "cabaret-lenfer",
+    "url": "https://datemydish.com/en/reviews/the-plateau/cabaret-lenfer/",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "cabaret-lenfer--hero--title",
+          "variant": "title",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/cabaret-lenfer-cook-plating-at-pass-seen-from.webp",
+          "imageFile": "data/pinterest/cabaret-lenfer-hero-title.jpg",
+          "title": "Cabaret l'Enfer, the Plateau: An Honest Review",
+          "description": "Massimo Piedimonte's Michelin-listed tasting menu on Saint-Denis. Careful cooking, a loud room, small portions, and why it wasn't my favourite night out. Not our first pick: For the same money in Montreal I'd book somewhere else.",
+          "altText": "A cook plating at the pass, seen from the counter",
+          "link": "https://datemydish.com/en/reviews/the-plateau/cabaret-lenfer/",
+          "scheduledFor": "2026-10-10T09:00:00.000Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "cabaret-lenfer--dining-room--verdict",
+          "variant": "verdict",
+          "photo": "dining-room",
+          "sourceImage": "public/images/date-spots/cabaret-lenfer-dining-room-banquette-wood-tables-white.webp",
+          "imageFile": "data/pinterest/cabaret-lenfer-dining-room-verdict.jpg",
+          "title": "Cabaret l'Enfer, the Plateau: An Honest Review",
+          "description": "Not our first pick: For the same money in Montreal I'd book somewhere else. Massimo Piedimonte's Michelin-listed tasting menu on Saint-Denis. Careful cooking, a loud room, small portions, and why it wasn't my favourite night out.",
+          "altText": "The dining room: banquette, wood tables, white brick, two dark canvases",
+          "link": "https://datemydish.com/en/reviews/the-plateau/cabaret-lenfer/",
+          "scheduledFor": "2026-10-18T09:00:00.000Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "giwa": {
+    "type": "review",
+    "spotId": "giwa",
+    "url": "https://datemydish.com/en/reviews/verdun/giwa/",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "giwa--hero--title",
+          "variant": "title",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/giwa-korean-plates.webp",
+          "imageFile": "data/pinterest/giwa-hero-title.jpg",
+          "title": "Giwa, Verdun: Review & Date Night Guide",
+          "description": "Modern Korean on Promenade Wellington, pretty plates and clean technique. What to order, what it costs, and an honest note on the subtle flavours here. Depends on the night: If you want a relaxed dinner with careful plating, it works.",
+          "altText": "Pretty Korean dishes at Giwa restaurant in Verdun Montreal, a casual date-night spot on Promenade Wellington serving modern Korean cuisine",
+          "link": "https://datemydish.com/en/reviews/verdun/giwa/",
+          "scheduledFor": "2026-10-11T09:00:00.000Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "giwa--hero--verdict",
+          "variant": "verdict",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/giwa-korean-plates.webp",
+          "imageFile": "data/pinterest/giwa-hero-verdict.jpg",
+          "title": "Giwa, Verdun: Review & Date Night Guide",
+          "description": "Depends on the night: If you want a relaxed dinner with careful plating, it works. Modern Korean on Promenade Wellington, pretty plates and clean technique. What to order, what it costs, and an honest note on the subtle flavours here.",
+          "altText": "Pretty Korean dishes at Giwa restaurant in Verdun Montreal, a casual date-night spot on Promenade Wellington serving modern Korean cuisine",
+          "link": "https://datemydish.com/en/reviews/verdun/giwa/",
+          "scheduledFor": "2026-10-19T09:00:00.000Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "hoogan-et-beaufort": {
+    "type": "review",
+    "spotId": "hoogan-et-beaufort",
+    "url": "https://datemydish.com/en/reviews/rosemont/hoogan-et-beaufort/",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "hoogan-et-beaufort--hero--title",
+          "variant": "title",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/hoogan-et-beaufort-dining-room-open-hearth.webp",
+          "imageFile": "data/pinterest/hoogan-et-beaufort-hero-title.jpg",
+          "title": "Hoogan et Beaufort, Rosemont: Review & Guide",
+          "description": "Marc-André Jetté's wood-fired Québécois cooking in Rosemont, one Michelin star since 2026. The tasting menu, the cost, and whether it suits a date night. Depends on the night: Go for a celebration. Don't go for a first date.",
+          "altText": "Warm, intimate dining room at Hoogan et Beaufort Montreal with pendant lights and live-fire kitchen visible in the background",
+          "link": "https://datemydish.com/en/reviews/rosemont/hoogan-et-beaufort/",
+          "scheduledFor": "2026-10-12T09:00:00.000Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "hoogan-et-beaufort--hero--verdict",
+          "variant": "verdict",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/hoogan-et-beaufort-dining-room-open-hearth.webp",
+          "imageFile": "data/pinterest/hoogan-et-beaufort-hero-verdict.jpg",
+          "title": "Hoogan et Beaufort, Rosemont: Review & Guide",
+          "description": "Depends on the night: Go for a celebration. Don't go for a first date. Marc-André Jetté's wood-fired Québécois cooking in Rosemont, one Michelin star since 2026. The tasting menu, the cost, and whether it suits a date night.",
+          "altText": "Warm, intimate dining room at Hoogan et Beaufort Montreal with pendant lights and live-fire kitchen visible in the background",
+          "link": "https://datemydish.com/en/reviews/rosemont/hoogan-et-beaufort/",
+          "scheduledFor": "2026-10-20T09:00:00.000Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "ile-flottante": {
+    "type": "review",
+    "spotId": "ile-flottante",
+    "url": "https://datemydish.com/en/reviews/mile-end/ile-flottante/",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "ile-flottante--hero--title",
+          "variant": "title",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/ile-flottante-seasonal-plate.webp",
+          "imageFile": "data/pinterest/ile-flottante-hero-title.jpg",
+          "title": "Île Flottante, Mile End: Tasting Menu Date Guide",
+          "description": "Sean Murray Smith's seasonal tasting menu in Mile End, $130 a head. An honest take on the technique, the desserts, and whether the night earns the money. Depends on the night: Go for the calm room and precise cooking.",
+          "altText": "Elegant plating at Île Flottante Montreal, a delicate seasonal dish resting on fine ceramic in the intimate Mile End dining room",
+          "link": "https://datemydish.com/en/reviews/mile-end/ile-flottante/",
+          "scheduledFor": "2026-10-13T09:00:00.000Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "ile-flottante--hero--verdict",
+          "variant": "verdict",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/ile-flottante-seasonal-plate.webp",
+          "imageFile": "data/pinterest/ile-flottante-hero-verdict.jpg",
+          "title": "Île Flottante, Mile End: Tasting Menu Date Guide",
+          "description": "Depends on the night: Go for the calm room and precise cooking. Sean Murray Smith's seasonal tasting menu in Mile End, $130 a head. An honest take on the technique, the desserts, and whether the night earns the money.",
+          "altText": "Elegant plating at Île Flottante Montreal, a delicate seasonal dish resting on fine ceramic in the intimate Mile End dining room",
+          "link": "https://datemydish.com/en/reviews/mile-end/ile-flottante/",
+          "scheduledFor": "2026-10-21T09:00:00.000Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "mckiernan": {
+    "type": "review",
+    "spotId": "mckiernan",
+    "url": "https://datemydish.com/en/reviews/ville-emard/mckiernan/",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "mckiernan--hero--title",
+          "variant": "title",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/mckiernan-devilled-brussels-sprouts.webp",
+          "imageFile": "data/pinterest/mckiernan-hero-title.jpg",
+          "title": "McKiernan, Ville-Émard: Brunch & Date Guide",
+          "description": "Rotisserie brunch by the Lachine Canal from the Joe Beef group, now trading as McKiernan Rotisserie. What to order, what it costs, and the canal walk after. A favourite: A lively brunch and lunch in a large industrial room with plenty of daylight.",
+          "altText": "Crispy devilled Brussels sprouts with caramelized edges and sweet-savory glaze served at McKiernan restaurant in Montreal's Sud-Ouest neighbourhood",
+          "link": "https://datemydish.com/en/reviews/ville-emard/mckiernan/",
+          "scheduledFor": "2026-10-14T09:00:00.000Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "mckiernan--hero--verdict",
+          "variant": "verdict",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/mckiernan-devilled-brussels-sprouts.webp",
+          "imageFile": "data/pinterest/mckiernan-hero-verdict.jpg",
+          "title": "McKiernan, Ville-Émard: Brunch & Date Guide",
+          "description": "A favourite: A lively brunch and lunch in a large industrial room with plenty of daylight. Rotisserie brunch by the Lachine Canal from the Joe Beef group, now trading as McKiernan Rotisserie. What to order, what it costs, and the canal walk after.",
+          "altText": "Crispy devilled Brussels sprouts with caramelized edges and sweet-savory glaze served at McKiernan restaurant in Montreal's Sud-Ouest neighbourhood",
+          "link": "https://datemydish.com/en/reviews/ville-emard/mckiernan/",
+          "scheduledFor": "2026-10-22T09:00:00.000Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "moccione": {
+    "type": "review",
+    "spotId": "moccione",
+    "url": "https://datemydish.com/en/reviews/villeray/moccione/",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "moccione--hero--title",
+          "variant": "title",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/moccione-dining-room.webp",
+          "imageFile": "data/pinterest/moccione-hero-title.jpg",
+          "title": "Moccione, Villeray: Review & Date Night Guide",
+          "description": "Luca Cianciulli's modern Italian in Villeray, with handmade pasta and a room built for lingering. What to order, what it costs, and why it suits a date. A favourite: The pasta is the reason to come and the room is the reason to stay.",
+          "altText": "Warm, intimate dining room at Moccione in Villeray, Montreal, with candlelit tables and a cozy Italian restaurant atmosphere perfect for a date night",
+          "link": "https://datemydish.com/en/reviews/villeray/moccione/",
+          "scheduledFor": "2026-10-15T09:00:00.000Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "moccione--hero--verdict",
+          "variant": "verdict",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/moccione-dining-room.webp",
+          "imageFile": "data/pinterest/moccione-hero-verdict.jpg",
+          "title": "Moccione, Villeray: Review & Date Night Guide",
+          "description": "A favourite: The pasta is the reason to come and the room is the reason to stay. Luca Cianciulli's modern Italian in Villeray, with handmade pasta and a room built for lingering. What to order, what it costs, and why it suits a date.",
+          "altText": "Warm, intimate dining room at Moccione in Villeray, Montreal, with candlelit tables and a cozy Italian restaurant atmosphere perfect for a date night",
+          "link": "https://datemydish.com/en/reviews/villeray/moccione/",
+          "scheduledFor": "2026-10-23T09:00:00.000Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "oncle-lee-kao": {
+    "type": "review",
+    "spotId": "oncle-lee-kao",
+    "url": "https://datemydish.com/en/reviews/old-montreal/oncle-lee-kao/",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "oncle-lee-kao--hero--title",
+          "variant": "title",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/oncle-lee-kao-dining-room.webp",
+          "imageFile": "data/pinterest/oncle-lee-kao-hero-title.jpg",
+          "title": "Oncle Lee Kăo, Old Montreal: Review & Date Guide",
+          "description": "Andersen Lee's modern Chinese grill on rue McGill in Old Montreal. What to order, what it costs, and why it suits a double date better than a first one. Depends on the night: Bring three friends rather than one.",
+          "altText": "Oncle Lee Kăo's soaring dining room in Old Montreal, Michelin Bib Gourmand with burnt-orange leather accents and warm flattering lighting",
+          "link": "https://datemydish.com/en/reviews/old-montreal/oncle-lee-kao/",
+          "scheduledFor": "2026-10-16T09:00:00.000Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "oncle-lee-kao--hero--verdict",
+          "variant": "verdict",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/oncle-lee-kao-dining-room.webp",
+          "imageFile": "data/pinterest/oncle-lee-kao-hero-verdict.jpg",
+          "title": "Oncle Lee Kăo, Old Montreal: Review & Date Guide",
+          "description": "Depends on the night: Bring three friends rather than one. Andersen Lee's modern Chinese grill on rue McGill in Old Montreal. What to order, what it costs, and why it suits a double date better than a first one.",
+          "altText": "Oncle Lee Kăo's soaring dining room in Old Montreal, Michelin Bib Gourmand with burnt-orange leather accents and warm flattering lighting",
+          "link": "https://datemydish.com/en/reviews/old-montreal/oncle-lee-kao/",
+          "scheduledFor": "2026-10-24T09:00:00.000Z",
+          "status": "pending"
+        }
+      ]
+    }
+  },
+  "othym": {
+    "type": "review",
+    "spotId": "othym",
+    "url": "https://datemydish.com/en/reviews/the-village/othym/",
+    "pinterest": {
+      "pins": [
+        {
+          "imageKey": "othym--hero--title",
+          "variant": "title",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/othym-seasonal-plates.webp",
+          "imageFile": "data/pinterest/othym-hero-title.jpg",
+          "title": "Othym, the Village: BYOB Review & Date Guide",
+          "description": "Noé Lainesse's seasonal Québec cooking on rue Atateken in the Village, and you bring the wine. What to order, what it costs, and how to plan the night. Depends on the night: Ingredient-driven, rustic and thoughtful, with a lot of the flavour built in-house through ferments.",
+          "altText": "Seasonal dishes at Othym, a Michelin-recommended BYOB restaurant in Montreal's Village featuring ingredient-driven Quebec cooking",
+          "link": "https://datemydish.com/en/reviews/the-village/othym/",
+          "scheduledFor": "2026-10-17T09:00:00.000Z",
+          "status": "pending"
+        },
+        {
+          "imageKey": "othym--hero--verdict",
+          "variant": "verdict",
+          "photo": "hero",
+          "sourceImage": "public/images/date-spots/othym-seasonal-plates.webp",
+          "imageFile": "data/pinterest/othym-hero-verdict.jpg",
+          "title": "Othym, the Village: BYOB Review & Date Guide",
+          "description": "Depends on the night: Ingredient-driven, rustic and thoughtful, with a lot of the flavour built in-house through ferments. Noé Lainesse's seasonal Québec cooking on rue Atateken in the Village, and you bring the wine. What to order, what it costs, and how to plan the night.",
+          "altText": "Seasonal dishes at Othym, a Michelin-recommended BYOB restaurant in Montreal's Village featuring ingredient-driven Quebec cooking",
+          "link": "https://datemydish.com/en/reviews/the-village/othym/",
+          "scheduledFor": "2026-10-25T09:00:00.000Z",
+          "status": "pending"
+        }
+      ]
+    }
   }
 }

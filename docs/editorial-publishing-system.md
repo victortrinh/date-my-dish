@@ -176,7 +176,7 @@ The FR is translated section by section from the section-fitted EN, so both keep
 - Pins use real photos only, with a title overlay rendered by script. No AI-generated images.
 - Pin copy is assembled from the meta title, meta description and verdict line. No new prose.
 - Pins link to the nested review URLs, English only.
-- Publishing a post queues its pins; `pinterest-pin-rotation.yml` posts the queue daily.
+- Publishing a post queues its pins: on merge, `social-post-on-deploy.yml` runs `scripts/social-post.mjs`, which renders each pin (1000x1500, one per post photo; a single-photo post gets a title pin and a verdict pin) into `data/pinterest/` and opens a PR adding them to `data/social-posts-log.json`. Merging that PR approves posting; `pinterest-pin-rotation.yml` posts the queue daily, one pin per scheduled day.
 - Pins created before the rework stay up; the 301 redirects keep them working.
 
 ## Scheduled work
@@ -188,6 +188,7 @@ The FR is translated section by section from the section-fitted EN, so both keep
 | `weekly-seo-ranking.yml` | GitHub Actions, Mondays | GSC and SERP data into `data/seo/`, keywords derived from published posts |
 | `weekly-seo-audit.yml` | GitHub Actions, Sundays | Full Lighthouse audit into `data/lighthouse/` |
 | `venue-maintenance.yml` | GitHub Actions, monthly | Flags reviews and Date Spots due a recheck (six months since Checked, or seasonal). Report only. |
+| `social-post-on-deploy.yml` | GitHub Actions, on merge of a publish PR | Queues pins for newly published posts and opens a PR with them |
 | `pinterest-pin-rotation.yml` | GitHub Actions, daily | Posts queued pins |
 | `token-refresh.yml` | GitHub Actions, 1st and 25th | Refreshes the Pinterest access token pin posting needs |
 | `playwright-weekly.yml` | GitHub Actions, Sundays | Full E2E suite |
