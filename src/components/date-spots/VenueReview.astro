@@ -104,8 +104,8 @@ const jump = [
     ]} />
 
     <SpotHero image={spot.image} alt={copy.imageAlt} caption={caption}>
-      <p class="eyebrow">{t(locale, "dateSpot.review")} · {t(locale, `dateSpot.spotType.${spot.spotType}`)} · {copy.cuisine}</p>
-      <h1 class="mt-4 text-heading-1 text-ink sm:text-display">{name}<span class="text-ink-subtle">, {neighbourhood}</span></h1>
+      <p class="eyebrow truncate">{t(locale, "dateSpot.review")} · {t(locale, `dateSpot.spotType.${spot.spotType}`)} · {copy.cuisine}</p>
+      <h1 class="mt-4 text-4xl text-ink sm:text-heading-1 lg:text-display">{name}<span class="text-ink-subtle">, {neighbourhood}</span></h1>
       <VerdictBadge verdict={spot.reviewVerdict} locale={locale} size="lg" class="mt-6" />
       <p class={`mt-6 ${body}`}>
         {lead && copy.opening.includes(lead.name)
