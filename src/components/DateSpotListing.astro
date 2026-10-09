@@ -28,21 +28,21 @@ const groups = groupByCategory
   : [{ id: "all", label: "", items: ordered }];
 ---
 <BaseLayout title={`${title} | Date My Dish`} description={description} noindex={spots.length === 0} alternatePath={alternatePath}>
-  <section data-pagefind-ignore={spots.length === 0 || undefined} class="mx-auto max-w-content px-4 py-section">
+  <section data-pagefind-ignore={spots.length === 0 || undefined} class="page-container pt-8 pb-section">
     <Breadcrumbs locale={locale} items={breadcrumbs} />
-    <h1 class="my-8 font-heading text-4xl text-warm-900 dark:text-warm-100">{title}</h1>
-    {present.length > 1 && <div class="no-print mb-8 bg-warm-100 p-5 dark:bg-warm-900" data-verdict-filter>
-      <p id="verdict-filter-label" class="mb-3 font-ui text-caption font-bold uppercase tracking-wider text-warm-500 dark:text-warm-400">{t(locale, "dateSpot.filterByTake")}</p>
-      <div role="group" aria-labelledby="verdict-filter-label" class="flex flex-wrap gap-2.5 font-ui text-body-sm font-semibold">
-        <button type="button" data-filter="all" aria-pressed="true" class="border-[1.5px] border-warm-400 px-4 py-2 text-warm-800 aria-pressed:bg-warm-800 aria-pressed:text-white dark:text-warm-200 dark:aria-pressed:bg-warm-200 dark:aria-pressed:text-warm-950">{t(locale, "dateSpot.filterAll")}</button>
-        {present.map((verdict) => <button type="button" data-filter={verdict} aria-pressed="false" class="border-[1.5px] border-brand-wine px-4 py-2 text-brand-wine-text aria-pressed:bg-brand-wine aria-pressed:text-white dark:border-brand-rose dark:text-brand-rose dark:aria-pressed:bg-brand-rose dark:aria-pressed:text-warm-950">{t(locale, `dateSpot.verdict.${verdict}`)}</button>)}
+    <h1 class="mt-10 max-w-4xl text-4xl text-ink sm:text-heading-1 lg:text-display">{title}</h1>
+    {present.length > 1 && <div class="no-print mt-10 flex flex-col gap-4 border-y border-line py-5 sm:flex-row sm:items-center sm:gap-6" data-verdict-filter>
+      <p id="verdict-filter-label" class="eyebrow shrink-0">{t(locale, "dateSpot.filterByTake")}</p>
+      <div role="group" aria-labelledby="verdict-filter-label" class="flex flex-wrap gap-2">
+        <button type="button" data-filter="all" aria-pressed="true" class="chip">{t(locale, "dateSpot.filterAll")}</button>
+        {present.map((verdict) => <button type="button" data-filter={verdict} aria-pressed="false" class="chip">{t(locale, `dateSpot.verdict.${verdict}`)}</button>)}
       </div>
       <p class="sr-only" aria-live="polite" data-filter-status></p>
     </div>}
     {groups.map((group) => (
-      <section id={group.id} data-filter-group class="mb-12 scroll-mt-20">
-        {group.label && <h2 class="mb-5 font-heading text-heading-2 text-warm-900 dark:text-warm-100">{group.label}</h2>}
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{group.items.map((spot) => <DateSpotCard spot={spot} locale={locale} />)}</div>
+      <section id={group.id} data-filter-group aria-labelledby={group.label ? `${group.id}-title` : undefined} class="mt-section-sm scroll-mt-20">
+        {group.label && <h2 id={`${group.id}-title`} class="mb-10 border-t border-line-strong pt-6 text-heading-2 text-ink">{group.label}</h2>}
+        <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">{group.items.map((spot, index) => <DateSpotCard spot={spot} locale={locale} headingLevel={group.label ? 3 : 2} loading={index === 0 && group === groups[0] ? "eager" : "lazy"} />)}</div>
       </section>
     ))}
   </section>

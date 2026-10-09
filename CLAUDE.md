@@ -58,7 +58,7 @@ This is a single-context repository. See `docs/agents/domain.md`.
 
 ### Dark Mode
 - Tailwind `class` strategy: `.dark` on `<html>`. Light is the default and follows `prefers-color-scheme`.
-- The semantic tokens (`bg-surface`, `text-ink`, `border-line`, `text-accent-ink`...) flip with the theme, so components that use them need no `dark:` variant. `dark:` remains only in templates still on the legacy aliases.
+- The semantic tokens (`bg-surface`, `text-ink`, `border-line`, `text-accent-ink`...) flip with the theme, so components never need a `dark:` colour variant. `dark:` survives only to swap an element by theme (the sun and moon icons in `DarkModeToggle`).
 - Toggle persisted in `localStorage.dmd_theme`
 - Flash prevention: inline `<script>` in `<head>` applies `.dark` class before first paint
 
@@ -98,14 +98,14 @@ The design system is **Greystone evening** (Plateau limestone, wrought iron, one
 - Use the semantic tokens only: `surface`, `surface-raised`, `surface-sunken`, `ink`, `ink-muted`, `ink-subtle`, `line`, `line-strong`, `accent`, `accent-ink`, `on-accent`, `iron`, `on-iron`, `on-iron-muted`, `verdict-{favourite,conditional,pass}`. Every text pair passes WCAG AA in both themes.
 - **Accent** amber `accent` (`#e8a33d` light, `#f0b254` dark) is a fill: buttons, the lit pane of the logo, highlights. Text in amber uses `accent-ink` (`#7c4a00` on stone, 5.9:1). Text on an amber fill uses `on-accent`.
 - **Background**: `bg-surface` (stone `#e7e5e1` / night `#16171a`); the footer is `bg-iron`.
-- `warm-*`, `brand-wine*` and `brand-rose*` are legacy aliases mapped onto the greystone ramp so un-migrated templates keep rendering. New code never uses them; they go once the post templates move (redesign phases 2 and 3).
-- No raw hex or arbitrary `shadow-[`/`rounded-[`/colour values in components, layouts or pages (enforced by `validate-source`).
+- No raw hex, no arbitrary `shadow-[`/`rounded-[`/colour values and no retired legacy alias (`warm-*`, `brand-wine*`, `brand-rose*`, `font-caveat`, `font-heading`) in components, layouts or pages (enforced by `validate-source`). Headings use `font-display`.
 
 ### Fonts
 - **Young Serif** 400 -- Display and headings (one upright weight; `font-synthesis: none`, never bold or italic)
 - **Libre Caslon Text** 400/700, italic 400 -- Reading text
 - **Hanken Grotesk** 400-700 -- UI, captions, eyebrows
 - Loaded via `<link>` with `preconnect` in `<head>`, never CSS `@import`
+- Each `--font-*` stack puts a metric-matched fallback `@font-face` (`size-adjust` and ascent/descent/line-gap overrides on Georgia, Times New Roman or Arial) right after its web font, so text does not re-wrap when the web font swaps in (CLS)
 
 ### Logo and icons
 - `Logo.astro` renders `src/assets/brand/wordmark.svg` (outlined paths, no font dependency): the greystone window and the name. Frame and letters take `currentColor`; the lit pane takes `--accent`.
@@ -206,4 +206,4 @@ Detailed write-ups live in `docs/solutions/`.
 24. **Performance budgets block the build, not just Lighthouse.** A post page ships at most 15 KB of first-party JavaScript (inline scripts count; JSON-LD does not), the hero stays under 200 KB, every `<img>` sets width and height, below-the-fold images are `loading="lazy"`, and no third-party `<iframe>` loads with the page: the map is a link, and any embed loads on click. `is:inline` scripts are emitted once per component instance, so a component rendered twice ships its script twice; give it an `includeScript` prop and emit the script from one instance (see `DarkModeToggle` and `NewsletterSignup`). Enforced by `validate-build`; the Lighthouse PR check enforces performance 95+, LCP and CLS.
 25. **Imported prose must trace to its Notion source.** `notion-import.mjs check` fails any English sentence in a record that is not in `notion/sources/{slug}.json` after the Allowed Edits (word-level match; negations and numbers can never be edited away). When it fails, restore the Notion wording; never loosen the check to fit a rewrite. Author notes (`INTERNAL` callouts, bracketed placeholders) are not traceable source. New author headings go into the heading map in `scripts/notion-story/headings.mjs`, with a test.
 26. **The FR is a section-by-section translation of the fitted EN, checked by script.** `notion-import.mjs check` fails an FR copy whose fields, signals, dish tags, link targets, dates or counts differ from the EN at the same path, an FR link that is not a final `/fr/` URL with a trailing slash pointing at the French page of what the EN links to, FR left in English, the EN meta description reused, and France-French usage (petit-déjeuner, cuillère à café, week-end). The seven pre-rework reviews (Notion rows in `LEGACY_REVIEWS`, `scripts/notion-story/legacy.mjs`) reuse their old FR MDX: their FR must trace to it, except where the EN carries Notion text the old review never had. `next` copies the old text into the snapshot (`legacy`), so retiring `src/content/reviews/` later does not break the check.
-27. **One design system, tokens only.** Components, layouts and pages take colour, radius, shadow, type and motion from the tokens in `src/styles/global.css` (documented in `DESIGN.md`) and the component classes there (`.btn` + `.btn-primary`/`.btn-accent`/`.btn-secondary`, `.btn-icon`, `.link-draw`, `.chip`, `.card`, `.eyebrow`, `.arch`, `.page-container`). No raw hex, no `shadow-[`, `rounded-[` or arbitrary colour utilities: `validate-source` fails them (`scripts/design-tokens-guard.mjs`, tested in `tests/contracts/design-tokens.test.mjs`). A new colour or component is a `DESIGN.md` change first.
+27. **One design system, tokens only.** Components, layouts and pages take colour, radius, shadow, type and motion from the tokens in `src/styles/global.css` (documented in `DESIGN.md`) and the component classes there (`.btn` + `.btn-primary`/`.btn-accent`/`.btn-secondary`, `.btn-icon`, `.link-draw`, `.chip`, `.card`, `.eyebrow`, `.arch`, `.page-container`). No raw hex, no `shadow-[`, `rounded-[` or arbitrary colour utilities, and none of the retired legacy aliases (`warm-*`, `brand-wine*`, `brand-rose*`, `font-caveat`, `font-heading`): `validate-source` fails them (`scripts/design-tokens-guard.mjs`, tested in `tests/contracts/design-tokens.test.mjs`). A new colour or component is a `DESIGN.md` change first.

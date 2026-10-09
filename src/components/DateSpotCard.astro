@@ -4,29 +4,28 @@ import type { Locale } from "@i18n/utils";
 import VerdictBadge from "./date-spots/VerdictBadge.astro";
 import { copyLocale, dateSpotPath, priceLabel } from "@utils/date-spots";
 
+// A listing entry: the photo in the greystone window, then the facts, the
+// verdict and the one-line take. One link per card, so a listing has one
+// `a:has(img)` per entry.
 interface Props {
   spot: CollectionEntry<"dateSpots">;
   locale: Locale;
   loading?: "eager" | "lazy";
+  /** Heading level inside the listing: h2 under a page h1, h3 under a group h2. */
+  headingLevel?: 2 | 3;
 }
 
-const { spot, locale, loading = "lazy" } = Astro.props;
+const { spot, locale, loading = "lazy", headingLevel = 2 } = Astro.props;
 const copy = spot.data.locales[copyLocale(locale)];
 const verdict = spot.data.reviewVerdict;
+const Heading = headingLevel === 3 ? "h3" : "h2";
 ---
-<article data-verdict={verdict} class:list={[
-  "overflow-hidden border border-l-[5px] border-warm-200 bg-white dark:border-warm-700 dark:bg-warm-900",
-  verdict === "favourite" && "border-l-brand-wine dark:border-l-brand-rose",
-  verdict === "conditional" && "border-l-brand-rose",
-  verdict === "pass" && "border-l-warm-400",
-]}>
-  <a href={dateSpotPath(spot.data, locale)} class="block no-underline">
-    <img src={spot.data.image.src} alt={copy.imageAlt} width={spot.data.image.width} height={spot.data.image.height} loading={loading} class="aspect-[4/3] w-full object-cover" />
-    <div class="p-6">
-      <h2 class="mb-1 text-heading-3 text-warm-900 dark:text-warm-100">{spot.data.name}</h2>
-      <p class="mb-3 font-ui text-body-sm text-warm-500 dark:text-warm-400">{[spot.data.neighbourhood, "cuisine" in copy ? copy.cuisine : undefined, spot.data.priceRange && priceLabel(spot.data.priceRange, locale)].filter(Boolean).join(" · ")}</p>
-      <VerdictBadge verdict={verdict} locale={locale} qualifier={"verdictQualifier" in copy ? copy.verdictQualifier : undefined} />
-      <p class="mt-3 text-warm-700 dark:text-warm-300">{("verdictHeadline" in copy && copy.verdictHeadline) || copy.opening || copy.verdictReason}</p>
-    </div>
+<article data-verdict={verdict} class="min-w-0">
+  <a href={dateSpotPath(spot.data, locale)} class="group block text-ink no-underline hover:text-ink">
+    <img src={spot.data.image.src} alt={copy.imageAlt} width={spot.data.image.width} height={spot.data.image.height} loading={loading} class="aspect-[4/5] w-full rounded-arch bg-surface-sunken object-cover object-center" />
+    <p class="mt-5 font-ui text-body-sm text-ink-subtle">{[spot.data.neighbourhood, "cuisine" in copy ? copy.cuisine : undefined, spot.data.priceRange && priceLabel(spot.data.priceRange, locale)].filter(Boolean).join(" · ")}</p>
+    <Heading class="mt-2 text-heading-3 text-ink"><span class="link-draw">{spot.data.name}</span></Heading>
+    <VerdictBadge verdict={verdict} locale={locale} qualifier={"verdictQualifier" in copy ? copy.verdictQualifier : undefined} class="mt-3" />
+    <p class="mt-3 font-body text-ink-muted">{("verdictHeadline" in copy && copy.verdictHeadline) || copy.opening || copy.verdictReason}</p>
   </a>
 </article>

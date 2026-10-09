@@ -146,6 +146,10 @@
     "allReviews": "Toutes les critiques",
     "noReviewsFound": "Aucune critique trouvée."
   },
+  "home": {
+    "verdictsTitle": "Comment on juge un lieu",
+    "allDateSpots": "Tous les Date Spots"
+  },
   "about": {
     "pageTitle": "À propos",
     "market": "Montréal · Date Spots",
@@ -243,10 +247,10 @@
     "current": "Français"
   },
   "newsletter": {
-    "title": "Date My Dish",
-    "footerTitle": "Date My Dish",
-    "compactTitle": "Date My Dish",
-    "description": "Date Spots",
+    "title": "Les Date Spots de Montréal, par courriel",
+    "footerTitle": "Les Date Spots de Montréal, par courriel",
+    "compactTitle": "Planifiez la prochaine sortie",
+    "description": "Nous vous envoyons nos nouvelles critiques et nos nouveaux Date Spots à Montréal, avec le verdict en premier.",
     "emailPlaceholder": "Votre adresse courriel",
     "subscribe": "S'abonner",
     "success": "Vous êtes abonné! Vérifiez votre courriel pour confirmer.",

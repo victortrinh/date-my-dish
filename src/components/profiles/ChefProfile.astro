@@ -4,6 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import NewsletterSignup from "@components/NewsletterSignup.astro";
 import Paragraphs from "@components/date-spots/Paragraphs.astro";
+import SpotHero from "@components/date-spots/SpotHero.astro";
 import { t, tf, type Locale } from "@i18n/utils";
 import { copyLocale, dateSpotPath, profilePath, recipeCardPath } from "@utils/date-spots";
 import { SITE_URL } from "@utils/constants";
@@ -34,10 +35,9 @@ const dinnerAndDate = copy.dinnerAndDate ?? [];
 const quoteAfter = Math.min(1, theVenue.length - 1);
 const title = copy.title ?? subject.name;
 const path = profilePath(copy.slug, locale);
-const h2 = "scroll-mt-20 font-heading text-heading-2 text-warm-900 dark:text-warm-100";
-const body = "font-body text-body-lg text-warm-700 dark:text-warm-300";
-const kicker = "font-ui text-caption font-bold uppercase tracking-wider text-brand-wine-text dark:text-brand-rose";
-const small = "font-ui text-caption font-bold uppercase tracking-wider text-warm-500 dark:text-warm-400";
+const h2 = "scroll-mt-20 text-heading-2 text-ink";
+const body = "max-w-measure font-body text-body-lg text-ink-muted";
+const actionLink = "link-draw font-ui text-body-sm font-semibold";
 const facts: [string, string | undefined][] = [
   [t(locale, "profile.worksAt"), subject.venue],
   [t(locale, "profile.neighbourhood"), subject.neighbourhood],
@@ -61,93 +61,89 @@ const jsonLd = {
 ---
 <BaseLayout title={copy.metaTitle} description={copy.metaDescription} canonical={path} alternatePath={profilePath(profile.locales[copyLocale(other)].slug, other)} ogImage={profile.image?.src} ogType="article" publishDate={new Date(`${profile.published}T12:00:00`)}>
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
-  <article class="mx-auto max-w-content px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
+  <article class="page-container pt-8 pb-section-sm" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
     <Breadcrumbs locale={locale} items={[{ label: t(locale, "nav.chefs"), href: `/${locale}/chefs/` }, { label: subject.name }]} />
-    <div class="mt-6 grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1fr)_20rem]">
-      <div class="min-w-0 space-y-14">
-        <header>
-          <p class={kicker}>{t(locale, isBartender ? "profile.behindTheBarWith" : "profile.inKitchenWith")}</p>
-          <h1 class="mt-3 font-heading text-4xl italic text-warm-900 dark:text-warm-100 sm:text-display">{subject.name}</h1>
-          {copy.standfirst && <p class="mt-5 max-w-prose font-body text-body-lg text-warm-700 dark:text-warm-300">{copy.standfirst}</p>}
-          <p class="mt-4 font-ui text-body-sm text-warm-500 dark:text-warm-400">{[tf(locale, "profile.interviewBy", { name: profile.interviewer }), monthYear, t(locale, "profile.edited")].filter(Boolean).join(" · ")}</p>
-          {profile.image && <figure class="mt-8">
-            <img src={profile.image.src} width={profile.image.width} height={profile.image.height} alt={copy.imageAlt} class="max-h-[520px] w-full rounded-2xl object-cover" loading="eager" fetchpriority="high" />
-            {copy.imageCredit && <figcaption class="mt-2 font-ui text-caption text-warm-500 dark:text-warm-400">{copy.imageCredit}</figcaption>}
-          </figure>}
-          {copy.shortScene && <div class={`mt-8 space-y-4 italic ${body}`}><Paragraphs text={copy.shortScene} /></div>}
-        </header>
+    <SpotHero image={profile.image} alt={copy.imageAlt} caption={copy.imageCredit}>
+      <p class="eyebrow">{t(locale, isBartender ? "profile.behindTheBarWith" : "profile.inKitchenWith")}</p>
+      <h1 class="mt-4 text-4xl text-ink sm:text-heading-1 lg:text-display">{subject.name}</h1>
+      {copy.standfirst && <p class={`mt-6 ${body}`}>{copy.standfirst}</p>}
+      <p class="mt-6 font-ui text-body-sm text-ink-subtle">{[tf(locale, "profile.interviewBy", { name: profile.interviewer }), monthYear, t(locale, "profile.edited")].filter(Boolean).join(" · ")}</p>
+    </SpotHero>
+    <div class="mt-section-sm grid grid-cols-[minmax(0,1fr)] gap-16 lg:grid-cols-[minmax(0,1fr)_20rem]">
+      <div class="min-w-0 space-y-section-sm">
+        {copy.shortScene && <div class={`space-y-5 italic ${body}`}><Paragraphs text={copy.shortScene} /></div>}
 
-        {theVenue.length > 0 && <section id="the-venue" aria-labelledby="venue-title">
-          <p class={kicker}>{t(locale, "profile.roundOne")}</p>
-          <h2 id="venue-title" class={`mt-2 ${h2}`}>{t(locale, isBartender ? "profile.theBar" : "profile.theRestaurant")}</h2>
-          <div class="mt-6 space-y-8">
+        {theVenue.length > 0 && <section id="the-venue" aria-labelledby="venue-title" class="scroll-mt-20 border-t border-line-strong pt-8">
+          <p class="eyebrow">{t(locale, "profile.roundOne")}</p>
+          <h2 id="venue-title" class={`mt-3 ${h2}`}>{t(locale, isBartender ? "profile.theBar" : "profile.theRestaurant")}</h2>
+          <div class="mt-8 space-y-10">
             {theVenue.map((item, index) => (
               <>
                 <div>
-                  <h3 class="font-ui text-lg font-semibold text-warm-900 dark:text-warm-100">{item.question}</h3>
-                  <div class={`mt-2 space-y-4 ${body}`}><Paragraphs text={item.answer} /></div>
+                  <h3 class="max-w-measure font-ui text-lg font-semibold text-ink">{item.question}</h3>
+                  <div class={`mt-3 space-y-5 ${body}`}><Paragraphs text={item.answer} /></div>
                 </div>
-                {copy.pullQuote && index === quoteAfter && <blockquote class="border-l-4 border-brand-rose pl-5 font-heading text-heading-3 italic text-warm-900 dark:text-warm-100">“{copy.pullQuote}”</blockquote>}
+                {copy.pullQuote && index === quoteAfter && <blockquote class="max-w-measure font-display text-heading-3 text-ink before:mb-5 before:block before:h-0.5 before:w-10 before:bg-accent before:content-['']">“{copy.pullQuote}”</blockquote>}
               </>
             ))}
           </div>
         </section>}
 
-        {dinnerAndDate.length > 0 && <section id="dinner-and-a-date" aria-labelledby="date-title">
-          <p class={kicker}>{t(locale, "profile.roundTwo")}</p>
-          <h2 id="date-title" class={`mt-2 ${h2}`}>{t(locale, "profile.dinnerAndDate")}</h2>
-          <p class={`mt-3 ${body}`}>{t(locale, "profile.dinnerAndDateIntro")}</p>
-          <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        {dinnerAndDate.length > 0 && <section id="dinner-and-a-date" aria-labelledby="date-title" class="scroll-mt-20 border-t border-line-strong pt-8">
+          <p class="eyebrow">{t(locale, "profile.roundTwo")}</p>
+          <h2 id="date-title" class={`mt-3 ${h2}`}>{t(locale, "profile.dinnerAndDate")}</h2>
+          <p class={`mt-5 ${body}`}>{t(locale, "profile.dinnerAndDateIntro")}</p>
+          <div class="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2">
             {dinnerAndDate.map((item, index) => (
-              <div data-question={item.key} class="border border-warm-200 p-5 dark:border-warm-700">
-                <p class="font-ui text-caption font-bold text-warm-500 dark:text-warm-400">{index + 1} / {dinnerAndDate.length}</p>
-                <h3 class="mt-2 font-heading text-lg text-warm-900 dark:text-warm-100">{item.question}</h3>
-                <div class="mt-2 space-y-3 font-body text-warm-700 dark:text-warm-300"><Paragraphs text={item.answer} /></div>
+              <div data-question={item.key} class="border-t border-line pt-5">
+                <p class="font-ui text-caption tabular-nums text-ink-subtle">{index + 1} / {dinnerAndDate.length}</p>
+                <h3 class="mt-2 text-xl text-ink">{item.question}</h3>
+                <div class="mt-3 space-y-4 font-body text-ink-muted"><Paragraphs text={item.answer} /></div>
               </div>
             ))}
           </div>
         </section>}
 
-        {copy.atHome && <section id="recipe-card" aria-labelledby="last-title" class:list={["grid gap-6 bg-warm-50 p-6 dark:bg-warm-900", recipe?.image && "sm:grid-cols-[14rem_minmax(0,1fr)]"]}>
-          {recipe?.image && <img src={recipe.image.src} width={recipe.image.width} height={recipe.image.height} alt={recipeCopy?.imageAlt} loading="lazy" class="h-auto w-full rounded-xl object-cover" />}
+        {copy.atHome && <section id="recipe-card" aria-labelledby="last-title" class:list={["card scroll-mt-20 grid gap-8", recipe?.image && "sm:grid-cols-[12rem_minmax(0,1fr)] sm:items-center"]}>
+          {recipe?.image && <img src={recipe.image.src} width={recipe.image.width} height={recipe.image.height} alt={recipeCopy?.imageAlt} loading="lazy" class="aspect-[4/5] w-full max-w-56 rounded-arch bg-surface-sunken object-cover object-center" />}
           <div>
-            <p class={kicker}>{t(locale, "profile.lastQuestion")}</p>
-            <h2 id="last-title" class={`mt-2 ${h2}`}>{t(locale, "profile.atHomeQuestion")}</h2>
-            <div class={`mt-3 space-y-4 ${body}`}><Paragraphs text={copy.atHome} /></div>
+            <p class="eyebrow">{t(locale, "profile.lastQuestion")}</p>
+            <h2 id="last-title" class={`mt-3 ${h2}`}>{t(locale, "profile.atHomeQuestion")}</h2>
+            <div class={`mt-5 space-y-5 ${body}`}><Paragraphs text={copy.atHome} /></div>
             {recipe && recipeCopy && <>
-              <p class="mt-3 font-ui text-body-sm text-warm-500 dark:text-warm-400">{t(locale, "profile.atHomeNote")}</p>
-              <a href={recipeCardPath(recipeCopy.slug, locale)} class="mt-4 inline-block font-ui font-semibold text-brand-wine-text underline dark:text-brand-rose">{tf(locale, "dateSpot.getRecipeCard", { name: subject.name })}</a>
+              <p class="mt-4 font-ui text-body-sm text-ink-subtle">{t(locale, "profile.atHomeNote")}</p>
+              <a href={recipeCardPath(recipeCopy.slug, locale)} class="btn btn-accent mt-6">{tf(locale, "dateSpot.getRecipeCard", { name: subject.name })}</a>
             </>}
           </div>
         </section>}
 
-        <footer>
-          <p class="font-caveat text-3xl normal-case text-warm-900 dark:text-warm-100">{profile.interviewer}</p>
-          <p class="mt-2 font-ui text-body-sm text-warm-600 dark:text-warm-400">{t(locale, "profile.interviewNote")}</p>
+        <footer class="border-t border-line-strong pt-8">
+          <p class="flex items-center gap-4 font-body text-heading-3 italic text-ink before:block before:h-px before:w-10 before:bg-line-strong before:content-['']">{profile.interviewer}</p>
+          <p class="mt-4 max-w-measure font-ui text-body-sm text-ink-subtle">{t(locale, "profile.interviewNote")}</p>
         </footer>
       </div>
 
-      <aside class="min-w-0 space-y-8 lg:sticky lg:top-24 lg:self-start">
-        <section aria-labelledby="short-title" class="border border-warm-200 bg-white p-6 dark:border-warm-700 dark:bg-warm-900">
-          <h2 id="short-title" class="font-heading text-2xl text-warm-900 dark:text-warm-100">{t(locale, "profile.shortVersion")}</h2>
-          <dl class="mt-3 divide-y divide-warm-200 font-ui text-body-sm dark:divide-warm-700">
-            {facts.filter(([, value]) => value).map(([label, value]) => <div class="flex justify-between gap-4 py-2.5"><dt class="text-warm-500 dark:text-warm-400">{label}</dt><dd class="text-right text-warm-800 dark:text-warm-200">{value}</dd></div>)}
+      <aside class="min-w-0 space-y-10 lg:sticky lg:top-24 lg:self-start">
+        <section aria-labelledby="short-title" class="card">
+          <h2 id="short-title" class="text-heading-3 text-ink">{t(locale, "profile.shortVersion")}</h2>
+          <dl class="mt-4 divide-y divide-line border-y border-line font-ui text-body-sm">
+            {facts.filter(([, value]) => value).map(([label, value]) => <div class="flex justify-between gap-4 py-3"><dt class="text-ink-subtle">{label}</dt><dd class="text-right text-ink">{value}</dd></div>)}
           </dl>
-          {companion && <a href={dateSpotPath(companion, locale)} class="mt-4 block bg-brand-wine px-4 py-2.5 text-center font-ui text-body-sm font-semibold text-white no-underline dark:bg-brand-rose dark:text-warm-950">{tf(locale, "profile.readReview", { venue: companion.name })}</a>}
+          {companion && <a href={dateSpotPath(companion, locale)} class="btn btn-primary mt-6 w-full">{tf(locale, "profile.readReview", { venue: companion.name })}</a>}
         </section>
-        <nav aria-labelledby="interview-jump">
-          <p id="interview-jump" class={small}>{t(locale, "profile.inThisInterview")}</p>
-          <ol class="mt-3 space-y-1.5 font-ui text-body-sm">
-            {theVenue.length > 0 && <li><a href="#the-venue" class="text-warm-700 no-underline dark:text-warm-300">{t(locale, isBartender ? "profile.theBar" : "profile.theRestaurant")}</a></li>}
-            {dinnerAndDate.length > 0 && <li><a href="#dinner-and-a-date" class="text-warm-700 no-underline dark:text-warm-300">{t(locale, "profile.dinnerAndDate")}</a></li>}
-            {copy.atHome && <li><a href="#recipe-card" class="text-warm-700 no-underline dark:text-warm-300">{t(locale, "profile.recipeCard")}</a></li>}
+        <nav aria-labelledby="interview-jump" class="no-print">
+          <p id="interview-jump" class="eyebrow">{t(locale, "profile.inThisInterview")}</p>
+          <ol class="mt-4 space-y-2 font-ui text-body-sm">
+            {theVenue.length > 0 && <li><a href="#the-venue" class="link-draw text-ink-muted hover:text-ink">{t(locale, isBartender ? "profile.theBar" : "profile.theRestaurant")}</a></li>}
+            {dinnerAndDate.length > 0 && <li><a href="#dinner-and-a-date" class="link-draw text-ink-muted hover:text-ink">{t(locale, "profile.dinnerAndDate")}</a></li>}
+            {copy.atHome && <li><a href="#recipe-card" class="link-draw text-ink-muted hover:text-ink">{t(locale, "profile.recipeCard")}</a></li>}
           </ol>
         </nav>
         {moreChefs.length > 0 && <div>
-          <p class={small}>{t(locale, "profile.moreChefs")}</p>
-          <ul class="mt-3 space-y-2 font-ui text-body-sm">
-            {moreChefs.map((item) => <li class="flex justify-between gap-3"><a href={profilePath(item.locales[copyLocale(locale)].slug, locale)} class="text-warm-800 dark:text-warm-200">{item.subject.name}</a>{item.subject.neighbourhood && <span class="text-warm-500 dark:text-warm-400">{item.subject.neighbourhood}</span>}</li>)}
-            <li><a href={`/${locale}/chefs/`} class="font-semibold text-brand-wine-text underline dark:text-brand-rose">{t(locale, "profile.everyone")}</a></li>
+          <p class="eyebrow">{t(locale, "profile.moreChefs")}</p>
+          <ul class="mt-4 space-y-3 font-ui text-body-sm">
+            {moreChefs.map((item) => <li class="flex items-baseline justify-between gap-3"><a href={profilePath(item.locales[copyLocale(locale)].slug, locale)} class="link-draw">{item.subject.name}</a>{item.subject.neighbourhood && <span class="text-ink-subtle">{item.subject.neighbourhood}</span>}</li>)}
+            <li><a href={`/${locale}/chefs/`} class={actionLink}>{t(locale, "profile.everyone")}</a></li>
           </ul>
         </div>}
         <NewsletterSignup locale={locale} compact />
