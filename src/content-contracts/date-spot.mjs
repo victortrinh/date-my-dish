@@ -14,6 +14,10 @@ const object = (shape) => z.object(shape).strict();
 // The four fixed Date Spot categories, in the order "Make a night of it"
 // always shows them. Category and neighbourhood listings key off these too.
 export const DATE_SPOT_CATEGORIES = /** @type {const} */ (["activities-sports", "arts-culture", "games-entertainment", "nature-scenic"]);
+// A review's "Make a night of it" picks come from its Notion text, which also
+// names Social and Romantic places (a market, a promenade). Those picks keep
+// the fifth category, last; a Date Spot page never carries it.
+export const NIGHT_CATEGORIES = /** @type {const} */ ([...DATE_SPOT_CATEGORIES, "social-romantic"]);
 // Montréal boroughs, spelled as the Notion Borough property spells them. The
 // Date Spots listing filters by borough; neighbourhood stays the finer place
 // name used in titles, breadcrumbs and neighbourhood guides.
@@ -29,14 +33,16 @@ export const BOROUGHS = /** @type {const} */ ([
   "Ville-Marie",
   "Villeray–Saint-Michel–Parc-Extension",
 ]);
-export const OCCASIONS = /** @type {const} */ (["first-date", "anniversary", "casual-midweek", "impressing-a-cook", "double-date", "solo-at-the-bar"]);
+export const OCCASIONS = /** @type {const} */ (["first-date", "anniversary", "casual-midweek", "impressing-a-cook", "double-date", "solo-at-the-bar", "late-night"]);
 export const VERDICTS = /** @type {const} */ (["favourite", "conditional", "pass"]);
 export const SPOT_TYPES = /** @type {const} */ (["restaurant", "bar", "activity", "chef-led-experience"]);
 // The build warns below the target and blocks below the minimum, per locale.
 // Never pad to reach a number.
 export const REVIEW_WORD_TARGET = 1000;
 export const REVIEW_WORD_MINIMUM = 300;
-export const MAKE_A_NIGHT_MAX = 4;
+export const MAKE_A_NIGHT_MAX = 5;
+// Dish cards in What to order (or What to eat).
+export const MAX_DISHES = 10;
 // Path segments used by listing routes under /date-spots/ and /lieux/.
 export const RESERVED_SLUGS = ["category", "categorie", "neighbourhood", "quartier"];
 
@@ -54,7 +60,7 @@ const section = (schema, label, labels = []) => schema.refine(
 
 const assessment = z.enum(["ideal", "caveat", "not-for"]);
 export const signal = object({ occasion: z.enum(OCCASIONS), assessment, reason: text });
-export const goodFor = z.array(signal).min(1).max(6).refine(
+export const goodFor = z.array(signal).min(1).max(OCCASIONS.length).refine(
   (items) => new Set(items.map((item) => item.occasion)).size === items.length,
   "Good-for occasions must be unique",
 );
@@ -136,12 +142,20 @@ const realCost = section(object({
   total: object({ label: text, amount: text }).optional(),
   howToSpendLess: text.optional(),
 }), "The real cost");
+// A Make a night of it pick. One whose `spotId` is a published Date Spot
+// links to that page. One without a published page still shows the
+// author's name, details and blurb, as long as it names its venue and
+// category; once its Date Spot is published, the same pick becomes a link.
 export const nightPick = object({
-  spotId: slug,
-  timing: z.enum(["before", "after"]).optional(),
+  spotId: slug.optional(),
+  name: text.optional(),
+  category: z.enum(NIGHT_CATEGORIES).optional(),
+  timing: z.enum(["before", "after", "before-or-after"]).optional(),
   walkMinutes: z.number().int().positive().max(15).optional(),
+  // How far and how much, as the author wrote it ("15 min walk · $$").
+  details: text.optional(),
   blurb: text.optional(),
-});
+}).refine((pick) => Boolean(pick.spotId || (pick.name && pick.category)), "A Make a night of it pick links a Date Spot (spotId) or names its venue and category");
 export const pairing = object({ spotId: slug, walkMinutes: z.number().int().positive().optional() });
 
 const venueCopy = {
@@ -153,6 +167,10 @@ const venueCopy = {
   paymentDisclosure: text,
   essentials: venueEssentials,
   verdictHeadline: text.optional(),
+  // The author's full verdict paragraph. The one-line verdictReason is
+  // usually one of its sentences; the page then sets that sentence in ink
+  // inside the paragraph instead of printing it twice.
+  verdictDetail: text.optional(),
   // Everything below is an Optional Section: it renders only when present
   // and is never filled with invented material.
   goodFor: goodFor.optional(),
@@ -184,13 +202,13 @@ const restaurantCopy = object({
       advice: z.enum(["take-it", "go-a-la-carte"]).optional(),
     }).optional(),
     strategy: text.optional(),
-    dishes: z.array(dish).min(1).max(7).optional(),
+    dishes: z.array(dish).min(1).max(MAX_DISHES).optional(),
   }), "What to order").optional(),
 });
 const barCopy = object({
   ...venueCopy,
   meetTheBartender: person.optional(),
-  whatToEat: section(object({ intro: text.optional(), dishes: z.array(dish).min(1).max(7).optional() }), "What to eat").optional(),
+  whatToEat: section(object({ intro: text.optional(), dishes: z.array(dish).min(1).max(MAX_DISHES).optional() }), "What to eat").optional(),
 });
 const planningCopy = object({
   ...commonCopy,
@@ -258,7 +276,7 @@ const collect = (value, key, found = []) => {
 
 // Words a reader actually sees; identifiers, notes for editors and SEO
 // metadata don't count toward the word count.
-const UNCOUNTED_KEYS = new Set(["slug", "metaTitle", "metaDescription", "sourceNotes", "factNotes", "imageAlt", "imageCredit", "alt", "photo", "spotId", "recipeId", "profileId", "moment", "tag", "occasion", "assessment", "timing", "advice", "byline", "date"]);
+const UNCOUNTED_KEYS = new Set(["slug", "metaTitle", "metaDescription", "sourceNotes", "factNotes", "imageAlt", "imageCredit", "alt", "photo", "spotId", "recipeId", "profileId", "moment", "tag", "occasion", "assessment", "timing", "advice", "byline", "date", "category"]);
 export function countReaderWords(value) {
   if (typeof value === "string") return value.split(/\s+/).filter((word) => /[\p{L}\p{N}]/u.test(word)).length;
   if (Array.isArray(value)) return value.reduce((sum, item) => sum + countReaderWords(item), 0);
@@ -270,7 +288,7 @@ export function countReaderWords(value) {
 
 // Values that must agree across the Locale Pair; any other string is just
 // words and only its presence must match.
-export const STRUCTURAL_KEYS = new Set(["occasion", "assessment", "moment", "tag", "advice", "spotId", "timing", "recipeId", "profileId", "photo", "date", "byline"]);
+export const STRUCTURAL_KEYS = new Set(["occasion", "assessment", "moment", "tag", "advice", "spotId", "timing", "recipeId", "profileId", "photo", "date", "byline", "category"]);
 // Per-locale fields whose presence may differ between languages.
 export const LOCALE_ONLY_KEYS = new Set(["slug", "title", "metaTitle", "metaDescription", "sourceNotes", "factNotes", "imageCredit"]);
 function shape(value, key) {
@@ -344,7 +362,7 @@ export const dateSpotSchema = z.discriminatedUnion("spotType", [
     if (words < REVIEW_WORD_MINIMUM) {
       issue(["locales", locale], `Reviews need at least ${REVIEW_WORD_MINIMUM} reader-facing words to publish; this one has ${words}. Never pad: publish when the reporting is there.`);
     }
-    const picks = copy.makeANight?.map((pick) => pick.spotId) ?? [];
+    const picks = copy.makeANight?.map((pick) => pick.spotId ?? `name:${pick.name}`) ?? [];
     if (new Set(picks).size !== picks.length) issue(["locales", locale, "makeANight"], "Each Make a night of it pick is a different Date Spot");
   }
   if (structure(spot.locales.en) !== structure(spot.locales["fr-CA"])) {
@@ -353,24 +371,26 @@ export const dateSpotSchema = z.discriminatedUnion("spotType", [
 });
 
 /**
- * "Make a night of it": one card per published Date Spot pick, in the fixed
- * category order, at most five. Picks whose Date Spot is not published (not
- * in `spots`) are left out; with none left, the section is hidden.
- * @template {{ id: string, category?: (typeof DATE_SPOT_CATEGORIES)[number] }} S
- * @template {{ spotId: string }} P
+ * "Make a night of it": one card per pick, in the fixed category order, at
+ * most five. A pick whose Date Spot is published (in `spots`) links to it
+ * (`target`); a pick that names its venue and category shows unlinked. A
+ * pick with neither is left out; with no cards left, the section is hidden.
+ * @template {{ id: string, category?: (typeof NIGHT_CATEGORIES)[number] }} S
+ * @template {{ spotId?: string, name?: string, category?: (typeof NIGHT_CATEGORIES)[number] }} P
  * @param {P[] | undefined} picks
  * @param {S[]} spots the published Date Spots
- * @returns {{ pick: P, target: S, category: (typeof DATE_SPOT_CATEGORIES)[number] }[]}
+ * @returns {{ pick: P, target: S | undefined, category: (typeof NIGHT_CATEGORIES)[number] }[]}
  */
 export function makeANightCards(picks, spots) {
   const byId = new Map(spots.map((spot) => [spot.id, spot]));
-  /** @type {{ pick: P, target: S, category: (typeof DATE_SPOT_CATEGORIES)[number] }[]} */
+  /** @type {{ pick: P, target: S | undefined, category: (typeof NIGHT_CATEGORIES)[number] }[]} */
   const cards = [];
   for (const pick of picks ?? []) {
-    const target = byId.get(pick.spotId);
+    const target = pick.spotId ? byId.get(pick.spotId) : undefined;
     if (target?.category) cards.push({ pick, target, category: target.category });
+    else if (pick.name && pick.category) cards.push({ pick, target: undefined, category: pick.category });
   }
-  return cards.sort((a, b) => DATE_SPOT_CATEGORIES.indexOf(a.category) - DATE_SPOT_CATEGORIES.indexOf(b.category)).slice(0, MAKE_A_NIGHT_MAX);
+  return cards.sort((a, b) => NIGHT_CATEGORIES.indexOf(a.category) - NIGHT_CATEGORIES.indexOf(b.category)).slice(0, MAKE_A_NIGHT_MAX);
 }
 
 export const dateSpotsSchema = z.array(dateSpotSchema).superRefine((spots, ctx) => {
@@ -404,18 +424,27 @@ export const dateSpotsSchema = z.array(dateSpotSchema).superRefine((spots, ctx) 
     if ("makeANight" in copy) {
       const categories = [];
       for (const [index, pick] of (copy.makeANight ?? []).entries()) {
-        const target = byId.get(pick.spotId);
-        if (!target) continue;
-        if (!("category" in target) || !target.category) {
-          ctx.addIssue({ code: "custom", path: at("makeANight", index), message: "Make a night of it picks must be categorised Date Spots (Activity, Chef-led Experience, or a categorised Bar)" });
-        } else if (target.city !== spot.city) {
-          ctx.addIssue({ code: "custom", path: at("makeANight", index), message: "Make a night of it picks stay in the same city" });
-        } else {
-          if (categories.includes(target.category)) {
-            ctx.addIssue({ code: "custom", path: at("makeANight", index), message: `One pick per category: ${target.category} is already used` });
+        const target = pick.spotId ? byId.get(pick.spotId) : undefined;
+        let category = pick.category;
+        if (target) {
+          if (!("category" in target) || !target.category) {
+            ctx.addIssue({ code: "custom", path: at("makeANight", index), message: "Make a night of it picks must be categorised Date Spots (Activity, Chef-led Experience, or a categorised Bar)" });
+            continue;
           }
-          categories.push(target.category);
+          if (target.city !== spot.city) {
+            ctx.addIssue({ code: "custom", path: at("makeANight", index), message: "Make a night of it picks stay in the same city" });
+            continue;
+          }
+          if (pick.category && pick.category !== target.category) {
+            ctx.addIssue({ code: "custom", path: at("makeANight", index), message: `The pick says ${pick.category}, but its Date Spot is ${target.category}` });
+          }
+          category = target.category;
         }
+        if (!category) continue;
+        if (categories.includes(category)) {
+          ctx.addIssue({ code: "custom", path: at("makeANight", index), message: `One pick per category: ${category} is already used` });
+        }
+        categories.push(category);
       }
     }
   }

@@ -6,9 +6,9 @@ Run the `/seo-audit` checks across every published post (Reviews, Date Spots, Ch
 
 The same rules as `/seo-audit`, which follow `docs/editorial-publishing-system.md` ("SEO rules", "Edit policy", "Performance budgets"):
 
-- **Companion File fields only**: `metaTitle`, `metaDescription`, `imageAlt` and the internal-link fields (`makeANight`, `pairItWith`) in `src/content/editorial/{slug}.json`, in either locale. Nothing else.
+- **Companion File fields only**: `metaTitle`, `metaDescription`, `imageAlt` and `pairItWith` in `src/content/editorial/{slug}.json`, in either locale, plus a `spotId` on an existing Make a night of it pick, as `/seo-audit` describes. Nothing else.
 - **No prose edits.** Prose is Notion's. Report prose suggestions for Victor to make in Notion.
-- **No new content.** Never create a post, a Companion File for a post that has none, or any file under `src/content/`. Content gaps (a neighbourhood with no Date Spots, a Make a night of it category with no published pick) go in the report under "Gaps", not into a file.
+- **No new content.** Never create a post, a Companion File for a post that has none, or any file under `src/content/`. Content gaps (a neighbourhood with no Date Spots, a Make a night of it pick whose venue has no Date Spot page yet) go in the report under "Gaps", not into a file.
 - Never change the verdict, signals, Spot Type, category, neighbourhood, Checked date, update lines, Google Snapshot lines, Instagram handle or booking link.
 - Never pad toward a word count; never add `Review`, `AggregateRating` or `FAQPage` markup; no em-dashes.
 

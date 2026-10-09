@@ -2,53 +2,180 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ─── Design tokens: Greystone evening ──────────────────────────────────
+   Plateau limestone, wrought-iron black, one warm lit-window amber.
+   Two tiers. Semantic tokens (below, as CSS custom properties) flip with
+   the theme, so components that use them need no `dark:` variant:
+     bg-surface / bg-surface-raised / bg-surface-sunken / bg-iron
+     text-ink / text-ink-muted / text-ink-subtle / text-accent-ink / text-on-accent
+     border-line / border-line-strong / bg-accent
+     text-verdict-{favourite,conditional,pass}
+   There is no other colour tier: no static ramp, no legacy aliases.
+   Never write a raw hex colour in a component (validate-source fails it).
+   DESIGN.md is the reference. */
+
+:root {
+  --surface: #e7e5e1;
+  --surface-raised: #f2f1ee;
+  --surface-sunken: #dcd9d3;
+  --ink: #1b1c1e;
+  --ink-muted: #424347;
+  --ink-subtle: #5d5e62;
+  --line: #c7c3bc;
+  --line-strong: #1b1c1e;
+  --accent: #e8a33d;
+  --accent-ink: #7c4a00;
+  --on-accent: #1b1c1e;
+  --iron: #1b1c1e;
+  --on-iron: #ece9e3;
+  --on-iron-muted: #a8a49c;
+  --verdict-favourite: #7c4a00;
+  --verdict-conditional: #424347;
+  --verdict-pass: #5d5e62;
+  --scrim: rgb(27 28 30 / 0.55);
+  color-scheme: light;
+}
+
+:root.dark {
+  --surface: #16171a;
+  --surface-raised: #1f2024;
+  --surface-sunken: #101114;
+  --ink: #ece9e3;
+  --ink-muted: #bab6ae;
+  --ink-subtle: #908d86;
+  --line: #2f3136;
+  --line-strong: #ece9e3;
+  --accent: #f0b254;
+  --accent-ink: #f0b254;
+  --on-accent: #16171a;
+  --iron: #101114;
+  --on-iron: #ece9e3;
+  --on-iron-muted: #a8a49c;
+  --verdict-favourite: #f0b254;
+  --verdict-conditional: #bab6ae;
+  --verdict-pass: #908d86;
+  --scrim: rgb(0 0 0 / 0.65);
+  color-scheme: dark;
+}
+
+/* Metric-matched fallbacks for the web fonts (loaded from Google Fonts with
+   display=swap). A local system face is scaled to the web font's average
+   glyph width (size-adjust) and given its vertical metrics, so a line set in
+   the fallback breaks where the web font will. Values come from the fonts'
+   own metrics (Capsize): override = web font metric / unitsPerEm / size-adjust.
+   Georgia and Arial cover macOS, iOS and Windows; the "Times" faces cover
+   systems without Georgia (Linux, where Liberation Serif and Tinos carry the
+   Times New Roman metrics). A face whose local() font is missing is skipped
+   and the stack moves on to the next family. */
+@font-face {
+  font-family: "Young Serif Fallback";
+  src: local("Georgia");
+  size-adjust: 114.63%;
+  ascent-override: 91.25%;
+  descent-override: 31.93%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Young Serif Fallback Times";
+  src: local("Times New Roman"), local("TimesNewRomanPSMT"), local("Liberation Serif"), local("LiberationSerif"), local("Tinos");
+  size-adjust: 125.78%;
+  ascent-override: 83.16%;
+  descent-override: 29.1%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Libre Caslon Text Fallback";
+  src: local("Georgia");
+  size-adjust: 107.22%;
+  ascent-override: 90.47%;
+  descent-override: 24.25%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Libre Caslon Text Fallback Times";
+  src: local("Times New Roman"), local("TimesNewRomanPSMT"), local("Liberation Serif"), local("LiberationSerif"), local("Tinos");
+  size-adjust: 117.66%;
+  ascent-override: 82.44%;
+  descent-override: 22.1%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Hanken Grotesk Fallback";
+  src: local("Arial"), local("ArialMT"), local("Liberation Sans"), local("LiberationSans"), local("Arimo");
+  size-adjust: 100.94%;
+  ascent-override: 99.07%;
+  descent-override: 30.02%;
+  line-gap-override: 0%;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-on-accent: var(--on-accent);
+  --color-iron: var(--iron);
+  --color-on-iron: var(--on-iron);
+  --color-on-iron-muted: var(--on-iron-muted);
+  --color-verdict-favourite: var(--verdict-favourite);
+  --color-verdict-conditional: var(--verdict-conditional);
+  --color-verdict-pass: var(--verdict-pass);
+  --color-scrim: var(--scrim);
+}
+
 @theme {
-  --color-brand-wine: #7b2d3b;
-  --color-brand-wine-text: #7b2d3b;
-  --color-brand-wine-dark: #c4697a;
+  /* Type: Young Serif for display (one weight, upright), Libre Caslon Text
+     for reading, Hanken Grotesk for UI and captions. Each web font is
+     followed by its metric-matched fallback (the @font-face rules below),
+     so text set before the web font arrives takes the same room and does
+     not re-wrap when it swaps in (CLS). */
+  --font-display: "Young Serif", "Young Serif Fallback", "Young Serif Fallback Times", Georgia, serif;
+  --font-body: "Libre Caslon Text", "Libre Caslon Text Fallback", "Libre Caslon Text Fallback Times", Georgia, serif;
+  --font-ui: "Hanken Grotesk", "Hanken Grotesk Fallback", "Helvetica Neue", Arial, sans-serif;
 
-  --color-brand-rose: #d4a08a;
-  --color-brand-rose-text: #8b5a45;
-  --color-brand-rose-dark: #b8896e;
-
-  --color-warm-50: #faf7f5;
-  --color-warm-100: #f3eeeb;
-  --color-warm-200: #e4dbd8;
-  --color-warm-300: #cbc0bd;
-  --color-warm-400: #a19491;
-  --color-warm-500: #786a68;
-  --color-warm-600: #584c4b;
-  --color-warm-700: #433739;
-  --color-warm-800: #2d2226;
-  --color-warm-900: #1f1a1c;
-  --color-warm-950: #1e1416;
-
-  --font-heading: "Playfair Display", serif;
-  --font-body: "Source Serif 4", serif;
-  --font-ui: Inter, sans-serif;
-  --font-caveat: Caveat, cursive;
-
-  --text-display: 3.5rem;
-  --text-display--line-height: 1.1;
-  --text-heading-1: 2.5rem;
-  --text-heading-1--line-height: 1.2;
-  --text-heading-2: 1.875rem;
-  --text-heading-2--line-height: 1.3;
+  --text-display: 4.5rem;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.02em;
+  --text-heading-1: 3rem;
+  --text-heading-1--line-height: 1.08;
+  --text-heading-1--letter-spacing: -0.015em;
+  --text-heading-2: 2rem;
+  --text-heading-2--line-height: 1.15;
+  --text-heading-2--letter-spacing: -0.01em;
   --text-heading-3: 1.5rem;
-  --text-heading-3--line-height: 1.4;
+  --text-heading-3--line-height: 1.25;
   --text-body-lg: 1.125rem;
   --text-body-lg--line-height: 1.7;
   --text-body-sm: 0.875rem;
   --text-body-sm--line-height: 1.6;
   --text-caption: 0.75rem;
   --text-caption--line-height: 1.5;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.14em;
 
-  --spacing-section: 5rem;
-  --spacing-section-sm: 3rem;
+  --spacing-section: 7rem;
+  --spacing-section-sm: 4rem;
 
-  --container-content: 72rem;
+  --container-content: 76rem;
   --container-prose: 56rem;
   --container-narrow: 48rem;
+  --container-measure: 38rem;
+
+  /* One corner language: square or fully round, plus the greystone arch. */
+  --radius-sm: 2px;
+  --radius-arch: 999px 999px 0 0;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-quick: 160ms;
+  --duration-base: 320ms;
+  --duration-slow: 640ms;
 }
 
 @layer base {
@@ -57,15 +184,21 @@
   }
 
   body {
-    @apply font-body text-warm-800 antialiased dark:text-warm-50;
+    @apply bg-surface font-body text-ink antialiased;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply font-heading font-normal;
+    @apply font-display font-normal text-balance;
+    /* Young Serif ships one upright weight: never fake bold or italic. */
+    font-synthesis: none;
   }
+
+  h1 { @apply text-heading-1; }
+  h2 { @apply text-heading-2; }
+  h3 { @apply text-heading-3; }
 
   /* Headings get scroll-margin to clear sticky nav */
   h2,
@@ -74,17 +207,21 @@
   }
 
   a {
-    @apply text-brand-wine-text transition-colors hover:text-brand-rose-text dark:text-brand-wine-dark dark:hover:text-brand-rose;
+    @apply text-accent-ink underline-offset-4 transition-colors duration-(--duration-quick) hover:text-ink;
+  }
+
+  ::selection {
+    @apply bg-accent text-on-accent;
   }
 }
 
 @layer components {
   .prose h2 {
-    @apply mt-10 mb-4 text-heading-2 font-bold text-warm-800 dark:text-warm-100;
+    @apply mt-12 mb-4 text-heading-2 text-ink;
   }
 
   .prose h3 {
-    @apply mt-8 mb-3 text-heading-3 font-semibold text-warm-800 dark:text-warm-200;
+    @apply mt-10 mb-3 text-heading-3 text-ink;
   }
 
   .prose p {
@@ -104,79 +241,207 @@
   }
 
   .prose img {
-    @apply my-8 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[75%];
+    @apply my-8 max-w-full sm:max-w-[75%] lg:max-w-[75%];
   }
 
   .prose blockquote {
-    @apply my-6 border-l-4 border-brand-wine pl-4 italic text-warm-500 dark:text-warm-400 dark:border-brand-wine-dark;
+    @apply my-6 border-l-2 border-accent pl-4 italic text-ink-muted;
   }
 
   .prose a {
-    @apply text-brand-wine-text underline decoration-brand-wine/30 underline-offset-2 transition-colors hover:text-brand-rose-text hover:decoration-brand-rose/50;
+    @apply text-accent-ink underline decoration-1 underline-offset-4 hover:text-ink;
   }
 
-  /* ─── Button system ─────────────────────────────────────────────────── */
+  /* ─── Layout ─────────────────────────────────────────────────────────── */
 
-  /* Base: shared layout, font, and transition. Combine with a variant below. */
+  .page-container {
+    @apply mx-auto w-full max-w-content px-4 sm:px-8;
+  }
+
+  /* Small tracked caption above a heading: a section or post label. */
+  .eyebrow {
+    @apply font-ui text-eyebrow font-medium uppercase text-ink-subtle;
+  }
+
+  /* ─── Buttons ────────────────────────────────────────────────────────── */
+
+  /* Base: shared shape, type and motion. Combine with one variant. */
   .btn {
-    @apply inline-flex items-center gap-2 rounded-lg font-ui text-sm font-medium transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-6 py-3 font-ui text-body-sm font-medium no-underline transition duration-(--duration-quick) ease-(--ease-out) active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60;
   }
 
-  /* Filled wine burgundy — primary CTAs (hero, view-all alternative) */
+  /* Iron: the main action on a page (Book, Subscribe, Home). */
   .btn-primary {
-    @apply bg-brand-wine px-6 py-3 text-white no-underline shadow-sm hover:bg-brand-wine/90 hover:text-white dark:text-white dark:hover:text-white;
+    @apply bg-ink text-surface hover:bg-accent hover:text-on-accent;
   }
 
-  /* Filled rose gold — jump-to-recipe and accent CTAs */
+  /* Lit window: the one warm call to action in a block. */
   .btn-accent {
-    @apply bg-brand-rose px-6 py-3 font-semibold text-white no-underline shadow-sm hover:bg-brand-rose-dark hover:text-white hover:shadow-md dark:text-white dark:hover:text-white;
+    @apply bg-accent text-on-accent hover:bg-ink hover:text-surface;
   }
 
-  /* Bordered neutral — secondary actions (print, share) */
-  .btn-outline {
-    @apply border border-warm-200 px-5 py-3 text-warm-600 hover:bg-warm-100 dark:border-warm-600 dark:text-warm-400 dark:hover:bg-warm-800;
+  /* Outline: secondary actions (Map, View all). */
+  .btn-secondary {
+    @apply border-line-strong text-ink hover:bg-ink hover:text-surface;
   }
 
-  /* Bordered brand — "View all" links */
-  .btn-outline-brand {
-    @apply border-2 border-brand-wine px-6 py-2.5 font-semibold text-brand-wine-text no-underline hover:bg-brand-wine hover:text-white dark:text-white dark:hover:text-white;
+  /* Icon-only controls in the header (search, theme, menu). */
+  .btn-icon {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-muted transition-colors duration-(--duration-quick) hover:bg-surface-sunken hover:text-ink;
   }
 
-  /* Ghost — icon-only nav buttons */
-  .btn-ghost {
-    @apply p-2 text-warm-400 hover:bg-warm-100 hover:text-warm-600 dark:text-warm-500 dark:hover:bg-warm-800 dark:hover:text-warm-300;
+  /* Text link with an underline that draws in on hover. */
+  .link-draw {
+    @apply text-ink no-underline;
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size var(--duration-base) var(--ease-out), color var(--duration-quick);
+  }
+  .link-draw:hover,
+  .link-draw[aria-current],
+  .group:hover .link-draw,
+  .group:focus-visible .link-draw {
+    @apply text-ink;
+    background-size: 100% 1px;
+  }
+
+  /* Filter chip: pairs with aria-pressed. */
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 font-ui text-body-sm text-ink-muted no-underline transition-colors duration-(--duration-quick) hover:border-line-strong hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-surface;
+  }
+
+  /* A set-apart block (essentials, newsletter). Used sparingly. */
+  .card {
+    @apply rounded-sm bg-surface-raised p-6 sm:p-8;
+  }
+
+  /* The greystone window: an arched frame for a photo. */
+  .arch {
+    @apply overflow-hidden rounded-arch;
+  }
+
+  /* A photo inside an .arch that leans in slowly while its card (.group) is
+     hovered or focused. Pair the .arch with `isolate` so Safari clips it. */
+  .zoom {
+    transition: transform var(--duration-slow) var(--ease-out);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .group:hover .zoom,
+    .group:focus-visible .zoom {
+      transform: scale(1.04);
+    }
   }
 }
 
-/* Scroll-triggered stagger animations — children cascade in one by one */
-[data-animate-stagger] > * {
-  opacity: 0;
-  transform: translateY(1.5rem);
-  transition:
-    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+/* ─── Motion: page transitions, reveals, the verdict settle ─────────────
+   DESIGN.md, Motion. Durations and easing come from the motion tokens.
+   Nothing here runs under prefers-reduced-motion: reduce, and nothing hides
+   content unless BaseLayout's head script set .js-reveal (JS on, motion
+   allowed) and its reveal script then marked the element .reveal-pending
+   (below the fold at load). */
+
+/* Cross-document View Transitions: the page crossfades while a card's
+   photo and title (view-transition-name from src/utils/view-transitions.ts)
+   travel to the post's hero and h1. The header holds still. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
 }
 
-[data-animate-stagger] > .animate-in {
-  opacity: 1;
-  transform: none;
+.site-nav {
+  view-transition-name: site-nav;
 }
 
-/* Focus indicators — visible for keyboard, hidden for mouse/touch */
+::view-transition-group(*) {
+  animation-duration: var(--duration-base);
+  animation-timing-function: var(--ease-out);
+}
+
+::view-transition-old(root) {
+  animation-duration: var(--duration-quick);
+}
+
+::view-transition-new(root) {
+  animation-duration: var(--duration-base);
+}
+
+/* Quiet reveals: an element marked data-reveal that starts below the fold
+   fades and rises once, staggered with whatever enters beside it. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+/* The verdict settle: the window's pane lights once, like a lamp coming on. */
+@keyframes pane-light {
+  from {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.4;
+  }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .js-reveal [data-reveal].reveal-pending {
+    opacity: 0;
+  }
+
+  .js-reveal [data-reveal].is-revealed {
+    animation: reveal var(--duration-slow) var(--ease-out) var(--reveal-delay, 0ms) backwards;
+  }
+
+  .js-reveal [data-settle].reveal-pending .pane-light {
+    opacity: 0;
+  }
+
+  .js-reveal [data-settle].is-revealed .pane-light {
+    animation: pane-light var(--duration-slow) var(--ease-out) var(--duration-quick) backwards;
+  }
+}
+
+/* Pagefind UI: themed through its own custom properties, from the semantic
+   tokens, so it follows light and dark without per-colour overrides.
+   Prefixed with :root because pagefind-ui.css loads after this file. */
+:root .pagefind-ui {
+  --pagefind-ui-primary: var(--ink);
+  --pagefind-ui-text: var(--ink);
+  --pagefind-ui-background: var(--surface-raised);
+  --pagefind-ui-border: var(--line);
+  --pagefind-ui-tag: var(--surface-sunken);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 2px;
+  --pagefind-ui-font: var(--font-ui);
+}
+:root.dark .pagefind-ui {
+  --pagefind-ui-primary: var(--ink);
+  --pagefind-ui-text: var(--ink);
+  --pagefind-ui-background: var(--surface-raised);
+  --pagefind-ui-border: var(--line);
+  --pagefind-ui-tag: var(--surface-sunken);
+}
+:root .pagefind-ui mark {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+:root .pagefind-ui .pagefind-ui__result-excerpt,
+:root .pagefind-ui .pagefind-ui__message {
+  color: var(--ink-muted);
+}
+
+/* Focus indicators: visible for keyboard, hidden for mouse/touch */
 *:focus:not(:focus-visible) {
   outline: none;
 }
 
 *:focus-visible {
-  outline: 3px solid var(--color-brand-wine);
-  outline-offset: 2px;
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 3px;
 }
 
-:root.dark *:focus-visible {
-  outline-color: var(--color-brand-rose);
-}
-
-/* Reduced motion — disable animations for vestibular-sensitive users */
+/* Reduced motion: disable animations for vestibular-sensitive users */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
@@ -189,12 +454,6 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  [data-animate-stagger] > * {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
   }
 }
 
@@ -219,146 +478,94 @@
     text-decoration: none;
   }
 
-  /* Remove background colors for ink savings */
-  .bg-warm-50,
-  .bg-warm-100,
-  .bg-warm-200 {
+  /* Ink savings: no fills, black text. */
+  .card,
+  .bg-surface-raised,
+  .bg-surface-sunken {
     background: none !important;
   }
 
-  .bg-brand-wine {
-    background: #000 !important;
-  }
-
-  .text-brand-wine,
-  .text-brand-wine-text {
+  .text-ink,
+  .text-ink-muted,
+  .text-ink-subtle,
+  .text-accent-ink {
     color: #000 !important;
   }
 
-  /* Recipe detail card: hide image in print */
-  .recipe-detail-card-image {
+  /* Chef Recipe Card: one sheet, ingredients beside the method. */
+  .recipe-card {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  .recipe-card .hero-photo {
     display: none !important;
   }
 
-  /* Card: strip decorative styles for ink savings */
-  .recipe-detail-card {
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    overflow: visible !important;
+  .recipe-card h1 {
+    font-size: 18pt !important;
+    margin-top: 0.25rem !important;
   }
 
-  /* Strip padding from all inner card sections */
-  .recipe-detail-card-content > div {
-    padding: 0 !important;
-    border: none !important;
+  .recipe-card-intro {
+    font-size: 9pt !important;
+    margin-top: 0.4rem !important;
   }
 
-  /* Title: compact */
-  .recipe-detail-card-print-title {
-    padding-top: 0 !important;
-  }
-
-  .recipe-detail-card [itemprop="name"] {
-    font-size: 13pt !important;
-    margin-bottom: 0.4rem !important;
-  }
-
-  /* Meta bar: strip background, compact, add bottom rule */
-  .recipe-detail-card-meta {
-    background: none !important;
-    border-bottom: 1px solid #ccc !important;
-    padding: 0 0 0.35rem 0 !important;
-    margin-bottom: 0.5rem !important;
-    border-radius: 0 !important;
-    gap: 0.5rem 0.75rem !important;
+  .recipe-card-meta {
+    border-color: #ccc !important;
+    padding: 0.35rem 0 !important;
+    margin-top: 0.6rem !important;
+    gap: 0.25rem 1rem !important;
     font-size: 8pt !important;
   }
 
-  .recipe-detail-card-meta .h-8 {
-    display: none !important;
-  }
-
-  /* Two-column body: ingredients left, instructions right */
-  .recipe-detail-card-body {
+  .recipe-card-body {
     display: grid !important;
     grid-template-columns: 1fr 1.5fr !important;
     gap: 0 1.25rem !important;
     align-items: start !important;
-    padding: 0 !important;
-    margin-top: 0.5rem !important;
+    margin-top: 0.6rem !important;
   }
 
-  /* Section headings */
-  .recipe-detail-card-ingredients h3,
-  .recipe-detail-card-instructions h3 {
-    font-size: 10pt !important;
-    margin-bottom: 0.25rem !important;
+  .recipe-card-body li,
+  .recipe-card-extra li {
+    font-size: 9pt !important;
+    line-height: 1.4 !important;
   }
 
-  .recipe-detail-card-ingredients h4,
-  .recipe-detail-card-instructions h4 {
-    font-size: 8pt !important;
-    margin-bottom: 0.15rem !important;
-    margin-top: 0.25rem !important;
-  }
-
-  /* Tighten ingredient spacing */
-  .recipe-detail-card-ingredients ul {
-    gap: 0 !important;
-  }
-
-  .recipe-detail-card-ingredients ul > * + * {
-    margin-top: 0.05rem !important;
-  }
-
-  .recipe-detail-card-ingredients li input[type="checkbox"] {
-    margin-top: 0.05rem !important;
-  }
-
-  .recipe-detail-card-ingredients > div {
-    margin-bottom: 0.2rem !important;
-  }
-
-  /* Step number: clean inline text for print */
-  .recipe-detail-step-number {
-    width: auto !important;
-    height: auto !important;
-    min-width: auto !important;
-    display: inline !important;
-    background: none !important;
-    color: #000 !important;
-    font-size: 10pt !important;
-    font-weight: 700 !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    line-height: 1.5 !important;
-  }
-
-  .recipe-detail-step-number::after {
-    content: ".";
-  }
-
-  .recipe-detail-card-instructions li {
+  .recipe-card-body ol li {
     gap: 0.25rem !important;
-    align-items: baseline !important;
+    grid-template-columns: 1rem minmax(0, 1fr) !important;
   }
 
-  .recipe-detail-card-instructions li p {
-    padding-top: 0 !important;
-    line-height: 1.3 !important;
+  .recipe-card-body > section {
+    margin-top: 0 !important;
   }
 
-  .recipe-detail-card-instructions ol {
-    gap: 0 !important;
+  .recipe-card-body ul,
+  .recipe-card-body ol {
+    margin-top: 0.2rem !important;
   }
 
-  .recipe-detail-card-instructions ol > * + * {
+  .recipe-card-body li + li {
     margin-top: 0.1rem !important;
   }
 
-  .recipe-detail-card-instructions > div {
-    margin-bottom: 0.25rem !important;
+  .recipe-card-step-number {
+    color: #000 !important;
+    font-size: 9pt !important;
+  }
+
+  .recipe-card-extra {
+    margin-top: 0.6rem !important;
+  }
+
+  .recipe-card-footer {
+    border-color: #ccc !important;
+    margin-top: 0.6rem !important;
+    padding-top: 0.35rem !important;
+    font-size: 8pt !important;
   }
 
   /* Compact headings for print */
@@ -378,41 +585,6 @@
 
   li {
     break-inside: avoid;
-  }
-
-  /* Nutrition: compact inline layout for print */
-  .recipe-detail-card-content h3:has(+ .grid) {
-    display: inline !important;
-    font-size: 9pt !important;
-    margin: 0 !important;
-  }
-
-  .recipe-detail-card-content h3:has(+ .grid) + .grid {
-    display: inline-flex !important;
-    gap: 0.75rem !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .recipe-detail-card-content h3:has(+ .grid) + .grid > div {
-    display: inline-flex !important;
-    gap: 0.2rem !important;
-    align-items: baseline !important;
-    padding: 0 !important;
-    background: none !important;
-    border-radius: 0 !important;
-  }
-
-  .recipe-detail-card-content h3:has(+ .grid) + .grid > div p:first-child {
-    font-size: 9pt !important;
-    font-weight: 600 !important;
-    color: #000 !important;
-  }
-
-  .recipe-detail-card-content h3:has(+ .grid) + .grid > div p:last-child {
-    font-size: 8pt !important;
-    text-transform: none !important;
-    letter-spacing: normal !important;
   }
 
   /* Orphan/widow control */

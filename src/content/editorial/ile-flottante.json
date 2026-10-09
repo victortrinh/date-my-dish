@@ -35,6 +35,11 @@
           "occasion": "casual-midweek",
           "assessment": "not-for",
           "reason": "Nothing about $130 a head is casual."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "The room closes at 22:00 and the menu runs two and a half hours, so the last useful table is early evening."
         }
       ],
       "imageAlt": "Elegant plating at Île Flottante Montreal, a delicate seasonal dish resting on fine ceramic in the intimate Mile End dining room"
@@ -66,6 +71,11 @@
           "occasion": "casual-midweek",
           "assessment": "not-for",
           "reason": "Rien à 130 $ par personne n'est décontracté."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "La salle ferme à 22 h et le menu dure deux heures et demie, alors la dernière table utile est en début de soirée."
         }
       ],
       "metaTitle": "Île Flottante, Mile End : menu dégustation",

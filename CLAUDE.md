@@ -57,9 +57,9 @@ This is a single-context repository. See `docs/agents/domain.md`.
 - Keep a review page at 15 KB of JS or less (performance budget)
 
 ### Dark Mode
-- Tailwind `class` strategy with `dark:` prefix
-- Neutral palette: `dark:bg-neutral-950` (body), `dark:bg-neutral-900` (cards), `dark:text-neutral-200` (text)
-- Toggle persisted in `localStorage.theme`
+- Tailwind `class` strategy: `.dark` on `<html>`. Light is the default and follows `prefers-color-scheme`.
+- The semantic tokens (`bg-surface`, `text-ink`, `border-line`, `text-accent-ink`...) flip with the theme, so components never need a `dark:` colour variant. `dark:` survives only to swap an element by theme (the sun and moon icons in `DarkModeToggle`).
+- Toggle persisted in `localStorage.dmd_theme`
 - Flash prevention: inline `<script>` in `<head>` applies `.dark` class before first paint
 
 ### CSS Conventions
@@ -92,24 +92,27 @@ This is a single-context repository. See `docs/agents/domain.md`.
 
 ## Brand & Accessibility
 
+The design system is **Greystone evening** (Plateau limestone, wrought iron, one lit-window amber). `DESIGN.md` is the reference; the tokens live in `src/styles/global.css`.
+
 ### Colors
-- **Primary**: Terracotta `#C4704B` (decorative/backgrounds only)
-  - `brand-primary-text` `#9A5439` -- WCAG AA 5.67:1 on white (use for text)
-  - `brand-primary-dark` `#A85D3D` -- 4.87:1 (larger text/UI elements)
-- **Accent**: Warm Gold `#D4A853` (decorative/backgrounds only)
-  - `brand-accent-text` `#7D631C` -- WCAG AA 5.72:1 on white (use for text)
-  - Never use `brand-accent` or `brand-accent-dark` for text (fails WCAG)
-- **Background**: `bg-gray-100` (light) / `bg-neutral-950` (dark)
+- Use the semantic tokens only: `surface`, `surface-raised`, `surface-sunken`, `ink`, `ink-muted`, `ink-subtle`, `line`, `line-strong`, `accent`, `accent-ink`, `on-accent`, `iron`, `on-iron`, `on-iron-muted`, `verdict-{favourite,conditional,pass}`. Every text pair passes WCAG AA in both themes.
+- **Accent** amber `accent` (`#e8a33d` light, `#f0b254` dark) is a fill: buttons, the lit pane of the logo, highlights. Text in amber uses `accent-ink` (`#7c4a00` on stone, 5.9:1). Text on an amber fill uses `on-accent`.
+- **Background**: `bg-surface` (stone `#e7e5e1` / night `#16171a`); the footer is `bg-iron`.
+- No raw hex, no arbitrary `shadow-[`/`rounded-[`/colour values and no retired legacy alias (`warm-*`, `brand-wine*`, `brand-rose*`, `font-caveat`, `font-heading`) in components, layouts or pages (enforced by `validate-source`). Headings use `font-display`.
 
 ### Fonts
-- **Playfair Display** 400-900 -- Headings (italic)
-- **Source Serif 4** 400-700 -- Body text
-- **Inter** 400-700 -- UI elements
-- **Caveat** 400/700 -- Handwritten accents
+- **Young Serif** 400 -- Display and headings (one upright weight; `font-synthesis: none`, never bold or italic)
+- **Libre Caslon Text** 400/700, italic 400 -- Reading text
+- **Hanken Grotesk** 400-700 -- UI, captions, eyebrows
 - Loaded via `<link>` with `preconnect` in `<head>`, never CSS `@import`
+- Each `--font-*` stack puts a metric-matched fallback `@font-face` (`size-adjust` and ascent/descent/line-gap overrides on Georgia, Times New Roman or Arial) right after its web font, so text does not re-wrap when the web font swaps in (CLS)
+
+### Logo and icons
+- `Logo.astro` renders `src/assets/brand/wordmark.svg` (outlined paths, no font dependency): the greystone window and the name. Frame and letters take `currentColor`; the lit pane takes `--accent`.
+- `src/assets/brand/monogram.svg` is the window with a D (404, avatars); `favicon.svg` is the window alone and adapts to dark browser chrome. The PNG icons (`favicon-48x48.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`), `site.webmanifest` and `images/og-default.jpg` are rendered from these.
 
 ### Accessibility Rules (WCAG 2.2 AA)
-- Focus-visible outlines: terracotta `#9A5439` (light), gold `#D4A853` (dark)
+- Focus-visible outlines: `accent-ink` (`#7c4a00` light, `#f0b254` dark), 2px, 3px offset
 - Focus traps in modals (SearchOverlay, mobile Navigation)
 - `prefers-reduced-motion: reduce` disables all animations
 - Skip-to-content link on every page
@@ -153,7 +156,7 @@ Publishing, Pinterest and every scheduled job are defined in the spec (`docs/edi
 - **`scripts/validate-source.mjs`** (`prebuild`) -- Fails on a `<Picture>` missing `fallbackFormat` and on taxonomy values with no translation.
 - **`scripts/validate-date-spots.mjs`** (`prebuild`) -- Merges each Companion File (`src/content/editorial/{slug}.json`) over its record, then validates the content contracts (naming any missing required field), EN/FR parity, append-only Google snapshots and update lines, and cross-collection links. Fails a review below 300 reader-facing words per locale; warns below 1,000 words, below nine internal links, and when `favourite` passes one in four.
 - **`scripts/notion-import.mjs check`** (`prebuild`, and in the PR check with `--base`) -- Every published record needs a Notion source snapshot in `notion/sources/`. Runs the Verbatim Check (each English sentence must trace to the snapshot after the Allowed Edits) and the publish gate (contracts with Companion Files merged, links, no author placeholders or em-dashes, no venue twice, photo budgets; with `--base`, append-only Google snapshots and update lines and dated updates against the base). Runs the French checks (`scripts/notion-story/french.mjs`): EN/FR parity path by path, FR routes and links, untranslated copy and Quebec usage, and for the seven pre-rework reviews the Verbatim Check against their old FR MDX. Prints Unplaced Text, FR sentences translated fresh, and number warnings.
-- **`scripts/validate-build.mjs`** (`postbuild`) -- Fails on hreflang pointing to a redirect/404 or missing a trailing slash, noindex/bare-root/redirecting URLs in the sitemap, indexable meta descriptions outside 120-160, internal links to a `_redirects` source, untranslated i18n keys in titles/meta, `dist/_astro` images over 500 KB, or any `Review`, `AggregateRating`, `Rating` or `FAQPage` JSON-LD (or `reviewRating`/`aggregateRating`/`ratingValue` keys). Also enforces the performance budgets: over 15 KB of first-party JavaScript on a post page, a hero (`fetchpriority="high"`) source over 200 KB, any `<img>` without width and height, a non-hero `<img>` on a post page without `loading="lazy"`, or a third-party `<iframe>` in the initial HTML.
+- **`scripts/validate-build.mjs`** (`postbuild`) -- Fails on a `view-transition-name` used twice on one page, hreflang pointing to a redirect/404 or missing a trailing slash, noindex/bare-root/redirecting URLs in the sitemap, indexable meta descriptions outside 120-160, internal links to a `_redirects` source, untranslated i18n keys in titles/meta, `dist/_astro` images over 500 KB, or any `Review`, `AggregateRating`, `Rating` or `FAQPage` JSON-LD (or `reviewRating`/`aggregateRating`/`ratingValue` keys). Also enforces the performance budgets: over 15 KB of first-party JavaScript on a post page, a hero (`fetchpriority="high"`) source over 200 KB, any `<img>` without width and height, a non-hero `<img>` on a post page without `loading="lazy"`, or a third-party `<iframe>` in the initial HTML.
 - **`scripts/validate-contributor-content.mjs`** (`prebuild`) -- Validates Chefs and Chef Recipe Cards with their Companion Files, and fails when a declared photo is missing from `public/`.
 - **`scripts/validate-descriptions.mjs`** (`prebuild`) -- Meta titles 46 characters or fewer, meta descriptions 120 to 160.
 - **`scripts/validate-retired-content.mjs`** (`postbuild`) -- Fails on any retired recipe or article route (`/en/recipes/`, `/en/articles/`, `/fr/recettes/`, `/fr/articles/`) or URL in `dist/client`. `tests/smoke/retired-content.spec.ts` asserts they answer 404. The legacy MDX under `src/content/recipes/` and `src/content/articles/` stays in Git but its collections load no entries.
@@ -179,18 +182,18 @@ Detailed write-ups live in `docs/solutions/`.
 
 1. Cloudflare `_redirects` only accepts relative paths. www-to-apex goes at DNS level.
 2. Every image is optimised before it ships (hero max 1200px and under 200 KB, others max 900px). Past heroes were 700 KB+.
-3. Pagefind UI needs explicit dark mode CSS overrides via the `:root.dark` selector.
+3. Pagefind UI is themed through its own `--pagefind-ui-*` custom properties, set from the semantic tokens in `global.css` under `:root .pagefind-ui` and `:root.dark .pagefind-ui` (the `:root` prefix matters: `pagefind-ui.css` loads after ours).
 4. When changing fonts, load ALL needed weights in the Google Fonts `<link>` URL. Google Fonts via `<link>`, never CSS `@import` (render-blocking).
 5. Never pair `uppercase` with negative `letter-spacing`. Protect handwritten fonts (Caveat) with `normal-case` when global uppercase rules exist.
 6. Fixed orderings (Make a night of it categories, listing filters) need an explicit priority array. Set insertion order is not a contract.
-7. Use `brand-primary-text`/`brand-accent-text` for text, never raw brand colors (WCAG fail).
+7. Text colour comes from `ink`, `ink-muted`, `ink-subtle` or `accent-ink`; the `accent` amber is a fill, never text on stone (WCAG fail).
 8. All ARIA labels must be i18n'd via `t(locale, key)`.
 9. Focus traps are required in SearchOverlay and mobile Navigation. `prefers-reduced-motion: reduce` must be tested.
 10. Related content: use exact slug comparison (`===`), never `.includes()`.
 11. The sitemap filter in `astro.config.ts` must exclude every noindex page (search, 404) and the bare root. Astro sitemap does not read noindex meta tags.
 12. All URL builders in `src/i18n/utils.ts` return trailing slashes; never append `/` after calling them. Astro 301-redirects non-trailing-slash URLs. Content hreflang/alternate URLs in `SEOHead.astro` must also end in a slash. Enforced by `validate-build`.
 13. Meta descriptions run 120 to 160 characters; the rendered `<title>` stays at 60 characters or fewer. Enforced by `validate-descriptions` and `validate-build`.
-14. **No content is created outside the Notion importer.** SEO audits and the weekly SEO maintenance routine may report content gaps but never author new posts and never edit prose. They may only change Companion File fields (meta title and description, alt text, internal links) and `public/_redirects` for broken internal links. Never pad prose to hit a word count.
+14. **No content is created outside the Notion importer.** SEO audits and the weekly SEO maintenance routine may report content gaps but never author new posts and never edit prose. They may only change Companion File fields (meta title and description, alt text, internal links), the `spotId` on an existing Make a night of it pick once its venue's Date Spot is published, and `public/_redirects` for broken internal links. Never pad prose to hit a word count.
 15. **Every `<Picture>` sets `fallbackFormat="webp"`.** Astro's default fallback for webp/avif sources is PNG, which balloons photos to 1-3 MB. Enforced by `validate-source`.
 16. **Taxonomy slug maps must cover every value in content** (categories, neighbourhoods, cuisines). A value with no map entry renders a raw key and produces a 404 hreflang. Enforced by `validate-source` and `validate-build`.
 17. **Never link to a `_redirects` source, the bare apex, or a retired page.** Internal `<a href>`s must point at final 200 URLs. Enforced by `validate-build`.
@@ -203,4 +206,6 @@ Detailed write-ups live in `docs/solutions/`.
 24. **Performance budgets block the build, not just Lighthouse.** A post page ships at most 15 KB of first-party JavaScript (inline scripts count; JSON-LD does not), the hero stays under 200 KB, every `<img>` sets width and height, below-the-fold images are `loading="lazy"`, and no third-party `<iframe>` loads with the page: the map is a link, and any embed loads on click. `is:inline` scripts are emitted once per component instance, so a component rendered twice ships its script twice; give it an `includeScript` prop and emit the script from one instance (see `DarkModeToggle` and `NewsletterSignup`). Enforced by `validate-build`; the Lighthouse PR check enforces performance 95+, LCP and CLS.
 25. **Imported prose must trace to its Notion source.** `notion-import.mjs check` fails any English sentence in a record that is not in `notion/sources/{slug}.json` after the Allowed Edits (word-level match; negations and numbers can never be edited away). When it fails, restore the Notion wording; never loosen the check to fit a rewrite. Author notes (`INTERNAL` callouts, bracketed placeholders) are not traceable source. New author headings go into the heading map in `scripts/notion-story/headings.mjs`, with a test.
 26. **The FR is a section-by-section translation of the fitted EN, checked by script.** `notion-import.mjs check` fails an FR copy whose fields, signals, dish tags, link targets, dates or counts differ from the EN at the same path, an FR link that is not a final `/fr/` URL with a trailing slash pointing at the French page of what the EN links to, FR left in English, the EN meta description reused, and France-French usage (petit-déjeuner, cuillère à café, week-end). The seven pre-rework reviews (Notion rows in `LEGACY_REVIEWS`, `scripts/notion-story/legacy.mjs`) reuse their old FR MDX: their FR must trace to it, except where the EN carries Notion text the old review never had. `next` copies the old text into the snapshot (`legacy`), so retiring `src/content/reviews/` later does not break the check.
-27. **The Date Spots listing (`/en/date-spots/`, `/fr/lieux/`) shows activities and Chef-led Experiences only**, grouped under the four categories (`DATE_SPOT_CATEGORIES`; Social and Romantic was retired in #574). Restaurants and bars list under Reviews; neighbourhood guides keep both. `borough` is a Companion File field, an enum of the Montréal boroughs spelled as the Notion `Borough` property spells them (`BOROUGHS` in `src/content-contracts/date-spot.mjs`), pre-filled by the Importer and used by the listing's borough filter.
+27. **One design system, tokens only.** Components, layouts and pages take colour, radius, shadow, type and motion from the tokens in `src/styles/global.css` (documented in `DESIGN.md`) and the component classes there (`.btn` + `.btn-primary`/`.btn-accent`/`.btn-secondary`, `.btn-icon`, `.link-draw`, `.chip`, `.card`, `.eyebrow`, `.arch`, `.page-container`). No raw hex, no `shadow-[`, `rounded-[` or arbitrary colour utilities, and none of the retired legacy aliases (`warm-*`, `brand-wine*`, `brand-rose*`, `font-caveat`, `font-heading`): `validate-source` fails them (`scripts/design-tokens-guard.mjs`, tested in `tests/contracts/design-tokens.test.mjs`). A new colour or component is a `DESIGN.md` change first.
+28. **Motion is tokens only, off under reduced motion, and never hides content without JS.** Durations and easing come from `--duration-quick`/`--duration-base`/`--duration-slow` and `--ease-out` (DESIGN.md, Motion). `prefers-reduced-motion: reduce` turns off View Transitions, reveals, the verdict settle and the card zoom. Reveals hide nothing unless the head script set `.js-reveal` and the one reveal script in `BaseLayout` (emitted once) found the element below the fold; never mark body paragraphs or anything above the fold. Every `view-transition-name` goes through `transitionStyle()` (`src/utils/view-transitions.ts`), which gives a name out once per page, and a card's names must match its post's hero photo and h1. `validate-build` fails a duplicate name on a page; `tests/smoke/motion.spec.ts` covers no-JS, reduced motion, reveals and the card-to-hero name match.
+29. **The Date Spots listing (`/en/date-spots/`, `/fr/lieux/`) shows activities and Chef-led Experiences only**, grouped under the four Date Spot categories (`DATE_SPOT_CATEGORIES`). Restaurants and bars list under Reviews; neighbourhood guides keep both. Social and Romantic is a Make a night of it pick's category only (`NIGHT_CATEGORIES`, last in the order), because reviews' Notion picks name places like a market or a promenade; no Date Spot or bar carries it (#574). `borough` is a Companion File field, an enum of the Montréal boroughs spelled as the Notion `Borough` property spells them (`BOROUGHS` in `src/content-contracts/date-spot.mjs`), pre-filled by the Importer and used by the listing's borough filter.

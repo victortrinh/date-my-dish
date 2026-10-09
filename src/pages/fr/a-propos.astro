@@ -13,12 +13,12 @@ const locale = "fr";
     mainEntity: { "@type": "Organization", name: "Date My Dish", url: SITE_URL },
     contributor: { "@type": "Person", name: "Victor Vu" },
   })} />
-  <section class="mx-auto max-w-prose px-4 py-section">
+  <section class="page-container pt-8 pb-section">
     <Breadcrumbs locale={locale} items={[{ label: t(locale, "about.pageTitle") }]} />
-    <h1 class="mt-8 font-heading text-4xl text-warm-900 dark:text-warm-100">{t(locale, "about.pageTitle")} Date My Dish</h1>
-    <p class="mt-6 text-2xl text-warm-700 dark:text-warm-300"><BrandDescriptor locale={locale} /></p>
-    <p class="mt-6 text-warm-600 dark:text-warm-400">{t(locale, "about.market")}</p>
-    <div class="mt-8 space-y-6 text-warm-700 dark:text-warm-300">
+    <p class="eyebrow mt-10">{t(locale, "about.market")}</p>
+    <h1 class="mt-5 max-w-4xl text-4xl text-ink sm:text-heading-1 lg:text-display">{t(locale, "about.pageTitle")} Date My Dish</h1>
+    <p class="mt-6 max-w-measure font-display text-heading-3 text-ink-muted"><BrandDescriptor locale={locale} /></p>
+    <div class="mt-section-sm max-w-measure space-y-6 border-t border-line-strong pt-8 font-body text-body-lg text-ink-muted">
       <p>{t(locale, "about.intro")}</p>
       <p>{t(locale, "about.verdicts")}</p>
       <p>{t(locale, "about.homeMarket")}</p>

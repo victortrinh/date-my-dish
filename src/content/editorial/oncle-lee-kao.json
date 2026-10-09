@@ -35,6 +35,11 @@
           "occasion": "first-date",
           "assessment": "not-for",
           "reason": "The food leans oily and heavy, and the sharing format works better once you already know each other."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "If you want late-night Chinese food, this isn't the version of it. It's a sit-down, order-wide dinner rather than somewhere to end up at eleven."
         }
       ],
       "imageAlt": "Oncle Lee Kăo's soaring dining room in Old Montreal, Michelin Bib Gourmand with burnt-orange leather accents and warm flattering lighting"
@@ -66,6 +71,11 @@
           "occasion": "first-date",
           "assessment": "not-for",
           "reason": "La bouffe penche grasse et lourde, et le format à partager marche mieux quand vous vous connaissez déjà."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "Si tu veux de la bouffe chinoise tard le soir, ce n'est pas la bonne version. C'est un souper assis où on commande large, pas un endroit où aboutir à onze heures."
         }
       ],
       "metaTitle": "Oncle Lee Kăo, Old Montreal : critique",

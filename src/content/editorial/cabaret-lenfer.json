@@ -18,6 +18,11 @@
           "reason": "The view over the pass lets you watch the team plate each course. The counter is more compelling than the food itself."
         },
         {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "Service starts at 6pm and the table runs three hours, so this is the whole evening rather than the end of one."
+        },
+        {
           "occasion": "double-date",
           "assessment": "caveat",
           "reason": "Loud enough that four people works better than two, but the three-hour limit means you're committed."
@@ -46,6 +51,11 @@
           "occasion": "impressing-a-cook",
           "assessment": "caveat",
           "reason": "La vue sur le passe te permet de regarder l'équipe dresser chaque service. Le comptoir est plus captivant que la bouffe elle-même."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "Le service commence à 18 h et la table dure trois heures, alors c'est toute la soirée plutôt que la fin d'une soirée."
         },
         {
           "occasion": "double-date",

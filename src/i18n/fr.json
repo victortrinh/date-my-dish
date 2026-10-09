@@ -1,7 +1,8 @@
 {
   "site": {
     "name": "Date My Dish",
-    "tagline": "Où sortir, quoi boire, quoi cuisiner pour quelqu’un."
+    "tagline": "Où sortir, quoi boire, quoi cuisiner pour quelqu’un.",
+    "homeLabel": "Date My Dish, accueil"
   },
   "nav": {
     "home": "Accueil",
@@ -145,6 +146,10 @@
     "allReviews": "Toutes les critiques",
     "noReviewsFound": "Aucune critique trouvée."
   },
+  "home": {
+    "verdictsTitle": "Comment on juge un lieu",
+    "allDateSpots": "Tous les Date Spots"
+  },
   "about": {
     "pageTitle": "À propos",
     "market": "Montréal · Date Spots",
@@ -242,10 +247,10 @@
     "current": "Français"
   },
   "newsletter": {
-    "title": "Date My Dish",
-    "footerTitle": "Date My Dish",
-    "compactTitle": "Date My Dish",
-    "description": "Date Spots",
+    "title": "Les Date Spots de Montréal, par courriel",
+    "footerTitle": "Les Date Spots de Montréal, par courriel",
+    "compactTitle": "Planifiez la prochaine sortie",
+    "description": "Nous vous envoyons nos nouvelles critiques et nos nouveaux Date Spots à Montréal, avec le verdict en premier.",
     "emailPlaceholder": "Votre adresse courriel",
     "subscribe": "S'abonner",
     "success": "Vous êtes abonné! Vérifiez votre courriel pour confirmer.",
@@ -285,7 +290,8 @@
       "casual-midweek": "Soir de semaine",
       "impressing-a-cook": "Impressionner quelqu’un qui cuisine",
       "double-date": "Sortie à quatre",
-      "solo-at-the-bar": "En solo au bar"
+      "solo-at-the-bar": "En solo au bar",
+      "late-night": "Tard en soirée"
     },
     "dishTag": {
       "order-this": "À commander",
@@ -304,13 +310,15 @@
     },
     "timing": {
       "before": "Avant",
-      "after": "Après"
+      "after": "Après",
+      "before-or-after": "Avant ou après"
     },
     "category": {
       "activities-sports": "Activités et sports",
       "arts-culture": "Arts et culture",
       "games-entertainment": "Jeux et divertissement",
-      "nature-scenic": "Nature et panoramas"
+      "nature-scenic": "Nature et panoramas",
+      "social-romantic": "Social et romantique"
     },
     "spotType": {
       "restaurant": "Restaurant",
@@ -415,6 +423,8 @@
     "nightKickerBar": "Avant ou après un verre",
     "nightTitle": "Faire toute une soirée",
     "nightIntro": "Tout est à moins de quinze minutes à pied. Chaque lieu a sa propre page : heures, coût et ce que c’est vraiment.",
+    "nightIntroNearby": "Tout près, pour avant ou après.",
+    "nightIntroLinked": "Un nom en lien ouvre sa propre page, avec les heures et le coût.",
     "walk": "{minutes} min à pied",
     "minutes": "{minutes} min",
     "moreNearby": "{count} autres à proximité →",

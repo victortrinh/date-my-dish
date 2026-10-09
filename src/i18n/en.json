@@ -1,7 +1,8 @@
 {
   "site": {
     "name": "Date My Dish",
-    "tagline": "Where to go, what to drink, what to make for someone."
+    "tagline": "Where to go, what to drink, what to make for someone.",
+    "homeLabel": "Date My Dish, home"
   },
   "nav": {
     "home": "Home",
@@ -145,6 +146,10 @@
     "allReviews": "All Reviews",
     "noReviewsFound": "No reviews found."
   },
+  "home": {
+    "verdictsTitle": "How we judge a place",
+    "allDateSpots": "All Date Spots"
+  },
   "about": {
     "pageTitle": "About",
     "market": "Montréal · Date Spots",
@@ -242,10 +247,10 @@
     "current": "English"
   },
   "newsletter": {
-    "title": "Date My Dish",
-    "footerTitle": "Date My Dish",
-    "compactTitle": "Date My Dish",
-    "description": "Date Spots",
+    "title": "Montréal Date Spots, by email",
+    "footerTitle": "Montréal Date Spots, by email",
+    "compactTitle": "Plan the next date",
+    "description": "We send our new reviews and Date Spots around Montréal, with the verdict up front.",
     "emailPlaceholder": "Your email address",
     "subscribe": "Subscribe",
     "success": "You're subscribed! Check your email to confirm.",
@@ -285,7 +290,8 @@
       "casual-midweek": "Casual midweek",
       "impressing-a-cook": "Impressing a cook",
       "double-date": "Double date",
-      "solo-at-the-bar": "Solo at the bar"
+      "solo-at-the-bar": "Solo at the bar",
+      "late-night": "Late night"
     },
     "dishTag": {
       "order-this": "Order this",
@@ -304,13 +310,15 @@
     },
     "timing": {
       "before": "Before",
-      "after": "After"
+      "after": "After",
+      "before-or-after": "Before or after"
     },
     "category": {
       "activities-sports": "Activities and Sports",
       "arts-culture": "Arts and Culture",
       "games-entertainment": "Games and Entertainment",
-      "nature-scenic": "Nature and Scenic"
+      "nature-scenic": "Nature and Scenic",
+      "social-romantic": "Social and Romantic"
     },
     "spotType": {
       "restaurant": "Restaurant",
@@ -415,6 +423,8 @@
     "nightKickerBar": "Before or after drinks",
     "nightTitle": "Make a night of it",
     "nightIntro": "All within a fifteen minute walk. Each one opens its own page with hours, cost and what it is actually like.",
+    "nightIntroNearby": "Close by, for before or after.",
+    "nightIntroLinked": "A linked name opens its own page with hours and cost.",
     "walk": "{minutes} min walk",
     "minutes": "{minutes} min",
     "moreNearby": "{count} more nearby →",

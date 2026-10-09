@@ -46,7 +46,7 @@ function fullVenueCopy(spotType, slug, name) {
     factNotes: `${token} fact notes`,
     imageCredit: `${token} image credit`,
     essentials: { address: `${token} address`, cost: `${token} cost per person`, booking: `${token} booking`, access: `${token} access`, duration: `${token} duration`, hours: `${token} hours` },
-    goodFor: signals(["anniversary", "impressing-a-cook", "first-date", "casual-midweek"]),
+    goodFor: signals(["anniversary", "impressing-a-cook", "first-date", "casual-midweek", "late-night"]),
     room: filler("room", 500),
     drinks: {
       intro: filler("drinks", 40),
@@ -134,7 +134,7 @@ export function acceptanceCollection() {
   // verdict, so the Date Spots listing has something to group and filter.
   const museum = dateSpotFixture("activity", "test-only-museum", "Test Museum");
   minimal.reviewVerdict = "pass";
-  bar.category = "games-entertainment";
+  bar.category = "arts-culture";
   activity.borough = "Verdun";
   museum.borough = "Ville-Marie";
   museum.category = "arts-culture";
@@ -148,13 +148,20 @@ export function acceptanceCollection() {
     copy.meetChef = { name: `${token} Cook`, role: `${token} chef`, background: filler("chef background", 90), quote: `${token} chef quote`, approach: filler("chef approach", 100), profileId: "test-only-profile" };
     copy.atHome = { recipeId: "test-only-recipe", intro: `${token} at home intro` };
     copy.whatToOrder.waitersChoice = { recommendation: `${token} waiter recommendation`, outcome: `${token} they were right` };
+    // The verdict paragraph carries the one-line reason, which the page sets in ink.
+    copy.verdictDetail = `${token} verdict detail opens. ${copy.verdictReason} ${token} verdict detail closes.`;
     copy.whatToOrder.setMenu = { name: `${token} tasting`, courses: 5, pricePerPerson: "$95", note: `${token} set menu note`, advice: "take-it" };
     // Out of category order on purpose, plus a pick whose Date Spot is not
-    // published: the page shows the bar, then the activity, and nothing else.
+    // published and that names no venue (left out), and two with no page that
+    // name their venue and category (shown unlinked), one of them Social and
+    // Romantic, which only a pick can carry: the page shows the bar, the
+    // unlinked cinema, the activity, then the unlinked promenade.
     copy.makeANight = [
       { spotId: "test-only-bar", timing: "after", walkMinutes: 4, blurb: `${token} bar blurb` },
       { spotId: "test-only-unpublished", timing: "after", walkMinutes: 2, blurb: `${token} unpublished blurb` },
       { spotId: "test-only-activity", timing: "before", walkMinutes: 9, blurb: `${token} activity blurb` },
+      { name: `${token} Corner Cinema`, category: "games-entertainment", timing: "before-or-after", details: `${token} around the corner · $`, blurb: `${token} cinema blurb` },
+      { name: `${token} Promenade`, category: "social-romantic", timing: "after", blurb: `${token} promenade blurb` },
     ];
     activity.locales[locale].pairItWith = [{ spotId: "test-only-restaurant", walkMinutes: 12 }];
     activity.locales[locale].verdictQualifier = `${token} in season`;

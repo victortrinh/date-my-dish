@@ -45,7 +45,7 @@ Any page section outside a post type's required minimum. It renders only when it
 _Avoid_: Placeholder, filler section
 
 **Make a Night of It**:
-The review section offering up to four published Date Spots nearby, one per category, in a fixed category order.
+The review section with the author's picks for before or after, up to five, one per category, in a fixed category order. Picks may be Social and Romantic, a category no Date Spot carries. A pick whose Date Spot is published links to its page; one without a page shows unlinked.
 _Avoid_: Related posts box
 
 **Reporter Byline**:

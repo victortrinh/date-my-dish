@@ -22,6 +22,11 @@
  *  11. Lazy below-the-fold images    (on post pages every non-hero <img> is loading="lazy")
  *  12. No third-party embeds on load (no off-site <iframe> in the initial HTML; the map is a link)
  *
+ * and one motion rule (DESIGN.md, Motion):
+ *
+ *  13. Unique view-transition names  (a name used twice on one page makes the browser skip
+ *                                     the whole card-to-post transition)
+ *
  * Run: node scripts/validate-build.mjs   (also runs automatically via `postbuild`)
  */
 import { readFileSync, readdirSync, statSync, existsSync } from "node:fs";
@@ -269,6 +274,14 @@ for (const file of htmlFiles()) {
     if (src && (src.startsWith("//") || (/^https?:/i.test(src) && !src.startsWith(SITE)))) {
       err(`[perf-embed] ${rel} loads a third-party iframe on page load: ${src}`);
     }
+  }
+
+  // 13. every view-transition-name in the page markup is unique
+  const seenNames = new Set();
+  for (const [, name] of html.matchAll(/view-transition-name:\s*([\w-]+)/g)) {
+    if (name === "none") continue;
+    if (seenNames.has(name)) err(`[view-transition] ${rel} uses view-transition-name "${name}" more than once`);
+    seenNames.add(name);
   }
 }
 

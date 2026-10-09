@@ -1,0 +1,13 @@
+---
+// The greystone window from the brand mark, as a three-state light: lit
+// (amber pane), half (the lower half lit) and unlit (a dark pane in the line
+// colour). Decoration only: a text label always sits next to it. The lit
+// part carries `.pane-light`, which the verdict settle animates.
+interface Props { state: "lit" | "half" | "unlit"; class?: string; }
+const { state, class: className } = Astro.props;
+---
+<svg viewBox="0 0 12 16" class:list={["shrink-0", className]} aria-hidden="true" focusable="false">
+  <path d="M0 16V6a6 6 0 0 1 12 0v10z" class={state === "unlit" ? "fill-ink-subtle" : "fill-ink"} />
+  <path d="M2 16V6.2a4 4 0 0 1 8 0V16z" class={state === "lit" ? "pane-light fill-accent" : "fill-line"} />
+  {state === "half" && <path d="M2 16v-5h8v5z" class="pane-light fill-accent" />}
+</svg>
