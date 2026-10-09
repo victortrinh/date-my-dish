@@ -146,6 +146,10 @@
     "allReviews": "All Reviews",
     "noReviewsFound": "No reviews found."
   },
+  "home": {
+    "verdictsTitle": "How we judge a place",
+    "allDateSpots": "All Date Spots"
+  },
   "about": {
     "pageTitle": "About",
     "market": "Montréal · Date Spots",
@@ -243,10 +247,10 @@
     "current": "English"
   },
   "newsletter": {
-    "title": "Date My Dish",
-    "footerTitle": "Date My Dish",
-    "compactTitle": "Date My Dish",
-    "description": "Date Spots",
+    "title": "Montréal Date Spots, by email",
+    "footerTitle": "Montréal Date Spots, by email",
+    "compactTitle": "Plan the next date",
+    "description": "We send our new reviews and Date Spots around Montréal, with the verdict up front.",
     "emailPlaceholder": "Your email address",
     "subscribe": "Subscribe",
     "success": "You're subscribed! Check your email to confirm.",

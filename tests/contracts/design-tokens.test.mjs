@@ -28,3 +28,19 @@ test("arbitrary shadow, radius and colour utilities fail", () => {
 test("token utilities and non-colour arbitrary values pass", () => {
   assert.deepEqual(check('<div class="bg-surface text-ink rounded-arch shadow-none max-h-[80vh] border-[1.5px]">'), []);
 });
+
+test("retired legacy aliases fail, with any variant prefix", () => {
+  assert.equal(check('<p class="text-warm-700 dark:text-warm-300">').length, 2);
+  assert.equal(check('<div class="border-l-brand-wine bg-brand-rose/10">').length, 2);
+  assert.equal(check('<a class="text-brand-wine-text hover:text-brand-wine-dark">').length, 2);
+  assert.equal(check('<div class="divide-warm-200 aria-pressed:bg-warm-800">').length, 2);
+  assert.equal(check('<h1 class="font-heading text-4xl">').length, 1);
+  assert.equal(check('<p class="font-caveat normal-case">').length, 1);
+  assert.equal(check("<style>h1 { font-family: var(--font-heading); color: var(--color-warm-900); }</style>").length, 2);
+});
+
+test("words that only look like aliases pass", () => {
+  assert.deepEqual(check("The warm-water soak sounds unnecessary."), []);
+  assert.deepEqual(check('<h1 class="font-display text-heading-1 text-ink">'), []);
+  assert.deepEqual(check('<p class="text-heading-2">heading-2</p>'), []);
+});
