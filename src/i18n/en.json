@@ -310,8 +310,7 @@
       "activities-sports": "Activities and Sports",
       "arts-culture": "Arts and Culture",
       "games-entertainment": "Games and Entertainment",
-      "nature-scenic": "Nature and Scenic",
-      "social-romantic": "Social and Romantic"
+      "nature-scenic": "Nature and Scenic"
     },
     "spotType": {
       "restaurant": "Restaurant",
@@ -426,6 +425,8 @@
     "ideasByType": "Date ideas by type",
     "moreCategory": "More {category}",
     "filterByTake": "Filter by our take",
+    "filterByBorough": "Filter by borough",
+    "emptyListing": "No date spots are published yet. In the meantime, browse our restaurant and bar reviews.",
     "filterAll": "All",
     "categoryTitle": "{category} date ideas",
     "categoryDescription": "{category} date ideas in Montréal: places we visited and checked, when they work, what they cost, and which restaurant or bar to pair them with.",

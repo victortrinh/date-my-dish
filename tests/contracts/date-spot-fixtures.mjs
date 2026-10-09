@@ -130,9 +130,16 @@ export function acceptanceCollection() {
   const activity = dateSpotFixture("activity", "test-only-activity", "Test Park");
   const bar = dateSpotFixture("bar", "test-only-bar", "Test Bar");
   const minimal = minimalReviewFixture();
+  // A second activity in another category and borough, with another
+  // verdict, so the Date Spots listing has something to group and filter.
+  const museum = dateSpotFixture("activity", "test-only-museum", "Test Museum");
   minimal.reviewVerdict = "pass";
-  bar.category = "social-romantic";
-  for (const spot of [restaurant, activity, bar, minimal]) spot.image.src = "/images/og-default.jpg";
+  bar.category = "games-entertainment";
+  activity.borough = "Verdun";
+  museum.borough = "Ville-Marie";
+  museum.category = "arts-culture";
+  museum.reviewVerdict = "favourite";
+  for (const spot of [restaurant, activity, bar, minimal, museum]) spot.image.src = "/images/og-default.jpg";
   restaurant.photos = { room: { src: "/images/og-default.jpg", width: 1200, height: 630, provenance: "dmd-held-photograph" } };
   for (const locale of ["en", "fr-CA"]) {
     const copy = restaurant.locales[locale];
@@ -143,7 +150,7 @@ export function acceptanceCollection() {
     copy.whatToOrder.waitersChoice = { recommendation: `${token} waiter recommendation`, outcome: `${token} they were right` };
     copy.whatToOrder.setMenu = { name: `${token} tasting`, courses: 5, pricePerPerson: "$95", note: `${token} set menu note`, advice: "take-it" };
     // Out of category order on purpose, plus a pick whose Date Spot is not
-    // published: the page shows the activity, then the bar, and nothing else.
+    // published: the page shows the bar, then the activity, and nothing else.
     copy.makeANight = [
       { spotId: "test-only-bar", timing: "after", walkMinutes: 4, blurb: `${token} bar blurb` },
       { spotId: "test-only-unpublished", timing: "after", walkMinutes: 2, blurb: `${token} unpublished blurb` },
@@ -154,7 +161,7 @@ export function acceptanceCollection() {
     activity.locales[locale].season = `${token} May to October`;
     activity.locales[locale].essentials.transit = `${token} metro`;
   }
-  return [restaurant, activity, bar, minimal];
+  return [restaurant, activity, bar, minimal, museum];
 }
 
 /**

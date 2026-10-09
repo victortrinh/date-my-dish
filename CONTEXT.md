@@ -9,7 +9,7 @@ A post assessing a Restaurant or Bar, built from the review page design. Restaur
 _Avoid_: Scorecard, separate restaurant and bar content types
 
 **Date Spot**:
-A post recommending an activity or a Chef-led Experience for a date, built from the date spot page design and carrying one of five categories.
+A post recommending an activity or a Chef-led Experience for a date, built from the date spot page design and carrying one of four categories (Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic). Listed under Date Spots, filterable by borough; Reviews are not.
 _Avoid_: Date idea, generic listing
 
 **Spot Type**:
@@ -45,7 +45,7 @@ Any page section outside a post type's required minimum. It renders only when it
 _Avoid_: Placeholder, filler section
 
 **Make a Night of It**:
-The review section offering up to five published Date Spots nearby, one per category, in a fixed category order.
+The review section offering up to four published Date Spots nearby, one per category, in a fixed category order.
 _Avoid_: Related posts box
 
 **Reporter Byline**:
@@ -67,7 +67,7 @@ The public, read-only Notion database every post is fetched from. DMD never writ
 _Avoid_: CMS we control, Notion Story template
 
 **Companion File**:
-`src/content/editorial/{slug}.json`: the fields Notion does not carry and DMD controls (verdict, signals, neighbourhood, Checked date, Google Snapshot, Instagram, meta fields, alt text, internal links). Pre-filled by the Importer, approved by Victor, never overwritten by a later import.
+`src/content/editorial/{slug}.json`: the fields Notion does not carry and DMD controls (verdict, signals, neighbourhood, borough, Checked date, Google Snapshot, Instagram, meta fields, alt text, internal links). Pre-filled by the Importer, approved by Victor, never overwritten by a later import.
 _Avoid_: Overlay, frontmatter
 
 **Importer**:

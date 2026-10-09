@@ -1,12 +1,12 @@
 import { z } from "astro/zod";
 import {
-  DATE_SPOT_CATEGORIES, SPOT_TYPES, VERDICTS, goodFor, googleReviews, isoDate, materialUpdates,
+  BOROUGHS, DATE_SPOT_CATEGORIES, MAKE_A_NIGHT_MAX, SPOT_TYPES, VERDICTS, goodFor, googleReviews, isoDate, materialUpdates,
   metaDescription, metaTitle, nightPick, pairing, slug, text, whenItWorks,
 } from "./date-spot.mjs";
 
 // The Companion File, src/content/editorial/{slug}.json: everything Notion
 // does not carry and DMD controls. Notion owns the prose; this file owns the
-// verdict, signals, neighbourhood, Checked date and update lines, Google
+// verdict, signals, neighbourhood, borough, Checked date and update lines, Google
 // snapshot, Instagram, booking link, meta fields, alt text and internal
 // links. The Importer pre-fills it, Victor approves it, and a later import
 // never overwrites it. The loaders merge it over the Notion-derived record,
@@ -23,7 +23,7 @@ const companionLocale = object({
   metaTitle: metaTitle.optional(),
   metaDescription: metaDescription.optional(),
   imageAlt: text.optional(),
-  makeANight: z.array(nightPick).min(1).max(5).optional(),
+  makeANight: z.array(nightPick).min(1).max(MAKE_A_NIGHT_MAX).optional(),
   pairItWith: z.array(pairing).min(1).optional(),
 });
 
@@ -32,6 +32,7 @@ export const companionSchema = object({
   spotType: z.enum(SPOT_TYPES).optional(),
   category: z.enum(DATE_SPOT_CATEGORIES).optional(),
   neighbourhood: text.optional(),
+  borough: z.enum(BOROUGHS).optional(),
   reviewVerdict: z.enum(VERDICTS).optional(),
   // "Checked {month}". Defaults to the publish date when left out.
   lastChecked: isoDate.optional(),

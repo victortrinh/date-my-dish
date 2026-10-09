@@ -498,7 +498,8 @@
         ],
         "verdictQualifier": "[TEST ONLY] in season"
       }
-    }
+    },
+    "borough": "Verdun"
   },
   {
     "id": "test-only-bar",
@@ -729,7 +730,7 @@
         "materialUpdates": []
       }
     },
-    "category": "social-romantic"
+    "category": "games-entertainment"
   },
   {
     "id": "test-only-minimal",
@@ -779,5 +780,111 @@
         }
       }
     }
+  },
+  {
+    "id": "test-only-museum",
+    "postType": "date-spot",
+    "spotType": "activity",
+    "name": "Test Museum",
+    "city": "Test City",
+    "neighbourhood": "Test Quarter",
+    "reporterByline": "Victor",
+    "freshness": {
+      "visited": "2026-01-01",
+      "published": "2026-01-02",
+      "lastChecked": "2026-01-03"
+    },
+    "image": {
+      "src": "/images/og-default.jpg",
+      "width": 1200,
+      "height": 800,
+      "provenance": "dmd-held-photograph"
+    },
+    "reviewVerdict": "favourite",
+    "mapUrl": "https://example.com",
+    "payment": "paid",
+    "priceRange": "free",
+    "category": "arts-culture",
+    "locales": {
+      "en": {
+        "title": "[TEST ONLY] Test Museum",
+        "slug": "test-only-museum",
+        "metaTitle": "Test Museum, Test Quarter: Date Spot Guide",
+        "metaDescription": "[TEST ONLY] mechanical fixture describing a Date Spot for checking the bilingual route, its visible modules, metadata and schema output here............",
+        "opening": "[TEST ONLY] opening",
+        "verdictReason": "[TEST ONLY] verdict reason",
+        "imageAlt": "[TEST ONLY] image description",
+        "imageCredit": "[TEST ONLY] image credit",
+        "essentials": {
+          "address": "[TEST ONLY] address",
+          "cost": "[TEST ONLY] cost",
+          "hours": "[TEST ONLY] hours",
+          "booking": "[TEST ONLY] booking",
+          "duration": "[TEST ONLY] duration"
+        },
+        "season": "[TEST ONLY] all year",
+        "paymentDisclosure": "[TEST ONLY] payment disclosure",
+        "whenItWorks": [
+          {
+            "situation": "[TEST ONLY] after dinner",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] works reason"
+          },
+          {
+            "situation": "[TEST ONLY] winter",
+            "assessment": "not-for",
+            "reason": "[TEST ONLY] winter reason"
+          }
+        ],
+        "whatItIs": "[TEST ONLY] what it is",
+        "howToDoItWell": [
+          {
+            "label": "[TEST ONLY] timing",
+            "text": "[TEST ONLY] go before sunset"
+          }
+        ],
+        "materialUpdates": []
+      },
+      "fr-CA": {
+        "title": "[TEST ONLY] Test Museum",
+        "slug": "test-only-museum-fr",
+        "metaTitle": "Test Museum, Test Quarter: Date Spot Guide",
+        "metaDescription": "[TEST ONLY] mechanical fixture describing a Date Spot for checking the bilingual route, its visible modules, metadata and schema output here............",
+        "opening": "[TEST ONLY] opening",
+        "verdictReason": "[TEST ONLY] verdict reason",
+        "imageAlt": "[TEST ONLY] image description",
+        "imageCredit": "[TEST ONLY] image credit",
+        "essentials": {
+          "address": "[TEST ONLY] address",
+          "cost": "[TEST ONLY] cost",
+          "hours": "[TEST ONLY] hours",
+          "booking": "[TEST ONLY] booking",
+          "duration": "[TEST ONLY] duration"
+        },
+        "season": "[TEST ONLY] all year",
+        "paymentDisclosure": "[TEST ONLY] payment disclosure",
+        "whenItWorks": [
+          {
+            "situation": "[TEST ONLY] after dinner",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] works reason"
+          },
+          {
+            "situation": "[TEST ONLY] winter",
+            "assessment": "not-for",
+            "reason": "[TEST ONLY] winter reason"
+          }
+        ],
+        "whatItIs": "[TEST ONLY] what it is",
+        "howToDoItWell": [
+          {
+            "label": "[TEST ONLY] timing",
+            "text": "[TEST ONLY] go before sunset"
+          }
+        ],
+        "materialUpdates": []
+      }
+    },
+    "borough": "Ville-Marie"
   }
 ]

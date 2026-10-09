@@ -29,7 +29,6 @@ export const CATEGORY_SLUGS = Object.freeze({
   "arts-culture": { en: "arts-and-culture", fr: "arts-et-culture" },
   "games-entertainment": { en: "games-and-entertainment", fr: "jeux-et-divertissement" },
   "nature-scenic": { en: "nature-and-scenic", fr: "nature-et-panoramas" },
-  "social-romantic": { en: "social-and-romantic", fr: "social-et-romantique" },
 });
 
 // First path segment of every live page, EN -> FR (CLAUDE.md, "Route Mapping").

@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import type { Locale } from "@i18n/utils";
 import VerdictBadge from "./date-spots/VerdictBadge.astro";
-import { copyLocale, dateSpotPath, priceLabel } from "@utils/date-spots";
+import { copyLocale, dateSpotPath, neighbourhoodSlug, priceLabel } from "@utils/date-spots";
 
 interface Props {
   spot: CollectionEntry<"dateSpots">;
@@ -14,7 +14,7 @@ const { spot, locale, loading = "lazy" } = Astro.props;
 const copy = spot.data.locales[copyLocale(locale)];
 const verdict = spot.data.reviewVerdict;
 ---
-<article data-verdict={verdict} class:list={[
+<article data-verdict={verdict} data-borough={spot.data.borough && neighbourhoodSlug(spot.data.borough)} class:list={[
   "overflow-hidden border border-l-[5px] border-warm-200 bg-white dark:border-warm-700 dark:bg-warm-900",
   verdict === "favourite" && "border-l-brand-wine dark:border-l-brand-rose",
   verdict === "conditional" && "border-l-brand-rose",

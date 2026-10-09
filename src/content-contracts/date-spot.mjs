@@ -11,9 +11,24 @@ export const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 /** @template {z.ZodRawShape} T @param {T} shape */
 const object = (shape) => z.object(shape).strict();
 
-// The five fixed Date Spot categories, in the order "Make a night of it"
+// The four fixed Date Spot categories, in the order "Make a night of it"
 // always shows them. Category and neighbourhood listings key off these too.
-export const DATE_SPOT_CATEGORIES = /** @type {const} */ (["activities-sports", "arts-culture", "games-entertainment", "nature-scenic", "social-romantic"]);
+export const DATE_SPOT_CATEGORIES = /** @type {const} */ (["activities-sports", "arts-culture", "games-entertainment", "nature-scenic"]);
+// Montréal boroughs, spelled as the Notion Borough property spells them. The
+// Date Spots listing filters by borough; neighbourhood stays the finer place
+// name used in titles, breadcrumbs and neighbourhood guides.
+export const BOROUGHS = /** @type {const} */ ([
+  "Ahuntsic-Cartierville",
+  "Côte-des-Neiges–Notre-Dame-de-Grâce",
+  "Le Plateau-Mont-Royal",
+  "Le Sud-Ouest",
+  "Mercier–Hochelaga-Maisonneuve",
+  "Outremont",
+  "Rosemont–La Petite-Patrie",
+  "Verdun",
+  "Ville-Marie",
+  "Villeray–Saint-Michel–Parc-Extension",
+]);
 export const OCCASIONS = /** @type {const} */ (["first-date", "anniversary", "casual-midweek", "impressing-a-cook", "double-date", "solo-at-the-bar"]);
 export const VERDICTS = /** @type {const} */ (["favourite", "conditional", "pass"]);
 export const SPOT_TYPES = /** @type {const} */ (["restaurant", "bar", "activity", "chef-led-experience"]);
@@ -21,7 +36,7 @@ export const SPOT_TYPES = /** @type {const} */ (["restaurant", "bar", "activity"
 // Never pad to reach a number.
 export const REVIEW_WORD_TARGET = 1000;
 export const REVIEW_WORD_MINIMUM = 300;
-export const MAKE_A_NIGHT_MAX = 5;
+export const MAKE_A_NIGHT_MAX = 4;
 // Path segments used by listing routes under /date-spots/ and /lieux/.
 export const RESERVED_SLUGS = ["category", "categorie", "neighbourhood", "quartier"];
 
@@ -203,6 +218,7 @@ const common = {
   // Montréal is the Home Market; a Travel Review names its actual city.
   city: text.default("Montréal"),
   neighbourhood: text,
+  borough: z.enum(BOROUGHS).optional(),
   reporterByline: z.literal("Victor"),
   freshness,
   image: object({
