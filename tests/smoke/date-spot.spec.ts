@@ -24,9 +24,9 @@ for (const [locale, route] of Object.entries(restaurant)) {
     await expect(page.locator("#verdict strong")).toContainText("[TEST ONLY] verdict reason");
     // Make a night of it, in the fixed category order: published picks link
     // to their page, a pick with no page shows its name unlinked.
-    await expect(page.locator("[data-night-pick]")).toHaveCount(3);
-    expect(await page.locator("[data-night-pick]").evaluateAll((cards) => cards.map((card) => card.getAttribute("data-category")))).toEqual(["games-entertainment", "nature-scenic", "social-romantic"]);
-    expect(await page.locator("[data-night-pick]").evaluateAll((cards) => cards.map((card) => card.getAttribute("data-linked")))).toEqual(["false", "true", "true"]);
+    await expect(page.locator("[data-night-pick]")).toHaveCount(4);
+    expect(await page.locator("[data-night-pick]").evaluateAll((cards) => cards.map((card) => card.getAttribute("data-category")))).toEqual(["arts-culture", "games-entertainment", "nature-scenic", "social-romantic"]);
+    expect(await page.locator("[data-night-pick]").evaluateAll((cards) => cards.map((card) => card.getAttribute("data-linked")))).toEqual(["true", "false", "true", "false"]);
     await expect(page.locator('[data-night-pick][data-linked="false"] a')).toHaveCount(0);
     // The venue's Google number is shown dated and labelled as theirs.
     await expect(page.locator("aside")).toContainText(locale === "en" ? "Their rating on Google, not ours." : "Leur note sur Google, pas la nôtre.");
@@ -87,13 +87,30 @@ test("the spot page, chef page, recipe card and listings render and link back in
   expect((await page.goto("/en/date-spots/neighbourhood/test-quarter/"))?.status()).toBe(200);
 });
 
-test("the verdict filter narrows a listing to one state", async ({ page }) => {
+test("the Date Spots listing holds activities only, grouped by category", async ({ page }) => {
   await page.goto("/en/date-spots/");
-  await page.getByRole("button", { name: "Depends on the night" }).click();
-  await expect(page.locator("article[data-verdict]:visible")).toHaveCount(2);
+  await expect(page.locator("article[data-verdict]")).toHaveCount(2);
+  await expect(page.locator('main a[href^="/en/reviews/"]')).toHaveCount(0);
+  await expect(page.locator("main section[data-filter-group] > h2")).toHaveText(["Arts and Culture", "Nature and Scenic"]);
+});
+
+test("the verdict and borough filters narrow the Date Spots listing together", async ({ page }) => {
+  await page.goto("/en/date-spots/");
+  const verdict = page.getByRole("group", { name: "Filter by our take" });
+  const borough = page.getByRole("group", { name: "Filter by borough" });
+  await expect(borough.getByRole("button")).toHaveText(["All", "Verdun", "Ville-Marie"]);
+  await verdict.getByRole("button", { name: "Depends on the night" }).click();
+  await expect(page.locator("article[data-verdict]:visible")).toHaveCount(1);
   await expect(page.locator('article[data-verdict="favourite"]')).toBeHidden();
-  await page.getByRole("button", { name: "All" }).click();
-  await expect(page.locator("article[data-verdict]:visible")).toHaveCount(4);
+  await borough.getByRole("button", { name: "Ville-Marie" }).click();
+  await expect(page.locator("article[data-verdict]:visible")).toHaveCount(0);
+  await expect(page.locator("#nature-scenic")).toBeHidden();
+  await verdict.getByRole("button", { name: "All" }).click();
+  await expect(page.locator("article[data-verdict]:visible")).toHaveCount(1);
+  await expect(page.locator('article[data-borough="ville-marie"]')).toBeVisible();
+  await expect(borough.getByRole("button", { name: "Ville-Marie" })).toHaveAttribute("aria-pressed", "true");
+  await borough.getByRole("button", { name: "All" }).click();
+  await expect(page.locator("article[data-verdict]:visible")).toHaveCount(2);
 });
 
 // The seven reviews published before the rework lived at flat

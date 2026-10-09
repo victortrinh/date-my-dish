@@ -2,6 +2,10 @@
 import { getCollection } from "astro:content";
 import DateSpotListing from "@components/DateSpotListing.astro";
 import { t } from "@i18n/utils";
-const spots = await getCollection("dateSpots");
+import { isPlanningSpot } from "@utils/date-spots";
+
+// Activities and chef-led experiences, grouped by category. Restaurants and
+// bars are Reviews and list under /reviews/.
+const spots = await getCollection("dateSpots", ({ data }) => isPlanningSpot(data));
 ---
-<DateSpotListing spots={spots} locale="en" title={t("en", "nav.dateSpots")} />
+<DateSpotListing spots={spots} locale="en" title={t("en", "nav.dateSpots")} groupByCategory empty={{ label: t("en", "dateSpot.emptyListing"), href: "/en/reviews/" }} />

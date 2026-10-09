@@ -30,6 +30,7 @@ Home recipes, informative articles and affiliate articles are not DMD post types
 | Page | English | French |
 |---|---|---|
 | Review | `/en/reviews/{neighbourhood}/{slug}/` | `/fr/critiques/{neighbourhood}/{slug}/` |
+| Date Spots listing | `/en/date-spots/` | `/fr/lieux/` |
 | Date Spot | `/en/date-spots/{slug}/` | `/fr/lieux/{slug}/` |
 | Category listing | `/en/date-spots/category/{category}/` | `/fr/lieux/categorie/{categorie}/` |
 | Neighbourhood guide | `/en/date-spots/neighbourhood/{neighbourhood}/` | `/fr/lieux/quartier/{neighbourhood}/` |
@@ -37,6 +38,8 @@ Home recipes, informative articles and affiliate articles are not DMD post types
 | Recipe card | `/en/recipe-cards/{slug}/` | `/fr/fiches-recettes/{slug}/` |
 
 The neighbourhood segment is the companion file's `neighbourhood` (accents dropped, lower case, hyphenated). Every URL ends in a trailing slash.
+
+The Date Spots listing shows Date Spots only (activities and Chef-led Experiences), grouped under the four categories in their fixed order. Reviews list under `/en/reviews/` and `/fr/critiques/`. Readers can filter the listing by verdict and by borough; each filter shows only when more than one value is present. Until a Date Spot is published, the listing is noindex, points readers to the reviews, and is left out of the navigation. Neighbourhood guides keep both: the reviews in a neighbourhood, then its Date Spots by category.
 
 The seven reviews published before the rework lived at `/en/reviews/{slug}-montreal/` and `/fr/critiques/{slug}-montreal/`. Each of those 14 URLs 301-redirects, in one hop, to its new nested URL.
 
@@ -67,13 +70,13 @@ Required:
 
 Optional, in design order: the author's full verdict paragraph (shown under the verdict, with the one-line reason set in ink where it stands), Good for (one row per occasion, up to 7), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, opening hours, Instagram, the Google snapshot, Book and Map links.
 
-**Make a night of it** shows 1 to 5 cards, one per category, always in this order: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. Each card is the author's pick: category, venue name, before or after, the distance and cost as written, and the blurb. A pick whose Date Spot page is published links to it; a pick with no published page shows the same card without a link, and becomes a link once its page is published. A `[SPOT NEEDED]` slot and the author's notes to DMD stay out. With no picks the section is hidden.
+**Make a night of it** shows 1 to 5 cards, one per category, always in this order: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. Social and Romantic exists only for these picks: a Date Spot carries one of the first four. Each card is the author's pick: category, venue name, before or after, the distance and cost as written, and the blurb. A pick whose Date Spot page is published links to it; a pick with no published page shows the same card without a link, and becomes a link once its page is published. A `[SPOT NEEDED]` slot and the author's notes to DMD stay out. With no picks the section is hidden.
 
 ### Date Spot
 
-Required: name, category (one of the five above), neighbourhood, a signal with its reason, address, practical info (hours, cost, season), a hero photo with alt text, EN and FR.
+Required: name, category (one of the first four above), neighbourhood, a signal with its reason, address, practical info (hours, cost, season), a hero photo with alt text, EN and FR.
 
-Optional: When it works rows, What it actually is, How to do it well, Pair it with (published reviews only), booking, transit, step-free access, map, a Chef-led Experience's named host.
+Optional: borough (one of Ahuntsic-Cartierville, Côte-des-Neiges–Notre-Dame-de-Grâce, Le Plateau-Mont-Royal, Le Sud-Ouest, Mercier–Hochelaga-Maisonneuve, Outremont, Rosemont–La Petite-Patrie, Verdun, Ville-Marie, Villeray–Saint-Michel–Parc-Extension, spelled as in Notion; it feeds the listing's borough filter), When it works rows, What it actually is, How to do it well, Pair it with (published reviews only), booking, transit, step-free access, map, a Chef-led Experience's named host.
 
 ### Chef
 
@@ -129,13 +132,13 @@ Every other `Post Type` (`Recipes`, `Informative Posts`, `Affiliate Links`, empt
 Each published post has a companion file, `src/content/editorial/{slug}.json`. It holds what Notion does not carry and what DMD controls:
 
 - verdict and its reason, Good-for and When-it-works signals
-- Spot Type, category, neighbourhood
+- Spot Type, category, neighbourhood, borough
 - Checked date and dated update lines
 - Google snapshot lines, Instagram handle, booking link
 - meta title and meta description per locale
 - alt text and internal links
 
-The importer pre-fills the companion file on first import (verdict and reason proposed from the review's own text, neighbourhood from the address, category from the title, Checked from the publish date). Victor approves or edits it in the PR. On later imports the importer never overwrites a companion file field.
+The importer pre-fills the companion file on first import (verdict and reason proposed from the review's own text, neighbourhood from the address, borough from the `Borough` property when it names one of the boroughs above, category from the title, Checked from the publish date). Victor approves or edits it in the PR. On later imports the importer never overwrites a companion file field.
 
 ### Edit policy
 

@@ -11,9 +11,28 @@ export const slug = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 /** @template {z.ZodRawShape} T @param {T} shape */
 const object = (shape) => z.object(shape).strict();
 
-// The five fixed Date Spot categories, in the order "Make a night of it"
+// The four fixed Date Spot categories, in the order "Make a night of it"
 // always shows them. Category and neighbourhood listings key off these too.
-export const DATE_SPOT_CATEGORIES = /** @type {const} */ (["activities-sports", "arts-culture", "games-entertainment", "nature-scenic", "social-romantic"]);
+export const DATE_SPOT_CATEGORIES = /** @type {const} */ (["activities-sports", "arts-culture", "games-entertainment", "nature-scenic"]);
+// A review's "Make a night of it" picks come from its Notion text, which also
+// names Social and Romantic places (a market, a promenade). Those picks keep
+// the fifth category, last; a Date Spot page never carries it.
+export const NIGHT_CATEGORIES = /** @type {const} */ ([...DATE_SPOT_CATEGORIES, "social-romantic"]);
+// Montréal boroughs, spelled as the Notion Borough property spells them. The
+// Date Spots listing filters by borough; neighbourhood stays the finer place
+// name used in titles, breadcrumbs and neighbourhood guides.
+export const BOROUGHS = /** @type {const} */ ([
+  "Ahuntsic-Cartierville",
+  "Côte-des-Neiges–Notre-Dame-de-Grâce",
+  "Le Plateau-Mont-Royal",
+  "Le Sud-Ouest",
+  "Mercier–Hochelaga-Maisonneuve",
+  "Outremont",
+  "Rosemont–La Petite-Patrie",
+  "Verdun",
+  "Ville-Marie",
+  "Villeray–Saint-Michel–Parc-Extension",
+]);
 export const OCCASIONS = /** @type {const} */ (["first-date", "anniversary", "casual-midweek", "impressing-a-cook", "double-date", "solo-at-the-bar", "late-night"]);
 export const VERDICTS = /** @type {const} */ (["favourite", "conditional", "pass"]);
 export const SPOT_TYPES = /** @type {const} */ (["restaurant", "bar", "activity", "chef-led-experience"]);
@@ -130,7 +149,7 @@ const realCost = section(object({
 export const nightPick = object({
   spotId: slug.optional(),
   name: text.optional(),
-  category: z.enum(DATE_SPOT_CATEGORIES).optional(),
+  category: z.enum(NIGHT_CATEGORIES).optional(),
   timing: z.enum(["before", "after", "before-or-after"]).optional(),
   walkMinutes: z.number().int().positive().max(15).optional(),
   // How far and how much, as the author wrote it ("15 min walk · $$").
@@ -217,6 +236,7 @@ const common = {
   // Montréal is the Home Market; a Travel Review names its actual city.
   city: text.default("Montréal"),
   neighbourhood: text,
+  borough: z.enum(BOROUGHS).optional(),
   reporterByline: z.literal("Victor"),
   freshness,
   image: object({
@@ -355,22 +375,22 @@ export const dateSpotSchema = z.discriminatedUnion("spotType", [
  * most five. A pick whose Date Spot is published (in `spots`) links to it
  * (`target`); a pick that names its venue and category shows unlinked. A
  * pick with neither is left out; with no cards left, the section is hidden.
- * @template {{ id: string, category?: (typeof DATE_SPOT_CATEGORIES)[number] }} S
- * @template {{ spotId?: string, name?: string, category?: (typeof DATE_SPOT_CATEGORIES)[number] }} P
+ * @template {{ id: string, category?: (typeof NIGHT_CATEGORIES)[number] }} S
+ * @template {{ spotId?: string, name?: string, category?: (typeof NIGHT_CATEGORIES)[number] }} P
  * @param {P[] | undefined} picks
  * @param {S[]} spots the published Date Spots
- * @returns {{ pick: P, target: S | undefined, category: (typeof DATE_SPOT_CATEGORIES)[number] }[]}
+ * @returns {{ pick: P, target: S | undefined, category: (typeof NIGHT_CATEGORIES)[number] }[]}
  */
 export function makeANightCards(picks, spots) {
   const byId = new Map(spots.map((spot) => [spot.id, spot]));
-  /** @type {{ pick: P, target: S | undefined, category: (typeof DATE_SPOT_CATEGORIES)[number] }[]} */
+  /** @type {{ pick: P, target: S | undefined, category: (typeof NIGHT_CATEGORIES)[number] }[]} */
   const cards = [];
   for (const pick of picks ?? []) {
     const target = pick.spotId ? byId.get(pick.spotId) : undefined;
     if (target?.category) cards.push({ pick, target, category: target.category });
     else if (pick.name && pick.category) cards.push({ pick, target: undefined, category: pick.category });
   }
-  return cards.sort((a, b) => DATE_SPOT_CATEGORIES.indexOf(a.category) - DATE_SPOT_CATEGORIES.indexOf(b.category)).slice(0, MAKE_A_NIGHT_MAX);
+  return cards.sort((a, b) => NIGHT_CATEGORIES.indexOf(a.category) - NIGHT_CATEGORIES.indexOf(b.category)).slice(0, MAKE_A_NIGHT_MAX);
 }
 
 export const dateSpotsSchema = z.array(dateSpotSchema).superRefine((spots, ctx) => {

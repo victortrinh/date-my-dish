@@ -130,9 +130,16 @@ export function acceptanceCollection() {
   const activity = dateSpotFixture("activity", "test-only-activity", "Test Park");
   const bar = dateSpotFixture("bar", "test-only-bar", "Test Bar");
   const minimal = minimalReviewFixture();
+  // A second activity in another category and borough, with another
+  // verdict, so the Date Spots listing has something to group and filter.
+  const museum = dateSpotFixture("activity", "test-only-museum", "Test Museum");
   minimal.reviewVerdict = "pass";
-  bar.category = "social-romantic";
-  for (const spot of [restaurant, activity, bar, minimal]) spot.image.src = "/images/og-default.jpg";
+  bar.category = "arts-culture";
+  activity.borough = "Verdun";
+  museum.borough = "Ville-Marie";
+  museum.category = "arts-culture";
+  museum.reviewVerdict = "favourite";
+  for (const spot of [restaurant, activity, bar, minimal, museum]) spot.image.src = "/images/og-default.jpg";
   restaurant.photos = { room: { src: "/images/og-default.jpg", width: 1200, height: 630, provenance: "dmd-held-photograph" } };
   for (const locale of ["en", "fr-CA"]) {
     const copy = restaurant.locales[locale];
@@ -145,21 +152,23 @@ export function acceptanceCollection() {
     copy.verdictDetail = `${token} verdict detail opens. ${copy.verdictReason} ${token} verdict detail closes.`;
     copy.whatToOrder.setMenu = { name: `${token} tasting`, courses: 5, pricePerPerson: "$95", note: `${token} set menu note`, advice: "take-it" };
     // Out of category order on purpose, plus a pick whose Date Spot is not
-    // published and that names no venue (left out) and one with no page that
-    // names its venue and category (shown unlinked): the page shows the
-    // unlinked cinema, then the activity, then the bar.
+    // published and that names no venue (left out), and two with no page that
+    // name their venue and category (shown unlinked), one of them Social and
+    // Romantic, which only a pick can carry: the page shows the bar, the
+    // unlinked cinema, the activity, then the unlinked promenade.
     copy.makeANight = [
       { spotId: "test-only-bar", timing: "after", walkMinutes: 4, blurb: `${token} bar blurb` },
       { spotId: "test-only-unpublished", timing: "after", walkMinutes: 2, blurb: `${token} unpublished blurb` },
       { spotId: "test-only-activity", timing: "before", walkMinutes: 9, blurb: `${token} activity blurb` },
       { name: `${token} Corner Cinema`, category: "games-entertainment", timing: "before-or-after", details: `${token} around the corner · $`, blurb: `${token} cinema blurb` },
+      { name: `${token} Promenade`, category: "social-romantic", timing: "after", blurb: `${token} promenade blurb` },
     ];
     activity.locales[locale].pairItWith = [{ spotId: "test-only-restaurant", walkMinutes: 12 }];
     activity.locales[locale].verdictQualifier = `${token} in season`;
     activity.locales[locale].season = `${token} May to October`;
     activity.locales[locale].essentials.transit = `${token} metro`;
   }
-  return [restaurant, activity, bar, minimal];
+  return [restaurant, activity, bar, minimal, museum];
 }
 
 /**

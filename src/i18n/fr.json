@@ -435,6 +435,8 @@
     "ideasByType": "Idées de sorties par type",
     "moreCategory": "Plus : {category}",
     "filterByTake": "Filtrer selon notre avis",
+    "filterByBorough": "Filtrer par arrondissement",
+    "emptyListing": "Aucun lieu n’est encore publié. En attendant, parcourez nos critiques de restaurants et de bars.",
     "filterAll": "Tout",
     "categoryTitle": "Idées de sorties : {category}",
     "categoryDescription": "Idées de sorties à Montréal, {category} : des lieux visités et vérifiés, quand y aller, ce que ça coûte et quel restaurant ou bar y combiner.",

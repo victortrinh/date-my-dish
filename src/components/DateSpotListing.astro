@@ -4,7 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import DateSpotCard from "./DateSpotCard.astro";
 import { t, type Locale } from "@i18n/utils";
-import { DATE_SPOT_CATEGORIES, spotCategory, type Verdict } from "@utils/date-spots";
+import { BOROUGHS, DATE_SPOT_CATEGORIES, neighbourhoodSlug, spotCategory, type Verdict } from "@utils/date-spots";
 
 interface Props {
   spots: CollectionEntry<"dateSpots">[];
@@ -12,14 +12,21 @@ interface Props {
   title: string;
   description?: string;
   breadcrumbs?: { label: string; href?: string }[];
-  /** Neighbourhood guides group spots under a heading per category (reviews first). */
+  /** Group spots under a heading per category (reviews first, on neighbourhood guides). */
   groupByCategory?: boolean;
   alternatePath?: string;
+  /** Shown, as a link, when the listing has nothing published yet. */
+  empty?: { label: string; href: string };
 }
-const { spots, locale, title, description = t(locale, "seo.homeDescription"), breadcrumbs = [{ label: title }], groupByCategory = false, alternatePath } = Astro.props;
+const { spots, locale, title, description = t(locale, "seo.homeDescription"), breadcrumbs = [{ label: title }], groupByCategory = false, alternatePath, empty } = Astro.props;
 const ordered = [...spots].sort((a, b) => b.data.freshness.published.localeCompare(a.data.freshness.published));
 const verdicts: Verdict[] = ["favourite", "conditional", "pass"];
 const present = verdicts.filter((verdict) => ordered.some(({ data }) => data.reviewVerdict === verdict));
+const boroughs = BOROUGHS.filter((borough) => ordered.some(({ data }) => data.borough === borough));
+const filters = [
+  ...(present.length > 1 ? [{ key: "verdict", label: t(locale, "dateSpot.filterByTake"), options: present.map((verdict) => ({ value: verdict, label: t(locale, `dateSpot.verdict.${verdict}`) })) }] : []),
+  ...(boroughs.length > 1 ? [{ key: "borough", label: t(locale, "dateSpot.filterByBorough"), options: boroughs.map((borough) => ({ value: neighbourhoodSlug(borough), label: borough })) }] : []),
+];
 const groups = groupByCategory
   ? [
       { id: "reviews", label: t(locale, "nav.venueReviews"), items: ordered.filter(({ data }) => !spotCategory(data)) },
@@ -31,14 +38,19 @@ const groups = groupByCategory
   <section data-pagefind-ignore={spots.length === 0 || undefined} class="page-container pt-8 pb-section">
     <Breadcrumbs locale={locale} items={breadcrumbs} />
     <h1 class="mt-10 max-w-4xl text-4xl text-ink sm:text-heading-1 lg:text-display">{title}</h1>
-    {present.length > 1 && <div class="no-print mt-10 flex flex-col gap-4 border-y border-line py-5 sm:flex-row sm:items-center sm:gap-6" data-verdict-filter>
-      <p id="verdict-filter-label" class="eyebrow shrink-0">{t(locale, "dateSpot.filterByTake")}</p>
-      <div role="group" aria-labelledby="verdict-filter-label" class="flex flex-wrap gap-2">
-        <button type="button" data-filter="all" aria-pressed="true" class="chip">{t(locale, "dateSpot.filterAll")}</button>
-        {present.map((verdict) => <button type="button" data-filter={verdict} aria-pressed="false" class="chip">{t(locale, `dateSpot.verdict.${verdict}`)}</button>)}
-      </div>
+    {filters.length > 0 && <div class="no-print mt-10 flex flex-col gap-4 border-y border-line py-5" data-spot-filters>
+      {filters.map((filter) => (
+        <div data-filter-key={filter.key} class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+          <p id={`${filter.key}-filter-label`} class="eyebrow shrink-0">{filter.label}</p>
+          <div role="group" aria-labelledby={`${filter.key}-filter-label`} class="flex flex-wrap gap-2">
+            <button type="button" data-filter="all" aria-pressed="true" class="chip">{t(locale, "dateSpot.filterAll")}</button>
+            {filter.options.map((option) => <button type="button" data-filter={option.value} aria-pressed="false" class="chip">{option.label}</button>)}
+          </div>
+        </div>
+      ))}
       <p class="sr-only" aria-live="polite" data-filter-status></p>
     </div>}
+    {spots.length === 0 && empty && <p class="mt-10 font-body text-ink-muted"><a href={empty.href} class="text-accent-ink underline decoration-1 underline-offset-4 hover:text-ink">{empty.label}</a></p>}
     {groups.map((group) => (
       <section id={group.id} data-filter-group aria-labelledby={group.label ? `${group.id}-title` : undefined} class="mt-section-sm scroll-mt-20">
         {group.label && <h2 id={`${group.id}-title`} data-reveal class="mb-10 border-t border-line-strong pt-6 text-heading-2 text-ink">{group.label}</h2>}
@@ -49,25 +61,35 @@ const groups = groupByCategory
 </BaseLayout>
 <script is:inline>
   (function () {
-    var root = document.querySelector("[data-verdict-filter]");
+    var root = document.querySelector("[data-spot-filters]");
     if (!root) return;
-    var buttons = root.querySelectorAll("button[data-filter]");
     var status = root.querySelector("[data-filter-status]");
-    function apply(value) {
+    var active = {};
+    function apply() {
       var shown = 0;
       document.querySelectorAll("article[data-verdict]").forEach(function (card) {
-        var match = value === "all" || card.getAttribute("data-verdict") === value;
+        var match = Object.keys(active).every(function (key) {
+          return active[key] === "all" || card.getAttribute("data-" + key) === active[key];
+        });
         card.hidden = !match;
         if (match) shown += 1;
       });
       document.querySelectorAll("[data-filter-group]").forEach(function (group) {
         group.hidden = !group.querySelector("article[data-verdict]:not([hidden])");
       });
-      buttons.forEach(function (button) { button.setAttribute("aria-pressed", String(button.getAttribute("data-filter") === value)); });
       if (status) status.textContent = String(shown);
     }
-    buttons.forEach(function (button) {
-      button.addEventListener("click", function () { apply(button.getAttribute("data-filter")); });
+    root.querySelectorAll("[data-filter-key]").forEach(function (filter) {
+      var key = filter.getAttribute("data-filter-key");
+      var buttons = filter.querySelectorAll("button[data-filter]");
+      active[key] = "all";
+      buttons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          active[key] = button.getAttribute("data-filter");
+          buttons.forEach(function (other) { other.setAttribute("aria-pressed", String(other === button)); });
+          apply();
+        });
+      });
     });
   })();
 </script>

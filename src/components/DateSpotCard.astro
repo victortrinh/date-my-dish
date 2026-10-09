@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import type { Locale } from "@i18n/utils";
 import VerdictBadge from "./date-spots/VerdictBadge.astro";
-import { copyLocale, dateSpotPath, priceLabel } from "@utils/date-spots";
+import { copyLocale, dateSpotPath, neighbourhoodSlug, priceLabel } from "@utils/date-spots";
 import { transitionStyle } from "@utils/view-transitions";
 
 // A listing entry: the photo in the greystone window, then the facts, the
@@ -23,7 +23,7 @@ const copy = spot.data.locales[copyLocale(locale)];
 const verdict = spot.data.reviewVerdict;
 const Heading = headingLevel === 3 ? "h3" : "h2";
 ---
-<article data-verdict={verdict} data-reveal class="min-w-0">
+<article data-verdict={verdict} data-borough={spot.data.borough && neighbourhoodSlug(spot.data.borough)} data-reveal class="min-w-0">
   <a href={dateSpotPath(spot.data, locale)} class="group flex items-start gap-5 text-ink no-underline hover:text-ink sm:block">
     <div class="arch isolate w-28 shrink-0 bg-surface-sunken sm:w-full" style={transitionStyle(Astro.locals, "spot", spot.data.id, "photo")}>
       <img src={spot.data.image.src} alt={copy.imageAlt} width={spot.data.image.width} height={spot.data.image.height} loading={loading} class="zoom aspect-[4/5] w-full object-cover object-center" />

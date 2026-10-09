@@ -197,8 +197,11 @@ test("Date Spots require category, signal reason, address and practical info; th
     const reviewModule = fixture(type); reviewModule.locales.en.goodFor = fixture().locales.en.goodFor; rejects(reviewModule);
   }
   accepts(without(fixture("chef-led-experience"), "host"));
-  const bar = fixture("bar"); bar.category = "social-romantic"; accepts(bar);
-  const restaurant = fixture(); restaurant.category = "social-romantic"; rejects(restaurant);
+  const bar = fixture("bar"); bar.category = "games-entertainment"; accepts(bar);
+  const restaurant = fixture(); restaurant.category = "games-entertainment"; rejects(restaurant);
+  // Social and Romantic is a Make a night of it pick's category, never a Date Spot's.
+  const romantic = fixture("activity"); romantic.category = "social-romantic"; rejects(romantic);
+  const romanticBar = fixture("bar"); romanticBar.category = "social-romantic"; rejects(romanticBar);
 });
 
 test("rejects invalid chronology, locale drift, identifiers and reserved slugs", () => {
@@ -223,11 +226,12 @@ test("the acceptance collections are valid and fully linked", () => {
 test("Make a night of it links published picks, shows named ones unlinked, in category order, at most five", () => {
   const [restaurant, activity, bar] = dateSpotsSchema.parse(acceptanceCollection());
   const cards = makeANightCards(restaurant.locales.en.makeANight, [restaurant, activity, bar]);
-  assert.deepEqual(cards.map(({ target }) => target?.id), [undefined, "test-only-activity", "test-only-bar"]);
-  assert.deepEqual(cards.map(({ category }) => category), ["games-entertainment", "nature-scenic", "social-romantic"]);
-  assert.equal(cards[0].pick.name, `${token} Corner Cinema`);
-  // With no Date Spot published, only the pick that names its venue and category is left.
-  assert.deepEqual(makeANightCards(restaurant.locales.en.makeANight, [restaurant]).map(({ pick }) => pick.name), [`${token} Corner Cinema`]);
+  assert.deepEqual(cards.map(({ target }) => target?.id), ["test-only-bar", undefined, "test-only-activity", undefined]);
+  // Social and Romantic is a pick's category only, and always comes last.
+  assert.deepEqual(cards.map(({ category }) => category), ["arts-culture", "games-entertainment", "nature-scenic", "social-romantic"]);
+  assert.equal(cards[1].pick.name, `${token} Corner Cinema`);
+  // With no Date Spot published, only the picks that name their venue and category are left.
+  assert.deepEqual(makeANightCards(restaurant.locales.en.makeANight, [restaurant]).map(({ pick }) => pick.name), [`${token} Corner Cinema`, `${token} Promenade`]);
   // A named pick becomes a link once its Date Spot is published.
   const linked = makeANightCards([{ spotId: "test-only-activity", name: "Test Park", category: "nature-scenic" }], [activity]);
   assert.equal(linked[0].target?.id, "test-only-activity");
@@ -300,6 +304,13 @@ test("editorial targets warn without blocking", () => {
   assert.ok(editorialWarnings(spots).some((warning) => /internal links/.test(warning)));
   const favourites = [0, 1, 2, 3].map((index) => ({ ...fixture("activity", `a-${index}`), reviewVerdict: "favourite" }));
   assert.ok(editorialWarnings(favourites).some((warning) => /one in four/.test(warning)));
+});
+
+test("borough is optional and, when set, one of the Montréal boroughs as Notion spells them", () => {
+  accepts(fixture("activity"));
+  const inBorough = fixture("activity"); inBorough.borough = "Côte-des-Neiges–Notre-Dame-de-Grâce"; accepts(inBorough);
+  const hyphenated = fixture("activity"); hyphenated.borough = "Côte-des-Neiges-Notre-Dame-de-Grâce"; rejects(hyphenated);
+  const unknown = fixture(); unknown.borough = "Laval"; rejects(unknown);
 });
 
 test("review URLs use a neighbourhood path segment", () => {

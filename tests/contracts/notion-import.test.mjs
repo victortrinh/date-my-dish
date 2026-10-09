@@ -238,6 +238,13 @@ test("the Importer proposes Companion File fields from the author's metadata", (
   });
 });
 
+test("the Importer proposes the borough from the row's Borough property when it is a known borough", () => {
+  const context = { slug: "moccione", postType: "review", publishDate: "2026-03-23" };
+  assert.equal(proposeCompanion({ ...moccione, notion: { borough: "Villeray–Saint-Michel–Parc-Extension" } }, context).borough, "Villeray–Saint-Michel–Parc-Extension");
+  assert.equal(proposeCompanion({ ...moccione, notion: { borough: "Laval" } }, context).borough, undefined);
+  assert.equal(proposeCompanion({ ...moccione, notion: { borough: null } }, context).borough, undefined);
+});
+
 test("a re-import keeps a hand-edited Companion File unchanged", () => {
   const dir = mkdtempSync(join(tmpdir(), "dmd-companion-"));
   try {

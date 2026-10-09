@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import { DATE_SPOT_CATEGORIES, neighbourhoodSlug } from "@content-contracts/date-spot.mjs";
+import { BOROUGHS, DATE_SPOT_CATEGORIES, neighbourhoodSlug } from "@content-contracts/date-spot.mjs";
 import { dateSpotDetailPath } from "@content-contracts/date-spot-paths.mjs";
 import { t, type Locale } from "@i18n/utils";
 
@@ -10,7 +10,7 @@ export type PlanningSpot = Extract<DateSpot, { spotType: "activity" | "chef-led-
 export type DateSpotCategory = (typeof DATE_SPOT_CATEGORIES)[number];
 export type Verdict = DateSpot["reviewVerdict"];
 
-export { DATE_SPOT_CATEGORIES, neighbourhoodSlug };
+export { BOROUGHS, DATE_SPOT_CATEGORIES, neighbourhoodSlug };
 
 export const copyLocale = (locale: Locale) => (locale === "fr" ? "fr-CA" : "en") as "en" | "fr-CA";
 
@@ -31,7 +31,6 @@ const categorySlugs: Record<DateSpotCategory, Record<Locale, string>> = {
   "arts-culture": { en: "arts-and-culture", fr: "arts-et-culture" },
   "games-entertainment": { en: "games-and-entertainment", fr: "jeux-et-divertissement" },
   "nature-scenic": { en: "nature-and-scenic", fr: "nature-et-panoramas" },
-  "social-romantic": { en: "social-and-romantic", fr: "social-et-romantique" },
 };
 
 export function categoryFromSlug(slug: string): DateSpotCategory | undefined {
@@ -92,7 +91,8 @@ export function sameCategoryNearby(spots: DateSpotEntry[], spot: DateSpot): Date
 
 export function dateSpotDestinations(spots: DateSpotEntry[], locale: Locale, profiles: CollectionEntry<"extendedProfiles">[] = []) {
   return [
-    ...(spots.length ? [{ label: t(locale, "nav.dateSpots"), path: locale === "fr" ? "/lieux/" : "/date-spots/" }] : []),
+    // Date Spots lists activities and chef-led experiences only; restaurants and bars live under Reviews.
+    ...(spots.some(({ data }) => isPlanningSpot(data)) ? [{ label: t(locale, "nav.dateSpots"), path: locale === "fr" ? "/lieux/" : "/date-spots/" }] : []),
     ...(spots.some(({ data }) => isVenueReview(data))
       ? [{ label: t(locale, "nav.venueReviews"), path: locale === "fr" ? "/critiques/" : "/reviews/" }]
       : []),
