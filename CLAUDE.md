@@ -161,7 +161,7 @@ Publishing, Pinterest and every scheduled job are defined in the spec (`docs/edi
 - When adding a check, add a matching lesson below.
 
 ### Key files (do not delete)
-- `notion/published.json`, `data/seo/`, `data/lighthouse/`, `data/social-posts-log.json` -- automation state
+- `notion/published.json`, `data/seo/`, `data/lighthouse/`, `data/social-posts-log.json`, `data/pinterest/` (rendered pin images the queued pins upload) -- automation state
 - `routines/` -- prompts for the Claude cloud routines
 - `scripts/seo/` -- SEO ranking and reporting scripts (`derive-keywords.mjs` reads only the published collections)
 - `scripts/notion-import.mjs`, `scripts/notion-story/` (`fields.mjs` eligibility, `notion.mjs` read-only fetch, `parse.mjs` body parsing, `headings.mjs` heading map, `verbatim.mjs`, `gate.mjs`, `companion.mjs`, `images.mjs`, `rows.mjs` duplicates and updates, `report.mjs` failure issue, `french.mjs` FR checks, `legacy.mjs` old EN/FR text of the seven pre-rework reviews) -- the Importer's deterministic steps

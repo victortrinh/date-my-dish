@@ -1,23 +1,17 @@
 // scripts/pinterest-rotate.mjs
-// Posts scheduled Pinterest pin variants/images that are due.
+// Posts queued Pinterest pins that are due.
 // Reads data/social-posts-log.json, finds pending pins with scheduledFor <= now,
-// posts them via Pinterest API, and updates the log.
+// posts them via the Pinterest API, and updates the log.
 //
-// Content-type aware: each log entry may carry a `type` field ("recipe",
-// "article", or "review") added by social-post.mjs. Entries without a `type`
-// field predate this change and are treated as recipes (their original type).
+// Pins are queued by scripts/social-post.mjs for Date Spots: entries of type
+// "review" (restaurants, bars) and "date-spot" (Planning Spots). Each pin
+// carries the English link it points to and the rendered 1000x1500 image in
+// data/pinterest/ (imageFile), uploaded as bytes (image_base64).
 //
-// This script only ever creates new pins for pins already marked "pending"
-// in the log. It never edits or re-posts a pin that already has status
-// "posted". Editing live pins is a separate, manual tool
-// (scripts/pinterest-update-pins.mjs).
-//
-// Images are resolved from the repo's own src/assets/images/ source files
-// and uploaded as bytes (image_base64), not by URL. Pins used to store the
-// deployed, content-hashed dist URL and post that URL straight to Pinterest;
-// by the time a pin's scheduled date arrived the image could easily have
-// been re-optimized under a new hash, leaving the stored URL 404ing. See
-// scripts/lib/content-images.mjs (resolveLocalAsset) for the resolution.
+// This script only ever creates new pins for pins marked "pending" in the
+// log. It never edits, deletes or re-posts a pin that is already "posted",
+// including the pins posted before the rework (their old URLs 301 to the
+// new nested review URLs).
 //
 // Usage:
 //   node scripts/pinterest-rotate.mjs
@@ -26,11 +20,7 @@
 // Rate limits: max 5 pins per run, 10s delay between posts.
 
 import { readFileSync, writeFileSync, existsSync } from "fs";
-import { join } from "path";
-import matter from "gray-matter";
 import {
-  buildContentUrl,
-  contentDir,
   boardIdForType,
   resolveLocalAsset,
   readImageAsBase64,
@@ -41,6 +31,7 @@ const MAX_PINS_PER_RUN = 5;
 const DELAY_BETWEEN_POSTS_MS = 10_000;
 const MAX_PIN_ATTEMPTS = 5;
 const DRY_RUN = process.argv.includes("--dry-run");
+const POSTABLE_TYPES = new Set(["review", "date-spot"]);
 
 const { PINTEREST_ACCESS_TOKEN } = process.env;
 
@@ -54,14 +45,6 @@ function readLog() {
 
 function writeLog(log) {
   writeFileSync(LOG_FILE, JSON.stringify(log, null, 2) + "\n");
-}
-
-function getHeroImageAlt(type, slug) {
-  const filePath = join(contentDir(type, "en"), `${slug}.mdx`);
-  if (!existsSync(filePath)) return "";
-  const raw = readFileSync(filePath, "utf-8");
-  const { data } = matter(raw);
-  return data.heroImageAlt || "";
 }
 
 // ---------------------------------------------------------------------------
@@ -188,7 +171,7 @@ async function main() {
   const duePins = [];
   for (const [slug, entry] of Object.entries(log)) {
     const type = entry.type || "recipe"; // pre-existing entries are legacy recipes
-    if (type !== "review") continue;
+    if (!POSTABLE_TYPES.has(type)) continue;
     const pins = entry.pinterest?.pins;
     if (!pins) continue;
 
@@ -196,7 +179,7 @@ async function main() {
       if (pin.status !== "pending") continue;
       if (!pin.scheduledFor) continue;
       if (new Date(pin.scheduledFor) > now) continue;
-      duePins.push({ slug, type, pin });
+      duePins.push({ slug, type, pin, link: pin.link || entry.url });
     }
   }
 
@@ -207,26 +190,25 @@ async function main() {
 
   console.log(`Found ${duePins.length} pin(s) due for posting (max ${MAX_PINS_PER_RUN} per run)`);
 
-  for (const { slug, type, pin } of duePins.slice(0, MAX_PINS_PER_RUN)) {
+  for (const { slug, type, pin, link } of duePins.slice(0, MAX_PINS_PER_RUN)) {
     const identifier = pin.imageKey || `variant ${pin.variant}`;
     console.log(`\nPosting ${slug} (${type}) ${identifier}...`);
 
     try {
       const boardId = boardIdForType(type);
-      const url = buildContentUrl(type, slug);
+      if (!link) throw new Error(`Pin ${identifier} has no link`);
       const assetPath = resolveLocalAsset({
-        type,
         slug,
         imageSrc: pin.imageSrc,
         imageFile: pin.imageFile,
       });
-      const altText = pin.altText || getHeroImageAlt(type, slug);
+      const altText = pin.altText || "";
       const image = await readImageAsBase64(assetPath);
 
       if (DRY_RUN) {
         console.log(`  [dry-run] Resolved ${assetPath} -> ${image.contentType}, ${image.data.length} b64 chars`);
       } else {
-        const pinId = await postToPinterest(boardId, image, pin.title, pin.description, url, altText);
+        const pinId = await postToPinterest(boardId, image, pin.title, pin.description, link, altText);
         pin.id = pinId;
         pin.postedAt = new Date().toISOString();
         pin.status = "posted";

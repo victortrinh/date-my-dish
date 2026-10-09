@@ -1,31 +1,39 @@
-name: Social Media Post on Deploy
+name: Queue Pinterest Pins on Publish
+
+# Merging a publish PR (src/content/date-spots.json or a Companion File in
+# src/content/editorial/) queues pins for every newly published Review or
+# Date Spot: scripts/social-post.mjs renders each pin's image from the post's
+# own photos into data/pinterest/ and appends "pending" pins with nested
+# English URLs to data/social-posts-log.json. Nothing is posted here;
+# pinterest-pin-rotation.yml posts the queue daily. Instagram is not wired
+# to Date Spots (revisited in #505).
 
 on:
   push:
     branches: [main]
     paths:
-      - "src/content/reviews/en/**/*.mdx"
+      - "src/content/date-spots.json"
+      - "src/content/editorial/*.json"
+  workflow_dispatch:
 
 concurrency:
-  group: social-post-${{ github.sha }}
+  group: social-post-queue
   cancel-in-progress: false
 
 permissions:
   contents: write
-  issues: write
   pull-requests: write
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  post:
+  queue:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
         with:
-          fetch-depth: 2
           token: ${{ secrets.PAT_TOKEN }}
 
       - uses: actions/setup-node@v7
@@ -35,68 +43,26 @@ jobs:
 
       - run: npm ci
 
-      - name: Detect new content
-        id: detect
+      - name: Queue pins for newly published Date Spots
+        run: node scripts/social-post.mjs
+
+      - name: Create PR with queued pins
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          NEW_FILES=$(git diff --name-only --diff-filter=A HEAD~1 -- 'src/content/reviews/en/*.mdx' || true)
-
-          UNPOSTED=$(node -e "
-            const fs = require('fs');
-            const log = JSON.parse(fs.readFileSync('data/social-posts-log.json'));
-            const dirs = [
-              'src/content/reviews/en',
-            ];
-            const missing = [];
-            for (const dir of dirs) {
-              if (!fs.existsSync(dir)) continue;
-              const slugs = fs.readdirSync(dir).filter(f => f.endsWith('.mdx')).map(f => f.replace('.mdx',''));
-              for (const slug of slugs) {
-                if (!log[slug]) missing.push(dir + '/' + slug + '.mdx');
-              }
-            }
-            if (missing.length) console.log(missing.join('\n'));
-          ")
-
-          ALL_NEW=$(printf '%s\n%s' "${NEW_FILES}" "${UNPOSTED}" | sort -u | grep -v '^$' || true)
-
-          if [ -z "$ALL_NEW" ]; then
-            echo "count=0" >> $GITHUB_OUTPUT
-            echo "recipes=" >> $GITHUB_OUTPUT
-          else
-            echo "recipes<<EOF" >> $GITHUB_OUTPUT
-            echo "$ALL_NEW" >> $GITHUB_OUTPUT
-            echo "EOF" >> $GITHUB_OUTPUT
-            echo "count=$(echo "$ALL_NEW" | wc -l | tr -d ' ')" >> $GITHUB_OUTPUT
+          git add data/social-posts-log.json data/pinterest
+          if git diff --cached --quiet; then
+            echo "Nothing new to queue."
+            exit 0
           fi
-          echo "Detected content to post: $ALL_NEW"
-
-      - name: Post to social media
-        if: steps.detect.outputs.count != '0'
-        env:
-          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
-          PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
-          PINTEREST_BOARD_ID: ${{ secrets.PINTEREST_BOARD_ID }}
-          PINTEREST_BOARD_ID_ARTICLES: ${{ secrets.PINTEREST_BOARD_ID_ARTICLES }}
-          PINTEREST_BOARD_ID_REVIEWS: ${{ secrets.PINTEREST_BOARD_ID_REVIEWS }}
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: node scripts/social-post.mjs ${{ steps.detect.outputs.recipes }}
-
-      - name: Create PR with post log
-        if: steps.detect.outputs.count != '0'
-        env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          BRANCH="chore/social-log-deploy-$(date +%Y%m%d-%H%M)"
+          BRANCH="chore/pinterest-queue-$(date +%Y%m%d-%H%M)"
           git checkout -b "$BRANCH"
-          git add data/social-posts-log.json
-          git diff --cached --quiet && exit 0
-          git commit -m "chore: update social posts log"
+          git commit -m "chore: queue Pinterest pins for new Date Spots"
           git push -u origin "$BRANCH"
           gh pr create \
-            --title "chore: update social posts log" \
-            --body "Automated: social media post log update after deploy." \
+            --title "chore: queue Pinterest pins for new Date Spots" \
+            --body "Automated: pins queued in data/social-posts-log.json for newly published Date Spots, with images in data/pinterest/. Merging approves posting; pinterest-pin-rotation.yml posts them on their scheduled days." \
             --base main \
             --head "$BRANCH"
