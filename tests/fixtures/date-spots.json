@@ -206,6 +206,12 @@
             "timing": "before-or-after",
             "details": "[TEST ONLY] around the corner · $",
             "blurb": "[TEST ONLY] cinema blurb"
+          },
+          {
+            "name": "[TEST ONLY] Promenade",
+            "category": "social-romantic",
+            "timing": "after",
+            "blurb": "[TEST ONLY] promenade blurb"
           }
         ]
       },
@@ -392,6 +398,12 @@
             "timing": "before-or-after",
             "details": "[TEST ONLY] around the corner · $",
             "blurb": "[TEST ONLY] cinema blurb"
+          },
+          {
+            "name": "[TEST ONLY] Promenade",
+            "category": "social-romantic",
+            "timing": "after",
+            "blurb": "[TEST ONLY] promenade blurb"
           }
         ]
       }
@@ -766,7 +778,7 @@
         "materialUpdates": []
       }
     },
-    "category": "games-entertainment"
+    "category": "arts-culture"
   },
   {
     "id": "test-only-minimal",
