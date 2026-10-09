@@ -69,14 +69,19 @@ function maintenanceResponse(): Response {
 
 export default {
   async fetch(request, env, ctx) {
-    if (env.MAINTENANCE_MODE === "true") {
+    // Widen the generated literal type: the var can be overridden per environment
+    // (dashboard, `--var`), so either value is possible at runtime.
+    const maintenanceMode: string = env.MAINTENANCE_MODE;
+    if (maintenanceMode === "true") {
       const { pathname } = new URL(request.url);
       if (!PASSTHROUGH_PATHS.has(pathname)) return maintenanceResponse();
     }
     // With `run_worker_first`, public/_redirects is only reached through the
     // ASSETS binding, which follows redirects by default and would serve the
     // target's body at the old URL with a 200. Ask for the redirect itself so
-    // old URLs answer with their 301.
+    // old URLs answer with their 301. With `run_worker_first: false` Cloudflare
+    // applies _redirects before the Worker runs, so this lookup finds no match
+    // and the request falls through to Astro.
     if (request.method === "GET" || request.method === "HEAD") {
       const asset = await env.ASSETS.fetch(new Request(request.url, { method: request.method, redirect: "manual" }));
       if (asset.status >= 300 && asset.status < 400 && asset.headers.has("Location")) return asset;

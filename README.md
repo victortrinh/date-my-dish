@@ -22,8 +22,6 @@ A bilingual (English and Quebec French) Montréal date-night guide: restaurant a
   <img src="docs/readme-screenshot-dark.png" alt="Date My Dish - Dark Mode" width="49%" />
 </p>
 
-> The site is in maintenance mode (`MAINTENANCE_MODE` in `wrangler.jsonc`) while the reviews move to the new page design. The screenshots above show the previous site and will be replaced once it is back.
-
 ---
 
 ## Table of Contents
