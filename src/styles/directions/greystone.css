@@ -1,0 +1,73 @@
+/* Direction 3: Greystone evening.
+   Plateau limestone, wrought-iron black, one warm lit-window amber. */
+:root[data-direction="greystone"] {
+  --surface: #e7e5e1;
+  --surface-raised: #f2f1ee;
+  --surface-sunken: #dcd9d3;
+  --ink: #1b1c1e;
+  --ink-muted: #424347;
+  --ink-subtle: #5d5e62;
+  --line: #c7c3bc;
+  --line-strong: #1b1c1e;
+  --accent: #e8a33d;
+  --accent-ink: #7c4a00;
+  --on-accent: #1b1c1e;
+  --verdict-favourite: #7c4a00;
+  --verdict-conditional: #424347;
+  --verdict-pass: #5d5e62;
+  --cat-1: #e8a33d; --cat-2: #e8a33d; --cat-3: #e8a33d; --cat-4: #e8a33d; --cat-5: #e8a33d;
+
+  --font-display: "Young Serif", Georgia, serif;
+  --font-body: "Libre Caslon Text", Georgia, serif;
+  --font-ui: "Hanken Grotesk", "Helvetica Neue", sans-serif;
+  --display-weight: 400;
+  --display-style: normal;
+  --display-tracking: -0.015em;
+  --eyebrow-case: uppercase;
+  --eyebrow-tracking: 0.14em;
+  --eyebrow-size: 0.75rem;
+  --wordmark-color: var(--ink);
+
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 999px 999px 0 0;
+  --radius-pill: 999px;
+  --shadow-raised: none;
+  --hero-ratio: 4 / 5;
+}
+
+:root.dark[data-direction="greystone"] {
+  --surface: #16171a;
+  --surface-raised: #1f2024;
+  --surface-sunken: #101114;
+  --ink: #ece9e3;
+  --ink-muted: #bab6ae;
+  --ink-subtle: #908d86;
+  --line: #2f3136;
+  --line-strong: #ece9e3;
+  --accent: #f0b254;
+  --accent-ink: #f0b254;
+  --on-accent: #16171a;
+  --verdict-favourite: #f0b254;
+  --verdict-conditional: #bab6ae;
+  --verdict-pass: #908d86;
+}
+
+/* Signature: the arched greystone window frames the hero and card photos,
+   and a lit-window glow marks the verdict. */
+[data-direction="greystone"] .hero-media,
+[data-direction="greystone"] .card-media { border-radius: 999px 999px 0 0; }
+[data-direction="greystone"] .card-media { border-radius: 12rem 12rem 0 0; }
+[data-direction="greystone"] .stamp { border: 0; padding: 0; gap: 0.6rem; }
+[data-direction="greystone"] .stamp::before {
+  content: "";
+  width: 0.75rem;
+  height: 1.05rem;
+  border-radius: 999px 999px 0 0;
+  background: var(--accent);
+  flex: none;
+}
+[data-direction="greystone"] .stamp[data-verdict="pass"]::before { background: var(--line); }
+[data-direction="greystone"] .stamp[data-verdict="conditional"]::before {
+  background: linear-gradient(to top, var(--accent) 50%, var(--line) 50%);
+}

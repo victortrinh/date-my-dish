@@ -1,0 +1,67 @@
+/* Direction 1: Natural wine label.
+   Limestone ground, near-black ink, one bottle-glass green. Tiny tracked
+   captions in a geometric sans, a high-contrast display serif used sparingly. */
+:root[data-direction="wine-label"] {
+  --surface: #ecebe7;
+  --surface-raised: #f6f5f2;
+  --surface-sunken: #e2e0da;
+  --ink: #161616;
+  --ink-muted: #45453f;
+  --ink-subtle: #5f5e59;
+  --line: #cfccc4;
+  --line-strong: #161616;
+  --accent: #1f4d3a;
+  --accent-ink: #1f4d3a;
+  --on-accent: #f6f5f2;
+  --verdict-favourite: #1f4d3a;
+  --verdict-conditional: #6e5310;
+  --verdict-pass: #5f5e59;
+  --cat-1: #1f4d3a; --cat-2: #1f4d3a; --cat-3: #1f4d3a; --cat-4: #1f4d3a; --cat-5: #1f4d3a;
+
+  --font-display: "Bodoni Moda", "Didot", serif;
+  --font-body: "Literata", Georgia, serif;
+  --font-ui: "Jost", "Futura", sans-serif;
+  --display-weight: 400;
+  --display-style: normal;
+  --display-tracking: -0.01em;
+  --eyebrow-case: uppercase;
+  --eyebrow-tracking: 0.22em;
+  --eyebrow-size: 0.6875rem;
+  --wordmark-color: var(--ink);
+
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-pill: 0;
+  --shadow-raised: none;
+  --hero-ratio: 4 / 5;
+}
+
+:root.dark[data-direction="wine-label"] {
+  --surface: #111312;
+  --surface-raised: #191c1a;
+  --surface-sunken: #0b0d0c;
+  --ink: #ecebe7;
+  --ink-muted: #bcbab3;
+  --ink-subtle: #96948d;
+  --line: #2d312e;
+  --line-strong: #ecebe7;
+  --accent: #8cc5a8;
+  --accent-ink: #8cc5a8;
+  --on-accent: #0b0d0c;
+  --verdict-favourite: #8cc5a8;
+  --verdict-conditional: #d9b45a;
+  --verdict-pass: #96948d;
+  --cat-1: #8cc5a8; --cat-2: #8cc5a8; --cat-3: #8cc5a8; --cat-4: #8cc5a8; --cat-5: #8cc5a8;
+}
+
+/* Signature: the verdict is a printed label stamp, ruled top and bottom. */
+[data-direction="wine-label"] .stamp {
+  border-block: 1px solid currentColor;
+  border-inline: 0;
+  padding: 0.5rem 0.25rem;
+  background: none;
+}
+[data-direction="wine-label"] .stamp[data-verdict="favourite"] { border-block-width: 2px; }
+[data-direction="wine-label"] .card { border-top: 1px solid var(--line-strong); padding-top: 1rem; }
+[data-direction="wine-label"] .display em { font-style: italic; }

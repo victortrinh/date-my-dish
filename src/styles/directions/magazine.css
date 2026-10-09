@@ -1,0 +1,60 @@
+/* Direction 4: Food-magazine standard, played straight as the control. */
+:root[data-direction="magazine"] {
+  --surface: #faf8f4;
+  --surface-raised: #ffffff;
+  --surface-sunken: #f1ede6;
+  --ink: #1a1a1a;
+  --ink-muted: #46433e;
+  --ink-subtle: #67635c;
+  --line: #e2ddd3;
+  --line-strong: #1a1a1a;
+  --accent: #a3201b;
+  --accent-ink: #a3201b;
+  --on-accent: #ffffff;
+  --verdict-favourite: #a3201b;
+  --verdict-conditional: #6e5310;
+  --verdict-pass: #67635c;
+  --cat-1: #a3201b; --cat-2: #a3201b; --cat-3: #a3201b; --cat-4: #a3201b; --cat-5: #a3201b;
+
+  --font-display: "Libre Caslon Display", Georgia, serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-ui: "Work Sans", "Helvetica Neue", sans-serif;
+  --display-weight: 400;
+  --display-style: normal;
+  --display-tracking: -0.01em;
+  --eyebrow-case: uppercase;
+  --eyebrow-tracking: 0.12em;
+  --eyebrow-size: 0.75rem;
+  --wordmark-color: var(--ink);
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-pill: 999px;
+  --shadow-raised: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.06);
+  --hero-ratio: 3 / 2;
+}
+
+:root.dark[data-direction="magazine"] {
+  --surface: #141312;
+  --surface-raised: #1d1b19;
+  --surface-sunken: #0e0d0c;
+  --ink: #f2efe9;
+  --ink-muted: #c2bdb4;
+  --ink-subtle: #99948b;
+  --line: #2e2b27;
+  --line-strong: #f2efe9;
+  --accent: #f08a80;
+  --accent-ink: #f08a80;
+  --on-accent: #141312;
+  --verdict-favourite: #f08a80;
+  --verdict-conditional: #d9b45a;
+  --verdict-pass: #99948b;
+  --shadow-raised: none;
+}
+
+[data-direction="magazine"] .stamp[data-verdict="favourite"] {
+  background: var(--verdict-favourite);
+  color: var(--on-accent);
+  border-color: var(--verdict-favourite);
+}
