@@ -4,6 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import SpotHero from "@components/date-spots/SpotHero.astro";
 import { t, tf, type Locale } from "@i18n/utils";
+import { transitionStyle } from "@utils/view-transitions";
 import { copyLocale, dateSpotPath, profilePath, recipeCardPath } from "@utils/date-spots";
 import { SITE_URL } from "@utils/constants";
 
@@ -48,9 +49,9 @@ const jsonLd = {
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <article class="recipe-card page-container pt-8 pb-section-sm" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
     <Breadcrumbs locale={locale} items={[...(profile ? [{ label: contributor.name, href: profilePath(profile.locales[copyLocale(locale)].slug, locale) }] : []), { label: copy.title }]} />
-    <SpotHero image={recipe.image} alt={copy.imageAlt} caption={copy.imageCredit}>
+    <SpotHero image={recipe.image} alt={copy.imageAlt} caption={copy.imageCredit} transition={{ kind: "recipe", id: recipe.id }}>
       <p class="eyebrow">{[tf(locale, "recipeCard.fromContributor", { name: contributor.name }), contributor.venueOrContext].filter(Boolean).join(" · ")}</p>
-      <h1 class="mt-4 text-4xl text-ink sm:text-heading-1 lg:text-display">{copy.title}</h1>
+      <h1 class="mt-4 w-fit text-4xl text-ink sm:text-heading-1 lg:text-display" style={transitionStyle(Astro.locals, "recipe", recipe.id, "title")}>{copy.title}</h1>
       {copy.originalContext && <p class="recipe-card-intro mt-6 max-w-measure font-body text-body-lg text-ink-muted">{copy.originalContext}</p>}
       <dl class="recipe-card-meta mt-8 grid max-w-measure grid-cols-2 gap-x-6 gap-y-4 border-y border-line py-5 font-ui text-body-sm sm:grid-cols-4">
         <div><dt class="text-ink-subtle">{t(locale, "recipeCard.serves")}</dt><dd class="mt-1 text-ink">{copy.serves}</dd></div>
@@ -63,20 +64,20 @@ const jsonLd = {
     </SpotHero>
     <div class="recipe-card-body mt-section-sm grid gap-14 border-t border-line-strong pt-8 lg:grid-cols-[minmax(0,20rem)_minmax(0,1fr)] lg:gap-16">
       <section aria-labelledby="ingredients-title">
-        <h2 id="ingredients-title" class={h2}>{t(locale, "recipeCard.ingredients")}</h2>
+        <h2 id="ingredients-title" data-reveal class={h2}>{t(locale, "recipeCard.ingredients")}</h2>
         {copy.ingredientGroups.map((group) => <div class="mt-6">{group.group && <h3 class={groupTitle}>{group.group}</h3>}<ul class="mt-3 divide-y divide-line border-y border-line font-body text-ink-muted">{group.items.map((item) => <li class="py-2.5">{item}</li>)}</ul></div>)}
       </section>
       <section aria-labelledby="method-title">
-        <h2 id="method-title" class={h2}>{t(locale, "recipeCard.method")}</h2>
+        <h2 id="method-title" data-reveal class={h2}>{t(locale, "recipeCard.method")}</h2>
         {copy.methodGroups.map((group) => <div class="mt-6">{group.group && <h3 class={groupTitle}>{group.group}</h3>}<ol class="mt-3 max-w-measure space-y-5 font-body text-body-lg text-ink-muted">{group.steps.map((step, index) => <li class="grid grid-cols-[2rem_minmax(0,1fr)] gap-3"><span aria-hidden="true" class="recipe-card-step-number font-display text-heading-3 leading-none text-accent-ink">{index + 1}</span><span>{step}</span></li>)}</ol></div>)}
       </section>
     </div>
     {copy.contributorNotes && <section class="recipe-card-extra mt-section-sm max-w-measure" aria-labelledby="notes-title">
-      <h2 id="notes-title" class={h2}>{tf(locale, "recipeCard.notesFrom", { name: contributor.name })}</h2>
+      <h2 id="notes-title" data-reveal class={h2}>{tf(locale, "recipeCard.notesFrom", { name: contributor.name })}</h2>
       <ul class="mt-5 list-disc space-y-3 pl-5 font-body text-body-lg text-ink-muted marker:text-ink-subtle">{copy.contributorNotes.map((note) => <li>{note}</li>)}</ul>
     </section>}
     {pairings.length > 0 && <section class="recipe-card-extra no-print mt-section-sm" aria-labelledby="pair-title">
-      <h2 id="pair-title" class={h2}>{t(locale, "recipeCard.pairItWith")}</h2>
+      <h2 id="pair-title" data-reveal class={h2}>{t(locale, "recipeCard.pairItWith")}</h2>
       <ul class="mt-5 space-y-3 font-ui">{pairings.map((spot) => <li><a href={dateSpotPath(spot, locale)} class="link-draw font-semibold">{spot.name}</a></li>)}</ul>
     </section>}
     <footer class="recipe-card-footer mt-section-sm max-w-measure border-t border-line pt-6 font-ui text-body-sm text-ink-subtle">

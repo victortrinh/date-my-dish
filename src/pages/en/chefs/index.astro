@@ -4,6 +4,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import { t } from "@i18n/utils";
 import { profilePath } from "@utils/date-spots";
+import { transitionStyle } from "@utils/view-transitions";
 
 const profiles = (await getCollection("extendedProfiles")).map(({ data }) => data).sort((a, b) => b.published.localeCompare(a.published));
 const title = t("en", "profile.indexTitle");
@@ -12,14 +13,14 @@ const title = t("en", "profile.indexTitle");
   <section data-pagefind-ignore={profiles.length === 0 || undefined} class="page-container pt-8 pb-section">
     <Breadcrumbs locale="en" items={[{ label: t("en", "nav.chefs") }]} />
     <h1 class="mt-10 max-w-4xl text-4xl text-ink sm:text-heading-1 lg:text-display">{title}</h1>
-    <div class="mt-section-sm grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-section-sm grid gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-3">
       {profiles.map((profile, index) => {
         const copy = profile.locales["en"];
         return (
-          <a href={profilePath(copy.slug, "en")} class="group block min-w-0 text-ink no-underline hover:text-ink">
-            {profile.image && <img src={profile.image.src} width={profile.image.width} height={profile.image.height} alt={copy.imageAlt} loading={index === 0 ? "eager" : "lazy"} class="mb-5 aspect-[4/5] w-full rounded-arch bg-surface-sunken object-cover object-center" />}
+          <a href={profilePath(copy.slug, "en")} data-reveal class="group block min-w-0 text-ink no-underline hover:text-ink">
+            {profile.image && <div class="arch isolate mb-5 bg-surface-sunken" style={transitionStyle(Astro.locals, "chef", profile.id, "photo")}><img src={profile.image.src} width={profile.image.width} height={profile.image.height} alt={copy.imageAlt} loading={index === 0 ? "eager" : "lazy"} class="zoom aspect-[4/5] w-full object-cover object-center" /></div>}
             <p class="font-ui text-body-sm text-ink-subtle">{[profile.subject.venue, profile.subject.neighbourhood].filter(Boolean).join(" · ")}</p>
-            <h2 class="mt-2 text-heading-3 text-ink"><span class="link-draw">{profile.subject.name}</span></h2>
+            <h2 class="mt-2 w-fit text-heading-3 text-ink" style={transitionStyle(Astro.locals, "chef", profile.id, "title")}><span class="link-draw">{profile.subject.name}</span></h2>
             {copy.standfirst && <p class="mt-3 font-body text-ink-muted">{copy.standfirst}</p>}
           </a>
         );

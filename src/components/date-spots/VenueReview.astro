@@ -12,6 +12,7 @@ import SpotPhoto from "./SpotPhoto.astro";
 import VerdictBadge from "./VerdictBadge.astro";
 import WindowGlyph from "./WindowGlyph.astro";
 import { t, tf, type Locale } from "@i18n/utils";
+import { transitionStyle } from "@utils/view-transitions";
 import { makeANightCards } from "@content-contracts/date-spot.mjs";
 import {
   copyLocale, dateSpotPath, neighbourhoodPath, priceLabel, profilePath, recipeCardPath, reviewPath,
@@ -103,9 +104,9 @@ const jump = [
       { label: name },
     ]} />
 
-    <SpotHero image={spot.image} alt={copy.imageAlt} caption={caption}>
+    <SpotHero image={spot.image} alt={copy.imageAlt} caption={caption} transition={{ kind: "spot", id: spot.id }}>
       <p class="eyebrow truncate">{t(locale, "dateSpot.review")} · {t(locale, `dateSpot.spotType.${spot.spotType}`)} · {copy.cuisine}</p>
-      <h1 class="mt-4 text-4xl text-ink sm:text-heading-1 lg:text-display">{name}<span class="sr-only">, </span><span class="block text-ink-subtle">{neighbourhood}</span></h1>
+      <h1 class="mt-4 text-4xl text-ink sm:text-heading-1 lg:text-display"><span class="block w-fit" style={transitionStyle(Astro.locals, "spot", spot.id, "title")}>{name}</span><span class="sr-only">, </span><span class="block text-ink-subtle">{neighbourhood}</span></h1>
       <p class={`mt-6 ${body}`}>
         {lead && copy.opening.includes(lead.name)
           ? <>{copy.opening.slice(0, copy.opening.indexOf(lead.name))}<a href="#meet" class={textLink}>{lead.name}</a>{copy.opening.slice(copy.opening.indexOf(lead.name) + lead.name.length)}</>
@@ -120,7 +121,7 @@ const jump = [
       <div class="min-w-0 space-y-section-sm">
         <section id="verdict" aria-labelledby="verdict-title" class="scroll-mt-20 border-t border-line-strong pt-8">
           <h2 id="verdict-title" class="font-ui text-body-sm font-medium text-ink-subtle">{tf(locale, "dateSpot.h.verdict", { name })}</h2>
-          <VerdictBadge verdict={spot.reviewVerdict} locale={locale} size="lg" class="mt-4" />
+          <VerdictBadge verdict={spot.reviewVerdict} locale={locale} size="lg" settle class="mt-4" />
           {copy.verdictHeadline && <p class="mt-5 max-w-measure font-display text-heading-2 text-ink">{copy.verdictHeadline}</p>}
           <div class={`mt-5 space-y-5 ${body}`}><Paragraphs text={copy.verdictReason} /></div>
         </section>
@@ -128,7 +129,7 @@ const jump = [
         <EssentialsCard spot={spot} locale={locale} id="essentials-title-mobile" class="lg:hidden" />
 
         {copy.goodFor && <section id="good-for" aria-labelledby="good-for-title" class="scroll-mt-20">
-          <h2 id="good-for-title" class={h2}>{t(locale, "dateSpot.h.goodFor")}</h2>
+          <h2 id="good-for-title" data-reveal class={h2}>{t(locale, "dateSpot.h.goodFor")}</h2>
           <ul class="mt-6 divide-y divide-line border-y border-line">
             {copy.goodFor.map((signal) => (
               <li class="flex gap-4 py-5">
@@ -146,13 +147,13 @@ const jump = [
         </section>}
 
         {hasRoom && <section id="room" aria-labelledby="room-title" class="scroll-mt-20">
-          <h2 id="room-title" class={h2}>{t(locale, "dateSpot.h.room")}</h2>
+          <h2 id="room-title" data-reveal class={h2}>{t(locale, "dateSpot.h.room")}</h2>
           {copy.roomPhoto && <SpotPhoto photos={spot.photos} reference={copy.roomPhoto} locale={locale} class="mt-6 max-w-measure" />}
           {copy.room && <div class={`mt-6 space-y-5 ${body}`}><Paragraphs text={copy.room} /></div>}
         </section>}
 
         {lead && <section id="meet" aria-labelledby="meet-title" class="scroll-mt-20">
-          <h2 id="meet-title" class={h2}>{t(locale, isBar ? "dateSpot.h.meetBartender" : "dateSpot.h.meetChef")}</h2>
+          <h2 id="meet-title" data-reveal class={h2}>{t(locale, isBar ? "dateSpot.h.meetBartender" : "dateSpot.h.meetChef")}</h2>
           <div class="mt-6 grid gap-8 sm:grid-cols-[12rem_minmax(0,1fr)]">
             {lead.portrait && <SpotPhoto photos={spot.photos} reference={lead.portrait} locale={locale} arch class="max-w-56" />}
             <div class:list={["space-y-5", !lead.portrait && "sm:col-span-2"]}>
@@ -169,7 +170,7 @@ const jump = [
         </section>}
 
         {copy.drinks && <section id="drinks" aria-labelledby="drinks-title" class="scroll-mt-20">
-          <h2 id="drinks-title" class={h2}>{tf(locale, "dateSpot.h.drinks", { name })}</h2>
+          <h2 id="drinks-title" data-reveal class={h2}>{tf(locale, "dateSpot.h.drinks", { name })}</h2>
           {copy.drinks.intro && <div class={`mt-6 space-y-5 ${body}`}><Paragraphs text={copy.drinks.intro} /></div>}
           {copy.drinks.picks && <div class="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-6">
             {copy.drinks.picks.map((pick) => (
@@ -184,7 +185,7 @@ const jump = [
         </section>}
 
         {hasOrder && <section id="order" aria-labelledby="order-title" class="scroll-mt-20">
-          <h2 id="order-title" class={h2}>{tf(locale, isBar ? "dateSpot.h.eat" : "dateSpot.h.order", { name })}</h2>
+          <h2 id="order-title" data-reveal class={h2}>{tf(locale, isBar ? "dateSpot.h.eat" : "dateSpot.h.order", { name })}</h2>
           {whatToEat?.intro && <div class={`mt-6 space-y-5 ${body}`}><Paragraphs text={whatToEat.intro} /></div>}
           {(whatToOrder?.waitersChoice || whatToOrder?.setMenu) && <div class="card mt-6 space-y-6">
             {whatToOrder.waitersChoice && <div>
@@ -224,7 +225,7 @@ const jump = [
         </section>}
 
         {copy.realCost && <section id="cost" aria-labelledby="cost-title" class="scroll-mt-20">
-          <h2 id="cost-title" class={h2}>{tf(locale, isBar ? "dateSpot.h.costBar" : "dateSpot.h.costRestaurant", { name })}</h2>
+          <h2 id="cost-title" data-reveal class={h2}>{tf(locale, isBar ? "dateSpot.h.costBar" : "dateSpot.h.costRestaurant", { name })}</h2>
           {copy.realCost.intro && <div class={`mt-6 space-y-5 ${body}`}><Paragraphs text={copy.realCost.intro} /></div>}
           {(copy.realCost.lines || copy.realCost.total) && <dl class="mt-6 max-w-measure divide-y divide-line border-y border-line font-ui tabular-nums">
             {(copy.realCost.lines ?? []).map((line) => <div class="flex justify-between gap-4 py-3"><dt class="text-ink-muted">{line.item}</dt><dd class="text-ink">{line.amount}</dd></div>)}
@@ -234,7 +235,7 @@ const jump = [
         </section>}
 
         {hasNote && <section id="note" aria-labelledby="note-title" class="scroll-mt-20 border-t border-line-strong pt-8">
-          <h2 id="note-title" class={h2}>{tf(locale, "dateSpot.h.note", { name })}</h2>
+          <h2 id="note-title" data-reveal class={h2}>{tf(locale, "dateSpot.h.note", { name })}</h2>
           {noteMeta.length > 0 && <p class="mt-3 font-ui text-body-sm text-ink-subtle">{noteMeta.join(" · ")}</p>}
           {(note?.detail || note?.caveat) && <>
             <p class="mt-8 font-body text-body-lg italic text-accent-ink">{t(locale, "dateSpot.noteKicker")}</p>
@@ -252,13 +253,13 @@ const jump = [
 
         {nightPicks.length > 0 && <section id="night" aria-labelledby="night-title" class="scroll-mt-20">
           <p class="eyebrow">{t(locale, isBar ? "dateSpot.nightKickerBar" : "dateSpot.nightKicker")}</p>
-          <h2 id="night-title" class={`mt-3 ${h2}`}>{tf(locale, isBar ? "dateSpot.h.nightBar" : "dateSpot.h.nightRestaurant", { neighbourhood })}</h2>
+          <h2 id="night-title" data-reveal class={`mt-3 ${h2}`}>{tf(locale, isBar ? "dateSpot.h.nightBar" : "dateSpot.h.nightRestaurant", { neighbourhood })}</h2>
           <p class={`mt-5 ${body}`}>{t(locale, "dateSpot.nightIntro")}</p>
-          <div class="mt-8 grid gap-10 sm:grid-cols-2 sm:gap-8">
+          <div data-reveal class="mt-8 grid gap-10 sm:grid-cols-2 sm:gap-8">
             {nightPicks.map(({ pick, target, category, nearby, season }) => (
               <div class="flex flex-col border-t border-line pt-5" data-night-pick={target.id} data-category={category}>
                 <p class="eyebrow">{t(locale, `dateSpot.category.${category}`)}</p>
-                <h3 class="mt-3 text-heading-3"><a href={dateSpotPath(target, locale)} class="link-draw">{target.name}</a></h3>
+                <h3 class="mt-3 w-fit text-heading-3" style={transitionStyle(Astro.locals, "spot", target.id, "title")}><a href={dateSpotPath(target, locale)} class="link-draw">{target.name}</a></h3>
                 <p class="mt-2 font-ui text-body-sm text-ink-subtle">{[
                   pick.timing && t(locale, `dateSpot.timing.${pick.timing}`),
                   pick.walkMinutes && tf(locale, "dateSpot.walk", { minutes: pick.walkMinutes }),
@@ -280,17 +281,17 @@ const jump = [
         </section>}
 
         {recipe && recipeCopy && copy.atHome && <section id="at-home" aria-labelledby="at-home-title" class:list={["card scroll-mt-20 grid gap-8", recipe.image && "sm:grid-cols-[12rem_minmax(0,1fr)] sm:items-center"]}>
-          {recipe.image && <img src={recipe.image.src} width={recipe.image.width} height={recipe.image.height} alt={recipeCopy.imageAlt} loading="lazy" class="aspect-[4/5] w-full max-w-56 rounded-arch bg-surface-sunken object-cover" />}
+          {recipe.image && <img src={recipe.image.src} width={recipe.image.width} height={recipe.image.height} alt={recipeCopy.imageAlt} loading="lazy" style={transitionStyle(Astro.locals, "recipe", recipe.id, "photo")} class="aspect-[4/5] w-full max-w-56 rounded-arch bg-surface-sunken object-cover" />}
           <div>
             <p class="eyebrow">{tf(locale, "dateSpot.fromKitchen", { name: recipe.contributor.name })}</p>
-            <h2 id="at-home-title" class={`mt-3 ${h2}`}>{t(locale, isBar ? "dateSpot.h.atHomeBartender" : "dateSpot.h.atHomeChef")}</h2>
+            <h2 id="at-home-title" data-reveal class={`mt-3 ${h2}`}>{t(locale, isBar ? "dateSpot.h.atHomeBartender" : "dateSpot.h.atHomeChef")}</h2>
             {copy.atHome.intro && <div class={`mt-5 space-y-5 ${body}`}><Paragraphs text={copy.atHome.intro} /></div>}
             <a href={recipeCardPath(recipeCopy.slug, locale)} class="btn btn-accent mt-6">{tf(locale, "dateSpot.getRecipeCard", { name: recipe.contributor.name })}</a>
           </div>
         </section>}
 
         {copy.beforeYouBook && <section id="before-you-book" aria-labelledby="faq-title" class="scroll-mt-20">
-          <h2 id="faq-title" class={h2}>{t(locale, isBar ? "dateSpot.h.beforeYouGo" : "dateSpot.h.beforeYouBook")}</h2>
+          <h2 id="faq-title" data-reveal class={h2}>{t(locale, isBar ? "dateSpot.h.beforeYouGo" : "dateSpot.h.beforeYouBook")}</h2>
           <div class="mt-6 divide-y divide-line border-y border-line">
             {copy.beforeYouBook.map((item) => (
               <div class="py-6">

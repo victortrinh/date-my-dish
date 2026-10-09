@@ -8,6 +8,7 @@ import SpotHero from "@components/date-spots/SpotHero.astro";
 import { t, tf, type Locale } from "@i18n/utils";
 import { copyLocale, dateSpotPath, profilePath, recipeCardPath } from "@utils/date-spots";
 import { SITE_URL } from "@utils/constants";
+import { transitionStyle } from "@utils/view-transitions";
 
 // Round one is their restaurant or bar. Round two is the same eight
 // questions asked of everyone, so answers compare across profiles and each
@@ -63,9 +64,9 @@ const jsonLd = {
   <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
   <article class="page-container pt-8 pb-section-sm" data-pagefind-body data-pagefind-filter={`lang:${locale}`}>
     <Breadcrumbs locale={locale} items={[{ label: t(locale, "nav.chefs"), href: `/${locale}/chefs/` }, { label: subject.name }]} />
-    <SpotHero image={profile.image} alt={copy.imageAlt} caption={copy.imageCredit}>
+    <SpotHero image={profile.image} alt={copy.imageAlt} caption={copy.imageCredit} transition={{ kind: "chef", id: profile.id }}>
       <p class="eyebrow">{t(locale, isBartender ? "profile.behindTheBarWith" : "profile.inKitchenWith")}</p>
-      <h1 class="mt-4 text-4xl text-ink sm:text-heading-1 lg:text-display">{subject.name}</h1>
+      <h1 class="mt-4 w-fit text-4xl text-ink sm:text-heading-1 lg:text-display" style={transitionStyle(Astro.locals, "chef", profile.id, "title")}>{subject.name}</h1>
       {copy.standfirst && <p class={`mt-6 ${body}`}>{copy.standfirst}</p>}
       <p class="mt-6 font-ui text-body-sm text-ink-subtle">{[tf(locale, "profile.interviewBy", { name: profile.interviewer }), monthYear, t(locale, "profile.edited")].filter(Boolean).join(" · ")}</p>
     </SpotHero>
@@ -75,7 +76,7 @@ const jsonLd = {
 
         {theVenue.length > 0 && <section id="the-venue" aria-labelledby="venue-title" class="scroll-mt-20 border-t border-line-strong pt-8">
           <p class="eyebrow">{t(locale, "profile.roundOne")}</p>
-          <h2 id="venue-title" class={`mt-3 ${h2}`}>{t(locale, isBartender ? "profile.theBar" : "profile.theRestaurant")}</h2>
+          <h2 id="venue-title" data-reveal class={`mt-3 ${h2}`}>{t(locale, isBartender ? "profile.theBar" : "profile.theRestaurant")}</h2>
           <div class="mt-8 space-y-10">
             {theVenue.map((item, index) => (
               <>
@@ -91,7 +92,7 @@ const jsonLd = {
 
         {dinnerAndDate.length > 0 && <section id="dinner-and-a-date" aria-labelledby="date-title" class="scroll-mt-20 border-t border-line-strong pt-8">
           <p class="eyebrow">{t(locale, "profile.roundTwo")}</p>
-          <h2 id="date-title" class={`mt-3 ${h2}`}>{t(locale, "profile.dinnerAndDate")}</h2>
+          <h2 id="date-title" data-reveal class={`mt-3 ${h2}`}>{t(locale, "profile.dinnerAndDate")}</h2>
           <p class={`mt-5 ${body}`}>{t(locale, "profile.dinnerAndDateIntro")}</p>
           <div class="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2">
             {dinnerAndDate.map((item, index) => (
@@ -105,10 +106,10 @@ const jsonLd = {
         </section>}
 
         {copy.atHome && <section id="recipe-card" aria-labelledby="last-title" class:list={["card scroll-mt-20 grid gap-8", recipe?.image && "sm:grid-cols-[12rem_minmax(0,1fr)] sm:items-center"]}>
-          {recipe?.image && <img src={recipe.image.src} width={recipe.image.width} height={recipe.image.height} alt={recipeCopy?.imageAlt} loading="lazy" class="aspect-[4/5] w-full max-w-56 rounded-arch bg-surface-sunken object-cover object-center" />}
+          {recipe?.image && <img src={recipe.image.src} width={recipe.image.width} height={recipe.image.height} alt={recipeCopy?.imageAlt} loading="lazy" style={transitionStyle(Astro.locals, "recipe", recipe.id, "photo")} class="aspect-[4/5] w-full max-w-56 rounded-arch bg-surface-sunken object-cover object-center" />}
           <div>
             <p class="eyebrow">{t(locale, "profile.lastQuestion")}</p>
-            <h2 id="last-title" class={`mt-3 ${h2}`}>{t(locale, "profile.atHomeQuestion")}</h2>
+            <h2 id="last-title" data-reveal class={`mt-3 ${h2}`}>{t(locale, "profile.atHomeQuestion")}</h2>
             <div class={`mt-5 space-y-5 ${body}`}><Paragraphs text={copy.atHome} /></div>
             {recipe && recipeCopy && <>
               <p class="mt-4 font-ui text-body-sm text-ink-subtle">{t(locale, "profile.atHomeNote")}</p>

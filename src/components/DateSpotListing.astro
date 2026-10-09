@@ -41,8 +41,8 @@ const groups = groupByCategory
     </div>}
     {groups.map((group) => (
       <section id={group.id} data-filter-group aria-labelledby={group.label ? `${group.id}-title` : undefined} class="mt-section-sm scroll-mt-20">
-        {group.label && <h2 id={`${group.id}-title`} class="mb-10 border-t border-line-strong pt-6 text-heading-2 text-ink">{group.label}</h2>}
-        <div class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">{group.items.map((spot, index) => <DateSpotCard spot={spot} locale={locale} headingLevel={group.label ? 3 : 2} loading={index === 0 && group === groups[0] ? "eager" : "lazy"} />)}</div>
+        {group.label && <h2 id={`${group.id}-title`} data-reveal class="mb-10 border-t border-line-strong pt-6 text-heading-2 text-ink">{group.label}</h2>}
+        <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-3">{group.items.map((spot, index) => <DateSpotCard spot={spot} locale={locale} headingLevel={group.label ? 3 : 2} loading={index === 0 && group === groups[0] ? "eager" : "lazy"} />)}</div>
       </section>
     ))}
   </section>

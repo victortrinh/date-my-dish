@@ -56,10 +56,10 @@ const recentSpots = (await getCollection("dateSpots"))
     </div>
   </section>
   {recentSpots.length > 0 && <section class="page-container pb-section" aria-labelledby="date-spots">
-    <div class="flex flex-wrap items-end justify-between gap-6 border-t border-line-strong pt-6">
+    <div data-reveal class="flex flex-wrap items-end justify-between gap-6 border-t border-line-strong pt-6">
       <h2 id="date-spots" class="text-heading-2 text-ink">{t(locale, "nav.dateSpots")}</h2>
       <a href={dateSpotsPath} class="btn btn-secondary">{t(locale, "home.allDateSpots")}</a>
     </div>
-    <div class="mt-10 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">{recentSpots.map((spot, index) => <DateSpotCard spot={spot} locale={locale} headingLevel={3} loading={index === 0 ? "eager" : "lazy"} />)}</div>
+    <div class="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-14 lg:grid-cols-3">{recentSpots.map((spot, index) => <DateSpotCard spot={spot} locale={locale} headingLevel={3} loading={index === 0 ? "eager" : "lazy"} />)}</div>
   </section>}
 </BaseLayout>
