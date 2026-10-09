@@ -376,6 +376,12 @@
     background: #000 !important;
   }
 
+  .card,
+  .bg-surface-raised,
+  .bg-surface-sunken {
+    background: none !important;
+  }
+
   .text-brand-wine,
   .text-brand-wine-text {
     color: #000 !important;
