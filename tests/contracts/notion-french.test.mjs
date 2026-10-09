@@ -7,6 +7,7 @@ import {
 } from "../../scripts/notion-story/french.mjs";
 import { LEGACY_REVIEWS, legacyTexts, readLegacyReview } from "../../scripts/notion-story/legacy.mjs";
 import { publishGate } from "../../scripts/notion-story/gate.mjs";
+import { dateSpotSchema } from "../../src/content-contracts/date-spot.mjs";
 import { dateSpotFixture, extendedProfileFixture } from "./date-spot-fixtures.mjs";
 
 // Mechanical records only: no real post is translated or imported here.
@@ -82,6 +83,34 @@ test("parity names the module, signal, dish tag, date or count the FR changed", 
   ]) assert.ok(lines.some((line) => expected.test(line)), `${expected} in ${JSON.stringify(lines)}`);
   // Per-locale fields (slug, meta) may differ.
   assert.ok(!lines.some((line) => /slug|meta/.test(line)));
+});
+
+test("opening hours are locale text: EN and FR may word them differently, but both must have them", () => {
+  const record = translatedPair();
+  record.locales.en.essentials.hours = "Tue to Sat from 6pm, closed Sun and Mon.";
+  record.locales["fr-CA"].essentials.hours = "Du mardi au samedi dès 18 h, fermé le dimanche et le lundi.";
+  assert.deepEqual(parityDifferences(record.locales.en, record.locales["fr-CA"]), []);
+  assert.equal(dateSpotSchema.safeParse(record).success, true);
+
+  const missing = structuredClone(record);
+  delete missing.locales["fr-CA"].essentials.hours;
+  assert.deepEqual(parityDifferences(missing.locales.en, missing.locales["fr-CA"]), ["essentials.hours: in en but missing from fr-CA"]);
+  assert.equal(dateSpotSchema.safeParse(missing).success, false);
+
+  // The old field name is gone from the essentials card.
+  const legacy = structuredClone(record);
+  for (const locale of ["en", "fr-CA"]) legacy.locales[locale].essentials.timing = legacy.locales[locale].essentials.hours;
+  assert.equal(dateSpotSchema.safeParse(legacy).success, false);
+});
+
+test("a Make a night of it pick's timing is still structural and must match across the pair", () => {
+  const record = translatedPair();
+  for (const locale of ["en", "fr-CA"]) record.locales[locale].makeANight = [{ spotId: "test-only-bar", timing: "after", blurb: locale === "en" ? "A bar blurb." : "Un bar." }];
+  assert.deepEqual(parityDifferences(record.locales.en, record.locales["fr-CA"]), []);
+  assert.equal(dateSpotSchema.safeParse(record).success, true);
+  record.locales["fr-CA"].makeANight[0].timing = "before";
+  assert.deepEqual(parityDifferences(record.locales.en, record.locales["fr-CA"]), ['makeANight[0].timing: "after" in en, "before" in fr-CA']);
+  assert.equal(dateSpotSchema.safeParse(record).success, false);
 });
 
 test("FR links use FR routes and point at the FR page of what the EN links to", () => {

@@ -41,7 +41,8 @@
           "cost": "$250 with one cocktail, tax and tip",
           "canYouTalk": "Not easily. The music is loud.",
           "booking": "Easy for two",
-          "duration": "3 hours"
+          "duration": "3 hours",
+          "hours": "Tue to Sat from 6pm, closed Sun and Mon."
         },
         "room": "Black walls, waxed concrete, white-painted brick with two dark canvases on it, a long banquette, warm wood tables and tan leather chairs. Candlelight pools on a black counter that bounces all of it back at you. The menu arrives inside an envelope closed with a wax seal, which is a fun way to start a night.\n\nThe music is the thing to know before you book. Rock and skate punk, turned up, and clearly turned up on purpose. It's loud enough that I couldn't hear the dish descriptions, which at this price is a real part of the experience going missing. If that sounds like a good dinner you'll have a good time. If you were picturing candlelight and easy conversation, pick somewhere else.\n\nNo dress code worth worrying about. Smart casual covers it.",
         "roomPhoto": {
@@ -134,7 +135,8 @@
           "cost": "250 $ avec un cocktail, taxes et pourboire",
           "canYouTalk": "Pas facilement. La musique est forte.",
           "booking": "Facile pour deux",
-          "duration": "3 h"
+          "duration": "3 h",
+          "hours": "Du mardi au samedi dès 18 h, fermé le dimanche et le lundi."
         },
         "room": "Murs noirs, béton ciré, brique peinte en blanc avec deux toiles sombres, une longue banquette, des tables en bois chaleureux et des chaises en cuir fauve. La lueur des chandelles se pose sur un comptoir noir qui te renvoie tout ça. Le menu arrive dans une enveloppe scellée à la cire, une façon amusante de commencer une soirée.\n\nLa musique, c'est la chose à savoir avant de réserver. Du rock et du skate punk, montés fort, et clairement montés fort exprès. C'est assez fort pour que je n'entende pas la description des plats, ce qui, à ce prix, est une vraie partie de l'expérience qui disparaît. Si ça te semble un bon souper, tu vas passer une belle soirée. Si tu imaginais des chandelles et une conversation facile, choisis un autre endroit.\n\nPas de code vestimentaire dont il faut s'inquiéter. Smart casual, ça fait l'affaire.",
         "roomPhoto": {
@@ -250,7 +252,8 @@
           "cost": "~$90",
           "canYouTalk": "Yes, easily",
           "booking": "Walk in",
-          "duration": "1.5 to 2 hours"
+          "duration": "1.5 to 2 hours",
+          "hours": "Wed to Sat 17:00 to 22:00, Sun to 21:00, closed Mon and Tue"
         },
         "room": "Inside it feels like a casual Korean restaurant: welcoming, straightforward and not trying to be fine dining. The room is easy for conversation.\n\nWe sat on the terrasse and didn't get a full look at the interior. If the weather is good, do the same. Lighting outside is whatever the evening gives you; inside it's casual and warm. Noise sits low to medium, more neighbourhood dinner than party room.",
         "drinks": {
@@ -351,7 +354,8 @@
           "cost": "~90 $",
           "canYouTalk": "Oui, facilement",
           "booking": "Sans réservation",
-          "duration": "1 h 30 à 2 h"
+          "duration": "1 h 30 à 2 h",
+          "hours": "Du mercredi au samedi de 17 h à 22 h, le dimanche jusqu'à 21 h, fermé le lundi et le mardi"
         },
         "room": "À l'intérieur, ça ressemble à un restaurant coréen casual classique : accueillant, simple, et qui ne prétend pas être de la gastronomie. La salle se prête bien à la conversation.\n\nOn s'est installés sur la terrasse et on n'a pas vraiment vu l'intérieur. Si la météo le permet, fais la même chose. L'éclairage dehors, c'est ce que la soirée te donne; à l'intérieur, c'est casual et chaleureux. Le niveau de bruit reste bas à moyen, plus souper de quartier que party room.",
         "drinks": {
@@ -475,7 +479,8 @@
           "cost": "$110 to $180+",
           "canYouTalk": "Mostly. Loud at peak.",
           "booking": "Plan ahead",
-          "duration": "2.5 hours"
+          "duration": "2.5 hours",
+          "hours": "Tue 11:30am–1:30pm, 5:30–10pm; Wed–Fri 11:30am–1:30pm, 5:30–10:30pm; Sat 5:30–10:30pm; Sun–Mon 5:30–10pm"
         },
         "room": "A converted industrial space that feels large without being impersonal. The lighting is warm, the room has a steady hum, and the open hearth stays in view.\n\nThe restaurant closed for a full renovation in May 2025 and reopened on 1 November 2025, rebuilt around the open hearth with a cellar of roughly five thousand bottles added. I ate in the new room. Anyone who went before the closure will find it changed.\n\nNoise runs medium to loud at peak. A two-top along the wall is easier for conversation; a table where you can feel the room without sitting in the middle of it is the compromise.",
         "meetChef": {
@@ -593,7 +598,8 @@
           "cost": "110-180 $+",
           "canYouTalk": "Plutôt. Moyen à élevé aux heures de pointe.",
           "booking": "Planifie d'avance",
-          "duration": "2 h 30"
+          "duration": "2 h 30",
+          "hours": "Mardi de 11 h 30 à 13 h 30 et de 17 h 30 à 22 h; du mercredi au vendredi de 11 h 30 à 13 h 30 et de 17 h 30 à 22 h 30; samedi de 17 h 30 à 22 h 30; dimanche et lundi de 17 h 30 à 22 h"
         },
         "room": "Un espace industriel converti qui paraît grand sans être impersonnel. L'éclairage est chaud, la salle a un bourdonnement régulier, et le foyer ouvert reste en vue.\n\nLe restaurant a fermé pour une rénovation complète en mai 2025 et a rouvert le 1er novembre 2025, reconstruit autour du foyer ouvert, avec une cave d'environ cinq mille bouteilles en plus. J'ai mangé dans la nouvelle salle. Ceux qui y sont allés avant la fermeture la trouveront changée.\n\nLe bruit est moyen à élevé aux heures de pointe. Une table à deux le long du mur facilite la conversation; une table où tu sens la salle sans être assis en plein milieu, c'est le compromis.",
         "meetChef": {
@@ -734,7 +740,8 @@
           "cost": "$130 to $170",
           "canYouTalk": "Yes, easily",
           "booking": "Book ahead",
-          "duration": "2.5 hours"
+          "duration": "2.5 hours",
+          "hours": "Wed to Sat 17:30 to 22:00, plus Tuesday \"Unplugged\" from 18:00"
         },
         "room": "Intimate without being stiff. People come to eat and take their time. Lighting is flattering and the pacing is calm.\n\nIt works well for a quiet date. The trade-off is time, so budget the full evening.",
         "meetChef": {
@@ -811,7 +818,8 @@
           "cost": "130-170 $",
           "canYouTalk": "Oui, facilement",
           "booking": "Réserve à l'avance",
-          "duration": "2 h 30"
+          "duration": "2 h 30",
+          "hours": "Du mercredi au samedi de 17 h 30 à 22 h, et le mardi « Unplugged » dès 18 h"
         },
         "room": "Intime sans être raide. Les gens viennent pour manger et prendre leur temps. L'éclairage est flatteur et le rythme est calme.\n\nÇa marche bien pour un rendez-vous tranquille. Le compromis, c'est le temps, alors prévois toute la soirée.",
         "meetChef": {
@@ -911,7 +919,8 @@
           "cost": "$30 to $55",
           "canYouTalk": "Yes, in the daytime",
           "booking": "Weekends yes",
-          "duration": "1.5 hours"
+          "duration": "1.5 hours",
+          "hours": "Mon to Wed 8:00 to 15:00. Thu and Fri 8:00 to 15:00 and 17:00 to 22:00. Brunch Sat and Sun from 10:00."
         },
         "room": "Industrial-feeling space right by the canal, and it leans into that: high ceilings, a lot of light, and a come-as-you-are room that still feels like a destination. Bright and warm rather than dim. Lively in the daytime without being overwhelming.\n\nAnywhere works, but the edges of the room feel calmer if you want to linger.",
         "drinks": {
@@ -1009,7 +1018,8 @@
           "cost": "30-55 $",
           "canYouTalk": "Oui, le jour",
           "booking": "Oui la fin de semaine",
-          "duration": "1 h 30"
+          "duration": "1 h 30",
+          "hours": "Du lundi au mercredi de 8 h à 15 h. Jeudi et vendredi de 8 h à 15 h et de 17 h à 22 h. Brunch samedi et dimanche dès 10 h."
         },
         "room": "Un espace aux allures industrielles juste à côté du canal, qui l'assume : hauts plafonds, beaucoup de lumière, et une salle où tu arrives comme tu es mais qui a quand même l'air d'une destination. Lumineux et chaleureux plutôt que tamisé. Animé le jour sans être étourdissant.\n\nToutes les places fonctionnent, mais les bords de la salle sont plus calmes si tu veux t'attarder.",
         "drinks": {
@@ -1576,7 +1586,8 @@
           "cost": "~$80 food only",
           "canYouTalk": "Yes, easily",
           "booking": "Recommended Fri and Sat",
-          "duration": "2 hours"
+          "duration": "2 hours",
+          "hours": "Daily from 17:30"
         },
         "room": "Warm and straightforward. A neighbourhood dining room where the focus stays on what's on the plate. It feels more like a great local restaurant than a special-occasion destination, which is exactly why it works.\n\nLighting is warm and relaxed, noise sits low to medium. A cosy two-top if you want a calm date; a bigger table if you're doing BYOW with friends. The room is now around seventy seats, larger and brighter than the old address.",
         "meetChef": {
@@ -1687,7 +1698,8 @@
           "cost": "~80 $ nourriture seulement",
           "canYouTalk": "Oui, facilement",
           "booking": "Recommandé ven et sam",
-          "duration": "2 h"
+          "duration": "2 h",
+          "hours": "Tous les jours dès 17 h 30"
         },
         "room": "Chaleureux et direct. Une salle à manger de quartier où le focus reste sur ce qu'il y a dans l'assiette. Ça ressemble plus à un excellent restaurant local qu'à une destination pour grande occasion, et c'est exactement pourquoi ça fonctionne.\n\nL'éclairage est chaud et détendu, le niveau sonore est bas à moyen. Une table à deux si tu veux un souper tranquille, une plus grande si tu fais un BYOB avec des amis. La salle compte maintenant environ soixante-dix places, plus grande et plus lumineuse que l'ancienne adresse.",
         "meetChef": {

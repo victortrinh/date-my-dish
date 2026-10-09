@@ -38,7 +38,7 @@
           "booking": "[TEST ONLY] booking",
           "access": "[TEST ONLY] access",
           "duration": "[TEST ONLY] duration",
-          "timing": "[TEST ONLY] timing"
+          "hours": "[TEST ONLY] hours"
         },
         "title": "[TEST ONLY] Test Venue",
         "verdictHeadline": "[TEST ONLY] verdict headline",
@@ -211,7 +211,7 @@
           "booking": "[TEST ONLY] booking",
           "access": "[TEST ONLY] access",
           "duration": "[TEST ONLY] duration",
-          "timing": "[TEST ONLY] timing"
+          "hours": "[TEST ONLY] hours"
         },
         "title": "[TEST ONLY] Test Venue",
         "verdictHeadline": "[TEST ONLY] verdict headline",
@@ -416,7 +416,7 @@
         "essentials": {
           "address": "[TEST ONLY] address",
           "cost": "[TEST ONLY] cost",
-          "timing": "[TEST ONLY] hours",
+          "hours": "[TEST ONLY] hours",
           "booking": "[TEST ONLY] booking",
           "duration": "[TEST ONLY] duration",
           "transit": "[TEST ONLY] metro"
@@ -463,7 +463,7 @@
         "essentials": {
           "address": "[TEST ONLY] address",
           "cost": "[TEST ONLY] cost",
-          "timing": "[TEST ONLY] hours",
+          "hours": "[TEST ONLY] hours",
           "booking": "[TEST ONLY] booking",
           "duration": "[TEST ONLY] duration",
           "transit": "[TEST ONLY] metro"
@@ -539,7 +539,7 @@
           "booking": "[TEST ONLY] booking",
           "access": "[TEST ONLY] access",
           "duration": "[TEST ONLY] duration",
-          "timing": "[TEST ONLY] timing"
+          "hours": "[TEST ONLY] hours"
         },
         "title": "[TEST ONLY] Test Bar",
         "verdictHeadline": "[TEST ONLY] verdict headline",
@@ -641,7 +641,7 @@
           "booking": "[TEST ONLY] booking",
           "access": "[TEST ONLY] access",
           "duration": "[TEST ONLY] duration",
-          "timing": "[TEST ONLY] timing"
+          "hours": "[TEST ONLY] hours"
         },
         "title": "[TEST ONLY] Test Bar",
         "verdictHeadline": "[TEST ONLY] verdict headline",
