@@ -27,6 +27,7 @@ You may change only these Companion File fields, in either locale:
 - **Meta description**: 120 to 160 characters, aim for 150 to 160. Write the FR one from the FR prose; never translate the EN meta.
 - **Alt text**: describes the plate or the place. No "Image of" prefix.
 - **Internal links**: links on words that already exist in the prose, pointing at a published post's final URL (trailing slash, never a redirect, a retired page or the bare apex). Prefer the links the spec counts: Make a night of it picks, the neighbourhood guide, the recipe card, the chef page, nearby reviews.
+- **Make a night of it links**: Make a night of it picks are the author's, imported from Notion into the record (`locales.*.makeANight` in `src/content/date-spots.json`); a pick with no published Date Spot shows unlinked. The one link edit there: when a pick's venue now has a published Date Spot, add that Date Spot's id as the pick's `spotId`, in both locales, changing nothing else in the pick. Never set `makeANight` in a Companion File: it would replace the author's picks.
 
 Nothing else. In particular, do not change the verdict or its reason, Good-for or When-it-works signals, Spot Type, category, neighbourhood, Checked date, update lines, Google Snapshot lines, Instagram handle or booking link. Those are Victor's calls.
 
@@ -48,6 +49,6 @@ Nothing else. In particular, do not change the verdict or its reason, Good-for o
 4. Run `npm run check` and `npm run build` again. Both must pass.
 5. If you changed anything, open one PR from a `chore/seo-maintenance-YYYY-MM-DD` branch. The body lists every changed field as before and after, with the reason (validator warning, ranking data, or rule).
 6. Collect prose suggestions (spelling, grammar, punctuation, an H2 that could be phrased as the question a searcher would type, an overlong paragraph) into one issue titled `SEO prose suggestions: YYYY-MM-DD`. Quote the sentence, name the post and the Notion row, and propose the fix. These are for Victor to make in Notion; the Importer carries them over on the next sync. Close last week's issue as superseded.
-7. Report content gaps (for example a neighbourhood with no Date Spots) in the same issue under "Gaps". Reporting a gap is fine; filling it is not.
+7. Report content gaps (for example a neighbourhood with no Date Spots, or a Make a night of it pick whose venue has no Date Spot page yet) in the same issue under "Gaps". Reporting a gap is fine; filling it is not.
 
 If nothing needs changing, open no PR, and open the issue only when there are suggestions.
