@@ -34,6 +34,11 @@
           "occasion": "anniversary",
           "assessment": "not-for",
           "reason": "Lively and bright rather than intimate. Save it for the morning after."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "A daytime room at heart. Dinner runs Thursday and Friday only, and the doors shut at 22:00."
         }
       ],
       "imageAlt": "Crispy devilled Brussels sprouts with caramelized edges and sweet-savory glaze served at McKiernan restaurant in Montreal's Sud-Ouest neighbourhood"
@@ -65,6 +70,11 @@
           "occasion": "anniversary",
           "assessment": "not-for",
           "reason": "Animé et lumineux plutôt qu'intime. Garde-le pour le lendemain matin."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "Une salle de jour avant tout. Le souper n'est servi que le jeudi et le vendredi, et les portes ferment à 22 h."
         }
       ],
       "metaTitle": "McKiernan, Ville-Émard : brunch et date",

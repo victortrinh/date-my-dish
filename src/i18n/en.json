@@ -290,7 +290,8 @@
       "casual-midweek": "Casual midweek",
       "impressing-a-cook": "Impressing a cook",
       "double-date": "Double date",
-      "solo-at-the-bar": "Solo at the bar"
+      "solo-at-the-bar": "Solo at the bar",
+      "late-night": "Late night"
     },
     "dishTag": {
       "order-this": "Order this",
@@ -309,7 +310,8 @@
     },
     "timing": {
       "before": "Before",
-      "after": "After"
+      "after": "After",
+      "before-or-after": "Before or after"
     },
     "category": {
       "activities-sports": "Activities and Sports",
@@ -421,6 +423,8 @@
     "nightKickerBar": "Before or after drinks",
     "nightTitle": "Make a night of it",
     "nightIntro": "All within a fifteen minute walk. Each one opens its own page with hours, cost and what it is actually like.",
+    "nightIntroNearby": "Close by, for before or after.",
+    "nightIntroLinked": "A linked name opens its own page with hours and cost.",
     "walk": "{minutes} min walk",
     "minutes": "{minutes} min",
     "moreNearby": "{count} more nearby →",

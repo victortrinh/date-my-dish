@@ -148,7 +148,7 @@ export function traceHeading(candidate, headings, venueName = "") {
 // which DMD writes and the spec allows.
 export const UNCHECKED_KEYS = new Set([
   "slug", "metaTitle", "metaDescription", "imageAlt", "alt", "imageCredit", "imageCaption", "sourceNotes", "factNotes",
-  "photo", "spotId", "recipeId", "profileId", "moment", "tag", "occasion", "assessment", "timing", "advice", "byline",
+  "photo", "spotId", "recipeId", "profileId", "moment", "tag", "occasion", "assessment", "timing", "advice", "byline", "category",
   "date", "role", "credit", "walkMinutes", "visits", "courses",
 ]);
 

@@ -19,9 +19,15 @@ for (const [locale, route] of Object.entries(restaurant)) {
     await expect(page.locator("#verdict [data-verdict]")).toHaveAttribute("data-verdict", "favourite");
     await expect(page).toHaveTitle(new RegExp(`Companion ${locale.toUpperCase()} Title`));
     await expect(page.locator("#note time")).toHaveAttribute("datetime", "2026-01-04");
-    // Make a night of it: published picks only, in the fixed category order.
-    await expect(page.locator("[data-night-pick]")).toHaveCount(2);
-    expect(await page.locator("[data-night-pick]").evaluateAll((cards) => cards.map((card) => card.getAttribute("data-category")))).toEqual(["nature-scenic", "social-romantic"]);
+    // The verdict paragraph sets the one-line reason in ink where it stands, once.
+    await expect(page.locator("#verdict strong")).toHaveCount(1);
+    await expect(page.locator("#verdict strong")).toContainText("[TEST ONLY] verdict reason");
+    // Make a night of it, in the fixed category order: published picks link
+    // to their page, a pick with no page shows its name unlinked.
+    await expect(page.locator("[data-night-pick]")).toHaveCount(3);
+    expect(await page.locator("[data-night-pick]").evaluateAll((cards) => cards.map((card) => card.getAttribute("data-category")))).toEqual(["games-entertainment", "nature-scenic", "social-romantic"]);
+    expect(await page.locator("[data-night-pick]").evaluateAll((cards) => cards.map((card) => card.getAttribute("data-linked")))).toEqual(["false", "true", "true"]);
+    await expect(page.locator('[data-night-pick][data-linked="false"] a')).toHaveCount(0);
     // The venue's Google number is shown dated and labelled as theirs.
     await expect(page.locator("aside")).toContainText(locale === "en" ? "Their rating on Google, not ours." : "Leur note sur Google, pas la nôtre.");
     for (const href of await page.locator("article a[href^='/']").evaluateAll((links) => links.map((link) => link.getAttribute("href")))) {

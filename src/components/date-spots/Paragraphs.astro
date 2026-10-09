@@ -1,8 +1,14 @@
 ---
 // Copy fields separate paragraphs with a blank line. An absent field
-// renders nothing.
-interface Props { text?: string; class?: string; }
-const { text = "", class: className } = Astro.props;
+// renders nothing. `emphasis` sets its first occurrence in ink and bold
+// where it stands (the verdict reason inside the verdict paragraph).
+interface Props { text?: string; class?: string; emphasis?: string; }
+const { text = "", class: className, emphasis } = Astro.props;
 const paragraphs = text.split(/\n\s*\n/).map((paragraph) => paragraph.trim()).filter(Boolean);
+const marked = emphasis ? paragraphs.findIndex((paragraph) => paragraph.includes(emphasis)) : -1;
 ---
-{paragraphs.map((paragraph) => <p class={className}>{paragraph}</p>)}
+{paragraphs.map((paragraph, index) => {
+  if (index !== marked || !emphasis) return <p class={className}>{paragraph}</p>;
+  const at = paragraph.indexOf(emphasis);
+  return <p class={className}>{paragraph.slice(0, at)}<strong class="font-bold text-ink">{emphasis}</strong>{paragraph.slice(at + emphasis.length)}</p>;
+})}

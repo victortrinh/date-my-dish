@@ -45,7 +45,7 @@ The seven reviews published before the rework lived at `/en/reviews/{slug}-montr
 No numbers from DMD anywhere: no rating, date score, stars or ranking.
 
 - **Verdict**: stored as `favourite`, `conditional` or `pass`; displayed as `A favourite`, `Depends on the night`, `Not our first pick`. Always paired with a one-line reason. It is also the listing filter ("Filter by our take"). Keep `favourite` scarce, about one in four; the build warns above that.
-- **Good-for and When-it-works rows**: `Ideal`, `Works, with a caveat`, `Not the one`, each with a reason line.
+- **Good-for and When-it-works rows**: `Ideal`, `Works, with a caveat`, `Not the one`, each with a reason line. A review's Good for rows use the fixed occasions: First date, Anniversary, Casual midweek, Impressing a cook, Double date, Solo at the bar, Late night.
 - **Google rating**: the venue's own number, shown only in the essentials card as a dated snapshot ("4.6 · 312 reviews, as of 18 September 2026, not updated since") and labelled as theirs. A recheck appends a new dated line and never overwrites. It never appears in DMD's structured data.
 
 ## What every post must have, and what is optional
@@ -65,9 +65,9 @@ Required:
 7. Byline and visit or payment disclosure.
 8. EN and FR versions.
 
-Optional, in design order: Good for (up to 6 rows), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, opening hours, Instagram, the Google snapshot, Book and Map links.
+Optional, in design order: the author's full verdict paragraph (shown under the verdict, with the one-line reason set in ink where it stands), Good for (one row per occasion, up to 7), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, opening hours, Instagram, the Google snapshot, Book and Map links.
 
-**Make a night of it** shows 1 to 5 cards, always in this order: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. A card appears only when its Date Spot page is published. With no published picks the section is hidden.
+**Make a night of it** shows 1 to 5 cards, one per category, always in this order: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. Each card is the author's pick: category, venue name, before or after, the distance and cost as written, and the blurb. A pick whose Date Spot page is published links to it; a pick with no published page shows the same card without a link, and becomes a link once its page is published. A `[SPOT NEEDED]` slot and the author's notes to DMD stay out. With no picks the section is hidden.
 
 ### Date Spot
 
@@ -166,7 +166,7 @@ The FR is translated section by section from the section-fitted EN, so both keep
 1. **Importer** (Claude cloud routine on Victor's claude.ai account, Wednesdays): fetches the next eligible Notion row, downloads and optimises its images, fits the text into sections, applies the allowed edits, translates to FR, writes or updates the collection JSON and the companion file, and opens a draft PR listing every edit, the section mapping, unplaced text and the translation.
 2. **Deterministic checks**, run by the routine and again by CI on the PR: Notion fetch, image optimisation, verbatim check, publish gate (required fields, EN and FR parity, append-only Google snapshots and update lines, links resolve), source and build validators, performance budgets.
 3. **Merge** is the act of publishing. Nothing else publishes.
-4. **Updates**: when a published Notion row is edited (detected by its last-edited time), the importer opens an update PR that keeps the companion file intact. A changed verdict or signal needs a new dated update line.
+4. **Updates**: when a published Notion row is edited (detected by its last-edited time), the importer opens an update PR that keeps the companion file intact. A changed verdict, or a changed or removed signal, needs a new dated update line; a signal row added for an occasion that had none does not.
 5. **Failure**: nothing on the site changes. The importer opens or updates a `notion-story` issue saying what blocked it.
 
 `notion/published.json` records which Notion rows are live and when they were last synced.

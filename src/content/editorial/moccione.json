@@ -34,6 +34,11 @@
           "occasion": "casual-midweek",
           "assessment": "not-for",
           "reason": "Nothing here is quick or cheap."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "Dinner here runs two hours or more and wants you ordering in layers, so it's the evening itself rather than the end of one."
         }
       ],
       "imageAlt": "Warm, intimate dining room at Moccione in Villeray, Montreal, with candlelit tables and a cozy Italian restaurant atmosphere perfect for a date night"
@@ -65,6 +70,11 @@
           "occasion": "casual-midweek",
           "assessment": "not-for",
           "reason": "Rien ici n'est rapide ni bon marché."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "Le souper ici dure deux heures ou plus et se commande par vagues, alors c'est la soirée elle-même plutôt que la fin d'une soirée."
         }
       ],
       "metaTitle": "Moccione, Villeray : critique et souper à deux",

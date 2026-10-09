@@ -34,6 +34,11 @@
           "occasion": "first-date",
           "assessment": "not-for",
           "reason": "It can feel like you're making a statement, and for me the statement isn't quite worth it here."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "caveat",
+          "reason": "There's a full a la carte alongside the tasting menu, so a late glass and a plate is on. Confirm the kitchen's last call, since the room is built around the long menu."
         }
       ],
       "imageAlt": "Warm, intimate dining room at Hoogan et Beaufort Montreal with pendant lights and live-fire kitchen visible in the background"
@@ -65,6 +70,11 @@
           "occasion": "first-date",
           "assessment": "not-for",
           "reason": "Ça peut avoir l'air d'une déclaration, et pour moi la déclaration n'en vaut pas tout à fait la peine ici."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "caveat",
+          "reason": "Il y a une carte complète à côté du menu dégustation, alors un dernier verre et une assiette, c'est possible. Confirme l'heure du dernier service en cuisine, puisque la salle est pensée pour le long menu."
         }
       ],
       "metaTitle": "Hoogan et Beaufort, Rosemont : critique",

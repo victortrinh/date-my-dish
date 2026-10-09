@@ -33,25 +33,35 @@ const stable = (value) => Array.isArray(value)
     : value;
 const same = (a, b) => JSON.stringify(stable(a)) === JSON.stringify(stable(b));
 
-function recommendation(record) {
-  return {
-    verdict: record.reviewVerdict ?? null,
-    goodFor: record.locales?.en?.goodFor ?? null,
-    whenItWorks: record.locales?.en?.whenItWorks ?? null,
-  };
+/**
+ * Did the recommendation readers already saw change? The verdict, or any
+ * signal row that was live: changed or removed. A row added for an occasion
+ * that had none (the author's row, placed later) changes nothing already
+ * published, so it needs no update line.
+ */
+function recommendationChanged(record, previous) {
+  if ((record.reviewVerdict ?? null) !== (previous.reviewVerdict ?? null)) return true;
+  for (const [field, key] of [["goodFor", "occasion"], ["whenItWorks", "situation"]]) {
+    const rows = record.locales?.en?.[field] ?? [];
+    for (const before of previous.locales?.en?.[field] ?? []) {
+      const after = rows.find((row) => row[key] === before[key]);
+      if (!after || !same(after, before)) return true;
+    }
+  }
+  return false;
 }
 
 /**
  * A published post cannot silently change its recommendation: a changed
- * verdict or signal needs a new dated update line in both locales, dated
- * after the previous Checked date.
+ * verdict, or a changed or removed signal, needs a new dated update line in
+ * both locales, dated after the previous Checked date.
  * @param {Record<string, any>} record merged record as it will publish
  * @param {Record<string, any> | null | undefined} previous merged record as it is live now
  * @returns {string[]}
  */
 export function checkDatedUpdate(record, previous) {
   if (!previous || record.postType !== "date-spot") return [];
-  if (same(recommendation(record), recommendation(previous))) return [];
+  if (!recommendationChanged(record, previous)) return [];
   const previousChecked = previous.freshness?.lastChecked ?? previous.freshness?.published;
   return ["en", "fr-CA"]
     .filter((locale) => !(record.locales?.[locale]?.materialUpdates ?? []).some((update) => update.date > previousChecked))
