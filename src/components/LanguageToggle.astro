@@ -33,8 +33,9 @@ if (alternatePath) {
 
 <a
   href={toggleUrl}
-  class="inline-flex items-center rounded-full border border-warm-200 dark:border-warm-600 px-2.5 py-1 font-ui text-xs font-medium text-warm-600 dark:text-warm-400 no-underline transition-colors hover:border-brand-wine hover:text-brand-wine"
+  class="inline-flex h-10 items-center rounded-full px-3 font-ui text-caption font-semibold tracking-[0.14em] text-ink-muted no-underline transition-colors duration-(--duration-quick) hover:bg-surface-sunken hover:text-ink"
   aria-label={t(locale, "lang.switchTo")}
+  hreflang={targetLocale}
 >
-  {locale === "en" ? "EN/FR" : "FR/EN"}
+  {targetLocale === "fr" ? "FR" : "EN"}
 </a>

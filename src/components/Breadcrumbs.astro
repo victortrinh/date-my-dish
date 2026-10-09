@@ -33,21 +33,17 @@ const jsonLd = {
 };
 ---
 
-<nav aria-label={t(locale, "nav.breadcrumb")} class="no-print mb-4">
-  <ol class="flex flex-wrap items-center gap-1 text-sm text-warm-500 dark:text-warm-400">
+<nav aria-label={t(locale, "nav.breadcrumb")} class="no-print mb-6">
+  <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-ui text-caption text-ink-subtle">
     {breadcrumbs.map((item, i) => (
-      <li class="flex items-center gap-1">
-        {i > 0 && (
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-warm-500 dark:text-warm-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        )}
+      <li class="flex items-center gap-2">
+        {i > 0 && <span aria-hidden="true" class="text-line">/</span>}
         {item.href && i < breadcrumbs.length - 1 ? (
-          <a href={item.href} class="text-warm-600 dark:text-warm-400 no-underline hover:text-brand-wine">
+          <a href={item.href} class="link-draw text-ink-subtle hover:text-ink">
             {item.label}
           </a>
         ) : (
-          <span class="font-medium text-warm-700 dark:text-warm-300">{item.label}</span>
+          <span class="text-ink" aria-current="page">{item.label}</span>
         )}
       </li>
     ))}
