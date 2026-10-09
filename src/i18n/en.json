@@ -1,7 +1,8 @@
 {
   "site": {
     "name": "Date My Dish",
-    "tagline": "Where to go, what to drink, what to make for someone."
+    "tagline": "Where to go, what to drink, what to make for someone.",
+    "homeLabel": "Date My Dish, home"
   },
   "nav": {
     "home": "Home",

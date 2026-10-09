@@ -2,53 +2,151 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ─── Design tokens: Greystone evening ──────────────────────────────────
+   Plateau limestone, wrought-iron black, one warm lit-window amber.
+   Two tiers. Semantic tokens (below, as CSS custom properties) flip with
+   the theme, so components that use them need no `dark:` variant:
+     bg-surface / bg-surface-raised / bg-surface-sunken / bg-iron
+     text-ink / text-ink-muted / text-ink-subtle / text-accent-ink / text-on-accent
+     border-line / border-line-strong / bg-accent
+     text-verdict-{favourite,conditional,pass}
+   The static stone ramp (warm-*) and the brand-wine / brand-rose names are
+   legacy aliases kept so the post templates keep rendering until they move
+   to the semantic tokens (redesign phases 2 and 3); new code never uses them.
+   Never write a raw hex colour in a component (validate-source fails it).
+   DESIGN.md is the reference. */
+
+:root {
+  --surface: #e7e5e1;
+  --surface-raised: #f2f1ee;
+  --surface-sunken: #dcd9d3;
+  --ink: #1b1c1e;
+  --ink-muted: #424347;
+  --ink-subtle: #5d5e62;
+  --line: #c7c3bc;
+  --line-strong: #1b1c1e;
+  --accent: #e8a33d;
+  --accent-ink: #7c4a00;
+  --on-accent: #1b1c1e;
+  --iron: #1b1c1e;
+  --on-iron: #ece9e3;
+  --on-iron-muted: #a8a49c;
+  --verdict-favourite: #7c4a00;
+  --verdict-conditional: #424347;
+  --verdict-pass: #5d5e62;
+  --scrim: rgb(27 28 30 / 0.55);
+  color-scheme: light;
+}
+
+:root.dark {
+  --surface: #16171a;
+  --surface-raised: #1f2024;
+  --surface-sunken: #101114;
+  --ink: #ece9e3;
+  --ink-muted: #bab6ae;
+  --ink-subtle: #908d86;
+  --line: #2f3136;
+  --line-strong: #ece9e3;
+  --accent: #f0b254;
+  --accent-ink: #f0b254;
+  --on-accent: #16171a;
+  --iron: #101114;
+  --on-iron: #ece9e3;
+  --on-iron-muted: #a8a49c;
+  --verdict-favourite: #f0b254;
+  --verdict-conditional: #bab6ae;
+  --verdict-pass: #908d86;
+  --scrim: rgb(0 0 0 / 0.65);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-on-accent: var(--on-accent);
+  --color-iron: var(--iron);
+  --color-on-iron: var(--on-iron);
+  --color-on-iron-muted: var(--on-iron-muted);
+  --color-verdict-favourite: var(--verdict-favourite);
+  --color-verdict-conditional: var(--verdict-conditional);
+  --color-verdict-pass: var(--verdict-pass);
+  --color-scrim: var(--scrim);
+}
+
 @theme {
-  --color-brand-wine: #7b2d3b;
-  --color-brand-wine-text: #7b2d3b;
-  --color-brand-wine-dark: #c4697a;
+  /* Legacy aliases (static, do not flip). See the note above. */
+  --color-brand-wine: #7c4a00;
+  --color-brand-wine-text: #7c4a00;
+  --color-brand-wine-dark: #f0b254;
+  --color-brand-rose: #e8a33d;
+  --color-brand-rose-text: #7c4a00;
+  --color-brand-rose-dark: #c98a2a;
 
-  --color-brand-rose: #d4a08a;
-  --color-brand-rose-text: #8b5a45;
-  --color-brand-rose-dark: #b8896e;
+  --color-warm-50: #f2f1ee;
+  --color-warm-100: #e7e5e1;
+  --color-warm-200: #d9d6d0;
+  --color-warm-300: #c4c0b8;
+  --color-warm-400: #9c9890;
+  --color-warm-500: #606165;
+  --color-warm-600: #4f5055;
+  --color-warm-700: #3a3b40;
+  --color-warm-800: #2a2b30;
+  --color-warm-900: #1f2024;
+  --color-warm-950: #16171a;
 
-  --color-warm-50: #faf7f5;
-  --color-warm-100: #f3eeeb;
-  --color-warm-200: #e4dbd8;
-  --color-warm-300: #cbc0bd;
-  --color-warm-400: #a19491;
-  --color-warm-500: #786a68;
-  --color-warm-600: #584c4b;
-  --color-warm-700: #433739;
-  --color-warm-800: #2d2226;
-  --color-warm-900: #1f1a1c;
-  --color-warm-950: #1e1416;
+  /* Type: Young Serif for display (one weight, upright), Libre Caslon Text
+     for reading, Hanken Grotesk for UI and captions. */
+  --font-display: "Young Serif", Georgia, serif;
+  --font-heading: "Young Serif", Georgia, serif;
+  --font-body: "Libre Caslon Text", Georgia, serif;
+  --font-ui: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-caveat: "Libre Caslon Text", Georgia, serif;
 
-  --font-heading: "Playfair Display", serif;
-  --font-body: "Source Serif 4", serif;
-  --font-ui: Inter, sans-serif;
-  --font-caveat: Caveat, cursive;
-
-  --text-display: 3.5rem;
-  --text-display--line-height: 1.1;
-  --text-heading-1: 2.5rem;
-  --text-heading-1--line-height: 1.2;
-  --text-heading-2: 1.875rem;
-  --text-heading-2--line-height: 1.3;
+  --text-display: 4.5rem;
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.02em;
+  --text-heading-1: 3rem;
+  --text-heading-1--line-height: 1.08;
+  --text-heading-1--letter-spacing: -0.015em;
+  --text-heading-2: 2rem;
+  --text-heading-2--line-height: 1.15;
+  --text-heading-2--letter-spacing: -0.01em;
   --text-heading-3: 1.5rem;
-  --text-heading-3--line-height: 1.4;
+  --text-heading-3--line-height: 1.25;
   --text-body-lg: 1.125rem;
   --text-body-lg--line-height: 1.7;
   --text-body-sm: 0.875rem;
   --text-body-sm--line-height: 1.6;
   --text-caption: 0.75rem;
   --text-caption--line-height: 1.5;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.4;
+  --text-eyebrow--letter-spacing: 0.14em;
 
-  --spacing-section: 5rem;
-  --spacing-section-sm: 3rem;
+  --spacing-section: 7rem;
+  --spacing-section-sm: 4rem;
 
-  --container-content: 72rem;
+  --container-content: 76rem;
   --container-prose: 56rem;
   --container-narrow: 48rem;
+  --container-measure: 38rem;
+
+  /* One corner language: square or fully round, plus the greystone arch. */
+  --radius-sm: 2px;
+  --radius-arch: 999px 999px 0 0;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-quick: 160ms;
+  --duration-base: 320ms;
+  --duration-slow: 640ms;
 }
 
 @layer base {
@@ -57,15 +155,21 @@
   }
 
   body {
-    @apply font-body text-warm-800 antialiased dark:text-warm-50;
+    @apply bg-surface font-body text-ink antialiased;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply font-heading font-normal;
+    @apply font-display font-normal text-balance;
+    /* Young Serif ships one upright weight: never fake bold or italic. */
+    font-synthesis: none;
   }
+
+  h1 { @apply text-heading-1; }
+  h2 { @apply text-heading-2; }
+  h3 { @apply text-heading-3; }
 
   /* Headings get scroll-margin to clear sticky nav */
   h2,
@@ -74,17 +178,21 @@
   }
 
   a {
-    @apply text-brand-wine-text transition-colors hover:text-brand-rose-text dark:text-brand-wine-dark dark:hover:text-brand-rose;
+    @apply text-accent-ink underline-offset-4 transition-colors duration-(--duration-quick) hover:text-ink;
+  }
+
+  ::selection {
+    @apply bg-accent text-on-accent;
   }
 }
 
 @layer components {
   .prose h2 {
-    @apply mt-10 mb-4 text-heading-2 font-bold text-warm-800 dark:text-warm-100;
+    @apply mt-12 mb-4 text-heading-2 text-ink;
   }
 
   .prose h3 {
-    @apply mt-8 mb-3 text-heading-3 font-semibold text-warm-800 dark:text-warm-200;
+    @apply mt-10 mb-3 text-heading-3 text-ink;
   }
 
   .prose p {
@@ -104,62 +212,110 @@
   }
 
   .prose img {
-    @apply my-8 max-w-full rounded-lg sm:max-w-[75%] lg:max-w-[75%];
+    @apply my-8 max-w-full sm:max-w-[75%] lg:max-w-[75%];
   }
 
   .prose blockquote {
-    @apply my-6 border-l-4 border-brand-wine pl-4 italic text-warm-500 dark:text-warm-400 dark:border-brand-wine-dark;
+    @apply my-6 border-l-2 border-accent pl-4 italic text-ink-muted;
   }
 
   .prose a {
-    @apply text-brand-wine-text underline decoration-brand-wine/30 underline-offset-2 transition-colors hover:text-brand-rose-text hover:decoration-brand-rose/50;
+    @apply text-accent-ink underline decoration-1 underline-offset-4 hover:text-ink;
   }
 
-  /* ─── Button system ─────────────────────────────────────────────────── */
+  /* ─── Layout ─────────────────────────────────────────────────────────── */
 
-  /* Base: shared layout, font, and transition. Combine with a variant below. */
+  .page-container {
+    @apply mx-auto w-full max-w-content px-4 sm:px-8;
+  }
+
+  /* Small tracked caption above a heading: a section or post label. */
+  .eyebrow {
+    @apply font-ui text-eyebrow font-medium uppercase text-ink-subtle;
+  }
+
+  /* ─── Buttons ────────────────────────────────────────────────────────── */
+
+  /* Base: shared shape, type and motion. Combine with one variant. */
   .btn {
-    @apply inline-flex items-center gap-2 rounded-lg font-ui text-sm font-medium transition-colors;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-transparent px-6 py-3 font-ui text-body-sm font-medium no-underline transition duration-(--duration-quick) ease-(--ease-out) active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60;
   }
 
-  /* Filled wine burgundy — primary CTAs (hero, view-all alternative) */
+  /* Iron: the main action on a page (Book, Subscribe, Home). */
   .btn-primary {
-    @apply bg-brand-wine px-6 py-3 text-white no-underline shadow-sm hover:bg-brand-wine/90 hover:text-white dark:text-white dark:hover:text-white;
+    @apply bg-ink text-surface hover:bg-accent hover:text-on-accent;
   }
 
-  /* Filled rose gold — jump-to-recipe and accent CTAs */
+  /* Lit window: the one warm call to action in a block. */
   .btn-accent {
-    @apply bg-brand-rose px-6 py-3 font-semibold text-white no-underline shadow-sm hover:bg-brand-rose-dark hover:text-white hover:shadow-md dark:text-white dark:hover:text-white;
+    @apply bg-accent text-on-accent hover:bg-ink hover:text-surface;
   }
 
-  /* Bordered neutral — secondary actions (print, share) */
-  .btn-outline {
-    @apply border border-warm-200 px-5 py-3 text-warm-600 hover:bg-warm-100 dark:border-warm-600 dark:text-warm-400 dark:hover:bg-warm-800;
+  /* Outline: secondary actions (Map, View all). */
+  .btn-secondary {
+    @apply border-line-strong text-ink hover:bg-ink hover:text-surface;
   }
 
-  /* Bordered brand — "View all" links */
-  .btn-outline-brand {
-    @apply border-2 border-brand-wine px-6 py-2.5 font-semibold text-brand-wine-text no-underline hover:bg-brand-wine hover:text-white dark:text-white dark:hover:text-white;
+  /* Icon-only controls in the header (search, theme, menu). */
+  .btn-icon {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-full text-ink-muted transition-colors duration-(--duration-quick) hover:bg-surface-sunken hover:text-ink;
   }
 
-  /* Ghost — icon-only nav buttons */
-  .btn-ghost {
-    @apply p-2 text-warm-400 hover:bg-warm-100 hover:text-warm-600 dark:text-warm-500 dark:hover:bg-warm-800 dark:hover:text-warm-300;
+  /* Text link with an underline that draws in on hover. */
+  .link-draw {
+    @apply text-ink no-underline;
+    background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+    transition: background-size var(--duration-base) var(--ease-out), color var(--duration-quick);
+  }
+  .link-draw:hover,
+  .link-draw[aria-current] {
+    @apply text-ink;
+    background-size: 100% 1px;
+  }
+
+  /* Filter chip: pairs with aria-pressed. */
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 font-ui text-body-sm text-ink-muted no-underline transition-colors duration-(--duration-quick) hover:border-line-strong hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-surface;
+  }
+
+  /* A set-apart block (essentials, newsletter). Used sparingly. */
+  .card {
+    @apply rounded-sm bg-surface-raised p-6 sm:p-8;
+  }
+
+  /* The greystone window: an arched frame for a photo. */
+  .arch {
+    @apply overflow-hidden rounded-arch;
   }
 }
 
-/* Scroll-triggered stagger animations — children cascade in one by one */
-[data-animate-stagger] > * {
-  opacity: 0;
-  transform: translateY(1.5rem);
-  transition:
-    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+/* Pagefind UI: themed through its own custom properties, from the semantic
+   tokens, so it follows light and dark without per-colour overrides.
+   Prefixed with :root because pagefind-ui.css loads after this file. */
+:root .pagefind-ui {
+  --pagefind-ui-primary: var(--ink);
+  --pagefind-ui-text: var(--ink);
+  --pagefind-ui-background: var(--surface-raised);
+  --pagefind-ui-border: var(--line);
+  --pagefind-ui-tag: var(--surface-sunken);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 2px;
+  --pagefind-ui-font: var(--font-ui);
 }
-
-[data-animate-stagger] > .animate-in {
-  opacity: 1;
-  transform: none;
+:root.dark .pagefind-ui {
+  --pagefind-ui-primary: var(--ink);
+  --pagefind-ui-text: var(--ink);
+  --pagefind-ui-background: var(--surface-raised);
+  --pagefind-ui-border: var(--line);
+  --pagefind-ui-tag: var(--surface-sunken);
+}
+:root .pagefind-ui mark {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+:root .pagefind-ui .pagefind-ui__result-excerpt,
+:root .pagefind-ui .pagefind-ui__message {
+  color: var(--ink-muted);
 }
 
 /* Focus indicators — visible for keyboard, hidden for mouse/touch */
@@ -168,12 +324,8 @@
 }
 
 *:focus-visible {
-  outline: 3px solid var(--color-brand-wine);
-  outline-offset: 2px;
-}
-
-:root.dark *:focus-visible {
-  outline-color: var(--color-brand-rose);
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 3px;
 }
 
 /* Reduced motion — disable animations for vestibular-sensitive users */
@@ -189,12 +341,6 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  [data-animate-stagger] > * {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
   }
 }
 

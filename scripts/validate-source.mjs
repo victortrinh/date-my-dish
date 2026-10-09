@@ -4,6 +4,8 @@
  * (exit 1) on source-level mistakes:
  *
  *   1. <Picture> without fallbackFormat  -> Astro emits a huge PNG <img> fallback
+ *   2. Raw hex colours and arbitrary shadow, radius or colour utilities in
+ *      components, layouts and pages -> the design system drifts (lesson 27)
  *
  * Recipe/article tag-translation and EN/FR tag-parity checks were removed
  * when recipes and articles were retired from public generation (#498):
@@ -19,6 +21,7 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
+import { findDesignViolations } from "./design-tokens-guard.mjs";
 
 const errors = [];
 const err = (msg) => errors.push(msg);
@@ -48,6 +51,15 @@ for (const file of walk("src").filter((f) => /\.(astro|mdx)$/.test(f))) {
   }
 }
 
+// ---- 2. Design tokens only ------------------------------------------------
+// Colour, shadow and radius come from src/styles/global.css. See DESIGN.md.
+
+for (const dir of ["src/components", "src/layouts", "src/pages"]) {
+  for (const file of walk(dir).filter((f) => f.endsWith(".astro"))) {
+    for (const message of findDesignViolations(readFileSync(file, "utf-8"), file)) err(message);
+  }
+}
+
 // ---- report ----------------------------------------------------------------
 
 if (errors.length) {
@@ -56,4 +68,4 @@ if (errors.length) {
   console.error("\nFix these before building (see CLAUDE.md SEO lessons).");
   process.exit(1);
 }
-console.log("✅ validate-source: Picture fallbacks all pass.");
+console.log("✅ validate-source: Picture fallbacks and design tokens all pass.");
