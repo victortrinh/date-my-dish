@@ -1,0 +1,76 @@
+{
+  "id": "mckiernan",
+  "spotType": "restaurant",
+  "reviewVerdict": "favourite",
+  "neighbourhood": "Ville-Émard",
+  "instagram": "mckiernanmtl",
+  "locales": {
+    "en": {
+      "metaTitle": "McKiernan, Ville-Émard: Brunch & Date Guide",
+      "metaDescription": "Rotisserie brunch by the Lachine Canal from the Joe Beef group, now trading as McKiernan Rotisserie. What to order, what it costs, and the canal walk after.",
+      "verdictReason": "A lively brunch and lunch in a large industrial room with plenty of daylight.",
+      "goodFor": [
+        {
+          "occasion": "casual-midweek",
+          "assessment": "ideal",
+          "reason": "Exactly what it's built for. Coffee, a couple of plates, out the door."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "ideal",
+          "reason": "Big room, good pacing, shareable plates. Everyone leaves happy."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "ideal",
+          "reason": "Brunch makes conversation easy and low pressure, and the canal gives you a natural second act."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "caveat",
+          "reason": "Very Montreal in the best way, and the group's pedigree carries weight. It's comfort food, not a technical showcase."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "not-for",
+          "reason": "Lively and bright rather than intimate. Save it for the morning after."
+        }
+      ],
+      "imageAlt": "Crispy devilled Brussels sprouts with caramelized edges and sweet-savory glaze served at McKiernan restaurant in Montreal's Sud-Ouest neighbourhood"
+    },
+    "fr-CA": {
+      "verdictReason": "Un brunch-lunch animé dans une grande salle industrielle baignée de lumière.",
+      "goodFor": [
+        {
+          "occasion": "casual-midweek",
+          "assessment": "ideal",
+          "reason": "Exactement ce pour quoi c'est fait. Un café, quelques assiettes, et on repart."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "ideal",
+          "reason": "Grande salle, bon rythme, assiettes à partager. Tout le monde repart content."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "ideal",
+          "reason": "Le brunch rend la conversation facile et sans pression, et le canal te donne un deuxième acte naturel."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "caveat",
+          "reason": "Très montréalais dans le meilleur sens, et le pedigree du groupe compte. C'est du comfort food, pas une démonstration technique."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "not-for",
+          "reason": "Animé et lumineux plutôt qu'intime. Garde-le pour le lendemain matin."
+        }
+      ],
+      "metaTitle": "McKiernan, Ville-Émard : brunch et date",
+      "metaDescription": "Le brunch rôtisserie au bord du Canal Lachine, par l'équipe de Joe Beef. Quoi commander, combien ça coûte, et la marche le long du canal pour finir la matinée.",
+      "imageAlt": "Choux de Bruxelles à la diable croustillants avec bords caramélisés et glaçage sucré-salé servis au restaurant McKiernan dans le Sud-Ouest de Montréal"
+    }
+  },
+  "lastChecked": "2026-09-24"
+}

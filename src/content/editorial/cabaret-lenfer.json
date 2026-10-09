@@ -1,0 +1,76 @@
+{
+  "id": "cabaret-lenfer",
+  "spotType": "restaurant",
+  "reviewVerdict": "pass",
+  "neighbourhood": "the Plateau",
+  "instagram": "cabaret.lenfer",
+  "locales": {
+    "en": {
+      "metaTitle": "Cabaret l'Enfer, the Plateau: An Honest Review",
+      "metaDescription": "Massimo Piedimonte's Michelin-listed tasting menu on Saint-Denis. Careful cooking, a loud room, small portions, and why it wasn't my favourite night out.",
+      "imageAlt": "A cook plating at the pass, seen from the counter",
+      "verdictReason": "For the same money in Montreal I'd book somewhere else.",
+      "goodFor": [
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "caveat",
+          "reason": "The view over the pass lets you watch the team plate each course. The counter is more compelling than the food itself."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "caveat",
+          "reason": "Loud enough that four people works better than two, but the three-hour limit means you're committed."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "not-for",
+          "reason": "You'll spend the evening leaning across the table, and you're locked into a fixed seven-course run before you know if you like each other."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "not-for",
+          "reason": "For a milestone I'd want a quieter room where conversation is easier."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "not-for",
+          "reason": "$165 before you've had a drink. Nothing about this is casual."
+        }
+      ]
+    },
+    "fr-CA": {
+      "verdictReason": "Pour le même prix à Montréal, je réserverais ailleurs.",
+      "goodFor": [
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "caveat",
+          "reason": "La vue sur le passe te permet de regarder l'équipe dresser chaque service. Le comptoir est plus captivant que la bouffe elle-même."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "caveat",
+          "reason": "Assez bruyant pour que ça marche mieux à quatre qu'à deux, mais la limite de trois heures veut dire que tu es engagé."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "not-for",
+          "reason": "Tu vas passer la soirée penché au-dessus de la table, et tu es pris dans un menu fixe de sept services avant de savoir si vous vous plaisez."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "not-for",
+          "reason": "Pour un moment marquant, je voudrais une salle plus calme où la conversation est plus facile."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "not-for",
+          "reason": "165 $ avant même un verre. Rien de tout ça n'est décontracté."
+        }
+      ],
+      "metaTitle": "Cabaret l'Enfer, the Plateau : critique",
+      "metaDescription": "Le menu dégustation de Massimo Piedimonte sur Saint-Denis, au Michelin. Cuisine soignée, salle bruyante, petites portions : pourquoi ça n'a pas été ma soirée.",
+      "imageAlt": "Un cuisinier dresse une assiette au passe, vu du comptoir"
+    }
+  },
+  "lastChecked": "2026-10-08"
+}

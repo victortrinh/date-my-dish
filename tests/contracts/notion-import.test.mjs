@@ -8,7 +8,7 @@ import { isEligible, venueKey, ELIGIBLE_POST_TYPES } from "../../scripts/notion-
 import { rowFromBlock } from "../../scripts/notion-story/notion.mjs";
 import { mapHeading, HEADING_MAP } from "../../scripts/notion-story/headings.mjs";
 import { parseBody, parseMetadata, sourceTexts, unmappedHeadings } from "../../scripts/notion-story/parse.mjs";
-import { verbatimCheck, traceHeading, unplacedText, sentences } from "../../scripts/notion-story/verbatim.mjs";
+import { verbatimCheck, traceHeading, traces, unplacedText, sentences } from "../../scripts/notion-story/verbatim.mjs";
 import { mergeCompanion, proposeCompanion, writeCompanion } from "../../scripts/notion-story/companion.mjs";
 import { classifyRows, eligibleRows, findDuplicates, nextWork } from "../../scripts/notion-story/rows.mjs";
 import {
@@ -190,6 +190,11 @@ test("the Verbatim Check fails a page with an added sentence and names it", () =
   const result = verbatimCheck(copy, moccione);
   assert.equal(result.ok, false);
   assert.deepEqual(result.offending, [{ path: "room", sentence: "The bread service alone is worth the trip across town." }]);
+});
+
+test("a one-word sentence traces only to that exact word, not a near spelling", () => {
+  assert.equal(traces("Paid", [["a", "pair", "of", "pain"]]), false);
+  assert.equal(traces("Paid", [["victor", "one", "visit", "paid"]]), true);
 });
 
 test("the Verbatim Check fails a changed opinion, a changed fact and text lifted from an INTERNAL note", () => {

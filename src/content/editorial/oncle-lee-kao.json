@@ -1,0 +1,76 @@
+{
+  "id": "oncle-lee-kao",
+  "spotType": "restaurant",
+  "reviewVerdict": "conditional",
+  "neighbourhood": "Old Montreal",
+  "instagram": "oncleleekao",
+  "locales": {
+    "en": {
+      "metaTitle": "Oncle Lee Kăo, Old Montreal: Review & Date Guide",
+      "metaDescription": "Andersen Lee's modern Chinese grill on rue McGill in Old Montreal. What to order, what it costs, and why it suits a double date better than a first one.",
+      "verdictReason": "Bring three friends rather than one.",
+      "goodFor": [
+        {
+          "occasion": "double-date",
+          "assessment": "ideal",
+          "reason": "Order a spread and share everything. The larger table suits the menu."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "ideal",
+          "reason": "The five-spice duck platter shows the kitchen's technique, and the grill work is central to the menu."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "caveat",
+          "reason": "You can control the total with three or four dishes, but nothing here is cheap."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "caveat",
+          "reason": "The room is polished, but it would not be my choice for a milestone."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "not-for",
+          "reason": "The food leans oily and heavy, and the sharing format works better once you already know each other."
+        }
+      ],
+      "imageAlt": "Oncle Lee Kăo's soaring dining room in Old Montreal, Michelin Bib Gourmand with burnt-orange leather accents and warm flattering lighting"
+    },
+    "fr-CA": {
+      "verdictReason": "Amène trois amis plutôt qu'un seul.",
+      "goodFor": [
+        {
+          "occasion": "double-date",
+          "assessment": "ideal",
+          "reason": "Commandez un spread et partagez tout. La plus grande table convient au menu."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "ideal",
+          "reason": "Le plateau de canard aux cinq épices montre la technique de la cuisine, et le travail au grill est au centre du menu."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "caveat",
+          "reason": "Tu peux contrôler le total avec trois ou quatre assiettes, mais rien ici n'est bon marché."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "caveat",
+          "reason": "La salle est soignée, mais ce ne serait pas mon choix pour un moment marquant."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "not-for",
+          "reason": "La bouffe penche grasse et lourde, et le format à partager marche mieux quand vous vous connaissez déjà."
+        }
+      ],
+      "metaTitle": "Oncle Lee Kăo, Old Montreal : critique",
+      "metaDescription": "Le grill chinois moderne d'Andersen Lee sur la rue McGill, dans le Vieux-Montréal. Quoi commander, combien ça coûte, et pourquoi c'est mieux en double date.",
+      "imageAlt": "Salle à manger à hauts plafonds d'Oncle Lee Kăo dans le Vieux-Montréal, Bib Gourmand Michelin avec cuir brûlé et éclairage chaleureux"
+    }
+  },
+  "lastChecked": "2026-09-24"
+}

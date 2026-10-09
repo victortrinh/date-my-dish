@@ -1,6 +1,70 @@
 {
   "version": 1,
   "entries": {
+    "3": {
+      "notionTitle": "Tangy Vietnamese Pickled Vegetables Recipe (Authentic Do Chua for Banh Mi)",
+      "slug": "vietnamese-pickled-vegetables",
+      "type": "recipe",
+      "publishedDate": "2026-02-28",
+      "lastSyncedDate": "2026-02-28",
+      "status": "published"
+    },
+    "7": {
+      "notionTitle": "Irresistible Vietnamese Fish Sauce Wings Recipe (Caramelized and Crispy)",
+      "slug": "vietnamese-fish-sauce-wings",
+      "type": "recipe",
+      "publishedDate": "2026-08-28",
+      "lastSyncedDate": "2026-08-28",
+      "status": "published"
+    },
+    "9": {
+      "notionTitle": "Bold Spicy Miso Ramen Recipe (Restaurant-Style at Home)",
+      "slug": "bold-spicy-miso-ramen",
+      "type": "recipe",
+      "publishedDate": "2026-06-12",
+      "lastSyncedDate": "2026-06-12",
+      "status": "published"
+    },
+    "15": {
+      "notionTitle": "Pork Osso Buco Recipe with Creamy Polenta (Italian Braised Perfection)",
+      "slug": "pork-osso-buco",
+      "type": "recipe",
+      "publishedDate": "2026-03-12",
+      "lastSyncedDate": "2026-03-12",
+      "status": "published"
+    },
+    "22": {
+      "notionTitle": "Northern Thai Beef Tartare Recipe",
+      "slug": "northern-thai-beef-tartare",
+      "type": "recipe",
+      "publishedDate": "2026-03-20",
+      "lastSyncedDate": "2026-03-20",
+      "status": "published"
+    },
+    "25": {
+      "notionTitle": "Why You Shouldn't Order a Well-Done Steak on a Date (Make a Great Impression)",
+      "slug": "well-done-steak-date-night",
+      "type": "article",
+      "publishedDate": "2026-02-28",
+      "lastSyncedDate": "2026-02-28",
+      "status": "published"
+    },
+    "28": {
+      "notionTitle": "The Secret to Deliciously Tender Stir-Fries: Mastering the Art of Velveting (Perfect for Date Night)",
+      "slug": "velveting-stir-fry-technique",
+      "type": "article",
+      "publishedDate": "2026-03-02",
+      "lastSyncedDate": "2026-03-02",
+      "status": "published"
+    },
+    "29": {
+      "notionTitle": "Unlock Restaurant-Quality Meals with Sous Vide Cooking for Date Night",
+      "slug": "sous-vide-date-night",
+      "type": "article",
+      "publishedDate": "2026-03-09",
+      "lastSyncedDate": "2026-03-09",
+      "status": "published"
+    },
     "30": {
       "notionTitle": "Here's How to Get Wok Hei at Home for a Memorable Date Night",
       "slug": "wok-hei-at-home",
@@ -17,76 +81,12 @@
       "lastSyncedDate": "2026-02-27",
       "status": "published"
     },
-    "35": {
-      "notionTitle": "Why You Shouldn't Wash Chicken on Date Night (and What to Do Instead)",
-      "slug": "why-not-wash-chicken",
-      "type": "article",
-      "publishedDate": "2026-02-27",
-      "lastSyncedDate": "2026-02-27",
-      "status": "published"
-    },
-    "25": {
-      "notionTitle": "Why You Shouldn't Order a Well-Done Steak on a Date (Make a Great Impression)",
-      "slug": "well-done-steak-date-night",
-      "type": "article",
-      "publishedDate": "2026-02-28",
-      "lastSyncedDate": "2026-02-28",
-      "status": "published"
-    },
-    "3": {
-      "notionTitle": "Tangy Vietnamese Pickled Vegetables Recipe (Authentic Do Chua for Banh Mi)",
-      "slug": "vietnamese-pickled-vegetables",
-      "type": "recipe",
-      "publishedDate": "2026-02-28",
-      "lastSyncedDate": "2026-02-28",
-      "status": "published"
-    },
-    "28": {
-      "notionTitle": "The Secret to Deliciously Tender Stir-Fries: Mastering the Art of Velveting (Perfect for Date Night)",
-      "slug": "velveting-stir-fry-technique",
-      "type": "article",
-      "publishedDate": "2026-03-02",
-      "lastSyncedDate": "2026-03-02",
-      "status": "published"
-    },
-    "54": {
-      "notionTitle": "Spicy Gochujang-Kimchi Seafood Bucatini (Thick + Clingy)",
-      "slug": "gochujang-kimchi-seafood-bucatini",
-      "type": "recipe",
-      "publishedDate": "2026-03-06",
-      "lastSyncedDate": "2026-03-06",
-      "status": "published"
-    },
-    "29": {
-      "notionTitle": "Unlock Restaurant-Quality Meals with Sous Vide Cooking for Date Night",
-      "slug": "sous-vide-date-night",
-      "type": "article",
-      "publishedDate": "2026-03-09",
-      "lastSyncedDate": "2026-03-09",
-      "status": "published"
-    },
-    "15": {
-      "notionTitle": "Pork Osso Buco Recipe with Creamy Polenta (Italian Braised Perfection)",
-      "slug": "pork-osso-buco",
-      "type": "recipe",
-      "publishedDate": "2026-03-12",
-      "lastSyncedDate": "2026-03-12",
-      "status": "published"
-    },
     "32": {
       "notionTitle": "The Essential Guide to Cooking Oils for Date Night Dinners",
       "slug": "cooking-oils-guide",
       "type": "article",
       "publishedDate": "2026-03-16",
       "lastSyncedDate": "2026-03-16",
-      "status": "published"
-    },
-    "22": {
-      "notionTitle": "Northern Thai Beef Tartare Recipe",
-      "slug": "northern-thai-beef-tartare",
-      "type": "recipe",
-      "publishedDate": "2026-03-20",
-      "lastSyncedDate": "2026-03-20",
       "status": "published"
     },
     "33": {
@@ -97,20 +97,80 @@
       "lastSyncedDate": "2026-03-23",
       "status": "published"
     },
-    "55": {
-      "notionTitle": "Moccione Restaurant Review: Villeray's Cozy Italian Date-Night Gem",
-      "slug": "moccione-montreal",
-      "type": "review",
-      "publishedDate": "2026-03-23",
-      "lastSyncedDate": "2026-07-16",
+    "34": {
+      "notionTitle": "The Ultimate Guide to Cooking a Perfect Steak for Your Next Date Night",
+      "slug": "perfect-steak-date-night-guide",
+      "type": "article",
+      "publishedDate": "2026-04-01",
+      "lastSyncedDate": "2026-04-01",
+      "status": "published"
+    },
+    "35": {
+      "notionTitle": "Why You Shouldn't Wash Chicken on Date Night (and What to Do Instead)",
+      "slug": "why-not-wash-chicken",
+      "type": "article",
+      "publishedDate": "2026-02-27",
+      "lastSyncedDate": "2026-02-27",
+      "status": "published"
+    },
+    "36": {
+      "notionTitle": "How to Choose Fresh Seafood for a Perfect Date Night",
+      "slug": "how-to-choose-fresh-seafood-for-a-perfect-date-night",
+      "type": "article",
+      "publishedDate": "2026-04-09",
+      "lastSyncedDate": "2026-06-09",
+      "status": "published"
+    },
+    "37": {
+      "notionTitle": "The Ultimate Guide to Crafting the Perfect Cocktail for Date Night",
+      "slug": "the-ultimate-guide-to-crafting-the-perfect-cocktail-for-date-night",
+      "type": "article",
+      "publishedDate": "2026-04-15",
+      "lastSyncedDate": "2026-04-15",
+      "status": "published"
+    },
+    "38": {
+      "notionTitle": "The Foolproof Egg Formula",
+      "slug": "the-foolproof-egg-formula",
+      "type": "article",
+      "publishedDate": "2026-05-01",
+      "lastSyncedDate": "2026-05-01",
       "status": "published"
     },
     "53": {
-      "notionTitle": "McKiernan Brunch Review: Lachine Canal's Big, Lively Daytime Hang",
-      "slug": "mckiernan-montreal",
+      "notionTitle": "McKiernan Brunch Review: Food, Prices, and the Canal Walk",
+      "slug": "mckiernan",
       "type": "review",
       "publishedDate": "2026-03-23",
-      "lastSyncedDate": "2026-07-10",
+      "lastSyncedDate": "2026-10-08",
+      "status": "published",
+      "pageId": "db13ded7-a3ca-450a-8b03-b4f198bed99f",
+      "notionLastEdited": 1790222110320
+    },
+    "54": {
+      "notionTitle": "Spicy Gochujang-Kimchi Seafood Bucatini (Thick + Clingy)",
+      "slug": "gochujang-kimchi-seafood-bucatini",
+      "type": "recipe",
+      "publishedDate": "2026-03-06",
+      "lastSyncedDate": "2026-03-06",
+      "status": "published"
+    },
+    "55": {
+      "notionTitle": "Moccione Review: Handmade Pasta and Date-Night Details",
+      "slug": "moccione",
+      "type": "review",
+      "publishedDate": "2026-03-23",
+      "lastSyncedDate": "2026-10-08",
+      "status": "published",
+      "pageId": "651befd8-ea33-4928-ab73-7e53f48406d1",
+      "notionLastEdited": 1790222110337
+    },
+    "60": {
+      "notionTitle": "Entry-Level Cooking Essentials: The Starter Kit That Makes Home Cooking Easy (Amazon Links)",
+      "slug": "cooking-essentials-starter-kit",
+      "type": "article",
+      "publishedDate": "2026-05-05",
+      "lastSyncedDate": "2026-05-05",
       "status": "published"
     },
     "61": {
@@ -153,46 +213,6 @@
       "lastSyncedDate": "2026-03-30",
       "status": "published"
     },
-    "34": {
-      "notionTitle": "The Ultimate Guide to Cooking a Perfect Steak for Your Next Date Night",
-      "slug": "perfect-steak-date-night-guide",
-      "type": "article",
-      "publishedDate": "2026-04-01",
-      "lastSyncedDate": "2026-04-01",
-      "status": "published"
-    },
-    "36": {
-      "notionTitle": "How to Choose Fresh Seafood for a Perfect Date Night",
-      "slug": "how-to-choose-fresh-seafood-for-a-perfect-date-night",
-      "type": "article",
-      "publishedDate": "2026-04-09",
-      "lastSyncedDate": "2026-06-09",
-      "status": "published"
-    },
-    "37": {
-      "notionTitle": "The Ultimate Guide to Crafting the Perfect Cocktail for Date Night",
-      "slug": "the-ultimate-guide-to-crafting-the-perfect-cocktail-for-date-night",
-      "type": "article",
-      "publishedDate": "2026-04-15",
-      "lastSyncedDate": "2026-04-15",
-      "status": "published"
-    },
-    "38": {
-      "notionTitle": "The Foolproof Egg Formula",
-      "slug": "the-foolproof-egg-formula",
-      "type": "article",
-      "publishedDate": "2026-05-01",
-      "lastSyncedDate": "2026-05-01",
-      "status": "published"
-    },
-    "60": {
-      "notionTitle": "Entry-Level Cooking Essentials: The Starter Kit That Makes Home Cooking Easy (Amazon Links)",
-      "slug": "cooking-essentials-starter-kit",
-      "type": "article",
-      "publishedDate": "2026-05-05",
-      "lastSyncedDate": "2026-05-05",
-      "status": "published"
-    },
     "76": {
       "notionTitle": "Anova vs Joule: The Two Best Sous Vide Machines Compared (First-Time Buyer Guide)",
       "slug": "anova-vs-joule-sous-vide-comparison",
@@ -209,60 +229,64 @@
       "lastSyncedDate": "2026-06-02",
       "status": "published"
     },
-    "9": {
-      "notionTitle": "Bold Spicy Miso Ramen Recipe (Restaurant-Style at Home)",
-      "slug": "bold-spicy-miso-ramen",
-      "type": "recipe",
-      "publishedDate": "2026-06-12",
-      "lastSyncedDate": "2026-06-12",
-      "status": "published"
-    },
     "80": {
-      "notionTitle": "Hoogan et Beaufort Restaurant Review: Montréal's Michelin-Star Tasting Menu Experience",
-      "slug": "hoogan-et-beaufort-montreal",
+      "notionTitle": "Hoogan et Beaufort Review: Michelin-Starred Wood-Fired Cooking",
+      "slug": "hoogan-et-beaufort",
       "type": "review",
       "publishedDate": "2026-06-18",
-      "lastSyncedDate": "2026-07-23",
-      "status": "published"
+      "lastSyncedDate": "2026-10-08",
+      "status": "published",
+      "pageId": "33470cfd-a561-40f0-880e-2cb93be4a9fc",
+      "notionLastEdited": 1790222110279
     },
     "81": {
-      "notionTitle": "Othym Restaurant Review: Montréal's BYOB Seasonal Standout",
-      "slug": "othym-montreal",
+      "notionTitle": "Othym Review: Seasonal Québec Cooking and BYOW Details",
+      "slug": "othym",
       "type": "review",
       "publishedDate": "2026-06-25",
-      "lastSyncedDate": "2026-07-30",
-      "status": "published"
+      "lastSyncedDate": "2026-10-08",
+      "status": "published",
+      "pageId": "a6d7eb1b-98f4-4df9-9c1c-7271bded63da",
+      "notionLastEdited": 1790222118191
     },
     "82": {
-      "notionTitle": "Oncle Lee Kăo Restaurant Review: Modern Chinese Grill Energy in Montréal",
-      "slug": "oncle-lee-kao-montreal",
+      "notionTitle": "Oncle Lee Kăo Review: Modern Chinese Grill in Old Montreal",
+      "slug": "oncle-lee-kao",
       "type": "review",
       "publishedDate": "2026-07-02",
-      "lastSyncedDate": "2026-07-02",
-      "status": "published"
+      "lastSyncedDate": "2026-10-08",
+      "status": "published",
+      "pageId": "3036847c-46a3-4bae-a681-2ab3d079681b",
+      "notionLastEdited": 1790222157277
     },
     "83": {
-      "notionTitle": "Giwa (Verdun) Review: Pretty Plates, Subtle Korean Twists, and a Waterfront Walk After",
-      "slug": "giwa-verdun-montreal",
+      "notionTitle": "Giwa Review: Modern Korean Cooking in Verdun",
+      "slug": "giwa",
       "type": "review",
       "publishedDate": "2026-08-26",
-      "lastSyncedDate": "2026-08-26",
-      "status": "published"
-    },
-    "7": {
-      "notionTitle": "Irresistible Vietnamese Fish Sauce Wings Recipe (Caramelized and Crispy)",
-      "slug": "vietnamese-fish-sauce-wings",
-      "type": "recipe",
-      "publishedDate": "2026-08-28",
-      "lastSyncedDate": "2026-08-28",
-      "status": "published"
+      "lastSyncedDate": "2026-10-08",
+      "status": "published",
+      "pageId": "218ce4d2-eb60-4075-9129-4fb3625684a2",
+      "notionLastEdited": 1790222144908
     },
     "84": {
-      "notionTitle": "Île Flottante Review: Montreal Date-Night Cooking That Feels Like a Quiet Flex",
-      "slug": "ile-flottante-montreal",
+      "notionTitle": "Île Flottante Review: Mile End Tasting Menu and Prices",
+      "slug": "ile-flottante",
       "type": "review",
       "publishedDate": "2026-09-04",
-      "lastSyncedDate": "2026-09-04",
+      "lastSyncedDate": "2026-10-08",
+      "status": "published",
+      "pageId": "b797e9b0-70f2-4fc0-aa36-14305e318a71",
+      "notionLastEdited": 1790222157261
+    },
+    "125": {
+      "notionTitle": "Cabaret l'Enfer Review: Tasting Menu, Chef's Counter, and What to Know",
+      "slug": "cabaret-lenfer",
+      "type": "review",
+      "pageId": "3e4c3484-e8de-81d9-b3b6-f7af3edf00e6",
+      "notionLastEdited": 1790222144279,
+      "publishedDate": "2026-10-08",
+      "lastSyncedDate": "2026-10-08",
       "status": "published"
     }
   }

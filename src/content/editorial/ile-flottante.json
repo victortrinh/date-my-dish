@@ -1,0 +1,76 @@
+{
+  "id": "ile-flottante",
+  "spotType": "restaurant",
+  "reviewVerdict": "conditional",
+  "neighbourhood": "Mile End",
+  "instagram": "restaurantileflottante",
+  "locales": {
+    "en": {
+      "metaTitle": "Île Flottante, Mile End: Tasting Menu Date Guide",
+      "metaDescription": "Sean Murray Smith's seasonal tasting menu in Mile End, $130 a head. An honest take on the technique, the desserts, and whether the night earns the money.",
+      "verdictReason": "Go for the calm room and precise cooking.",
+      "goodFor": [
+        {
+          "occasion": "anniversary",
+          "assessment": "ideal",
+          "reason": "Calm, intimate and well suited to a planned evening together."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "caveat",
+          "reason": "Safe pick for technique and polish. Someone hunting a standout dish may not find one."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "caveat",
+          "reason": "The room is quiet and the pacing is slow. Four people can work, but this is built for two."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "not-for",
+          "reason": "A long tasting menu is a commitment. We sat at 5:30 and left at 8:00 eating at a normal pace, and that's a lot of evening before you know."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "not-for",
+          "reason": "Nothing about $130 a head is casual."
+        }
+      ],
+      "imageAlt": "Elegant plating at Île Flottante Montreal, a delicate seasonal dish resting on fine ceramic in the intimate Mile End dining room"
+    },
+    "fr-CA": {
+      "verdictReason": "Vas-y pour la salle calme et la cuisine précise.",
+      "goodFor": [
+        {
+          "occasion": "anniversary",
+          "assessment": "ideal",
+          "reason": "Calme, intime et bien adapté à une soirée planifiée à deux."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "caveat",
+          "reason": "Un choix sûr pour la technique et le soin. Quelqu'un qui cherche un plat marquant pourrait ne pas en trouver."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "caveat",
+          "reason": "La salle est calme et le rythme est lent. À quatre, ça peut marcher, mais c'est fait pour deux."
+        },
+        {
+          "occasion": "first-date",
+          "assessment": "not-for",
+          "reason": "Un long menu dégustation, c'est un engagement. On s'est assis à 17 h 30 et on est sortis à 20 h en mangeant à un rythme normal, et c'est beaucoup de soirée avant de savoir."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "not-for",
+          "reason": "Rien à 130 $ par personne n'est décontracté."
+        }
+      ],
+      "metaTitle": "Île Flottante, Mile End : menu dégustation",
+      "metaDescription": "Le menu dégustation saisonnier de Sean Murray Smith dans le Mile End, à 130 $. Un avis honnête sur la technique, les desserts et si la soirée vaut le prix.",
+      "imageAlt": "Assiette élégante à l'Île Flottante Montréal, une préparation saisonnière délicate sur belle céramique dans la salle à manger intimiste du Mile End"
+    }
+  },
+  "lastChecked": "2026-09-24"
+}

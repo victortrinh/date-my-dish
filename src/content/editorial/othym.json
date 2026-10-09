@@ -1,0 +1,76 @@
+{
+  "id": "othym",
+  "spotType": "restaurant",
+  "reviewVerdict": "conditional",
+  "neighbourhood": "the Village",
+  "instagram": "othymmtl",
+  "locales": {
+    "en": {
+      "metaTitle": "Othym, the Village: BYOB Review & Date Guide",
+      "metaDescription": "Noé Lainesse's seasonal Québec cooking on rue Atateken in the Village, and you bring the wine. What to order, what it costs, and how to plan the night.",
+      "verdictReason": "Ingredient-driven, rustic and thoughtful, with a lot of the flavour built in-house through ferments.",
+      "goodFor": [
+        {
+          "occasion": "first-date",
+          "assessment": "ideal",
+          "reason": "Relaxed, not intimidating, and bringing a bottle you chose makes it feel personal rather than transactional."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "ideal",
+          "reason": "A low-key milestone done properly. Bring a bottle that means something and let the food carry the rest."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "ideal",
+          "reason": "Garums, cheongs and house spice blends, and you can taste the work in the sauces."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "ideal",
+          "reason": "BYOW with friends is the best version of this room."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "caveat",
+          "reason": "BYOW lowers the drinks cost, but dinner still takes about two hours."
+        }
+      ],
+      "imageAlt": "Seasonal dishes at Othym, a Michelin-recommended BYOB restaurant in Montreal's Village featuring ingredient-driven Quebec cooking"
+    },
+    "fr-CA": {
+      "verdictReason": "Axé sur l'ingrédient, rustique et réfléchi, avec une bonne partie des saveurs bâties maison grâce aux fermentations.",
+      "goodFor": [
+        {
+          "occasion": "first-date",
+          "assessment": "ideal",
+          "reason": "Détendu, pas intimidant, et apporter une bouteille que tu as choisie rend la soirée personnelle plutôt que transactionnelle."
+        },
+        {
+          "occasion": "anniversary",
+          "assessment": "ideal",
+          "reason": "Un moment à souligner sans tambour ni trompette, bien fait. Apporte une bouteille qui a du sens et laisse la bouffe faire le reste."
+        },
+        {
+          "occasion": "impressing-a-cook",
+          "assessment": "ideal",
+          "reason": "Garums, cheongs et mélanges d'épices maison, et tu goûtes le travail dans les sauces."
+        },
+        {
+          "occasion": "double-date",
+          "assessment": "ideal",
+          "reason": "Apporter son vin entre amis, c'est la meilleure version de cette salle."
+        },
+        {
+          "occasion": "casual-midweek",
+          "assessment": "caveat",
+          "reason": "Apporter ton vin baisse le coût des boissons, mais le souper prend quand même environ deux heures."
+        }
+      ],
+      "metaTitle": "Othym, the Village : critique, vin apporté",
+      "metaDescription": "La cuisine saisonnière de Noé Lainesse sur la rue Atateken, et tu apportes le vin. Quoi commander, combien ça coûte et comment planifier la soirée.",
+      "imageAlt": "Assiettes saisonnières au restaurant Othym dans le Village de Montréal, BYOB recommandé Michelin et cuisine du terroir québécois"
+    }
+  },
+  "lastChecked": "2026-09-24"
+}

@@ -1,0 +1,712 @@
+{
+  "slug": "giwa",
+  "records": [
+    "giwa"
+  ],
+  "notion": {
+    "pageId": "218ce4d2-eb60-4075-9129-4fb3625684a2",
+    "number": 83,
+    "postType": "Restaurant Reviews",
+    "status": "Published",
+    "title": "Giwa Review: Modern Korean Cooking in Verdun",
+    "borough": "Verdun",
+    "publishDate": null,
+    "lastEditedTime": 1790222144908
+  },
+  "metadata": {
+    "URL": "/en/reviews/verdun/giwa/",
+    "Slug": "giwa",
+    "Meta title": "Giwa, Verdun: Review & Date Night Guide",
+    "Meta desc": "Modern Korean on Promenade Wellington, pretty plates and clean technique. What to order, what it costs, and an honest note on the subtle flavours here.",
+    "H1": "Giwa, Verdun",
+    "Verdict state": "conditional",
+    "Cuisine": "Modern Korean, fermentation-driven",
+    "Address": "3780 rue Wellington, Verdun, QC H4G 1V2",
+    "Price range": "$$. Dishes $10 to $20, about $90 per person as I ate it",
+    "Instagram": "@restaurant_giwa",
+    "Website": "https://restaurantgiwa.ca",
+    "Phone": "514-766-5777",
+    "Hours": "Wed to Sat 17:00 to 22:00, Sun to 21:00, closed Mon and Tue",
+    "Visited": "[DATE]",
+    "Checked": "September 2026"
+  },
+  "sections": [
+    {
+      "heading": null,
+      "level": 0,
+      "section": null,
+      "label": null,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "REVIEW · VERDUN"
+        }
+      ]
+    },
+    {
+      "heading": "Giwa",
+      "level": 1,
+      "section": "opening",
+      "label": "H1 and opening",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "A modern Korean kitchen on Promenade Wellington in Verdun, serving carefully plated classics with a fermentation-led twist."
+        },
+        {
+          "kind": "paragraph",
+          "text": "By Victor · Published [DATE] · Checked September 2026"
+        }
+      ]
+    },
+    {
+      "heading": "The verdict",
+      "level": 2,
+      "section": "verdict",
+      "label": "The verdict (verdictHeadline, verdict reason)",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "DEPENDS ON THE NIGHT"
+        },
+        {
+          "kind": "subheading",
+          "text": "Pretty plates and clean technique, but the flavours play it safe"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The plating is genuinely lovely and the technique shows. What you should know before booking is that the flavours lean refined rather than loud. If you're chasing heat, funk or punch you'll wish it went harder. If you want a relaxed dinner with careful plating, it works. Take the terrasse when the weather allows."
+        }
+      ]
+    },
+    {
+      "heading": "Good for",
+      "level": 2,
+      "section": "goodFor",
+      "label": "Good for",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "Occasion",
+              "",
+              "Why"
+            ],
+            [
+              "First date",
+              "Ideal",
+              "Relaxed, easy to talk, and the terrasse is pleasant in good weather."
+            ],
+            [
+              "Casual midweek",
+              "Ideal",
+              "Walk-ins are easy, the room is unfussy, and you can be out in ninety minutes."
+            ],
+            [
+              "Double date",
+              "Works, with a caveat",
+              "Sharing works well here, but portions are small enough that four people need to order wide."
+            ],
+            [
+              "Impressing a cook",
+              "Works, with a caveat",
+              "The plating and technique do the work. Someone hunting for bold Korean flavour will be underwhelmed."
+            ],
+            [
+              "Anniversary",
+              "Not the one",
+              "More cute and casual than big occasion, unless you're specifically craving Korean."
+            ],
+            [
+              "Late night",
+              "Works, with a caveat",
+              "The kitchen shuts at 22:00, 21:00 on Sunday, so a late table means two dishes and a drink rather than settling in."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The room",
+      "level": 2,
+      "section": "room",
+      "label": "The room",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "[PHOTO: terrasse or dining room, wide]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Inside it feels like a casual Korean restaurant: welcoming, straightforward and not trying to be fine dining. The room is easy for conversation."
+        },
+        {
+          "kind": "paragraph",
+          "text": "We sat on the terrasse and didn't get a full look at the interior. If the weather is good, do the same. Lighting outside is whatever the evening gives you; inside it's casual and warm. Noise sits low to medium, more neighbourhood dinner than party room."
+        }
+      ]
+    },
+    {
+      "heading": "Meet the chef",
+      "level": 2,
+      "section": "meetChef",
+      "label": "Meet the chef",
+      "blocks": [
+        {
+          "kind": "quote",
+          "text": "SLOT PENDING. No chef is named on Giwa's own website or in its Instagram bio. A name circulates on restaurant sites but I couldn't confirm it against a primary source, so nobody is named here. Confirm with the restaurant and this section can be written properly."
+        },
+        {
+          "kind": "paragraph",
+          "text": "What can be said now: the kitchen opened on 14 March 2025, so it's young. It runs a seasonal menu that calls out local producers, and the fermentation work is the throughline. In 2026 it won the bibimbap competition at Montreal's Korean Festival, judged by Edward Lee, which is a specific and checkable reason to order the sot bap."
+        },
+        {
+          "kind": "paragraph",
+          "text": "[PULL QUOTE NEEDED. Recorded speech only.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "[LINK: recipe card. Needs a named chef and an interview.]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "The drinks",
+      "level": 2,
+      "section": "drinks",
+      "label": "The drinks",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "The list has interesting choices without being the reason to come."
+        },
+        {
+          "kind": "paragraph",
+          "text": "To start — the somaek. Fresh soju and Origine lager. Crisp, clean and light."
+        },
+        {
+          "kind": "paragraph",
+          "text": "With the meal — the omija. Gin, five-flavour berry syrup, lemon. Bright, fruity-tart, very easy to drink."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Not drinking — [UNKNOWN]. Check the no-alcohol list."
+        },
+        {
+          "kind": "paragraph",
+          "text": "One drink each at the start, then water or tea, is enough. Nothing on the list stood out to me, so I would spend the extra money on food."
+        }
+      ]
+    },
+    {
+      "heading": "What to order",
+      "level": 2,
+      "section": "whatToOrder",
+      "label": "What to order",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Order in layers. For two: two appetisers, one dish from the main menu, one from the seasonal menu, one sot bap, then dessert."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sot bap — Order this"
+        },
+        {
+          "kind": "paragraph",
+          "text": "I didn't order it and I should have. It's their specialty and it won the Korean Festival bibimbap competition in 2026, judged by Edward Lee. That's a strong enough hint."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Gimbap — Order this"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Seaweed roll with the fish of the moment, cucumber, avocado and a gochujang vinaigrette. Fresh, lightly sweet, gently spicy, very clean. A good first bite and easy to share."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Yukhwe — Order this"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Beef tartare with pear, sesame, soy and egg yolk, finished with nasturtium. Sweet-salty and silky, with juicy pear cutting through and real savoury depth."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Hodumaru — Order this"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Rich gochujang chocolate mousse with chilli-spiked chantilly, candied walnuts and maple ice cream. Chocolate forward with a warm chilli tingle. Best dessert of the three."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Baechu — Worth it"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Charred napa cabbage glazed with doenjang over perilla cream, with cucumber and herbs. Smoky-sweet, savoury funk, cooling herbal finish."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Haemul jang — Skip"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Soy-marinated crab, shrimp, octopus and salmon with seaweed and egg yolk. Briny-sweet and glossy, but the seaweed crisp wasn't crisp and for the price the flavour stayed uniform and soy-heavy. Tempting, worth trying once, but I wouldn't reorder."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Doenjang crème brûlée — Skip"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Sweet and salty with a fermented edge. Cleanly made, not my thing."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Basque corn cheesecake — Worth it"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Torched corn and corn ice cream, creamy and toasty. The popcorn topping tasted stale."
+        }
+      ]
+    },
+    {
+      "heading": "The real cost",
+      "level": 2,
+      "section": "realCost",
+      "label": "The real cost",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "About $90 per person, based on our meal."
+        },
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "",
+              ""
+            ],
+            [
+              "Dishes",
+              "$10 to $20 each"
+            ],
+            [
+              "Drinks",
+              "one round each"
+            ],
+            [
+              "Per person, as we did it",
+              "~$90"
+            ]
+          ]
+        },
+        {
+          "kind": "paragraph",
+          "text": "Skip the second round and add another dish to share instead. The total should be similar."
+        }
+      ]
+    },
+    {
+      "heading": "My note",
+      "level": 2,
+      "section": "reportersNote",
+      "label": "My note",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Victor · one visit, [MONTH YEAR] · paid"
+        },
+        {
+          "kind": "subheading",
+          "text": "The part that's just my opinion"
+        },
+        {
+          "kind": "paragraph",
+          "text": "[THE THING THAT STAYED WITH YOU.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "The honest caveat is already written into the verdict, and it's the most useful thing on this page: the cooking is clean and the plates are pretty, but the flavour intensity is dialled back. A couple of elements tasted prepped too far ahead, the seaweed crisp and the popcorn. If you're expecting the louder Korean profile, this isn't it."
+        },
+        {
+          "kind": "quote",
+          "text": "UPDATE · [MONTH YEAR]"
+        },
+        {
+          "kind": "quote",
+          "text": "[Add a line if anything changes.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Victor"
+        }
+      ]
+    },
+    {
+      "heading": "Make a night of it",
+      "level": 2,
+      "section": "makeANight",
+      "label": "Make a night of it",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "Activities and Sports — Plage urbaine de Verdun"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before · behind the Auditorium · Free · 13 June to 30 August"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The only supervised river swim on the island. Call 514-280-0789 the day you go."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Arts and Culture — Quai 5160"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before or after · 800 m · Free to low"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The 1970 arena cut open onto the riverside promenade. Closed Mondays."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Games and Entertainment — Auditorium de Verdun"
+        },
+        {
+          "kind": "paragraph",
+          "text": "After · same boulevard · varies"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The restored 1939 room. Note the works running to January 2027."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Nature and Scenic — Domaine Saint-Paul"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Before · REM to Île-des-Sœurs · Free"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Twenty-six hectares of protected woodland. No dogs, no bikes."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Social and Romantic — Promenade Wellington"
+        },
+        {
+          "kind": "paragraph",
+          "text": "After · at the door · Free"
+        },
+        {
+          "kind": "paragraph",
+          "text": "The strip Giwa sits on. The best keep-talking walk in the borough, and it needs its own spot page."
+        },
+        {
+          "kind": "paragraph",
+          "text": "[TILE: Open the Verdun guide]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "What the chef cooks at home",
+      "level": 2,
+      "section": "atHome",
+      "label": "What the chef would make for a date night",
+      "blocks": [
+        {
+          "kind": "quote",
+          "text": "SLOT EMPTY. Needs a named chef first."
+        }
+      ]
+    },
+    {
+      "heading": "Before you book",
+      "level": 2,
+      "section": "beforeYouBook",
+      "label": "Before you book",
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "text": "How far ahead do I need to book?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Not necessary. Walk-ins are easy. Worth calling for a terrasse table on a good evening."
+        },
+        {
+          "kind": "paragraph",
+          "text": "Can they handle dietary restrictions?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "[ANSWER NEEDED.]",
+          "note": true
+        },
+        {
+          "kind": "paragraph",
+          "text": "Is there parking, or should we take the metro?"
+        },
+        {
+          "kind": "paragraph",
+          "text": "[ANSWER NEEDED. De l'Église is the closest station.]",
+          "note": true
+        }
+      ]
+    },
+    {
+      "heading": "The essentials card",
+      "level": 2,
+      "section": "essentials",
+      "label": "The essentials card",
+      "blocks": [
+        {
+          "kind": "table",
+          "header": true,
+          "rows": [
+            [
+              "",
+              ""
+            ],
+            [
+              "Our take",
+              "Depends on the night"
+            ],
+            [
+              "Cuisine",
+              "Modern Korean"
+            ],
+            [
+              "Neighbourhood",
+              "Verdun"
+            ],
+            [
+              "Per person",
+              "~$90"
+            ],
+            [
+              "Can you talk?",
+              "Yes, easily"
+            ],
+            [
+              "Booking",
+              "Walk in"
+            ],
+            [
+              "Allow",
+              "1.5 to 2 hours"
+            ],
+            [
+              "Address",
+              "3780 rue Wellington"
+            ],
+            [
+              "Instagram",
+              "@restaurant_giwa"
+            ],
+            [
+              "Google reviews",
+              "[RATING AND COUNT NEEDED, dated]"
+            ]
+          ]
+        },
+        {
+          "kind": "callout",
+          "lines": [
+            "INTERNAL. Delete before publishing.",
+            "No chef named, per your call. Meet the chef and the recipe card both stay open until the restaurant confirms one.",
+            "Opened 14 March 2025. Avoid any long-standing or neighbourhood-institution framing.",
+            "Not in the Michelin Guide Québec. No star, no Bib, not Selected. Keep that straight against Moccione and Île Flottante, which are listed.",
+            "The bibimbap competition is the best hook on the page. Keep it dated.",
+            "My note is mostly empty. The caveat is carried over from your original; the personal paragraph is yours to write."
+          ],
+          "note": true
+        }
+      ]
+    }
+  ],
+  "photos": [],
+  "legacy": {
+    "name": "giwa-verdun-montreal",
+    "en": {
+      "texts": [
+        "Giwa Verdun: Korean Plates Worth the Date",
+        "Giwa restaurant review: Korean plates and terrasse seating in Verdun, Montreal. A relaxed date-night pick with standout dishes and fair prices.",
+        "Pretty Korean dishes at Giwa restaurant in Verdun Montreal, a casual date-night spot on Promenade Wellington serving modern Korean cuisine",
+        "Giwa",
+        "Verdun (Promenade Wellington)",
+        "3780 Rue Wellington, Verdun, Montréal, QC H4G 1V2",
+        "Korean, Modern",
+        "Low-stress date nights",
+        "Pretty plating",
+        "Something different",
+        "~$90 CAD",
+        "Walk-ins welcome. Book ahead for terrasse seating on warm evenings.",
+        "Gimbap",
+        "Seaweed roll with fish of the moment, cucumber, avocado, and gochujang vinaigrette: fresh, lightly sweet, gently spicy, and easy to share",
+        "Yukhwe",
+        "Beef tartare with pear, sesame, soy, egg yolk, and nasturtium: sweet-salty and silky, with juicy pear cutting through the savory depth",
+        "Baechu (seasonal)",
+        "Charred napa cabbage glazed with doenjang over perilla cream with cucumber and herbs: smoky-sweet with a cooling herbal finish, the standout plate of the night",
+        "Hodumaru",
+        "Gochujang chocolate mousse with chili-spiked chantilly, candied walnuts, and maple ice cream: warm chocolate heat with a sweet maple finish",
+        "First Date",
+        "Relaxed vibe, easy conversation, and not too expensive-feeling",
+        "Anniversary",
+        "More cute and casual than big occasion, unless Korean food is the whole point of the night",
+        "Impressing a Food Lover",
+        "The plating and technique do the heavy lifting even if the flavors play it a little safe",
+        "Is Giwa a good restaurant for a date night in Montreal?",
+        "It's a solid pick for a low-stress date when you want Korean food that feels a little more polished than your usual spot. The terrasse is the move in summer, the vibe is relaxed, and the menu balances familiar and new without getting weird about it. Just go in knowing the flavors lean refined rather than loud: if you want maximum heat or deep fermentation punch, you might wish it pushed harder.",
+        "What should I order at Giwa?",
+        "The sot bap is their signature: Giwa won a bibimbap competition at the 2026 Montreal Korean Festival, judged by Edward Lee. That alone makes it worth ordering. Beyond that, two appetizers to share, one main, one seasonal dish, and dessert. The Hodumaru (gochujang chocolate mousse with maple ice cream) is the one to end on.",
+        "How much does dinner at Giwa cost?",
+        "Expect around $90 CAD per person for a full shared meal with drinks. It sits in that comfortable mid-range zone: a proper night out without full fine-dining pressure. Skip the second round of drinks and order one more dish to share instead. More food, better memories.",
+        "Giwa is the kind of place you pick when you want Korean food that feels a little more polished than your usual spot, but you still want dinner to feel easy. The plates show up looking sharp, the technique is there, and the menu plays with Korean classics in a way that feels modern without getting weird about it.",
+        "One honest note going in: the flavors lean refined, not loud. If you're chasing maximum heat, deep fermentation funk, or the kind of punch you expect from a big bold Korean meal, you might leave wishing it pushed further. But if you want a pretty, low-pressure night where the food still feels thoughtful, Giwa is a really solid date move.",
+        "The Vibe",
+        "Inside, it feels like a classic casual Korean restaurant: welcoming, straightforward, and not pretending to be fine dining. That's exactly why it works for a date. You can focus on your person, not on performing restaurant etiquette.",
+        "We sat on the terrasse, and if the weather is good, I'd recommend doing the same. It instantly turns dinner into a proper Montreal summer night. The noise level sits at low to medium, closer to a neighborhood dinner than a party room. Lighting is natural and easy. You can hold a real conversation without leaning across the table.",
+        "Best seats: terrasse for the summer date-night vibe, inside if the season turns or you want a more contained atmosphere. Casual dress works fine either way.",
+        "What to Order",
+        "This is a sharing spot. Order in layers so the table keeps changing while you talk.",
+        "For two: two appetizers, one main, one seasonal dish, one sot bap, and dessert. And here's the thing: don't skip the sot bap, even if you're not usually a sot bap person. Giwa won a bibimbap competition at the Montreal Korean Festival 2026, judged by Edward Lee. That's a pretty strong signal that this is the plate the kitchen is most proud of. I didn't order it, and I regret it.",
+        "The order logic that makes it feel like a date rather than a menu-sweep: start with something light and bright, follow with one comforting classic, and add one \"twist\" dish from the seasonal menu. That structure keeps the energy moving without rushing anyone.",
+        "The Dishes",
+        "The strongest thing Giwa does is how the food looks. Clean, modern, genuinely photo-friendly, and the technique shows in the details. The seasonal menu keeps things from feeling like a greatest-hits rotation.",
+        "Gimbap: seaweed roll with fish of the moment, cucumber, avocado, and a gochujang vinaigrette. Fresh, lightly sweet, gently spicy, and easy to share. Great first bite.",
+        "Yukhwe: beef tartare with pear, sesame, soy, egg yolk, and nasturtium. Sweet-salty, silky, and rich, with juicy pear cutting through the savory depth and nasturtium adding a peppery brightness that keeps it from getting heavy. One of the cleaner tartares in the city.",
+        "Haemul Jang: soy-marinated seafood (crab, shrimp, octopus, salmon) with seaweed and egg yolk. Briny-sweet seafood with soy umami, the egg yolk making it feel glossy and rich. Worth trying once for the experience, but the overall flavor leaned heavily soy-forward and felt a bit toned down for the price. The seaweed crisp also lacked that fresh snap it should have. Probably not a reorder.",
+        "Baechu (seasonal): charred napa cabbage glazed with doenjang, served over perilla cream with cucumber and fresh herbs. This was the most interesting dish of the night: smoky-sweet cabbage, savory doenjang funk, and a cooling herbal finish from the perilla and cucumber. It's the dish that most clearly shows the chef's point of view, and it's the best reason to come back when the seasonal menu rotates.",
+        "Desserts: three options, three different vibes. The doenjang crème brûlée is clean and properly executed, with a sweet-salty-fermented edge that's interesting but not quite my thing. The Basque corn cheesecake with torched corn and corn ice cream is creamy and toasty, though the popcorn topping tasted a bit stale. The winner is the Hodumaru: gochujang chocolate mousse, chili-spiked chantilly, candied walnuts, and maple ice cream. Chocolate-forward with a warm chili tingle, a crunchy-nutty top, and maple creaminess to pull everything together. Order that one.",
+        "The Drinks",
+        "The drink list has some interesting choices without being overwhelming.",
+        "We had the Somaek (fresh soju and Origine lager: crisp, clean, and light) and the Omija (gin, five-flavor berry syrup, lemon: bright, fruity-tart, and easy to drink). Both work well as openers while you settle in and figure out what to share.",
+        "Date tip: one drink each to start, then switch to water or tea. Keeps the night light and the conversation going without the check becoming the story.",
+        "The Real Cost",
+        "About $90 CAD per person based on our meal. That puts Giwa solidly in the \"nice night out without full fine-dining pressure\" range.",
+        "Worth it if you care about technique and plating and want Korean flavors that feel approachable. If budget matters: skip the second round of drinks and add one more dish to share instead. More food, better food memories, and you'll still feel like you got something for your money.",
+        "Before and After",
+        "Verdun is easy to build a full night around.",
+        "Before dinner: a golden-hour walk along the Verdun waterfront at Parc Arthur-Therrien, or a slow stroll down Promenade Wellington to window-shop and arrive hungry. If you're coming from downtown, make the trip to Verdun part of the date. Meet there and walk Wellington together.",
+        "After dinner: keep it going on Wellington (the \"keep talking\" walk) or head back down to the waterfront and sit for a few minutes. Quiet, low-pressure, no reservation needed.",
+        "The full mini-plan: meet in Verdun, waterfront walk at Parc Arthur-Therrien, terrasse at Giwa, post-dinner stroll on Wellington.",
+        "Is It a Date Spot?",
+        "For a first date: 4/5. Relaxed vibe, not too expensive-feeling, easy to talk. The terrasse helps.",
+        "For an anniversary: 3/5. More cute and casual than big occasion. A solid choice if Korean food is the whole point of the night, but not the move for a landmark dinner.",
+        "For impressing someone who cares about food: 3/5. The plating and technique do a lot of the work, even if the flavors play it a little safe.",
+        "Giwa scores 7 out of 10 as a date-night restaurant. It's not a jaw-drop moment, and it won't deliver the flavor intensity you might expect from Korean food. But when you want a relaxed Montreal night, pretty plates, and a terrasse in summer with a walk built in after, it delivers that cleanly and easily.",
+        "But when you want someone else to do the cooking, Giwa on Wellington is worth the metro ride."
+      ],
+      "headings": [
+        "The Vibe",
+        "What to Order",
+        "The Dishes",
+        "The Drinks",
+        "The Real Cost",
+        "Before and After",
+        "Is It a Date Spot?"
+      ]
+    },
+    "fr": {
+      "texts": [
+        "Giwa Verdun : Plats Coréens, Soirée Réussie",
+        "Avis restaurant Giwa : cuisine coréenne soignée et terrasse à Verdun, Montréal. Un choix parfait pour un souper en amoureux avec des plats remarquables.",
+        "Beaux plats coréens au restaurant Giwa à Verdun Montréal, une adresse décontractée sur la Promenade Wellington pour un souper en amoureux",
+        "Giwa",
+        "Verdun (Promenade Wellington)",
+        "3780 Rue Wellington, Verdun, Montréal, QC H4G 1V2",
+        "Coréen, moderne",
+        "Soupers décontractés en amoureux",
+        "Belle présentation",
+        "Changer de la routine",
+        "~90$ CAD",
+        "Les places à emporter sans réservation. Réserver pour la terrasse les soirs de belle température.",
+        "Gimbap",
+        "Rouleau de mer avec poisson du moment, concombre, avocat et vinaigrette gochujang : frais, légèrement sucré, doucement épicé et facile à partager",
+        "Yukhwe",
+        "Tartare de boeuf avec poire, sésame, soya, jaune d'oeuf et capucine : doux-salé et soyeux, avec la poire juteuse qui tranche dans la profondeur umami",
+        "Baechu (saisonnier)",
+        "Chou napa grillé glacé au doenjang sur crème de perilla avec concombre et herbes fraîches : fumé-sucré avec une finale herbacée rafraîchissante, le meilleur plat de la soirée",
+        "Hodumaru",
+        "Mousse au chocolat gochujang avec chantilly au piment, noix caramélisées et crème glacée à l'érable : chaleur chocolatée avec une finale douce à l'érable",
+        "Premier rendez-vous",
+        "Ambiance détendue, conversation facile et pas trop intimidant côté budget",
+        "Anniversaire",
+        "Plus mignon et casual que grande occasion, sauf si la cuisine coréenne est vraiment la raison du souper",
+        "Impressionner un amateur de bouffe",
+        "La présentation et la technique font le gros du travail, même si les saveurs jouent la prudence",
+        "Est-ce que Giwa est un bon restaurant pour un souper en amoureux à Montréal?",
+        "C'est un solide choix pour un souper décontracté quand tu veux de la cuisine coréenne un peu plus soignée que d'habitude. La terrasse est parfaite en été, l'ambiance est relax, et le menu joue entre le familier et le nouveau sans se compliquer la vie. Juste s'attendre à des saveurs raffinées plutôt que puissantes : si tu cherches le maximum de piment ou une profondeur de fermentation intense, tu pourrais vouloir que ça aille plus loin.",
+        "Quoi commander chez Giwa?",
+        "Le sot bap, c'est leur signature : Giwa a remporté un concours de bibimbap au Festival coréen de Montréal 2026, jugé par Edward Lee. Ça vaut le détour. Au-delà de ça : deux entrées à partager, un plat principal, un plat saisonnier, et un dessert. Le Hodumaru (mousse au chocolat gochujang avec crème glacée à l'érable) est celui avec lequel finir.",
+        "Combien coûte un souper chez Giwa?",
+        "Environ 90$ CAD par personne pour un souper complet avec des boissons. C'est la zone mid-range confortable : une belle soirée sans la pression de la gastronomie formelle. Skip le deuxième service de boissons et ajoute plutôt un plat à partager. Plus de nourriture, de meilleurs souvenirs.",
+        "Giwa, c'est l'endroit qu'on choisit quand on veut de la cuisine coréenne un peu plus soignée que d'habitude, mais sans la pression. Les assiettes arrivent bien présentées, la technique est là, et le menu joue avec les classiques coréens d'une façon qui se sent moderne sans tomber dans le bizarre.",
+        "Un avis honnête avant de commencer : les saveurs penchent vers le raffiné plutôt que vers le puissant. Si tu cherches le maximum de piment, une profondeur de fermentation intense ou un punch qui frappe fort, tu pourrais repartir en voulant que ça aille plus loin. Mais si tu veux une belle soirée décontractée où la nourriture reste réfléchie, Giwa est un très solide choix de souper en amoureux.",
+        "L'Ambiance",
+        "À l'intérieur, ça ressemble à un restaurant coréen casual classique : accueillant, simple, et qui ne prétend pas être de la gastronomie. C'est exactement pour ça que ça fonctionne pour un souper en amoureux. On peut se concentrer sur sa personne plutôt que sur les bonnes manières à table.",
+        "On s'est installés sur la terrasse, et si la météo le permet, je le recommande. Ça transforme instantanément le souper en une vraie soirée montréalaise d'été. Le niveau de bruit reste bas à moyen, plus souper de quartier que party room. L'éclairage est naturel et facile. Une vraie conversation sans se pencher par-dessus la table.",
+        "Meilleures places : la terrasse pour la vibe soirée en amoureux estivale, l'intérieur si la saison tourne ou si tu préfères une ambiance plus feutrée. La tenue casual passe partout.",
+        "Quoi Commander",
+        "C'est un endroit pour partager. Commander en vagues pour que la table continue d'évoluer pendant la conversation.",
+        "Pour deux : deux entrées, un plat principal, un plat saisonnier, un sot bap, et un dessert. Et là, point important : ne skip pas le sot bap, même si c'est pas ton truc d'habitude. Giwa a remporté un concours de bibimbap au Festival coréen de Montréal 2026, jugé par Edward Lee. C'est un signal assez clair que c'est le plat dont la cuisine est la plus fière. Je ne l'ai pas commandé, et je le regrette.",
+        "La logique de commande qui transforme ça en souper plutôt qu'en rush : commencer avec quelque chose de léger et vif, enchaîner avec un classique réconfortant, et ajouter un plat \"avec twist\" du menu saisonnier. Cette structure maintient l'énergie sans brusquer personne.",
+        "Les Plats",
+        "Ce que Giwa fait le mieux, c'est la façon dont la nourriture se présente. Clean, moderne, vraiment photogénique, et la technique se voit dans les détails. Le menu saisonnier empêche ça de ressembler à un Greatest Hits.",
+        "Gimbap : rouleau de mer avec poisson du moment, concombre, avocat et vinaigrette gochujang. Frais, légèrement sucré, doucement épicé, et facile à partager. Très belle première bouchée.",
+        "Yukhwe : tartare de boeuf avec poire, sésame, soya, jaune d'oeuf et capucine. Doux-salé, soyeux et riche, avec la poire juteuse qui tranche dans la profondeur umami et la capucine qui ajoute un piquant herbacé pour éviter que ça devienne lourd. Un des tartares les plus propres en ville.",
+        "Haemul Jang : fruits de mer marinés au soya (crabe, crevettes, pieuvre, saumon) avec algue et jaune d'oeuf. Fruits de mer saumâtres-sucrés avec umami de soya, le jaune d'oeuf rendant tout ça brillant et riche. Vaut le coup d'essayer une fois pour l'expérience, mais le profil de saveur penchait beaucoup vers le soya et semblait un peu terne pour le prix. La croustille d'algue manquait aussi du craquant frais attendu. Probablement pas à récommander.",
+        "Baechu (saisonnier) : chou napa grillé glacé au doenjang, servi sur crème de perilla avec concombre et herbes fraîches. C'était le plat le plus intéressant de la soirée : chou fumé-sucré, funk savoureux du doenjang, et une finale herbacée rafraîchissante grâce au perilla et au concombre. C'est le plat qui montre le plus clairement le point de vue du chef, et la meilleure raison de revenir quand le menu saisonnier change.",
+        "Desserts : trois options, trois vibes différentes. La crème brûlée au doenjang est proprement exécutée, avec un côté doux-salé-fermenté intéressant mais pas vraiment mon truc. Le cheesecake basque au maïs avec maïs brûlé et crème glacée au maïs est crémeux et grillé, mais le topping de popcorn goûtait un peu rassis. Le gagnant, c'est le Hodumaru : mousse au chocolat gochujang, chantilly au piment, noix caramélisées et crème glacée à l'érable. Chocolat en avant avec une chaleur de piment, un dessus croquant-noisette, et la douceur de l'érable pour tout arrondir. Commander ça.",
+        "Les Boissons",
+        "La carte des boissons offre des choix intéressants sans être intimidante.",
+        "On a pris le Somaek (soju frais et bière Origine : vif, propre et léger) et l'Omija (gin, sirop aux baies aux cinq saveurs, citron : lumineux, fruité-acidulé, et très facile à boire). Les deux fonctionnent bien comme apéritif pendant qu'on s'installe et qu'on décide quoi partager.",
+        "Conseil souper : un verre chacun pour commencer, puis passer à l'eau ou au thé. Ça garde la soirée légère et la conversation bien allumée sans que l'addition devienne le sujet principal.",
+        "Le Vrai Coût",
+        "Environ 90$ CAD par personne selon notre souper. Giwa se place confortablement dans la zone mid-range : une belle soirée sans la pression de la gastronomie formelle.",
+        "Vaut le coup si tu tiens à la technique et à la présentation et que tu veux des saveurs coréennes accessibles. Si le budget compte : skip le deuxième verre et ajoute plutôt un plat à partager. Plus de nourriture, de meilleurs souvenirs, et t'as quand même l'impression d'en avoir pour ton argent.",
+        "Avant et Après",
+        "Verdun est facile à intégrer dans une soirée complète.",
+        "Avant le souper : une marche dorée au bord de l'eau à Verdun au Parc Arthur-Therrien, ou une flânerie sur la Promenade Wellington pour magasiner les vitrines et arriver en appétit. Si vous venez du centre-ville, faites du trajet vers Verdun une partie de la soirée. Se rejoindre là et marcher Wellington ensemble.",
+        "Après le souper : continuer sur Wellington (la marche classique pour prolonger la conversation) ou redescendre au bord de l'eau s'asseoir quelques minutes. Calme, sans pression, pas besoin de réservation.",
+        "Le mini-plan complet : se retrouver à Verdun, marche au bord de l'eau au Parc Arthur-Therrien, terrasse chez Giwa, promenade post-souper sur Wellington.",
+        "Pour Quel Type de Rendez-vous?",
+        "Premier rendez-vous : 4/5. Ambiance décontractée, conversation facile, pas intimidant côté budget. La terrasse aide.",
+        "Anniversaire : 3/5. Plus mignon et casual que grande occasion. Un bon choix si la cuisine coréenne est vraiment l'objet de la soirée, mais probablement pas le move pour un souper marquant.",
+        "Pour impressionner quelqu'un qui aime la bouffe : 3/5. La présentation et la technique font beaucoup de travail, même si les saveurs jouent la prudence.",
+        "Giwa mérite 7 sur 10 comme restaurant pour un souper en amoureux. C'est pas un moment de jaw-drop, et ça ne livrera pas l'intensité de saveurs qu'on pourrait attendre de la cuisine coréenne. Mais quand tu veux une soirée montréalaise décontractée, de belles assiettes, une terrasse en été et une marche prévue après, Giwa livre ça facilement et proprement.",
+        "Mais quand tu veux que quelqu'un d'autre cuisine, Giwa sur Wellington vaut le trajet en métro."
+      ],
+      "headings": [
+        "L'Ambiance",
+        "Quoi Commander",
+        "Les Plats",
+        "Les Boissons",
+        "Le Vrai Coût",
+        "Avant et Après",
+        "Pour Quel Type de Rendez-vous?"
+      ]
+    }
+  }
+}

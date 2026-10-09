@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import {
   CATEGORY_SLUGS, contentRoutes, expectedFrenchHref, frenchCheck, frenchRouteProblem, legacyFrenchCheck, linkProblems,
   numberWarnings, parityDifferences, usageProblems,
@@ -138,17 +138,24 @@ test("a changed number is a warning for Victor, not a failure", () => {
 });
 
 // ---------------------------------------------------------------------------
-// The seven pre-rework reviews: FR reused from src/content/reviews/fr/
+// The seven pre-rework reviews: FR reused from their old FR MDX
 // ---------------------------------------------------------------------------
 
-test("the seven pre-rework reviews map to their old EN and FR MDX by Notion row", () => {
-  const published = JSON.parse(readFileSync(new URL("../../notion/published.json", import.meta.url), "utf8")).entries;
+// The old MDX is retired once the reviews are imported (#541); their EN and
+// FR text lives on in each source snapshot's `legacy` block.
+const sourcesDir = new URL("../../notion/sources/", import.meta.url);
+const snapshots = readdirSync(sourcesDir).filter((file) => file.endsWith(".json")).map((file) => JSON.parse(readFileSync(new URL(file, sourcesDir), "utf8")));
+/** @param {number} number */
+const legacyFromSnapshot = (number) => snapshots.find((source) => source.notion?.number === number)?.legacy ?? null;
+
+test("the seven pre-rework reviews keep their old EN and FR text in their source snapshots", () => {
   assert.equal(Object.keys(LEGACY_REVIEWS).length, 7);
   for (const [number, name] of Object.entries(LEGACY_REVIEWS)) {
-    assert.equal(published[number]?.slug, name, `row #${number}`);
-    const legacy = readLegacyReview(number);
+    const legacy = legacyFromSnapshot(Number(number));
+    assert.equal(legacy?.name, name, `row #${number}`);
     assert.ok(legacy && legacy.en.texts.length > 20 && legacy.fr.texts.length > 20, name);
   }
+  assert.equal(legacyFromSnapshot(125), null);
   assert.equal(readLegacyReview(125), null);
 });
 
@@ -163,7 +170,7 @@ test("legacyTexts keeps the reader text of an old review and drops imports, comp
   assert.deepEqual(texts, ["Titre", "Faut-il réserver?", "Oui, surtout le vendredi.", "Premier paragraphe sur deux lignes.", "L'ambiance", "Un élément", "Un autre", "Plat", "Avis", "Crudo", "Très bon"]);
 });
 
-const moccioneLegacy = /** @type {NonNullable<ReturnType<typeof readLegacyReview>>} */ (readLegacyReview(55));
+const moccioneLegacy = /** @type {NonNullable<ReturnType<typeof readLegacyReview>>} */ (legacyFromSnapshot(55));
 
 test("FR prose fitted from the existing FR MDX passes the Verbatim Check against it", () => {
   // EN as the old EN said it; FR moved into the new sections with Allowed
