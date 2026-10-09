@@ -290,7 +290,8 @@
       "casual-midweek": "Soir de semaine",
       "impressing-a-cook": "Impressionner quelqu’un qui cuisine",
       "double-date": "Sortie à quatre",
-      "solo-at-the-bar": "En solo au bar"
+      "solo-at-the-bar": "En solo au bar",
+      "late-night": "Tard en soirée"
     },
     "dishTag": {
       "order-this": "À commander",
@@ -309,7 +310,8 @@
     },
     "timing": {
       "before": "Avant",
-      "after": "Après"
+      "after": "Après",
+      "before-or-after": "Avant ou après"
     },
     "category": {
       "activities-sports": "Activités et sports",
@@ -421,6 +423,8 @@
     "nightKickerBar": "Avant ou après un verre",
     "nightTitle": "Faire toute une soirée",
     "nightIntro": "Tout est à moins de quinze minutes à pied. Chaque lieu a sa propre page : heures, coût et ce que c’est vraiment.",
+    "nightIntroNearby": "Tout près, pour avant ou après.",
+    "nightIntroLinked": "Un nom en lien ouvre sa propre page, avec les heures et le coût.",
     "walk": "{minutes} min à pied",
     "minutes": "{minutes} min",
     "moreNearby": "{count} autres à proximité →",

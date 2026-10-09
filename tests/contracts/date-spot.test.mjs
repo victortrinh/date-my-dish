@@ -220,12 +220,17 @@ test("the acceptance collections are valid and fully linked", () => {
   assert.equal(contributorRecipesSchema.safeParse([contributorRecipeFixture("real-recipe")]).success, false);
 });
 
-test("Make a night of it shows only published picks, in category order, at most five", () => {
+test("Make a night of it links published picks, shows named ones unlinked, in category order, at most five", () => {
   const [restaurant, activity, bar] = dateSpotsSchema.parse(acceptanceCollection());
   const cards = makeANightCards(restaurant.locales.en.makeANight, [restaurant, activity, bar]);
-  assert.deepEqual(cards.map(({ target }) => target.id), ["test-only-activity", "test-only-bar"]);
-  assert.deepEqual(cards.map(({ category }) => category), ["nature-scenic", "social-romantic"]);
-  assert.deepEqual(makeANightCards(restaurant.locales.en.makeANight, [restaurant]), []);
+  assert.deepEqual(cards.map(({ target }) => target?.id), [undefined, "test-only-activity", "test-only-bar"]);
+  assert.deepEqual(cards.map(({ category }) => category), ["games-entertainment", "nature-scenic", "social-romantic"]);
+  assert.equal(cards[0].pick.name, `${token} Corner Cinema`);
+  // With no Date Spot published, only the pick that names its venue and category is left.
+  assert.deepEqual(makeANightCards(restaurant.locales.en.makeANight, [restaurant]).map(({ pick }) => pick.name), [`${token} Corner Cinema`]);
+  // A named pick becomes a link once its Date Spot is published.
+  const linked = makeANightCards([{ spotId: "test-only-activity", name: "Test Park", category: "nature-scenic" }], [activity]);
+  assert.equal(linked[0].target?.id, "test-only-activity");
   assert.deepEqual(makeANightCards(undefined, [activity]), []);
   const categories = ["social-romantic", "nature-scenic", "games-entertainment", "arts-culture", "activities-sports"];
   const spots = categories.map((category, index) => ({ id: `s-${index}`, category }));
@@ -246,6 +251,32 @@ test("Make a night of it picks that are published resolve to categorised spots, 
   assert.equal(dateSpotsSchema.safeParse([restaurant, elsewhere, bar]).success, false);
   const tooFar = structuredClone(restaurant); bothLocales(tooFar, (copy) => { copy.makeANight[0].walkMinutes = 25; });
   assert.equal(dateSpotsSchema.safeParse([tooFar, activity, bar]).success, false);
+  // A pick with no page must name its venue and its category.
+  const nameless = structuredClone(restaurant); bothLocales(nameless, (copy) => { delete copy.makeANight[3].name; });
+  assert.equal(dateSpotsSchema.safeParse([nameless, activity, bar]).success, false);
+  const uncategorisedPick = structuredClone(restaurant); bothLocales(uncategorisedPick, (copy) => { delete copy.makeANight[3].category; });
+  assert.equal(dateSpotsSchema.safeParse([uncategorisedPick, activity, bar]).success, false);
+  // One pick per category, linked or not, and a named category matches its Date Spot's.
+  const twoParks = structuredClone(restaurant); bothLocales(twoParks, (copy) => { copy.makeANight[3].category = "nature-scenic"; });
+  assert.equal(dateSpotsSchema.safeParse([twoParks, activity, bar]).success, false);
+  const mismatch = structuredClone(restaurant); bothLocales(mismatch, (copy) => { copy.makeANight[2].category = "arts-culture"; });
+  assert.equal(dateSpotsSchema.safeParse([mismatch, activity, bar]).success, false);
+  // The pick's category is structure: both locales agree on it.
+  const drift = structuredClone(restaurant); drift.locales["fr-CA"].makeANight[3].category = "arts-culture";
+  assert.equal(dateSpotSchema.safeParse(drift).success, false);
+});
+
+test("Good for takes a Late night row, and the verdict paragraph is optional prose", () => {
+  const spot = fixture("restaurant");
+  assert.ok(spot.locales.en.goodFor.some(({ occasion }) => occasion === "late-night"));
+  accepts(spot);
+  bothLocales(spot, (copy) => { copy.goodFor.push({ occasion: "late-night", assessment: "ideal", reason: token }); });
+  rejects(spot);
+  const detail = fixture("restaurant");
+  detail.locales.en.verdictDetail = `${token} verdict paragraph`;
+  rejects(detail);
+  detail.locales["fr-CA"].verdictDetail = `${token} paragraphe du verdict`;
+  accepts(detail);
 });
 
 test("planning pairings resolve only to published Restaurants or Bars", () => {

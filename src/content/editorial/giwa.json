@@ -34,6 +34,11 @@
           "occasion": "anniversary",
           "assessment": "not-for",
           "reason": "More cute and casual than big occasion, unless you're specifically craving Korean."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "caveat",
+          "reason": "The kitchen shuts at 22:00, 21:00 on Sunday, so a late table means two dishes and a drink rather than settling in."
         }
       ],
       "imageAlt": "Pretty Korean dishes at Giwa restaurant in Verdun Montreal, a casual date-night spot on Promenade Wellington serving modern Korean cuisine"
@@ -65,6 +70,11 @@
           "occasion": "anniversary",
           "assessment": "not-for",
           "reason": "Plus mignon et casual que grande occasion, sauf si tu as vraiment envie de coréen."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "caveat",
+          "reason": "La cuisine ferme à 22 h, 21 h le dimanche, alors une table tardive, c'est deux plats et un verre plutôt que de s'installer."
         }
       ],
       "metaTitle": "Giwa, Verdun : critique et souper à deux",

@@ -65,6 +65,11 @@
             "occasion": "casual-midweek",
             "assessment": "ideal",
             "reason": "[TEST ONLY] casual-midweek reason"
+          },
+          {
+            "occasion": "late-night",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] late-night reason"
           }
         ],
         "room": "[TEST ONLY] room test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
@@ -175,6 +180,7 @@
           "recipeId": "test-only-recipe",
           "intro": "[TEST ONLY] at home intro"
         },
+        "verdictDetail": "[TEST ONLY] verdict detail opens. [TEST ONLY] verdict reason test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test [TEST ONLY] verdict detail closes.",
         "makeANight": [
           {
             "spotId": "test-only-bar",
@@ -193,6 +199,13 @@
             "timing": "before",
             "walkMinutes": 9,
             "blurb": "[TEST ONLY] activity blurb"
+          },
+          {
+            "name": "[TEST ONLY] Corner Cinema",
+            "category": "games-entertainment",
+            "timing": "before-or-after",
+            "details": "[TEST ONLY] around the corner · $",
+            "blurb": "[TEST ONLY] cinema blurb"
           }
         ]
       },
@@ -238,6 +251,11 @@
             "occasion": "casual-midweek",
             "assessment": "ideal",
             "reason": "[TEST ONLY] casual-midweek reason"
+          },
+          {
+            "occasion": "late-night",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] late-night reason"
           }
         ],
         "room": "[TEST ONLY] room test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
@@ -348,6 +366,7 @@
           "recipeId": "test-only-recipe",
           "intro": "[TEST ONLY] at home intro"
         },
+        "verdictDetail": "[TEST ONLY] verdict detail opens. [TEST ONLY] verdict reason test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test [TEST ONLY] verdict detail closes.",
         "makeANight": [
           {
             "spotId": "test-only-bar",
@@ -366,6 +385,13 @@
             "timing": "before",
             "walkMinutes": 9,
             "blurb": "[TEST ONLY] activity blurb"
+          },
+          {
+            "name": "[TEST ONLY] Corner Cinema",
+            "category": "games-entertainment",
+            "timing": "before-or-after",
+            "details": "[TEST ONLY] around the corner · $",
+            "blurb": "[TEST ONLY] cinema blurb"
           }
         ]
       }
@@ -566,6 +592,11 @@
             "occasion": "casual-midweek",
             "assessment": "ideal",
             "reason": "[TEST ONLY] casual-midweek reason"
+          },
+          {
+            "occasion": "late-night",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] late-night reason"
           }
         ],
         "room": "[TEST ONLY] room test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",
@@ -668,6 +699,11 @@
             "occasion": "casual-midweek",
             "assessment": "ideal",
             "reason": "[TEST ONLY] casual-midweek reason"
+          },
+          {
+            "occasion": "late-night",
+            "assessment": "ideal",
+            "reason": "[TEST ONLY] late-night reason"
           }
         ],
         "room": "[TEST ONLY] room test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test",

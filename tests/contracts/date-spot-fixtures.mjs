@@ -46,7 +46,7 @@ function fullVenueCopy(spotType, slug, name) {
     factNotes: `${token} fact notes`,
     imageCredit: `${token} image credit`,
     essentials: { address: `${token} address`, cost: `${token} cost per person`, booking: `${token} booking`, access: `${token} access`, duration: `${token} duration`, hours: `${token} hours` },
-    goodFor: signals(["anniversary", "impressing-a-cook", "first-date", "casual-midweek"]),
+    goodFor: signals(["anniversary", "impressing-a-cook", "first-date", "casual-midweek", "late-night"]),
     room: filler("room", 500),
     drinks: {
       intro: filler("drinks", 40),
@@ -141,13 +141,18 @@ export function acceptanceCollection() {
     copy.meetChef = { name: `${token} Cook`, role: `${token} chef`, background: filler("chef background", 90), quote: `${token} chef quote`, approach: filler("chef approach", 100), profileId: "test-only-profile" };
     copy.atHome = { recipeId: "test-only-recipe", intro: `${token} at home intro` };
     copy.whatToOrder.waitersChoice = { recommendation: `${token} waiter recommendation`, outcome: `${token} they were right` };
+    // The verdict paragraph carries the one-line reason, which the page sets in ink.
+    copy.verdictDetail = `${token} verdict detail opens. ${copy.verdictReason} ${token} verdict detail closes.`;
     copy.whatToOrder.setMenu = { name: `${token} tasting`, courses: 5, pricePerPerson: "$95", note: `${token} set menu note`, advice: "take-it" };
     // Out of category order on purpose, plus a pick whose Date Spot is not
-    // published: the page shows the activity, then the bar, and nothing else.
+    // published and that names no venue (left out) and one with no page that
+    // names its venue and category (shown unlinked): the page shows the
+    // unlinked cinema, then the activity, then the bar.
     copy.makeANight = [
       { spotId: "test-only-bar", timing: "after", walkMinutes: 4, blurb: `${token} bar blurb` },
       { spotId: "test-only-unpublished", timing: "after", walkMinutes: 2, blurb: `${token} unpublished blurb` },
       { spotId: "test-only-activity", timing: "before", walkMinutes: 9, blurb: `${token} activity blurb` },
+      { name: `${token} Corner Cinema`, category: "games-entertainment", timing: "before-or-after", details: `${token} around the corner · $`, blurb: `${token} cinema blurb` },
     ];
     activity.locales[locale].pairItWith = [{ spotId: "test-only-restaurant", walkMinutes: 12 }];
     activity.locales[locale].verdictQualifier = `${token} in season`;
