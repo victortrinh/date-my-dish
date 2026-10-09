@@ -18,7 +18,7 @@ try {
 module.exports = {
   ci: {
     collect: {
-      // MAINTENANCE_MODE is on in wrangler.jsonc and 503s every page; audit the real site.
+      // Force MAINTENANCE_MODE off so a maintenance window never 503s the audit.
       startServerCommand: 'npx wrangler dev --port 8788 --var MAINTENANCE_MODE:false',
       startServerReadyPattern: 'Ready on',
       startServerReadyTimeout: 30000,

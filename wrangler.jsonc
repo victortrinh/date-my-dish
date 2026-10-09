@@ -10,12 +10,14 @@
   "assets": {
     "binding": "ASSETS",
     "directory": "dist/client",
-    // Maintenance mode: must be true while MAINTENANCE_MODE is "true" so the
-    // Worker (src/worker.ts) sees static page requests. Set both back to turn it off.
-    "run_worker_first": true
+    // false: Cloudflare serves static assets and public/_redirects directly; only
+    // unmatched requests (the root language redirect, 404s) reach src/worker.ts.
+    // For a maintenance window, set this to true together with MAINTENANCE_MODE
+    // so the Worker sees static page requests.
+    "run_worker_first": false
   },
   "vars": {
-    "MAINTENANCE_MODE": "true"
+    "MAINTENANCE_MODE": "false"
   },
   "observability": {
     "enabled": true
