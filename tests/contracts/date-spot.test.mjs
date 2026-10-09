@@ -190,7 +190,7 @@ test("Date Spots require category, signal reason, address and practical info; th
     for (const key of ["whatItIs", "howToDoItWell", "whenItWorks", "opening", "paymentDisclosure"]) {
       accepts(bothLocales(fixture(type), (copy) => { delete copy[key]; }));
     }
-    for (const key of ["verdictReason", "season", "essentials.address", "essentials.cost", "essentials.timing", "imageAlt"]) {
+    for (const key of ["verdictReason", "season", "essentials.address", "essentials.cost", "essentials.hours", "imageAlt"]) {
       rejects(without(fixture(type), `locales.en.${key}`));
     }
     rejects(without(fixture(type), "category"));

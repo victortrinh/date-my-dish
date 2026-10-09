@@ -65,7 +65,7 @@ Required:
 7. Byline and visit or payment disclosure.
 8. EN and FR versions.
 
-Optional, in design order: Good for (up to 6 rows), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, Instagram, the Google snapshot, Book and Map links.
+Optional, in design order: Good for (up to 6 rows), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, opening hours, Instagram, the Google snapshot, Book and Map links.
 
 **Make a night of it** shows 1 to 5 cards, always in this order: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. A card appears only when its Date Spot page is published. With no published picks the section is hidden.
 

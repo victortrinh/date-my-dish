@@ -66,6 +66,10 @@ const photo = object({
 // The essentials card. A review needs cuisine (on the copy), neighbourhood
 // (on the record), address and price per person; a Date Spot needs its
 // address and practical info (hours and cost here, season on the copy).
+// Opening hours are locale text ("6pm" in English, "18 h" in French), so
+// `hours` is an ordinary words field: both locales must have it or neither,
+// but its wording may differ. Don't name it `timing`: that key is the
+// structural before/after enum on a Make a night of it pick.
 const optionalEssentials = {
   booking: text.optional(),
   access: text.optional(),
@@ -74,8 +78,8 @@ const optionalEssentials = {
   transit: text.optional(),
   stepFree: text.optional(),
 };
-const venueEssentials = object({ address: text, cost: text, timing: text.optional(), ...optionalEssentials });
-const planningEssentials = object({ address: text, cost: text, timing: text, ...optionalEssentials });
+const venueEssentials = object({ address: text, cost: text, hours: text.optional(), ...optionalEssentials });
+const planningEssentials = object({ address: text, cost: text, hours: text, ...optionalEssentials });
 
 const commonCopy = {
   // A review's H1 is always "{Name}, {Neighbourhood}" and a Date Spot's

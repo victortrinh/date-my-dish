@@ -45,7 +45,7 @@ function fullVenueCopy(spotType, slug, name) {
     sourceNotes: `${token} source notes`,
     factNotes: `${token} fact notes`,
     imageCredit: `${token} image credit`,
-    essentials: { address: `${token} address`, cost: `${token} cost per person`, booking: `${token} booking`, access: `${token} access`, duration: `${token} duration`, timing: `${token} timing` },
+    essentials: { address: `${token} address`, cost: `${token} cost per person`, booking: `${token} booking`, access: `${token} access`, duration: `${token} duration`, hours: `${token} hours` },
     goodFor: signals(["anniversary", "impressing-a-cook", "first-date", "casual-midweek"]),
     room: filler("room", 500),
     drinks: {
@@ -85,7 +85,7 @@ function planningCopy(slug, name) {
     verdictReason: `${token} verdict reason`,
     imageAlt: `${token} image description`,
     imageCredit: `${token} image credit`,
-    essentials: { address: `${token} address`, cost: `${token} cost`, timing: `${token} hours`, booking: `${token} booking`, duration: `${token} duration` },
+    essentials: { address: `${token} address`, cost: `${token} cost`, hours: `${token} hours`, booking: `${token} booking`, duration: `${token} duration` },
     season: `${token} all year`,
     paymentDisclosure: `${token} payment disclosure`,
     whenItWorks: [{ situation: `${token} after dinner`, assessment: "ideal", reason: `${token} works reason` }, { situation: `${token} winter`, assessment: "not-for", reason: `${token} winter reason` }],
