@@ -318,6 +318,88 @@
   .arch {
     @apply overflow-hidden rounded-arch;
   }
+
+  /* A photo inside an .arch that leans in slowly while its card (.group) is
+     hovered or focused. Pair the .arch with `isolate` so Safari clips it. */
+  .zoom {
+    transition: transform var(--duration-slow) var(--ease-out);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .group:hover .zoom,
+    .group:focus-visible .zoom {
+      transform: scale(1.04);
+    }
+  }
+}
+
+/* ─── Motion: page transitions, reveals, the verdict settle ─────────────
+   DESIGN.md, Motion. Durations and easing come from the motion tokens.
+   Nothing here runs under prefers-reduced-motion: reduce, and nothing hides
+   content unless BaseLayout's head script set .js-reveal (JS on, motion
+   allowed) and its reveal script then marked the element .reveal-pending
+   (below the fold at load). */
+
+/* Cross-document View Transitions: the page crossfades while a card's
+   photo and title (view-transition-name from src/utils/view-transitions.ts)
+   travel to the post's hero and h1. The header holds still. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
+
+.site-nav {
+  view-transition-name: site-nav;
+}
+
+::view-transition-group(*) {
+  animation-duration: var(--duration-base);
+  animation-timing-function: var(--ease-out);
+}
+
+::view-transition-old(root) {
+  animation-duration: var(--duration-quick);
+}
+
+::view-transition-new(root) {
+  animation-duration: var(--duration-base);
+}
+
+/* Quiet reveals: an element marked data-reveal that starts below the fold
+   fades and rises once, staggered with whatever enters beside it. */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+/* The verdict settle: the window's pane lights once, like a lamp coming on. */
+@keyframes pane-light {
+  from {
+    opacity: 0;
+  }
+  35% {
+    opacity: 0.4;
+  }
+}
+
+@media screen and (prefers-reduced-motion: no-preference) {
+  .js-reveal [data-reveal].reveal-pending {
+    opacity: 0;
+  }
+
+  .js-reveal [data-reveal].is-revealed {
+    animation: reveal var(--duration-slow) var(--ease-out) var(--reveal-delay, 0ms) backwards;
+  }
+
+  .js-reveal [data-settle].reveal-pending .pane-light {
+    opacity: 0;
+  }
+
+  .js-reveal [data-settle].is-revealed .pane-light {
+    animation: pane-light var(--duration-slow) var(--ease-out) var(--duration-quick) backwards;
+  }
 }
 
 /* Pagefind UI: themed through its own custom properties, from the semantic

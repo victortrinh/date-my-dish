@@ -76,10 +76,14 @@ A signature (the reporter's signed note, the interviewer under a chef Q&A) is Li
 
 Tokens: `--ease-out` `cubic-bezier(0.22, 1, 0.36, 1)`, `--duration-quick` 160ms, `--duration-base` 320ms, `--duration-slow` 640ms.
 
-- Hover: colour and underline-draw transitions (`quick` / `base`).
-- Press: `.btn` scales to 0.97.
-- Planned (redesign phase 4): cross-document View Transitions from card to post hero, one-time quiet reveals, the verdict settle on review pages.
-- `prefers-reduced-motion: reduce` disables all of it; content is visible without JavaScript.
+Everything below takes its duration and easing from these tokens; the CSS lives at the end of `src/styles/global.css` ("Motion").
+
+- **Hover**: colour and underline-draw transitions (`quick` / `base`). A card's photo leans in to 1.04 inside its arch (`.zoom` on the img, `.arch isolate` on its frame, `slow`), with the title's drawn underline (`.link-draw`).
+- **Press**: `.btn` scales to 0.97.
+- **Card to post (cross-document View Transitions)**: `@view-transition { navigation: auto; }`, no JavaScript. A card's photo and title carry the same `view-transition-name` as the post's hero photo and h1, `{spot|chef|recipe}-{id}-{photo|title}`, so the photo grows into the hero and the name into the h1 (`base`), while the page crossfades (old page out in `quick`, new in `base`). The header (`.site-nav`) holds still. Names come only from `transitionStyle()` in `src/utils/view-transitions.ts`, which hands a name out once per page render; `validate-build` fails a page that repeats one, since one repeat makes the browser skip the whole transition.
+- **Quiet reveals**: section headings, card grids and cards, and the essentials card carry `data-reveal`. Never body paragraphs. The head script sets `.js-reveal` on `<html>` before first paint (JS on, `IntersectionObserver` present, motion allowed). The reveal script at the end of `BaseLayout` (emitted once) leaves anything on screen at load alone (LCP, CLS) and marks the rest `.reveal-pending`. Each fades and rises 1rem once as it scrolls in (`slow`), with a 90 ms stagger (four steps at most) among elements entering together. Skipped on back/forward. Without JavaScript nothing is ever hidden.
+- **The verdict settle**: the page's own verdict mark (`VerdictBadge settle`: `#verdict` on reviews, the essentials card on Date Spots) lights its pane (`.pane-light`) once, like a lamp coming on, when it scrolls into view or on load if already visible (`slow`, after a `quick` pause). An unlit verdict has no pane to light.
+- `prefers-reduced-motion: reduce` disables all of it: no View Transitions, no reveals, no settle, no zoom. Content is fully visible without JavaScript, under reduced motion and in print. `tests/smoke/motion.spec.ts` covers it.
 
 ## Dark mode
 

@@ -5,12 +5,15 @@ import type { Locale } from "@i18n/utils";
 
 // The verdict mark: the greystone window, lit for a favourite, half-lit when
 // it depends on the night, unlit for a pass, then the label in its own colour.
-interface Props { verdict: Verdict; locale: Locale; qualifier?: string; size?: "sm" | "lg"; class?: string; }
-const { verdict, locale, qualifier, size = "sm", class: className } = Astro.props;
+// `settle` marks the page's own verdict: its pane lights once when it comes
+// into view (the reveal script in BaseLayout, DESIGN.md Motion).
+interface Props { verdict: Verdict; locale: Locale; qualifier?: string; size?: "sm" | "lg"; settle?: boolean; class?: string; }
+const { verdict, locale, qualifier, size = "sm", settle = false, class: className } = Astro.props;
 const state = verdict === "favourite" ? "lit" : verdict === "conditional" ? "half" : "unlit";
 ---
 <span
   data-verdict={verdict}
+  data-settle={settle || undefined}
   class:list={[
     "inline-flex max-w-full items-center font-ui font-semibold uppercase",
     size === "lg" ? "gap-3 text-body-sm tracking-[0.12em]" : "gap-2 text-eyebrow",

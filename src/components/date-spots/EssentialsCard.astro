@@ -7,10 +7,10 @@ import type { CollectionEntry } from "astro:content";
 // The one fact card per page. "Our take" repeats the page verdict word for
 // word, so a reader who goes straight to the sidebar still gets the answer.
 // The Google rating is the venue's number, dated, and labelled as theirs.
-interface Props { spot: CollectionEntry<"dateSpots">["data"]; locale: Locale; id?: string; class?: string; }
+interface Props { spot: CollectionEntry<"dateSpots">["data"]; locale: Locale; id?: string; class?: string; /** Play the verdict settle here (pages with no #verdict section). */ settleVerdict?: boolean; }
 // Rendered twice on review pages (after the verdict on phones, in the sidebar
 // on desktop), so the heading id is configurable.
-const { spot, locale, id = "essentials-title", class: className } = Astro.props;
+const { spot, locale, id = "essentials-title", class: className, settleVerdict = false } = Astro.props;
 const copy = spot.locales[copyLocale(locale)];
 const { essentials } = copy;
 const category = spotCategory(spot);
@@ -45,11 +45,11 @@ const rows: [string, string | undefined][] = isVenueReview(spot)
     ];
 const snapshots = spot.googleReviews ?? [];
 ---
-<section aria-labelledby={id} data-pagefind-ignore={id !== "essentials-title" || undefined} class:list={[className, "card"]}>
+<section aria-labelledby={id} data-pagefind-ignore={id !== "essentials-title" || undefined} data-reveal class:list={[className, "card"]}>
   <h2 id={id} class="text-heading-3 text-ink">{t(locale, "dateSpot.essentials")}</h2>
   <div class="mt-5 border-b border-line pb-5">
     <p class="eyebrow">{t(locale, "dateSpot.ourTake")}</p>
-    <VerdictBadge verdict={spot.reviewVerdict} locale={locale} qualifier={qualifier} class="mt-3" />
+    <VerdictBadge verdict={spot.reviewVerdict} locale={locale} qualifier={qualifier} settle={settleVerdict} class="mt-3" />
   </div>
   <dl class="divide-y divide-line font-ui text-body-sm">
     {rows.filter(([, value]) => value).map(([label, value]) => (

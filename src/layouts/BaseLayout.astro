@@ -74,8 +74,11 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     <link rel="alternate" type="application/rss+xml" title="Date My Dish (English)" href="/en/rss.xml" />
     <link rel="alternate" type="application/rss+xml" title="Date My Dish (Français)" href="/fr/rss.xml" />
     <meta name="p:domain_verify" content="f73563c227b19a404524ccf1d3167dd6"/>
+    <!-- Before first paint: the theme, then .js-reveal, which lets the reveal
+         script below hide what starts below the fold (only with JS on and
+         motion allowed; without it every element stays visible). -->
     <script is:inline>
-      (function(){var t=localStorage.getItem('dmd_theme');if(!t){var o=localStorage.getItem('theme');if(o){t=o;localStorage.setItem('dmd_theme',o);localStorage.removeItem('theme')}}if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})();
+      (function(){var d=document.documentElement;if('IntersectionObserver' in window&&matchMedia('(prefers-reduced-motion: no-preference)').matches)d.classList.add('js-reveal');var t=localStorage.getItem('dmd_theme');if(!t){var o=localStorage.getItem('theme');if(o){t=o;localStorage.setItem('dmd_theme',o);localStorage.removeItem('theme')}}if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})();
     </script>
     <!-- Cloudflare Web Analytics -->
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2acfc6a04df0427b80b87ca6498542a3"}' is:inline></script>
@@ -114,5 +117,36 @@ const resolvedCanonical = canonical || Astro.url.pathname;
     </main>
     <Footer locale={locale} />
     <SearchOverlay locale={locale} />
+    <!-- Quiet reveals and the verdict settle (DESIGN.md, Motion). Emitted once,
+         here. Anything on screen at load is left alone (LCP, CLS); anything
+         below the fold is marked .reveal-pending and revealed once when it
+         scrolls in. Elements entering together are staggered. Skipped on
+         back/forward, where the reader has already seen the page. -->
+    <script is:inline>
+      (function(){
+        var d=document.documentElement;
+        if(!d.classList.contains('js-reveal'))return;
+        var nav=performance.getEntriesByType&&performance.getEntriesByType('navigation')[0];
+        if(nav&&nav.type==='back_forward')return;
+        var io=new IntersectionObserver(function(entries){
+          var step=0;
+          entries.forEach(function(entry){
+            if(!entry.isIntersecting)return;
+            var el=entry.target;
+            io.unobserve(el);
+            if(el.hasAttribute('data-reveal'))el.style.setProperty('--reveal-delay',Math.min(step++,4)*90+'ms');
+            el.classList.remove('reveal-pending');
+            el.classList.add('is-revealed');
+          });
+        },{rootMargin:'0px 0px -8% 0px'});
+        var fold=window.innerHeight;
+        document.querySelectorAll('[data-reveal],[data-settle]').forEach(function(el){
+          var box=el.getBoundingClientRect();
+          if(box.bottom>0&&box.top<fold){if(el.hasAttribute('data-settle'))el.classList.add('is-revealed');return;}
+          el.classList.add('reveal-pending');
+          io.observe(el);
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -23,6 +23,7 @@ const { locale, compact = false, includeScript = false } = Astro.props;
       : "",
   ]}
   data-locale={locale}
+  data-subscribe-label={t(locale, "newsletter.subscribe")}
   data-compact={compact ? "true" : "false"}
 >
   <div class="newsletter-content">
@@ -55,6 +56,7 @@ const { locale, compact = false, includeScript = false } = Astro.props;
 
     var locale = widget.dataset.locale;
     var isCompact = widget.dataset.compact === 'true';
+    var subscribeLabel = widget.dataset.subscribeLabel;
     var formArea = widget.querySelector('.newsletter-form-area');
     if (!formArea) return;
 
@@ -79,7 +81,7 @@ const { locale, compact = false, includeScript = false } = Astro.props;
         'class="' + inputClass + '" />' +
         '<input type="hidden" name="fields[locale]" value="' + locale + '" />' +
         '<button type="submit" class="' + btnClass + '">' +
-        (locale === 'fr' ? 'S\'abonner' : 'Join the Club') + '</button></form>' +
+        subscribeLabel + '</button></form>' +
         '<div class="newsletter-feedback mt-2" aria-live="polite"></div>';
 
       var form = formArea.querySelector('.newsletter-form');
@@ -115,7 +117,7 @@ const { locale, compact = false, includeScript = false } = Astro.props;
             feedback.innerHTML = '<p class="font-ui text-body-sm font-medium" role="alert">' +
               (locale === 'fr' ? 'Une erreur est survenue. Veuillez réessayer.' : 'Something went wrong. Please try again.') + '</p>';
             btn.disabled = false;
-            btn.textContent = locale === 'fr' ? 'S\'abonner' : 'Subscribe';
+            btn.textContent = subscribeLabel;
           });
       });
     }
