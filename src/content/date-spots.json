@@ -318,65 +318,37 @@
             {
               "name": "Gimbap",
               "tag": "order-this",
-              "note": "Seaweed roll with the fish of the moment, cucumber, avocado and a gochujang vinaigrette. Fresh, lightly sweet, gently spicy, very clean. A good first bite and easy to share.",
-              "photo": {
-                "photo": "gimbap",
-                "alt": "Gimbap at Giwa Verdun, a seaweed roll with seasonal fish, cucumber, avocado, and gochujang vinaigrette: a fresh and easy date-night starter to share"
-              }
+              "note": "Seaweed roll with the fish of the moment, cucumber, avocado and a gochujang vinaigrette. Fresh, lightly sweet, gently spicy, very clean. A good first bite and easy to share."
             },
             {
               "name": "Yukhwe",
               "tag": "order-this",
-              "note": "Beef tartare with pear, sesame, soy and egg yolk, finished with nasturtium. Sweet-salty and silky, with juicy pear cutting through and real savoury depth.",
-              "photo": {
-                "photo": "yukhwe",
-                "alt": "Yukhwe beef tartare at Giwa Verdun, a Korean-style tartare with pear, sesame, soy, egg yolk, and nasturtium on a dark ceramic plate"
-              }
+              "note": "Beef tartare with pear, sesame, soy and egg yolk, finished with nasturtium. Sweet-salty and silky, with juicy pear cutting through and real savoury depth."
             },
             {
               "name": "Hodumaru",
               "tag": "order-this",
-              "note": "Rich gochujang chocolate mousse with chilli-spiked chantilly, candied walnuts and maple ice cream. Chocolate forward with a warm chilli tingle. Best dessert of the three.",
-              "photo": {
-                "photo": "hodumaru",
-                "alt": "Hodumaru dessert at Giwa Verdun, gochujang chocolate mousse with chili-spiked chantilly, candied walnuts, and maple ice cream, the standout dessert of the night"
-              }
+              "note": "Rich gochujang chocolate mousse with chilli-spiked chantilly, candied walnuts and maple ice cream. Chocolate forward with a warm chilli tingle. Best dessert of the three."
             },
             {
               "name": "Baechu",
               "tag": "worth-it",
-              "note": "Charred napa cabbage glazed with doenjang over perilla cream, with cucumber and herbs. Smoky-sweet, savoury funk, cooling herbal finish.",
-              "photo": {
-                "photo": "baechu",
-                "alt": "Charred napa cabbage with doenjang glaze over perilla cream at Giwa Verdun, the seasonal baechu dish with cucumber and fresh herb finish"
-              }
+              "note": "Charred napa cabbage glazed with doenjang over perilla cream, with cucumber and herbs. Smoky-sweet, savoury funk, cooling herbal finish."
             },
             {
               "name": "Basque corn cheesecake",
               "tag": "worth-it",
-              "note": "Torched corn and corn ice cream, creamy and toasty. The popcorn topping tasted stale.",
-              "photo": {
-                "photo": "corn-cheesecake",
-                "alt": "Basque corn cheesecake at Giwa Verdun with torched corn and corn ice cream, a creamy and toasty seasonal dessert"
-              }
+              "note": "Torched corn and corn ice cream, creamy and toasty. The popcorn topping tasted stale."
             },
             {
               "name": "Haemul jang",
               "tag": "skip",
-              "note": "Soy-marinated crab, shrimp, octopus and salmon with seaweed and egg yolk. Briny-sweet and glossy, but the seaweed crisp wasn't crisp and for the price the flavour stayed uniform and soy-heavy. Tempting, worth trying once, but I wouldn't reorder.",
-              "photo": {
-                "photo": "haemul-jang",
-                "alt": "Haemul Jang at Giwa Verdun, soy-marinated seafood with crab, shrimp, octopus, and salmon topped with egg yolk on a black ceramic plate"
-              }
+              "note": "Soy-marinated crab, shrimp, octopus and salmon with seaweed and egg yolk. Briny-sweet and glossy, but the seaweed crisp wasn't crisp and for the price the flavour stayed uniform and soy-heavy. Tempting, worth trying once, but I wouldn't reorder."
             },
             {
               "name": "Doenjang crème brûlée",
               "tag": "skip",
-              "note": "Sweet and salty with a fermented edge. Cleanly made, not my thing.",
-              "photo": {
-                "photo": "doenjang-creme-brulee",
-                "alt": "Doenjang crème brûlée at Giwa Verdun, a sweet-salty fermented dessert with a clean golden crust and an unconventional Korean-French finish"
-              }
+              "note": "Sweet and salty with a fermented edge. Cleanly made, not my thing."
             }
           ]
         },
@@ -491,65 +463,37 @@
             {
               "name": "Gimbap",
               "tag": "order-this",
-              "note": "Rouleau de mer avec poisson du moment, concombre, avocat et vinaigrette gochujang. Frais, légèrement sucré, doucement épicé, très net. Une bonne première bouchée, facile à partager.",
-              "photo": {
-                "photo": "gimbap",
-                "alt": "Gimbap au restaurant Giwa à Verdun, un rouleau de mer avec poisson du moment, concombre, avocat et vinaigrette gochujang, une entrée fraîche à partager"
-              }
+              "note": "Rouleau de mer avec poisson du moment, concombre, avocat et vinaigrette gochujang. Frais, légèrement sucré, doucement épicé, très net. Une bonne première bouchée, facile à partager."
             },
             {
               "name": "Yukhwe",
               "tag": "order-this",
-              "note": "Tartare de bœuf avec poire, sésame, soya et jaune d'oeuf, fini à la capucine. Doux-salé et soyeux, avec la poire juteuse qui tranche et une vraie profondeur savoureuse.",
-              "photo": {
-                "photo": "yukhwe",
-                "alt": "Yukhwe tartare de boeuf au restaurant Giwa à Verdun, tartare à la coréenne avec poire, sésame, soya, jaune d'oeuf et capucine sur une assiette en céramique noire"
-              }
+              "note": "Tartare de bœuf avec poire, sésame, soya et jaune d'oeuf, fini à la capucine. Doux-salé et soyeux, avec la poire juteuse qui tranche et une vraie profondeur savoureuse."
             },
             {
               "name": "Hodumaru",
               "tag": "order-this",
-              "note": "Mousse au chocolat gochujang, chantilly au piment, noix caramélisées et crème glacée à l'érable. Chocolat en avant avec une chaleur de piment. Le meilleur des trois desserts.",
-              "photo": {
-                "photo": "hodumaru",
-                "alt": "Dessert Hodumaru au restaurant Giwa à Verdun, mousse au chocolat gochujang avec chantilly au piment, noix caramélisées et crème glacée à l'érable"
-              }
+              "note": "Mousse au chocolat gochujang, chantilly au piment, noix caramélisées et crème glacée à l'érable. Chocolat en avant avec une chaleur de piment. Le meilleur des trois desserts."
             },
             {
               "name": "Baechu",
               "tag": "worth-it",
-              "note": "Chou napa grillé glacé au doenjang, servi sur crème de perilla avec concombre et herbes fraîches. Fumé-sucré, funk savoureux, finale herbacée rafraîchissante.",
-              "photo": {
-                "photo": "baechu",
-                "alt": "Baechu saisonnier au restaurant Giwa à Verdun, chou napa grillé glacé au doenjang sur crème de perilla avec concombre et herbes fraîches"
-              }
+              "note": "Chou napa grillé glacé au doenjang, servi sur crème de perilla avec concombre et herbes fraîches. Fumé-sucré, funk savoureux, finale herbacée rafraîchissante."
             },
             {
               "name": "Cheesecake basque au maïs",
               "tag": "worth-it",
-              "note": "Maïs brûlé et crème glacée au maïs, crémeux et grillé. Le topping de popcorn goûtait rassis.",
-              "photo": {
-                "photo": "corn-cheesecake",
-                "alt": "Cheesecake basque au maïs au restaurant Giwa à Verdun avec maïs brûlé et crème glacée au maïs, un dessert crémeux et saisonnier"
-              }
+              "note": "Maïs brûlé et crème glacée au maïs, crémeux et grillé. Le topping de popcorn goûtait rassis."
             },
             {
               "name": "Haemul Jang",
               "tag": "skip",
-              "note": "Crabe, crevettes, pieuvre et saumon marinés au soya, avec algue et jaune d'oeuf. Saumâtre-sucré et lustré, mais la croustille d'algue n'était pas croustillante et, pour le prix, la saveur restait uniforme et dominée par le soya. Tentant, à essayer une fois, mais je ne le recommanderais pas.",
-              "photo": {
-                "photo": "haemul-jang",
-                "alt": "Haemul Jang au restaurant Giwa à Verdun, plateau de fruits de mer marinés au soya avec crabe, crevettes, pieuvre et saumon surmonté d'un jaune d'oeuf"
-              }
+              "note": "Crabe, crevettes, pieuvre et saumon marinés au soya, avec algue et jaune d'oeuf. Saumâtre-sucré et lustré, mais la croustille d'algue n'était pas croustillante et, pour le prix, la saveur restait uniforme et dominée par le soya. Tentant, à essayer une fois, mais je ne le recommanderais pas."
             },
             {
               "name": "Crème brûlée au doenjang",
               "tag": "skip",
-              "note": "Douce et salée, avec une pointe fermentée. Proprement exécutée, pas vraiment mon truc.",
-              "photo": {
-                "photo": "doenjang-creme-brulee",
-                "alt": "Crème brûlée au doenjang au restaurant Giwa à Verdun, un dessert doux-salé-fermenté avec une croûte dorée propre et une finale coréenne-française originale"
-              }
+              "note": "Douce et salée, avec une pointe fermentée. Proprement exécutée, pas vraiment mon truc."
             }
           ]
         },
@@ -619,50 +563,6 @@
             "answer": "Pas nécessaire. Sans réservation, c'est facile. Ça vaut la peine d'appeler pour une table en terrasse par une belle soirée."
           }
         ]
-      }
-    },
-    "photos": {
-      "gimbap": {
-        "src": "/images/date-spots/giwa-gimbap.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "yukhwe": {
-        "src": "/images/date-spots/giwa-yukhwe.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "hodumaru": {
-        "src": "/images/date-spots/giwa-hodumaru.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "baechu": {
-        "src": "/images/date-spots/giwa-baechu.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "corn-cheesecake": {
-        "src": "/images/date-spots/giwa-corn-cheesecake.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "haemul-jang": {
-        "src": "/images/date-spots/giwa-haemul-jang.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "doenjang-creme-brulee": {
-        "src": "/images/date-spots/giwa-doenjang-creme-brulee.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -736,65 +636,37 @@
             {
               "name": "Hot oysters, cider sabayon",
               "tag": "order-this",
-              "note": "Perfect texture on the poached oysters and a genuinely good way to open the meal. The add-on worth making.",
-              "photo": {
-                "photo": "hot-oysters",
-                "alt": "Hot oysters with cider sabayon served on a bed of sea salt at Hoogan et Beaufort Montreal, the shells glistening under warm restaurant lighting"
-              }
+              "note": "Perfect texture on the poached oysters and a genuinely good way to open the meal. The add-on worth making."
             },
             {
               "name": "Crab, dashi broth, tomatillo",
               "tag": "order-this",
-              "note": "Freshness and umami straight away. Sweet crab against a savoury, sea-leaning dashi, with tomatillo bringing green acidity that keeps the bowl sharp and modern. Clean, polished presentation. Best plate of the night.",
-              "photo": {
-                "photo": "crab-dashi",
-                "alt": "Crab with dashi broth and tomatillo at Hoogan et Beaufort Montreal, delicate seafood arranged in a shallow bowl with precise, minimalist plating"
-              }
+              "note": "Freshness and umami straight away. Sweet crab against a savoury, sea-leaning dashi, with tomatillo bringing green acidity that keeps the bowl sharp and modern. Clean, polished presentation. Best plate of the night."
             },
             {
               "name": "Green asparagus, snap peas, pistachio",
               "tag": "worth-it",
-              "note": "You can taste that the vegetables are local, right down to the microgreens. Asparagus and snap peas keep it crisp and green, pistachio adds buttery richness and crunch. A proper reset course before the pasta.",
-              "photo": {
-                "photo": "green-asparagus",
-                "alt": "Green asparagus and snap peas with pistachio and vibrant microgreens plated elegantly at Hoogan et Beaufort Montreal"
-              }
+              "note": "You can taste that the vegetables are local, right down to the microgreens. Asparagus and snap peas keep it crisp and green, pistachio adds buttery richness and crunch. A proper reset course before the pasta."
             },
             {
               "name": "Rhubarb, cherry blossom, shiso",
               "tag": "worth-it",
-              "note": "Light, bright and refreshing as a closer. Tart rhubarb, a gentle floral note, a subtle herbal lift. Finishes clean without being too sweet.",
-              "photo": {
-                "photo": "rhubarb",
-                "alt": "Rhubarb dessert with cherry blossom and shiso at Hoogan et Beaufort Montreal, a delicate, colorful plate with jewel-toned fruit and pale floral elements"
-              }
+              "note": "Light, bright and refreshing as a closer. Tart rhubarb, a gentle floral note, a subtle herbal lift. Finishes clean without being too sweet."
             },
             {
               "name": "Spaghetti, ramps, Louis d'Or",
               "tag": "worth-it",
-              "note": "Visually refined and very well made. Ramps for a gentle garlicky hit, Louis d'Or for nutty depth, sauce clinging properly. It tastes like an excellent pasta dish rather than a surprising one.",
-              "photo": {
-                "photo": "spaghetti",
-                "alt": "Spaghetti with ramps and Louis d'Or cheese at Hoogan et Beaufort Montreal, silky noodles coiled elegantly in a light creamy sauce"
-              }
+              "note": "Visually refined and very well made. Ramps for a gentle garlicky hit, Louis d'Or for nutty depth, sauce clinging properly. It tastes like an excellent pasta dish rather than a surprising one."
             },
             {
               "name": "Beef, maitake, black cardamom",
               "tag": "worth-it",
-              "note": "A good piece of beef with an earthy, smoky backdrop. Nothing jumped out. Well-executed rather than a standout.",
-              "photo": {
-                "photo": "beef",
-                "alt": "Beef with maitake mushrooms and black cardamom at Hoogan et Beaufort Montreal, a beautifully plated main course with rich dark jus and precise garnish"
-              }
+              "note": "A good piece of beef with an earthy, smoky backdrop. Nothing jumped out. Well-executed rather than a standout."
             },
             {
               "name": "Grilled focaccia, whipped butter",
               "tag": "skip",
-              "note": "Listed as focaccia but it ate like simple grilled bread: no airy bubbles, none of that chewy olive-oil richness. It's described as fire-baked and I didn't get much extra flavour from that, and the whipped butter was subtle too. Since it's called out on the menu, I expected it to stand out.",
-              "photo": {
-                "photo": "focaccia",
-                "alt": "Grilled focaccia with whipped butter at Hoogan et Beaufort Montreal, sliced bread on a wooden board with a small ramekin of pale whipped butter"
-              }
+              "note": "Listed as focaccia but it ate like simple grilled bread: no airy bubbles, none of that chewy olive-oil richness. It's described as fire-baked and I didn't get much extra flavour from that, and the whipped butter was subtle too. Since it's called out on the menu, I expected it to stand out."
             }
           ]
         },
@@ -914,65 +786,37 @@
             {
               "name": "Huîtres chaudes, sabayon au cidre",
               "tag": "order-this",
-              "note": "Texture parfaite sur les huîtres pochées et une vraie bonne façon d'ouvrir le repas. L'extra qui vaut la peine.",
-              "photo": {
-                "photo": "hot-oysters",
-                "alt": "Huîtres chaudes avec sabayon au cidre servies sur un lit de sel de mer au Hoogan et Beaufort Montréal, les coquilles luisant sous l'éclairage chaleureux du restaurant"
-              }
+              "note": "Texture parfaite sur les huîtres pochées et une vraie bonne façon d'ouvrir le repas. L'extra qui vaut la peine."
             },
             {
               "name": "Crabe, bouillon dashi, tomatillo",
               "tag": "order-this",
-              "note": "Fraîcheur et umami tout de suite. Crabe sucré contre un dashi savoureux penché vers la mer, avec le tomatillo qui apporte cette acidité verte qui garde le bol vif et moderne. Présentation nette et soignée. La meilleure assiette de la soirée.",
-              "photo": {
-                "photo": "crab-dashi",
-                "alt": "Crabe avec bouillon dashi et tomatillo au Hoogan et Beaufort Montréal, fruits de mer délicats disposés dans un bol peu profond avec un dressage minimaliste précis"
-              }
+              "note": "Fraîcheur et umami tout de suite. Crabe sucré contre un dashi savoureux penché vers la mer, avec le tomatillo qui apporte cette acidité verte qui garde le bol vif et moderne. Présentation nette et soignée. La meilleure assiette de la soirée."
             },
             {
               "name": "Asperges vertes, pois mange-tout, pistache",
               "tag": "worth-it",
-              "note": "Tu goûtes que les légumes sont locaux, jusqu'aux micropousses. Les asperges et les pois mange-tout gardent ça croquant et vert, la pistache ajoute une richesse beurrée et du croquant. Un vrai service de remise à zéro avant les pâtes.",
-              "photo": {
-                "photo": "green-asparagus",
-                "alt": "Asperges vertes et pois mange-tout avec pistache et micropousses vibrantes dressés élégamment au Hoogan et Beaufort Montréal"
-              }
+              "note": "Tu goûtes que les légumes sont locaux, jusqu'aux micropousses. Les asperges et les pois mange-tout gardent ça croquant et vert, la pistache ajoute une richesse beurrée et du croquant. Un vrai service de remise à zéro avant les pâtes."
             },
             {
               "name": "Rhubarbe, fleur de cerisier, shiso",
               "tag": "worth-it",
-              "note": "Léger, vif et rafraîchissant comme finale. Rhubarbe acidulée, une douce note florale, un subtil relèvement herbacé. Ça finit net sans être trop sucré.",
-              "photo": {
-                "photo": "rhubarb",
-                "alt": "Dessert rhubarbe avec fleur de cerisier et shiso au Hoogan et Beaufort Montréal, une assiette délicate et colorée avec des fruits aux teintes de joyaux et des éléments floraux pâles"
-              }
+              "note": "Léger, vif et rafraîchissant comme finale. Rhubarbe acidulée, une douce note florale, un subtil relèvement herbacé. Ça finit net sans être trop sucré."
             },
             {
               "name": "Spaghetti, aulx des bois, Louis d'Or",
               "tag": "worth-it",
-              "note": "Visuellement raffiné et très bien fait. Les aulx des bois pour un petit goût d'ail délicat, le Louis d'Or pour la profondeur de noisette, une sauce qui accroche comme il faut. Ça goûte comme un excellent plat de pâtes plutôt qu'un plat surprenant.",
-              "photo": {
-                "photo": "spaghetti",
-                "alt": "Spaghetti aux aulx des bois et fromage Louis d'Or au Hoogan et Beaufort Montréal, nouilles soyeuses enroulées élégamment dans une légère sauce crémeuse"
-              }
+              "note": "Visuellement raffiné et très bien fait. Les aulx des bois pour un petit goût d'ail délicat, le Louis d'Or pour la profondeur de noisette, une sauce qui accroche comme il faut. Ça goûte comme un excellent plat de pâtes plutôt qu'un plat surprenant."
             },
             {
               "name": "Bœuf, maitake, cardamome noire",
               "tag": "worth-it",
-              "note": "Une bonne pièce de bœuf sur un fond terreux et fumé. Rien n'a ressorti. Bien exécuté plutôt que remarquable.",
-              "photo": {
-                "photo": "beef",
-                "alt": "Bœuf avec champignons maitake et cardamome noire au Hoogan et Beaufort Montréal, plat principal magnifiquement dressé avec un jus foncé riche et une garniture précise"
-              }
+              "note": "Une bonne pièce de bœuf sur un fond terreux et fumé. Rien n'a ressorti. Bien exécuté plutôt que remarquable."
             },
             {
               "name": "Focaccia grillée, beurre fouetté",
               "tag": "skip",
-              "note": "Annoncée comme une focaccia, mais elle se mangeait comme un simple pain grillé : pas de bulles aériennes, rien de cette richesse mâchue à l'huile d'olive. Elle est décrite comme cuite au feu et je n'en ai pas tiré beaucoup plus de saveur, et le beurre fouetté était subtil aussi. Comme elle est mise en valeur sur le menu, je m'attendais à ce qu'elle se démarque.",
-              "photo": {
-                "photo": "focaccia",
-                "alt": "Focaccia grillée avec beurre fouetté au Hoogan et Beaufort Montréal, pain tranché sur une planche en bois avec une petite ramequin de beurre fouetté pâle"
-              }
+              "note": "Annoncée comme une focaccia, mais elle se mangeait comme un simple pain grillé : pas de bulles aériennes, rien de cette richesse mâchue à l'huile d'olive. Elle est décrite comme cuite au feu et je n'en ai pas tiré beaucoup plus de saveur, et le beurre fouetté était subtil aussi. Comme elle est mise en valeur sur le menu, je m'attendais à ce qu'elle se démarque."
             }
           ]
         },
@@ -1042,50 +886,6 @@
             "answer": "Recommandé, surtout du jeudi au samedi. Les meilleures plages partent."
           }
         ]
-      }
-    },
-    "photos": {
-      "hot-oysters": {
-        "src": "/images/date-spots/hoogan-et-beaufort-hot-oysters.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "crab-dashi": {
-        "src": "/images/date-spots/hoogan-et-beaufort-crab-dashi.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "green-asparagus": {
-        "src": "/images/date-spots/hoogan-et-beaufort-green-asparagus.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "rhubarb": {
-        "src": "/images/date-spots/hoogan-et-beaufort-rhubarb.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "spaghetti": {
-        "src": "/images/date-spots/hoogan-et-beaufort-spaghetti.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "beef": {
-        "src": "/images/date-spots/hoogan-et-beaufort-beef.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "focaccia": {
-        "src": "/images/date-spots/hoogan-et-beaufort-focaccia.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -1210,11 +1010,7 @@
             "question": "Can they handle dietary restrictions?",
             "answer": "Yes, if you tell them when you book. Fixed menu, so give them notice."
           }
-        ],
-        "roomPhoto": {
-          "photo": "dining-room",
-          "alt": "Intimate dining room at Île Flottante Montreal with warm, flattering lighting and tables set for a calm, unhurried evening"
-        }
+        ]
       },
       "fr-CA": {
         "slug": "ile-flottante",
@@ -1316,19 +1112,7 @@
             "question": "Est-ce qu'ils peuvent gérer les restrictions alimentaires?",
             "answer": "Oui, si tu leur dis en réservant. Menu fixe, alors donne-leur un préavis."
           }
-        ],
-        "roomPhoto": {
-          "photo": "dining-room",
-          "alt": "Salle à manger intime de l'Île Flottante Montréal avec un éclairage chaleureux et flatteur, tables dressées pour une soirée calme et sans précipitation"
-        }
-      }
-    },
-    "photos": {
-      "dining-room": {
-        "src": "/images/date-spots/ile-flottante-dining-room.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
+        ]
       }
     }
   },
@@ -1397,38 +1181,22 @@
             {
               "name": "Bomba schnitzel",
               "tag": "order-this",
-              "note": "Golden, crunchy and aggressively satisfying. The bomba brings heat and acidity, which stops it feeling heavy.",
-              "photo": {
-                "photo": "bomba-schnitzel",
-                "alt": "Golden bomba schnitzel with crunchy breading, spicy bomba sauce and fresh herbs on a white plate at McKiernan Montreal"
-              }
+              "note": "Golden, crunchy and aggressively satisfying. The bomba brings heat and acidity, which stops it feeling heavy."
             },
             {
               "name": "Homemade donuts",
               "tag": "order-this",
-              "note": "Warm, fluffy and easy to share at the end of brunch.",
-              "photo": {
-                "photo": "donuts",
-                "alt": "Homemade sugar-dusted and chocolate-glazed donuts served warm at McKiernan"
-              }
+              "note": "Warm, fluffy and easy to share at the end of brunch."
             },
             {
               "name": "Zesty Italian beef tartare",
               "tag": "worth-it",
-              "note": "Bright, lemony and clean-tasting rather than heavy or bluntly beefy. More fresh and snackable than rich.",
-              "photo": {
-                "photo": "beef-tartare",
-                "alt": "Zesty Italian beef tartare with endive leaves, fresh basil, shaved parmesan, and olive oil at McKiernan"
-              }
+              "note": "Bright, lemony and clean-tasting rather than heavy or bluntly beefy. More fresh and snackable than rich."
             },
             {
               "name": "Honey garlic spare ribs",
               "tag": "worth-it",
-              "note": "Sticky, glossy and built for sharing. Sweet at first, then savoury.",
-              "photo": {
-                "photo": "spare-ribs",
-                "alt": "Honey garlic spare ribs glazed with sticky sauce, topped with sesame seeds and green onions at McKiernan"
-              }
+              "note": "Sticky, glossy and built for sharing. Sweet at first, then savoury."
             }
           ]
         },
@@ -1529,38 +1297,22 @@
             {
               "name": "Schnitzel bomba",
               "tag": "order-this",
-              "note": "Doré, croquant et agressivement satisfaisant. La bomba apporte du piquant et de l'acidité, ce qui l'empêche d'être lourd.",
-              "photo": {
-                "photo": "bomba-schnitzel",
-                "alt": "Schnitzel bomba doré avec panure croustillante, sauce bomba épicée et herbes fraîches dans une assiette blanche au McKiernan Montréal"
-              }
+              "note": "Doré, croquant et agressivement satisfaisant. La bomba apporte du piquant et de l'acidité, ce qui l'empêche d'être lourd."
             },
             {
               "name": "Beignes maison",
               "tag": "order-this",
-              "note": "Chauds, moelleux et faciles à partager à la fin du brunch.",
-              "photo": {
-                "photo": "donuts",
-                "alt": "Beignes maison saupoudrés de sucre et glacés au chocolat, servis chauds au McKiernan"
-              }
+              "note": "Chauds, moelleux et faciles à partager à la fin du brunch."
             },
             {
               "name": "Tartare de bœuf à l'italienne",
               "tag": "worth-it",
-              "note": "Vif, citronné et net plutôt que lourd ou franchement bovin. Plus frais et grignotable que riche.",
-              "photo": {
-                "photo": "beef-tartare",
-                "alt": "Tartare de bœuf à l'italienne avec feuilles d'endive, basilic frais, parmesan en copeaux et huile d'olive au McKiernan"
-              }
+              "note": "Vif, citronné et net plutôt que lourd ou franchement bovin. Plus frais et grignotable que riche."
             },
             {
               "name": "Côtes levées miel et ail",
               "tag": "worth-it",
-              "note": "Collantes, lustrées et faites pour partager. Sucrées au début, puis savoureuses.",
-              "photo": {
-                "photo": "spare-ribs",
-                "alt": "Côtes levées miel et ail glacées avec sauce collante, garnies de graines de sésame et d'oignons verts au McKiernan"
-              }
+              "note": "Collantes, lustrées et faites pour partager. Sucrées au début, puis savoureuses."
             }
           ]
         },
@@ -1616,32 +1368,6 @@
             "answer": "Mieux en vélo ou en covoiturage. Le stationnement dans la rue varie."
           }
         ]
-      }
-    },
-    "photos": {
-      "bomba-schnitzel": {
-        "src": "/images/date-spots/mckiernan-bomba-schnitzel.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "donuts": {
-        "src": "/images/date-spots/mckiernan-donuts.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "beef-tartare": {
-        "src": "/images/date-spots/mckiernan-beef-tartare.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "spare-ribs": {
-        "src": "/images/date-spots/mckiernan-spare-ribs.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -1710,65 +1436,37 @@
             {
               "name": "Scallop crudo",
               "tag": "order-this",
-              "note": "Scallops with an icy apple and grapefruit granita. Silky scallop, crunchy cold granita, clean finish. The one to start with.",
-              "photo": {
-                "photo": "scallop-crudo",
-                "alt": "Scallop crudo with apple-grapefruit granita served in a shell on marble counter at Moccione Montreal"
-              }
+              "note": "Scallops with an icy apple and grapefruit granita. Silky scallop, crunchy cold granita, clean finish. The one to start with."
             },
             {
               "name": "Caramelle",
               "tag": "order-this",
-              "note": "Candy-shaped stuffed pasta with ricotta, artichoke and rabbit, finished with tomato-sage sauce. Tender pasta, creamy filling, bright sauce. If you order one thing, this.",
-              "photo": {
-                "photo": "caramelle",
-                "alt": "Caramelle pasta with ricotta, artichoke, and rabbit in tomato-sage sauce at Moccione Montreal"
-              }
+              "note": "Candy-shaped stuffed pasta with ricotta, artichoke and rabbit, finished with tomato-sage sauce. Tender pasta, creamy filling, bright sauce. If you order one thing, this."
             },
             {
               "name": "Cappelletti",
               "tag": "order-this",
-              "note": "Delicate stuffed pasta with beef, saffron, bergamot and Parmigiano. Pillowy, rich, with a perfumed citrus finish.",
-              "photo": {
-                "photo": "cappelletti",
-                "alt": "Cappelletti pasta with beef filling in saffron-bergamot sauce with Parmigiano at Moccione Montreal"
-              }
+              "note": "Delicate stuffed pasta with beef, saffron, bergamot and Parmigiano. Pillowy, rich, with a perfumed citrus finish."
             },
             {
               "name": "Stracciatella di bufala",
               "tag": "worth-it",
-              "note": "Creamy buffalo stracciatella with braised cabbage, roasted cipollini, hazelnuts and olive oil. Lush and soft, sweet onion, nutty crunch.",
-              "photo": {
-                "photo": "stracciatella",
-                "alt": "Stracciatella di bufala with basil, braised cabbage, and cipollini onions at Moccione Montreal"
-              }
+              "note": "Creamy buffalo stracciatella with braised cabbage, roasted cipollini, hazelnuts and olive oil. Lush and soft, sweet onion, nutty crunch."
             },
             {
               "name": "Baba tiramisu",
               "tag": "worth-it",
-              "note": "Airy sponge soaked in syrup under silky cream. Boozy, coffee and cocoa forward. Dessert is a closer here.",
-              "photo": {
-                "photo": "baba-tiramisu",
-                "alt": "Baba tiramisu dessert with cocoa dusting in glass bowl at Moccione Montreal"
-              }
+              "note": "Airy sponge soaked in syrup under silky cream. Boozy, coffee and cocoa forward. Dessert is a closer here."
             },
             {
               "name": "Sorbet",
               "tag": "worth-it",
-              "note": "A clean palate reset after the richer pastas. Does its job, no more.",
-              "photo": {
-                "photo": "sorbet",
-                "alt": "Berry sorbet with fresh herbs served in a silver cup at Moccione Montreal"
-              }
+              "note": "A clean palate reset after the richer pastas. Does its job, no more."
             },
             {
               "name": "Beef",
               "tag": "skip",
-              "note": "Beef with topinambour, trompette mushrooms and sea-asparagus salsa verde. Tender and earthy, but mine came under-seasoned. I'd pick another protein next time.",
-              "photo": {
-                "photo": "beef",
-                "alt": "Beef with chimichurri salsa verde, radicchio, and rich jus at Moccione Montreal"
-              }
+              "note": "Beef with topinambour, trompette mushrooms and sea-asparagus salsa verde. Tender and earthy, but mine came under-seasoned. I'd pick another protein next time."
             }
           ]
         },
@@ -1871,65 +1569,37 @@
             {
               "name": "Crudo de pétoncles",
               "tag": "order-this",
-              "note": "Pétoncles soyeux avec une granita glacée pomme et pamplemousse. Pétoncle soyeux, granita froide et croquante, finale nette. Celui par lequel commencer.",
-              "photo": {
-                "photo": "scallop-crudo",
-                "alt": "Crudo de pétoncles avec granita pomme-pamplemousse servi dans une coquille au Moccione Montréal"
-              }
+              "note": "Pétoncles soyeux avec une granita glacée pomme et pamplemousse. Pétoncle soyeux, granita froide et croquante, finale nette. Celui par lequel commencer."
             },
             {
               "name": "Caramelle",
               "tag": "order-this",
-              "note": "Pâtes farcies en forme de bonbon avec ricotta, artichaut et lapin, finies dans une sauce tomate-sauge. Pâte tendre, farce crémeuse, tomate lumineuse. Si tu commandes une seule chose, c'est celle-là.",
-              "photo": {
-                "photo": "caramelle",
-                "alt": "Pâtes caramelle avec ricotta, artichaut et lapin dans sauce tomate-sauge au Moccione Montréal"
-              }
+              "note": "Pâtes farcies en forme de bonbon avec ricotta, artichaut et lapin, finies dans une sauce tomate-sauge. Pâte tendre, farce crémeuse, tomate lumineuse. Si tu commandes une seule chose, c'est celle-là."
             },
             {
               "name": "Cappelletti",
               "tag": "order-this",
-              "note": "Pâtes farcies délicates au bœuf, safran, bergamote et Parmigiano. Moelleuses, riches, avec une finale parfumée citron-safran.",
-              "photo": {
-                "photo": "cappelletti",
-                "alt": "Pâtes cappelletti au bœuf dans sauce safran-bergamote avec Parmigiano au Moccione Montréal"
-              }
+              "note": "Pâtes farcies délicates au bœuf, safran, bergamote et Parmigiano. Moelleuses, riches, avec une finale parfumée citron-safran."
             },
             {
               "name": "Stracciatella di bufala",
               "tag": "worth-it",
-              "note": "Stracciatella de bufflonne crémeuse avec chou braisé, cipollini rôtis, noisettes et huile d'olive. Fondante et douce, oignon sucré, croquant de noisette.",
-              "photo": {
-                "photo": "stracciatella",
-                "alt": "Stracciatella di bufala avec basilic, chou braisé et oignons cipollini au Moccione Montréal"
-              }
+              "note": "Stracciatella de bufflonne crémeuse avec chou braisé, cipollini rôtis, noisettes et huile d'olive. Fondante et douce, oignon sucré, croquant de noisette."
             },
             {
               "name": "Baba tiramisu",
               "tag": "worth-it",
-              "note": "Une génoise aérienne imbibée de sirop sous une crème soyeuse. Imbibé d'alcool, dominé par le café et le cacao. Ici, le dessert est un vrai final.",
-              "photo": {
-                "photo": "baba-tiramisu",
-                "alt": "Dessert baba tiramisu avec saupoudrage de cacao dans un bol en verre au Moccione Montréal"
-              }
+              "note": "Une génoise aérienne imbibée de sirop sous une crème soyeuse. Imbibé d'alcool, dominé par le café et le cacao. Ici, le dessert est un vrai final."
             },
             {
               "name": "Sorbet",
               "tag": "worth-it",
-              "note": "Un reset de palais après les pâtes et le bœuf plus riches. Ça fait son travail, sans plus.",
-              "photo": {
-                "photo": "sorbet",
-                "alt": "Sorbet aux petits fruits avec herbes fraîches servi dans une coupe en argent au Moccione Montréal"
-              }
+              "note": "Un reset de palais après les pâtes et le bœuf plus riches. Ça fait son travail, sans plus."
             },
             {
               "name": "Bœuf",
               "tag": "skip",
-              "note": "Bœuf avec topinambour, champignons trompette et salsa verde aux asperges de mer. Tendre et terreux, mais le mien manquait d'assaisonnement. Je choisirais une autre protéine la prochaine fois.",
-              "photo": {
-                "photo": "beef",
-                "alt": "Bœuf avec salsa verde chimichurri, radicchio et jus riche au Moccione Montréal"
-              }
+              "note": "Bœuf avec topinambour, champignons trompette et salsa verde aux asperges de mer. Tendre et terreux, mais le mien manquait d'assaisonnement. Je choisirais une autre protéine la prochaine fois."
             }
           ]
         },
@@ -1987,50 +1657,6 @@
             "answer": "Fortement recommandé, surtout du jeudi au samedi."
           }
         ]
-      }
-    },
-    "photos": {
-      "scallop-crudo": {
-        "src": "/images/date-spots/moccione-scallop-crudo.webp",
-        "width": 810,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "caramelle": {
-        "src": "/images/date-spots/moccione-caramelle.webp",
-        "width": 810,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "cappelletti": {
-        "src": "/images/date-spots/moccione-cappelletti.webp",
-        "width": 810,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "stracciatella": {
-        "src": "/images/date-spots/moccione-stracciatella.webp",
-        "width": 810,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "baba-tiramisu": {
-        "src": "/images/date-spots/moccione-baba-tiramisu.webp",
-        "width": 810,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "sorbet": {
-        "src": "/images/date-spots/moccione-sorbet.webp",
-        "width": 900,
-        "height": 936,
-        "provenance": "dmd-held-photograph"
-      },
-      "beef": {
-        "src": "/images/date-spots/moccione-beef.webp",
-        "width": 900,
-        "height": 1078,
-        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -2092,38 +1718,22 @@
             {
               "name": "Five-spice duck platter",
               "tag": "order-this",
-              "note": "The signature, and it makes sense the moment it lands. A big portion of sous vide duck with five-spice warmth and a rich texture, served platter-style so you build your own wraps. Comes with duck rillettes, a pile of cilantro, pickled carrot and daikon, chilli crisp, peanuts, cucumber, a liver mousse and a hoisin-style sauce.",
-              "photo": {
-                "photo": "duck-platter",
-                "alt": "5 Spice Duck Platter at Oncle Lee Kăo Montreal, sous vide duck served family-style with rillettes, pickled vegetables, chili crisp, and hoisin for building your own wraps"
-              }
+              "note": "The signature, and it makes sense the moment it lands. A big portion of sous vide duck with five-spice warmth and a rich texture, served platter-style so you build your own wraps. Comes with duck rillettes, a pile of cilantro, pickled carrot and daikon, chilli crisp, peanuts, cucumber, a liver mousse and a hoisin-style sauce."
             },
             {
               "name": "Sweet and sour eggplant",
               "tag": "order-this",
-              "note": "Peanuts and bacon. The plate that makes the table feel alive. Glossy and tender, sweet-and-sour without being ketchup-sweet, peanuts for crunch and bacon for a smoky, salty anchor. It also resets your palate and keeps the meal from feeling heavy.",
-              "photo": {
-                "photo": "eggplant",
-                "alt": "Sweet and sour eggplant with peanuts and bacon at Oncle Lee Kăo Montreal, glossy and jammy with a smoky salty anchor and crunch that makes the table come alive"
-              }
+              "note": "Peanuts and bacon. The plate that makes the table feel alive. Glossy and tender, sweet-and-sour without being ketchup-sweet, peanuts for crunch and bacon for a smoky, salty anchor. It also resets your palate and keeps the meal from feeling heavy."
             },
             {
               "name": "Steamed oysters, black bean",
               "tag": "order-this",
-              "note": "Clean, briny oysters with a savoury black bean hit that reads salty-sweet and fermented. Keeps the oyster tasting like an oyster while adding enough depth that it doesn't vanish in one bite.",
-              "photo": {
-                "photo": "steamed-oysters",
-                "alt": "Steamed oysters with black bean sauce at Oncle Lee Kăo Montreal, clean and briny with a salty-sweet fermented depth that keeps the oyster fresh and complex"
-              }
+              "note": "Clean, briny oysters with a savoury black bean hit that reads salty-sweet and fermented. Keeps the oyster tasting like an oyster while adding enough depth that it doesn't vanish in one bite."
             },
             {
               "name": "Garlic fried rice",
               "tag": "order-this",
-              "note": "The closer that makes everything feel complete, and the bridge plate if one of you wants to keep drinking and talking.",
-              "photo": {
-                "photo": "garlic-fried-rice",
-                "alt": "Garlic fried rice at Oncle Lee Kăo Montreal, the satisfying closer that grounds a tasting-style dinner and gives you the space to linger without ordering another main"
-              }
+              "note": "The closer that makes everything feel complete, and the bridge plate if one of you wants to keep drinking and talking."
             },
             {
               "name": "Beef tataki",
@@ -2133,11 +1743,7 @@
             {
               "name": "Yuzu tartelette, green tea and fruit",
               "tag": "worth-it",
-              "note": "Offered by the restaurant, and the perfect soft ending. Yuzu gives a bright citrus snap after a savoury meal.",
-              "photo": {
-                "photo": "yuzu-tartelette",
-                "alt": "Yuzu tartelette with green tea and fruit at Oncle Lee Kăo Montreal, a bright citrus closer that cuts through the savory meal and ends the night on a clean, considered note"
-              }
+              "note": "Offered by the restaurant, and the perfect soft ending. Yuzu gives a bright citrus snap after a savoury meal."
             }
           ]
         },
@@ -2202,11 +1808,7 @@
             "question": "How far ahead do I need to book?",
             "answer": "Nice to have, but don't stress it. There were plenty of slots when I booked."
           }
-        ],
-        "roomPhoto": {
-          "photo": "dining-room-wood-panels",
-          "alt": "Oncle Lee Kăo dining room in Old Montreal with soaring ceilings, minimalist wood panels, burnt-orange leather seating, and Chinese art details"
-        }
+        ]
       },
       "fr-CA": {
         "slug": "oncle-lee-kao",
@@ -2245,38 +1847,22 @@
             {
               "name": "Plateau de canard aux 5 épices",
               "tag": "order-this",
-              "note": "La signature, et ça fait sens dès que ça arrive sur la table. Une grosse portion de canard sous vide avec la chaleur du cinq épices et une texture riche, servie en plateau pour que tu construises tes propres rouleaux. Ça vient avec des rillettes de canard, plein de coriandre, carotte et daikon marinés, huile de chili croustillante, arachides, concombre, une mousse de foie et une sauce de style hoisin.",
-              "photo": {
-                "photo": "duck-platter",
-                "alt": "Plateau de canard aux 5 épices chez Oncle Lee Kăo Montréal, canard sous vide servi en plateau familial avec rillettes, légumes marinés, huile de chili et hoisin pour personnaliser ses rouleaux"
-              }
+              "note": "La signature, et ça fait sens dès que ça arrive sur la table. Une grosse portion de canard sous vide avec la chaleur du cinq épices et une texture riche, servie en plateau pour que tu construises tes propres rouleaux. Ça vient avec des rillettes de canard, plein de coriandre, carotte et daikon marinés, huile de chili croustillante, arachides, concombre, une mousse de foie et une sauce de style hoisin."
             },
             {
               "name": "Aubergine aigre-douce",
               "tag": "order-this",
-              "note": "Arachides et bacon. Le plat qui fait vivre la table. Luisante et fondante, aigre-douce sans être sucrée comme du ketchup, les arachides pour le croquant et le bacon pour une ancre fumée et salée. Elle remet aussi ton palais à zéro et empêche le repas de paraître lourd.",
-              "photo": {
-                "photo": "eggplant",
-                "alt": "Aubergine aigre-douce avec cacahouètes et bacon chez Oncle Lee Kăo Montréal, luisante et fondante avec une ancre fumée-salée et un croquant qui fait vivre la table"
-              }
+              "note": "Arachides et bacon. Le plat qui fait vivre la table. Luisante et fondante, aigre-douce sans être sucrée comme du ketchup, les arachides pour le croquant et le bacon pour une ancre fumée et salée. Elle remet aussi ton palais à zéro et empêche le repas de paraître lourd."
             },
             {
               "name": "Huîtres vapeur, haricot noir",
               "tag": "order-this",
-              "note": "Des huîtres propres et iodées avec un fond de haricots noirs savoureux qui est à la fois salé-sucré et fermenté. L'huître garde son goût d'huître, avec assez de profondeur pour ne pas disparaître en une bouchée.",
-              "photo": {
-                "photo": "steamed-oysters",
-                "alt": "Huîtres vapeur avec sauce aux haricots noirs chez Oncle Lee Kăo Montréal, propres et iodées avec une profondeur fermentée salée-sucrée qui garde toute la fraîcheur marine"
-              }
+              "note": "Des huîtres propres et iodées avec un fond de haricots noirs savoureux qui est à la fois salé-sucré et fermenté. L'huître garde son goût d'huître, avec assez de profondeur pour ne pas disparaître en une bouchée."
             },
             {
               "name": "Riz frit à l'ail",
               "tag": "order-this",
-              "note": "Le plat de clôture qui rend tout complet, et l'assiette pont si l'un de vous veut continuer à boire et à jaser.",
-              "photo": {
-                "photo": "garlic-fried-rice",
-                "alt": "Riz frit à l'ail chez Oncle Lee Kăo Montréal, le plat de clôture réconfortant qui ancre un souper de style dégustation et te donne l'espace pour t'attarder sans commander un autre principal"
-              }
+              "note": "Le plat de clôture qui rend tout complet, et l'assiette pont si l'un de vous veut continuer à boire et à jaser."
             },
             {
               "name": "Tataki de boeuf",
@@ -2286,11 +1872,7 @@
             {
               "name": "Tartelette au yuzu, thé vert et fruits",
               "tag": "worth-it",
-              "note": "Offerte par le restaurant, et la parfaite conclusion douce. Le yuzu donne un snap d'agrumes vif après un repas salé.",
-              "photo": {
-                "photo": "yuzu-tartelette",
-                "alt": "Tartelette au yuzu avec thé vert et fruits chez Oncle Lee Kăo Montréal, une finale d'agrumes vifs qui tranche à travers le repas savoureux et conclut la soirée sur une note propre et attentionnée"
-              }
+              "note": "Offerte par le restaurant, et la parfaite conclusion douce. Le yuzu donne un snap d'agrumes vif après un repas salé."
             }
           ]
         },
@@ -2355,49 +1937,7 @@
             "question": "Combien de temps d'avance faut-il réserver?",
             "answer": "C'est bien de le faire, mais pas de stress. Il y avait plein de plages quand j'ai réservé."
           }
-        ],
-        "roomPhoto": {
-          "photo": "dining-room-wood-panels",
-          "alt": "Salle à manger d'Oncle Lee Kăo dans le Vieux-Montréal avec hauts plafonds, panneaux de bois minimalistes, sièges en cuir brûlé et détails artistiques chinois"
-        }
-      }
-    },
-    "photos": {
-      "dining-room-wood-panels": {
-        "src": "/images/date-spots/oncle-lee-kao-dining-room-wood-panels.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "duck-platter": {
-        "src": "/images/date-spots/oncle-lee-kao-duck-platter.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "eggplant": {
-        "src": "/images/date-spots/oncle-lee-kao-eggplant.webp",
-        "width": 900,
-        "height": 600,
-        "provenance": "dmd-held-photograph"
-      },
-      "steamed-oysters": {
-        "src": "/images/date-spots/oncle-lee-kao-steamed-oysters.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "garlic-fried-rice": {
-        "src": "/images/date-spots/oncle-lee-kao-garlic-fried-rice.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "yuzu-tartelette": {
-        "src": "/images/date-spots/oncle-lee-kao-yuzu-tartelette.webp",
-        "width": 680,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
+        ]
       }
     }
   },
@@ -2471,65 +2011,37 @@
             {
               "name": "Têtes de violon",
               "tag": "order-this",
-              "note": "Fiddleheads treated as a real seasonal feature, with that bright green snap and a pleasant edge of bitterness, rounded out with duck egg, crab bisque and smoked breadcrumbs. Tastes like Québec spring, with the bisque adding depth and the chapelure fumée adding crunch.",
-              "photo": {
-                "photo": "fiddleheads",
-                "alt": "Fiddleheads with duck egg, crab bisque, and smoked breadcrumbs at Othym Montreal, a seasonal Quebec spring plate with bright green snap and savory crunch"
-              }
+              "note": "Fiddleheads treated as a real seasonal feature, with that bright green snap and a pleasant edge of bitterness, rounded out with duck egg, crab bisque and smoked breadcrumbs. Tastes like Québec spring, with the bisque adding depth and the chapelure fumée adding crunch."
             },
             {
               "name": "Langue de bœuf",
               "tag": "order-this",
-              "note": "Beef tongue cooked properly tender, brightened with tomato, Japanese knotweed and a sauce vierge finish. Rich and silky, with acidity and herbal olive-oil freshness keeping it energetic rather than heavy.",
-              "photo": {
-                "photo": "beef-tongue",
-                "alt": "Beef tongue with tomato, Japanese knotweed, and sauce vierge at Othym Montreal, silky and tender with bright acidic lift from the herb-oil sauce"
-              }
+              "note": "Beef tongue cooked properly tender, brightened with tomato, Japanese knotweed and a sauce vierge finish. Rich and silky, with acidity and herbal olive-oil freshness keeping it energetic rather than heavy."
             },
             {
               "name": "Mozzarella de bufflonne",
               "tag": "worth-it",
-              "note": "Cold and creamy with aubergine, kohlrabi and tarragon. Rich and milky without being heavy. Not flashy: more of a quality check, and a well-balanced one signals a kitchen that understands restraint.",
-              "photo": {
-                "photo": "mozzarella",
-                "alt": "Buffalo mozzarella with aubergine, kohlrabi, and tarragon at Othym restaurant Montreal, a clean and creamy seasonal opener with herbal lift"
-              }
+              "note": "Cold and creamy with aubergine, kohlrabi and tarragon. Rich and milky without being heavy. Not flashy: more of a quality check, and a well-balanced one signals a kitchen that understands restraint."
             },
             {
               "name": "Maitake à Simon",
               "tag": "worth-it",
-              "note": "Caramelised at the edges, juicy in the centre, with wild rice, carrot and sunflower. Earthy and substantial even though the portion isn't large.",
-              "photo": {
-                "photo": "maitake",
-                "alt": "Maitake mushrooms with wild rice, carrot, and sunflower at Othym Montreal, a deeply earthy and umami-forward plate from Simon's local mushroom farm"
-              }
+              "note": "Caramelised at the edges, juicy in the centre, with wild rice, carrot and sunflower. Earthy and substantial even though the portion isn't large."
             },
             {
               "name": "Tartelette de crevettes nordiques",
               "tag": "worth-it",
-              "note": "Crisp shell against sweet, briny shrimp, with kiwi nordiques, fennel and agastache keeping it bright and lifted.",
-              "photo": {
-                "photo": "shrimp-tartlet",
-                "alt": "Nordic shrimp tartlet with fennel and agastache at Othym Montreal, a delicate crisp shell with briny-sweet seafood and bright aromatic finish"
-              }
+              "note": "Crisp shell against sweet, briny shrimp, with kiwi nordiques, fennel and agastache keeping it bright and lifted."
             },
             {
               "name": "Baba",
               "tag": "worth-it",
-              "note": "A soaked cake with black beets bringing a deep, almost molasses sweetness, closer to black garlic than to sugar. Keeps the dessert interesting.",
-              "photo": {
-                "photo": "baba",
-                "alt": "Baba dessert with black beets at Othym Montreal, a soaked cake with deep molasses-like sweetness from the black beet treatment, a complex and satisfying closer"
-              }
+              "note": "A soaked cake with black beets bringing a deep, almost molasses sweetness, closer to black garlic than to sugar. Keeps the dessert interesting."
             },
             {
               "name": "Pain bio seigle et tournesol",
               "tag": "worth-it",
-              "note": "Nutty, earthy rye and sunflower bread that stands up to the fermented and garum-led seasoning rather than getting lost in it.",
-              "photo": {
-                "photo": "rye-bread",
-                "alt": "Organic rye and sunflower bread at Othym Montreal, a dense nutty loaf from local producers that stands up beautifully to the fermented flavors on the menu"
-              }
+              "note": "Nutty, earthy rye and sunflower bread that stands up to the fermented and garum-led seasoning rather than getting lost in it."
             }
           ]
         },
@@ -2641,65 +2153,37 @@
             {
               "name": "Têtes de violon",
               "tag": "order-this",
-              "note": "Des têtes de violon traitées comme une vraie vedette saisonnière, avec ce croquant vert vif et une légère amertume agréable, arrondies avec oeuf de canard, bisque de crabe et chapelure fumée. Ça goûte le printemps québécois, la bisque ajoute de la profondeur et la chapelure fumée du croquant.",
-              "photo": {
-                "photo": "fiddleheads",
-                "alt": "Têtes de violon avec oeuf de canard, bisque de crabe et chapelure fumée au restaurant Othym Montréal, une assiette printanière québécoise avec croquant vert vif"
-              }
+              "note": "Des têtes de violon traitées comme une vraie vedette saisonnière, avec ce croquant vert vif et une légère amertume agréable, arrondies avec oeuf de canard, bisque de crabe et chapelure fumée. Ça goûte le printemps québécois, la bisque ajoute de la profondeur et la chapelure fumée du croquant."
             },
             {
               "name": "Langue de bœuf",
               "tag": "order-this",
-              "note": "Langue de bœuf cuite bien tendre, relevée de tomate, de renouée du Japon et d'une finition sauce vierge. Riche et soyeuse, avec l'acidité et la fraîcheur herbacée de l'huile d'olive qui la gardent énergique plutôt que lourde.",
-              "photo": {
-                "photo": "beef-tongue",
-                "alt": "Langue de boeuf avec tomate, renouée du Japon et sauce vierge au restaurant Othym Montréal, soyeuse et tendre avec un relèvement acide lumineux de la sauce aux herbes"
-              }
+              "note": "Langue de bœuf cuite bien tendre, relevée de tomate, de renouée du Japon et d'une finition sauce vierge. Riche et soyeuse, avec l'acidité et la fraîcheur herbacée de l'huile d'olive qui la gardent énergique plutôt que lourde."
             },
             {
               "name": "Mozzarella de bufflonne",
               "tag": "worth-it",
-              "note": "Froide et crémeuse avec aubergine, choux-rave et estragon. Riche et laiteuse sans être lourde. Pas de fla-fla : c'est plus un test de qualité, et un test bien équilibré signale une cuisine qui comprend la retenue.",
-              "photo": {
-                "photo": "mozzarella",
-                "alt": "Mozzarella de bufflonne avec aubergine, choux-rave et estragon au restaurant Othym Montréal, un premier service crémeux et propre avec un relèvement herbacé"
-              }
+              "note": "Froide et crémeuse avec aubergine, choux-rave et estragon. Riche et laiteuse sans être lourde. Pas de fla-fla : c'est plus un test de qualité, et un test bien équilibré signale une cuisine qui comprend la retenue."
             },
             {
               "name": "Maitake à Simon",
               "tag": "worth-it",
-              "note": "Caramélisés sur les bords, juteux au centre, avec riz sauvage, carotte et tournesol. Terreux et substantiel même si la portion n'est pas grande.",
-              "photo": {
-                "photo": "maitake",
-                "alt": "Champignons maitake avec riz sauvage, carotte et tournesol au restaurant Othym Montréal, une assiette profondément terreuse et riche en umami de la ferme locale de Simon"
-              }
+              "note": "Caramélisés sur les bords, juteux au centre, avec riz sauvage, carotte et tournesol. Terreux et substantiel même si la portion n'est pas grande."
             },
             {
               "name": "Tartelette de crevettes nordiques",
               "tag": "worth-it",
-              "note": "Une croûte croustillante contre des crevettes sucrées et iodées, avec kiwis nordiques, fenouil et agastache qui gardent ça vif et léger.",
-              "photo": {
-                "photo": "shrimp-tartlet",
-                "alt": "Tartelette de crevettes nordiques avec fenouil et agastache au restaurant Othym Montréal, croûte croustillante avec fruits de mer sucrés-iodés et finition aromatique lumineuse"
-              }
+              "note": "Une croûte croustillante contre des crevettes sucrées et iodées, avec kiwis nordiques, fenouil et agastache qui gardent ça vif et léger."
             },
             {
               "name": "Baba",
               "tag": "worth-it",
-              "note": "Un gâteau imbibé avec des betteraves noires qui apportent une douceur profonde, presque comme de la mélasse, plus proche de l'ail noir que du sucre. Garde le dessert intéressant.",
-              "photo": {
-                "photo": "baba",
-                "alt": "Dessert baba avec betterave noire au restaurant Othym Montréal, un gâteau imbibé avec une douceur profonde et mélassée issue du traitement à la betterave noire"
-              }
+              "note": "Un gâteau imbibé avec des betteraves noires qui apportent une douceur profonde, presque comme de la mélasse, plus proche de l'ail noir que du sucre. Garde le dessert intéressant."
             },
             {
               "name": "Pain bio seigle et tournesol",
               "tag": "worth-it",
-              "note": "Un pain au seigle et au tournesol, noiseteux et terreux, qui tient tête à l'assaisonnement fermenté et au garum plutôt que de s'y perdre.",
-              "photo": {
-                "photo": "rye-bread",
-                "alt": "Pain biologique au seigle et tournesol au restaurant Othym Montréal, un pain dense et noiseteux de producteurs locaux qui s'accorde parfaitement aux saveurs fermentées du menu"
-              }
+              "note": "Un pain au seigle et au tournesol, noiseteux et terreux, qui tient tête à l'assaisonnement fermenté et au garum plutôt que de s'y perdre."
             }
           ]
         },
@@ -2761,50 +2245,6 @@
             "answer": "Facile selon mon expérience. Quand même recommandé le vendredi et le samedi, et les meilleures plages partent."
           }
         ]
-      }
-    },
-    "photos": {
-      "fiddleheads": {
-        "src": "/images/date-spots/othym-fiddleheads.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "beef-tongue": {
-        "src": "/images/date-spots/othym-beef-tongue.webp",
-        "width": 900,
-        "height": 614,
-        "provenance": "dmd-held-photograph"
-      },
-      "mozzarella": {
-        "src": "/images/date-spots/othym-mozzarella.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "maitake": {
-        "src": "/images/date-spots/othym-maitake.webp",
-        "width": 900,
-        "height": 581,
-        "provenance": "dmd-held-photograph"
-      },
-      "shrimp-tartlet": {
-        "src": "/images/date-spots/othym-shrimp-tartlet.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "baba": {
-        "src": "/images/date-spots/othym-baba.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
-      },
-      "rye-bread": {
-        "src": "/images/date-spots/othym-rye-bread.webp",
-        "width": 720,
-        "height": 1080,
-        "provenance": "dmd-held-photograph"
       }
     }
   }
