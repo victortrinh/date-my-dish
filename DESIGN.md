@@ -62,7 +62,7 @@ A signature (the reporter's signed note, the interviewer under a chef Q&A) is Li
 - **`.card`**: `surface-raised` block with 2px corners; for the one set-apart block (essentials, newsletter, the short version on a chef page, the recipe card teaser).
 - **Listing entry** (`DateSpotCard`, chef index): the photo in the arch at 4:5, centred (`object-center`, there is no focal-point field), then the facts in UI caption, the name in `text-heading-3` with a drawn underline on hover, the `VerdictBadge` and the one-line take. No box, no border; the grid gap separates entries.
 - **`.eyebrow`**: small tracked uppercase label above a heading.
-- **`.arch`**: the greystone window frame for photographs (`rounded-arch`). Hero photos always sit in the arch at 4:5, landscape originals included, cropped from the centre.
+- **`.arch`**: the greystone window frame for photographs (`rounded-arch`). Hero photos always sit in the arch at 4:5, landscape originals included, cropped from the centre. So does every photograph inside a post (`SpotPhoto`: dish cards, the room, portraits), at most 14rem wide beside a dish or portrait and 24rem for the room.
 - **Breadcrumbs**: UI caption, `/` separators in `line`.
 
 ## Brand mark

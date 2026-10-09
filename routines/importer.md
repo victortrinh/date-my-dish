@@ -36,6 +36,7 @@ The deterministic steps are scripts. Run them; do not reimplement them, and do n
    - Copy the text as written. Table cells and short facts (address, cost, hours) go in exactly as the author wrote them.
    - The verdict: the subheading is `verdictHeadline` and the author's whole verdict paragraph is `verdictDetail`, as written. The one-line `verdictReason` (step 8) is one of its sentences, word for word, so the page can set it in ink inside the paragraph.
    - Make a night of it: one `makeANight` pick per card the author wrote, with `category` (the card's category line, "Games and Entertainment": `games-entertainment`), `name` (the venue on that line: `Cinéma du Parc`), `timing` (`before`, `after` or `before-or-after`), `details` (the rest of the line, as written: `15 min walk · $$`) and `blurb` (the reader-facing sentences under it). Add `spotId` when the venue has a Date Spot record. Leave out `[SPOT NEEDED]` cards, `[X] min` placeholders, and sentences that are notes to DMD ("Needs its own spot page", "Named in the original draft", "Confirm ... before linking"); list them as Unplaced Text.
+   - Photos: `next` downloaded every Notion photo and listed it (`photos` in its output). Beyond the hero, place each one where the page has a slot for it, by its alt text and where it sits in the Notion page: a dish's photo on that dish card (`whatToOrder.dishes[].photo` or `whatToEat.dishes[].photo`), the dining room on `roomPhoto`, the chef on `meetChef.portrait`. Declare each placed photo in the record's `photos` under a short key (`scallop-crudo`, `dining-room`) and reference it as `{ "photo": key, "alt": ... }` in both locales, with the author's alt text in EN and its translation in FR. Look at a photo before placing it; never place one whose picture does not match its dish. A photo with no matching slot stays out of the page: list it under "Photos" in the PR, never make a dish card or tag up to hold it.
    - Opening hours go in `essentials.hours`, from the author's `Hours` metadata line, as written. They are words like any other field: the FR gets its own `essentials.hours` in Quebec format (`18 h`, `17 h 30`) and the two may read differently. (`timing` is the before/after value on a Make a night of it pick, and must match across the pair.)
    - A Chef Interviews row that contains a recipe makes two records (the chef page and the recipe card). Add the second record's id to `records` in the snapshot.
    - On an `updated` row, change only what changed in Notion since the last import (compare with the previous snapshot in `git diff`). If the verdict, or a signal row that was already published, changed or was removed, the post needs a new dated update line (a row added for a new occasion does not); Victor writes it, so list it under "Needs Victor".
@@ -156,6 +157,8 @@ Notion text that fits no section, for Victor to keep or drop. Nothing here is on
 ## Photos
 
 {n} photos from Notion, optimised. Hero: `{src}` ({width}px, {KB} KB), alt "{alt}".
+
+Placed: {key} on {dish card / roomPhoto / portrait}, one line each. Not placed (no slot on the page): {file, alt}.
 
 ## Needs Victor
 
