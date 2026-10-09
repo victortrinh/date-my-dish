@@ -7,6 +7,7 @@ import DateSpotSchema from "./DateSpotSchema.astro";
 import EssentialsCard from "./date-spots/EssentialsCard.astro";
 import Paragraphs from "./date-spots/Paragraphs.astro";
 import SignalIcon from "./date-spots/SignalIcon.astro";
+import SpotHero from "./date-spots/SpotHero.astro";
 import VerdictBadge from "./date-spots/VerdictBadge.astro";
 import { t, tf, type Locale } from "@i18n/utils";
 import {
@@ -39,15 +40,13 @@ const updates = copy.materialUpdates ?? [];
 const caption = copy.imageCaption ?? copy.imageCredit;
 // What it actually is, How to do it well, When it works and Pair it with
 // are Optional Sections: with no content they render nothing.
-const h2 = "scroll-mt-20 font-heading text-heading-2 text-warm-900 dark:text-warm-100";
-const body = "font-body text-body-lg text-warm-700 dark:text-warm-300";
-const kicker = "font-ui text-caption font-bold uppercase tracking-wider text-brand-wine-text dark:text-brand-rose";
-const small = "font-ui text-caption font-bold uppercase tracking-wider text-warm-500 dark:text-warm-400";
+const h2 = "scroll-mt-20 text-heading-2 text-ink";
+const body = "max-w-measure font-body text-body-lg text-ink-muted";
 ---
 <DateSpotLayout title={copy.metaTitle} description={copy.metaDescription} locale={locale} canonical={planningPath(spot, locale)} alternatePath={planningPath(spot, other)} ogImage={spot.image.src} published={spot.freshness.published} lastChecked={spot.freshness.lastChecked}>
   <DateSpotSchema slot="head" title={title} description={copy.metaDescription} slug={copy.slug} locale={locale} name={spot.name} city={spot.city} neighbourhood={spot.neighbourhood} image={spot.image.src} imageAlt={copy.imageAlt} mapUrl={spot.mapUrl} published={spot.freshness.published} lastChecked={spot.freshness.lastChecked} host={host} />
 
-  <article class="mx-auto max-w-content px-4 py-8" data-pagefind-body data-pagefind-filter={`lang:${locale}`} data-spot-type={spot.spotType}>
+  <article class="page-container pt-8 pb-section-sm" data-pagefind-body data-pagefind-filter={`lang:${locale}`} data-spot-type={spot.spotType}>
     <Breadcrumbs locale={locale} items={[
       { label: t(locale, "nav.dateSpots"), href: locale === "fr" ? "/fr/lieux/" : "/en/date-spots/" },
       { label: categoryLabel, href: categoryPath(category, locale) },
@@ -55,34 +54,30 @@ const small = "font-ui text-caption font-bold uppercase tracking-wider text-warm
       { label: spot.name },
     ]} />
 
-    <div class="mt-6 grid grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1fr)_20rem]">
-      <div class="min-w-0 space-y-14">
-        <header>
-          <p class={kicker}>{categoryLabel}{spot.spotType === "chef-led-experience" && ` · ${t(locale, "dateSpot.spotType.chef-led-experience")}`}</p>
-          <h1 class="mt-3 font-heading text-4xl italic text-warm-900 dark:text-warm-100 sm:text-display">{title}</h1>
-          {copy.opening && <p class="mt-5 max-w-prose font-body text-body-lg text-warm-700 dark:text-warm-300">{copy.opening}</p>}
-          {host && <p class="mt-3 font-ui font-semibold text-warm-800 dark:text-warm-200">{tf(locale, "dateSpot.hostedBy", { name: host.name })}</p>}
-          <p class="mt-4 font-ui text-body-sm text-warm-500 dark:text-warm-400">
-            {t(locale, "dateSpot.by")} {spot.reporterByline} · {spot.freshness.visited && <>{t(locale, "dateSpot.visited")} {fullDate(spot.freshness.visited)} · </>}{tf(locale, "dateSpot.published", { date: fullDate(spot.freshness.published) })} · {tf(locale, "dateSpot.checked", { date: monthYear(spot.freshness.lastChecked) })}
-          </p>
-          <figure class="mt-8">
-            <img src={spot.image.src} width={spot.image.width} height={spot.image.height} alt={copy.imageAlt} class="max-h-[460px] w-full rounded-2xl object-cover" loading="eager" fetchpriority="high" />
-            {caption && <figcaption class="mt-2 font-ui text-caption text-warm-500 dark:text-warm-400">{caption}</figcaption>}
-          </figure>
-        </header>
+    <SpotHero image={spot.image} alt={copy.imageAlt} caption={caption}>
+      <p class="eyebrow truncate">{categoryLabel}{spot.spotType === "chef-led-experience" && ` · ${t(locale, "dateSpot.spotType.chef-led-experience")}`}</p>
+      <h1 class="mt-4 text-4xl text-ink sm:text-heading-1 lg:text-display">{title}</h1>
+      {copy.opening && <p class={`mt-6 ${body}`}>{copy.opening}</p>}
+      {host && <p class="mt-4 font-ui font-semibold text-ink">{tf(locale, "dateSpot.hostedBy", { name: host.name })}</p>}
+      <p class="mt-6 font-ui text-body-sm text-ink-subtle">
+        {t(locale, "dateSpot.by")} {spot.reporterByline} · {spot.freshness.visited && <>{t(locale, "dateSpot.visited")} {fullDate(spot.freshness.visited)} · </>}{tf(locale, "dateSpot.published", { date: fullDate(spot.freshness.published) })} · {tf(locale, "dateSpot.checked", { date: monthYear(spot.freshness.lastChecked) })}
+      </p>
+    </SpotHero>
 
-        {copy.whenItWorks && <section aria-labelledby="works-title">
+    <div class="mt-section-sm grid grid-cols-[minmax(0,1fr)] gap-16 lg:grid-cols-[minmax(0,1fr)_20rem]">
+      <div class="min-w-0 space-y-section-sm">
+        {copy.whenItWorks && <section aria-labelledby="works-title" class="border-t border-line-strong pt-8">
           <h2 id="works-title" class={h2}>{t(locale, "dateSpot.h.whenItWorks")}</h2>
-          <ul class="mt-5 divide-y divide-warm-200 border-y border-warm-200 dark:divide-warm-700 dark:border-warm-700">
+          <ul class="mt-6 divide-y divide-line border-y border-line">
             {copy.whenItWorks.map((row) => (
-              <li class="flex gap-4 py-4">
+              <li class="flex gap-4 py-5">
                 <SignalIcon assessment={row.assessment} />
-                <div class="min-w-0 flex-1 sm:flex sm:gap-4">
-                <div class="font-ui sm:w-44 sm:shrink-0">
-                  <p class="font-semibold text-warm-900 dark:text-warm-100">{row.situation}</p>
-                  <p class="text-body-sm font-semibold text-brand-wine-text dark:text-brand-rose">{t(locale, `dateSpot.assessment.${row.assessment}`)}</p>
-                </div>
-                <p class="mt-1 font-body text-warm-700 dark:text-warm-300 sm:mt-0">{row.reason}</p>
+                <div class="min-w-0 flex-1 sm:flex sm:gap-6">
+                  <div class="font-ui sm:w-44 sm:shrink-0">
+                    <p class="font-semibold text-ink">{row.situation}</p>
+                    <p class:list={["text-body-sm", row.assessment === "ideal" ? "text-accent-ink" : row.assessment === "caveat" ? "text-ink-muted" : "text-ink-subtle"]}>{t(locale, `dateSpot.assessment.${row.assessment}`)}</p>
+                  </div>
+                  <p class="mt-1 font-body text-ink-muted sm:mt-0">{row.reason}</p>
                 </div>
               </li>
             ))}
@@ -91,58 +86,56 @@ const small = "font-ui text-caption font-bold uppercase tracking-wider text-warm
 
         {copy.whatItIs && <section aria-labelledby="is-title">
           <h2 id="is-title" class={h2}>{t(locale, "dateSpot.h.whatItIs")}</h2>
-          <div class={`mt-4 space-y-4 ${body}`}><Paragraphs text={copy.whatItIs} /></div>
+          <div class={`mt-6 space-y-5 ${body}`}><Paragraphs text={copy.whatItIs} /></div>
         </section>}
 
         {copy.howToDoItWell && <section aria-labelledby="well-title">
           <h2 id="well-title" class={h2}>{t(locale, "dateSpot.h.howToDoItWell")}</h2>
-          <dl class="mt-5 divide-y divide-warm-200 border-y border-warm-200 dark:divide-warm-700 dark:border-warm-700">
-            {copy.howToDoItWell.map((tip) => <div class="grid gap-2 py-4 sm:grid-cols-[10rem_minmax(0,1fr)]"><dt class="font-ui font-semibold text-warm-900 dark:text-warm-100">{tip.label}</dt><dd class="font-body text-warm-700 dark:text-warm-300">{tip.text}</dd></div>)}
+          <dl class="mt-6 divide-y divide-line border-y border-line">
+            {copy.howToDoItWell.map((tip) => <div class="grid gap-2 py-5 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6"><dt class="font-ui font-semibold text-ink">{tip.label}</dt><dd class="max-w-measure font-body text-ink-muted">{tip.text}</dd></div>)}
           </dl>
         </section>}
 
         {pairings.length > 0 && <section aria-labelledby="pair-title">
-          <p class={kicker}>{t(locale, "dateSpot.pairKicker")}</p>
-          <h2 id="pair-title" class={`mt-2 ${h2}`}>{t(locale, "dateSpot.h.pairItWith")}</h2>
-          <div class="mt-5 grid gap-4 sm:grid-cols-3">
+          <p class="eyebrow">{t(locale, "dateSpot.pairKicker")}</p>
+          <h2 id="pair-title" class={`mt-3 ${h2}`}>{t(locale, "dateSpot.h.pairItWith")}</h2>
+          <div class="mt-8 grid gap-10 sm:grid-cols-3 sm:gap-6">
             {pairings.map(({ target, walkMinutes }) => {
               const targetCopy = target.locales[copyLocale(locale)];
               return (
-                <a href={dateSpotPath(target, locale)} class="block border border-warm-200 no-underline dark:border-warm-700">
-                  <img src={target.image.src} width={target.image.width} height={target.image.height} alt={targetCopy.imageAlt} loading="lazy" class="aspect-[4/3] w-full object-cover" />
-                  <div class="p-4">
-                    <h3 class="font-heading text-lg text-warm-900 dark:text-warm-100">{target.name}</h3>
-                    <p class="mt-1 font-ui text-body-sm text-warm-500 dark:text-warm-400">{["cuisine" in targetCopy ? targetCopy.cuisine : t(locale, `dateSpot.spotType.${target.spotType}`), walkMinutes && tf(locale, "dateSpot.minutes", { minutes: walkMinutes }), target.priceRange && priceLabel(target.priceRange, locale)].filter(Boolean).join(" · ")}</p>
-                    <p class="mt-3"><VerdictBadge verdict={target.reviewVerdict} locale={locale} /></p>
-                  </div>
+                <a href={dateSpotPath(target, locale)} class="group block text-ink no-underline hover:text-ink">
+                  <img src={target.image.src} width={target.image.width} height={target.image.height} alt={targetCopy.imageAlt} loading="lazy" class="aspect-[4/5] w-full max-w-xs rounded-arch bg-surface-sunken object-cover" />
+                  <h3 class="mt-4 text-xl text-ink"><span class="link-draw group-hover:bg-size-[100%_1px]">{target.name}</span></h3>
+                  <p class="mt-1 font-ui text-body-sm text-ink-subtle">{["cuisine" in targetCopy ? targetCopy.cuisine : t(locale, `dateSpot.spotType.${target.spotType}`), walkMinutes && tf(locale, "dateSpot.minutes", { minutes: walkMinutes }), target.priceRange && priceLabel(target.priceRange, locale)].filter(Boolean).join(" · ")}</p>
+                  <p class="mt-3"><VerdictBadge verdict={target.reviewVerdict} locale={locale} /></p>
                 </a>
               );
             })}
           </div>
         </section>}
 
-        {updates.length > 0 && <section class="space-y-4">
+        {updates.length > 0 && <section class="space-y-6">
           {updates.map((update) => (
-            <div class="border-l-4 border-brand-wine pl-5 dark:border-brand-rose">
-              <p class={kicker}>{t(locale, "dateSpot.update")} · <time datetime={update.date}>{monthYear(update.date)}</time></p>
-              <p class={`mt-2 ${body}`}>{update.note}</p>
+            <div class="max-w-measure border-t border-line pt-5">
+              <p class="eyebrow">{t(locale, "dateSpot.update")} · <time datetime={update.date}>{monthYear(update.date)}</time></p>
+              <p class={`mt-3 ${body}`}>{update.note}</p>
             </div>
           ))}
         </section>}
       </div>
 
-      <aside class="min-w-0 space-y-8 lg:sticky lg:top-24 lg:self-start">
+      <aside class="min-w-0 space-y-10 lg:sticky lg:top-24 lg:self-start">
         <EssentialsCard spot={spot} locale={locale} />
-        <nav aria-labelledby="ideas-title">
-          <p id="ideas-title" class={small}>{t(locale, "dateSpot.ideasByType")}</p>
-          <ul class="mt-3 space-y-1.5 font-ui text-body-sm">
-            {categoriesWithContent.map((key) => <li><a href={categoryPath(key, locale)} aria-current={key === category ? "page" : undefined} class:list={["no-underline", key === category ? "font-semibold text-brand-wine-text dark:text-brand-rose" : "text-warm-700 dark:text-warm-300"]}>{t(locale, `dateSpot.category.${key}`)}</a></li>)}
+        <nav aria-labelledby="ideas-title" class="no-print">
+          <p id="ideas-title" class="eyebrow">{t(locale, "dateSpot.ideasByType")}</p>
+          <ul class="mt-4 space-y-2 font-ui text-body-sm">
+            {categoriesWithContent.map((key) => <li><a href={categoryPath(key, locale)} aria-current={key === category ? "page" : undefined} class:list={["link-draw", key === category ? "font-semibold text-ink" : "text-ink-muted hover:text-ink"]}>{t(locale, `dateSpot.category.${key}`)}</a></li>)}
           </ul>
         </nav>
         {moreInCategory.length > 0 && <div>
-          <p class={small}>{tf(locale, "dateSpot.moreCategory", { category: categoryLabel })}</p>
-          <ul class="mt-3 space-y-2 font-ui text-body-sm">
-            {moreInCategory.map((item) => <li class="flex justify-between gap-3"><a href={dateSpotPath(item, locale)} class="text-warm-800 dark:text-warm-200">{item.name}</a><span class="text-warm-500 dark:text-warm-400">{item.neighbourhood}</span></li>)}
+          <p class="eyebrow">{tf(locale, "dateSpot.moreCategory", { category: categoryLabel })}</p>
+          <ul class="mt-4 space-y-3 font-ui text-body-sm">
+            {moreInCategory.map((item) => <li class="flex justify-between gap-3"><a href={dateSpotPath(item, locale)} class="link-draw">{item.name}</a><span class="text-ink-subtle">{item.neighbourhood}</span></li>)}
           </ul>
         </div>}
         <NewsletterSignup locale={locale} compact />

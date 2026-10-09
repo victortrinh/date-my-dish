@@ -2,12 +2,13 @@
 import { tf, type Locale } from "@i18n/utils";
 
 // A keyed photo from a Date Spot's `photos`, with its per-locale alt text.
+// `arch` sets it in the greystone window frame, for portraits.
 interface Photo { src: string; width: number; height: number; credit?: string; }
-interface Props { photos?: Record<string, Photo>; reference: { photo: string; alt: string }; locale: Locale; class?: string; }
-const { photos, reference, locale, class: className } = Astro.props;
+interface Props { photos?: Record<string, Photo>; reference: { photo: string; alt: string }; locale: Locale; arch?: boolean; class?: string; }
+const { photos, reference, locale, arch = false, class: className } = Astro.props;
 const photo = photos?.[reference.photo];
 ---
 {photo && <figure class={className}>
-  <img src={photo.src} width={photo.width} height={photo.height} alt={reference.alt} loading="lazy" class="h-auto w-full rounded-xl object-cover" />
-  {photo.credit && <figcaption class="mt-1.5 font-ui text-caption text-warm-500 dark:text-warm-400">{tf(locale, "dateSpot.photoCredit", { credit: photo.credit })}</figcaption>}
+  <img src={photo.src} width={photo.width} height={photo.height} alt={reference.alt} loading="lazy" class:list={["w-full bg-surface-sunken object-cover", arch ? "aspect-[4/5] rounded-arch" : "h-auto rounded-sm"]} />
+  {photo.credit && <figcaption class="mt-2 font-ui text-caption text-ink-subtle">{tf(locale, "dateSpot.photoCredit", { credit: photo.credit })}</figcaption>}
 </figure>}

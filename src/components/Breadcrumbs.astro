@@ -33,17 +33,19 @@ const jsonLd = {
 };
 ---
 
+<!-- One line, the current page truncating: a wrap that changes when the web
+     font swaps in would shift the whole page down (CLS). -->
 <nav aria-label={t(locale, "nav.breadcrumb")} class="no-print mb-6">
-  <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 font-ui text-caption text-ink-subtle">
+  <ol class="flex items-center gap-x-2 overflow-hidden whitespace-nowrap font-ui text-caption text-ink-subtle">
     {breadcrumbs.map((item, i) => (
-      <li class="flex items-center gap-2">
+      <li class:list={["flex items-center gap-2", i === breadcrumbs.length - 1 ? "min-w-0" : "shrink-0"]}>
         {i > 0 && <span aria-hidden="true" class="text-line">/</span>}
         {item.href && i < breadcrumbs.length - 1 ? (
           <a href={item.href} class="link-draw text-ink-subtle hover:text-ink">
             {item.label}
           </a>
         ) : (
-          <span class="text-ink" aria-current="page">{item.label}</span>
+          <span class="truncate text-ink" aria-current="page">{item.label}</span>
         )}
       </li>
     ))}
