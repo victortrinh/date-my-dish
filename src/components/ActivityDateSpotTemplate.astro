@@ -57,7 +57,6 @@ const body = "max-w-measure font-body text-body-lg text-ink-muted";
     <SpotHero image={spot.image} alt={copy.imageAlt} caption={caption}>
       <p class="eyebrow truncate">{categoryLabel}{spot.spotType === "chef-led-experience" && ` · ${t(locale, "dateSpot.spotType.chef-led-experience")}`}</p>
       <h1 class="mt-4 text-4xl text-ink sm:text-heading-1 lg:text-display">{title}</h1>
-      <VerdictBadge verdict={spot.reviewVerdict} locale={locale} size="lg" class="mt-6" />
       {copy.opening && <p class={`mt-6 ${body}`}>{copy.opening}</p>}
       {host && <p class="mt-4 font-ui font-semibold text-ink">{tf(locale, "dateSpot.hostedBy", { name: host.name })}</p>}
       <p class="mt-6 font-ui text-body-sm text-ink-subtle">

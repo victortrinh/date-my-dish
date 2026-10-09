@@ -62,12 +62,14 @@ const { locale, compact = false, includeScript = false } = Astro.props;
 
     function renderForm() {
       var inputClass = isCompact
-        ? 'min-w-0 flex-1 rounded-full border border-line bg-surface px-5 py-3 font-ui text-body-sm text-ink placeholder:text-ink-subtle focus:border-ink'
+        ? 'w-full rounded-full border border-line bg-surface px-5 py-3 font-ui text-body-sm text-ink placeholder:text-ink-subtle focus:border-ink'
         : 'w-full rounded-full border border-on-iron-muted/40 bg-transparent px-5 py-3 font-ui text-body-sm text-on-iron placeholder:text-on-iron-muted focus:border-on-iron';
       var btnClass = isCompact
-        ? 'btn btn-primary shrink-0'
+        ? 'btn btn-primary w-full'
         : 'btn btn-accent mt-3 w-full hover:bg-on-iron hover:text-iron';
-      var layout = isCompact ? 'flex gap-2' : 'flex flex-col';
+      // Stacked in both: the compact box sits in a 20rem sidebar, where a side-by-side
+      // field leaves no room for the placeholder.
+      var layout = isCompact ? 'flex flex-col gap-3' : 'flex flex-col';
 
       formArea.innerHTML =
         '<form class="newsletter-form ' + layout + '" aria-label="' +
