@@ -1266,7 +1266,9 @@
           "altText": "Pretty Korean dishes at Giwa restaurant in Verdun Montreal, a casual date-night spot on Promenade Wellington serving modern Korean cuisine",
           "link": "https://datemydish.com/en/reviews/verdun/giwa/",
           "scheduledFor": "2026-10-11T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858562038",
+          "postedAt": "2026-10-11T15:59:52.715Z"
         },
         {
           "imageKey": "giwa--hero--verdict",
