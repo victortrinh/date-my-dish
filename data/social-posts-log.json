@@ -1303,7 +1303,9 @@
           "altText": "Warm, intimate dining room at Hoogan et Beaufort Montreal with pendant lights and live-fire kitchen visible in the background",
           "link": "https://datemydish.com/en/reviews/rosemont/hoogan-et-beaufort/",
           "scheduledFor": "2026-10-12T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858598409",
+          "postedAt": "2026-10-12T19:28:15.034Z"
         },
         {
           "imageKey": "hoogan-et-beaufort--hero--verdict",
