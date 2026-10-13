@@ -1267,8 +1267,8 @@
           "link": "https://datemydish.com/en/reviews/verdun/giwa/",
           "scheduledFor": "2026-10-11T09:00:00.000Z",
           "status": "posted",
-          "id": "1050746156858598408",
-          "postedAt": "2026-10-12T19:28:04.389Z"
+          "id": "1050746156858562038",
+          "postedAt": "2026-10-11T15:59:52.715Z"
         },
         {
           "imageKey": "giwa--hero--verdict",
@@ -1303,9 +1303,7 @@
           "altText": "Warm, intimate dining room at Hoogan et Beaufort Montreal with pendant lights and live-fire kitchen visible in the background",
           "link": "https://datemydish.com/en/reviews/rosemont/hoogan-et-beaufort/",
           "scheduledFor": "2026-10-12T09:00:00.000Z",
-          "status": "posted",
-          "id": "1050746156858598409",
-          "postedAt": "2026-10-12T19:28:15.034Z"
+          "status": "pending"
         },
         {
           "imageKey": "hoogan-et-beaufort--hero--verdict",
