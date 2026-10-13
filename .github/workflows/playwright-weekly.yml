@@ -56,12 +56,24 @@ jobs:
         if: steps.pw-cache.outputs.cache-hit == 'true'
         run: npx playwright install-deps chromium
 
+      # The smoke specs assert on the fixture routes (tests/fixtures/), so build
+      # and test from the same fixtures as the PR check. Live content is checked
+      # by the validators on every deploy build.
       - run: npm run build
+        env:
+          DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
+          CONTRIBUTOR_RECIPE_SOURCE: tests/fixtures/contributor-recipes.json
+          EXTENDED_PROFILE_SOURCE: tests/fixtures/extended-profiles.json
+          EDITORIAL_SOURCE: tests/fixtures/editorial
 
       - name: Run Playwright full suite
         run: npx playwright test
         env:
           CI: "true"
+          DATE_SPOT_SOURCE: tests/fixtures/date-spots.json
+          CONTRIBUTOR_RECIPE_SOURCE: tests/fixtures/contributor-recipes.json
+          EXTENDED_PROFILE_SOURCE: tests/fixtures/extended-profiles.json
+          EDITORIAL_SOURCE: tests/fixtures/editorial
 
       - name: Upload report
         if: always()
