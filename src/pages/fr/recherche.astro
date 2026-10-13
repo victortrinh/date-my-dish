@@ -12,19 +12,18 @@ const locale = "fr";
   description="Rechercher sur Date My Dish."
   noindex={true}
 >
-  <div class="mx-auto max-w-narrow px-4 py-section-sm">
+  <div class="page-container pt-8 pb-section">
     <Breadcrumbs
       locale={locale}
       items={[{ label: t(locale, "nav.search") }]}
     />
 
-    <div class="mb-10">
-      <h1 class="mb-3 font-heading text-heading-1 font-normal text-warm-900 sm:text-4xl dark:text-warm-100">
-        {t(locale, "search.title")}
-      </h1>
-      <div class="h-1 w-12 rounded-full bg-brand-rose"></div>
-    </div>
+    <h1 class="mt-10 mb-12 max-w-4xl text-4xl text-ink sm:text-heading-1">
+      {t(locale, "search.title")}
+    </h1>
 
-    <SearchBar locale={locale} />
+    <div class="max-w-narrow">
+      <SearchBar locale={locale} />
+    </div>
   </div>
 </BaseLayout>

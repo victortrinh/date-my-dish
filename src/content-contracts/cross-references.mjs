@@ -64,7 +64,7 @@ export function editorialWarnings(spots) {
     const copy = review.locales.en;
     const lead = copy.meetChef ?? copy.meetTheBartender;
     const nearbyReviews = reviews.filter((other) => other.id !== review.id && other.city === review.city && other.neighbourhood === review.neighbourhood).length;
-    const links = makeANightCards(copy.makeANight, spots).length + 1 /* neighbourhood guide */ + (copy.atHome ? 1 : 0) + (lead?.profileId ? 1 : 0) + Math.min(nearbyReviews, 2);
+    const links = makeANightCards(copy.makeANight, spots).filter(({ target }) => target).length + 1 /* neighbourhood guide */ + (copy.atHome ? 1 : 0) + (lead?.profileId ? 1 : 0) + Math.min(nearbyReviews, 2);
     if (links < REVIEW_INTERNAL_LINK_TARGET) {
       warnings.push(`${review.id}: ${links} earned internal links; the review spec aims for ${REVIEW_INTERNAL_LINK_TARGET} (five Make a night of it picks, the neighbourhood guide, the recipe card, two nearby reviews)`);
     }

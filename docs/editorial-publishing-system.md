@@ -30,6 +30,7 @@ Home recipes, informative articles and affiliate articles are not DMD post types
 | Page | English | French |
 |---|---|---|
 | Review | `/en/reviews/{neighbourhood}/{slug}/` | `/fr/critiques/{neighbourhood}/{slug}/` |
+| Date Spots listing | `/en/date-spots/` | `/fr/lieux/` |
 | Date Spot | `/en/date-spots/{slug}/` | `/fr/lieux/{slug}/` |
 | Category listing | `/en/date-spots/category/{category}/` | `/fr/lieux/categorie/{categorie}/` |
 | Neighbourhood guide | `/en/date-spots/neighbourhood/{neighbourhood}/` | `/fr/lieux/quartier/{neighbourhood}/` |
@@ -38,6 +39,8 @@ Home recipes, informative articles and affiliate articles are not DMD post types
 
 The neighbourhood segment is the companion file's `neighbourhood` (accents dropped, lower case, hyphenated). Every URL ends in a trailing slash.
 
+The Date Spots listing shows Date Spots only (activities and Chef-led Experiences), grouped under the four categories in their fixed order. Reviews list under `/en/reviews/` and `/fr/critiques/`. Readers can filter the listing by verdict and by borough; each filter shows only when more than one value is present. Until a Date Spot is published, the listing is noindex, points readers to the reviews, and is left out of the navigation. Neighbourhood guides keep both: the reviews in a neighbourhood, then its Date Spots by category.
+
 The seven reviews published before the rework lived at `/en/reviews/{slug}-montreal/` and `/fr/critiques/{slug}-montreal/`. Each of those 14 URLs 301-redirects, in one hop, to its new nested URL.
 
 ## The recommendation signal
@@ -45,7 +48,7 @@ The seven reviews published before the rework lived at `/en/reviews/{slug}-montr
 No numbers from DMD anywhere: no rating, date score, stars or ranking.
 
 - **Verdict**: stored as `favourite`, `conditional` or `pass`; displayed as `A favourite`, `Depends on the night`, `Not our first pick`. Always paired with a one-line reason. It is also the listing filter ("Filter by our take"). Keep `favourite` scarce, about one in four; the build warns above that.
-- **Good-for and When-it-works rows**: `Ideal`, `Works, with a caveat`, `Not the one`, each with a reason line.
+- **Good-for and When-it-works rows**: `Ideal`, `Works, with a caveat`, `Not the one`, each with a reason line. A review's Good for rows use the fixed occasions: First date, Anniversary, Casual midweek, Impressing a cook, Double date, Solo at the bar, Late night.
 - **Google rating**: the venue's own number, shown only in the essentials card as a dated snapshot ("4.6 · 312 reviews, as of 18 September 2026, not updated since") and labelled as theirs. A recheck appends a new dated line and never overwrites. It never appears in DMD's structured data.
 
 ## What every post must have, and what is optional
@@ -65,15 +68,15 @@ Required:
 7. Byline and visit or payment disclosure.
 8. EN and FR versions.
 
-Optional, in design order: Good for (up to 6 rows), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, opening hours, Instagram, the Google snapshot, Book and Map links.
+Optional, in design order: the author's full verdict paragraph (shown under the verdict, with the one-line reason set in ink where it stands), Good for (one row per occasion, up to 7), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, opening hours, Instagram, the Google snapshot, Book and Map links.
 
-**Make a night of it** shows 1 to 5 cards, always in this order: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. A card appears only when its Date Spot page is published. With no published picks the section is hidden.
+**Make a night of it** shows 1 to 5 cards, one per category, always in this order: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. Social and Romantic exists only for these picks: a Date Spot carries one of the first four. Each card is the author's pick: category, venue name, before or after, the distance and cost as written, and the blurb. A pick whose Date Spot page is published links to it; a pick with no published page shows the same card without a link, and becomes a link once its page is published. A `[SPOT NEEDED]` slot and the author's notes to DMD stay out. With no picks the section is hidden.
 
 ### Date Spot
 
-Required: name, category (one of the five above), neighbourhood, a signal with its reason, address, practical info (hours, cost, season), a hero photo with alt text, EN and FR.
+Required: name, category (one of the first four above), neighbourhood, a signal with its reason, address, practical info (hours, cost, season), a hero photo with alt text, EN and FR.
 
-Optional: When it works rows, What it actually is, How to do it well, Pair it with (published reviews only), booking, transit, step-free access, map, a Chef-led Experience's named host.
+Optional: borough (one of Ahuntsic-Cartierville, Côte-des-Neiges–Notre-Dame-de-Grâce, Le Plateau-Mont-Royal, Le Sud-Ouest, Mercier–Hochelaga-Maisonneuve, Outremont, Rosemont–La Petite-Patrie, Verdun, Ville-Marie, Villeray–Saint-Michel–Parc-Extension, spelled as in Notion; it feeds the listing's borough filter), When it works rows, What it actually is, How to do it well, Pair it with (published reviews only), booking, transit, step-free access, map, a Chef-led Experience's named host.
 
 ### Chef
 
@@ -129,13 +132,13 @@ Every other `Post Type` (`Recipes`, `Informative Posts`, `Affiliate Links`, empt
 Each published post has a companion file, `src/content/editorial/{slug}.json`. It holds what Notion does not carry and what DMD controls:
 
 - verdict and its reason, Good-for and When-it-works signals
-- Spot Type, category, neighbourhood
+- Spot Type, category, neighbourhood, borough
 - Checked date and dated update lines
 - Google snapshot lines, Instagram handle, booking link
 - meta title and meta description per locale
 - alt text and internal links
 
-The importer pre-fills the companion file on first import (verdict and reason proposed from the review's own text, neighbourhood from the address, category from the title, Checked from the publish date). Victor approves or edits it in the PR. On later imports the importer never overwrites a companion file field.
+The importer pre-fills the companion file on first import (verdict and reason proposed from the review's own text, neighbourhood from the address, borough from the `Borough` property when it names one of the boroughs above, category from the title, Checked from the publish date). Victor approves or edits it in the PR. On later imports the importer never overwrites a companion file field.
 
 ### Edit policy
 
@@ -166,7 +169,7 @@ The FR is translated section by section from the section-fitted EN, so both keep
 1. **Importer** (Claude cloud routine on Victor's claude.ai account, Wednesdays): fetches the next eligible Notion row, downloads and optimises its images, fits the text into sections, applies the allowed edits, translates to FR, writes or updates the collection JSON and the companion file, and opens a draft PR listing every edit, the section mapping, unplaced text and the translation.
 2. **Deterministic checks**, run by the routine and again by CI on the PR: Notion fetch, image optimisation, verbatim check, publish gate (required fields, EN and FR parity, append-only Google snapshots and update lines, links resolve), source and build validators, performance budgets.
 3. **Merge** is the act of publishing. Nothing else publishes.
-4. **Updates**: when a published Notion row is edited (detected by its last-edited time), the importer opens an update PR that keeps the companion file intact. A changed verdict or signal needs a new dated update line.
+4. **Updates**: when a published Notion row is edited (detected by its last-edited time), the importer opens an update PR that keeps the companion file intact. A changed verdict, or a changed or removed signal, needs a new dated update line; a signal row added for an occasion that had none does not.
 5. **Failure**: nothing on the site changes. The importer opens or updates a `notion-story` issue saying what blocked it.
 
 `notion/published.json` records which Notion rows are live and when they were last synced.

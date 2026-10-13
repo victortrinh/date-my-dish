@@ -1,5 +1,5 @@
 ---
-import type { Locale } from "@i18n/utils";
+import { t, type Locale } from "@i18n/utils";
 
 interface Props {
   locale: Locale;
@@ -8,7 +8,7 @@ interface Props {
 const { locale } = Astro.props;
 ---
 
-<div id="search" data-pagefind-ui data-locale={locale}>
+<div id="search" data-pagefind-ui data-locale={locale} data-placeholder={t(locale, "search.placeholder")}>
   <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
   <div id="pagefind-container"></div>
 </div>
@@ -17,7 +17,9 @@ const { locale } = Astro.props;
   (function() {
     var loaded = false;
     var container = document.getElementById('pagefind-container');
-    var locale = document.getElementById('search')?.dataset?.locale || 'en';
+    var root = document.getElementById('search');
+    var locale = root?.dataset?.locale || 'en';
+    var placeholder = root?.dataset?.placeholder;
 
     function loadPagefind() {
       if (loaded) return;
@@ -29,12 +31,9 @@ const { locale } = Astro.props;
           element: '#pagefind-container',
           showSubResults: true,
           filters: { lang: locale },
-          translations: locale === 'fr' ? {
-            placeholder: 'Rechercher une recette...',
-            zero_results: 'Aucun résultat pour [SEARCH_TERM]',
-          } : {
-            placeholder: 'Search for a recipe...',
-            zero_results: 'No results for [SEARCH_TERM]',
+          translations: {
+            placeholder: placeholder,
+            zero_results: locale === 'fr' ? 'Aucun résultat pour [SEARCH_TERM]' : 'No results for [SEARCH_TERM]',
           },
         });
         var input = container?.querySelector('input');
@@ -42,7 +41,7 @@ const { locale } = Astro.props;
       };
       script.onerror = function() {
         if (container) {
-          container.innerHTML = '<p style="padding:1rem 0;color:#786A68;">' +
+          container.innerHTML = '<p class="py-4 font-ui text-body-sm text-ink-subtle">' +
             (locale === 'fr'
               ? 'La recherche nécessite une version compilée. Exécutez <code>npm run build</code> puis <code>npm run preview</code>.'
               : 'Search requires a built site. Run <code>npm run build</code> then <code>npm run preview</code>.') +
@@ -52,7 +51,7 @@ const { locale } = Astro.props;
       document.head.appendChild(script);
     }
 
-    // Load immediately — no need to defer on a dedicated search page
+    // Load immediately: no need to defer on a dedicated search page
     loadPagefind();
   })();
 </script>

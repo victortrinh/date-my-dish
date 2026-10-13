@@ -4,13 +4,15 @@ import { neighbourhoodSlug } from "../../src/content-contracts/date-spot.mjs";
 
 const spots = JSON.parse(readFileSync(process.env.DATE_SPOT_SOURCE || "src/content/date-spots.json", "utf8"));
 const hasVenues = spots.some((spot: { spotType: string }) => ["restaurant", "bar"].includes(spot.spotType));
+// Date Spots lists activities and chef-led experiences; restaurants and bars list under Reviews.
+const planning = spots.filter((spot: { spotType: string }) => ["activity", "chef-led-experience"].includes(spot.spotType));
 
 for (const locale of ["en", "fr"]) {
   const index = `/${locale}/${locale === "fr" ? "lieux" : "date-spots"}/`;
   const reviews = `/${locale}/${locale === "fr" ? "critiques" : "reviews"}/`;
   test(`${locale} stages Date Spot destinations in desktop, mobile and footer navigation`, async ({ page }) => {
     await page.goto(`/${locale}/`);
-    for (const [href, available] of [[index, spots.length > 0], [reviews, hasVenues]] as const) {
+    for (const [href, available] of [[index, planning.length > 0], [reviews, hasVenues]] as const) {
       const links = page.locator(`nav a[href="${href}"]`);
       expect(await links.count()).toBe(available ? 3 : 0);
     }
@@ -22,7 +24,7 @@ for (const locale of ["en", "fr"]) {
   });
 
   test(`${locale} listings expose only their published Date Spot variants`, async ({ page, request }) => {
-    for (const [route, entries] of [[index, spots], [reviews, spots.filter((spot: { spotType: string }) => ["restaurant", "bar"].includes(spot.spotType))]] as const) {
+    for (const [route, entries] of [[index, planning], [reviews, spots.filter((spot: { spotType: string }) => ["restaurant", "bar"].includes(spot.spotType))]] as const) {
       await page.goto(route);
       await expect(page.locator("main a:has(img)")).toHaveCount(entries.length);
       if (!entries.length) await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex/);

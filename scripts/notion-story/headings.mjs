@@ -17,7 +17,7 @@
 /** @type {Array<[RegExp, Placement]>} */
 export const HEADING_MAP = [
   // Review (Restaurant and Bar share one template)
-  [/^the verdict$|^verdict$|^is .+ worth it$/, { section: "verdict", label: "The verdict (verdictHeadline, verdict reason)" }],
+  [/^the verdict$|^verdict$|^is .+ worth it$/, { section: "verdict", label: "The verdict (verdictHeadline, verdictDetail, verdict reason)" }],
   [/^good for$/, { section: "goodFor", label: "Good for" }],
   [/^the room$|^the vibe$/, { section: "room", label: "The room" }],
   [/^meet the chef$/, { section: "meetChef", label: "Meet the chef" }],

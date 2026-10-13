@@ -36,6 +36,7 @@
         "paymentDisclosure": "Paid for it",
         "verdictHeadline": "Careful cooking, hard room, and a bill that asks a lot",
         "verdictReason": "For the same money in Montreal I'd book somewhere else.",
+        "verdictDetail": "Nothing here is badly made. The ferments are interesting, the ingredients are good, and the hour at the counter was the best part of the night. What I didn't get was the one course you're still thinking about the next morning, and at $165 before drinks that's the thing I'm paying for. For the same money in Montreal I'd book somewhere else. If you go, take the counter, go with someone you can already hear, and don't come hungry expecting to leave full.",
         "essentials": {
           "address": "4094 rue Saint-Denis, Montreal, QC H2W 2M5",
           "cost": "$250 with one cocktail, tax and tip",
@@ -116,6 +117,22 @@
           "detail": "The hour at the counter was the best part of the night. Watching four people build plates a tweezer-load at a time held my attention. I'd sit there again. I'm less sure I'd pay $165 for the menu.",
           "caveat": "The honest caveat is the service. Our server was new and it showed: he couldn't tell us much about the cocktail or where the wine came from, and on the pairing the bottles arrived, got poured, and that was that. Everyone starts somewhere and that sorts itself out in a few months, so I'd believe anyone who tells me their night was sharper. But on the night I paid, it was the difference between a good meal and a good evening."
         },
+        "makeANight": [
+          {
+            "name": "Cinéma du Parc",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "15 min walk · $$",
+            "blurb": "Tickets are nine dollars on Tuesday. It works well before dinner."
+          },
+          {
+            "name": "Parc La Fontaine",
+            "category": "nature-scenic",
+            "timing": "after",
+            "details": "10 min walk · Free",
+            "blurb": "Ten minutes north for a post-dinner walk. You will also pass places to eat on the way."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "How far ahead do I need to book?",
@@ -130,6 +147,7 @@
         "paymentDisclosure": "Payé de ma poche",
         "verdictHeadline": "Une cuisine soignée, une salle difficile, et une facture qui demande beaucoup",
         "verdictReason": "Pour le même prix à Montréal, je réserverais ailleurs.",
+        "verdictDetail": "Rien ici n'est mal fait. Les fermentations sont intéressantes, les ingrédients sont bons, et l'heure au comptoir a été le meilleur moment de la soirée. Ce qui m'a manqué, c'est le service auquel tu penses encore le lendemain matin, et à 165 $ avant les boissons, c'est exactement ce que je paie. Pour le même prix à Montréal, je réserverais ailleurs. Si tu y vas, prends le comptoir, vas-y avec quelqu'un que tu entends déjà bien, et n'arrive pas affamé en t'attendant à repartir rassasié.",
         "essentials": {
           "address": "4094 rue Saint-Denis, Montréal, QC H2W 2M5",
           "cost": "250 $ avec un cocktail, taxes et pourboire",
@@ -210,6 +228,22 @@
           "detail": "L'heure au comptoir a été le meilleur moment de la soirée. Regarder quatre personnes monter des assiettes une pince à la fois a retenu mon attention. Je m'y assoirais encore. Je suis moins sûr que je paierais 165 $ pour le menu.",
           "caveat": "La nuance honnête, c'est le service. Notre serveur était nouveau et ça paraissait : il ne pouvait pas nous dire grand-chose sur le cocktail ni sur la provenance du vin, et pour l'accord, les bouteilles arrivaient, étaient versées, et c'était tout. Tout le monde commence quelque part et ça se règle en quelques mois, alors je croirais n'importe qui qui me dit que sa soirée était plus rodée. Mais le soir où j'ai payé, c'était la différence entre un bon repas et une bonne soirée."
         },
+        "makeANight": [
+          {
+            "name": "Cinéma du Parc",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "15 min à pied · $$",
+            "blurb": "Les billets sont à neuf dollars le mardi. Ça marche bien avant le souper."
+          },
+          {
+            "name": "Parc La Fontaine",
+            "category": "nature-scenic",
+            "timing": "after",
+            "details": "10 min à pied · Gratuit",
+            "blurb": "Dix minutes au nord pour une marche après le souper. Tu vas aussi passer devant des endroits où manger en chemin."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "Combien de temps d'avance faut-il réserver?",
@@ -247,6 +281,7 @@
         "paymentDisclosure": "Paid",
         "verdictHeadline": "Pretty plates and clean technique, but the flavours play it safe",
         "verdictReason": "If you want a relaxed dinner with careful plating, it works.",
+        "verdictDetail": "The plating is genuinely lovely and the technique shows. What you should know before booking is that the flavours lean refined rather than loud. If you're chasing heat, funk or punch you'll wish it went harder. If you want a relaxed dinner with careful plating, it works. Take the terrasse when the weather allows.",
         "essentials": {
           "address": "3780 rue Wellington, Verdun, QC H4G 1V2",
           "cost": "~$90",
@@ -309,6 +344,11 @@
               "name": "Haemul jang",
               "tag": "skip",
               "note": "Soy-marinated crab, shrimp, octopus and salmon with seaweed and egg yolk. Briny-sweet and glossy, but the seaweed crisp wasn't crisp and for the price the flavour stayed uniform and soy-heavy. Tempting, worth trying once, but I wouldn't reorder."
+            },
+            {
+              "name": "Doenjang crème brûlée",
+              "tag": "skip",
+              "note": "Sweet and salty with a fermented edge. Cleanly made, not my thing."
             }
           ]
         },
@@ -335,6 +375,43 @@
           "visits": 1,
           "caveat": "The cooking is clean and the plates are pretty, but the flavour intensity is dialled back. A couple of elements tasted prepped too far ahead, the seaweed crisp and the popcorn. If you're expecting the louder Korean profile, this isn't it."
         },
+        "makeANight": [
+          {
+            "name": "Plage urbaine de Verdun",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "behind the Auditorium · Free · 13 June to 30 August",
+            "blurb": "The only supervised river swim on the island. Call 514-280-0789 the day you go."
+          },
+          {
+            "name": "Quai 5160",
+            "category": "arts-culture",
+            "timing": "before-or-after",
+            "details": "800 m · Free to low",
+            "blurb": "The 1970 arena cut open onto the riverside promenade. Closed Mondays."
+          },
+          {
+            "name": "Auditorium de Verdun",
+            "category": "games-entertainment",
+            "timing": "after",
+            "details": "same boulevard · varies",
+            "blurb": "The restored 1939 room. Note the works running to January 2027."
+          },
+          {
+            "name": "Domaine Saint-Paul",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "REM to Île-des-Sœurs · Free",
+            "blurb": "Twenty-six hectares of protected woodland. No dogs, no bikes."
+          },
+          {
+            "name": "Promenade Wellington",
+            "category": "social-romantic",
+            "timing": "after",
+            "details": "at the door · Free",
+            "blurb": "The strip Giwa sits on."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "How far ahead do I need to book?",
@@ -349,6 +426,7 @@
         "paymentDisclosure": "Payé",
         "verdictHeadline": "De belles assiettes et une technique propre, mais des saveurs qui jouent la prudence",
         "verdictReason": "Si tu veux un souper détendu avec des assiettes soignées, ça marche.",
+        "verdictDetail": "La présentation est vraiment belle et la technique se voit. Ce qu'il faut savoir avant de réserver : les saveurs penchent vers le raffiné plutôt que vers le puissant. Si tu cherches du piquant, du funk ou du punch, tu vas vouloir que ça aille plus loin. Si tu veux un souper détendu avec des assiettes soignées, ça marche. Prends la terrasse quand la météo le permet.",
         "essentials": {
           "address": "3780 Rue Wellington, Verdun, QC H4G 1V2",
           "cost": "~90 $",
@@ -411,6 +489,11 @@
               "name": "Haemul Jang",
               "tag": "skip",
               "note": "Crabe, crevettes, pieuvre et saumon marinés au soya, avec algue et jaune d'oeuf. Saumâtre-sucré et lustré, mais la croustille d'algue n'était pas croustillante et, pour le prix, la saveur restait uniforme et dominée par le soya. Tentant, à essayer une fois, mais je ne le recommanderais pas."
+            },
+            {
+              "name": "Crème brûlée au doenjang",
+              "tag": "skip",
+              "note": "Douce et salée, avec une pointe fermentée. Proprement exécutée, pas vraiment mon truc."
             }
           ]
         },
@@ -437,6 +520,43 @@
           "visits": 1,
           "caveat": "La cuisine est propre et les assiettes sont jolies, mais l'intensité des saveurs est baissée. Quelques éléments goûtaient préparés trop d'avance, la croustille d'algue et le popcorn. Si tu t'attends au profil coréen plus intense, ce n'est pas ça."
         },
+        "makeANight": [
+          {
+            "name": "Plage urbaine de Verdun",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "derrière l'Auditorium · Gratuit · du 13 juin au 30 août",
+            "blurb": "La seule baignade surveillée dans le fleuve sur l'île. Appelle au 514-280-0789 le jour même."
+          },
+          {
+            "name": "Quai 5160",
+            "category": "arts-culture",
+            "timing": "before-or-after",
+            "details": "800 m · Gratuit à peu coûteux",
+            "blurb": "L'aréna de 1970 ouvert sur la promenade au bord de l'eau. Fermé le lundi."
+          },
+          {
+            "name": "Auditorium de Verdun",
+            "category": "games-entertainment",
+            "timing": "after",
+            "details": "même boulevard · variable",
+            "blurb": "La salle de 1939, restaurée. À noter : des travaux jusqu'en janvier 2027."
+          },
+          {
+            "name": "Domaine Saint-Paul",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "REM jusqu'à L'Île-des-Sœurs · Gratuit",
+            "blurb": "Vingt-six hectares de boisé protégé. Pas de chiens, pas de vélos."
+          },
+          {
+            "name": "Promenade Wellington",
+            "category": "social-romantic",
+            "timing": "after",
+            "details": "à la porte · Gratuit",
+            "blurb": "L'artère où se trouve Giwa."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "Combien de temps d'avance faut-il réserver?",
@@ -474,6 +594,7 @@
         "paymentDisclosure": "Paid",
         "verdictHeadline": "A room built for an occasion, and a tasting menu that stayed in the very good lane",
         "verdictReason": "Go for a celebration. Don't go for a first date.",
+        "verdictDetail": "Lively, warm and a little dramatic, with the open hearth visible from the dining room. The cooking is clean, confident and well seasoned. What I didn't get was the wow a new Michelin star sets you up to expect, and for a restaurant that leans hard into live fire, the flavours never came across as especially smoky. Go for a celebration. Don't go for a first date.",
         "essentials": {
           "address": "4095 rue Molson, Montreal, QC H1Y 3L1",
           "cost": "$110 to $180+",
@@ -575,6 +696,36 @@
           "visits": 1,
           "caveat": "The honest caveat: they lean hard into the live-fire story and on my menu I didn't taste much smoke or char. Everything was clean and well executed, just not fire-forward. The oyster opener is good without being unforgettable, and the bread didn't do what a bread called out on the menu should. It's a very good restaurant that didn't deliver the big wow effect a new star sets you up to expect."
         },
+        "makeANight": [
+          {
+            "name": "Cinéma Beaubien",
+            "category": "arts-culture",
+            "timing": "before",
+            "details": "$9 on Tuesdays",
+            "blurb": "Montreal's oldest working cinema, community-owned since 2001."
+          },
+          {
+            "name": "Jardin botanique",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "$15.75 residents",
+            "blurb": "Note the greenhouses are closed at the moment. Call 514-868-3000."
+          },
+          {
+            "name": "Quilles G Plus Le Forum",
+            "category": "games-entertainment",
+            "timing": "after",
+            "details": "$6 a game",
+            "blurb": "Duckpin bowling, open to 2am at weekends. The unserious ending."
+          },
+          {
+            "name": "Golf municipal de Montréal",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "$19 with an Accès Montréal card",
+            "blurb": "Nine par-3 holes behind the Olympic pyramids."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "When is it open?",
@@ -593,6 +744,7 @@
         "paymentDisclosure": "Payé",
         "verdictHeadline": "Une salle faite pour les occasions, et un menu dégustation resté dans la catégorie très bien",
         "verdictReason": "Vas-y pour une célébration. Pas pour un premier rendez-vous.",
+        "verdictDetail": "Animé, chaleureux et un peu théâtral, avec le foyer ouvert visible de la salle. La cuisine est nette, assurée et bien assaisonnée. Ce qui m'a manqué, c'est l'effet wow qu'une nouvelle étoile Michelin te prépare à attendre, et pour un restaurant qui mise autant sur le feu vif, les saveurs ne sont jamais ressorties particulièrement fumées. Vas-y pour une célébration. Pas pour un premier rendez-vous.",
         "essentials": {
           "address": "4095 Rue Molson, Montréal, QC H1Y 3L1",
           "cost": "110-180 $+",
@@ -694,6 +846,36 @@
           "visits": 1,
           "caveat": "La nuance honnête : ils misent fort sur l'histoire du feu vif, et dans mon menu je n'ai pas goûté beaucoup de fumée ni de grillé. Tout était net et bien exécuté, juste pas axé sur le feu. L'entrée d'huîtres est bonne sans être inoubliable, et le pain n'a pas fait ce qu'un pain mis en valeur sur le menu devrait faire. C'est un très bon restaurant qui n'a pas livré le gros effet wow qu'une nouvelle étoile te pousse à attendre."
         },
+        "makeANight": [
+          {
+            "name": "Cinéma Beaubien",
+            "category": "arts-culture",
+            "timing": "before",
+            "details": "9 $ le mardi",
+            "blurb": "Le plus vieux cinéma encore en activité à Montréal, propriété de sa communauté depuis 2001."
+          },
+          {
+            "name": "Jardin botanique",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "15,75 $ pour les résidents",
+            "blurb": "À noter : les serres sont fermées en ce moment. Appelle au 514-868-3000."
+          },
+          {
+            "name": "Quilles G Plus Le Forum",
+            "category": "games-entertainment",
+            "timing": "after",
+            "details": "6 $ la partie",
+            "blurb": "Des petites quilles, ouvert jusqu'à 2 h la fin de semaine. La fin de soirée pas sérieuse."
+          },
+          {
+            "name": "Golf municipal de Montréal",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "19 $ avec la carte Accès Montréal",
+            "blurb": "Neuf trous à normale 3 derrière les pyramides olympiques."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "Quand est-ce ouvert?",
@@ -735,6 +917,7 @@
         "paymentDisclosure": "Paid",
         "verdictHeadline": "Technically excellent, without one dish I kept thinking about",
         "verdictReason": "Go for the calm room and precise cooking.",
+        "verdictDetail": "The ingredients are fresh, the technique is controlled and the service is polished. Where it fell short for me was flavour identity relative to the price. At $130 a head I expected a more distinct style, and I left having had a nice night without one dish I kept thinking about. Go for the calm room and precise cooking.",
         "essentials": {
           "address": "174-176 rue Saint-Viateur Ouest, Montreal, QC H2T 2L3",
           "cost": "$130 to $170",
@@ -795,6 +978,29 @@
           "visits": 1,
           "caveat": "The honest caveat: the technique and execution are excellent and the service is smooth, but for the price I expected at least one dish I'd describe as memorable. I had a really nice night. I didn't leave obsessed. At this level I'm looking for the plate that creates a memory, and the meal stayed in the very good lane."
         },
+        "makeANight": [
+          {
+            "name": "Cinéma du Parc",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "$9 on Tuesdays",
+            "blurb": "Repertory film in the basement of Les Galeries du Parc."
+          },
+          {
+            "name": "Parc Jeanne-Mance",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "Free",
+            "blurb": "The flat green apron at the foot of the mountain. Sunday means the Tam-Tams across Park Avenue."
+          },
+          {
+            "name": "Belvédère Kondiaronk",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "35 to 50 min uphill · Free",
+            "blurb": "Walk up the Olmsted path and arrive hungry. Sunset is the move."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "How far ahead do I need to book?",
@@ -813,6 +1019,7 @@
         "paymentDisclosure": "Payé",
         "verdictHeadline": "Techniquement excellent, sans un plat qui me reste en tête",
         "verdictReason": "Vas-y pour la salle calme et la cuisine précise.",
+        "verdictDetail": "Les ingrédients sont frais, la technique est maîtrisée et le service est soigné. Là où ça m'a laissé sur ma faim, c'est l'identité des saveurs par rapport au prix. À 130 $ par personne, je m'attendais à un style plus distinct, et je suis reparti après une belle soirée sans un seul plat qui m'est resté en tête. Vas-y pour la salle calme et la cuisine précise.",
         "essentials": {
           "address": "174-176 Rue Saint-Viateur Ouest, Montréal, QC H2T 2L3",
           "cost": "130-170 $",
@@ -873,6 +1080,29 @@
           "visits": 1,
           "caveat": "La nuance honnête : la technique et l'exécution sont excellentes et le service est fluide, mais pour le prix, je m'attendais à au moins un plat que je qualifierais de mémorable. J'ai passé une très belle soirée. Je ne suis pas ressorti obsédé. À ce niveau, je cherche l'assiette qui crée un souvenir, et le repas est resté dans la catégorie très bien."
         },
+        "makeANight": [
+          {
+            "name": "Cinéma du Parc",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "9 $ le mardi",
+            "blurb": "Du cinéma de répertoire au sous-sol des Galeries du Parc."
+          },
+          {
+            "name": "Parc Jeanne-Mance",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "Gratuit",
+            "blurb": "La grande pelouse plate au pied de la montagne. Le dimanche, ce sont les Tam-Tams de l'autre côté de l'avenue du Parc."
+          },
+          {
+            "name": "Belvédère Kondiaronk",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "35 à 50 min de montée · Gratuit",
+            "blurb": "Monte par le chemin Olmsted et arrive affamé. Le coucher de soleil, c'est le move."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "Combien de temps d'avance faut-il réserver?",
@@ -914,6 +1144,7 @@
         "paymentDisclosure": "Paid",
         "verdictHeadline": "Coffee, two shareable plates, then walk it off along the canal",
         "verdictReason": "A lively brunch and lunch in a large industrial room with plenty of daylight.",
+        "verdictDetail": "A lively brunch and lunch in a large industrial room with plenty of daylight. The canal is right outside for a walk afterward. Go hungry, but don't get carried away ordering: the room tempts you into settling in for a long meal you didn't come for.",
         "essentials": {
           "address": "5524 rue Saint-Patrick, suite 200, Montreal, QC H4E 1A8",
           "cost": "$30 to $55",
@@ -991,6 +1222,22 @@
           "byline": "Victor",
           "caveat": "Keep it tighter at brunch than the room wants you to. It tempts you into ordering like you're settling in for a long meal, and then you've spent $60 on what was meant to be coffee and a plate."
         },
+        "makeANight": [
+          {
+            "name": "Lachine Canal",
+            "category": "nature-scenic",
+            "timing": "after",
+            "details": "at the door · Free",
+            "blurb": "The classic post-brunch reset, and the reason to come to this address."
+          },
+          {
+            "name": "Atwater Market",
+            "category": "social-romantic",
+            "timing": "before",
+            "details": "Free to browse",
+            "blurb": "Coffee, snacks and a quick wander."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "How far ahead do I need to book?",
@@ -1013,6 +1260,7 @@
         "paymentDisclosure": "Payé",
         "verdictHeadline": "Café, deux assiettes à partager, puis une marche le long du canal",
         "verdictReason": "Un brunch-lunch animé dans une grande salle industrielle baignée de lumière.",
+        "verdictDetail": "Un brunch-lunch animé dans une grande salle industrielle baignée de lumière. Le canal est juste à côté pour une marche après. Viens avec l'appétit, mais ne t'emballe pas en commandant : la salle te donne envie de t'installer pour un long repas que tu n'étais pas venu faire.",
         "essentials": {
           "address": "5524 Rue Saint-Patrick, suite 200, Montréal, QC H4E 1A8",
           "cost": "30-55 $",
@@ -1090,6 +1338,22 @@
           "byline": "Victor",
           "caveat": "Reste plus serré au brunch que la salle le voudrait. Elle te donne envie de commander comme si tu t'installais pour un long repas, et là tu as dépensé 60 $ pour ce qui devait être un café et une assiette."
         },
+        "makeANight": [
+          {
+            "name": "Canal Lachine",
+            "category": "nature-scenic",
+            "timing": "after",
+            "details": "à la porte · Gratuit",
+            "blurb": "La pause classique après le brunch, et la raison de venir à cette adresse."
+          },
+          {
+            "name": "Marché Atwater",
+            "category": "social-romantic",
+            "timing": "before",
+            "details": "Gratuit pour flâner",
+            "blurb": "Café, collations et une petite balade."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "Combien de temps d'avance faut-il réserver?",
@@ -1135,6 +1399,7 @@
         "paymentDisclosure": "Paid",
         "verdictHeadline": "Worth the money when the night is the point",
         "verdictReason": "The pasta is the reason to come and the room is the reason to stay.",
+        "verdictDetail": "The pasta is the reason to come and the room is the reason to stay. Warm, a little buzzy, and loud enough to feel alive without turning dinner into a lip-reading contest. It's expensive enough that you want a reason, so save it for something rather than a Tuesday. Ask for a two-top along the wall.",
         "essentials": {
           "address": "7495 rue Saint-Denis, Montreal, QC H2R 2E5",
           "cost": "$120 to $200",
@@ -1223,6 +1488,36 @@
           },
           "howToSpendLess": "One cocktail each, then a bottle or a couple of sommelier picks instead of multiple rounds. That keeps the total down without changing the meal."
         },
+        "makeANight": [
+          {
+            "name": "Stade IGA and parc Jarry",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "Free to walk the park",
+            "blurb": "Thirty-six hectares to arrive hungry through. Note the new stadium project is contested locally."
+          },
+          {
+            "name": "TOHU",
+            "category": "arts-culture",
+            "timing": "before",
+            "details": "bus · $$$",
+            "blurb": "Contemporary circus in a converted quarry. Check the calendar, the season has gaps."
+          },
+          {
+            "name": "Cinéma Public",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "$",
+            "blurb": "Repertory film in the Casa d'Italia."
+          },
+          {
+            "name": "Parc Frédéric-Back",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "bus · Free",
+            "blurb": "The reclaimed landfill with the spheres. Golden hour, and bring a bag because there are no bins."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "How far ahead do I need to book?",
@@ -1237,6 +1532,7 @@
         "paymentDisclosure": "Payé",
         "verdictHeadline": "Ça vaut la dépense quand la soirée est le but",
         "verdictReason": "Les pâtes sont la raison de venir, et la salle est la raison de rester.",
+        "verdictDetail": "Les pâtes sont la raison de venir, et la salle est la raison de rester. Chaleureuse, un peu animée, et assez bruyante pour se sentir vivante sans transformer le souper en concours de lecture sur les lèvres. C'est assez cher pour qu'on veuille une raison, alors garde-le pour une occasion plutôt qu'un mardi. Demande une table pour deux le long du mur.",
         "essentials": {
           "address": "7495 Rue Saint-Denis, Montréal, QC H2R 2E5",
           "cost": "120-200 $",
@@ -1325,6 +1621,36 @@
           },
           "howToSpendLess": "Un cocktail chacun, puis une bouteille ou quelques choix du sommelier plutôt que plusieurs tournées. Ça garde le total plus bas sans changer le repas."
         },
+        "makeANight": [
+          {
+            "name": "Stade IGA et parc Jarry",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "Gratuit pour marcher dans le parc",
+            "blurb": "Trente-six hectares à traverser pour arriver en appétit. À noter : le nouveau projet de stade est contesté dans le quartier."
+          },
+          {
+            "name": "TOHU",
+            "category": "arts-culture",
+            "timing": "before",
+            "details": "autobus · $$$",
+            "blurb": "Du cirque contemporain dans une ancienne carrière. Vérifie le calendrier, la saison a des trous."
+          },
+          {
+            "name": "Cinéma Public",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "$",
+            "blurb": "Du cinéma de répertoire à la Casa d'Italia."
+          },
+          {
+            "name": "Parc Frédéric-Back",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "autobus · Gratuit",
+            "blurb": "L'ancien dépotoir réhabilité, avec ses sphères. À l'heure dorée, et apporte un sac parce qu'il n'y a pas de poubelles."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "Combien de temps d'avance faut-il réserver?",
@@ -1362,6 +1688,7 @@
         "paymentDisclosure": "Paid",
         "verdictHeadline": "A beautiful room, solid grill cooking, and prices that add up quickly",
         "verdictReason": "Bring three friends rather than one.",
+        "verdictDetail": "Execution is solid, the portions are generous and the room is attractive. But a lot of the flavour profiles land close to what a good neighbourhood Chinese restaurant already does, with updated technique and a premium price on top. It also leans oily and heavy, which isn't always what you want on a date. Bring three friends rather than one.",
         "essentials": {
           "address": "112 rue McGill, Montreal, QC H2Y 2E5",
           "cost": "$60 to $120+",
@@ -1446,6 +1773,36 @@
           "visits": 1,
           "caveat": "The honest caveat: it wouldn't be my first choice if you already eat at Chinese restaurants often. A lot of the flavour profiles sit close to what you can get elsewhere, with better technique and a higher price. It also doesn't hit the comfort spot of late-night Chinese food, and it leans oily and heavy, which matters on a date. Where it shines is a group. If you're not familiar with Chinese food, it's a fair, approachable option in a beautiful room."
         },
+        "makeANight": [
+          {
+            "name": "Bota Bota",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "10 min walk · $$$",
+            "blurb": "The spa boat in the Old Port. The right kind of before if you want to arrive relaxed."
+          },
+          {
+            "name": "Musée des beaux-arts",
+            "category": "arts-culture",
+            "timing": "before",
+            "details": "Free under 26",
+            "blurb": "Wednesday evenings run to 9pm, which is the date version."
+          },
+          {
+            "name": "Cinémathèque québécoise",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "Berri-UQAM · $14",
+            "blurb": "Archive cinema in the Quartier Latin. Arrive early, latecomers are not admitted."
+          },
+          {
+            "name": "Belvédère Kondiaronk",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "uphill from downtown · Free",
+            "blurb": "Sunset over the city, then dinner."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "How far ahead do I need to book?",
@@ -1460,6 +1817,7 @@
         "paymentDisclosure": "Payé",
         "verdictHeadline": "Une belle salle, une cuisine de grill solide, et des prix qui montent vite",
         "verdictReason": "Amène trois amis plutôt qu'un seul.",
+        "verdictDetail": "L'exécution est solide, les portions sont généreuses et la salle est belle. Mais beaucoup de profils de saveurs ressemblent à ce que fait déjà un bon restaurant chinois de quartier, avec une technique mise à jour et un prix premium en plus. C'est aussi plutôt gras et lourd, ce qui n'est pas toujours ce qu'on veut en rendez-vous. Amène trois amis plutôt qu'un seul.",
         "essentials": {
           "address": "112 Rue McGill, Montréal, QC H2Y 2E5",
           "cost": "60-120 $+",
@@ -1544,6 +1902,36 @@
           "visits": 1,
           "caveat": "La nuance honnête : ce ne serait pas mon premier choix si tu manges déjà souvent dans des restaurants chinois. Beaucoup de profils de saveurs sont proches de ce que tu trouves ailleurs, avec une meilleure technique et un prix plus élevé. Ça ne comble pas non plus le craving de bouffe chinoise de fin de soirée, et ça penche gras et lourd, ce qui compte en date. Là où ça brille, c'est en groupe. Si tu ne connais pas bien la cuisine chinoise, c'est une option honnête et accessible dans une belle salle."
         },
+        "makeANight": [
+          {
+            "name": "Bota Bota",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "10 min à pied · $$$",
+            "blurb": "Le bateau-spa du Vieux-Port. Le bon genre d'avant si tu veux arriver détendu."
+          },
+          {
+            "name": "Musée des beaux-arts",
+            "category": "arts-culture",
+            "timing": "before",
+            "details": "Gratuit pour les moins de 26 ans",
+            "blurb": "Le mercredi, c'est ouvert jusqu'à 21 h, la version rendez-vous."
+          },
+          {
+            "name": "Cinémathèque québécoise",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "Berri-UQAM · 14 $",
+            "blurb": "Du cinéma d'archives dans le Quartier latin. Arrive tôt, les retardataires ne sont pas admis."
+          },
+          {
+            "name": "Belvédère Kondiaronk",
+            "category": "nature-scenic",
+            "timing": "before",
+            "details": "en montant du centre-ville · Gratuit",
+            "blurb": "Le coucher de soleil sur la ville, puis le souper."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "Combien de temps d'avance faut-il réserver?",
@@ -1581,6 +1969,7 @@
         "paymentDisclosure": "Paid",
         "verdictHeadline": "Serious ingredient cooking and a BYOW bill, with portions that will not fill everyone",
         "verdictReason": "Ingredient-driven, rustic and thoughtful, with a lot of the flavour built in-house through ferments.",
+        "verdictDetail": "Ingredient-driven, rustic and thoughtful, with a lot of the flavour built in-house through ferments. Bringing your own bottle keeps the total under control. The catch is quantity: even ordering what felt like a full meal for two, around $160 before tax, I left a bit unfilled. If you or your date has a big appetite, factor that in.",
         "essentials": {
           "address": "1257 rue Atateken, Montreal, QC H2L 3K9",
           "cost": "~$80 food only",
@@ -1679,6 +2068,35 @@
           "visits": 1,
           "caveat": "I enjoyed the food but I wouldn't call it outstanding, and it isn't at the top of my recommendations. The biggest issue is portion size. You can also argue the plates feel expensive for the quantity, especially if you don't appreciate the time behind the garums, cheongs and ferments. For some people that will limit the experience."
         },
+        "makeANight": [
+          {
+            "name": "Musée des beaux-arts",
+            "category": "arts-culture",
+            "timing": "before",
+            "details": "Free under 26",
+            "blurb": "Wednesday to 9pm is the date version."
+          },
+          {
+            "name": "Cinémathèque québécoise",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "10 min walk · $14",
+            "blurb": "Archive cinema in the Quartier Latin. Arrive early; latecomers are not admitted."
+          },
+          {
+            "name": "Parc La Fontaine",
+            "category": "nature-scenic",
+            "timing": "before-or-after",
+            "details": "Free"
+          },
+          {
+            "name": "Bota Bota",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "$$$",
+            "blurb": "The spa boat, for a longer day."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "How far ahead do I need to book?",
@@ -1693,6 +2111,7 @@
         "paymentDisclosure": "Payé",
         "verdictHeadline": "Une vraie cuisine d'ingrédients et une facture allégée par le vin apporté, avec des portions qui ne rassasieront pas tout le monde",
         "verdictReason": "Axé sur l'ingrédient, rustique et réfléchi, avec une bonne partie des saveurs bâties maison grâce aux fermentations.",
+        "verdictDetail": "Axé sur l'ingrédient, rustique et réfléchi, avec une bonne partie des saveurs bâties maison grâce aux fermentations. Apporter ta bouteille garde la facture sous contrôle. Le hic, c'est la quantité : même en commandant ce qui semblait un repas complet pour deux, environ 160 $ avant taxes, je suis reparti un peu sur ma faim. Si toi ou ton rendez-vous avez un gros appétit, tiens-en compte.",
         "essentials": {
           "address": "1257 rue Atateken, Montréal, QC H2L 3K9",
           "cost": "~80 $ nourriture seulement",
@@ -1791,6 +2210,35 @@
           "visits": 1,
           "caveat": "J'ai aimé la bouffe, mais je ne dirais pas qu'elle est exceptionnelle, et elle n'est pas en tête de mes recommandations. Le plus gros problème, c'est la taille des portions. On peut aussi argumenter que les assiettes semblent chères pour la quantité, surtout si tu n'apprécies pas le temps derrière les garums, les cheongs et les fermentations. Pour certaines personnes, ça va limiter l'expérience."
         },
+        "makeANight": [
+          {
+            "name": "Musée des beaux-arts",
+            "category": "arts-culture",
+            "timing": "before",
+            "details": "Gratuit pour les moins de 26 ans",
+            "blurb": "Le mercredi jusqu'à 21 h, c'est la version rendez-vous."
+          },
+          {
+            "name": "Cinémathèque québécoise",
+            "category": "games-entertainment",
+            "timing": "before",
+            "details": "10 min à pied · 14 $",
+            "blurb": "Du cinéma d'archives dans le Quartier latin. Arrive tôt, les retardataires ne sont pas admis."
+          },
+          {
+            "name": "Parc La Fontaine",
+            "category": "nature-scenic",
+            "timing": "before-or-after",
+            "details": "Gratuit"
+          },
+          {
+            "name": "Bota Bota",
+            "category": "activities-sports",
+            "timing": "before",
+            "details": "$$$",
+            "blurb": "Le bateau-spa, pour une plus longue journée."
+          }
+        ],
         "beforeYouBook": [
           {
             "question": "Combien de temps d'avance faut-il réserver?",

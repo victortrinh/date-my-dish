@@ -1,0 +1,23 @@
+---
+import { t, getLocalizedPath, type Locale } from "@i18n/utils";
+import wordmark from "@assets/brand/wordmark.svg?raw";
+
+// The Date My Dish wordmark: the greystone window and the name, outlined so
+// it never waits on a web font. The frame and letters take the current text
+// colour; the lit pane takes --accent, so it follows light and dark.
+interface Props {
+  locale: Locale;
+  /** Height utility for the mark, e.g. "h-7". */
+  size?: string;
+  class?: string;
+}
+
+const { locale, size = "h-7", class: className } = Astro.props;
+const svg = wordmark.replace("<svg ", '<svg aria-hidden="true" focusable="false" ');
+---
+<a
+  href={getLocalizedPath(locale, "/")}
+  aria-label={t(locale, "site.homeLabel")}
+  class:list={["inline-flex shrink-0 items-center text-current no-underline transition-opacity duration-(--duration-quick) hover:text-current hover:opacity-80 [&>svg]:h-full [&>svg]:w-auto", size, className]}
+  set:html={svg}
+/>

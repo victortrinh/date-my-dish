@@ -5,33 +5,26 @@ import { t } from "@i18n/utils";
 const locale = "en";
 ---
 <BaseLayout title={`${t(locale, "contact.pageTitle")} | Date My Dish`} description={t(locale, "seo.homeDescription")}>
-  <section class="mx-auto max-w-prose px-4 py-section">
+  <section class="page-container pt-8 pb-section">
     <Breadcrumbs locale={locale} items={[{ label: t(locale, "contact.title") }]} />
-    <h1 class="my-8 font-heading text-4xl text-warm-900 dark:text-warm-100">{t(locale, "contact.pageTitle")}</h1>
-          <div class="space-y-4">
-            <a
-              href="https://www.instagram.com/datemydishdotcom"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-3 font-ui text-body-lg font-medium text-warm-800 no-underline dark:text-warm-200"
-            >
-              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-wine/10 text-lg dark:bg-brand-wine-dark/15">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-brand-wine-text dark:text-brand-wine-dark"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>
-              </span>
-              Instagram: @datemydishdotcom
-            </a>
-
-            <a
-              href="https://www.pinterest.com/datemydish"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="flex items-center gap-3 font-ui text-body-lg font-medium text-warm-800 no-underline dark:text-warm-200"
-            >
-              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-wine/10 text-lg dark:bg-brand-wine-dark/15">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-brand-wine-text dark:text-brand-wine-dark"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-              </span>
-              Pinterest: @datemydish
-            </a>
-          </div>
+    <h1 class="mt-10 max-w-4xl text-4xl text-ink sm:text-heading-1 lg:text-display">{t(locale, "contact.pageTitle")}</h1>
+    <ul class="mt-section-sm max-w-measure divide-y divide-line border-y border-line">
+      <li class="py-5">
+        <a href="https://www.instagram.com/datemydishdotcom" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 font-ui text-body-lg font-medium text-ink no-underline hover:text-ink">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-colors duration-(--duration-quick) group-hover:border-ink group-hover:bg-ink group-hover:text-surface">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"></circle></svg>
+          </span>
+          <span class="link-draw">Instagram: @datemydishdotcom</span>
+        </a>
+      </li>
+      <li class="py-5">
+        <a href="https://www.pinterest.com/datemydish" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 font-ui text-body-lg font-medium text-ink no-underline hover:text-ink">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-line text-ink transition-colors duration-(--duration-quick) group-hover:border-ink group-hover:bg-ink group-hover:text-surface">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
+          </span>
+          <span class="link-draw">Pinterest: @datemydish</span>
+        </a>
+      </li>
+    </ul>
   </section>
 </BaseLayout>

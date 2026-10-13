@@ -3,6 +3,7 @@
   "spotType": "restaurant",
   "reviewVerdict": "conditional",
   "neighbourhood": "Old Montreal",
+  "borough": "Ville-Marie",
   "instagram": "oncleleekao",
   "locales": {
     "en": {
@@ -34,9 +35,14 @@
           "occasion": "first-date",
           "assessment": "not-for",
           "reason": "The food leans oily and heavy, and the sharing format works better once you already know each other."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "If you want late-night Chinese food, this isn't the version of it. It's a sit-down, order-wide dinner rather than somewhere to end up at eleven."
         }
       ],
-      "imageAlt": "Oncle Lee Kăo's soaring dining room in Old Montreal, Michelin Bib Gourmand with burnt-orange leather accents and warm flattering lighting"
+      "imageAlt": "The soaring dining room at Oncle Lee Kăo in Old Montreal, with burnt-orange leather and warm lighting"
     },
     "fr-CA": {
       "verdictReason": "Amène trois amis plutôt qu'un seul.",
@@ -65,11 +71,16 @@
           "occasion": "first-date",
           "assessment": "not-for",
           "reason": "La bouffe penche grasse et lourde, et le format à partager marche mieux quand vous vous connaissez déjà."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "Si tu veux de la bouffe chinoise tard le soir, ce n'est pas la bonne version. C'est un souper assis où on commande large, pas un endroit où aboutir à onze heures."
         }
       ],
       "metaTitle": "Oncle Lee Kăo, Old Montreal : critique",
       "metaDescription": "Le grill chinois moderne d'Andersen Lee sur la rue McGill, dans le Vieux-Montréal. Quoi commander, combien ça coûte, et pourquoi c'est mieux en double date.",
-      "imageAlt": "Salle à manger à hauts plafonds d'Oncle Lee Kăo dans le Vieux-Montréal, Bib Gourmand Michelin avec cuir brûlé et éclairage chaleureux"
+      "imageAlt": "Salle à manger à hauts plafonds d'Oncle Lee Kăo, dans le Vieux-Montréal, avec cuir brûlé et éclairage chaleureux"
     }
   },
   "lastChecked": "2026-09-24"

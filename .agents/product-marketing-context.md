@@ -10,7 +10,7 @@
 ## What we publish
 
 - **Reviews** of restaurants and bars, with a qualitative verdict (`A favourite`, `Depends on the night`, `Not our first pick`), Good-for signals, what to order, the real cost, and a signed note. No numeric scores.
-- **Date Spots**: activities and Chef-led Experiences in five categories (Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic), linked from reviews' "Make a night of it".
+- **Date Spots**: activities and Chef-led Experiences in four categories (Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic), linked from reviews' "Make a night of it".
 - **Chef pages** (a fixed Q&A) and **Chef Recipe Cards** (a recipe the chef cooks at home for a date).
 
 Full rules: `docs/editorial-publishing-system.md`. Terms: `CONTEXT.md`.

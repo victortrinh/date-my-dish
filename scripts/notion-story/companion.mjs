@@ -9,7 +9,7 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { companionSchema } from "../../src/content-contracts/companion.mjs";
 import { DEFAULT_EDITORIAL_DIR } from "../../src/content-contracts/load.mjs";
-import { VERDICTS } from "../../src/content-contracts/date-spot.mjs";
+import { BOROUGHS, VERDICTS } from "../../src/content-contracts/date-spot.mjs";
 
 const LOCALES = /** @type {const} */ (["en", "fr-CA"]);
 const isSet = (value) => value !== undefined && value !== null && value !== "";
@@ -18,7 +18,7 @@ const isSet = (value) => value !== undefined && value !== null && value !== "";
  * The proposals a script can make without judgement, from the author's
  * metadata block and the row's properties. The agent adds the rest (verdict
  * reason from the review's own text, category, Good-for signals).
- * @param {{ metadata: Record<string, string> }} source
+ * @param {{ metadata: Record<string, string>, notion?: { borough?: string | null } }} source
  * @param {{ slug: string, postType: string, publishDate?: string | null, heroAlt?: string }} context
  */
 export function proposeCompanion(source, { slug, postType, publishDate, heroAlt }) {
@@ -31,6 +31,9 @@ export function proposeCompanion(source, { slug, postType, publishDate, heroAlt 
   // "H1: Moccione, Villeray" -> "Villeray"; "Othym, the Village" -> "the Village" is left for Victor.
   const neighbourhood = String(meta.H1 ?? "").split(",").slice(1).join(",").trim();
   if (neighbourhood) proposal.neighbourhood = neighbourhood;
+  // The row's Borough property, when it names one of the known boroughs.
+  const borough = String(source.notion?.borough ?? "").trim();
+  if (BOROUGHS.includes(/** @type {any} */ (borough))) proposal.borough = borough;
   if (publishDate) proposal.lastChecked = publishDate;
   const instagram = String(meta.Instagram ?? "").trim().replace(/^@/, "");
   if (/^[A-Za-z0-9._]{1,30}$/.test(instagram)) proposal.instagram = instagram;

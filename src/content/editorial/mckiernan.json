@@ -3,6 +3,7 @@
   "spotType": "restaurant",
   "reviewVerdict": "favourite",
   "neighbourhood": "Ville-Émard",
+  "borough": "Le Sud-Ouest",
   "instagram": "mckiernanmtl",
   "locales": {
     "en": {
@@ -34,9 +35,14 @@
           "occasion": "anniversary",
           "assessment": "not-for",
           "reason": "Lively and bright rather than intimate. Save it for the morning after."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "A daytime room at heart. Dinner runs Thursday and Friday only, and the doors shut at 22:00."
         }
       ],
-      "imageAlt": "Crispy devilled Brussels sprouts with caramelized edges and sweet-savory glaze served at McKiernan restaurant in Montreal's Sud-Ouest neighbourhood"
+      "imageAlt": "Crispy devilled Brussels sprouts with caramelized edges and a sweet-savory glaze at McKiernan"
     },
     "fr-CA": {
       "verdictReason": "Un brunch-lunch animé dans une grande salle industrielle baignée de lumière.",
@@ -65,11 +71,16 @@
           "occasion": "anniversary",
           "assessment": "not-for",
           "reason": "Animé et lumineux plutôt qu'intime. Garde-le pour le lendemain matin."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "Une salle de jour avant tout. Le souper n'est servi que le jeudi et le vendredi, et les portes ferment à 22 h."
         }
       ],
       "metaTitle": "McKiernan, Ville-Émard : brunch et date",
       "metaDescription": "Le brunch rôtisserie au bord du Canal Lachine, par l'équipe de Joe Beef. Quoi commander, combien ça coûte, et la marche le long du canal pour finir la matinée.",
-      "imageAlt": "Choux de Bruxelles à la diable croustillants avec bords caramélisés et glaçage sucré-salé servis au restaurant McKiernan dans le Sud-Ouest de Montréal"
+      "imageAlt": "Choux de Bruxelles à la diable croustillants, bords caramélisés et glaçage sucré-salé, au McKiernan"
     }
   },
   "lastChecked": "2026-09-24"

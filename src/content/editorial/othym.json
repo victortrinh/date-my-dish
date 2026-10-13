@@ -3,6 +3,7 @@
   "spotType": "restaurant",
   "reviewVerdict": "conditional",
   "neighbourhood": "the Village",
+  "borough": "Ville-Marie",
   "instagram": "othymmtl",
   "locales": {
     "en": {
@@ -34,9 +35,14 @@
           "occasion": "casual-midweek",
           "assessment": "caveat",
           "reason": "BYOW lowers the drinks cost, but dinner still takes about two hours."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "A full two-hour dinner, and bring-your-own puts a shop's closing time on your evening too, since you need the bottle in hand before you sit down."
         }
       ],
-      "imageAlt": "Seasonal dishes at Othym, a Michelin-recommended BYOB restaurant in Montreal's Village featuring ingredient-driven Quebec cooking"
+      "imageAlt": "Seasonal, ingredient-driven Québec dishes at Othym in Montreal's Village"
     },
     "fr-CA": {
       "verdictReason": "Axé sur l'ingrédient, rustique et réfléchi, avec une bonne partie des saveurs bâties maison grâce aux fermentations.",
@@ -65,11 +71,16 @@
           "occasion": "casual-midweek",
           "assessment": "caveat",
           "reason": "Apporter ton vin baisse le coût des boissons, mais le souper prend quand même environ deux heures."
+        },
+        {
+          "occasion": "late-night",
+          "assessment": "not-for",
+          "reason": "Un souper complet de deux heures, et apporter ton vin ajoute l'heure de fermeture d'un magasin à ta soirée, puisqu'il faut avoir la bouteille en main avant de t'asseoir."
         }
       ],
       "metaTitle": "Othym, the Village : critique, vin apporté",
       "metaDescription": "La cuisine saisonnière de Noé Lainesse sur la rue Atateken, et tu apportes le vin. Quoi commander, combien ça coûte et comment planifier la soirée.",
-      "imageAlt": "Assiettes saisonnières au restaurant Othym dans le Village de Montréal, BYOB recommandé Michelin et cuisine du terroir québécois"
+      "imageAlt": "Assiettes saisonnières à base d'ingrédients du terroir québécois au restaurant Othym, dans le Village de Montréal"
     }
   },
   "lastChecked": "2026-09-24"

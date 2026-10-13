@@ -238,6 +238,13 @@ test("the Importer proposes Companion File fields from the author's metadata", (
   });
 });
 
+test("the Importer proposes the borough from the row's Borough property when it is a known borough", () => {
+  const context = { slug: "moccione", postType: "review", publishDate: "2026-03-23" };
+  assert.equal(proposeCompanion({ ...moccione, notion: { borough: "Villeray–Saint-Michel–Parc-Extension" } }, context).borough, "Villeray–Saint-Michel–Parc-Extension");
+  assert.equal(proposeCompanion({ ...moccione, notion: { borough: "Laval" } }, context).borough, undefined);
+  assert.equal(proposeCompanion({ ...moccione, notion: { borough: null } }, context).borough, undefined);
+});
+
 test("a re-import keeps a hand-edited Companion File unchanged", () => {
   const dir = mkdtempSync(join(tmpdir(), "dmd-companion-"));
   try {
@@ -356,6 +363,18 @@ test("Google snapshots and update lines are append-only; a changed verdict needs
   const silent = structuredClone(previous);
   silent.reviewVerdict = "favourite";
   assert.equal(checkDatedUpdate(silent, previous).length, 2);
+  // A changed or removed signal row needs one too; a row added for a new occasion does not.
+  const changedSignal = structuredClone(previous);
+  changedSignal.locales.en.goodFor[0].assessment = changedSignal.locales.en.goodFor[0].assessment === "ideal" ? "caveat" : "ideal";
+  assert.equal(checkDatedUpdate(changedSignal, previous).length, 2);
+  const removedSignal = structuredClone(previous);
+  removedSignal.locales.en.goodFor.pop();
+  assert.equal(checkDatedUpdate(removedSignal, previous).length, 2);
+  const addedSignal = structuredClone(previous);
+  addedSignal.locales.en.goodFor = previous.locales.en.goodFor.filter(({ occasion }) => occasion !== "solo-at-the-bar");
+  const base = structuredClone(addedSignal);
+  addedSignal.locales.en.goodFor.push({ occasion: "solo-at-the-bar", assessment: "ideal", reason: token });
+  assert.deepEqual(checkDatedUpdate(addedSignal, base), []);
 
   const dropped = structuredClone(withUpdate);
   dropped.locales.en.materialUpdates = [];
