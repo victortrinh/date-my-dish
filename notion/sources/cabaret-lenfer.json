@@ -854,7 +854,7 @@
       "height": 1080,
       "bytes": 54716,
       "alt": "A cook plating at the pass, seen from the counter",
-      "hero": true,
+      "hero": false,
       "notionFile": "DSCF7458.jpg"
     },
     {
@@ -935,7 +935,7 @@
       "height": 600,
       "bytes": 146368,
       "alt": "The Cabaret l'Enfer nameplate on the concrete facade",
-      "hero": false,
+      "hero": true,
       "notionFile": "DSCF7409.jpg"
     },
     {

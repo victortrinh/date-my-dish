@@ -83,5 +83,13 @@
       "imageAlt": "Tables à la bougie dans la salle à manger chaleureuse et intime du Moccione, à Villeray"
     }
   },
-  "lastChecked": "2026-09-24"
+  "lastChecked": "2026-10-13",
+  "googleReviews": [
+    {
+      "average": 4.8,
+      "count": 1128,
+      "asOf": "2026-10-13"
+    }
+  ],
+  "bookingUrl": "https://resy.com/cities/montreal-qc/venues/moccione"
 }

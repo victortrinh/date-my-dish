@@ -9,7 +9,7 @@
     "en": {
       "metaTitle": "Cabaret l'Enfer, the Plateau: An Honest Review",
       "metaDescription": "Massimo Piedimonte's Michelin-listed tasting menu on Saint-Denis. Careful cooking, a loud room, small portions, and why it wasn't my favourite night out.",
-      "imageAlt": "A cook plating at the pass, seen from the counter",
+      "imageAlt": "The Cabaret l'Enfer nameplate on the concrete facade",
       "verdictReason": "For the same money in Montreal I'd book somewhere else.",
       "goodFor": [
         {
@@ -80,8 +80,16 @@
       ],
       "metaTitle": "Cabaret l'Enfer, the Plateau : critique",
       "metaDescription": "Le menu dégustation de Massimo Piedimonte sur Saint-Denis, au Michelin. Cuisine soignée, salle bruyante, petites portions : pourquoi ça n'a pas été ma soirée.",
-      "imageAlt": "Un cuisinier dresse une assiette au passe, vu du comptoir"
+      "imageAlt": "La plaque du Cabaret l'Enfer sur la façade de béton"
     }
   },
-  "lastChecked": "2026-10-08"
+  "lastChecked": "2026-10-13",
+  "googleReviews": [
+    {
+      "average": 4.4,
+      "count": 452,
+      "asOf": "2026-10-13"
+    }
+  ],
+  "bookingUrl": "https://www.opentable.ca/restaurant/profile/1258471"
 }

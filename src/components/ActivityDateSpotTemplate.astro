@@ -4,6 +4,7 @@ import DateSpotLayout from "@layouts/DateSpotLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import NewsletterSignup from "@components/NewsletterSignup.astro";
 import DateSpotSchema from "./DateSpotSchema.astro";
+import CorrectionLine from "./date-spots/CorrectionLine.astro";
 import EssentialsCard from "./date-spots/EssentialsCard.astro";
 import Paragraphs from "./date-spots/Paragraphs.astro";
 import SignalIcon from "./date-spots/SignalIcon.astro";
@@ -12,7 +13,7 @@ import VerdictBadge from "./date-spots/VerdictBadge.astro";
 import { t, tf, type Locale } from "@i18n/utils";
 import { transitionStyle } from "@utils/view-transitions";
 import {
-  DATE_SPOT_CATEGORIES, categoryPath, copyLocale, dateSpotPath, neighbourhoodPath, planningPath, priceLabel,
+  DATE_SPOT_CATEGORIES, categoryPath, copyLocale, dateSpotPath, hasNeighbourhoodGuide, neighbourhoodPath, planningPath, priceLabel,
   isVenueReview, sameCategoryNearby, spotCategory, spotTitle, type PlanningSpot,
 } from "@utils/date-spots";
 
@@ -51,7 +52,7 @@ const body = "max-w-measure font-body text-body-lg text-ink-muted";
     <Breadcrumbs locale={locale} items={[
       { label: t(locale, "nav.dateSpots"), href: locale === "fr" ? "/fr/lieux/" : "/en/date-spots/" },
       { label: categoryLabel, href: categoryPath(category, locale) },
-      { label: spot.neighbourhood, href: neighbourhoodPath(spot.neighbourhood, locale) },
+      { label: spot.neighbourhood, href: hasNeighbourhoodGuide(spots, spot.neighbourhood) ? neighbourhoodPath(spot.neighbourhood, locale) : undefined },
       { label: spot.name },
     ]} />
 
@@ -123,6 +124,8 @@ const body = "max-w-measure font-body text-body-lg text-ink-muted";
             </div>
           ))}
         </section>}
+
+        <CorrectionLine locale={locale} class="border-t border-line pt-6" />
       </div>
 
       <aside class="min-w-0 space-y-10 lg:sticky lg:top-24 lg:self-start">

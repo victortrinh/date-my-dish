@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "Date My Dish",
-    "tagline": "Où sortir, quoi boire, quoi cuisiner pour quelqu’un.",
+    "tagline": "Des plats qui valent le rendez-vous.",
     "homeLabel": "Date My Dish, accueil"
   },
   "nav": {
@@ -156,7 +156,7 @@
     "intro": "Date My Dish est un guide montréalais des Date Spots : restaurants, bars, activités et expériences avec des chefs qui valent une soirée. Chaque publication cherche à répondre à une seule question : est-ce que cet endroit convient au rendez-vous que vous avez en tête?",
     "verdicts": "Chaque critique et chaque Date Spot porte un verdict clair, avec sa raison : Un coup de cœur, Ça dépend de la soirée ou Pas notre premier choix. On indique pour quels genres de rendez-vous l’endroit fonctionne et où il déçoit, et on affiche le mois de notre dernière vérification. Quand on montre la note Google d’un établissement, elle est datée et présentée comme la sienne. Quand un chef nous confie un plat à faire à la maison, il paraît sous forme de fiche recette, à son nom.",
     "homeMarket": "Montréal, c’est notre port d’attache. Quand on critique un endroit dans une autre ville, la publication nomme cette ville.",
-    "reporter": "Victor Vu signe les reportages, et son nom figure sur chaque publication. Le « je » n’apparaît que dans sa note signée, à l’intérieur d’une critique; tout le reste est écrit au « on ». Chaque critique précise comment la visite s’est faite et qui a payé. Tout est publié en français et en anglais."
+    "reporter": "Personne ne paie pour figurer sur Date My Dish. On paie nos repas, on le dit dans chaque critique, et on vous dit ce qu’on en a vraiment pensé : avec gentillesse, mais honnêtement. Victor Vu signe les reportages, et son nom figure sur chaque publication. Le « je » n’apparaît que dans sa note signée, à l’intérieur d’une critique; tout le reste est écrit au « on ». Tout est publié en français et en anglais."
   },
   "contact": {
     "title": "Contact",
@@ -282,7 +282,7 @@
     "assessment": {
       "ideal": "Idéal",
       "caveat": "Ça marche, avec une réserve",
-      "not-for": "Pas le bon choix"
+      "not-for": "Mieux pour une autre soirée"
     },
     "occasion": {
       "first-date": "Premier rendez-vous",
@@ -296,7 +296,7 @@
     "dishTag": {
       "order-this": "À commander",
       "worth-it": "Ça vaut le coup",
-      "skip": "À éviter"
+      "skip": "Peut-être pas"
     },
     "drinkMoment": {
       "to-start": "Pour commencer",

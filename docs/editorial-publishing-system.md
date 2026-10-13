@@ -6,7 +6,7 @@ This is the single source of truth for what a DMD post looks like, where its con
 
 Date My Dish is a Montréal-first guide to date nights:
 
-> Where to go, what to drink, what to make for someone.
+> Dishes worth dating.
 
 Victor Vu is the reporter; bylines print "Victor". Practical copy uses the editorial "we"; first-person writing belongs only in the signed My note section of a review. Montréal is the Home Market. A venue elsewhere is published as a Travel Review that names its actual city.
 
@@ -48,8 +48,10 @@ The seven reviews published before the rework lived at `/en/reviews/{slug}-montr
 No numbers from DMD anywhere: no rating, date score, stars or ranking.
 
 - **Verdict**: stored as `favourite`, `conditional` or `pass`; displayed as `A favourite`, `Depends on the night`, `Not our first pick`. Always paired with a one-line reason. It is also the listing filter ("Filter by our take"). Keep `favourite` scarce, about one in four; the build warns above that.
-- **Good-for and When-it-works rows**: `Ideal`, `Works, with a caveat`, `Not the one`, each with a reason line. A review's Good for rows use the fixed occasions: First date, Anniversary, Casual midweek, Impressing a cook, Double date, Solo at the bar, Late night.
-- **Google rating**: the venue's own number, shown only in the essentials card as a dated snapshot ("4.6 · 312 reviews, as of 18 September 2026, not updated since") and labelled as theirs. A recheck appends a new dated line and never overwrites. It never appears in DMD's structured data.
+- **Good-for and When-it-works rows**: `Ideal`, `Works, with a caveat`, `Better for another night`, each with a reason line. A review's Good for rows use the fixed occasions: First date, Anniversary, Casual midweek, Impressing a cook, Double date, Solo at the bar, Late night.
+- **Google rating**: the venue's own number, shown only in the essentials card as a dated snapshot ("4.6 · 312 reviews, as of 18 September 2026, not updated since") and labelled as theirs. A recheck appends a new dated line and never overwrites. It never appears in DMD's structured data. The number is read by hand from the venue's Google Maps page: no Places API key, no scraping. The author writes it in the Notion essentials table's `Google reviews` row as `4.6 · 312 reviews, 13 October 2026`; the importer turns that line into a snapshot (a newer line is appended and moves the Checked date) and ignores anything it cannot parse, the placeholder included.
+- **Book and Map**: the Book button links the venue's own reservation page (OpenTable, Libro, Resy or its site), from `Booking link: https://...` in the author's metadata block or the companion file; a walk-in place with no booking page has no button. The Map button is always there: the companion file's `mapUrl`, or a Google Maps search for the name and address (a documented Maps URL, free, no key).
+- **Hero photo**: the venue's sign or storefront when there is a good one, so the reader recognises the door. Put it first among the Notion photos; the importer takes the first photo as the hero (`next --hero <index>` picks another).
 
 ## What every post must have, and what is optional
 
@@ -68,7 +70,7 @@ Required:
 7. Byline and visit or payment disclosure.
 8. EN and FR versions.
 
-Optional, in design order: the author's full verdict paragraph (shown under the verdict, with the one-line reason set in ink where it stands), Good for (one row per occasion, up to 7), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, opening hours, Instagram, the Google snapshot, Book and Map links.
+Optional, in design order: the author's full verdict paragraph (shown under the verdict, with the one-line reason set in ink where it stands), Good for (one row per occasion, up to 7), The room, Meet the chef (or bartender), The drinks (to start, with the meal, not drinking, the list), What to order (waiter's choice, set menu, à la carte strategy, dish cards tagged `Order this`, `Worth it` or `Maybe skip`), The real cost (breakdown and total), My note (signed, visit count, dated Update lines), Make a night of it, What the chef would make for a date night (links the recipe card), Before you book, and in the essentials card: "Can you talk?", booking, time to allow, opening hours, Instagram, the Google snapshot, Book and Map links.
 
 **Make a night of it** shows 1 to 5 cards, one per category, always in this order: Activities and Sports, Arts and Culture, Games and Entertainment, Nature and Scenic, Social and Romantic. Social and Romantic exists only for these picks: a Date Spot carries one of the first four. Each card is the author's pick: category, venue name, before or after, the distance and cost as written, and the blurb. A pick whose Date Spot page is published links to it; a pick with no published page shows the same card without a link, and becomes a link once its page is published. A `[SPOT NEEDED]` slot and the author's notes to DMD stay out. With no picks the section is hidden.
 
@@ -138,7 +140,7 @@ Each published post has a companion file, `src/content/editorial/{slug}.json`. I
 - meta title and meta description per locale
 - alt text and internal links
 
-The importer pre-fills the companion file on first import (verdict and reason proposed from the review's own text, neighbourhood from the address, borough from the `Borough` property when it names one of the boroughs above, category from the title, Checked from the publish date). Victor approves or edits it in the PR. On later imports the importer never overwrites a companion file field.
+The importer pre-fills the companion file on first import (verdict and reason proposed from the review's own text, neighbourhood from the address, borough from the `Borough` property when it names one of the boroughs above, category from the title, Checked from the publish date, the Google snapshot from the essentials table, the booking link from the metadata block). Victor approves or edits it in the PR. On later imports the importer never overwrites a companion file field.
 
 ### Edit policy
 

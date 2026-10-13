@@ -33,7 +33,7 @@ The qualitative recommendation on every Review and Date Spot, stored as `favouri
 _Avoid_: Date score, rating, stars
 
 **Good-for Signal**:
-A reasoned row saying how well a Review suits one date occasion: `Ideal`, `Works, with a caveat` or `Not the one`. Date Spots use the same states as When-it-works rows.
+A reasoned row saying how well a Review suits one date occasion: `Ideal`, `Works, with a caveat` or `Better for another night`. Date Spots use the same states as When-it-works rows.
 _Avoid_: Date type fit, compatibility score
 
 **Google Snapshot**:

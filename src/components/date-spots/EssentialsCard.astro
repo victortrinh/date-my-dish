@@ -1,7 +1,7 @@
 ---
 import VerdictBadge from "./VerdictBadge.astro";
 import { t, tf, type Locale } from "@i18n/utils";
-import { copyLocale, isVenueReview, priceLabel, spotCategory } from "@utils/date-spots";
+import { copyLocale, isVenueReview, mapLink, priceLabel, spotCategory } from "@utils/date-spots";
 import type { CollectionEntry } from "astro:content";
 
 // The one fact card per page. "Our take" repeats the page verdict word for
@@ -68,8 +68,8 @@ const snapshots = spot.googleReviews ?? [];
     </div>}
     {copy.paymentDisclosure && <div class="py-3"><dt class="text-ink-subtle">{t(locale, "dateSpot.disclosure")}</dt><dd class="mt-1 text-ink">{copy.paymentDisclosure}</dd></div>}
   </dl>
-  {(spot.bookingUrl || spot.mapUrl) && <div class="no-print mt-6 flex flex-wrap gap-3">
+  <div class="no-print mt-6 flex flex-wrap gap-3">
     {spot.bookingUrl && <a href={spot.bookingUrl} rel="external noopener" class="btn btn-accent flex-1">{t(locale, "dateSpot.book")}</a>}
-    {spot.mapUrl && <a href={spot.mapUrl} rel="external noopener" class="btn btn-secondary flex-1">{t(locale, "dateSpot.map")}</a>}
-  </div>}
+    <a href={mapLink(spot, locale)} rel="external noopener" class="btn btn-secondary flex-1">{t(locale, "dateSpot.map")}</a>
+  </div>
 </section>
