@@ -1,0 +1,9 @@
+---
+import { t, type Locale } from "@i18n/utils";
+
+// The standing invitation on every review and Date Spot: a reader who has
+// been recently can tell us what changed, and the page says so in an update.
+interface Props { locale: Locale; class?: string; }
+const { locale, class: className } = Astro.props;
+---
+<p class:list={["max-w-measure font-ui text-body-sm text-ink-subtle", className]}>{t(locale, "dateSpot.correction")} <a href={`/${locale}/contact/`} class="text-accent-ink underline decoration-1 underline-offset-4">{t(locale, "dateSpot.correctionLink")}</a></p>

@@ -19,8 +19,8 @@ for (const locale of ["en", "fr"]) {
     await expect(page.locator('nav a[href*="/recipes/"], nav a[href*="/recettes/"], nav a[href*="/articles/"]')).toHaveCount(0);
     await expect(page.locator("h1")).toHaveText("Date My Dish");
     await expect(page.locator("main")).toContainText(locale === "fr"
-      ? "Où sortir, quoi boire, quoi cuisiner pour quelqu’un."
-      : "Where to go, what to drink, what to make for someone.");
+      ? "Des plats qui valent le rendez-vous."
+      : "Dishes worth dating.");
   });
 
   test(`${locale} listings expose only their published Date Spot variants`, async ({ page, request }) => {

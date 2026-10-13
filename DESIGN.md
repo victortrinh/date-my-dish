@@ -64,6 +64,9 @@ A signature (the reporter's signed note, the interviewer under a chef Q&A) is Li
 - **`.eyebrow`**: small tracked uppercase label above a heading.
 - **`.arch`**: the greystone window frame for photographs (`rounded-arch`). Hero photos always sit in the arch at 4:5, landscape originals included, cropped from the centre. So does every photograph inside a post (`SpotPhoto`: dish cards, the room, portraits), at most 14rem wide beside a dish or portrait and 24rem for the room.
 - **Breadcrumbs**: UI caption, `/` separators in `line`.
+- **Verdict mark** (`VerdictBadge`, `WindowGlyph`): the greystone window, lit, half-lit or unlit, always next to its label. In the page verdict it stands 36px tall so the lit pane reads at a glance; 20px in cards and the essentials card.
+- **Occasion icons** (`OccasionIcon`): one 24-unit line icon per Good-for occasion (two glasses for a first date, a ring, a calendar, a toque, two people, a cocktail glass, a moon), 1.5 stroke in `currentColor` at 20px, in `ink-muted` before the occasion name. Decoration only (`aria-hidden`); the assessment keeps its window glyph.
+- **My note**: upright reading text in `ink`, set off by a 2px amber rule on the left and one decorative opening quote mark in `accent-ink`. No italics, and no quote characters added to the author's words. The correction line follows every review and Date Spot.
 
 ## Brand mark
 

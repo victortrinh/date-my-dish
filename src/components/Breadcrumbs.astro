@@ -44,6 +44,8 @@ const jsonLd = {
           <a href={item.href} class="link-draw text-ink-subtle hover:text-ink">
             {item.label}
           </a>
+        ) : i < breadcrumbs.length - 1 ? (
+          <span>{item.label}</span>
         ) : (
           <span class="truncate text-ink" aria-current="page">{item.label}</span>
         )}

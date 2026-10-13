@@ -9,7 +9,7 @@ import { rowFromBlock } from "../../scripts/notion-story/notion.mjs";
 import { mapHeading, HEADING_MAP } from "../../scripts/notion-story/headings.mjs";
 import { parseBody, parseMetadata, sourceTexts, unmappedHeadings } from "../../scripts/notion-story/parse.mjs";
 import { verbatimCheck, traceHeading, traces, unplacedText, sentences } from "../../scripts/notion-story/verbatim.mjs";
-import { mergeCompanion, proposeCompanion, writeCompanion } from "../../scripts/notion-story/companion.mjs";
+import { mergeCompanion, parseGoogleLine, proposeCompanion, writeCompanion } from "../../scripts/notion-story/companion.mjs";
 import { classifyRows, eligibleRows, findDuplicates, nextWork } from "../../scripts/notion-story/rows.mjs";
 import {
   publishGate, checkDatedUpdate, checkGoogleReviewsAppendOnly, checkUpdateLinesAppendOnly, checkLeftovers, checkDuplicateVenues,
@@ -276,6 +276,33 @@ test("a later import only fills Companion File fields that are still missing", (
   );
   assert.deepEqual(companion, { id: "x", reviewVerdict: "pass", neighbourhood: "Villeray", locales: { en: { metaTitle: "Kept", imageAlt: "Proposed alt" }, "fr-CA": { imageAlt: "Texte" } } });
   assert.deepEqual(added, ["neighbourhood", "locales.en.imageAlt", "locales.fr-CA.imageAlt"]);
+});
+
+test("the Google line in the essentials card becomes a dated snapshot, never a guess", () => {
+  assert.deepEqual(parseGoogleLine("4.6 · 312 reviews, 13 October 2026"), { average: 4.6, count: 312, asOf: "2026-10-13" });
+  assert.deepEqual(parseGoogleLine("4.8 · 1,128 reviews, 2026-10-13"), { average: 4.8, count: 1128, asOf: "2026-10-13" });
+  assert.equal(parseGoogleLine("[RATING AND COUNT NEEDED, dated]"), null);
+  assert.equal(parseGoogleLine("4.6 · 312 reviews"), null);
+  assert.equal(parseGoogleLine("9.1 · 312 reviews, 13 October 2026"), null);
+  const source = {
+    ...moccione,
+    metadata: { ...moccione.metadata, "Booking link": "https://resy.com/cities/montreal-qc/venues/moccione" },
+    sections: [{ blocks: [{ kind: "table", header: true, rows: [["Booking", "Plan ahead"], ["Google reviews", "4.8 · 1,128 reviews, 13 October 2026"]] }] }],
+  };
+  const proposal = proposeCompanion(source, { slug: "moccione", postType: "review", publishDate: "2026-03-23" });
+  assert.deepEqual(proposal.googleReviews, [{ average: 4.8, count: 1128, asOf: "2026-10-13" }]);
+  assert.equal(proposal.bookingUrl, "https://resy.com/cities/montreal-qc/venues/moccione");
+});
+
+test("a newer Google snapshot is appended and moves Checked; earlier lines stay", () => {
+  const first = { average: 4.7, count: 1000, asOf: "2026-06-01" };
+  const next = { average: 4.8, count: 1128, asOf: "2026-10-13" };
+  const { companion, added } = mergeCompanion({ id: "x", lastChecked: "2026-06-01", googleReviews: [first] }, { id: "x", googleReviews: [next] });
+  assert.deepEqual(companion.googleReviews, [first, next]);
+  assert.equal(companion.lastChecked, "2026-10-13");
+  assert.deepEqual(added, ["googleReviews", "lastChecked"]);
+  const same = mergeCompanion({ id: "x", lastChecked: "2026-10-13", googleReviews: [first, next] }, { id: "x", googleReviews: [next] });
+  assert.deepEqual(same.added, []);
 });
 
 // ---------------------------------------------------------------------------

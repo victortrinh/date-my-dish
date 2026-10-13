@@ -83,5 +83,13 @@
       "imageAlt": "Beaux plats coréens modernes au restaurant Giwa à Verdun, Montréal"
     }
   },
-  "lastChecked": "2026-09-24"
+  "lastChecked": "2026-10-13",
+  "googleReviews": [
+    {
+      "average": 4.8,
+      "count": 219,
+      "asOf": "2026-10-13"
+    }
+  ],
+  "bookingUrl": "https://widgets.libroreserve.com/WEB/QC017398095067/book"
 }

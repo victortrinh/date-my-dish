@@ -1,0 +1,15 @@
+---
+// One line icon per Good-for occasion, drawn at 24px in the current text
+// colour. Decoration only: the occasion's name always sits next to it.
+interface Props { occasion: "first-date" | "anniversary" | "casual-midweek" | "impressing-a-cook" | "double-date" | "solo-at-the-bar" | "late-night"; class?: string; }
+const { occasion, class: className } = Astro.props;
+---
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class:list={["shrink-0", className]} aria-hidden="true" focusable="false" data-occasion-icon={occasion}>
+  {occasion === "first-date" && <path d="M4 3h6l-.5 5.5a2.5 2.5 0 0 1-5 0zM7 11v8M5 19h4M14 3h6l-.5 5.5a2.5 2.5 0 0 1-5 0zM17 11v8M15 19h4" />}
+  {occasion === "anniversary" && <><circle cx="12" cy="15" r="6" /><path d="M9.5 5.5 12 3l2.5 2.5L12 9z" /></>}
+  {occasion === "casual-midweek" && <><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M8 3v4M16 3v4M10.5 14.5h3" /></>}
+  {occasion === "impressing-a-cook" && <path d="M7 14a4 4 0 0 1-.6-7.95 5 5 0 0 1 11.2 0A4 4 0 0 1 17 14v6H7zM7 17h10" />}
+  {occasion === "double-date" && <><circle cx="8" cy="8" r="3" /><circle cx="16" cy="8" r="3" /><path d="M3 20a5 5 0 0 1 10 0M11 20a5 5 0 0 1 10 0" /></>}
+  {occasion === "solo-at-the-bar" && <path d="M5 4h14l-7 8zM12 12v8M8 20h8" />}
+  {occasion === "late-night" && <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" />}
+</svg>

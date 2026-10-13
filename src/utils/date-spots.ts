@@ -61,6 +61,24 @@ export function neighbourhoodPath(neighbourhood: string, locale: Locale): string
   return `${base(locale)}/${locale === "fr" ? "quartier" : "neighbourhood"}/${neighbourhoodSlug(neighbourhood)}/`;
 }
 
+/**
+ * Whether a neighbourhood's guide is worth sending readers to: it needs at
+ * least two posts, or it only lists the page the reader came from.
+ */
+export function hasNeighbourhoodGuide(spots: DateSpotEntry[], neighbourhood: string): boolean {
+  return spots.filter(({ data }) => data.neighbourhood === neighbourhood).length >= 2;
+}
+
+/**
+ * The Map link: the Companion File's `mapUrl` when set, otherwise a Google
+ * Maps search for the name and address (a documented Maps URL, no API key).
+ */
+export function mapLink(spot: DateSpot, locale: Locale): string {
+  if (spot.mapUrl) return spot.mapUrl;
+  const query = `${spot.name}, ${spot.locales[copyLocale(locale)].essentials.address}`;
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
 export function profilePath(slug: string, locale: Locale): string {
   return `/${locale}/chefs/${slug}/`;
 }

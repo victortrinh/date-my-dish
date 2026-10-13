@@ -1,7 +1,7 @@
 {
   "name": "Date My Dish",
   "short_name": "Date My Dish",
-  "description": "Montréal date-night guide: where to go, what to drink, what to make for someone.",
+  "description": "Dishes worth dating. A Montréal date-night guide.",
   "start_url": "/",
   "display": "browser",
   "background_color": "#e7e5e1",

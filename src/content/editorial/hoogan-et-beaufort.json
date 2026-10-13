@@ -83,5 +83,13 @@
       "imageAlt": "Salle à manger intime du Hoogan et Beaufort, éclairage chaleureux et cuisine au feu de bois en fond de salle"
     }
   },
-  "lastChecked": "2026-09-24"
+  "lastChecked": "2026-10-13",
+  "googleReviews": [
+    {
+      "average": 4.6,
+      "count": 1423,
+      "asOf": "2026-10-13"
+    }
+  ],
+  "bookingUrl": "https://www.opentable.ca/restaurant/profile/192259"
 }

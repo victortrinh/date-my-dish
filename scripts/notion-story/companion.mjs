@@ -13,12 +13,48 @@ import { BOROUGHS, VERDICTS } from "../../src/content-contracts/date-spot.mjs";
 
 const LOCALES = /** @type {const} */ (["en", "fr-CA"]);
 const isSet = (value) => value !== undefined && value !== null && value !== "";
+const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+/**
+ * The essentials card's Google line, as the author writes it after reading
+ * the venue's Google Maps page: "4.6 · 312 reviews, 13 October 2026" (an ISO
+ * date works too). Anything else, the "[RATING AND COUNT NEEDED, dated]"
+ * placeholder included, gives null: no snapshot is ever guessed.
+ * @param {string} text
+ * @returns {{ average: number, count: number, asOf: string } | null}
+ */
+export function parseGoogleLine(text) {
+  const match = String(text).trim().match(/^(\d(?:[.,]\d)?)\s*(?:·|\/|,)\s*([\d,\u202f ]+?)\s+reviews?\s*,?\s*(?:as of\s+)?(.+)$/i);
+  if (!match) return null;
+  const average = Number(match[1].replace(",", "."));
+  const count = Number(match[2].replace(/[,\u202f ]/g, ""));
+  const when = match[3].trim().replace(/\.$/, "");
+  let asOf = /^\d{4}-\d{2}-\d{2}$/.test(when) ? when : null;
+  const long = when.match(/^(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})$/);
+  if (long && MONTHS.includes(long[2].toLowerCase())) {
+    asOf = `${long[3]}-${String(MONTHS.indexOf(long[2].toLowerCase()) + 1).padStart(2, "0")}-${long[1].padStart(2, "0")}`;
+  }
+  if (!asOf || !(average >= 1 && average <= 5) || !Number.isInteger(count)) return null;
+  return { average, count, asOf };
+}
+
+/** The value of the essentials table row labelled `label`, if the source has one. */
+function essentialsRow(sections, label) {
+  for (const section of sections ?? []) {
+    for (const block of section.blocks ?? []) {
+      if (block.kind !== "table") continue;
+      const row = block.rows.find(([key]) => String(key).trim().toLowerCase() === label.toLowerCase());
+      if (row) return String(row[1] ?? "");
+    }
+  }
+  return undefined;
+}
 
 /**
  * The proposals a script can make without judgement, from the author's
  * metadata block and the row's properties. The agent adds the rest (verdict
  * reason from the review's own text, category, Good-for signals).
- * @param {{ metadata: Record<string, string>, notion?: { borough?: string | null } }} source
+ * @param {{ metadata: Record<string, string>, notion?: { borough?: string | null }, sections?: { blocks: any[] }[] }} source
  * @param {{ slug: string, postType: string, publishDate?: string | null, heroAlt?: string }} context
  */
 export function proposeCompanion(source, { slug, postType, publishDate, heroAlt }) {
@@ -37,6 +73,11 @@ export function proposeCompanion(source, { slug, postType, publishDate, heroAlt 
   if (publishDate) proposal.lastChecked = publishDate;
   const instagram = String(meta.Instagram ?? "").trim().replace(/^@/, "");
   if (/^[A-Za-z0-9._]{1,30}$/.test(instagram)) proposal.instagram = instagram;
+  // "Booking link: https://..." in the metadata block, like Instagram.
+  const bookingUrl = String(meta["Booking link"] ?? "").trim();
+  if (/^https:\/\/\S+$/.test(bookingUrl)) proposal.bookingUrl = bookingUrl;
+  const snapshot = parseGoogleLine(essentialsRow(source.sections, "Google reviews") ?? "");
+  if (snapshot) proposal.googleReviews = [snapshot];
   const en = {};
   const metaTitle = String(meta["Meta title"] ?? "").trim();
   if (metaTitle && metaTitle.length <= 60) en.metaTitle = metaTitle;
@@ -58,6 +99,22 @@ export function mergeCompanion(existing, proposed) {
   const added = [];
   for (const [key, value] of Object.entries(proposed)) {
     if (key === "locales" || !isSet(value)) continue;
+    // A newer Google snapshot is appended; earlier lines are never touched.
+    if (key === "googleReviews" && Array.isArray(companion.googleReviews)) {
+      const last = companion.googleReviews.at(-1)?.asOf ?? "";
+      const newer = value.filter((/** @type {{ asOf: string }} */ snapshot) => snapshot.asOf > last);
+      if (newer.length) {
+        companion.googleReviews.push(...newer);
+        added.push(key);
+        // Reading Google again is a recheck: a snapshot never postdates "Checked".
+        const asOf = newer.at(-1).asOf;
+        if (isSet(companion.lastChecked) && companion.lastChecked < asOf) {
+          companion.lastChecked = asOf;
+          added.push("lastChecked");
+        }
+      }
+      continue;
+    }
     if (!isSet(companion[key])) {
       companion[key] = value;
       added.push(key);

@@ -23,4 +23,4 @@ const state = verdict === "favourite" ? "lit" : verdict === "conditional" ? "hal
     verdict === "pass" && "text-verdict-pass",
     className,
   ]}
-><WindowGlyph state={state} class={size === "lg" ? "h-6 w-auto" : "h-4 w-auto"} /><span>{verdictLabel(verdict, locale)}{qualifier && <span class="font-normal normal-case tracking-normal">, {qualifier}</span>}</span></span>
+><WindowGlyph state={state} class={size === "lg" ? "h-9 w-auto" : "h-5 w-auto"} /><span>{verdictLabel(verdict, locale)}{qualifier && <span class="font-normal normal-case tracking-normal">, {qualifier}</span>}</span></span>

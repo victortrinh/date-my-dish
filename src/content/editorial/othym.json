@@ -83,5 +83,13 @@
       "imageAlt": "Assiettes saisonnières à base d'ingrédients du terroir québécois au restaurant Othym, dans le Village de Montréal"
     }
   },
-  "lastChecked": "2026-09-24"
+  "lastChecked": "2026-10-13",
+  "googleReviews": [
+    {
+      "average": 4.7,
+      "count": 2143,
+      "asOf": "2026-10-13"
+    }
+  ],
+  "bookingUrl": "https://booking.libroreserve.com/2285ae246e014a1/QC015547411510/seat"
 }
