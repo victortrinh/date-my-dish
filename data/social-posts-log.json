@@ -1340,7 +1340,9 @@
           "altText": "Elegant plating at Île Flottante Montreal, a delicate seasonal dish resting on fine ceramic in the intimate Mile End dining room",
           "link": "https://datemydish.com/en/reviews/mile-end/ile-flottante/",
           "scheduledFor": "2026-10-13T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858651698",
+          "postedAt": "2026-10-14T14:44:35.186Z"
         },
         {
           "imageKey": "ile-flottante--hero--verdict",
@@ -1375,7 +1377,9 @@
           "altText": "Crispy devilled Brussels sprouts with caramelized edges and sweet-savory glaze served at McKiernan restaurant in Montreal's Sud-Ouest neighbourhood",
           "link": "https://datemydish.com/en/reviews/ville-emard/mckiernan/",
           "scheduledFor": "2026-10-14T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858651708",
+          "postedAt": "2026-10-14T14:44:45.739Z"
         },
         {
           "imageKey": "mckiernan--hero--verdict",
