@@ -1414,7 +1414,9 @@
           "altText": "Warm, intimate dining room at Moccione in Villeray, Montreal, with candlelit tables and a cozy Italian restaurant atmosphere perfect for a date night",
           "link": "https://datemydish.com/en/reviews/villeray/moccione/",
           "scheduledFor": "2026-10-15T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858709718",
+          "postedAt": "2026-10-16T14:22:24.795Z"
         },
         {
           "imageKey": "moccione--hero--verdict",
@@ -1449,7 +1451,9 @@
           "altText": "Oncle Lee Kăo's soaring dining room in Old Montreal, Michelin Bib Gourmand with burnt-orange leather accents and warm flattering lighting",
           "link": "https://datemydish.com/en/reviews/old-montreal/oncle-lee-kao/",
           "scheduledFor": "2026-10-16T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858709721",
+          "postedAt": "2026-10-16T14:22:35.651Z"
         },
         {
           "imageKey": "oncle-lee-kao--hero--verdict",
