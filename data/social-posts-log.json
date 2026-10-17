@@ -1414,7 +1414,9 @@
           "altText": "Warm, intimate dining room at Moccione in Villeray, Montreal, with candlelit tables and a cozy Italian restaurant atmosphere perfect for a date night",
           "link": "https://datemydish.com/en/reviews/villeray/moccione/",
           "scheduledFor": "2026-10-15T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858740953",
+          "postedAt": "2026-10-17T13:19:18.270Z"
         },
         {
           "imageKey": "moccione--hero--verdict",
@@ -1449,7 +1451,9 @@
           "altText": "Oncle Lee Kăo's soaring dining room in Old Montreal, Michelin Bib Gourmand with burnt-orange leather accents and warm flattering lighting",
           "link": "https://datemydish.com/en/reviews/old-montreal/oncle-lee-kao/",
           "scheduledFor": "2026-10-16T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858740956",
+          "postedAt": "2026-10-17T13:19:29.400Z"
         },
         {
           "imageKey": "oncle-lee-kao--hero--verdict",
@@ -1484,7 +1488,9 @@
           "altText": "Seasonal dishes at Othym, a Michelin-recommended BYOB restaurant in Montreal's Village featuring ingredient-driven Quebec cooking",
           "link": "https://datemydish.com/en/reviews/the-village/othym/",
           "scheduledFor": "2026-10-17T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858740960",
+          "postedAt": "2026-10-17T13:19:40.070Z"
         },
         {
           "imageKey": "othym--hero--verdict",
