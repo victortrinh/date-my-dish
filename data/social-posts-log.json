@@ -1244,7 +1244,9 @@
           "altText": "The dining room: banquette, wood tables, white brick, two dark canvases",
           "link": "https://datemydish.com/en/reviews/the-plateau/cabaret-lenfer/",
           "scheduledFor": "2026-10-18T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858773146",
+          "postedAt": "2026-10-18T13:38:22.733Z"
         }
       ]
     }
@@ -1414,7 +1416,9 @@
           "altText": "Warm, intimate dining room at Moccione in Villeray, Montreal, with candlelit tables and a cozy Italian restaurant atmosphere perfect for a date night",
           "link": "https://datemydish.com/en/reviews/villeray/moccione/",
           "scheduledFor": "2026-10-15T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858773147",
+          "postedAt": "2026-10-18T13:38:33.221Z"
         },
         {
           "imageKey": "moccione--hero--verdict",
@@ -1449,7 +1453,9 @@
           "altText": "Oncle Lee Kăo's soaring dining room in Old Montreal, Michelin Bib Gourmand with burnt-orange leather accents and warm flattering lighting",
           "link": "https://datemydish.com/en/reviews/old-montreal/oncle-lee-kao/",
           "scheduledFor": "2026-10-16T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858773154",
+          "postedAt": "2026-10-18T13:38:43.636Z"
         },
         {
           "imageKey": "oncle-lee-kao--hero--verdict",
@@ -1484,7 +1490,9 @@
           "altText": "Seasonal dishes at Othym, a Michelin-recommended BYOB restaurant in Montreal's Village featuring ingredient-driven Quebec cooking",
           "link": "https://datemydish.com/en/reviews/the-village/othym/",
           "scheduledFor": "2026-10-17T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858773158",
+          "postedAt": "2026-10-18T13:38:54.218Z"
         },
         {
           "imageKey": "othym--hero--verdict",
