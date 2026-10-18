@@ -1,0 +1,266 @@
+[
+  {
+    "url": "http://localhost:8788/en/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_-2026_10_18_07_53_48.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_-2026_10_18_07_53_48.report.json",
+    "summary": {
+      "performance": 0.89,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_-2026_10_18_07_54_00.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_-2026_10_18_07_54_00.report.json",
+    "summary": {
+      "performance": 0.89,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/about/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_about_-2026_10_18_07_54_12.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_about_-2026_10_18_07_54_12.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/a-propos/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_a_propos_-2026_10_18_07_54_24.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_a_propos_-2026_10_18_07_54_24.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/contact/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_contact_-2026_10_18_07_54_35.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_contact_-2026_10_18_07_54_35.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/contact/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_contact_-2026_10_18_07_54_47.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_contact_-2026_10_18_07_54_47.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/reviews/the-plateau/cabaret-lenfer/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_the_plateau_cabaret_lenfer_-2026_10_18_07_54_58.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_the_plateau_cabaret_lenfer_-2026_10_18_07_54_58.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/critiques/the-plateau/cabaret-lenfer/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_the_plateau_cabaret_lenfer_-2026_10_18_07_55_10.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_the_plateau_cabaret_lenfer_-2026_10_18_07_55_10.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/reviews/verdun/giwa/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_verdun_giwa_-2026_10_18_07_55_22.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_verdun_giwa_-2026_10_18_07_55_22.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/critiques/verdun/giwa/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_verdun_giwa_-2026_10_18_07_55_34.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_verdun_giwa_-2026_10_18_07_55_34.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/reviews/rosemont/hoogan-et-beaufort/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_rosemont_hoogan_et_beaufort_-2026_10_18_07_55_46.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_rosemont_hoogan_et_beaufort_-2026_10_18_07_55_46.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/critiques/rosemont/hoogan-et-beaufort/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_rosemont_hoogan_et_beaufort_-2026_10_18_07_55_58.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_rosemont_hoogan_et_beaufort_-2026_10_18_07_55_58.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/reviews/mile-end/ile-flottante/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_mile_end_ile_flottante_-2026_10_18_07_56_10.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_mile_end_ile_flottante_-2026_10_18_07_56_10.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/critiques/mile-end/ile-flottante/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_mile_end_ile_flottante_-2026_10_18_07_56_22.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_mile_end_ile_flottante_-2026_10_18_07_56_22.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/reviews/ville-emard/mckiernan/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_ville_emard_mckiernan_-2026_10_18_07_56_33.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_ville_emard_mckiernan_-2026_10_18_07_56_33.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/critiques/ville-emard/mckiernan/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_ville_emard_mckiernan_-2026_10_18_07_56_45.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_ville_emard_mckiernan_-2026_10_18_07_56_45.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/reviews/villeray/moccione/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_villeray_moccione_-2026_10_18_07_56_57.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_villeray_moccione_-2026_10_18_07_56_57.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/critiques/villeray/moccione/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_villeray_moccione_-2026_10_18_07_57_09.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_villeray_moccione_-2026_10_18_07_57_09.report.json",
+    "summary": {
+      "performance": 0.97,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/reviews/old-montreal/oncle-lee-kao/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_old_montreal_oncle_lee_kao_-2026_10_18_07_57_21.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_old_montreal_oncle_lee_kao_-2026_10_18_07_57_21.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/critiques/old-montreal/oncle-lee-kao/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_old_montreal_oncle_lee_kao_-2026_10_18_07_57_33.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_old_montreal_oncle_lee_kao_-2026_10_18_07_57_33.report.json",
+    "summary": {
+      "performance": 0.98,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/en/reviews/the-village/othym/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_the_village_othym_-2026_10_18_07_57_45.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-en_reviews_the_village_othym_-2026_10_18_07_57_45.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:8788/fr/critiques/the-village/othym/",
+    "isRepresentativeRun": true,
+    "htmlPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_the_village_othym_-2026_10_18_07_57_57.report.html",
+    "jsonPath": "/home/runner/work/date-my-dish/date-my-dish/.lighthouseci/localhost-fr_critiques_the_village_othym_-2026_10_18_07_57_57.report.json",
+    "summary": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  }
+]
