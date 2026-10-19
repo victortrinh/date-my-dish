@@ -181,7 +181,7 @@ The FR is translated section by section from the section-fitted EN, so both keep
 - Pins use real photos only, with a title overlay rendered by script. No AI-generated images.
 - Pin copy is assembled from the meta title, meta description and verdict line. No new prose.
 - Pins link to the nested review URLs, English only.
-- Publishing a post queues its pins: on merge, `social-post-on-deploy.yml` runs `scripts/social-post.mjs`, which renders each pin (1000x1500, one per post photo; a single-photo post gets a title pin and a verdict pin) into `data/pinterest/` and opens a PR adding them to `data/social-posts-log.json`. Merging that PR approves posting; `pinterest-pin-rotation.yml` posts the queue daily, one pin per scheduled day.
+- Publishing a post queues its pins: on merge, `social-post-on-deploy.yml` runs `scripts/social-post.mjs`, which renders each pin (1000x1500, one per post photo; a single-photo post gets a title pin and a verdict pin) into `data/pinterest/` and opens a PR adding them to `data/social-posts-log.json`. Merging that PR approves posting; `pinterest-pin-rotation.yml` posts the queue daily, one pin per scheduled day. Its log PR auto-merges (`auto-merge.yml`), and a run refuses to post while the last one is still open, since an unmerged log would post the same pins again.
 - Pins created before the rework stay up; the 301 redirects keep them working.
 
 ## Scheduled work
