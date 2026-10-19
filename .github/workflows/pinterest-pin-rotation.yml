@@ -34,6 +34,20 @@ jobs:
 
       - run: npm ci
 
+      # The log on main is the only record of what has been posted. If the
+      # last run's log PR is still open, main still lists those pins as
+      # pending and this run would post them again, so stop instead.
+      - name: Stop if the last log update is unmerged
+        env:
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+        run: |
+          OPEN=$(gh pr list --state open --json number,headRefName \
+            -q '[.[] | select(.headRefName | startswith("chore/social-log-pin-rotation-")) | "#\(.number)"] | join(" ")')
+          if [ -n "$OPEN" ]; then
+            echo "::error::Pin rotation log PR not merged yet ($OPEN). Merge it first, or these pins post twice."
+            exit 1
+          fi
+
       - name: Post due pins
         env:
           PINTEREST_ACCESS_TOKEN: ${{ secrets.PINTEREST_ACCESS_TOKEN }}
