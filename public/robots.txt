@@ -1,25 +1,15 @@
 # Date My Dish - robots.txt
 # Allow all crawlers including AI bots
 
+# One group for every crawler: a crawler that matches a named User-agent
+# ignores the * rules, so the AI bots are listed in the same group as *
+# and the Disallow lines below apply to all of them.
 User-agent: *
-Allow: /
-
-# AI Crawlers - explicitly allowed
 User-agent: GPTBot
-Allow: /
-
 User-agent: ClaudeBot
-Allow: /
-
 User-agent: PerplexityBot
-Allow: /
-
 User-agent: Google-Extended
-Allow: /
-
 User-agent: Googlebot
-Allow: /
-
 User-agent: Bingbot
 Allow: /
 
