@@ -1400,7 +1400,9 @@
           "altText": "Crispy devilled Brussels sprouts with caramelized edges and sweet-savory glaze served at McKiernan restaurant in Montreal's Sud-Ouest neighbourhood",
           "link": "https://datemydish.com/en/reviews/ville-emard/mckiernan/",
           "scheduledFor": "2026-10-22T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156858892697",
+          "postedAt": "2026-10-22T14:43:43.647Z"
         }
       ]
     }
