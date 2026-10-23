@@ -441,6 +441,11 @@
   outline-offset: 3px;
 }
 
+/* The page stays put behind the open photo viewer (PhotoViewer.astro). */
+html:has(#photo-viewer[open]) {
+  overflow: hidden;
+}
+
 /* Reduced motion: disable animations for vestibular-sensitive users */
 @media (prefers-reduced-motion: reduce) {
   html {

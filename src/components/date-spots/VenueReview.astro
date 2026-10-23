@@ -7,6 +7,7 @@ import VenueReviewSchema from "./VenueReviewSchema.astro";
 import CorrectionLine from "./CorrectionLine.astro";
 import EssentialsCard from "./EssentialsCard.astro";
 import OccasionIcon from "./OccasionIcon.astro";
+import PhotoViewer from "./PhotoViewer.astro";
 import Paragraphs from "./Paragraphs.astro";
 import SignalIcon from "./SignalIcon.astro";
 import SpotHero from "./SpotHero.astro";
@@ -353,4 +354,5 @@ const jump = [
       </aside>
     </div>
   </article>
+  {Object.keys(spot.photos ?? {}).length > 0 && <PhotoViewer locale={locale} />}
 </BaseLayout>
