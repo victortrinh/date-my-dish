@@ -6,7 +6,7 @@ The look of a Plateau greystone at dusk: limestone fronts, black wrought-iron st
 
 - **Stone and iron carry the page; amber is the one light.** Amber appears once or twice per view: the main call to action, the logo's pane, the verdict. Never as body text on stone.
 - **Space is the luxury.** Sections breathe (`py-section`, 7rem); running text stays near 38rem (`max-w-measure`).
-- **One corner language.** Square (2px) blocks, fully round controls, and the arch for photographs and the brand mark. Nothing in between.
+- **One corner language.** Square (2px) blocks and photographs inside a post, fully round controls, and the arch for hero and card photographs and the brand mark. Nothing in between.
 - **No shadows, no gradients, no glass.** Separation comes from surface steps and 1px lines.
 - **Motion explains, it does not decorate.** Underlines draw, buttons press, the verdict settles. Everything stops under `prefers-reduced-motion`.
 
@@ -62,7 +62,7 @@ A signature (the reporter's signed note, the interviewer under a chef Q&A) is Li
 - **`.card`**: `surface-raised` block with 2px corners; for the one set-apart block (essentials, newsletter, the short version on a chef page, the recipe card teaser).
 - **Listing entry** (`DateSpotCard`, chef index): the photo in the arch at 4:5, centred (`object-center`, there is no focal-point field), then the facts in UI caption, the name in `text-heading-3` with a drawn underline on hover, the `VerdictBadge` and the one-line take. No box, no border; the grid gap separates entries.
 - **`.eyebrow`**: small tracked uppercase label above a heading.
-- **`.arch`**: the greystone window frame for photographs (`rounded-arch`). Hero photos always sit in the arch at 4:5, landscape originals included, cropped from the centre. So does every photograph inside a post (`SpotPhoto`: dish cards, the room, portraits), at most 14rem wide beside a dish or portrait and 24rem for the room. The author's other photos in a section sit in a strip at the section's end (`SectionPhotos`): two arches across on a phone, three from `sm`.
+- **`.arch`**: the greystone window frame for photographs (`rounded-arch`). Hero photos always sit in the arch at 4:5, landscape originals included, cropped from the centre. Every other photograph inside a post (`SpotPhoto`: dish cards, the room, portraits) is 4:5 and centre-cropped too, but square-cornered (`rounded-sm`), not arched: at most 14rem wide beside a dish or portrait and 24rem for the room. The author's other photos in a section sit in a strip at the section's end (`SectionPhotos`): two across on a phone, three from `sm`.
 - **Breadcrumbs**: UI caption, `/` separators in `line`.
 - **Verdict mark** (`VerdictBadge`, `WindowGlyph`): the greystone window, lit, half-lit or unlit, always next to its label. In the page verdict it stands 36px tall so the lit pane reads at a glance; 20px in cards and the essentials card.
 - **Occasion icons** (`OccasionIcon`): one 24-unit line icon per Good-for occasion (two glasses for a first date, a ring, a calendar, a toque, two people, a cocktail glass, a moon), 1.5 stroke in `currentColor` at 20px, in `ink-muted` before the occasion name. Decoration only (`aria-hidden`); the assessment keeps its window glyph.
