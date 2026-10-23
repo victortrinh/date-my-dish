@@ -212,11 +212,13 @@ function collectionsAtRef(ref) {
 async function imageProblems(record) {
   const problems = [];
   const hero = record.image?.src;
-  const paths = [hero, ...Object.values(record.photos ?? {}).map((photo) => photo.src)].filter(Boolean);
+  const photos = Object.values(record.photos ?? {});
+  const large = new Set(photos.map((photo) => photo.large).filter(Boolean));
+  const paths = [hero, ...photos.map((photo) => photo.src), ...large].filter(Boolean);
   for (const src of paths) {
     const file = join("public", src);
     if (!existsSync(file)) continue; // validate-date-spots reports missing files
-    const budget = src === hero ? IMAGE_BUDGETS.hero : IMAGE_BUDGETS.other;
+    const budget = src === hero ? IMAGE_BUDGETS.hero : large.has(src) ? IMAGE_BUDGETS.viewer : IMAGE_BUDGETS.other;
     const bytes = readFileSync(file).length;
     const { width = 0 } = await sharp(file).metadata();
     if (bytes > budget.maxBytes) problems.push(`${record.id}: ${src} is ${Math.round(bytes / 1024)} KB; the budget is ${budget.maxBytes / 1024} KB`);

@@ -181,7 +181,7 @@ Publishing, Pinterest and every scheduled job are defined in the spec (`docs/edi
 Detailed write-ups live in `docs/solutions/`.
 
 1. Cloudflare `_redirects` only accepts relative paths. www-to-apex goes at DNS level.
-2. Every image is optimised before it ships (hero max 1200px and under 200 KB, others max 900px). Past heroes were 700 KB+.
+2. Every image is optimised before it ships (hero max 1200px and under 200 KB, others max 900px). Past heroes were 700 KB+. A photo whose Notion original is wider than its page copy also gets a viewer copy (`-large.webp`, max 2400px and 400 KB) that only the full-screen photo viewer loads, on a click; the page never loads it.
 3. Pagefind UI is themed through its own `--pagefind-ui-*` custom properties, set from the semantic tokens in `global.css` under `:root .pagefind-ui` and `:root.dark .pagefind-ui` (the `:root` prefix matters: `pagefind-ui.css` loads after ours).
 4. When changing fonts, load ALL needed weights in the Google Fonts `<link>` URL. Google Fonts via `<link>`, never CSS `@import` (render-blocking).
 5. Never pair `uppercase` with negative `letter-spacing`. Protect handwritten fonts (Caveat) with `normal-case` when global uppercase rules exist.

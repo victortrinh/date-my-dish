@@ -7,17 +7,18 @@ import { pinFor } from "@utils/pinterest";
 // Every photograph in a post below the hero sits in a square-cornered frame
 // at 4:5, cropped from the centre (DESIGN.md, `.arch`): dish shots, the
 // room and portraits alike, whatever the original's orientation. The arch
-// stays with the hero. The photo links to its file, which the photo viewer
-// (`PhotoViewer.astro`) opens full screen and uncropped; Pinterest's Save
-// button sits over its corner.
-interface Photo { src: string; width: number; height: number; credit?: string; }
+// stays with the hero. The photo links to its viewer copy (`large`) or its
+// own file, which the photo viewer (`PhotoViewer.astro`) opens full screen
+// and uncropped; Pinterest's Save button, which pins the same file, sits
+// over its corner.
+interface Photo { src: string; width: number; height: number; large?: string; credit?: string; }
 interface Props { photos?: Record<string, Photo>; reference: { photo: string; alt: string }; locale: Locale; class?: string; }
 const { photos, reference, locale, class: className } = Astro.props;
 const photo = photos?.[reference.photo];
-const pin = photo ? pinFor(Astro, photo.src, `${reference.alt} | Date My Dish`) : "";
+const pin = photo ? pinFor(Astro, photo.large ?? photo.src, `${reference.alt} | Date My Dish`) : "";
 ---
 {photo && <figure class:list={["group relative", className]}>
-  <a href={photo.src} data-photo-viewer data-pin={pin} aria-label={tf(locale, "dateSpot.viewPhoto", { alt: reference.alt })} class="block cursor-zoom-in rounded-sm">
+  <a href={photo.large ?? photo.src} data-photo-viewer data-pin={pin} aria-label={tf(locale, "dateSpot.viewPhoto", { alt: reference.alt })} class="block cursor-zoom-in rounded-sm">
     <img src={photo.src} width={photo.width} height={photo.height} alt={reference.alt} loading="lazy" class="aspect-[4/5] w-full rounded-sm bg-surface-sunken object-cover object-center" />
   </a>
   <PinButton href={pin} locale={locale} />

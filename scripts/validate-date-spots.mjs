@@ -33,7 +33,7 @@ const recipes = parse(contributorRecipesSchema, "Chef Recipe Cards", process.env
 const profiles = parse(extendedProfilesSchema, "Chef pages", process.env.EXTENDED_PROFILE_SOURCE || "src/content/extended-profiles.json");
 
 for (const spot of spots) {
-  for (const [label, src] of [["Editorial Image", spot.image.src], ...Object.entries(spot.photos ?? {}).map(([key, photo]) => [`Photo "${key}"`, photo.src])]) {
+  for (const [label, src] of [["Editorial Image", spot.image.src], ...Object.entries(spot.photos ?? {}).flatMap(([key, photo]) => [[`Photo "${key}"`, photo.src], ...(photo.large ? [[`Photo "${key}" viewer copy`, photo.large]] : [])])]) {
     if (!existsSync(resolve("public", `.${src}`))) throw new Error(`${spot.id}: ${label} is missing: ${src}`);
   }
 }

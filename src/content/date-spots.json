@@ -33,18 +33,21 @@
         "src": "/images/date-spots/cabaret-lenfer-photo-3.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/cabaret-lenfer-photo-3-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "tables-set": {
         "src": "/images/date-spots/cabaret-lenfer-photo-4.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/cabaret-lenfer-photo-4-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "open-kitchen": {
         "src": "/images/date-spots/cabaret-lenfer-photo-6.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/cabaret-lenfer-photo-6-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "negroni": {
@@ -123,6 +126,7 @@
         "src": "/images/date-spots/cabaret-lenfer-photo-19.webp",
         "width": 900,
         "height": 1061,
+        "large": "/images/date-spots/cabaret-lenfer-photo-19-large.webp",
         "provenance": "dmd-held-photograph"
       }
     },
@@ -912,12 +916,14 @@
         "src": "/images/date-spots/giwa-photo-3.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/giwa-photo-3-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "yukhwe": {
         "src": "/images/date-spots/giwa-photo-4.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/giwa-photo-4-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "hodumaru": {
@@ -930,12 +936,14 @@
         "src": "/images/date-spots/giwa-photo-6.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/giwa-photo-6-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "haemul-jang": {
         "src": "/images/date-spots/giwa-photo-7.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/giwa-photo-7-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "creme-brulee": {
@@ -948,6 +956,7 @@
         "src": "/images/date-spots/giwa-photo-9.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/giwa-photo-9-large.webp",
         "provenance": "dmd-held-photograph"
       }
     }
@@ -1425,6 +1434,7 @@
         "src": "/images/date-spots/hoogan-et-beaufort-photo-5.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/hoogan-et-beaufort-photo-5-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "asparagus": {
@@ -1884,6 +1894,7 @@
         "src": "/images/date-spots/ile-flottante-photo-9.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/ile-flottante-photo-9-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "course-fish": {
@@ -2195,12 +2206,14 @@
         "src": "/images/date-spots/mckiernan-photo-2.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/mckiernan-photo-2-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "beef-tartare": {
         "src": "/images/date-spots/mckiernan-photo-3.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/mckiernan-photo-3-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "spare-ribs": {
@@ -2590,12 +2603,14 @@
         "src": "/images/date-spots/moccione-photo-7.webp",
         "width": 900,
         "height": 1079,
+        "large": "/images/date-spots/moccione-photo-7-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "sorbet": {
         "src": "/images/date-spots/moccione-photo-8.webp",
         "width": 900,
         "height": 936,
+        "large": "/images/date-spots/moccione-photo-8-large.webp",
         "provenance": "dmd-held-photograph"
       }
     }
@@ -3043,6 +3058,7 @@
         "src": "/images/date-spots/oncle-lee-kao-photo-9.webp",
         "width": 900,
         "height": 600,
+        "large": "/images/date-spots/oncle-lee-kao-photo-9-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "steamed-oysters": {
@@ -3466,6 +3482,7 @@
         "src": "/images/date-spots/othym-photo-4.webp",
         "width": 900,
         "height": 614,
+        "large": "/images/date-spots/othym-photo-4-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "mozzarella": {
@@ -3478,6 +3495,7 @@
         "src": "/images/date-spots/othym-photo-6.webp",
         "width": 900,
         "height": 581,
+        "large": "/images/date-spots/othym-photo-6-large.webp",
         "provenance": "dmd-held-photograph"
       },
       "baba": {

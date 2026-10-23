@@ -161,6 +161,14 @@ test("photos are declared once and referenced by key", () => {
   const generic = structuredClone(spot); generic.photos.room.src = "/images/og-default.jpg"; rejects(generic);
 });
 
+test("a photo's viewer copy is a -large.webp beside it", () => {
+  const spot = bothLocales(fixture(), (copy) => { copy.roomPhoto = { photo: "room", alt: token }; });
+  spot.photos = { room: { src: "/images/date-spots/test-only-room.webp", width: 900, height: 600, large: "/images/date-spots/test-only-room-large.webp", provenance: "dmd-held-photograph" } };
+  accepts(spot);
+  const notLarge = structuredClone(spot); notLarge.photos.room.large = "/images/date-spots/test-only-room.webp"; rejects(notLarge);
+  const elsewhere = structuredClone(spot); elsewhere.photos.room.large = "/images/profiles/test-only-room-large.webp"; rejects(elsewhere);
+});
+
 test("section photo strips reference declared photos in both locales", () => {
   const spot = bothLocales(fixture(), (copy) => { copy.sectionPhotos = { drinks: [{ photo: "room", alt: token }], note: [{ photo: "room", alt: token }] }; });
   rejects(spot);

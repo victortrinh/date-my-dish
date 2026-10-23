@@ -83,6 +83,9 @@ const photo = object({
   src: z.union([z.string().regex(/^\/images\/date-spots\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/), z.literal("/images/og-default.jpg")]),
   width: z.number().int().positive(),
   height: z.number().int().positive(),
+  // The viewer copy (`-large.webp`), wider than `src`: only the full-screen
+  // photo viewer loads it. Absent when the original is no wider than `src`.
+  large: z.string().regex(/^\/images\/date-spots\/[a-z0-9-]+-large\.webp$/).optional(),
   provenance: z.literal("dmd-held-photograph"),
   credit: text.optional(),
 });

@@ -13,6 +13,7 @@ The Importer (`node scripts/notion-import.mjs next`) already downloads and optim
 |---|---|---|---|
 | Hero | 1200px | 200 KB | WebP (the page serves AVIF and WebP with a WebP fallback) |
 | Every other photo | 900px | 150 KB | WebP |
+| Viewer copy (`-large.webp`, the photo's `large`), only when the original is wider than the page copy | 2400px | 400 KB | WebP |
 
 Where photos live (the contracts check the path):
 

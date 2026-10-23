@@ -114,6 +114,7 @@ These block a PR (Lighthouse PR check and `validate-build`):
 | JavaScript on a review page | 15 KB or less |
 | Hero image | 200 KB or less, AVIF and WebP with WebP fallback, width and height set |
 | Below-the-fold images | `loading="lazy"` |
+| Photo viewer copy | 2400px wide and 400 KB or less (`{name}-large.webp`, the photo's `large`), made by the Importer only when the Notion original is wider than the page copy; only the full-screen photo viewer loads it, on a click |
 | Third-party embeds | none on load; the map loads on click |
 
 ## Where content comes from

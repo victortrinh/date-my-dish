@@ -4,7 +4,10 @@
 // wide and under 200 KB, every other photo at most 900px wide and under
 // 150 KB, WebP, with a real descriptive filename built from the slug and
 // the author's alt text (docs/editorial-publishing-system.md, "SEO rules"
-// and "Performance budgets").
+// and "Performance budgets"). A photo other than the hero whose original is
+// wider than its page copy also gets a viewer copy (`{name}-large.webp`, at
+// most 2400px wide and under 400 KB), which only the full-screen photo
+// viewer loads, on a click.
 
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -14,6 +17,7 @@ import { slugify } from "./fields.mjs";
 export const IMAGE_BUDGETS = {
   hero: { maxWidth: 1200, maxBytes: 200 * 1024 },
   other: { maxWidth: 900, maxBytes: 150 * 1024 },
+  viewer: { maxWidth: 2400, maxBytes: 400 * 1024 },
 };
 
 /** Where each collection's photos live (the contracts check the path). */
@@ -72,13 +76,30 @@ export async function optimiseImage(input, budget) {
   }
 }
 
+/** "giwa-yukhwe.webp" -> "giwa-yukhwe-large.webp", the viewer copy. */
+export function largeFilename(filename) {
+  return filename.replace(/\.webp$/, "-large.webp");
+}
+
+/**
+ * The viewer copy of a photo, or null when the original is no wider than
+ * the page copy (a second file would add bytes, not detail).
+ * @param {Buffer} input the original
+ * @param {number} pageWidth the page copy's width
+ * @returns {Promise<Buffer | null>}
+ */
+export async function viewerCopy(input, pageWidth) {
+  const { data, width } = await optimiseImage(input, IMAGE_BUDGETS.viewer);
+  return width > pageWidth ? data : null;
+}
+
 /**
  * Download every source image, optimise it, and write it under the
  * collection's image folder. The hero is `heroIndex` (the first photo
  * unless the agent picks another).
  * @param {import("./parse.mjs").SourceImage[]} images
  * @param {{ slug: string, postType: keyof typeof IMAGE_DIRS, heroIndex?: number, root?: string, fetchImpl?: typeof fetch }} options
- * @returns {Promise<{ src: string, width: number, height: number, bytes: number, alt: string, hero: boolean, notionFile: string }[]>}
+ * @returns {Promise<{ src: string, width: number, height: number, bytes: number, large?: string, alt: string, hero: boolean, notionFile: string }[]>}
  */
 export async function downloadImages(images, { slug, postType, heroIndex = 0, root = ".", fetchImpl = fetch }) {
   const dir = IMAGE_DIRS[postType];
@@ -89,12 +110,21 @@ export async function downloadImages(images, { slug, postType, heroIndex = 0, ro
     const response = await fetchImpl(image.url);
     if (!response.ok) throw new Error(`Could not download image "${image.file}": HTTP ${response.status}`);
     const hero = index === heroIndex;
-    const { data, width, height } = await optimiseImage(Buffer.from(await response.arrayBuffer()), hero ? IMAGE_BUDGETS.hero : IMAGE_BUDGETS.other);
+    const input = Buffer.from(await response.arrayBuffer());
+    const { data, width, height } = await optimiseImage(input, hero ? IMAGE_BUDGETS.hero : IMAGE_BUDGETS.other);
     const filename = imageFilename(slug, image.alt, index, taken);
     const outPath = join(root, dir, filename);
     mkdirSync(dirname(outPath), { recursive: true });
     writeFileSync(outPath, data);
-    results.push({ src: `/${dir.replace(/^public\//, "")}/${filename}`, width, height, bytes: data.length, alt: image.alt, hero, notionFile: image.file });
+    const publicDir = `/${dir.replace(/^public\//, "")}`;
+    const result = { src: `${publicDir}/${filename}`, width, height, bytes: data.length, alt: image.alt, hero, notionFile: image.file };
+    const large = hero ? null : await viewerCopy(input, width);
+    if (large) {
+      const largeName = largeFilename(filename);
+      writeFileSync(join(root, dir, largeName), large);
+      result.large = `${publicDir}/${largeName}`;
+    }
+    results.push(result);
   }
   return results;
 }

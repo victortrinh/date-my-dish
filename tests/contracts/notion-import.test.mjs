@@ -14,7 +14,7 @@ import { classifyRows, eligibleRows, findDuplicates, nextWork } from "../../scri
 import {
   publishGate, checkDatedUpdate, checkGoogleReviewsAppendOnly, checkUpdateLinesAppendOnly, checkLeftovers, checkDuplicateVenues,
 } from "../../scripts/notion-story/gate.mjs";
-import { IMAGE_BUDGETS, imageFilename, optimiseImage } from "../../scripts/notion-story/images.mjs";
+import { IMAGE_BUDGETS, imageFilename, largeFilename, optimiseImage, viewerCopy } from "../../scripts/notion-story/images.mjs";
 import { failureBody, failureTitle, openOrUpdateFailureIssue } from "../../scripts/notion-story/report.mjs";
 import { dueForRecheck } from "../../scripts/notion-story/maintenance.mjs";
 import { dateSpotFixture, token } from "./date-spot-fixtures.mjs";
@@ -434,6 +434,17 @@ test("optimiseImage fits the hero under 1200px and 200 KB, other photos under 90
   const other = await optimiseImage(input, IMAGE_BUDGETS.other);
   assert.ok(other.width <= 900 && other.data.length <= 150 * 1024, `${other.width}px, ${other.data.length} bytes`);
   assert.equal((await sharp(other.data).metadata()).format, "webp");
+});
+
+test("a viewer copy is made only when the original is wider than the page copy", async () => {
+  const photo = (width, height) => sharp({ create: { width, height, channels: 3, background: { r: 120, g: 90, b: 60 } } }).jpeg().toBuffer();
+  const wide = await viewerCopy(await photo(3000, 2000), 900);
+  assert.ok(wide);
+  const { width, format } = await sharp(wide).metadata();
+  assert.ok(width > 900 && width <= IMAGE_BUDGETS.viewer.maxWidth && wide.length <= IMAGE_BUDGETS.viewer.maxBytes, `${width}px, ${wide.length} bytes`);
+  assert.equal(format, "webp");
+  assert.equal(await viewerCopy(await photo(720, 1080), 720), null);
+  assert.equal(largeFilename("/images/date-spots/giwa-yukhwe.webp"), "/images/date-spots/giwa-yukhwe-large.webp");
 });
 
 // ---------------------------------------------------------------------------
