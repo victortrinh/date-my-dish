@@ -11,7 +11,7 @@
     "title": "Cabaret l'Enfer Review: Tasting Menu, Chef's Counter, and What to Know",
     "borough": "Le Plateau-Mont-Royal",
     "publishDate": null,
-    "lastEditedTime": 1790222144279
+    "lastEditedTime": 1792725660294
   },
   "metadata": {
     "URL": "/en/reviews/plateau/cabaret-lenfer/",
@@ -52,6 +52,20 @@
       "label": "H1 and opening",
       "blocks": [
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7409.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7406.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Chef Massimo Piedimonte cooks a modern Quebecois tasting menu on Saint-Denis, in a black-walled 33-seat room in the Plateau that plays rock loud enough to drown out the dish descriptions."
         },
@@ -65,7 +79,7 @@
       "heading": "The verdict",
       "level": 2,
       "section": "verdict",
-      "label": "The verdict (verdictHeadline, verdict reason)",
+      "label": "The verdict (verdictHeadline, verdictDetail, verdict reason)",
       "blocks": [
         {
           "kind": "paragraph",
@@ -74,6 +88,13 @@
         {
           "kind": "subheading",
           "text": "Careful cooking, hard room, and a bill that asks a lot"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7431.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -137,13 +158,29 @@
       "label": "The room",
       "blocks": [
         {
-          "kind": "paragraph",
-          "text": "[PHOTO: dining room, wide. 720 x 320]",
-          "note": true
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7414.jpg"
+          }
         },
         {
           "kind": "paragraph",
           "text": "Black walls, waxed concrete, white-painted brick with two dark canvases on it, a long banquette, warm wood tables and tan leather chairs. Candlelight pools on a black counter that bounces all of it back at you. The menu arrives inside an envelope closed with a wax seal, which is a fun way to start a night."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7413.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7419.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -201,8 +238,22 @@
           "text": "To start — I had a negroni. It wasn't presented or suggested; I had to ask for it. Bitter, low sugar, and good. I couldn't tell whether it was a regular option or part of a rotating cocktail selection because nobody explained the list."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7422.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "With the meal — the pairing, at about $120. The person I was with took it, so I saw how it went. Bottles presented, wine poured, not much said about any of it. No producer, no region, no reason why a given glass sat beside a given course. At that price the explanation is a good chunk of what you're buying."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7394.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -233,8 +284,29 @@
           "text": "I could not hear the dish descriptions. I caught three names and lost the rest. What follows is what I can name and what I can see in my photos."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7427.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7425.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Cappellacci, nordic shrimp, lacto koji"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7440.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -245,12 +317,26 @@
           "text": "Ora King salmon, \"divorciado\""
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7462.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "A block of salmon split down the middle by two sauces, bright green on one side, deep red-orange on the other, one small shellfish alongside. The name winks at huevos divorciados, two sauces that never meet. Best-looking plate of the night."
         },
         {
           "kind": "paragraph",
           "text": "\"Amy Winehouse,\" rhubarb, citron basilic"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7481.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -264,6 +350,20 @@
         {
           "kind": "paragraph",
           "text": "From my photos: slices of otoro. A canapé of otoro with microgreens on a dark base. Three crisp rolled tubes filled with something red on a pewter bowl. A dessert I couldn't identify in a white bowl. A dish of barigoule vegetables finished with a cougar stencil. Describe or name them properly once you have a menu card."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7478.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7437.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -280,6 +380,13 @@
         {
           "kind": "paragraph",
           "text": "I paid $250 all in for the set menu, one cocktail, tax and tip. The person I was with took the wine pairing, which wasn't part of my total."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7393.jpg"
+          }
         },
         {
           "kind": "table",
@@ -332,6 +439,13 @@
           "text": "The part that's just my opinion"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7458.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "The hour at the counter was the best part of the night. Watching four people build plates a tweezer-load at a time held my attention. I'd sit there again. I'm less sure I'd pay $165 for the menu."
         },
@@ -364,6 +478,13 @@
       "section": "makeANight",
       "label": "Make a night of it",
       "blocks": [
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7453.jpg"
+          }
+        },
         {
           "kind": "paragraph",
           "text": "A few nearby options before or after dinner."
@@ -433,6 +554,13 @@
       "section": "beforeYouBook",
       "label": "Before you book",
       "blocks": [
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF7468.jpg"
+          }
+        },
         {
           "kind": "paragraph",
           "text": "How far ahead do I need to book?"
@@ -533,294 +661,6 @@
       ]
     },
     {
-      "heading": "Alt text for the photos",
-      "level": 2,
-      "section": "editorial:imageAlt",
-      "label": "Alt text (Companion File)",
-      "blocks": [
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "A cook plating at the pass, seen from the counter"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "A cook plating at the pass, seen from the counter",
-            "file": "DSCF7458.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "Ora King salmon divorciado, split lengthwise by green and red-orange sauces"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "Ora King salmon divorciado, split lengthwise by green and red-orange sauces",
-            "file": "DSCF7462.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "A cook laying otoro slices onto small discs with microgreens"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "A cook laying otoro slices onto small discs with microgreens",
-            "file": "DSCF7468.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "Slices of otoro arranged on a plate"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "Slices of otoro arranged on a plate",
-            "file": "DSCF7427.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "An unidentified dessert in a white ceramic bowl"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "An unidentified dessert in a white ceramic bowl",
-            "file": "DSCF7478.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "The Amy Winehouse dessert, a white disc with a portrait stencilled in dark powder"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "The Amy Winehouse dessert, a white disc with a portrait stencilled in dark powder",
-            "file": "DSCF7481.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "The menu envelope, closed with a wax seal"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "The menu envelope, closed with a wax seal",
-            "file": "DSCF7393.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "A wine glass lit by candlelight on the black counter"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "A wine glass lit by candlelight on the black counter",
-            "file": "DSCF7394.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "The MICHELIN 2026 plaque in the front window"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "The MICHELIN 2026 plaque in the front window",
-            "file": "DSCF7406.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "The Cabaret l'Enfer nameplate on the concrete facade"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "The Cabaret l'Enfer nameplate on the concrete facade",
-            "file": "DSCF7409.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "The dining room: banquette, wood tables, white brick, two dark canvases"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "The dining room: banquette, wood tables, white brick, two dark canvases",
-            "file": "DSCF7413.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "Tables set with glassware along the banquette"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "Tables set with glassware along the banquette",
-            "file": "DSCF7414.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "The open kitchen, pans racked above the stove, steam rising"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "The open kitchen, pans racked above the stove, steam rising",
-            "file": "DSCF7419.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "A negroni on the counter with a yellow flower garnish"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "A negroni on the counter with a yellow flower garnish",
-            "file": "DSCF7422.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "Three crisp rolled tubes with red filling on a pewter bowl"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "Three crisp rolled tubes with red filling on a pewter bowl",
-            "file": "DSCF7425.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "A single otoro canapé with microgreens on a folded black napkin"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "A single otoro canapé with microgreens on a folded black napkin",
-            "file": "DSCF7427.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "Fermentation jars on a shelf, labelled ROSE STARTER JUL.10"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "Fermentation jars on a shelf, labelled ROSE STARTER JUL.10",
-            "file": "DSCF7431.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "Barigoule vegetables finished with a cougar stencil"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "Barigoule vegetables finished with a cougar stencil",
-            "file": "DSCF7437.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "Cappellacci with nordic shrimp and foam in a shallow bowl"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "Cappellacci with nordic shrimp and foam in a shallow bowl",
-            "file": "DSCF7440.jpg"
-          }
-        },
-        {
-          "kind": "list",
-          "style": "numbered",
-          "items": [
-            "A cook piping red filling into rolled crisps at the pass"
-          ]
-        },
-        {
-          "kind": "image",
-          "image": {
-            "alt": "A cook piping red filling into rolled crisps at the pass",
-            "file": "DSCF7453.jpg"
-          }
-        }
-      ]
-    },
-    {
       "heading": "Internal links, eight",
       "level": 2,
       "section": "editorial:internalLinks",
@@ -849,184 +689,175 @@
   ],
   "photos": [
     {
-      "src": "/images/date-spots/cabaret-lenfer-cook-plating-at-pass-seen-from.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 54716,
-      "alt": "A cook plating at the pass, seen from the counter",
-      "hero": false,
-      "notionFile": "DSCF7458.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-ora-king-salmon-divorciado-split-lengthwise.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 44402,
-      "alt": "Ora King salmon divorciado, split lengthwise by green and red-orange sauces",
-      "hero": false,
-      "notionFile": "DSCF7462.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-cook-laying-otoro-slices-onto-small.webp",
-      "width": 900,
-      "height": 1061,
-      "bytes": 54204,
-      "alt": "A cook laying otoro slices onto small discs with microgreens",
-      "hero": false,
-      "notionFile": "DSCF7468.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-slices-of-otoro-arranged-on-plate.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 41736,
-      "alt": "Slices of otoro arranged on a plate",
-      "hero": false,
-      "notionFile": "DSCF7427.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-unidentified-dessert-in-white-ceramic-bowl.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 36212,
-      "alt": "An unidentified dessert in a white ceramic bowl",
-      "hero": false,
-      "notionFile": "DSCF7478.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-amy-winehouse-dessert-white-disc-with.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 22720,
-      "alt": "The Amy Winehouse dessert, a white disc with a portrait stencilled in dark powder",
-      "hero": false,
-      "notionFile": "DSCF7481.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-menu-envelope-closed-with-wax-seal.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 27604,
-      "alt": "The menu envelope, closed with a wax seal",
-      "hero": false,
-      "notionFile": "DSCF7393.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-wine-glass-lit-by-candlelight-on.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 67510,
-      "alt": "A wine glass lit by candlelight on the black counter",
-      "hero": false,
-      "notionFile": "DSCF7394.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-michelin-2026-plaque-in-front-window.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 124330,
-      "alt": "The MICHELIN 2026 plaque in the front window",
-      "hero": false,
-      "notionFile": "DSCF7406.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-nameplate-on-concrete-facade.webp",
-      "width": 900,
-      "height": 600,
-      "bytes": 146368,
-      "alt": "The Cabaret l'Enfer nameplate on the concrete facade",
+      "src": "/images/date-spots/cabaret-lenfer-photo-1.webp",
+      "width": 1080,
+      "height": 720,
+      "bytes": 200756,
+      "alt": "",
       "hero": true,
       "notionFile": "DSCF7409.jpg"
     },
     {
-      "src": "/images/date-spots/cabaret-lenfer-dining-room-banquette-wood-tables-white.webp",
+      "src": "/images/date-spots/cabaret-lenfer-photo-2.webp",
       "width": 720,
       "height": 1080,
-      "bytes": 102846,
-      "alt": "The dining room: banquette, wood tables, white brick, two dark canvases",
+      "bytes": 124330,
+      "alt": "",
       "hero": false,
-      "notionFile": "DSCF7413.jpg"
+      "notionFile": "DSCF7406.jpg"
     },
     {
-      "src": "/images/date-spots/cabaret-lenfer-tables-set-with-glassware-along-banquette.webp",
-      "width": 900,
-      "height": 600,
-      "bytes": 63740,
-      "alt": "Tables set with glassware along the banquette",
-      "hero": false,
-      "notionFile": "DSCF7414.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-open-kitchen-pans-racked-above-stove.webp",
-      "width": 900,
-      "height": 600,
-      "bytes": 101136,
-      "alt": "The open kitchen, pans racked above the stove, steam rising",
-      "hero": false,
-      "notionFile": "DSCF7419.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-negroni-on-counter-with-yellow-flower.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 36532,
-      "alt": "A negroni on the counter with a yellow flower garnish",
-      "hero": false,
-      "notionFile": "DSCF7422.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-three-crisp-rolled-tubes-with-red.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 32342,
-      "alt": "Three crisp rolled tubes with red filling on a pewter bowl",
-      "hero": false,
-      "notionFile": "DSCF7425.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-single-otoro-canape-with-microgreens-on.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 41736,
-      "alt": "A single otoro canapé with microgreens on a folded black napkin",
-      "hero": false,
-      "notionFile": "DSCF7427.jpg"
-    },
-    {
-      "src": "/images/date-spots/cabaret-lenfer-fermentation-jars-on-shelf-labelled-rose.webp",
+      "src": "/images/date-spots/cabaret-lenfer-photo-3.webp",
       "width": 900,
       "height": 600,
       "bytes": 50362,
-      "alt": "Fermentation jars on a shelf, labelled ROSE STARTER JUL.10",
+      "alt": "",
       "hero": false,
       "notionFile": "DSCF7431.jpg"
     },
     {
-      "src": "/images/date-spots/cabaret-lenfer-barigoule-vegetables-finished-with-cougar-stencil.webp",
-      "width": 720,
-      "height": 1080,
-      "bytes": 30818,
-      "alt": "Barigoule vegetables finished with a cougar stencil",
+      "src": "/images/date-spots/cabaret-lenfer-photo-4.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 63740,
+      "alt": "",
       "hero": false,
-      "notionFile": "DSCF7437.jpg"
+      "notionFile": "DSCF7414.jpg"
     },
     {
-      "src": "/images/date-spots/cabaret-lenfer-cappellacci-with-nordic-shrimp-and-foam.webp",
+      "src": "/images/date-spots/cabaret-lenfer-photo-5.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 102846,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7413.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-6.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 101136,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7419.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-7.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 36532,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7422.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-8.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 67510,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7394.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-9.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 41736,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7427.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-10.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 32342,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7425.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-11.webp",
       "width": 720,
       "height": 1080,
       "bytes": 40646,
-      "alt": "Cappellacci with nordic shrimp and foam in a shallow bowl",
+      "alt": "",
       "hero": false,
       "notionFile": "DSCF7440.jpg"
     },
     {
-      "src": "/images/date-spots/cabaret-lenfer-cook-piping-red-filling-into-rolled.webp",
+      "src": "/images/date-spots/cabaret-lenfer-photo-12.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 44402,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7462.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-13.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 22720,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7481.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-14.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 36212,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7478.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-15.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 30818,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7437.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-16.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 27604,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7393.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-17.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 54716,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7458.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-18.webp",
       "width": 720,
       "height": 1080,
       "bytes": 45878,
-      "alt": "A cook piping red filling into rolled crisps at the pass",
+      "alt": "",
       "hero": false,
       "notionFile": "DSCF7453.jpg"
+    },
+    {
+      "src": "/images/date-spots/cabaret-lenfer-photo-19.webp",
+      "width": 900,
+      "height": 1061,
+      "bytes": 54204,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF7468.jpg"
     }
   ]
 }

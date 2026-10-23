@@ -11,7 +11,7 @@
     "title": "Moccione Review: Handmade Pasta and Date-Night Details",
     "borough": "Villeray–Saint-Michel–Parc-Extension",
     "publishDate": null,
-    "lastEditedTime": 1790222110337
+    "lastEditedTime": 1792725297607
   },
   "metadata": {
     "URL": "/en/reviews/villeray/moccione/",
@@ -53,6 +53,13 @@
           "text": "Chef Luca Cianciulli cooks modern Italian with handmade pasta on Saint-Denis, and has built one of the few rooms in Villeray where a long dinner still feels like an occasion."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "IMG_4762.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "By Victor · Published [DATE] · Checked September 2026"
         }
@@ -62,7 +69,7 @@
       "heading": "The verdict",
       "level": 2,
       "section": "verdict",
-      "label": "The verdict (verdictHeadline, verdict reason)",
+      "label": "The verdict (verdictHeadline, verdictDetail, verdict reason)",
       "blocks": [
         {
           "kind": "paragraph",
@@ -227,6 +234,13 @@
           "text": "Scallop crudo — Order this"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "IMG_7301.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Scallops with an icy apple and grapefruit granita. Silky scallop, crunchy cold granita, clean finish. The one to start with."
         },
@@ -235,12 +249,26 @@
           "text": "Caramelle — Order this"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "IMG_7304.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Candy-shaped stuffed pasta with ricotta, artichoke and rabbit, finished with tomato-sage sauce. Tender pasta, creamy filling, bright sauce. If you order one thing, this."
         },
         {
           "kind": "paragraph",
           "text": "Cappelletti — Order this"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "IMG_7303.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -255,8 +283,22 @@
           "text": "Creamy buffalo stracciatella with braised cabbage, roasted cipollini, hazelnuts and olive oil. Lush and soft, sweet onion, nutty crunch."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "IMG_7298.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Baba tiramisu — Worth it"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "IMG_7308.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -267,12 +309,26 @@
           "text": "Beef — Skip"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "IMG_7307.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Beef with topinambour, trompette mushrooms and sea-asparagus salsa verde. Tender and earthy, but mine came under-seasoned. I'd pick another protein next time."
         },
         {
           "kind": "paragraph",
           "text": "Sorbet — Worth it"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "IMG_7309.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -315,6 +371,14 @@
         {
           "kind": "paragraph",
           "text": "One cocktail each, then a bottle or a couple of sommelier picks instead of multiple rounds. That keeps the total down without changing the meal."
+        },
+        {
+          "kind": "paragraph",
+          "text": "For two people, I would spend the food budget on variety before adding another expensive main. The contrast between a cold scallop starter, a stuffed pasta and something sweet is part of what makes the dinner feel complete. If you are both most interested in the pasta, make that the centre of the conversation when you order rather than treating it as a small stop on the way to the beef."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The wall-side table matters for the same reason. This is a restaurant I would choose when the meal and the company deserve equal attention. You can be interested in how the caramelle are made and still have a proper conversation. The room's warmth is not a substitute for the cooking; it is what makes taking your time over that cooking feel worthwhile."
         }
       ]
     },
@@ -543,7 +607,80 @@
       ]
     }
   ],
-  "photos": [],
+  "photos": [
+    {
+      "src": "/images/date-spots/moccione-photo-1.webp",
+      "width": 810,
+      "height": 1080,
+      "bytes": 126170,
+      "alt": "",
+      "hero": true,
+      "notionFile": "IMG_4762.jpg"
+    },
+    {
+      "src": "/images/date-spots/moccione-photo-2.webp",
+      "width": 810,
+      "height": 1080,
+      "bytes": 101098,
+      "alt": "",
+      "hero": false,
+      "notionFile": "IMG_7301.jpg"
+    },
+    {
+      "src": "/images/date-spots/moccione-photo-3.webp",
+      "width": 810,
+      "height": 1080,
+      "bytes": 75606,
+      "alt": "",
+      "hero": false,
+      "notionFile": "IMG_7304.jpg"
+    },
+    {
+      "src": "/images/date-spots/moccione-photo-4.webp",
+      "width": 810,
+      "height": 1080,
+      "bytes": 67848,
+      "alt": "",
+      "hero": false,
+      "notionFile": "IMG_7303.jpg"
+    },
+    {
+      "src": "/images/date-spots/moccione-photo-5.webp",
+      "width": 810,
+      "height": 1080,
+      "bytes": 139958,
+      "alt": "",
+      "hero": false,
+      "notionFile": "IMG_7298.jpg"
+    },
+    {
+      "src": "/images/date-spots/moccione-photo-6.webp",
+      "width": 810,
+      "height": 1080,
+      "bytes": 99064,
+      "alt": "",
+      "hero": false,
+      "notionFile": "IMG_7308.jpg"
+    },
+    {
+      "src": "/images/date-spots/moccione-photo-7.webp",
+      "width": 900,
+      "height": 1079,
+      "bytes": 95606,
+      "alt": "",
+      "hero": false,
+      "notionFile": "IMG_7307.jpg"
+    },
+    {
+      "src": "/images/date-spots/moccione-photo-8.webp",
+      "width": 900,
+      "height": 936,
+      "bytes": 92258,
+      "alt": "",
+      "hero": false,
+      "notionFile": "IMG_7309.jpg"
+    }
+  ],
   "legacy": {
     "name": "moccione-montreal",
     "en": {

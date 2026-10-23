@@ -11,7 +11,7 @@
     "title": "Hoogan et Beaufort Review: Michelin-Starred Wood-Fired Cooking",
     "borough": "Rosemont–La Petite-Patrie",
     "publishDate": null,
-    "lastEditedTime": 1790222110279
+    "lastEditedTime": 1792725296968
   },
   "metadata": {
     "URL": "/en/reviews/rosemont/hoogan-et-beaufort/",
@@ -54,6 +54,13 @@
           "text": "Chef Marc-André Jetté cooks wood-fired Québécois in the old Angus Shops in Rosemont, in a converted industrial room that won its first Michelin star in 2026."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5887.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "By Victor · Published [DATE] · Checked September 2026"
         }
@@ -63,7 +70,7 @@
       "heading": "The verdict",
       "level": 2,
       "section": "verdict",
-      "label": "The verdict (verdictHeadline, verdict reason)",
+      "label": "The verdict (verdictHeadline, verdictDetail, verdict reason)",
       "blocks": [
         {
           "kind": "paragraph",
@@ -76,6 +83,13 @@
         {
           "kind": "paragraph",
           "text": "Lively, warm and a little dramatic, with the open hearth visible from the dining room. The cooking is clean, confident and well seasoned. What I didn't get was the wow a new Michelin star sets you up to expect, and for a restaurant that leans hard into live fire, the flavours never came across as especially smoky. Go for a celebration. Don't go for a first date."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5885.jpg"
+          }
         }
       ]
     },
@@ -204,6 +218,13 @@
           "text": "To start — a cocktail. Especially if you want the night to feel like an event."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5893.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "With the meal — crisp whites or light reds with acidity. Whites cut through the richer, charred plates; light reds stay refreshing even with smoke. Pairings run $85 or $150."
         },
@@ -236,12 +257,26 @@
           "text": "Hot oysters, cider sabayon — Order this"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5901.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Perfect texture on the poached oysters and a genuinely good way to open the meal. The add-on worth making."
         },
         {
           "kind": "paragraph",
           "text": "Crab, dashi broth, tomatillo — Order this"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5905.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -252,20 +287,26 @@
           "text": "Green asparagus, snap peas, pistachio — Worth it"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5912.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "You can taste that the vegetables are local, right down to the microgreens. Asparagus and snap peas keep it crisp and green, pistachio adds buttery richness and crunch. A proper reset course before the pasta."
         },
         {
           "kind": "paragraph",
-          "text": "Rhubarb, cherry blossom, shiso — Worth it"
-        },
-        {
-          "kind": "paragraph",
-          "text": "Light, bright and refreshing as a closer. Tart rhubarb, a gentle floral note, a subtle herbal lift. Finishes clean without being too sweet."
-        },
-        {
-          "kind": "paragraph",
           "text": "Spaghetti, ramps, Louis d'Or — Worth it"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5917.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -273,7 +314,36 @@
         },
         {
           "kind": "paragraph",
+          "text": "Grilled focaccia, whipped butter — Skip"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5921.jpg"
+          }
+        },
+        {
+          "kind": "paragraph",
+          "text": "Listed as focaccia but it ate like simple grilled bread: no airy bubbles, none of that chewy olive-oil richness. It's described as fire-baked and I didn't get much extra flavour from that, and the whipped butter was subtle too. Since it's called out on the menu, I expected it to stand out."
+        },
+        {
+          "kind": "paragraph",
           "text": "Beef, maitake, black cardamom — Worth it"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5923.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5927.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -281,11 +351,18 @@
         },
         {
           "kind": "paragraph",
-          "text": "Grilled focaccia, whipped butter — Skip"
+          "text": "Rhubarb, cherry blossom, shiso — Worth it"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5932.jpg"
+          }
         },
         {
           "kind": "paragraph",
-          "text": "Listed as focaccia but it ate like simple grilled bread: no airy bubbles, none of that chewy olive-oil richness. It's described as fire-baked and I didn't get much extra flavour from that, and the whipped butter was subtle too. Since it's called out on the menu, I expected it to stand out."
+          "text": "Light, bright and refreshing as a closer. Tart rhubarb, a gentle floral note, a subtle herbal lift. Finishes clean without being too sweet."
         }
       ]
     },
@@ -322,6 +399,13 @@
           ]
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5891.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "One cocktail each, then a bottle or a couple of glasses rather than multiple rounds keeps the total lower."
         }
@@ -349,6 +433,20 @@
         {
           "kind": "paragraph",
           "text": "The honest caveat: they lean hard into the live-fire story and on my menu I didn't taste much smoke or char. Everything was clean and well executed, just not fire-forward. The oyster opener is good without being unforgettable, and the bread didn't do what a bread called out on the menu should. It's a very good restaurant that didn't deliver the big wow effect a new star sets you up to expect."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5940.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF5934.jpg"
+          }
         },
         {
           "kind": "quote",
@@ -566,7 +664,134 @@
       ]
     }
   ],
-  "photos": [],
+  "photos": [
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-1.webp",
+      "width": 1080,
+      "height": 720,
+      "bytes": 153572,
+      "alt": "",
+      "hero": true,
+      "notionFile": "DSCF5887.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-2.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 93584,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5885.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-3.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 38404,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5893.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-4.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 52868,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5901.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-5.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 61446,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5905.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-6.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 50278,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5912.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-7.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 41926,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5917.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-8.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 45498,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5921.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-9.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 45122,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5923.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-10.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 49748,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5927.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-11.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 33654,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5932.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-12.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 65432,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5891.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-13.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 38372,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5940.jpg"
+    },
+    {
+      "src": "/images/date-spots/hoogan-et-beaufort-photo-14.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 32976,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF5934.jpg"
+    }
+  ],
   "legacy": {
     "name": "hoogan-et-beaufort-montreal",
     "en": {

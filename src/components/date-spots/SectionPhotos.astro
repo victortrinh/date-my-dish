@@ -1,0 +1,16 @@
+---
+import SpotPhoto from "./SpotPhoto.astro";
+import type { Locale } from "@i18n/utils";
+
+// The photos the author placed in a section beyond its own slots, in the
+// author's order: a strip of arched frames at the end of the section, two
+// across on a phone and three from `sm` (DESIGN.md, `.arch`). Renders
+// nothing without photos.
+interface Photo { src: string; width: number; height: number; credit?: string; }
+interface Props { photos?: Record<string, Photo>; references?: { photo: string; alt: string }[]; locale: Locale; class?: string; }
+const { photos, references = [], locale, class: className } = Astro.props;
+const shown = references.filter((reference) => photos?.[reference.photo]);
+---
+{shown.length > 0 && <div class:list={["grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6", className]}>
+  {shown.map((reference) => <SpotPhoto photos={photos} reference={reference} locale={locale} />)}
+</div>}

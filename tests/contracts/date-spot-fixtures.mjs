@@ -145,6 +145,9 @@ export function acceptanceCollection() {
     const copy = restaurant.locales[locale];
     copy.opening = `${token} Chef ${token} Cook opening`;
     copy.roomPhoto = { photo: "room", alt: `${token} room photo` };
+    // A strip of the author's other photos, and a dish the author did not tag.
+    copy.sectionPhotos = { drinks: [{ photo: "room", alt: `${token} drinks photo` }, { photo: "room", alt: `${token} second drinks photo` }] };
+    delete copy.whatToOrder.dishes[2].tag;
     copy.meetChef = { name: `${token} Cook`, role: `${token} chef`, background: filler("chef background", 90), quote: `${token} chef quote`, approach: filler("chef approach", 100), profileId: "test-only-profile" };
     copy.atHome = { recipeId: "test-only-recipe", intro: `${token} at home intro` };
     copy.whatToOrder.waitersChoice = { recommendation: `${token} waiter recommendation`, outcome: `${token} they were right` };

@@ -11,7 +11,7 @@
     "title": "McKiernan Brunch Review: Food, Prices, and the Canal Walk",
     "borough": "Le Sud-Ouest",
     "publishDate": null,
-    "lastEditedTime": 1790222110320
+    "lastEditedTime": 1792725297726
   },
   "metadata": {
     "URL": "/en/reviews/ville-emard/mckiernan/",
@@ -63,7 +63,7 @@
       "heading": "The verdict",
       "level": 2,
       "section": "verdict",
-      "label": "The verdict (verdictHeadline, verdict reason)",
+      "label": "The verdict (verdictHeadline, verdictDetail, verdict reason)",
       "blocks": [
         {
           "kind": "paragraph",
@@ -217,12 +217,19 @@
           "text": "Devilled brussels sprouts — Order this"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF3689.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Crispy-edged, salty-sweet, and the vegetable side that disappears first. Enough punch and richness that it eats like bar food in the best way."
         },
         {
           "kind": "paragraph",
-          "text": "Bomba schnitzel — Order this"
+          "text": "Bomba schnitzel"
         },
         {
           "kind": "paragraph",
@@ -230,7 +237,14 @@
         },
         {
           "kind": "paragraph",
-          "text": "Homemade donuts — Order this"
+          "text": "Homemade donuts"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF3700.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -238,7 +252,14 @@
         },
         {
           "kind": "paragraph",
-          "text": "Zesty Italian beef tartare — Worth it"
+          "text": "Zesty Italian beef tartare"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF3686.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -247,6 +268,13 @@
         {
           "kind": "paragraph",
           "text": "Honey garlic spare ribs — Worth it"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF3694.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -285,6 +313,34 @@
         {
           "kind": "paragraph",
           "text": "You're paying for the room, the canal-side location and solid comfort cooking. Skip the cocktails, share plates, coffee and one main each."
+        },
+        {
+          "kind": "subheading",
+          "text": "How I would plan brunch for two"
+        },
+        {
+          "kind": "paragraph",
+          "text": "Start by deciding whether this is breakfast with a walk or a long, indulgent brunch. Both are reasonable plans, but they lead to different orders. For the shorter version, coffee and a main each are enough of a commitment. If you want to share, choose two or three plates between you and stop there before adding anything else. You can always reassess after the first round of food rather than ordering as if every good-sounding dish needs to land at once."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The dishes that make most sense to me are the ones with a clear job in the meal. The schnitzel provides the substantial, crunchy centre. The devilled brussels sprouts bring a vegetable plate with enough seasoning to stand beside it. The tartare offers a fresher contrast if you do not want the whole order to be rich and fried. Donuts are an optional finish, not a reason to order beyond your appetite. That is a way of balancing the meal, not a requirement to have all four."
+        },
+        {
+          "kind": "subheading",
+          "text": "The date plan"
+        },
+        {
+          "kind": "paragraph",
+          "text": "What makes this work for a first date is the natural stopping point. You can have brunch, see how the conversation feels, and then decide whether to walk along the canal. There is no need to commit to a second reservation before you have even sat down. A daytime meeting also takes some of the ceremony out of choosing a restaurant: you are meeting for food and coffee, not announcing a grand romantic evening."
+        },
+        {
+          "kind": "paragraph",
+          "text": "For a double date, the sharing format gives everyone something to talk about without making the food the only subject. Keep the order focused and let the room do the social work. For two people who want a quiet milestone dinner, I would choose somewhere else; that does not make this a worse restaurant, just a different tool for a different occasion."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The useful measure of value here is whether you enjoyed the whole outing. A good plate, daylight and a walk can make a satisfying morning. Several rounds of cocktails and an overfull table can turn the same idea into a much more expensive meal without necessarily making the date better."
         }
       ]
     },
@@ -506,7 +562,44 @@
       ]
     }
   ],
-  "photos": [],
+  "photos": [
+    {
+      "src": "/images/date-spots/mckiernan-photo-1.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 66356,
+      "alt": "",
+      "hero": true,
+      "notionFile": "DSCF3689.jpg"
+    },
+    {
+      "src": "/images/date-spots/mckiernan-photo-2.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 34898,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF3700.jpg"
+    },
+    {
+      "src": "/images/date-spots/mckiernan-photo-3.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 45298,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF3686.jpg"
+    },
+    {
+      "src": "/images/date-spots/mckiernan-photo-4.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 55320,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF3694.jpg"
+    }
+  ],
   "legacy": {
     "name": "mckiernan-montreal",
     "en": {

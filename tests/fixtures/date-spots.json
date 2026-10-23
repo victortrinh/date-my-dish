@@ -143,7 +143,6 @@
             },
             {
               "name": "[TEST ONLY] dish 3",
-              "tag": "worth-it",
               "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
             },
             {
@@ -167,6 +166,18 @@
         "roomPhoto": {
           "photo": "room",
           "alt": "[TEST ONLY] room photo"
+        },
+        "sectionPhotos": {
+          "drinks": [
+            {
+              "photo": "room",
+              "alt": "[TEST ONLY] drinks photo"
+            },
+            {
+              "photo": "room",
+              "alt": "[TEST ONLY] second drinks photo"
+            }
+          ]
         },
         "meetChef": {
           "name": "[TEST ONLY] Cook",
@@ -335,7 +346,6 @@
             },
             {
               "name": "[TEST ONLY] dish 3",
-              "tag": "worth-it",
               "note": "[TEST ONLY] dish test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test"
             },
             {
@@ -359,6 +369,18 @@
         "roomPhoto": {
           "photo": "room",
           "alt": "[TEST ONLY] room photo"
+        },
+        "sectionPhotos": {
+          "drinks": [
+            {
+              "photo": "room",
+              "alt": "[TEST ONLY] drinks photo"
+            },
+            {
+              "photo": "room",
+              "alt": "[TEST ONLY] second drinks photo"
+            }
+          ]
         },
         "meetChef": {
           "name": "[TEST ONLY] Cook",

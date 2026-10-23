@@ -43,6 +43,8 @@ export const REVIEW_WORD_MINIMUM = 300;
 export const MAKE_A_NIGHT_MAX = 5;
 // Dish cards in What to order (or What to eat).
 export const MAX_DISHES = 10;
+// Photos in one section's strip (sectionPhotos).
+export const MAX_SECTION_PHOTOS = 8;
 // Path segments used by listing routes under /date-spots/ and /lieux/.
 export const RESERVED_SLUGS = ["category", "categorie", "neighbourhood", "quartier"];
 
@@ -76,6 +78,7 @@ export const metaDescription = text.min(120).max(160);
 // Photographs beyond the Editorial Image are declared once, locale-neutral,
 // and referenced from the copy by key with per-locale alt text.
 const photoRef = object({ photo: slug, alt: text });
+const photoStrip = z.array(photoRef).min(1).max(MAX_SECTION_PHOTOS);
 const photo = object({
   src: z.union([z.string().regex(/^\/images\/date-spots\/[a-z0-9-]+\.(jpg|jpeg|webp|avif)$/), z.literal("/images/og-default.jpg")]),
   width: z.number().int().positive(),
@@ -135,7 +138,8 @@ const drinks = section(object({
   picks: z.array(object({ moment: z.enum(["to-start", "with-the-meal", "second-round", "not-drinking"]), name: text, note: text.optional() })).min(1).optional(),
   list: text.optional(),
 }), "The drinks");
-const dish = object({ name: text, tag: z.enum(["order-this", "worth-it", "skip"]), note: text.optional(), photo: photoRef.optional() });
+// The tag is the author's: a dish the author did not tag shows no tag.
+const dish = object({ name: text, tag: z.enum(["order-this", "worth-it", "skip"]).optional(), note: text.optional(), photo: photoRef.optional() });
 const realCost = section(object({
   intro: text.optional(),
   lines: z.array(object({ item: text, amount: text })).min(1).optional(),
@@ -176,6 +180,18 @@ const venueCopy = {
   goodFor: goodFor.optional(),
   room: text.optional(),
   roomPhoto: photoRef.optional(),
+  // Photos the author placed in a section that have no slot of their own
+  // (a dish card, the room, a portrait), shown as a strip at the end of
+  // that section in the author's order.
+  sectionPhotos: object({
+    opening: photoStrip.optional(),
+    verdict: photoStrip.optional(),
+    room: photoStrip.optional(),
+    drinks: photoStrip.optional(),
+    food: photoStrip.optional(),
+    realCost: photoStrip.optional(),
+    note: photoStrip.optional(),
+  }).optional(),
   drinks: drinks.optional(),
   realCost: realCost.optional(),
   reportersNote: section(object({

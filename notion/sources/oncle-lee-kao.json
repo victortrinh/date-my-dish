@@ -11,7 +11,7 @@
     "title": "Oncle Lee Kăo Review: Modern Chinese Grill in Old Montreal",
     "borough": "Ville-Marie",
     "publishDate": null,
-    "lastEditedTime": 1790222157277
+    "lastEditedTime": 1792725297049
   },
   "metadata": {
     "URL": "/en/reviews/old-montreal/oncle-lee-kao/",
@@ -48,6 +48,20 @@
       "label": "H1 and opening",
       "blocks": [
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6119.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6120.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Chef Andersen Lee cooks a modern Chinese grill on rue McGill in Old Montreal, in a high-ceilinged room built for ordering wide and sharing everything."
         },
@@ -61,7 +75,7 @@
       "heading": "The verdict",
       "level": 2,
       "section": "verdict",
-      "label": "The verdict (verdictHeadline, verdict reason)",
+      "label": "The verdict (verdictHeadline, verdictDetail, verdict reason)",
       "blocks": [
         {
           "kind": "paragraph",
@@ -70,6 +84,20 @@
         {
           "kind": "subheading",
           "text": "A beautiful room, solid grill cooking, and prices that add up quickly"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6123.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6131.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -134,12 +162,14 @@
       "blocks": [
         {
           "kind": "paragraph",
-          "text": "[PHOTO: dining room, wide]",
-          "note": true
+          "text": "The restaurant opened in the former Ikanos and Garde-Côte space in late January 2025. Around eighty seats sit under high ceilings. The room uses wood, burnt-orange leather, Chinese artwork and a few red lanterns without feeling overdecorated. There's a private room at the back for roughly twelve to thirty-six, which makes it a strong group option."
         },
         {
-          "kind": "paragraph",
-          "text": "The restaurant opened in the former Ikanos and Garde-Côte space in late January 2025. Around eighty seats sit under high ceilings. The room uses wood, burnt-orange leather, Chinese artwork and a few red lanterns without feeling overdecorated. There's a private room at the back for roughly twelve to thirty-six, which makes it a strong group option."
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6126.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -193,6 +223,13 @@
           "text": "To start — the Pandan Express. I loved it. You can taste the pandan properly: clean, aromatic, not perfumey, and the baijiu reads crisp rather than harsh. It tastes specific to this restaurant instead of being a sweet drink with a fancy name."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6134.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "With the meal — [WHAT THE LIST DOES]. Not covered on my visit. Worth a paragraph on how the list is built and whether the markup is fair."
         },
@@ -221,12 +258,33 @@
           "text": "Five-spice duck platter — Order this"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6162.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6178.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "The signature, and it makes sense the moment it lands. A big portion of sous vide duck with five-spice warmth and a rich texture, served platter-style so you build your own wraps. Comes with duck rillettes, a pile of cilantro, pickled carrot and daikon, chilli crisp, peanuts, cucumber, a liver mousse and a hoisin-style sauce."
         },
         {
           "kind": "paragraph",
-          "text": "Sweet and sour eggplant — Order this"
+          "text": "Sweet and sour eggplant"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6190.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -234,7 +292,14 @@
         },
         {
           "kind": "paragraph",
-          "text": "Steamed oysters, black bean — Order this"
+          "text": "Steamed oysters, black bean"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6146.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -245,12 +310,26 @@
           "text": "Garlic fried rice — Order this"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6160.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "The closer that makes everything feel complete, and the bridge plate if one of you wants to keep drinking and talking."
         },
         {
           "kind": "paragraph",
-          "text": "Beef tataki — Worth it"
+          "text": "Beef tataki"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6143.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -258,11 +337,25 @@
         },
         {
           "kind": "paragraph",
-          "text": "Yuzu tartelette, green tea and fruit — Worth it"
+          "text": "Yuzu tartelette, green tea and fruit"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6194.jpg"
+          }
         },
         {
           "kind": "paragraph",
           "text": "Offered by the restaurant, and the perfect soft ending. Yuzu gives a bright citrus snap after a savoury meal."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6196.jpg"
+          }
         }
       ]
     },
@@ -528,7 +621,134 @@
       ]
     }
   ],
-  "photos": [],
+  "photos": [
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-1.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 45266,
+      "alt": "",
+      "hero": true,
+      "notionFile": "DSCF6119.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-2.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 61988,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6120.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-3.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 35750,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6123.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-4.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 71802,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6131.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-5.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 26462,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6126.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-6.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 62106,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6134.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-7.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 39912,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6162.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-8.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 111478,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6178.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-9.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 94974,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6190.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-10.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 75756,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6146.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-11.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 96714,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6160.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-12.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 72596,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6143.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-13.webp",
+      "width": 680,
+      "height": 1080,
+      "bytes": 99456,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6194.jpg"
+    },
+    {
+      "src": "/images/date-spots/oncle-lee-kao-photo-14.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 90198,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6196.jpg"
+    }
+  ],
   "legacy": {
     "name": "oncle-lee-kao-montreal",
     "en": {

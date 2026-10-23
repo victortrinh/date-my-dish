@@ -10,6 +10,7 @@ import OccasionIcon from "./OccasionIcon.astro";
 import Paragraphs from "./Paragraphs.astro";
 import SignalIcon from "./SignalIcon.astro";
 import SpotHero from "./SpotHero.astro";
+import SectionPhotos from "./SectionPhotos.astro";
 import SpotPhoto from "./SpotPhoto.astro";
 import VerdictBadge from "./VerdictBadge.astro";
 import WindowGlyph from "./WindowGlyph.astro";
@@ -40,8 +41,9 @@ const name = spot.name;
 const neighbourhood = spot.neighbourhood;
 const updates = copy.materialUpdates ?? [];
 const note = copy.reportersNote;
-const hasNote = Boolean(note || updates.length);
-const hasRoom = Boolean(copy.room || copy.roomPhoto);
+const hasNote = Boolean(note || updates.length || copy.sectionPhotos?.note);
+const strips = copy.sectionPhotos ?? {};
+const hasRoom = Boolean(copy.room || copy.roomPhoto || strips.room);
 
 const spots = await getCollection("dateSpots");
 const recipes = await getCollection("contributorRecipes");
@@ -132,6 +134,8 @@ const jump = [
 
     <div class="mt-section-sm grid grid-cols-[minmax(0,1fr)] gap-16 lg:grid-cols-[minmax(0,1fr)_20rem]">
       <div class="min-w-0 space-y-section-sm">
+        <SectionPhotos photos={spot.photos} references={strips.opening} locale={locale} />
+
         <section id="verdict" aria-labelledby="verdict-title" class="scroll-mt-20 border-t border-line-strong pt-8">
           <h2 id="verdict-title" class="font-ui text-body-sm font-medium text-ink-subtle">{tf(locale, "dateSpot.h.verdict", { name })}</h2>
           <VerdictBadge verdict={spot.reviewVerdict} locale={locale} size="lg" settle class="mt-4" />
@@ -140,6 +144,7 @@ const jump = [
             {!reasonInDetail && <Paragraphs text={copy.verdictReason} class={copy.verdictDetail ? "text-ink" : undefined} />}
             <Paragraphs text={copy.verdictDetail} emphasis={copy.verdictReason} />
           </div>
+          <SectionPhotos photos={spot.photos} references={strips.verdict} locale={locale} class="mt-8" />
         </section>
 
         <EssentialsCard spot={spot} locale={locale} id="essentials-title-mobile" class="lg:hidden" />
@@ -166,6 +171,7 @@ const jump = [
           <h2 id="room-title" data-reveal class={h2}>{t(locale, "dateSpot.h.room")}</h2>
           {copy.roomPhoto && <SpotPhoto photos={spot.photos} reference={copy.roomPhoto} locale={locale} class="mt-6 max-w-sm" />}
           {copy.room && <div class={`mt-6 space-y-5 ${body}`}><Paragraphs text={copy.room} /></div>}
+          <SectionPhotos photos={spot.photos} references={strips.room} locale={locale} class="mt-8" />
         </section>}
 
         {lead && <section id="meet" aria-labelledby="meet-title" class="scroll-mt-20">
@@ -198,6 +204,7 @@ const jump = [
             ))}
           </div>}
           {copy.drinks.list && <div class={`mt-8 space-y-5 ${body}`}><Paragraphs text={copy.drinks.list} /></div>}
+          <SectionPhotos photos={spot.photos} references={strips.drinks} locale={locale} class="mt-8" />
         </section>}
 
         {hasOrder && <section id="order" aria-labelledby="order-title" class="scroll-mt-20">
@@ -221,18 +228,19 @@ const jump = [
             </div>}
           </div>}
           {whatToOrder?.strategy && <div class={`mt-6 space-y-5 ${body}`}><Paragraphs text={whatToOrder.strategy} /></div>}
+          <SectionPhotos photos={spot.photos} references={strips.food} locale={locale} class="mt-8" />
           {dishes.length > 0 && <ul class="mt-8 divide-y divide-line border-y border-line">
             {dishes.map((dish) => (
               <li class="grid gap-5 py-6 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
                 {dish.photo ? <SpotPhoto photos={spot.photos} reference={dish.photo} locale={locale} class="max-w-56" /> : null}
                 <div class:list={[!dish.photo && "sm:col-span-2"]}>
                   <h3 class="text-heading-3 text-ink">{dish.name}</h3>
-                  <span data-dish-tag={dish.tag} class:list={[
+                  {dish.tag && <span data-dish-tag={dish.tag} class:list={[
                     "mt-2 inline-flex items-center gap-2 font-ui text-eyebrow font-semibold uppercase",
                     dish.tag === "order-this" && "text-accent-ink",
                     dish.tag === "worth-it" && "text-ink-muted",
                     dish.tag === "skip" && "text-ink-subtle",
-                  ]}><WindowGlyph state={dish.tag === "order-this" ? "lit" : dish.tag === "worth-it" ? "half" : "unlit"} class="h-4 w-auto" />{t(locale, `dateSpot.dishTag.${dish.tag}`)}</span>
+                  ]}><WindowGlyph state={dish.tag === "order-this" ? "lit" : dish.tag === "worth-it" ? "half" : "unlit"} class="h-4 w-auto" />{t(locale, `dateSpot.dishTag.${dish.tag}`)}</span>}
                   {dish.note && <p class="mt-3 max-w-measure font-body text-ink-muted">{dish.note}</p>}
                 </div>
               </li>
@@ -248,6 +256,7 @@ const jump = [
             {copy.realCost.total && <div class="flex justify-between gap-4 border-t border-line-strong py-4 font-semibold"><dt class="text-ink">{copy.realCost.total.label}</dt><dd class="text-ink">{copy.realCost.total.amount}</dd></div>}
           </dl>}
           {copy.realCost.howToSpendLess && <div class={`mt-6 space-y-5 ${body}`}><Paragraphs text={copy.realCost.howToSpendLess} /></div>}
+          <SectionPhotos photos={spot.photos} references={strips.realCost} locale={locale} class="mt-8" />
         </section>}
 
         {hasNote && <section id="note" aria-labelledby="note-title" class="scroll-mt-20 border-t border-line-strong pt-8">
@@ -268,6 +277,7 @@ const jump = [
           ))}
           <p class="mt-10 flex items-center gap-4 font-body text-heading-3 text-ink before:block before:h-px before:w-10 before:bg-line-strong before:content-['']">{spot.reporterByline}</p>
           <CorrectionLine locale={locale} class="mt-6" />
+          <SectionPhotos photos={spot.photos} references={strips.note} locale={locale} class="mt-8" />
         </section>}
         {!hasNote && <CorrectionLine locale={locale} class="border-t border-line pt-6" />}
 

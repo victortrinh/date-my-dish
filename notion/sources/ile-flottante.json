@@ -11,7 +11,7 @@
     "title": "Île Flottante Review: Mile End Tasting Menu and Prices",
     "borough": "Le Plateau-Mont-Royal",
     "publishDate": null,
-    "lastEditedTime": 1790222157261
+    "lastEditedTime": 1792725297801
   },
   "metadata": {
     "URL": "/en/reviews/mile-end/ile-flottante/",
@@ -49,6 +49,20 @@
       "label": "H1 and opening",
       "blocks": [
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6601.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6586.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Chef Sean Murray Smith cooks a seasonal, vegetable-forward tasting menu on Saint-Viateur in a calm Mile End dining room."
         },
@@ -62,7 +76,7 @@
       "heading": "The verdict",
       "level": 2,
       "section": "verdict",
-      "label": "The verdict (verdictHeadline, verdict reason)",
+      "label": "The verdict (verdictHeadline, verdictDetail, verdict reason)",
       "blocks": [
         {
           "kind": "paragraph",
@@ -134,9 +148,18 @@
       "label": "The room",
       "blocks": [
         {
-          "kind": "paragraph",
-          "text": "[PHOTO: dining room, wide]",
-          "note": true
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6593.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6604.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -145,6 +168,18 @@
         {
           "kind": "paragraph",
           "text": "It works well for a quiet date. The trade-off is time, so budget the full evening."
+        },
+        {
+          "kind": "paragraph",
+          "text": "I would plan around the length of dinner before planning anything else. Our two-and-a-half-hour meal was not unusually slow; that was simply the shape of the evening. A tasting menu asks you to hand over both the ordering and the pace. That can be lovely when you already know you want to spend the night together, and less useful when you want the option of a quick drink and an early exit."
+        },
+        {
+          "kind": "paragraph",
+          "text": "For an anniversary, the calm room is the strongest argument. You do not need a loud soundtrack or a parade of surprises for a dinner to feel considered. There is room for conversation, and the polished service means you can concentrate on the person across the table. Just separate that kind of comfort from the expectation that every course will be a revelation. The former worked better for me than the latter."
+        },
+        {
+          "kind": "paragraph",
+          "text": "My practical recommendation is to avoid booking another timed activity straight after dinner. Walk beforehand if you want to do something in Mile End, then let the restaurant be the evening. If you are choosing between this and an à la carte meal, ask yourself whether you want the kitchen to make the decisions. Here, that fixed sequence is central to what you are paying for, not an optional way to order."
         }
       ]
     },
@@ -194,6 +229,13 @@
           "text": "To start — one cocktail. After that, keep the drinks simple."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6606.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "With the meal — ask. Say whether you prefer bright, bitter, boozy or fruity drinks and ask for a recommendation."
         },
@@ -235,12 +277,68 @@
           "text": "This is the weak point of the page. A tasting menu review that can't say what was served is a tasting menu review with a hole in it. Go back through the photos and name them, or email the restaurant for the menu from that date. Each one then gets its own heading and a tag, which is what earns the dish-name searches."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6616.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6628.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6631.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6642.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6651.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6654.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "On the food overall. Ingredients fresh and handled properly, technique controlled and confident, execution clean and consistent. Some combinations felt a little mismatched, and I never got that this-is-the-chef's-profile moment."
         },
         {
           "kind": "paragraph",
           "text": "On dessert. The weakest part of my visit, which surprised me, because dessert is usually where a kitchen lands the final punch. They were good rather than a statement. One was corn-focused and the corn never actually showed up in a way that popped. The idea was stronger than the payoff, and because dessert is the last thing you remember the night ended flatter than I wanted."
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6663.jpg"
+          }
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6673.jpg"
+          }
         }
       ]
     },
@@ -271,6 +369,13 @@
               "~$170"
             ]
           ]
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6595.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -490,7 +595,134 @@
       ]
     }
   ],
-  "photos": [],
+  "photos": [
+    {
+      "src": "/images/date-spots/ile-flottante-photo-1.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 158580,
+      "alt": "",
+      "hero": true,
+      "notionFile": "DSCF6601.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-2.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 67838,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6586.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-3.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 70354,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6593.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-4.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 131702,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6604.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-5.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 56496,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6606.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-6.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 44416,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6616.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-7.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 59380,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6628.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-8.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 47016,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6631.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-9.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 56936,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6642.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-10.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 47876,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6651.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-11.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 44486,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6654.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-12.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 45086,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6663.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-13.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 34050,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6673.jpg"
+    },
+    {
+      "src": "/images/date-spots/ile-flottante-photo-14.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 40404,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6595.jpg"
+    }
+  ],
   "legacy": {
     "name": "ile-flottante-montreal",
     "en": {

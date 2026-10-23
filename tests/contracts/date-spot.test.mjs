@@ -113,6 +113,10 @@ test("What to order tags dishes and keeps the Locale Pair aligned", () => {
   accepts(spot);
   const badTag = structuredClone(spot); badTag.locales.en.whatToOrder.dishes[0].tag = "must-try"; rejects(badTag);
   const tagDrift = fixture(); tagDrift.locales["fr-CA"].whatToOrder.dishes[0].tag = "skip"; rejects(tagDrift);
+  // A dish the author did not tag has no tag, in both locales.
+  const untagged = bothLocales(fixture(), (copy) => { delete copy.whatToOrder.dishes[0].tag; });
+  accepts(untagged);
+  const untaggedDrift = fixture(); delete untaggedDrift.locales.en.whatToOrder.dishes[0].tag; rejects(untaggedDrift);
   const menuDrift = structuredClone(spot); delete menuDrift.locales["fr-CA"].whatToOrder.setMenu; rejects(menuDrift);
   const sectionDrift = fixture(); delete sectionDrift.locales["fr-CA"].room; rejects(sectionDrift);
 });
@@ -155,6 +159,16 @@ test("photos are declared once and referenced by key", () => {
   spot.photos = { room: { src: "/images/date-spots/test-only-room.webp", width: 1200, height: 800, provenance: "dmd-held-photograph", credit: token } };
   accepts(spot);
   const generic = structuredClone(spot); generic.photos.room.src = "/images/og-default.jpg"; rejects(generic);
+});
+
+test("section photo strips reference declared photos in both locales", () => {
+  const spot = bothLocales(fixture(), (copy) => { copy.sectionPhotos = { drinks: [{ photo: "room", alt: token }], note: [{ photo: "room", alt: token }] }; });
+  rejects(spot);
+  spot.photos = { room: { src: "/images/date-spots/test-only-room.webp", width: 1200, height: 800, provenance: "dmd-held-photograph" } };
+  accepts(spot);
+  const empty = structuredClone(spot); bothLocales(empty, (copy) => { copy.sectionPhotos.drinks = []; }); rejects(empty);
+  const unknownSection = structuredClone(spot); bothLocales(unknownSection, (copy) => { copy.sectionPhotos.makeANight = [{ photo: "room", alt: token }]; }); rejects(unknownSection);
+  const drift = structuredClone(spot); delete drift.locales["fr-CA"].sectionPhotos.note; rejects(drift);
 });
 
 test("the Google rating is a dated, append-only snapshot of their number", () => {

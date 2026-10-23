@@ -22,6 +22,108 @@
         "width": 720,
         "height": 1080,
         "provenance": "dmd-held-photograph"
+      },
+      "michelin-plaque": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-2.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "fermentation-jars": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-3.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "tables-set": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-4.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "open-kitchen": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-6.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "negroni": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-7.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "wine-glass": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-8.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "otoro-canape": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-9.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "rolled-crisps": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-10.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "cappellacci": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-11.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "ora-king-salmon": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-12.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "amy-winehouse-dessert": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-13.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "golden-disc-dessert": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-14.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "barigoule": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-15.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "menu-envelope": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-16.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "cook-plating": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-17.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "cook-piping": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-18.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "cook-otoro": {
+        "src": "/images/date-spots/cabaret-lenfer-photo-19.webp",
+        "width": 900,
+        "height": 1061,
+        "provenance": "dmd-held-photograph"
       }
     },
     "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cabaret+l'Enfer+4094+Rue+Saint-Denis+Montreal+QC+H2W+2M5",
@@ -138,7 +240,91 @@
             "question": "How far ahead do I need to book?",
             "answer": "Not far. A table for two was easy to get. It's OpenTable only, 33 seats, with a three-hour table limit, so a bigger group is a different problem."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "opening": [
+            {
+              "photo": "michelin-plaque",
+              "alt": "The MICHELIN 2026 plaque in the front window"
+            }
+          ],
+          "verdict": [
+            {
+              "photo": "fermentation-jars",
+              "alt": "Fermentation jars on a shelf, labelled ROSE STARTER JUL.10"
+            }
+          ],
+          "room": [
+            {
+              "photo": "tables-set",
+              "alt": "Tables set with glassware along the banquette"
+            },
+            {
+              "photo": "open-kitchen",
+              "alt": "The open kitchen, pans racked above the stove, steam rising"
+            }
+          ],
+          "drinks": [
+            {
+              "photo": "negroni",
+              "alt": "A negroni on the counter with a yellow flower garnish"
+            },
+            {
+              "photo": "wine-glass",
+              "alt": "A wine glass lit by candlelight on the black counter"
+            }
+          ],
+          "food": [
+            {
+              "photo": "otoro-canape",
+              "alt": "A single otoro canapé with microgreens on a folded black napkin"
+            },
+            {
+              "photo": "rolled-crisps",
+              "alt": "Three crisp rolled tubes with red filling on a pewter bowl"
+            },
+            {
+              "photo": "cappellacci",
+              "alt": "Cappellacci with nordic shrimp and foam in a shallow bowl"
+            },
+            {
+              "photo": "ora-king-salmon",
+              "alt": "Ora King salmon divorciado, split lengthwise by green and red-orange sauces"
+            },
+            {
+              "photo": "amy-winehouse-dessert",
+              "alt": "The Amy Winehouse dessert, a white disc with a portrait stencilled in dark powder"
+            },
+            {
+              "photo": "golden-disc-dessert",
+              "alt": "An unidentified dessert in a white ceramic bowl"
+            },
+            {
+              "photo": "barigoule",
+              "alt": "Barigoule vegetables finished with a cougar stencil"
+            }
+          ],
+          "realCost": [
+            {
+              "photo": "menu-envelope",
+              "alt": "The menu envelope, closed with a wax seal"
+            }
+          ],
+          "note": [
+            {
+              "photo": "cook-plating",
+              "alt": "A cook plating at the pass, seen from the counter"
+            },
+            {
+              "photo": "cook-piping",
+              "alt": "A cook piping red filling into rolled crisps at the pass"
+            },
+            {
+              "photo": "cook-otoro",
+              "alt": "A cook laying otoro slices onto small discs with microgreens"
+            }
+          ]
+        }
       },
       "fr-CA": {
         "slug": "cabaret-lenfer",
@@ -249,7 +435,91 @@
             "question": "Combien de temps d'avance faut-il réserver?",
             "answer": "Pas longtemps. Une table pour deux était facile à avoir. C'est OpenTable seulement, 33 places, avec une limite de trois heures par table, alors un plus grand groupe, c'est une autre histoire."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "opening": [
+            {
+              "photo": "michelin-plaque",
+              "alt": "La plaque MICHELIN 2026 dans la vitrine"
+            }
+          ],
+          "verdict": [
+            {
+              "photo": "fermentation-jars",
+              "alt": "Des pots de fermentation sur une tablette, étiquetés ROSE STARTER JUL.10"
+            }
+          ],
+          "room": [
+            {
+              "photo": "tables-set",
+              "alt": "Des tables dressées avec la verrerie le long de la banquette"
+            },
+            {
+              "photo": "open-kitchen",
+              "alt": "La cuisine ouverte, les poêles suspendues au-dessus du fourneau, la vapeur qui monte"
+            }
+          ],
+          "drinks": [
+            {
+              "photo": "negroni",
+              "alt": "Un negroni sur le comptoir, garni d'une fleur jaune"
+            },
+            {
+              "photo": "wine-glass",
+              "alt": "Un verre à vin éclairé à la chandelle sur le comptoir noir"
+            }
+          ],
+          "food": [
+            {
+              "photo": "otoro-canape",
+              "alt": "Un canapé d'otoro aux micropousses sur une serviette noire pliée"
+            },
+            {
+              "photo": "rolled-crisps",
+              "alt": "Trois tubes croustillants roulés, garnis de rouge, sur un bol en étain"
+            },
+            {
+              "photo": "cappellacci",
+              "alt": "Cappellacci aux crevettes nordiques et mousse dans un bol peu profond"
+            },
+            {
+              "photo": "ora-king-salmon",
+              "alt": "Saumon Ora King divorciado, partagé en longueur par une sauce verte et une sauce rouge orangé"
+            },
+            {
+              "photo": "amy-winehouse-dessert",
+              "alt": "Le dessert Amy Winehouse, un disque blanc avec un portrait au pochoir en poudre foncée"
+            },
+            {
+              "photo": "golden-disc-dessert",
+              "alt": "Un dessert non identifié dans un bol de céramique blanc"
+            },
+            {
+              "photo": "barigoule",
+              "alt": "Légumes barigoule finis avec un pochoir de couguar"
+            }
+          ],
+          "realCost": [
+            {
+              "photo": "menu-envelope",
+              "alt": "L'enveloppe du menu, fermée par un sceau de cire"
+            }
+          ],
+          "note": [
+            {
+              "photo": "cook-plating",
+              "alt": "Un cuisinier qui dresse au passe, vu du comptoir"
+            },
+            {
+              "photo": "cook-piping",
+              "alt": "Un cuisinier qui garnit de rouge des croustillants roulés au passe"
+            },
+            {
+              "photo": "cook-otoro",
+              "alt": "Un cuisinier qui dépose des tranches d'otoro sur de petits disques aux micropousses"
+            }
+          ]
+        }
       }
     }
   },
@@ -305,7 +575,7 @@
               "note": "Gin, five-flavour berry syrup, lemon. Bright, fruity-tart, very easy to drink."
             }
           ],
-          "list": "One drink each at the start, then water or tea, is enough. Nothing on the list stood out to me, so I would spend the extra money on food."
+          "list": "One drink each at the start, then water or tea, is enough. Nothing on the list stood out to me, so I would spend the extra money on food.\n\nFor a date, I would build the order around contrast rather than simply choosing the richest plates. The gimbap gives you a fresh opening, the yukhwe adds a softer, sweeter savoury course, and the charred cabbage brings the fermented element into focus. That is a more varied run than leaning on several soy-heavy dishes at once. Leave room for the chocolate dessert if you like a little chilli with your sweets.\n\nThe distinction is between subtle cooking and a lack of technique. My reservations are about intensity and a couple of textures, not whether the kitchen can cook. Someone who prefers gentler seasoning could reasonably enjoy the same meal more than I did. If your ideal Korean dinner is driven by pronounced heat and funk, though, choose with that expectation in mind rather than assuming the plating tells you how forceful the flavours will be."
         },
         "whatToOrder": {
           "strategy": "Order in layers. For two: two appetisers, one dish from the main menu, one from the seasonal menu, one sot bap, then dessert.",
@@ -318,37 +588,62 @@
             {
               "name": "Gimbap",
               "tag": "order-this",
-              "note": "Seaweed roll with the fish of the moment, cucumber, avocado and a gochujang vinaigrette. Fresh, lightly sweet, gently spicy, very clean. A good first bite and easy to share."
+              "note": "Seaweed roll with the fish of the moment, cucumber, avocado and a gochujang vinaigrette. Fresh, lightly sweet, gently spicy, very clean. A good first bite and easy to share.",
+              "photo": {
+                "photo": "gimbap",
+                "alt": "Gimbap rolls in black sesame on a blue plate"
+              }
             },
             {
               "name": "Yukhwe",
               "tag": "order-this",
-              "note": "Beef tartare with pear, sesame, soy and egg yolk, finished with nasturtium. Sweet-salty and silky, with juicy pear cutting through and real savoury depth."
+              "note": "Beef tartare with pear, sesame, soy and egg yolk, finished with nasturtium. Sweet-salty and silky, with juicy pear cutting through and real savoury depth.",
+              "photo": {
+                "photo": "yukhwe",
+                "alt": "Yukhwe, beef tartare topped with nasturtium leaves"
+              }
             },
             {
               "name": "Hodumaru",
               "tag": "order-this",
-              "note": "Rich gochujang chocolate mousse with chilli-spiked chantilly, candied walnuts and maple ice cream. Chocolate forward with a warm chilli tingle. Best dessert of the three."
+              "note": "Rich gochujang chocolate mousse with chilli-spiked chantilly, candied walnuts and maple ice cream. Chocolate forward with a warm chilli tingle. Best dessert of the three.",
+              "photo": {
+                "photo": "hodumaru",
+                "alt": "Chocolate mousse under a chocolate lattice, with ice cream and candied walnuts"
+              }
             },
             {
               "name": "Baechu",
-              "tag": "worth-it",
-              "note": "Charred napa cabbage glazed with doenjang over perilla cream, with cucumber and herbs. Smoky-sweet, savoury funk, cooling herbal finish."
+              "note": "Charred napa cabbage glazed with doenjang over perilla cream, with cucumber and herbs. Smoky-sweet, savoury funk, cooling herbal finish.",
+              "photo": {
+                "photo": "baechu",
+                "alt": "Charred napa cabbage over a green sauce, topped with herbs"
+              }
             },
             {
               "name": "Basque corn cheesecake",
-              "tag": "worth-it",
-              "note": "Torched corn and corn ice cream, creamy and toasty. The popcorn topping tasted stale."
+              "note": "Torched corn and corn ice cream, creamy and toasty. The popcorn topping tasted stale.",
+              "photo": {
+                "photo": "corn-cheesecake",
+                "alt": "Basque corn cheesecake with caramel and popcorn"
+              }
             },
             {
               "name": "Haemul jang",
               "tag": "skip",
-              "note": "Soy-marinated crab, shrimp, octopus and salmon with seaweed and egg yolk. Briny-sweet and glossy, but the seaweed crisp wasn't crisp and for the price the flavour stayed uniform and soy-heavy. Tempting, worth trying once, but I wouldn't reorder."
+              "note": "Soy-marinated crab, shrimp, octopus and salmon with seaweed and egg yolk. Briny-sweet and glossy, but the seaweed crisp wasn't crisp and for the price the flavour stayed uniform and soy-heavy. Tempting, worth trying once, but I wouldn't reorder.",
+              "photo": {
+                "photo": "haemul-jang",
+                "alt": "Soy-marinated crab and shrimp with roe and seaweed crisps"
+              }
             },
             {
               "name": "Doenjang crème brûlée",
-              "tag": "skip",
-              "note": "Sweet and salty with a fermented edge. Cleanly made, not my thing."
+              "note": "Sweet and salty with a fermented edge. Cleanly made, not my thing.",
+              "photo": {
+                "photo": "creme-brulee",
+                "alt": "Doenjang crème brûlée in a ramekin"
+              }
             }
           ]
         },
@@ -417,7 +712,15 @@
             "question": "How far ahead do I need to book?",
             "answer": "Not necessary. Walk-ins are easy. Worth calling for a terrasse table on a good evening."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "drinks": [
+            {
+              "photo": "somaek-and-omija",
+              "alt": "A somaek and a pink omija cocktail on a terrace table"
+            }
+          ]
+        }
       },
       "fr-CA": {
         "slug": "giwa",
@@ -450,7 +753,7 @@
               "note": "Gin, sirop aux baies aux cinq saveurs, citron. Lumineux, fruité-acidulé, et très facile à boire."
             }
           ],
-          "list": "Un verre chacun pour commencer, puis de l'eau ou du thé, c'est assez. Rien sur la carte ne m'a marqué, alors je mettrais l'argent de plus dans la bouffe."
+          "list": "Un verre chacun pour commencer, puis de l'eau ou du thé, c'est assez. Rien sur la carte ne m'a marqué, alors je mettrais l'argent de plus dans la bouffe.\n\nPour un rendez-vous, je bâtirais la commande autour du contraste plutôt que de simplement choisir les assiettes les plus riches. Le gimbap donne une entrée fraîche, le yukhwe ajoute un service salé plus doux et plus sucré, et le chou grillé met l'élément fermenté en valeur. C'est une suite plus variée que de miser sur plusieurs plats chargés en soya en même temps. Garde de la place pour le dessert au chocolat si tu aimes un peu de piment dans tes desserts.\n\nLa nuance, c'est entre une cuisine subtile et un manque de technique. Mes réserves portent sur l'intensité et quelques textures, pas sur la capacité de la cuisine. Quelqu'un qui préfère un assaisonnement plus doux pourrait raisonnablement aimer le même repas plus que moi. Si ton souper coréen idéal est mené par un piquant et un funk prononcés, par contre, choisis en gardant ça en tête plutôt que de présumer que la présentation te dit à quel point les saveurs seront affirmées."
         },
         "whatToOrder": {
           "strategy": "Commander en vagues. Pour deux : deux entrées, un plat principal, un plat saisonnier, un sot bap, et un dessert.",
@@ -463,37 +766,62 @@
             {
               "name": "Gimbap",
               "tag": "order-this",
-              "note": "Rouleau de mer avec poisson du moment, concombre, avocat et vinaigrette gochujang. Frais, légèrement sucré, doucement épicé, très net. Une bonne première bouchée, facile à partager."
+              "note": "Rouleau de mer avec poisson du moment, concombre, avocat et vinaigrette gochujang. Frais, légèrement sucré, doucement épicé, très net. Une bonne première bouchée, facile à partager.",
+              "photo": {
+                "photo": "gimbap",
+                "alt": "Rouleaux de gimbap au sésame noir dans une assiette bleue"
+              }
             },
             {
               "name": "Yukhwe",
               "tag": "order-this",
-              "note": "Tartare de bœuf avec poire, sésame, soya et jaune d'oeuf, fini à la capucine. Doux-salé et soyeux, avec la poire juteuse qui tranche et une vraie profondeur savoureuse."
+              "note": "Tartare de bœuf avec poire, sésame, soya et jaune d'oeuf, fini à la capucine. Doux-salé et soyeux, avec la poire juteuse qui tranche et une vraie profondeur savoureuse.",
+              "photo": {
+                "photo": "yukhwe",
+                "alt": "Yukhwe, un tartare de bœuf garni de feuilles de capucine"
+              }
             },
             {
               "name": "Hodumaru",
               "tag": "order-this",
-              "note": "Mousse au chocolat gochujang, chantilly au piment, noix caramélisées et crème glacée à l'érable. Chocolat en avant avec une chaleur de piment. Le meilleur des trois desserts."
+              "note": "Mousse au chocolat gochujang, chantilly au piment, noix caramélisées et crème glacée à l'érable. Chocolat en avant avec une chaleur de piment. Le meilleur des trois desserts.",
+              "photo": {
+                "photo": "hodumaru",
+                "alt": "Mousse au chocolat sous une dentelle de chocolat, avec crème glacée et noix confites"
+              }
             },
             {
               "name": "Baechu",
-              "tag": "worth-it",
-              "note": "Chou napa grillé glacé au doenjang, servi sur crème de perilla avec concombre et herbes fraîches. Fumé-sucré, funk savoureux, finale herbacée rafraîchissante."
+              "note": "Chou napa grillé glacé au doenjang, servi sur crème de perilla avec concombre et herbes fraîches. Fumé-sucré, funk savoureux, finale herbacée rafraîchissante.",
+              "photo": {
+                "photo": "baechu",
+                "alt": "Chou nappa grillé sur une sauce verte, garni d'herbes"
+              }
             },
             {
               "name": "Cheesecake basque au maïs",
-              "tag": "worth-it",
-              "note": "Maïs brûlé et crème glacée au maïs, crémeux et grillé. Le topping de popcorn goûtait rassis."
+              "note": "Maïs brûlé et crème glacée au maïs, crémeux et grillé. Le topping de popcorn goûtait rassis.",
+              "photo": {
+                "photo": "corn-cheesecake",
+                "alt": "Gâteau au fromage basque au maïs avec caramel et maïs soufflé"
+              }
             },
             {
               "name": "Haemul Jang",
               "tag": "skip",
-              "note": "Crabe, crevettes, pieuvre et saumon marinés au soya, avec algue et jaune d'oeuf. Saumâtre-sucré et lustré, mais la croustille d'algue n'était pas croustillante et, pour le prix, la saveur restait uniforme et dominée par le soya. Tentant, à essayer une fois, mais je ne le recommanderais pas."
+              "note": "Crabe, crevettes, pieuvre et saumon marinés au soya, avec algue et jaune d'oeuf. Saumâtre-sucré et lustré, mais la croustille d'algue n'était pas croustillante et, pour le prix, la saveur restait uniforme et dominée par le soya. Tentant, à essayer une fois, mais je ne le recommanderais pas.",
+              "photo": {
+                "photo": "haemul-jang",
+                "alt": "Crabe et crevettes marinés au soya, avec des œufs de poisson et des croustilles d'algue"
+              }
             },
             {
               "name": "Crème brûlée au doenjang",
-              "tag": "skip",
-              "note": "Douce et salée, avec une pointe fermentée. Proprement exécutée, pas vraiment mon truc."
+              "note": "Douce et salée, avec une pointe fermentée. Proprement exécutée, pas vraiment mon truc.",
+              "photo": {
+                "photo": "creme-brulee",
+                "alt": "Crème brûlée au doenjang dans un ramequin"
+              }
             }
           ]
         },
@@ -562,7 +890,65 @@
             "question": "Combien de temps d'avance faut-il réserver?",
             "answer": "Pas nécessaire. Sans réservation, c'est facile. Ça vaut la peine d'appeler pour une table en terrasse par une belle soirée."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "drinks": [
+            {
+              "photo": "somaek-and-omija",
+              "alt": "Un somaek et un cocktail omija rose sur une table de la terrasse"
+            }
+          ]
+        }
+      }
+    },
+    "photos": {
+      "somaek-and-omija": {
+        "src": "/images/date-spots/giwa-photo-2.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "gimbap": {
+        "src": "/images/date-spots/giwa-photo-3.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "yukhwe": {
+        "src": "/images/date-spots/giwa-photo-4.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "hodumaru": {
+        "src": "/images/date-spots/giwa-photo-5.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "baechu": {
+        "src": "/images/date-spots/giwa-photo-6.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "haemul-jang": {
+        "src": "/images/date-spots/giwa-photo-7.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "creme-brulee": {
+        "src": "/images/date-spots/giwa-photo-8.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "corn-cheesecake": {
+        "src": "/images/date-spots/giwa-photo-9.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -636,37 +1022,65 @@
             {
               "name": "Hot oysters, cider sabayon",
               "tag": "order-this",
-              "note": "Perfect texture on the poached oysters and a genuinely good way to open the meal. The add-on worth making."
+              "note": "Perfect texture on the poached oysters and a genuinely good way to open the meal. The add-on worth making.",
+              "photo": {
+                "photo": "hot-oysters",
+                "alt": "Hot oysters with cider sabayon in their shells"
+              }
             },
             {
               "name": "Crab, dashi broth, tomatillo",
               "tag": "order-this",
-              "note": "Freshness and umami straight away. Sweet crab against a savoury, sea-leaning dashi, with tomatillo bringing green acidity that keeps the bowl sharp and modern. Clean, polished presentation. Best plate of the night."
+              "note": "Freshness and umami straight away. Sweet crab against a savoury, sea-leaning dashi, with tomatillo bringing green acidity that keeps the bowl sharp and modern. Clean, polished presentation. Best plate of the night.",
+              "photo": {
+                "photo": "crab",
+                "alt": "Crab with dashi jelly, served in a crab shell"
+              }
             },
             {
               "name": "Green asparagus, snap peas, pistachio",
               "tag": "worth-it",
-              "note": "You can taste that the vegetables are local, right down to the microgreens. Asparagus and snap peas keep it crisp and green, pistachio adds buttery richness and crunch. A proper reset course before the pasta."
+              "note": "You can taste that the vegetables are local, right down to the microgreens. Asparagus and snap peas keep it crisp and green, pistachio adds buttery richness and crunch. A proper reset course before the pasta.",
+              "photo": {
+                "photo": "asparagus",
+                "alt": "Green asparagus, snap peas and radish in a bowl"
+              }
             },
             {
               "name": "Rhubarb, cherry blossom, shiso",
               "tag": "worth-it",
-              "note": "Light, bright and refreshing as a closer. Tart rhubarb, a gentle floral note, a subtle herbal lift. Finishes clean without being too sweet."
+              "note": "Light, bright and refreshing as a closer. Tart rhubarb, a gentle floral note, a subtle herbal lift. Finishes clean without being too sweet.",
+              "photo": {
+                "photo": "rhubarb",
+                "alt": "Rhubarb dessert with white meringue drops and flower petals"
+              }
             },
             {
               "name": "Spaghetti, ramps, Louis d'Or",
               "tag": "worth-it",
-              "note": "Visually refined and very well made. Ramps for a gentle garlicky hit, Louis d'Or for nutty depth, sauce clinging properly. It tastes like an excellent pasta dish rather than a surprising one."
+              "note": "Visually refined and very well made. Ramps for a gentle garlicky hit, Louis d'Or for nutty depth, sauce clinging properly. It tastes like an excellent pasta dish rather than a surprising one.",
+              "photo": {
+                "photo": "spaghetti",
+                "alt": "Green spaghetti with ramps under grated Louis d'Or"
+              }
             },
             {
               "name": "Beef, maitake, black cardamom",
               "tag": "worth-it",
-              "note": "A good piece of beef with an earthy, smoky backdrop. Nothing jumped out. Well-executed rather than a standout."
+              "note": "A good piece of beef with an earthy, smoky backdrop. Nothing jumped out. Well-executed rather than a standout.",
+              "photo": {
+                "photo": "beef",
+                "alt": "Beef with maitake and broccolini in a dark sauce"
+              }
             },
             {
               "name": "Grilled focaccia, whipped butter",
               "tag": "skip",
-              "note": "Listed as focaccia but it ate like simple grilled bread: no airy bubbles, none of that chewy olive-oil richness. It's described as fire-baked and I didn't get much extra flavour from that, and the whipped butter was subtle too. Since it's called out on the menu, I expected it to stand out."
+              "note": "Listed as focaccia but it ate like simple grilled bread: no airy bubbles, none of that chewy olive-oil richness. It's described as fire-baked and I didn't get much extra flavour from that, and the whipped butter was subtle too. Since it's called out on the menu, I expected it to stand out.",
+              "photo": {
+                "photo": "focaccia",
+                "alt": "Grilled bread with whipped butter"
+              }
             }
           ]
         },
@@ -735,7 +1149,43 @@
             "question": "How far ahead do I need to book?",
             "answer": "Recommended, especially Thursday to Saturday. Prime slots go."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "verdict": [
+            {
+              "photo": "michelin-plaque",
+              "alt": "The MICHELIN 2026 plaque on the brick wall outside"
+            }
+          ],
+          "drinks": [
+            {
+              "photo": "cocktails",
+              "alt": "Two pink cocktails on the wooden table"
+            }
+          ],
+          "food": [
+            {
+              "photo": "skewers",
+              "alt": "A skewered course dusted with yellow powder"
+            }
+          ],
+          "realCost": [
+            {
+              "photo": "menu",
+              "alt": "The Hoogan et Beaufort tasting menu card"
+            }
+          ],
+          "note": [
+            {
+              "photo": "mignardises",
+              "alt": "Two mignardises: a small tart and a chocolate bite"
+            },
+            {
+              "photo": "granita",
+              "alt": "A small bowl of pink granita, held in hand"
+            }
+          ]
+        }
       },
       "fr-CA": {
         "slug": "hoogan-et-beaufort",
@@ -786,37 +1236,65 @@
             {
               "name": "Huîtres chaudes, sabayon au cidre",
               "tag": "order-this",
-              "note": "Texture parfaite sur les huîtres pochées et une vraie bonne façon d'ouvrir le repas. L'extra qui vaut la peine."
+              "note": "Texture parfaite sur les huîtres pochées et une vraie bonne façon d'ouvrir le repas. L'extra qui vaut la peine.",
+              "photo": {
+                "photo": "hot-oysters",
+                "alt": "Huîtres chaudes au sabayon de cidre dans leurs coquilles"
+              }
             },
             {
               "name": "Crabe, bouillon dashi, tomatillo",
               "tag": "order-this",
-              "note": "Fraîcheur et umami tout de suite. Crabe sucré contre un dashi savoureux penché vers la mer, avec le tomatillo qui apporte cette acidité verte qui garde le bol vif et moderne. Présentation nette et soignée. La meilleure assiette de la soirée."
+              "note": "Fraîcheur et umami tout de suite. Crabe sucré contre un dashi savoureux penché vers la mer, avec le tomatillo qui apporte cette acidité verte qui garde le bol vif et moderne. Présentation nette et soignée. La meilleure assiette de la soirée.",
+              "photo": {
+                "photo": "crab",
+                "alt": "Crabe avec une gelée de dashi, servi dans une carapace de crabe"
+              }
             },
             {
               "name": "Asperges vertes, pois mange-tout, pistache",
               "tag": "worth-it",
-              "note": "Tu goûtes que les légumes sont locaux, jusqu'aux micropousses. Les asperges et les pois mange-tout gardent ça croquant et vert, la pistache ajoute une richesse beurrée et du croquant. Un vrai service de remise à zéro avant les pâtes."
+              "note": "Tu goûtes que les légumes sont locaux, jusqu'aux micropousses. Les asperges et les pois mange-tout gardent ça croquant et vert, la pistache ajoute une richesse beurrée et du croquant. Un vrai service de remise à zéro avant les pâtes.",
+              "photo": {
+                "photo": "asparagus",
+                "alt": "Asperges vertes, pois mange-tout et radis dans un bol"
+              }
             },
             {
               "name": "Rhubarbe, fleur de cerisier, shiso",
               "tag": "worth-it",
-              "note": "Léger, vif et rafraîchissant comme finale. Rhubarbe acidulée, une douce note florale, un subtil relèvement herbacé. Ça finit net sans être trop sucré."
+              "note": "Léger, vif et rafraîchissant comme finale. Rhubarbe acidulée, une douce note florale, un subtil relèvement herbacé. Ça finit net sans être trop sucré.",
+              "photo": {
+                "photo": "rhubarb",
+                "alt": "Dessert à la rhubarbe avec des gouttes de meringue et des pétales de fleurs"
+              }
             },
             {
               "name": "Spaghetti, aulx des bois, Louis d'Or",
               "tag": "worth-it",
-              "note": "Visuellement raffiné et très bien fait. Les aulx des bois pour un petit goût d'ail délicat, le Louis d'Or pour la profondeur de noisette, une sauce qui accroche comme il faut. Ça goûte comme un excellent plat de pâtes plutôt qu'un plat surprenant."
+              "note": "Visuellement raffiné et très bien fait. Les aulx des bois pour un petit goût d'ail délicat, le Louis d'Or pour la profondeur de noisette, une sauce qui accroche comme il faut. Ça goûte comme un excellent plat de pâtes plutôt qu'un plat surprenant.",
+              "photo": {
+                "photo": "spaghetti",
+                "alt": "Spaghetti vert à l'ail des bois sous du Louis d'Or râpé"
+              }
             },
             {
               "name": "Bœuf, maitake, cardamome noire",
               "tag": "worth-it",
-              "note": "Une bonne pièce de bœuf sur un fond terreux et fumé. Rien n'a ressorti. Bien exécuté plutôt que remarquable."
+              "note": "Une bonne pièce de bœuf sur un fond terreux et fumé. Rien n'a ressorti. Bien exécuté plutôt que remarquable.",
+              "photo": {
+                "photo": "beef",
+                "alt": "Bœuf avec maitake et brocolini dans une sauce foncée"
+              }
             },
             {
               "name": "Focaccia grillée, beurre fouetté",
               "tag": "skip",
-              "note": "Annoncée comme une focaccia, mais elle se mangeait comme un simple pain grillé : pas de bulles aériennes, rien de cette richesse mâchue à l'huile d'olive. Elle est décrite comme cuite au feu et je n'en ai pas tiré beaucoup plus de saveur, et le beurre fouetté était subtil aussi. Comme elle est mise en valeur sur le menu, je m'attendais à ce qu'elle se démarque."
+              "note": "Annoncée comme une focaccia, mais elle se mangeait comme un simple pain grillé : pas de bulles aériennes, rien de cette richesse mâchue à l'huile d'olive. Elle est décrite comme cuite au feu et je n'en ai pas tiré beaucoup plus de saveur, et le beurre fouetté était subtil aussi. Comme elle est mise en valeur sur le menu, je m'attendais à ce qu'elle se démarque.",
+              "photo": {
+                "photo": "focaccia",
+                "alt": "Pain grillé avec du beurre fouetté"
+              }
             }
           ]
         },
@@ -885,7 +1363,123 @@
             "question": "Combien de temps d'avance faut-il réserver?",
             "answer": "Recommandé, surtout du jeudi au samedi. Les meilleures plages partent."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "verdict": [
+            {
+              "photo": "michelin-plaque",
+              "alt": "La plaque MICHELIN 2026 sur le mur de brique, à l'extérieur"
+            }
+          ],
+          "drinks": [
+            {
+              "photo": "cocktails",
+              "alt": "Deux cocktails roses sur la table en bois"
+            }
+          ],
+          "food": [
+            {
+              "photo": "skewers",
+              "alt": "Un service en brochette saupoudré d'une poudre jaune"
+            }
+          ],
+          "realCost": [
+            {
+              "photo": "menu",
+              "alt": "La carte du menu dégustation de Hoogan et Beaufort"
+            }
+          ],
+          "note": [
+            {
+              "photo": "mignardises",
+              "alt": "Deux mignardises : une petite tarte et une bouchée au chocolat"
+            },
+            {
+              "photo": "granita",
+              "alt": "Un petit bol de granité rose, tenu à la main"
+            }
+          ]
+        }
+      }
+    },
+    "photos": {
+      "michelin-plaque": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-2.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "cocktails": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-3.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "hot-oysters": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-4.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "crab": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-5.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "asparagus": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-6.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "spaghetti": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-7.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "focaccia": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-8.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "beef": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-9.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "skewers": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-10.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "rhubarb": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-11.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "menu": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-12.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "mignardises": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-13.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "granita": {
+        "src": "/images/date-spots/hoogan-et-beaufort-photo-14.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -926,7 +1520,7 @@
           "duration": "2.5 hours",
           "hours": "Wed to Sat 17:30 to 22:00, plus Tuesday \"Unplugged\" from 18:00"
         },
-        "room": "Intimate without being stiff. People come to eat and take their time. Lighting is flattering and the pacing is calm.\n\nIt works well for a quiet date. The trade-off is time, so budget the full evening.",
+        "room": "Intimate without being stiff. People come to eat and take their time. Lighting is flattering and the pacing is calm.\n\nIt works well for a quiet date. The trade-off is time, so budget the full evening.\n\nI would plan around the length of dinner before planning anything else. Our two-and-a-half-hour meal was not unusually slow; that was simply the shape of the evening. A tasting menu asks you to hand over both the ordering and the pace. That can be lovely when you already know you want to spend the night together, and less useful when you want the option of a quick drink and an early exit.\n\nFor an anniversary, the calm room is the strongest argument. You do not need a loud soundtrack or a parade of surprises for a dinner to feel considered. There is room for conversation, and the polished service means you can concentrate on the person across the table. Just separate that kind of comfort from the expectation that every course will be a revelation. The former worked better for me than the latter.\n\nMy practical recommendation is to avoid booking another timed activity straight after dinner. Walk beforehand if you want to do something in Mile End, then let the restaurant be the evening. If you are choosing between this and an à la carte meal, ask yourself whether you want the kitchen to make the decisions. Here, that fixed sequence is central to what you are paying for, not an optional way to order.",
         "meetChef": {
           "name": "Sean Murray Smith",
           "role": "Chef and co-owner",
@@ -1010,7 +1604,71 @@
             "question": "Can they handle dietary restrictions?",
             "answer": "Yes, if you tell them when you book. Fixed menu, so give them notice."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "opening": [
+            {
+              "photo": "michelin-plaques",
+              "alt": "Two MICHELIN plaques, 2025 and 2026, by the entrance"
+            }
+          ],
+          "room": [
+            {
+              "photo": "dining-room-bar",
+              "alt": "The dining room and bar with bentwood chairs"
+            }
+          ],
+          "drinks": [
+            {
+              "photo": "cocktail",
+              "alt": "A yellow cocktail in a stemmed glass"
+            }
+          ],
+          "food": [
+            {
+              "photo": "course-golden-round",
+              "alt": "A golden round topped with a translucent sheet and a flower"
+            },
+            {
+              "photo": "brioche",
+              "alt": "Brioche rolls on a napkin"
+            },
+            {
+              "photo": "course-squash",
+              "alt": "Squash with a red nasturtium flower and herbs"
+            },
+            {
+              "photo": "course-endive",
+              "alt": "Endive and radicchio under grated cheese"
+            },
+            {
+              "photo": "course-fish",
+              "alt": "White fish on broccolini and asparagus"
+            },
+            {
+              "photo": "course-beef",
+              "alt": "Sliced beef under a crisp leaf, with root vegetables and foam"
+            },
+            {
+              "photo": "course-panna-cotta",
+              "alt": "A panna cotta with blueberries and a green crumble"
+            },
+            {
+              "photo": "course-cake",
+              "alt": "A small cake with petals, sorbet and a cream sauce"
+            }
+          ],
+          "realCost": [
+            {
+              "photo": "drinks-list",
+              "alt": "The cocktail and alcohol-free drinks list with prices"
+            }
+          ]
+        },
+        "roomPhoto": {
+          "photo": "flowers",
+          "alt": "Dried flowers in a glass vase on a table"
+        }
       },
       "fr-CA": {
         "slug": "ile-flottante",
@@ -1028,7 +1686,7 @@
           "duration": "2 h 30",
           "hours": "Du mercredi au samedi de 17 h 30 à 22 h, et le mardi « Unplugged » dès 18 h"
         },
-        "room": "Intime sans être raide. Les gens viennent pour manger et prendre leur temps. L'éclairage est flatteur et le rythme est calme.\n\nÇa marche bien pour un rendez-vous tranquille. Le compromis, c'est le temps, alors prévois toute la soirée.",
+        "room": "Intime sans être raide. Les gens viennent pour manger et prendre leur temps. L'éclairage est flatteur et le rythme est calme.\n\nÇa marche bien pour un rendez-vous tranquille. Le compromis, c'est le temps, alors prévois toute la soirée.\n\nJe planifierais autour de la durée du souper avant de planifier quoi que ce soit d'autre. Notre repas de deux heures et demie n'était pas particulièrement lent; c'était simplement la forme de la soirée. Un menu dégustation te demande de laisser aller à la fois la commande et le rythme. Ça peut être charmant quand vous savez déjà que vous voulez passer la soirée ensemble, et moins utile quand tu veux garder l'option d'un verre rapide et d'une sortie hâtive.\n\nPour un anniversaire, la salle calme est l'argument le plus fort. Pas besoin d'une trame sonore forte ou d'un défilé de surprises pour qu'un souper semble réfléchi. Il y a de la place pour la conversation, et le service soigné te permet de te concentrer sur la personne en face de toi. Sépare juste ce genre de confort de l'attente que chaque service sera une révélation. Le premier a mieux marché pour moi que le second.\n\nMa recommandation pratique, c'est d'éviter de réserver une autre activité à heure fixe juste après le souper. Marchez avant si vous voulez faire quelque chose dans le Mile End, puis laissez le restaurant être la soirée. Si tu hésites entre ici et un repas à la carte, demande-toi si tu veux que la cuisine prenne les décisions. Ici, cette séquence fixe est au cœur de ce que tu paies, pas une façon facultative de commander.",
         "meetChef": {
           "name": "Sean Murray Smith",
           "role": "Chef et copropriétaire",
@@ -1112,7 +1770,151 @@
             "question": "Est-ce qu'ils peuvent gérer les restrictions alimentaires?",
             "answer": "Oui, si tu leur dis en réservant. Menu fixe, alors donne-leur un préavis."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "opening": [
+            {
+              "photo": "michelin-plaques",
+              "alt": "Deux plaques MICHELIN, 2025 et 2026, à l'entrée"
+            }
+          ],
+          "room": [
+            {
+              "photo": "dining-room-bar",
+              "alt": "La salle et le bar avec des chaises bistro"
+            }
+          ],
+          "drinks": [
+            {
+              "photo": "cocktail",
+              "alt": "Un cocktail jaune dans un verre à pied"
+            }
+          ],
+          "food": [
+            {
+              "photo": "course-golden-round",
+              "alt": "Un rond doré garni d'une feuille translucide et d'une fleur"
+            },
+            {
+              "photo": "brioche",
+              "alt": "Petites brioches sur une serviette"
+            },
+            {
+              "photo": "course-squash",
+              "alt": "Courge avec une fleur de capucine rouge et des herbes"
+            },
+            {
+              "photo": "course-endive",
+              "alt": "Endives et radicchio sous du fromage râpé"
+            },
+            {
+              "photo": "course-fish",
+              "alt": "Poisson blanc sur du brocolini et des asperges"
+            },
+            {
+              "photo": "course-beef",
+              "alt": "Bœuf tranché sous une feuille croustillante, avec légumes racines et mousse"
+            },
+            {
+              "photo": "course-panna-cotta",
+              "alt": "Une panna cotta avec des bleuets et un crumble vert"
+            },
+            {
+              "photo": "course-cake",
+              "alt": "Un petit gâteau avec des pétales, un sorbet et une sauce crémeuse"
+            }
+          ],
+          "realCost": [
+            {
+              "photo": "drinks-list",
+              "alt": "La carte des cocktails et des boissons sans alcool avec les prix"
+            }
+          ]
+        },
+        "roomPhoto": {
+          "photo": "flowers",
+          "alt": "Des fleurs séchées dans un vase de verre sur une table"
+        }
+      }
+    },
+    "photos": {
+      "michelin-plaques": {
+        "src": "/images/date-spots/ile-flottante-photo-2.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "flowers": {
+        "src": "/images/date-spots/ile-flottante-photo-3.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "dining-room-bar": {
+        "src": "/images/date-spots/ile-flottante-photo-4.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "cocktail": {
+        "src": "/images/date-spots/ile-flottante-photo-5.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "course-golden-round": {
+        "src": "/images/date-spots/ile-flottante-photo-6.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "brioche": {
+        "src": "/images/date-spots/ile-flottante-photo-7.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "course-squash": {
+        "src": "/images/date-spots/ile-flottante-photo-8.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "course-endive": {
+        "src": "/images/date-spots/ile-flottante-photo-9.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "course-fish": {
+        "src": "/images/date-spots/ile-flottante-photo-10.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "course-beef": {
+        "src": "/images/date-spots/ile-flottante-photo-11.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "course-panna-cotta": {
+        "src": "/images/date-spots/ile-flottante-photo-12.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "course-cake": {
+        "src": "/images/date-spots/ile-flottante-photo-13.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "drinks-list": {
+        "src": "/images/date-spots/ile-flottante-photo-14.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -1180,23 +1982,32 @@
             },
             {
               "name": "Bomba schnitzel",
-              "tag": "order-this",
               "note": "Golden, crunchy and aggressively satisfying. The bomba brings heat and acidity, which stops it feeling heavy."
             },
             {
               "name": "Homemade donuts",
-              "tag": "order-this",
-              "note": "Warm, fluffy and easy to share at the end of brunch."
+              "note": "Warm, fluffy and easy to share at the end of brunch.",
+              "photo": {
+                "photo": "homemade-donuts",
+                "alt": "Two homemade donuts, one sugared and one chocolate-glazed"
+              }
             },
             {
               "name": "Zesty Italian beef tartare",
-              "tag": "worth-it",
-              "note": "Bright, lemony and clean-tasting rather than heavy or bluntly beefy. More fresh and snackable than rich."
+              "note": "Bright, lemony and clean-tasting rather than heavy or bluntly beefy. More fresh and snackable than rich.",
+              "photo": {
+                "photo": "beef-tartare",
+                "alt": "Beef tartare with basil and grated cheese, served with endive leaves"
+              }
             },
             {
               "name": "Honey garlic spare ribs",
               "tag": "worth-it",
-              "note": "Sticky, glossy and built for sharing. Sweet at first, then savoury."
+              "note": "Sticky, glossy and built for sharing. Sweet at first, then savoury.",
+              "photo": {
+                "photo": "spare-ribs",
+                "alt": "Honey garlic spare ribs topped with sesame seeds and green onion"
+              }
             }
           ]
         },
@@ -1216,7 +2027,7 @@
             "label": "Per person",
             "amount": "$30 to $55"
           },
-          "howToSpendLess": "Skip the cocktails, share plates, coffee and one main each."
+          "howToSpendLess": "Skip the cocktails, share plates, coffee and one main each.\n\nStart by deciding whether this is breakfast with a walk or a long, indulgent brunch. Both are reasonable plans, but they lead to different orders. For the shorter version, coffee and a main each are enough of a commitment. If you want to share, choose two or three plates between you and stop there before adding anything else. You can always reassess after the first round of food rather than ordering as if every good-sounding dish needs to land at once.\n\nThe dishes that make most sense to me are the ones with a clear job in the meal. The schnitzel provides the substantial, crunchy centre. The devilled brussels sprouts bring a vegetable plate with enough seasoning to stand beside it. The tartare offers a fresher contrast if you do not want the whole order to be rich and fried. Donuts are an optional finish, not a reason to order beyond your appetite. That is a way of balancing the meal, not a requirement to have all four.\n\nWhat makes this work for a first date is the natural stopping point. You can have brunch, see how the conversation feels, and then decide whether to walk along the canal. There is no need to commit to a second reservation before you have even sat down. A daytime meeting also takes some of the ceremony out of choosing a restaurant: you are meeting for food and coffee, not announcing a grand romantic evening.\n\nFor a double date, the sharing format gives everyone something to talk about without making the food the only subject. Keep the order focused and let the room do the social work. For two people who want a quiet milestone dinner, I would choose somewhere else; that does not make this a worse restaurant, just a different tool for a different occasion.\n\nThe useful measure of value here is whether you enjoyed the whole outing. A good plate, daylight and a walk can make a satisfying morning. Several rounds of cocktails and an overfull table can turn the same idea into a much more expensive meal without necessarily making the date better."
         },
         "reportersNote": {
           "byline": "Victor",
@@ -1296,23 +2107,32 @@
             },
             {
               "name": "Schnitzel bomba",
-              "tag": "order-this",
               "note": "Doré, croquant et agressivement satisfaisant. La bomba apporte du piquant et de l'acidité, ce qui l'empêche d'être lourd."
             },
             {
               "name": "Beignes maison",
-              "tag": "order-this",
-              "note": "Chauds, moelleux et faciles à partager à la fin du brunch."
+              "note": "Chauds, moelleux et faciles à partager à la fin du brunch.",
+              "photo": {
+                "photo": "homemade-donuts",
+                "alt": "Deux beignes maison, un sucré et un glacé au chocolat"
+              }
             },
             {
               "name": "Tartare de bœuf à l'italienne",
-              "tag": "worth-it",
-              "note": "Vif, citronné et net plutôt que lourd ou franchement bovin. Plus frais et grignotable que riche."
+              "note": "Vif, citronné et net plutôt que lourd ou franchement bovin. Plus frais et grignotable que riche.",
+              "photo": {
+                "photo": "beef-tartare",
+                "alt": "Tartare de bœuf au basilic et au fromage râpé, servi avec des feuilles d'endive"
+              }
             },
             {
               "name": "Côtes levées miel et ail",
               "tag": "worth-it",
-              "note": "Collantes, lustrées et faites pour partager. Sucrées au début, puis savoureuses."
+              "note": "Collantes, lustrées et faites pour partager. Sucrées au début, puis savoureuses.",
+              "photo": {
+                "photo": "spare-ribs",
+                "alt": "Côtes levées miel et ail garnies de graines de sésame et d'oignon vert"
+              }
             }
           ]
         },
@@ -1332,7 +2152,7 @@
             "label": "Par personne",
             "amount": "30-55 $"
           },
-          "howToSpendLess": "Saute les cocktails, partage les assiettes, un café et un plat chacun."
+          "howToSpendLess": "Saute les cocktails, partage les assiettes, un café et un plat chacun.\n\nCommence par décider si c'est un déjeuner suivi d'une marche ou un long brunch gourmand. Les deux plans se défendent, mais ils mènent à des commandes différentes. Pour la version courte, un café et un plat chacun, c'est assez comme engagement. Si vous voulez partager, choisissez deux ou trois assiettes à deux et arrêtez-vous là avant d'ajouter quoi que ce soit. Tu peux toujours réévaluer après la première tournée plutôt que de commander comme si chaque plat alléchant devait arriver en même temps.\n\nLes plats qui ont le plus de sens pour moi sont ceux qui ont un rôle clair dans le repas. Le schnitzel donne le centre solide et croustillant. Les choux de Bruxelles à la diable apportent une assiette de légumes assez assaisonnée pour tenir à côté. Le tartare offre un contraste plus frais si tu ne veux pas que toute la commande soit riche et frite. Les beignes sont une finale facultative, pas une raison de commander au-delà de ta faim. C'est une façon d'équilibrer le repas, pas une obligation de prendre les quatre.\n\nCe qui fait que ça marche pour un premier rendez-vous, c'est le point d'arrêt naturel. Vous pouvez bruncher, voir comment la conversation se passe, puis décider de marcher le long du canal. Pas besoin de s'engager à une deuxième réservation avant même de s'être assis. Une rencontre de jour enlève aussi une partie de la cérémonie du choix du restaurant : vous vous voyez pour manger et prendre un café, pas pour annoncer une grande soirée romantique.\n\nPour une sortie à deux couples, le format à partager donne à tout le monde un sujet de conversation sans que la bouffe soit le seul sujet. Garde la commande ciblée et laisse la salle faire le travail social. Pour deux personnes qui veulent un souper tranquille pour souligner une étape, je choisirais ailleurs; ça n'en fait pas un moins bon restaurant, juste un autre outil pour une autre occasion.\n\nLa bonne mesure de la valeur ici, c'est de savoir si vous avez aimé toute la sortie. Une bonne assiette, la lumière du jour et une marche peuvent faire une matinée satisfaisante. Plusieurs tournées de cocktails et une table trop pleine peuvent transformer la même idée en repas beaucoup plus cher sans nécessairement rendre le rendez-vous meilleur."
         },
         "reportersNote": {
           "byline": "Victor",
@@ -1368,6 +2188,26 @@
             "answer": "Mieux en vélo ou en covoiturage. Le stationnement dans la rue varie."
           }
         ]
+      }
+    },
+    "photos": {
+      "homemade-donuts": {
+        "src": "/images/date-spots/mckiernan-photo-2.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "beef-tartare": {
+        "src": "/images/date-spots/mckiernan-photo-3.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "spare-ribs": {
+        "src": "/images/date-spots/mckiernan-photo-4.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -1436,37 +2276,65 @@
             {
               "name": "Scallop crudo",
               "tag": "order-this",
-              "note": "Scallops with an icy apple and grapefruit granita. Silky scallop, crunchy cold granita, clean finish. The one to start with."
+              "note": "Scallops with an icy apple and grapefruit granita. Silky scallop, crunchy cold granita, clean finish. The one to start with.",
+              "photo": {
+                "photo": "scallop-crudo",
+                "alt": "Scallop crudo in a shell with apple and grapefruit granita"
+              }
             },
             {
               "name": "Caramelle",
               "tag": "order-this",
-              "note": "Candy-shaped stuffed pasta with ricotta, artichoke and rabbit, finished with tomato-sage sauce. Tender pasta, creamy filling, bright sauce. If you order one thing, this."
+              "note": "Candy-shaped stuffed pasta with ricotta, artichoke and rabbit, finished with tomato-sage sauce. Tender pasta, creamy filling, bright sauce. If you order one thing, this.",
+              "photo": {
+                "photo": "caramelle",
+                "alt": "Caramelle, green and yellow candy-shaped pasta, on tomato sauce"
+              }
             },
             {
               "name": "Cappelletti",
               "tag": "order-this",
-              "note": "Delicate stuffed pasta with beef, saffron, bergamot and Parmigiano. Pillowy, rich, with a perfumed citrus finish."
+              "note": "Delicate stuffed pasta with beef, saffron, bergamot and Parmigiano. Pillowy, rich, with a perfumed citrus finish.",
+              "photo": {
+                "photo": "cappelletti",
+                "alt": "Cappelletti in a saffron butter sauce with grated Parmigiano"
+              }
             },
             {
               "name": "Stracciatella di bufala",
               "tag": "worth-it",
-              "note": "Creamy buffalo stracciatella with braised cabbage, roasted cipollini, hazelnuts and olive oil. Lush and soft, sweet onion, nutty crunch."
+              "note": "Creamy buffalo stracciatella with braised cabbage, roasted cipollini, hazelnuts and olive oil. Lush and soft, sweet onion, nutty crunch.",
+              "photo": {
+                "photo": "stracciatella",
+                "alt": "Stracciatella di bufala with cipollini, hazelnuts and basil leaves"
+              }
             },
             {
               "name": "Baba tiramisu",
               "tag": "worth-it",
-              "note": "Airy sponge soaked in syrup under silky cream. Boozy, coffee and cocoa forward. Dessert is a closer here."
+              "note": "Airy sponge soaked in syrup under silky cream. Boozy, coffee and cocoa forward. Dessert is a closer here.",
+              "photo": {
+                "photo": "baba-tiramisu",
+                "alt": "Baba tiramisu dusted with cocoa in a cut-glass bowl"
+              }
             },
             {
               "name": "Sorbet",
               "tag": "worth-it",
-              "note": "A clean palate reset after the richer pastas. Does its job, no more."
+              "note": "A clean palate reset after the richer pastas. Does its job, no more.",
+              "photo": {
+                "photo": "sorbet",
+                "alt": "A dark red sorbet with green leaves in a metal coupe"
+              }
             },
             {
               "name": "Beef",
               "tag": "skip",
-              "note": "Beef with topinambour, trompette mushrooms and sea-asparagus salsa verde. Tender and earthy, but mine came under-seasoned. I'd pick another protein next time."
+              "note": "Beef with topinambour, trompette mushrooms and sea-asparagus salsa verde. Tender and earthy, but mine came under-seasoned. I'd pick another protein next time.",
+              "photo": {
+                "photo": "beef",
+                "alt": "Sliced beef with radicchio and salsa verde in a dark jus"
+              }
             }
           ]
         },
@@ -1486,7 +2354,7 @@
             "label": "Per person, all in",
             "amount": "$120 to $200"
           },
-          "howToSpendLess": "One cocktail each, then a bottle or a couple of sommelier picks instead of multiple rounds. That keeps the total down without changing the meal."
+          "howToSpendLess": "One cocktail each, then a bottle or a couple of sommelier picks instead of multiple rounds. That keeps the total down without changing the meal.\n\nFor two people, I would spend the food budget on variety before adding another expensive main. The contrast between a cold scallop starter, a stuffed pasta and something sweet is part of what makes the dinner feel complete. If you are both most interested in the pasta, make that the centre of the conversation when you order rather than treating it as a small stop on the way to the beef.\n\nThe wall-side table matters for the same reason. This is a restaurant I would choose when the meal and the company deserve equal attention. You can be interested in how the caramelle are made and still have a proper conversation. The room's warmth is not a substitute for the cooking; it is what makes taking your time over that cooking feel worthwhile."
         },
         "makeANight": [
           {
@@ -1569,37 +2437,65 @@
             {
               "name": "Crudo de pétoncles",
               "tag": "order-this",
-              "note": "Pétoncles soyeux avec une granita glacée pomme et pamplemousse. Pétoncle soyeux, granita froide et croquante, finale nette. Celui par lequel commencer."
+              "note": "Pétoncles soyeux avec une granita glacée pomme et pamplemousse. Pétoncle soyeux, granita froide et croquante, finale nette. Celui par lequel commencer.",
+              "photo": {
+                "photo": "scallop-crudo",
+                "alt": "Crudo de pétoncles dans une coquille avec un granité pomme et pamplemousse"
+              }
             },
             {
               "name": "Caramelle",
               "tag": "order-this",
-              "note": "Pâtes farcies en forme de bonbon avec ricotta, artichaut et lapin, finies dans une sauce tomate-sauge. Pâte tendre, farce crémeuse, tomate lumineuse. Si tu commandes une seule chose, c'est celle-là."
+              "note": "Pâtes farcies en forme de bonbon avec ricotta, artichaut et lapin, finies dans une sauce tomate-sauge. Pâte tendre, farce crémeuse, tomate lumineuse. Si tu commandes une seule chose, c'est celle-là.",
+              "photo": {
+                "photo": "caramelle",
+                "alt": "Caramelle, des pâtes vertes et jaunes en forme de bonbon, sur une sauce tomate"
+              }
             },
             {
               "name": "Cappelletti",
               "tag": "order-this",
-              "note": "Pâtes farcies délicates au bœuf, safran, bergamote et Parmigiano. Moelleuses, riches, avec une finale parfumée citron-safran."
+              "note": "Pâtes farcies délicates au bœuf, safran, bergamote et Parmigiano. Moelleuses, riches, avec une finale parfumée citron-safran.",
+              "photo": {
+                "photo": "cappelletti",
+                "alt": "Cappelletti dans une sauce au beurre et au safran, avec du parmigiano râpé"
+              }
             },
             {
               "name": "Stracciatella di bufala",
               "tag": "worth-it",
-              "note": "Stracciatella de bufflonne crémeuse avec chou braisé, cipollini rôtis, noisettes et huile d'olive. Fondante et douce, oignon sucré, croquant de noisette."
+              "note": "Stracciatella de bufflonne crémeuse avec chou braisé, cipollini rôtis, noisettes et huile d'olive. Fondante et douce, oignon sucré, croquant de noisette.",
+              "photo": {
+                "photo": "stracciatella",
+                "alt": "Stracciatella di bufala avec cipollini, noisettes et feuilles de basilic"
+              }
             },
             {
               "name": "Baba tiramisu",
               "tag": "worth-it",
-              "note": "Une génoise aérienne imbibée de sirop sous une crème soyeuse. Imbibé d'alcool, dominé par le café et le cacao. Ici, le dessert est un vrai final."
+              "note": "Une génoise aérienne imbibée de sirop sous une crème soyeuse. Imbibé d'alcool, dominé par le café et le cacao. Ici, le dessert est un vrai final.",
+              "photo": {
+                "photo": "baba-tiramisu",
+                "alt": "Baba tiramisu saupoudré de cacao dans un bol en verre taillé"
+              }
             },
             {
               "name": "Sorbet",
               "tag": "worth-it",
-              "note": "Un reset de palais après les pâtes et le bœuf plus riches. Ça fait son travail, sans plus."
+              "note": "Un reset de palais après les pâtes et le bœuf plus riches. Ça fait son travail, sans plus.",
+              "photo": {
+                "photo": "sorbet",
+                "alt": "Un sorbet rouge foncé garni de feuilles vertes dans une coupe en métal"
+              }
             },
             {
               "name": "Bœuf",
               "tag": "skip",
-              "note": "Bœuf avec topinambour, champignons trompette et salsa verde aux asperges de mer. Tendre et terreux, mais le mien manquait d'assaisonnement. Je choisirais une autre protéine la prochaine fois."
+              "note": "Bœuf avec topinambour, champignons trompette et salsa verde aux asperges de mer. Tendre et terreux, mais le mien manquait d'assaisonnement. Je choisirais une autre protéine la prochaine fois.",
+              "photo": {
+                "photo": "beef",
+                "alt": "Bœuf tranché avec radicchio et salsa verde dans un jus foncé"
+              }
             }
           ]
         },
@@ -1619,7 +2515,7 @@
             "label": "Par personne, tout compris",
             "amount": "120-200 $"
           },
-          "howToSpendLess": "Un cocktail chacun, puis une bouteille ou quelques choix du sommelier plutôt que plusieurs tournées. Ça garde le total plus bas sans changer le repas."
+          "howToSpendLess": "Un cocktail chacun, puis une bouteille ou quelques choix du sommelier plutôt que plusieurs tournées. Ça garde le total plus bas sans changer le repas.\n\nÀ deux, je mettrais le budget bouffe sur la variété avant d'ajouter un autre plat principal cher. Le contraste entre une entrée froide de pétoncles, des pâtes farcies et quelque chose de sucré fait partie de ce qui rend le souper complet. Si vous êtes tous les deux surtout intéressés par les pâtes, faites-en le centre de la conversation au moment de commander plutôt qu'une petite escale en route vers le bœuf.\n\nLa table le long du mur compte pour la même raison. C'est un restaurant que je choisirais quand le repas et la compagnie méritent autant d'attention l'un que l'autre. Tu peux t'intéresser à la façon dont les caramelle sont faites et quand même avoir une vraie conversation. La chaleur de la salle ne remplace pas la cuisine; c'est ce qui fait que prendre ton temps avec cette cuisine en vaut la peine."
         },
         "makeANight": [
           {
@@ -1657,6 +2553,50 @@
             "answer": "Fortement recommandé, surtout du jeudi au samedi."
           }
         ]
+      }
+    },
+    "photos": {
+      "scallop-crudo": {
+        "src": "/images/date-spots/moccione-photo-2.webp",
+        "width": 810,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "caramelle": {
+        "src": "/images/date-spots/moccione-photo-3.webp",
+        "width": 810,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "cappelletti": {
+        "src": "/images/date-spots/moccione-photo-4.webp",
+        "width": 810,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "stracciatella": {
+        "src": "/images/date-spots/moccione-photo-5.webp",
+        "width": 810,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "baba-tiramisu": {
+        "src": "/images/date-spots/moccione-photo-6.webp",
+        "width": 810,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "beef": {
+        "src": "/images/date-spots/moccione-photo-7.webp",
+        "width": 900,
+        "height": 1079,
+        "provenance": "dmd-held-photograph"
+      },
+      "sorbet": {
+        "src": "/images/date-spots/moccione-photo-8.webp",
+        "width": 900,
+        "height": 936,
+        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -1718,32 +2658,48 @@
             {
               "name": "Five-spice duck platter",
               "tag": "order-this",
-              "note": "The signature, and it makes sense the moment it lands. A big portion of sous vide duck with five-spice warmth and a rich texture, served platter-style so you build your own wraps. Comes with duck rillettes, a pile of cilantro, pickled carrot and daikon, chilli crisp, peanuts, cucumber, a liver mousse and a hoisin-style sauce."
+              "note": "The signature, and it makes sense the moment it lands. A big portion of sous vide duck with five-spice warmth and a rich texture, served platter-style so you build your own wraps. Comes with duck rillettes, a pile of cilantro, pickled carrot and daikon, chilli crisp, peanuts, cucumber, a liver mousse and a hoisin-style sauce.",
+              "photo": {
+                "photo": "five-spice-duck",
+                "alt": "Sliced five-spice duck with fresh herbs"
+              }
             },
             {
               "name": "Sweet and sour eggplant",
-              "tag": "order-this",
-              "note": "Peanuts and bacon. The plate that makes the table feel alive. Glossy and tender, sweet-and-sour without being ketchup-sweet, peanuts for crunch and bacon for a smoky, salty anchor. It also resets your palate and keeps the meal from feeling heavy."
+              "note": "Peanuts and bacon. The plate that makes the table feel alive. Glossy and tender, sweet-and-sour without being ketchup-sweet, peanuts for crunch and bacon for a smoky, salty anchor. It also resets your palate and keeps the meal from feeling heavy.",
+              "photo": {
+                "photo": "eggplant",
+                "alt": "Sweet and sour eggplant topped with peanuts and green onion"
+              }
             },
             {
               "name": "Steamed oysters, black bean",
-              "tag": "order-this",
-              "note": "Clean, briny oysters with a savoury black bean hit that reads salty-sweet and fermented. Keeps the oyster tasting like an oyster while adding enough depth that it doesn't vanish in one bite."
+              "note": "Clean, briny oysters with a savoury black bean hit that reads salty-sweet and fermented. Keeps the oyster tasting like an oyster while adding enough depth that it doesn't vanish in one bite.",
+              "photo": {
+                "photo": "steamed-oysters",
+                "alt": "Steamed oysters with black bean and green onion in a bamboo steamer"
+              }
             },
             {
               "name": "Garlic fried rice",
               "tag": "order-this",
-              "note": "The closer that makes everything feel complete, and the bridge plate if one of you wants to keep drinking and talking."
+              "note": "The closer that makes everything feel complete, and the bridge plate if one of you wants to keep drinking and talking.",
+              "photo": {
+                "photo": "fried-rice",
+                "alt": "Garlic fried rice topped with crisp garlic"
+              }
             },
             {
               "name": "Beef tataki",
-              "tag": "worth-it",
               "note": "Nordic shrimp and cucumber. Familiar in the best way, like hotpot flavours translated into a clean modern plate: slick chilli oil, warm spices, a little mala tingle, but still light."
             },
             {
               "name": "Yuzu tartelette, green tea and fruit",
-              "tag": "worth-it",
-              "note": "Offered by the restaurant, and the perfect soft ending. Yuzu gives a bright citrus snap after a savoury meal."
+              "note": "Offered by the restaurant, and the perfect soft ending. Yuzu gives a bright citrus snap after a savoury meal.",
+              "photo": {
+                "photo": "yuzu-tartelette",
+                "alt": "Yuzu tartelette topped with a green tea cream"
+              }
             }
           ]
         },
@@ -1808,7 +2764,49 @@
             "question": "How far ahead do I need to book?",
             "answer": "Nice to have, but don't stress it. There were plenty of slots when I booked."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "opening": [
+            {
+              "photo": "michelin-plaque",
+              "alt": "The MICHELIN 2026 plaque in the front window"
+            }
+          ],
+          "verdict": [
+            {
+              "photo": "banquette",
+              "alt": "Leather banquette and wooden chairs in the dining room"
+            },
+            {
+              "photo": "dining-room-bar",
+              "alt": "The dining room and bar under red lanterns"
+            }
+          ],
+          "drinks": [
+            {
+              "photo": "water-glass",
+              "alt": "A glass of water with a green leaf"
+            }
+          ],
+          "food": [
+            {
+              "photo": "duck-condiments",
+              "alt": "The condiments served with the five-spice duck platter"
+            },
+            {
+              "photo": "crisp-sheet",
+              "alt": "A spiced crisp sheet over a dish in a black bowl"
+            },
+            {
+              "photo": "fruit-bowl",
+              "alt": "Mango and strawberries over ice in a blue and white bowl"
+            }
+          ]
+        },
+        "roomPhoto": {
+          "photo": "set-tables",
+          "alt": "Set tables with candles and chopsticks"
+        }
       },
       "fr-CA": {
         "slug": "oncle-lee-kao",
@@ -1847,32 +2845,48 @@
             {
               "name": "Plateau de canard aux 5 épices",
               "tag": "order-this",
-              "note": "La signature, et ça fait sens dès que ça arrive sur la table. Une grosse portion de canard sous vide avec la chaleur du cinq épices et une texture riche, servie en plateau pour que tu construises tes propres rouleaux. Ça vient avec des rillettes de canard, plein de coriandre, carotte et daikon marinés, huile de chili croustillante, arachides, concombre, une mousse de foie et une sauce de style hoisin."
+              "note": "La signature, et ça fait sens dès que ça arrive sur la table. Une grosse portion de canard sous vide avec la chaleur du cinq épices et une texture riche, servie en plateau pour que tu construises tes propres rouleaux. Ça vient avec des rillettes de canard, plein de coriandre, carotte et daikon marinés, huile de chili croustillante, arachides, concombre, une mousse de foie et une sauce de style hoisin.",
+              "photo": {
+                "photo": "five-spice-duck",
+                "alt": "Canard cinq-épices tranché avec des herbes fraîches"
+              }
             },
             {
               "name": "Aubergine aigre-douce",
-              "tag": "order-this",
-              "note": "Arachides et bacon. Le plat qui fait vivre la table. Luisante et fondante, aigre-douce sans être sucrée comme du ketchup, les arachides pour le croquant et le bacon pour une ancre fumée et salée. Elle remet aussi ton palais à zéro et empêche le repas de paraître lourd."
+              "note": "Arachides et bacon. Le plat qui fait vivre la table. Luisante et fondante, aigre-douce sans être sucrée comme du ketchup, les arachides pour le croquant et le bacon pour une ancre fumée et salée. Elle remet aussi ton palais à zéro et empêche le repas de paraître lourd.",
+              "photo": {
+                "photo": "eggplant",
+                "alt": "Aubergine aigre-douce garnie d'arachides et d'oignon vert"
+              }
             },
             {
               "name": "Huîtres vapeur, haricot noir",
-              "tag": "order-this",
-              "note": "Des huîtres propres et iodées avec un fond de haricots noirs savoureux qui est à la fois salé-sucré et fermenté. L'huître garde son goût d'huître, avec assez de profondeur pour ne pas disparaître en une bouchée."
+              "note": "Des huîtres propres et iodées avec un fond de haricots noirs savoureux qui est à la fois salé-sucré et fermenté. L'huître garde son goût d'huître, avec assez de profondeur pour ne pas disparaître en une bouchée.",
+              "photo": {
+                "photo": "steamed-oysters",
+                "alt": "Huîtres vapeur aux haricots noirs et à l'oignon vert dans un panier de bambou"
+              }
             },
             {
               "name": "Riz frit à l'ail",
               "tag": "order-this",
-              "note": "Le plat de clôture qui rend tout complet, et l'assiette pont si l'un de vous veut continuer à boire et à jaser."
+              "note": "Le plat de clôture qui rend tout complet, et l'assiette pont si l'un de vous veut continuer à boire et à jaser.",
+              "photo": {
+                "photo": "fried-rice",
+                "alt": "Riz frit à l'ail garni d'ail croustillant"
+              }
             },
             {
               "name": "Tataki de boeuf",
-              "tag": "worth-it",
               "note": "Crevettes nordiques et concombre. Familier dans le meilleur sens, comme des saveurs de fondue chinoise traduites en assiette moderne et épurée : huile de chili lustrée, épices chaudes, un petit picotement mala, mais ça reste léger."
             },
             {
               "name": "Tartelette au yuzu, thé vert et fruits",
-              "tag": "worth-it",
-              "note": "Offerte par le restaurant, et la parfaite conclusion douce. Le yuzu donne un snap d'agrumes vif après un repas salé."
+              "note": "Offerte par le restaurant, et la parfaite conclusion douce. Le yuzu donne un snap d'agrumes vif après un repas salé.",
+              "photo": {
+                "photo": "yuzu-tartelette",
+                "alt": "Tartelette au yuzu garnie d'une crème au thé vert"
+              }
             }
           ]
         },
@@ -1937,7 +2951,129 @@
             "question": "Combien de temps d'avance faut-il réserver?",
             "answer": "C'est bien de le faire, mais pas de stress. Il y avait plein de plages quand j'ai réservé."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "opening": [
+            {
+              "photo": "michelin-plaque",
+              "alt": "La plaque MICHELIN 2026 dans la vitrine"
+            }
+          ],
+          "verdict": [
+            {
+              "photo": "banquette",
+              "alt": "Banquette de cuir et chaises de bois dans la salle"
+            },
+            {
+              "photo": "dining-room-bar",
+              "alt": "La salle et le bar sous des lanternes rouges"
+            }
+          ],
+          "drinks": [
+            {
+              "photo": "water-glass",
+              "alt": "Un verre d'eau avec une feuille verte"
+            }
+          ],
+          "food": [
+            {
+              "photo": "duck-condiments",
+              "alt": "Les condiments servis avec le plateau de canard cinq-épices"
+            },
+            {
+              "photo": "crisp-sheet",
+              "alt": "Une galette croustillante épicée sur un plat dans un bol noir"
+            },
+            {
+              "photo": "fruit-bowl",
+              "alt": "Mangue et fraises sur de la glace dans un bol bleu et blanc"
+            }
+          ]
+        },
+        "roomPhoto": {
+          "photo": "set-tables",
+          "alt": "Tables dressées avec bougies et baguettes"
+        }
+      }
+    },
+    "photos": {
+      "michelin-plaque": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-2.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "banquette": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-3.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "dining-room-bar": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-4.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "set-tables": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-5.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "water-glass": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-6.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "duck-condiments": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-7.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "five-spice-duck": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-8.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "eggplant": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-9.webp",
+        "width": 900,
+        "height": 600,
+        "provenance": "dmd-held-photograph"
+      },
+      "steamed-oysters": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-10.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "fried-rice": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-11.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "crisp-sheet": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-12.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "yuzu-tartelette": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-13.webp",
+        "width": 680,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "fruit-bowl": {
+        "src": "/images/date-spots/oncle-lee-kao-photo-14.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
       }
     }
   },
@@ -2010,23 +3146,36 @@
           "dishes": [
             {
               "name": "Têtes de violon",
-              "tag": "order-this",
-              "note": "Fiddleheads treated as a real seasonal feature, with that bright green snap and a pleasant edge of bitterness, rounded out with duck egg, crab bisque and smoked breadcrumbs. Tastes like Québec spring, with the bisque adding depth and the chapelure fumée adding crunch."
+              "note": "Fiddleheads treated as a real seasonal feature, with that bright green snap and a pleasant edge of bitterness, rounded out with duck egg, crab bisque and smoked breadcrumbs. Tastes like Québec spring, with the bisque adding depth and the chapelure fumée adding crunch.",
+              "photo": {
+                "photo": "tetes-de-violon",
+                "alt": "Fiddleheads on a skewer beside a glazed round, in a broth"
+              }
             },
             {
               "name": "Langue de bœuf",
               "tag": "order-this",
-              "note": "Beef tongue cooked properly tender, brightened with tomato, Japanese knotweed and a sauce vierge finish. Rich and silky, with acidity and herbal olive-oil freshness keeping it energetic rather than heavy."
+              "note": "Beef tongue cooked properly tender, brightened with tomato, Japanese knotweed and a sauce vierge finish. Rich and silky, with acidity and herbal olive-oil freshness keeping it energetic rather than heavy.",
+              "photo": {
+                "photo": "langue-de-boeuf",
+                "alt": "Grilled beef tongue with tomato sauce and a green herb salad"
+              }
             },
             {
               "name": "Mozzarella de bufflonne",
-              "tag": "worth-it",
-              "note": "Cold and creamy with aubergine, kohlrabi and tarragon. Rich and milky without being heavy. Not flashy: more of a quality check, and a well-balanced one signals a kitchen that understands restraint."
+              "note": "Cold and creamy with aubergine, kohlrabi and tarragon. Rich and milky without being heavy. Not flashy: more of a quality check, and a well-balanced one signals a kitchen that understands restraint.",
+              "photo": {
+                "photo": "mozzarella",
+                "alt": "Buffalo mozzarella with ribbons of kohlrabi and a crisp cracker"
+              }
             },
             {
               "name": "Maitake à Simon",
-              "tag": "worth-it",
-              "note": "Caramelised at the edges, juicy in the centre, with wild rice, carrot and sunflower. Earthy and substantial even though the portion isn't large."
+              "note": "Caramelised at the edges, juicy in the centre, with wild rice, carrot and sunflower. Earthy and substantial even though the portion isn't large.",
+              "photo": {
+                "photo": "maitake",
+                "alt": "A caramelised maitake mushroom in a dark sauce"
+              }
             },
             {
               "name": "Tartelette de crevettes nordiques",
@@ -2035,13 +3184,19 @@
             },
             {
               "name": "Baba",
-              "tag": "worth-it",
-              "note": "A soaked cake with black beets bringing a deep, almost molasses sweetness, closer to black garlic than to sugar. Keeps the dessert interesting."
+              "note": "A soaked cake with black beets bringing a deep, almost molasses sweetness, closer to black garlic than to sugar. Keeps the dessert interesting.",
+              "photo": {
+                "photo": "baba",
+                "alt": "Baba with cream, ice cream and black beets"
+              }
             },
             {
               "name": "Pain bio seigle et tournesol",
-              "tag": "worth-it",
-              "note": "Nutty, earthy rye and sunflower bread that stands up to the fermented and garum-led seasoning rather than getting lost in it."
+              "note": "Nutty, earthy rye and sunflower bread that stands up to the fermented and garum-led seasoning rather than getting lost in it.",
+              "photo": {
+                "photo": "rye-bread",
+                "alt": "A slab of rye and sunflower bread with whipped butter"
+              }
             }
           ]
         },
@@ -2102,7 +3257,21 @@
             "question": "How far ahead do I need to book?",
             "answer": "Easy in my experience. Still recommended Friday and Saturday, and prime slots do go."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "drinks": [
+            {
+              "photo": "drinks-bottle",
+              "alt": "A bottle labelled Natural Orange next to wine and water glasses"
+            }
+          ],
+          "realCost": [
+            {
+              "photo": "menu",
+              "alt": "The printed Othym menu with prices"
+            }
+          ]
+        }
       },
       "fr-CA": {
         "slug": "othym",
@@ -2152,23 +3321,36 @@
           "dishes": [
             {
               "name": "Têtes de violon",
-              "tag": "order-this",
-              "note": "Des têtes de violon traitées comme une vraie vedette saisonnière, avec ce croquant vert vif et une légère amertume agréable, arrondies avec oeuf de canard, bisque de crabe et chapelure fumée. Ça goûte le printemps québécois, la bisque ajoute de la profondeur et la chapelure fumée du croquant."
+              "note": "Des têtes de violon traitées comme une vraie vedette saisonnière, avec ce croquant vert vif et une légère amertume agréable, arrondies avec oeuf de canard, bisque de crabe et chapelure fumée. Ça goûte le printemps québécois, la bisque ajoute de la profondeur et la chapelure fumée du croquant.",
+              "photo": {
+                "photo": "tetes-de-violon",
+                "alt": "Têtes de violon en brochette à côté d'une boule glacée, dans un bouillon"
+              }
             },
             {
               "name": "Langue de bœuf",
               "tag": "order-this",
-              "note": "Langue de bœuf cuite bien tendre, relevée de tomate, de renouée du Japon et d'une finition sauce vierge. Riche et soyeuse, avec l'acidité et la fraîcheur herbacée de l'huile d'olive qui la gardent énergique plutôt que lourde."
+              "note": "Langue de bœuf cuite bien tendre, relevée de tomate, de renouée du Japon et d'une finition sauce vierge. Riche et soyeuse, avec l'acidité et la fraîcheur herbacée de l'huile d'olive qui la gardent énergique plutôt que lourde.",
+              "photo": {
+                "photo": "langue-de-boeuf",
+                "alt": "Langue de bœuf grillée avec une sauce tomate et une salade d'herbes"
+              }
             },
             {
               "name": "Mozzarella de bufflonne",
-              "tag": "worth-it",
-              "note": "Froide et crémeuse avec aubergine, choux-rave et estragon. Riche et laiteuse sans être lourde. Pas de fla-fla : c'est plus un test de qualité, et un test bien équilibré signale une cuisine qui comprend la retenue."
+              "note": "Froide et crémeuse avec aubergine, choux-rave et estragon. Riche et laiteuse sans être lourde. Pas de fla-fla : c'est plus un test de qualité, et un test bien équilibré signale une cuisine qui comprend la retenue.",
+              "photo": {
+                "photo": "mozzarella",
+                "alt": "Mozzarella de bufflonne avec des rubans de chou-rave et un craquelin"
+              }
             },
             {
               "name": "Maitake à Simon",
-              "tag": "worth-it",
-              "note": "Caramélisés sur les bords, juteux au centre, avec riz sauvage, carotte et tournesol. Terreux et substantiel même si la portion n'est pas grande."
+              "note": "Caramélisés sur les bords, juteux au centre, avec riz sauvage, carotte et tournesol. Terreux et substantiel même si la portion n'est pas grande.",
+              "photo": {
+                "photo": "maitake",
+                "alt": "Un maitake caramélisé dans une sauce foncée"
+              }
             },
             {
               "name": "Tartelette de crevettes nordiques",
@@ -2177,13 +3359,19 @@
             },
             {
               "name": "Baba",
-              "tag": "worth-it",
-              "note": "Un gâteau imbibé avec des betteraves noires qui apportent une douceur profonde, presque comme de la mélasse, plus proche de l'ail noir que du sucre. Garde le dessert intéressant."
+              "note": "Un gâteau imbibé avec des betteraves noires qui apportent une douceur profonde, presque comme de la mélasse, plus proche de l'ail noir que du sucre. Garde le dessert intéressant.",
+              "photo": {
+                "photo": "baba",
+                "alt": "Baba avec crème, crème glacée et betteraves noires"
+              }
             },
             {
               "name": "Pain bio seigle et tournesol",
-              "tag": "worth-it",
-              "note": "Un pain au seigle et au tournesol, noiseteux et terreux, qui tient tête à l'assaisonnement fermenté et au garum plutôt que de s'y perdre."
+              "note": "Un pain au seigle et au tournesol, noiseteux et terreux, qui tient tête à l'assaisonnement fermenté et au garum plutôt que de s'y perdre.",
+              "photo": {
+                "photo": "rye-bread",
+                "alt": "Un morceau de pain de seigle et tournesol avec du beurre fouetté"
+              }
             }
           ]
         },
@@ -2244,7 +3432,71 @@
             "question": "Combien de temps d'avance faut-il réserver?",
             "answer": "Facile selon mon expérience. Quand même recommandé le vendredi et le samedi, et les meilleures plages partent."
           }
-        ]
+        ],
+        "sectionPhotos": {
+          "drinks": [
+            {
+              "photo": "drinks-bottle",
+              "alt": "Une bouteille étiquetée Natural Orange à côté de verres à vin et à eau"
+            }
+          ],
+          "realCost": [
+            {
+              "photo": "menu",
+              "alt": "Le menu imprimé d'Othym avec les prix"
+            }
+          ]
+        }
+      }
+    },
+    "photos": {
+      "drinks-bottle": {
+        "src": "/images/date-spots/othym-photo-2.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "tetes-de-violon": {
+        "src": "/images/date-spots/othym-photo-3.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "langue-de-boeuf": {
+        "src": "/images/date-spots/othym-photo-4.webp",
+        "width": 900,
+        "height": 614,
+        "provenance": "dmd-held-photograph"
+      },
+      "mozzarella": {
+        "src": "/images/date-spots/othym-photo-5.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "maitake": {
+        "src": "/images/date-spots/othym-photo-6.webp",
+        "width": 900,
+        "height": 581,
+        "provenance": "dmd-held-photograph"
+      },
+      "baba": {
+        "src": "/images/date-spots/othym-photo-7.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "rye-bread": {
+        "src": "/images/date-spots/othym-photo-8.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
+      },
+      "menu": {
+        "src": "/images/date-spots/othym-photo-9.webp",
+        "width": 720,
+        "height": 1080,
+        "provenance": "dmd-held-photograph"
       }
     }
   }

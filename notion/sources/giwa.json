@@ -11,7 +11,7 @@
     "title": "Giwa Review: Modern Korean Cooking in Verdun",
     "borough": "Verdun",
     "publishDate": null,
-    "lastEditedTime": 1790222144908
+    "lastEditedTime": 1792725297619
   },
   "metadata": {
     "URL": "/en/reviews/verdun/giwa/",
@@ -50,6 +50,13 @@
       "label": "H1 and opening",
       "blocks": [
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6517.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "A modern Korean kitchen on Promenade Wellington in Verdun, serving carefully plated classics with a fermentation-led twist."
         },
@@ -63,7 +70,7 @@
       "heading": "The verdict",
       "level": 2,
       "section": "verdict",
-      "label": "The verdict (verdictHeadline, verdict reason)",
+      "label": "The verdict (verdictHeadline, verdictDetail, verdict reason)",
       "blocks": [
         {
           "kind": "paragraph",
@@ -186,6 +193,13 @@
           "text": "The list has interesting choices without being the reason to come."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6528.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "To start — the somaek. Fresh soju and Origine lager. Crisp, clean and light."
         },
@@ -200,6 +214,14 @@
         {
           "kind": "paragraph",
           "text": "One drink each at the start, then water or tea, is enough. Nothing on the list stood out to me, so I would spend the extra money on food."
+        },
+        {
+          "kind": "paragraph",
+          "text": "For a date, I would build the order around contrast rather than simply choosing the richest plates. The gimbap gives you a fresh opening, the yukhwe adds a softer, sweeter savoury course, and the charred cabbage brings the fermented element into focus. That is a more varied run than leaning on several soy-heavy dishes at once. Leave room for the chocolate dessert if you like a little chilli with your sweets."
+        },
+        {
+          "kind": "paragraph",
+          "text": "The distinction is between subtle cooking and a lack of technique. My reservations are about intensity and a couple of textures, not whether the kitchen can cook. Someone who prefers gentler seasoning could reasonably enjoy the same meal more than I did. If your ideal Korean dinner is driven by pronounced heat and funk, though, choose with that expectation in mind rather than assuming the plating tells you how forceful the flavours will be."
         }
       ]
     },
@@ -226,12 +248,26 @@
           "text": "Gimbap — Order this"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6525.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Seaweed roll with the fish of the moment, cucumber, avocado and a gochujang vinaigrette. Fresh, lightly sweet, gently spicy, very clean. A good first bite and easy to share."
         },
         {
           "kind": "paragraph",
           "text": "Yukhwe — Order this"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6540.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -242,12 +278,26 @@
           "text": "Hodumaru — Order this"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6567.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Rich gochujang chocolate mousse with chilli-spiked chantilly, candied walnuts and maple ice cream. Chocolate forward with a warm chilli tingle. Best dessert of the three."
         },
         {
           "kind": "paragraph",
-          "text": "Baechu — Worth it"
+          "text": "Baechu"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6546.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -258,12 +308,26 @@
           "text": "Haemul jang — Skip"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6565.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Soy-marinated crab, shrimp, octopus and salmon with seaweed and egg yolk. Briny-sweet and glossy, but the seaweed crisp wasn't crisp and for the price the flavour stayed uniform and soy-heavy. Tempting, worth trying once, but I wouldn't reorder."
         },
         {
           "kind": "paragraph",
-          "text": "Doenjang crème brûlée — Skip"
+          "text": "Doenjang crème brûlée"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6570.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -271,7 +335,14 @@
         },
         {
           "kind": "paragraph",
-          "text": "Basque corn cheesecake — Worth it"
+          "text": "Basque corn cheesecake"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6579.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -545,7 +616,89 @@
       ]
     }
   ],
-  "photos": [],
+  "photos": [
+    {
+      "src": "/images/date-spots/giwa-photo-1.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 109376,
+      "alt": "",
+      "hero": true,
+      "notionFile": "DSCF6517.jpg"
+    },
+    {
+      "src": "/images/date-spots/giwa-photo-2.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 56214,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6528.jpg"
+    },
+    {
+      "src": "/images/date-spots/giwa-photo-3.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 122982,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6525.jpg"
+    },
+    {
+      "src": "/images/date-spots/giwa-photo-4.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 102778,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6540.jpg"
+    },
+    {
+      "src": "/images/date-spots/giwa-photo-5.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 35690,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6567.jpg"
+    },
+    {
+      "src": "/images/date-spots/giwa-photo-6.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 90356,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6546.jpg"
+    },
+    {
+      "src": "/images/date-spots/giwa-photo-7.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 97222,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6565.jpg"
+    },
+    {
+      "src": "/images/date-spots/giwa-photo-8.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 72644,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6570.jpg"
+    },
+    {
+      "src": "/images/date-spots/giwa-photo-9.webp",
+      "width": 900,
+      "height": 600,
+      "bytes": 54722,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6579.jpg"
+    }
+  ],
   "legacy": {
     "name": "giwa-verdun-montreal",
     "en": {

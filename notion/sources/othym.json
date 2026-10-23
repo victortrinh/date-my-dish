@@ -11,7 +11,7 @@
     "title": "Othym Review: Seasonal Québec Cooking and BYOW Details",
     "borough": "Ville-Marie",
     "publishDate": null,
-    "lastEditedTime": 1790222118191
+    "lastEditedTime": 1792725297077
   },
   "metadata": {
     "URL": "/en/reviews/village/othym/",
@@ -54,6 +54,13 @@
           "text": "Chef Noé Lainesse cooks seasonal Québec produce on rue Atateken in the Village, in a bring-your-own-wine room run with front-of-house partner Kevin Duguay."
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6051.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "By Victor · Published [DATE] · Checked September 2026"
         }
@@ -63,7 +70,7 @@
       "heading": "The verdict",
       "level": 2,
       "section": "verdict",
-      "label": "The verdict (verdictHeadline, verdict reason)",
+      "label": "The verdict (verdictHeadline, verdictDetail, verdict reason)",
       "blocks": [
         {
           "kind": "paragraph",
@@ -191,6 +198,13 @@
       "label": "The drinks",
       "blocks": [
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6045.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "The whole drinks section here is one decision: which bottle you bring."
         },
@@ -232,7 +246,14 @@
         },
         {
           "kind": "paragraph",
-          "text": "Têtes de violon — Order this"
+          "text": "Têtes de violon"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6069.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -243,12 +264,26 @@
           "text": "Langue de bœuf — Order this"
         },
         {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6079.jpg"
+          }
+        },
+        {
           "kind": "paragraph",
           "text": "Beef tongue cooked properly tender, brightened with tomato, Japanese knotweed and a sauce vierge finish. Rich and silky, with acidity and herbal olive-oil freshness keeping it energetic rather than heavy."
         },
         {
           "kind": "paragraph",
-          "text": "Mozzarella de bufflonne — Worth it"
+          "text": "Mozzarella de bufflonne"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6059.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -256,7 +291,14 @@
         },
         {
           "kind": "paragraph",
-          "text": "Maitake à Simon — Worth it"
+          "text": "Maitake à Simon"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6087.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -272,7 +314,14 @@
         },
         {
           "kind": "paragraph",
-          "text": "Baba — Worth it"
+          "text": "Baba"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6095.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -280,7 +329,14 @@
         },
         {
           "kind": "paragraph",
-          "text": "Pain bio seigle et tournesol — Worth it"
+          "text": "Pain bio seigle et tournesol"
+        },
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6057.jpg"
+          }
         },
         {
           "kind": "paragraph",
@@ -294,6 +350,13 @@
       "section": "realCost",
       "label": "The real cost",
       "blocks": [
+        {
+          "kind": "image",
+          "image": {
+            "alt": "",
+            "file": "DSCF6055.jpg"
+          }
+        },
         {
           "kind": "paragraph",
           "text": "BYOW keeps the drinks cost separate from the restaurant bill."
@@ -551,7 +614,89 @@
       ]
     }
   ],
-  "photos": [],
+  "photos": [
+    {
+      "src": "/images/date-spots/othym-photo-1.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 100512,
+      "alt": "",
+      "hero": true,
+      "notionFile": "DSCF6051.jpg"
+    },
+    {
+      "src": "/images/date-spots/othym-photo-2.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 59484,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6045.jpg"
+    },
+    {
+      "src": "/images/date-spots/othym-photo-3.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 56102,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6069.jpg"
+    },
+    {
+      "src": "/images/date-spots/othym-photo-4.webp",
+      "width": 900,
+      "height": 614,
+      "bytes": 112008,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6079.jpg"
+    },
+    {
+      "src": "/images/date-spots/othym-photo-5.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 54872,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6059.jpg"
+    },
+    {
+      "src": "/images/date-spots/othym-photo-6.webp",
+      "width": 900,
+      "height": 581,
+      "bytes": 49330,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6087.jpg"
+    },
+    {
+      "src": "/images/date-spots/othym-photo-7.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 67530,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6095.jpg"
+    },
+    {
+      "src": "/images/date-spots/othym-photo-8.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 56900,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6057.jpg"
+    },
+    {
+      "src": "/images/date-spots/othym-photo-9.webp",
+      "width": 720,
+      "height": 1080,
+      "bytes": 69092,
+      "alt": "",
+      "hero": false,
+      "notionFile": "DSCF6055.jpg"
+    }
+  ],
   "legacy": {
     "name": "othym-montreal",
     "en": {
