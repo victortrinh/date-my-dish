@@ -13,7 +13,10 @@ for (const [locale, route] of Object.entries(restaurant)) {
       ? ["Is Test Venue worth it?", "The essentials", "Good for", "The room", "Meet the chef", "What to drink at Test Venue", "What to order at Test Venue", "How much does dinner at Test Venue cost?", "My note on Test Venue", "What to do before or after dinner in Test Quarter", "What the chef would make for a date night", "Before you book", "The essentials"]
       : ["Test Venue, ça vaut le coup?", "L’essentiel", "Bon pour", "La salle", "Rencontrez le chef", "Quoi boire chez Test Venue", "Quoi commander chez Test Venue", "Combien coûte un souper chez Test Venue?", "Ma note sur Test Venue", "Quoi faire avant ou après le souper dans Test Quarter", "Ce que le chef cuisinerait pour un tête-à-tête", "Avant de réserver", "L’essentiel"];
     expect(headings.map((heading) => heading.trim())).toEqual(expected);
-    await expect(page.locator("[data-dish-tag]")).toHaveCount(4);
+    // Four dish cards; the third is one the author did not tag, so it shows no tag.
+    await expect(page.locator("#order li")).toHaveCount(4);
+    expect(await page.locator("[data-dish-tag]").evaluateAll((tags) => tags.map((tag) => tag.getAttribute("data-dish-tag")))).toEqual(["order-this", "worth-it", "skip"]);
+    await expect(page.locator("#order li").nth(2).locator("[data-dish-tag]")).toHaveCount(0);
     // The verdict, Checked date, update line, venue facts and meta title come
     // from the Companion File, which wins over the Notion-derived record.
     await expect(page.locator("#verdict [data-verdict]")).toHaveAttribute("data-verdict", "favourite");
