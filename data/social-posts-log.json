@@ -1259,7 +1259,9 @@
           "altText": "The MICHELIN 2026 plaque in the front window",
           "link": "https://datemydish.com/en/reviews/the-plateau/cabaret-lenfer/",
           "scheduledFor": "2026-11-10T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859463528",
+          "postedAt": "2026-11-10T17:20:38.265Z"
         },
         {
           "imageKey": "cabaret-lenfer--fermentation-jars--verdict",
