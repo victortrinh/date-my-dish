@@ -1521,7 +1521,9 @@
           "altText": "Gimbap rolls in black sesame on a blue plate",
           "link": "https://datemydish.com/en/reviews/verdun/giwa/",
           "scheduledFor": "2026-11-11T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859493442",
+          "postedAt": "2026-11-11T17:30:51.720Z"
         },
         {
           "imageKey": "giwa--yukhwe--title",
