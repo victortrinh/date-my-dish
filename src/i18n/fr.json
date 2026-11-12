@@ -149,6 +149,7 @@
   "home": {
     "nightTitle": "C'est quel genre de soirée?",
     "nightHint": "Choisis l'occasion. On te dit où on réserverait, et pourquoi.",
+    "nightBook": "Réserver chez {name}",
     "verdictsTitle": "Comment on juge un lieu",
     "allDateSpots": "Tous les Date Spots"
   },
