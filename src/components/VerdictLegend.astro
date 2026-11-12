@@ -1,0 +1,17 @@
+---
+import VerdictBadge from "@components/date-spots/VerdictBadge.astro";
+import { t, type Locale } from "@i18n/utils";
+
+// "How we judge a place": the three verdict marks. The homepage renders it
+// twice, once in the hero's right column from `lg` and once after the
+// occasion picker below `lg`; the copy not shown is display:none, so a screen
+// reader meets it once, in the order it is seen.
+interface Props { locale: Locale; class?: string; }
+const { locale, class: className } = Astro.props;
+---
+<div class:list={["border-t border-line-strong pt-6", className]}>
+  <h2 class="font-ui text-body-sm font-medium text-ink-subtle">{t(locale, "home.verdictsTitle")}</h2>
+  <ul class="mt-4 space-y-3">
+    {(["favourite", "conditional", "pass"] as const).map((verdict) => <li><VerdictBadge verdict={verdict} locale={locale} /></li>)}
+  </ul>
+</div>
