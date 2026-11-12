@@ -22,8 +22,11 @@ const { spot, locale, loading = "lazy", headingLevel = 2 } = Astro.props;
 const copy = spot.data.locales[copyLocale(locale)];
 const verdict = spot.data.reviewVerdict;
 const Heading = headingLevel === 3 ? "h3" : "h2";
+// Space-separated occasions the spot suits (ideal or with a caveat), for the
+// listing's occasion filter. Not-for and missing signals do not match.
+const occasions = ("goodFor" in copy ? copy.goodFor ?? [] : []).filter((item) => item.assessment !== "not-for").map((item) => item.occasion).join(" ");
 ---
-<article data-verdict={verdict} data-borough={spot.data.borough && neighbourhoodSlug(spot.data.borough)} data-reveal class="min-w-0">
+<article data-verdict={verdict} data-borough={spot.data.borough && neighbourhoodSlug(spot.data.borough)} data-occasion={occasions || undefined} data-reveal class="min-w-0">
   <a href={dateSpotPath(spot.data, locale)} class="group flex items-start gap-5 text-ink no-underline hover:text-ink sm:block">
     <div class="arch isolate w-28 shrink-0 bg-surface-sunken sm:w-full" style={transitionStyle(Astro.locals, "spot", spot.data.id, "photo")}>
       <img src={spot.data.image.src} alt={copy.imageAlt} width={spot.data.image.width} height={spot.data.image.height} loading={loading} class="zoom aspect-[4/5] w-full object-cover object-center" />

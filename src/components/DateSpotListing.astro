@@ -3,8 +3,10 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import DateSpotCard from "./DateSpotCard.astro";
+import OccasionIcon from "./date-spots/OccasionIcon.astro";
+import { OCCASIONS } from "@content-contracts/date-spot.mjs";
 import { t, type Locale } from "@i18n/utils";
-import { BOROUGHS, DATE_SPOT_CATEGORIES, neighbourhoodSlug, spotCategory, type Verdict } from "@utils/date-spots";
+import { BOROUGHS, DATE_SPOT_CATEGORIES, copyLocale, neighbourhoodSlug, spotCategory, type Verdict } from "@utils/date-spots";
 
 interface Props {
   spots: CollectionEntry<"dateSpots">[];
@@ -23,9 +25,15 @@ const ordered = [...spots].sort((a, b) => b.data.freshness.published.localeCompa
 const verdicts: Verdict[] = ["favourite", "conditional", "pass"];
 const present = verdicts.filter((verdict) => ordered.some(({ data }) => data.reviewVerdict === verdict));
 const boroughs = BOROUGHS.filter((borough) => ordered.some(({ data }) => data.borough === borough));
-const filters = [
+// An occasion lists when at least one spot is ideal for it or works with a caveat.
+const occasions = OCCASIONS.filter((occasion) => ordered.some(({ data }) => {
+  const copy = data.locales[copyLocale(locale)];
+  return "goodFor" in copy && copy.goodFor?.some((item) => item.occasion === occasion && item.assessment !== "not-for");
+}));
+const filters: { key: string; label: string; options: { value: string; label: string; occasion?: (typeof OCCASIONS)[number] }[] }[] = [
   ...(present.length > 1 ? [{ key: "verdict", label: t(locale, "dateSpot.filterByTake"), options: present.map((verdict) => ({ value: verdict, label: t(locale, `dateSpot.verdict.${verdict}`) })) }] : []),
   ...(boroughs.length > 1 ? [{ key: "borough", label: t(locale, "dateSpot.filterByBorough"), options: boroughs.map((borough) => ({ value: neighbourhoodSlug(borough), label: borough })) }] : []),
+  ...(occasions.length > 1 ? [{ key: "occasion", label: t(locale, "dateSpot.filterByOccasion"), options: occasions.map((occasion) => ({ value: occasion, label: t(locale, `dateSpot.occasion.${occasion}`), occasion })) }] : []),
 ];
 const groups = groupByCategory
   ? [
@@ -44,7 +52,7 @@ const groups = groupByCategory
           <p id={`${filter.key}-filter-label`} class="eyebrow shrink-0">{filter.label}</p>
           <div role="group" aria-labelledby={`${filter.key}-filter-label`} class="flex flex-wrap gap-2">
             <button type="button" data-filter="all" aria-pressed="true" class="chip">{t(locale, "dateSpot.filterAll")}</button>
-            {filter.options.map((option) => <button type="button" data-filter={option.value} aria-pressed="false" class="chip">{option.label}</button>)}
+            {filter.options.map((option) => <button type="button" data-filter={option.value} aria-pressed="false" class="chip">{option.occasion && <OccasionIcon occasion={option.occasion} class="h-4 w-4" />}{option.label}</button>)}
           </div>
         </div>
       ))}
@@ -68,8 +76,10 @@ const groups = groupByCategory
     function apply() {
       var shown = 0;
       document.querySelectorAll("article[data-verdict]").forEach(function (card) {
+        // Each card attribute holds space-separated values: one verdict, one
+        // borough, any number of occasions.
         var match = Object.keys(active).every(function (key) {
-          return active[key] === "all" || card.getAttribute("data-" + key) === active[key];
+          return active[key] === "all" || (card.getAttribute("data-" + key) || "").split(" ").indexOf(active[key]) > -1;
         });
         card.hidden = !match;
         if (match) shown += 1;
