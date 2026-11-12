@@ -114,6 +114,31 @@ test("the verdict and borough filters narrow the Date Spots listing together", a
   await expect(borough.getByRole("button", { name: "Ville-Marie" })).toHaveAttribute("aria-pressed", "true");
   await borough.getByRole("button", { name: "All" }).click();
   await expect(page.locator("article[data-verdict]:visible")).toHaveCount(2);
+  // Activities carry no Good-for Signals, so the listing has no occasion row.
+  await expect(page.locator('[data-filter-key="occasion"]')).toHaveCount(0);
+});
+
+test("the occasion filter matches ideal and caveat signals and combines with the verdict", async ({ page }) => {
+  await page.goto("/en/reviews/");
+  const verdict = page.getByRole("group", { name: "Filter by our take" });
+  const occasion = page.getByRole("group", { name: "Filter by occasion" });
+  const cards = page.locator("article[data-verdict]:visible");
+  const status = page.locator("[data-filter-status]");
+  // First date is not-for on both fixtures with signals, so it never lists.
+  await expect(occasion.getByRole("button")).toHaveText(["All", "Anniversary", "Casual midweek", "Impressing a cook", "Late night"]);
+  await expect(cards).toHaveCount(3);
+  await occasion.getByRole("button", { name: "Impressing a cook" }).click();
+  await expect(occasion.getByRole("button", { name: "Impressing a cook" })).toHaveAttribute("aria-pressed", "true");
+  await expect(cards).toHaveCount(2);
+  await expect(page.locator('article[data-verdict="pass"]')).toBeHidden();
+  await expect(status).toHaveText("2");
+  await verdict.getByRole("button", { name: "Not our first pick" }).click();
+  await expect(cards).toHaveCount(0);
+  await expect(status).toHaveText("0");
+  await occasion.getByRole("button", { name: "All" }).click();
+  await expect(cards).toHaveCount(1);
+  await page.goto("/fr/critiques/");
+  await expect(page.getByRole("group", { name: "Filtrer par occasion" }).getByRole("button")).toHaveCount(5);
 });
 
 // The seven reviews published before the rework lived at flat

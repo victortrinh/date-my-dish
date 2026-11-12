@@ -444,6 +444,7 @@
     "moreCategory": "More {category}",
     "filterByTake": "Filter by our take",
     "filterByBorough": "Filter by borough",
+    "filterByOccasion": "Filter by occasion",
     "emptyListing": "No date spots are published yet. In the meantime, browse our restaurant and bar reviews.",
     "filterAll": "All",
     "categoryTitle": "{category} date ideas",
