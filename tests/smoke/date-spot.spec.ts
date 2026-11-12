@@ -144,3 +144,38 @@ test("legacy flat review URLs 301 once to their nested URLs", async ({ request }
     }
   }
 });
+
+for (const locale of ["en", "fr"] as const) {
+  test(`a ${locale} homepage night pick opens its review on the verdict with that night's Good-for row lit`, async ({ page }) => {
+    await page.goto(`/${locale}/`);
+    const night = await page.locator(".night-picker input[name='night']:checked").getAttribute("value");
+    const pick = page.locator(".night-panel:visible a").first();
+    const href = (await pick.getAttribute("href"))!;
+    expect(href).toMatch(new RegExp(`^/${locale}/[^#]+/#verdict-${night}$`));
+    await page.goto(href);
+    // Verdict first: the planner lands on the verdict, clear of the sticky nav.
+    await expect(page.locator("#verdict-title")).toBeInViewport();
+    expect(await page.locator("#verdict").evaluate((element) => element.getBoundingClientRect().top)).toBeGreaterThan(0);
+    const lit = (row: string) => page.locator(row).evaluate((element) => getComputedStyle(element).boxShadow !== "none");
+    const rows = await page.locator(".good-for-row").evaluateAll((elements) => elements.map((element) => element.id));
+    expect(rows).toContain(`good-for-${night}`);
+    for (const row of rows) expect(await lit(`#${row}`), row).toBe(row === `good-for-${night}`);
+  });
+}
+
+test("every Good-for row lights from its verdict landing spot and from a direct link", async ({ page }) => {
+  await page.goto(restaurant.en);
+  const occasions = await page.locator(".good-for-row").evaluateAll((elements) => elements.map((element) => element.id.replace("good-for-", "")));
+  expect(occasions.length).toBeGreaterThan(1);
+  const litRows = () => page.locator(".good-for-row").evaluateAll((elements) => elements.filter((element) => getComputedStyle(element).boxShadow !== "none").map((element) => element.id));
+  // Each URL is a fresh load, as it is when a reader follows a link here.
+  for (const occasion of occasions) {
+    await page.goto("about:blank");
+    await page.goto(`${restaurant.en}#verdict-${occasion}`);
+    expect(await litRows(), occasion).toEqual([`good-for-${occasion}`]);
+    await page.goto("about:blank");
+    await page.goto(`${restaurant.en}#good-for-${occasion}`);
+    expect(await litRows(), occasion).toEqual([`good-for-${occasion}`]);
+    await expect(page.locator(`#good-for-${occasion}`)).toBeInViewport();
+  }
+});

@@ -12,7 +12,9 @@ import { copyLocale, dateSpotPath, priceLabel } from "@utils/date-spots";
 // Ideal places first, then the ones that work with a caveat; places marked
 // "better for another night" are left out. The choice is a radio group and
 // the panels switch in CSS (.night-picker in global.css), so it ships no
-// JavaScript and nothing is hidden from a browser without :has().
+// JavaScript and nothing is hidden from a browser without :has(). Each pick
+// opens the review on its verdict (#verdict-{occasion}) with the matching
+// Good-for row highlighted, so the night chosen here carries over.
 interface Props {
   spots: CollectionEntry<"dateSpots">[];
   locale: Locale;
@@ -55,7 +57,7 @@ const nights = OCCASIONS.map((occasion) => ({
         <ul class="grid gap-x-16 lg:grid-cols-2">
           {picks.map(({ spot, copy, signal }) => (
             <li class="border-t border-line py-6">
-              <a href={dateSpotPath(spot.data, locale)} class="group flex items-start gap-5 text-ink no-underline hover:text-ink">
+              <a href={`${dateSpotPath(spot.data, locale)}#verdict-${occasion}`} class="group flex items-start gap-5 text-ink no-underline hover:text-ink">
                 <div class="arch isolate w-20 shrink-0 bg-surface-sunken sm:w-24">
                   <img src={spot.data.image.src} alt="" width={spot.data.image.width} height={spot.data.image.height} loading="lazy" class="zoom aspect-[4/5] w-full object-cover object-center" />
                 </div>
