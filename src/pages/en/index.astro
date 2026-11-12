@@ -2,13 +2,15 @@
 import BrandDescriptor from "@components/BrandDescriptor.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import DateSpotCard from "@components/DateSpotCard.astro";
+import NightPicker from "@components/NightPicker.astro";
 import VerdictBadge from "@components/date-spots/VerdictBadge.astro";
 import { t } from "@i18n/utils";
 import { SITE_URL } from "@utils/constants";
 import { getCollection } from "astro:content";
 const locale = "en";
 const dateSpotsPath = "/en/date-spots/";
-const recentSpots = (await getCollection("dateSpots"))
+const allSpots = await getCollection("dateSpots");
+const recentSpots = [...allSpots]
   .sort((a, b) => b.data.freshness.published.localeCompare(a.data.freshness.published))
   .slice(0, 6);
 ---
@@ -55,6 +57,7 @@ const recentSpots = (await getCollection("dateSpots"))
       </div>
     </div>
   </section>
+  <NightPicker spots={allSpots} locale={locale} />
   {recentSpots.length > 0 && <section class="page-container pb-section" aria-labelledby="date-spots">
     <div data-reveal class="flex flex-wrap items-end justify-between gap-6 border-t border-line-strong pt-6">
       <h2 id="date-spots" class="text-heading-2 text-ink">{t(locale, "nav.dateSpots")}</h2>

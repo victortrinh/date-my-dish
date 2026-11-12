@@ -147,6 +147,8 @@
     "noReviewsFound": "Aucune critique trouvée."
   },
   "home": {
+    "nightTitle": "C'est quel genre de soirée?",
+    "nightHint": "Choisis l'occasion. On te dit où on réserverait, et pourquoi.",
     "verdictsTitle": "Comment on juge un lieu",
     "allDateSpots": "Tous les Date Spots"
   },

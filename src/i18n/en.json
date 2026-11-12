@@ -147,6 +147,8 @@
     "noReviewsFound": "No reviews found."
   },
   "home": {
+    "nightTitle": "What kind of night is it?",
+    "nightHint": "Pick the occasion. We'll tell you where we'd book, and why.",
     "verdictsTitle": "How we judge a place",
     "allDateSpots": "All Date Spots"
   },

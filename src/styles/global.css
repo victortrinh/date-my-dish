@@ -309,6 +309,41 @@
     @apply inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 font-ui text-body-sm text-ink-muted no-underline transition-colors duration-(--duration-quick) hover:border-line-strong hover:text-ink aria-pressed:border-ink aria-pressed:bg-ink aria-pressed:text-surface;
   }
 
+  /* A chip that wraps a radio (NightPicker): the checked one fills like a
+     pressed chip, and keyboard focus on the hidden radio rings the chip. */
+  .chip:has(input:checked) {
+    @apply border-ink bg-ink text-surface;
+  }
+
+  .chip:has(input:focus-visible) {
+    outline: 2px solid var(--accent-ink);
+    outline-offset: 3px;
+  }
+
+  /* The homepage night picker: one panel per occasion, and only the checked
+     occasion's panel shows. Without :has() every panel stays visible. */
+  @supports selector(:has(*)) {
+    .night-panel {
+      display: none;
+    }
+
+    .night-picker:has(input[value="first-date"]:checked) .night-panel[data-night="first-date"],
+    .night-picker:has(input[value="anniversary"]:checked) .night-panel[data-night="anniversary"],
+    .night-picker:has(input[value="casual-midweek"]:checked) .night-panel[data-night="casual-midweek"],
+    .night-picker:has(input[value="impressing-a-cook"]:checked) .night-panel[data-night="impressing-a-cook"],
+    .night-picker:has(input[value="double-date"]:checked) .night-panel[data-night="double-date"],
+    .night-picker:has(input[value="solo-at-the-bar"]:checked) .night-panel[data-night="solo-at-the-bar"],
+    .night-picker:has(input[value="late-night"]:checked) .night-panel[data-night="late-night"] {
+      display: block;
+    }
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .night-panel {
+      animation: reveal var(--duration-base) var(--ease-out);
+    }
+  }
+
   /* A set-apart block (essentials, newsletter). Used sparingly. */
   .card {
     @apply rounded-sm bg-surface-raised p-6 sm:p-8;

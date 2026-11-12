@@ -1,0 +1,76 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { t, type Locale } from "@i18n/utils";
+import OccasionIcon from "./date-spots/OccasionIcon.astro";
+import VerdictBadge from "./date-spots/VerdictBadge.astro";
+import { OCCASIONS } from "@content-contracts/date-spot.mjs";
+import { copyLocale, dateSpotPath, priceLabel } from "@utils/date-spots";
+
+// "What kind of night is it?": the homepage's way in for a planner. Pick an
+// occasion and get the places whose Good-for Signal says it suits that night,
+// each with the Signal's own reason (Companion File text, never new prose).
+// Ideal places first, then the ones that work with a caveat; places marked
+// "better for another night" are left out. The choice is a radio group and
+// the panels switch in CSS (.night-picker in global.css), so it ships no
+// JavaScript and nothing is hidden from a browser without :has().
+interface Props {
+  spots: CollectionEntry<"dateSpots">[];
+  locale: Locale;
+}
+
+const { spots, locale } = Astro.props;
+const verdictRank = { favourite: 0, conditional: 1, pass: 2 };
+const nights = OCCASIONS.map((occasion) => ({
+  occasion,
+  picks: spots
+    .flatMap((spot) => {
+      const copy = spot.data.locales[copyLocale(locale)];
+      const signal = "goodFor" in copy ? copy.goodFor?.find((item) => item.occasion === occasion) : undefined;
+      return signal && signal.assessment !== "not-for" ? [{ spot, copy, signal }] : [];
+    })
+    .sort((a, b) =>
+      Number(b.signal.assessment === "ideal") - Number(a.signal.assessment === "ideal")
+      || verdictRank[a.spot.data.reviewVerdict] - verdictRank[b.spot.data.reviewVerdict]
+      || b.spot.data.freshness.published.localeCompare(a.spot.data.freshness.published)),
+})).filter((night) => night.picks.length > 0);
+---
+{nights.length > 1 && <section class="night-picker page-container pb-section" aria-labelledby="night-title" data-pagefind-ignore>
+  <div class="border-t border-line-strong pt-6">
+    <fieldset class="min-w-0">
+      <legend id="night-title" class="font-display text-heading-2 text-ink">{t(locale, "home.nightTitle")}</legend>
+      <p class="mt-3 max-w-measure font-body text-ink-muted">{t(locale, "home.nightHint")}</p>
+      <div class="mt-8 flex flex-wrap gap-2">
+        {nights.map(({ occasion }, index) => (
+          <label class="chip cursor-pointer">
+            <input type="radio" name="night" value={occasion} checked={index === 0} class="sr-only" />
+            <OccasionIcon occasion={occasion} class="h-5 w-5" />
+            {t(locale, `dateSpot.occasion.${occasion}`)}
+          </label>
+        ))}
+      </div>
+    </fieldset>
+    {nights.map(({ occasion, picks }) => (
+      <div class="night-panel mt-10" data-night={occasion}>
+        <h3 class="sr-only">{t(locale, `dateSpot.occasion.${occasion}`)}</h3>
+        <ul class="grid gap-x-16 lg:grid-cols-2">
+          {picks.map(({ spot, copy, signal }) => (
+            <li class="border-t border-line py-6">
+              <a href={dateSpotPath(spot.data, locale)} class="group flex items-start gap-5 text-ink no-underline hover:text-ink">
+                <div class="arch isolate w-20 shrink-0 bg-surface-sunken sm:w-24">
+                  <img src={spot.data.image.src} alt="" width={spot.data.image.width} height={spot.data.image.height} loading="lazy" class="zoom aspect-[4/5] w-full object-cover object-center" />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <p class:list={["eyebrow", signal.assessment === "ideal" ? "text-accent-ink" : "text-ink-subtle"]}>{t(locale, `dateSpot.assessment.${signal.assessment}`)}</p>
+                  <p class="mt-1 w-fit font-display text-xl text-ink sm:text-heading-3"><span class="link-draw">{spot.data.name}</span></p>
+                  <p class="mt-2 font-body text-body-sm text-ink-muted sm:text-base">{signal.reason}</p>
+                  <p class="mt-3 font-ui text-body-sm text-ink-subtle">{[spot.data.neighbourhood, "cuisine" in copy ? copy.cuisine : undefined, spot.data.priceRange && priceLabel(spot.data.priceRange, locale)].filter(Boolean).join(" · ")}</p>
+                  <VerdictBadge verdict={spot.data.reviewVerdict} locale={locale} class="mt-2" />
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>}
