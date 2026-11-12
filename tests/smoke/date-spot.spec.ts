@@ -114,6 +114,31 @@ test("the verdict and borough filters narrow the Date Spots listing together", a
   await expect(borough.getByRole("button", { name: "Ville-Marie" })).toHaveAttribute("aria-pressed", "true");
   await borough.getByRole("button", { name: "All" }).click();
   await expect(page.locator("article[data-verdict]:visible")).toHaveCount(2);
+  // Activities carry no Good-for Signals, so the listing has no occasion row.
+  await expect(page.locator('[data-filter-key="occasion"]')).toHaveCount(0);
+});
+
+test("the occasion filter matches ideal and caveat signals and combines with the verdict", async ({ page }) => {
+  await page.goto("/en/reviews/");
+  const verdict = page.getByRole("group", { name: "Filter by our take" });
+  const occasion = page.getByRole("group", { name: "Filter by occasion" });
+  const cards = page.locator("article[data-verdict]:visible");
+  const status = page.locator("[data-filter-status]");
+  // First date is not-for on both fixtures with signals, so it never lists.
+  await expect(occasion.getByRole("button")).toHaveText(["All", "Anniversary", "Casual midweek", "Impressing a cook", "Late night"]);
+  await expect(cards).toHaveCount(3);
+  await occasion.getByRole("button", { name: "Impressing a cook" }).click();
+  await expect(occasion.getByRole("button", { name: "Impressing a cook" })).toHaveAttribute("aria-pressed", "true");
+  await expect(cards).toHaveCount(2);
+  await expect(page.locator('article[data-verdict="pass"]')).toBeHidden();
+  await expect(status).toHaveText("2");
+  await verdict.getByRole("button", { name: "Not our first pick" }).click();
+  await expect(cards).toHaveCount(0);
+  await expect(status).toHaveText("0");
+  await occasion.getByRole("button", { name: "All" }).click();
+  await expect(cards).toHaveCount(1);
+  await page.goto("/fr/critiques/");
+  await expect(page.getByRole("group", { name: "Filtrer par occasion" }).getByRole("button")).toHaveCount(5);
 });
 
 // The seven reviews published before the rework lived at flat
@@ -142,5 +167,40 @@ test("legacy flat review URLs 301 once to their nested URLs", async ({ request }
       const next = await request.get(target, { maxRedirects: 0 });
       expect(next.headers().location, target).toBeUndefined();
     }
+  }
+});
+
+for (const locale of ["en", "fr"] as const) {
+  test(`a ${locale} homepage night pick opens its review on the verdict with that night's Good-for row lit`, async ({ page }) => {
+    await page.goto(`/${locale}/`);
+    const night = await page.locator(".night-picker input[name='night']:checked").getAttribute("value");
+    const pick = page.locator(".night-panel:visible a").first();
+    const href = (await pick.getAttribute("href"))!;
+    expect(href).toMatch(new RegExp(`^/${locale}/[^#]+/#verdict-${night}$`));
+    await page.goto(href);
+    // Verdict first: the planner lands on the verdict, clear of the sticky nav.
+    await expect(page.locator("#verdict-title")).toBeInViewport();
+    expect(await page.locator("#verdict").evaluate((element) => element.getBoundingClientRect().top)).toBeGreaterThan(0);
+    const lit = (row: string) => page.locator(row).evaluate((element) => getComputedStyle(element).boxShadow !== "none");
+    const rows = await page.locator(".good-for-row").evaluateAll((elements) => elements.map((element) => element.id));
+    expect(rows).toContain(`good-for-${night}`);
+    for (const row of rows) expect(await lit(`#${row}`), row).toBe(row === `good-for-${night}`);
+  });
+}
+
+test("every Good-for row lights from its verdict landing spot and from a direct link", async ({ page }) => {
+  await page.goto(restaurant.en);
+  const occasions = await page.locator(".good-for-row").evaluateAll((elements) => elements.map((element) => element.id.replace("good-for-", "")));
+  expect(occasions.length).toBeGreaterThan(1);
+  const litRows = () => page.locator(".good-for-row").evaluateAll((elements) => elements.filter((element) => getComputedStyle(element).boxShadow !== "none").map((element) => element.id));
+  // Each URL is a fresh load, as it is when a reader follows a link here.
+  for (const occasion of occasions) {
+    await page.goto("about:blank");
+    await page.goto(`${restaurant.en}#verdict-${occasion}`);
+    expect(await litRows(), occasion).toEqual([`good-for-${occasion}`]);
+    await page.goto("about:blank");
+    await page.goto(`${restaurant.en}#good-for-${occasion}`);
+    expect(await litRows(), occasion).toEqual([`good-for-${occasion}`]);
+    await expect(page.locator(`#good-for-${occasion}`)).toBeInViewport();
   }
 });

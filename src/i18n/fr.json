@@ -147,6 +147,9 @@
     "noReviewsFound": "Aucune critique trouvée."
   },
   "home": {
+    "nightTitle": "C'est quel genre de soirée?",
+    "nightHint": "Choisis l'occasion. On te dit où on réserverait, et pourquoi.",
+    "nightBook": "Réserver chez {name}",
     "verdictsTitle": "Comment on juge un lieu",
     "allDateSpots": "Tous les Date Spots"
   },
@@ -441,6 +444,7 @@
     "moreCategory": "Plus : {category}",
     "filterByTake": "Filtrer selon notre avis",
     "filterByBorough": "Filtrer par arrondissement",
+    "filterByOccasion": "Filtrer par occasion",
     "emptyListing": "Aucun lieu n’est encore publié. En attendant, parcourez nos critiques de restaurants et de bars.",
     "filterAll": "Tout",
     "categoryTitle": "Idées de sorties : {category}",

@@ -58,7 +58,8 @@ A signature (the reporter's signed note, the interviewer under a chef Q&A) is Li
 - **Buttons**: `.btn` plus one of `.btn-primary` (iron fill; hover lights amber), `.btn-accent` (amber fill, iron text; one per block), `.btn-secondary` (1px outline). All fully round, press to 97%.
 - **`.btn-icon`**: 40px round icon control for search, theme, menu, close.
 - **`.link-draw`**: text link whose 1px underline draws in on hover and stays for `aria-current`.
-- **`.chip`**: round filter chip; `aria-pressed="true"` fills it with iron. The listing verdict filter is a row of chips.
+- **`.chip`**: round filter chip; `aria-pressed="true"` fills it with iron. The listing verdict filter is a row of chips. A chip may also wrap a visually hidden radio: the checked one fills the same way and keyboard focus rings the chip.
+- **`.night-picker` / `.night-panel`**: the homepage occasion picker (`NightPicker.astro`). A radio group of chips; CSS `:has()` shows only the checked occasion's panel, so it ships no JavaScript, and a browser without `:has()` shows every panel.
 - **`.card`**: `surface-raised` block with 2px corners; for the one set-apart block (essentials, newsletter, the short version on a chef page, the recipe card teaser).
 - **Listing entry** (`DateSpotCard`, chef index): the photo in the arch at 4:5, centred (`object-center`, there is no focal-point field), then the facts in UI caption, the name in `text-heading-3` with a drawn underline on hover, the `VerdictBadge` and the one-line take. No box, no border; the grid gap separates entries.
 - **`.eyebrow`**: small tracked uppercase label above a heading.

@@ -147,6 +147,9 @@
     "noReviewsFound": "No reviews found."
   },
   "home": {
+    "nightTitle": "What kind of night is it?",
+    "nightHint": "Pick the occasion. We'll tell you where we'd book, and why.",
+    "nightBook": "Book {name}",
     "verdictsTitle": "How we judge a place",
     "allDateSpots": "All Date Spots"
   },
@@ -441,6 +444,7 @@
     "moreCategory": "More {category}",
     "filterByTake": "Filter by our take",
     "filterByBorough": "Filter by borough",
+    "filterByOccasion": "Filter by occasion",
     "emptyListing": "No date spots are published yet. In the meantime, browse our restaurant and bar reviews.",
     "filterAll": "All",
     "categoryTitle": "{category} date ideas",
