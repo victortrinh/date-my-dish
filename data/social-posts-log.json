@@ -1666,7 +1666,9 @@
           "altText": "Hot oysters with cider sabayon in their shells",
           "link": "https://datemydish.com/en/reviews/rosemont/hoogan-et-beaufort/",
           "scheduledFor": "2026-11-12T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859522107",
+          "postedAt": "2026-11-12T17:46:33.928Z"
         },
         {
           "imageKey": "hoogan-et-beaufort--crab--title",
