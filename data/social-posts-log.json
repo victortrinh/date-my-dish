@@ -1876,7 +1876,9 @@
           "altText": "Two MICHELIN plaques, 2025 and 2026, by the entrance",
           "link": "https://datemydish.com/en/reviews/mile-end/ile-flottante/",
           "scheduledFor": "2026-11-13T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859549073",
+          "postedAt": "2026-11-13T17:24:48.814Z"
         },
         {
           "imageKey": "ile-flottante--dining-room-bar--title",
