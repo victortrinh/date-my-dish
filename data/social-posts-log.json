@@ -2166,7 +2166,9 @@
           "altText": "Scallop crudo in a shell with apple and grapefruit granita",
           "link": "https://datemydish.com/en/reviews/villeray/moccione/",
           "scheduledFor": "2026-11-15T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859608521",
+          "postedAt": "2026-11-15T16:40:30.277Z"
         },
         {
           "imageKey": "moccione--caramelle--title",
