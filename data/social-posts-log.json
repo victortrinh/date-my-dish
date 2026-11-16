@@ -2298,7 +2298,9 @@
           "altText": "Sliced five-spice duck with fresh herbs",
           "link": "https://datemydish.com/en/reviews/old-montreal/oncle-lee-kao/",
           "scheduledFor": "2026-11-16T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859645433",
+          "postedAt": "2026-11-16T19:54:44.199Z"
         },
         {
           "imageKey": "oncle-lee-kao--eggplant--title",
