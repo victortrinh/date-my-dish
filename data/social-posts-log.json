@@ -2508,7 +2508,9 @@
           "altText": "Fiddleheads on a skewer beside a glazed round, in a broth",
           "link": "https://datemydish.com/en/reviews/the-village/othym/",
           "scheduledFor": "2026-11-17T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859670255",
+          "postedAt": "2026-11-17T18:49:40.458Z"
         },
         {
           "imageKey": "othym--langue-de-boeuf--title",
