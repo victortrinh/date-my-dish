@@ -1274,7 +1274,9 @@
           "altText": "Fermentation jars on a shelf, labelled ROSE STARTER JUL.10",
           "link": "https://datemydish.com/en/reviews/the-plateau/cabaret-lenfer/",
           "scheduledFor": "2026-11-18T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859697501",
+          "postedAt": "2026-11-18T18:28:52.760Z"
         },
         {
           "imageKey": "cabaret-lenfer--tables-set--title",
