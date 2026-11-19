@@ -1538,7 +1538,9 @@
           "altText": "Yukhwe, beef tartare topped with nasturtium leaves",
           "link": "https://datemydish.com/en/reviews/verdun/giwa/",
           "scheduledFor": "2026-11-19T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859725163",
+          "postedAt": "2026-11-19T18:43:00.760Z"
         },
         {
           "imageKey": "giwa--hodumaru--verdict",
