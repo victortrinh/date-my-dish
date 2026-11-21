@@ -1897,7 +1897,9 @@
           "altText": "The dining room and bar with bentwood chairs",
           "link": "https://datemydish.com/en/reviews/mile-end/ile-flottante/",
           "scheduledFor": "2026-11-21T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859779572",
+          "postedAt": "2026-11-21T16:59:36.075Z"
         },
         {
           "imageKey": "ile-flottante--cocktail--verdict",
