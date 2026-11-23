@@ -2191,7 +2191,9 @@
           "altText": "Caramelle, green and yellow candy-shaped pasta, on tomato sauce",
           "link": "https://datemydish.com/en/reviews/villeray/moccione/",
           "scheduledFor": "2026-11-23T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859845456",
+          "postedAt": "2026-11-23T21:46:48.633Z"
         },
         {
           "imageKey": "moccione--cappelletti--verdict",
