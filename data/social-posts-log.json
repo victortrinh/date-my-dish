@@ -2325,7 +2325,9 @@
           "altText": "Sweet and sour eggplant topped with peanuts and green onion",
           "link": "https://datemydish.com/en/reviews/old-montreal/oncle-lee-kao/",
           "scheduledFor": "2026-11-24T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859871709",
+          "postedAt": "2026-11-24T20:24:44.185Z"
         },
         {
           "imageKey": "oncle-lee-kao--steamed-oysters--verdict",
