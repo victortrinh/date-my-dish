@@ -2537,7 +2537,9 @@
           "altText": "Grilled beef tongue with tomato sauce and a green herb salad",
           "link": "https://datemydish.com/en/reviews/the-village/othym/",
           "scheduledFor": "2026-11-25T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859897135",
+          "postedAt": "2026-11-25T19:38:47.481Z"
         },
         {
           "imageKey": "othym--mozzarella--verdict",
