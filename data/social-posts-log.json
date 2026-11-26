@@ -1289,7 +1289,9 @@
           "altText": "Tables set with glassware along the banquette",
           "link": "https://datemydish.com/en/reviews/the-plateau/cabaret-lenfer/",
           "scheduledFor": "2026-11-26T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859924017",
+          "postedAt": "2026-11-26T19:19:12.704Z"
         },
         {
           "imageKey": "cabaret-lenfer--open-kitchen--verdict",
