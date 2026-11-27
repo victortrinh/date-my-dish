@@ -1555,7 +1555,9 @@
           "altText": "Chocolate mousse under a chocolate lattice, with ice cream and candied walnuts",
           "link": "https://datemydish.com/en/reviews/verdun/giwa/",
           "scheduledFor": "2026-11-27T09:00:00.000Z",
-          "status": "pending"
+          "status": "posted",
+          "id": "1050746156859950792",
+          "postedAt": "2026-11-27T19:13:20.757Z"
         },
         {
           "imageKey": "giwa--baechu--title",
